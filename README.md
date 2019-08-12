@@ -9,4 +9,4 @@ Deze website wordt gemaakt voor de scouts van Oostkamp: FOS 207 De Eekhoorn.
 
 ---
 ## changelog
-* 2019-08-07 // How to build added
+* 2019-08-12 // How to build added
