@@ -1,0 +1,29 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> volgende activiteit
+//  ------------------------------------------------------------------------------------
+
+.volgende-activiteit {
+	height: 100%;
+	padding: spacing(md);
+	background-color: white;
+	
+	color: $color-grey-dark;
+
+	
+	&--bevers { background-color: $color-yellow; }
+	&--welpen { background-color: $color-mint; }
+	&--jonge { background-color: $color-salmon; }
+	&--oude { background-color: $color-blue-light; }
+
+	&__header {
+		display: flex;
+		-webkit-justify-content: space-between;
+		        justify-content: space-between;
+	}
+	&__titel {
+		margin-top: 0;
+
+		font-weight: bold;
+		color: $color-grey-extra-dark;
+	}
+}
