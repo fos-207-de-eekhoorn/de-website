@@ -1,0 +1,84 @@
+//  ------------------------------------------------------------------------------------
+//  Base -> Typography
+//  ------------------------------------------------------------------------------------
+
+//  Headings
+//  ----------
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: spacing(md);
+	margin-bottom: spacing(sm);
+
+	font-weight: $font-weight-normal;
+}
+
+//  Titles
+//  ----------
+
+h1 {
+	margin: 0;
+
+	font-size: $font-size-h1;
+	font-weight: $font-weight-light;
+}
+
+h2 {
+	font-size: $font-size-h2;
+	font-weight: $font-weight-bold;
+	line-height: 1.125;
+	color: $color-grey-dark;
+}
+
+h3 {
+	margin-top: spacing(lg);
+
+	font-size: $font-size-h3;
+	line-height: 1.2;
+}
+
+h4 {
+	font-size: $font-size-h4;
+	line-height: 1.25;
+}
+
+h5 {
+	font-size: $font-size-h5;
+	line-height: 1.325;
+}
+
+h6 {
+	margin-bottom: spacing(xs);
+
+	font-size: $font-size-h6;
+	text-transform: uppercase;
+	line-height: 1.4;
+}
+
+//  Paragraphs, Lists & Links
+//  ----------
+ul,
+li,
+menu,
+dir,
+p {
+	margin-top: spacing(sm);
+	margin-bottom: spacing(sm);
+
+	line-height: 1.25;
+}
+
+li {
+	//some code here
+}
+
+button,
+a {
+	@include transitions(fast);
+}
+
+button {
+	color: $color-grey-medium;
+}

@@ -1,0 +1,16 @@
+//  ------------------------------------------------------------------------------------
+//  Utilities -> Settings -> Shadows
+//  ------------------------------------------------------------------------------------
+
+$shadow-spacing: spacing(xs);
+$text-shadow-spacing: spacing(xxs);
+
+$shadow: (
+	standard: 0 spacing(xs) spacing(s),
+	half: 0 spacing(xxs) spacing(xs)
+);
+
+$text-shadow: (
+	standard: 0 spacing(xxs) spacing(xs),
+	half: 0 spacing(xxxs) spacing(xxs)
+);

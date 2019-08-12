@@ -1,0 +1,59 @@
+//  ------------------------------------------------------------------------------------
+//  Utilities -> Mixins -> Shadows
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  .selector {
+//      @include shadow-standard;
+//      @include shadow-hard;
+//      @include shadow-half;
+//      @include shadow-none;
+//      @include shadow-custom($color);
+//
+//      @include text-shadow-standard;
+//      @include text-shadow-half;
+//      @include text-shadow-none;
+//      @include text-shadow-custom($color);
+//  }
+//
+//  From: Utilities -> Settings -> Colors
+//  From: Utilities -> Settings -> Shadows
+//
+//  ------------------------------------------------------------------------------------
+
+@mixin shadow-standard {
+    box-shadow: $shadow $color-shadow;
+}
+
+@mixin shadow-hard {
+    box-shadow: $shadow-hard $color-text-shadow;
+}
+
+@mixin shadow-half {
+    box-shadow: $shadow-half $color-shadow;
+}
+
+@mixin shadow-none {
+    box-shadow: none;
+}
+
+@mixin shadow-custom($color) {
+    box-shadow: $shadow $color;
+}
+
+@mixin text-shadow-standard {
+    text-shadow: $text-shadow $color-text-shadow;
+}
+
+@mixin text-shadow-half {
+    text-shadow: $text-shadow-half $color-text-shadow;
+}
+
+@mixin text-shadow-none {
+    text-shadow: none;
+}
+
+@mixin text-shadow-custom($color) {
+    text-shadow: $text-shadow $color;
+}

@@ -1,0 +1,52 @@
+//  ------------------------------------------------------------------------------------
+//  Base
+//  ------------------------------------------------------------------------------------
+
+//  Reset
+//  ------------------------------------------------------------------------------------
+@import 'normalize';
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+html,
+body {
+	background-color: $color-grey-background;
+
+	font-weight: $font-weight-normal;
+	color: $color-grey-medium;
+}
+
+html,
+body {
+	font-family: $font-stack;
+	font-size: $font-size-base-mobile;
+
+	@include mq(md) {
+		font-size: $font-size-base-desktop;
+	}
+
+	*::selection {
+		background-color: $color-grey-dark;
+		color: $color-white;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+//  Typography
+//  ------------------------------------------------------------------------------------
+@import 'typography';
