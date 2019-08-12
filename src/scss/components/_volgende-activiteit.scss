@@ -5,10 +5,10 @@
 .volgende-activiteit {
 	height: 100%;
 	padding: spacing(md);
+	margin-bottom: spacing(md);
 	background-color: white;
 	
 	color: $color-grey-dark;
-
 	
 	&--bevers { background-color: $color-yellow; }
 	&--welpen { background-color: $color-mint; }
