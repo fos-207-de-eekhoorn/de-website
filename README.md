@@ -3,7 +3,7 @@
 Deze website wordt gemaakt voor de scouts van Oostkamp: FOS 207 De Eekhoorn.
 
 ----
-## How to build?
+## Hoe te beginnen?
 ### Build CSS
 	sass src/scss/main.scss:public/css/style.css
 
