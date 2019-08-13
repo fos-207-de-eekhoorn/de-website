@@ -4,3 +4,9 @@
 
 //  General color scheme
 //  ------------------------------------------------------------------------------------
+
+.cs-white {
+	@include shadow-standard;
+
+	background-color: $color-white;
+}

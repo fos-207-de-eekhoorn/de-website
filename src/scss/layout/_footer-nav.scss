@@ -1,0 +1,46 @@
+//  ------------------------------------------------------------------------------------
+//  Layout -> Footer navigation
+//  ------------------------------------------------------------------------------------
+
+.footer-nav {
+	display: flex;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	padding: 0;
+	margin: 0;
+	
+	text-align: center;
+	
+	&__item {
+		margin: 0;
+	    
+		list-style: none;
+	}
+	
+	&__sublist {
+		padding: 0;
+	}
+
+	&__link {
+		color: $color-grey-dark;
+		text-decoration: none;
+		
+		&:hover {
+			color: $color-grey-extra-dark;
+		}
+		
+		&--parent {
+			font-size: $font-size-h5;
+			font-weight: $font-weight-bold;
+			color: $color-grey-extra-dark;
+			
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&--sublink {
+			
+		}
+	}	
+}

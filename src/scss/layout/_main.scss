@@ -2,12 +2,6 @@
 //  Layout -> Main
 //  ------------------------------------------------------------------------------------
 
-.container {
-	@include shadow-standard;
-
-	background-color: $color-white;
-}
-
 .row {
 	margin-bottom: spacing(md);
 }
