@@ -14,6 +14,14 @@
         background-color: $color-grey-medium;
     }
 
+    &__inner {
+        display: flex;
+        -webkit-justify-content: space-between;
+                justify-content: space-between;
+        -webkit-align-items: center;
+                align-items: center;
+    }
+
     &__title {
         margin-top: 0;
 
@@ -26,5 +34,11 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+
+    &__bottom-text {
+        margin: 0;
+        
+        font-size: $font-size-sm;
     }
 }
