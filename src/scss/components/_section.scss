@@ -1,12 +1,11 @@
 //  ------------------------------------------------------------------------------------
-//  Layout -> Main
+//  Component -> Section
 //  ------------------------------------------------------------------------------------
 
-.main {
-    min-height: 95vh;
-    padding-top: $header-height;
-    
-    @include mq(md) {
-        padding-top: $header-height + spacing(md);
-    }
+.section {
+	margin-bottom: spacing(lg);
+	
+	&--small-spacing {
+		margin-bottom: spacing(md);
+	}
 }

@@ -3,7 +3,8 @@
 //  ------------------------------------------------------------------------------------
 
 .carousel {
-	margin-bottom: spacing(md);
+	margin-left: -1 * ($gutter / 2);
+	margin-right: -1 * ($gutter / 2);
 
 	&__banner {
 		width: 100%;
