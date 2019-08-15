@@ -4,17 +4,27 @@
 
 .footer {
     min-height: 5vh;
+    padding: spacing(lg) 0;
 
-	background-color: $color-grey-extra-light;
-	color: $color-grey-dark;
+    background-color: $color-grey-extra-light;
+    color: $color-grey-dark;
 
-	&__title {
-		margin-top: 0;
+    &--bottom {
+        padding: spacing(sm) 0;
+        background-color: $color-grey-medium;
+    }
 
-		font-size: $font-size-h4;
-	}
+    &__title {
+        margin-top: 0;
 
-	&__extra {
-		background-color: $color-grey-medium;
-	}
+        font-size: $font-size-h4;
+    }
+
+    &__section {
+        margin-bottom: spacing(lg);
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }

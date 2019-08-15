@@ -5,6 +5,7 @@
 .main {
     min-height: 95vh;
     padding-top: $header-height;
+    padding-bottom: spading(lg);
     
     @include mq(md) {
         padding-top: $header-height + spacing(md);
