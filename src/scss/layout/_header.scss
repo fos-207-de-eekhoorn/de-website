@@ -1,3 +1,21 @@
 //  ------------------------------------------------------------------------------------
 //  Layout -> Header
 //  ------------------------------------------------------------------------------------
+
+.header {
+	@include shadow-standard;
+	
+	position: fixed;
+	top: 0;
+	width: 100%;
+	margin: 0;
+	z-index: 100;
+	background-color: $color-white;
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+
+		height: spacing(xl);
+	}
+}

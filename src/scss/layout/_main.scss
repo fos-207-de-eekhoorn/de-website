@@ -2,6 +2,15 @@
 //  Layout -> Main
 //  ------------------------------------------------------------------------------------
 
-.row {
+.main {
+	min-height: 95vh;
+	padding-top: spacing(xl) + spacing(md);
+	
+	@include mq(md) {
+		padding-top: spacing(xl) + spacing(lg);
+	}
+}
+
+.row { //todo
 	margin-bottom: spacing(md);
 }
