@@ -16,10 +16,24 @@
 
     &__inner {
         display: flex;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
         -webkit-justify-content: space-between;
                 justify-content: space-between;
         -webkit-align-items: center;
                 align-items: center;
+
+        @include mq(md) {
+            -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            padding: 0;
+        }
+            
+        & > * {
+            padding: spacing(sm) 0;
+        }
     }
 
     &__title {
