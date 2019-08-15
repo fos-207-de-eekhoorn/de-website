@@ -5,6 +5,10 @@
 .section {
 	margin-bottom: spacing(lg);
 	
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
 	&--small-spacing {
 		margin-bottom: spacing(md);
 	}
