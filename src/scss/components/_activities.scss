@@ -1,5 +1,11 @@
 //  ------------------------------------------------------------------------------------
-//  Utilities -> Settings -> Border radius
+//  Component -> Activities
 //  ------------------------------------------------------------------------------------
 
-$border-radius: .5rem;
+.activities {
+	&__date {
+		font-weight: $font-weight-bold;
+		text-align: center;
+		white-space: nowrap;
+	}
+}

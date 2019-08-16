@@ -1,5 +1,12 @@
 //  ------------------------------------------------------------------------------------
-//  Utilities -> Settings -> Border radius
+//  Component -> Card
 //  ------------------------------------------------------------------------------------
 
-$border-radius: .5rem;
+.card {
+    @include border-radius;
+
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: $gutter / 2;
+}
