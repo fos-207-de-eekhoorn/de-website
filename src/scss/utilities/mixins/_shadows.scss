@@ -23,7 +23,7 @@
 //  ------------------------------------------------------------------------------------
 
 @mixin shadow-standard {
-    box-shadow: $shadow $color-shadow;
+    box-shadow: $shadow-standard $color-shadow;
 }
 
 @mixin shadow-hard {
@@ -39,7 +39,7 @@
 }
 
 @mixin shadow-custom($color) {
-    box-shadow: $shadow $color;
+    box-shadow: $text-shadow-standard $color;
 }
 
 @mixin text-shadow-standard {

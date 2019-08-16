@@ -24,16 +24,28 @@ $color-black                    : #000 !default;
 
 //  Greys
 //  ----------
-$color-grey-background-light    : "#f8f8f8";
-$color-grey-background          : "#f4f4f4";
-$color-grey-extra-light         : "#e2e3e5";
-$color-grey-light               : "#afafaf";
-$color-grey-medium              : "#828282";
-$color-grey-dark                : "#666";
-$color-grey-extra-dark          : "#383d41";
+$color-grey-background-light    : #f8f8f8;
+$color-grey-background          : #f4f4f4;
+$color-grey-extra-light         : #e2e3e5;
+$color-grey-light               : #afafaf;
+$color-grey-medium              : #828282;
+$color-grey-dark                : #666;
+$color-grey-extra-dark          : #383d41;
 
 //  Primary and secondairy color
 //  ------------------------------------------------------------------------------------
+
+$color-green					: #c9dd03;
+$color-blue						: #00549f;
+
+$color-mint						: #99cccc;
+$color-red						: #eb5961;
+$color-salmon					: #f4a089;
+$color-yellow					: #ffe566;
+$color-green-dark				: #31846a;
+$color-blue-light				: #79c7e1;
+$color-brown					: #bf9003;
+$color-yellow-light				: #fcf8ba;
 
 //  Tertiary colors
 //  ------------------------------------------------------------------------------------
@@ -74,3 +86,10 @@ $color-alert-warning-dark       : #faf2cc;      //  color
 
 $color-shadow                   : rgba(0,0,0,.1);
 $color-text-shadow              : rgba(0,0,0,.4);
+
+//  Social colors
+//  ------------------------------------------------------------------------------------
+
+$color-facebook           		: hsla(222, 47%, 40%, 1);     // #365397
+$color-instagram          		: hsla(208, 46%, 41%, 1);     // #396d9a
+$color-google           	  	: hsla(217, 89%, 61%, 1);     // #4285f4

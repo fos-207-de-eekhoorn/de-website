@@ -1,0 +1,33 @@
+//  ------------------------------------------------------------------------------------
+//  Utilities -> Mixins -> Clear
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  .selector {
+//      @include transition;
+//      @include transition(.btn, slow);
+//
+//      @include transitions;
+//      @include transitions(fast);
+//  }
+//
+//  Options
+//  -------
+//  * none
+//  * slow
+//  * normal
+//  * medium
+//  * fast
+//
+//  From: Utilities -> Settings -> Transitions
+//
+//  ------------------------------------------------------------------------------------
+
+@mixin clear {
+	&:after {
+		clear: both;
+	    display: table-cell;
+	    content: ' ';
+	}
+}
