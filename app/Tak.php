@@ -12,7 +12,7 @@ class Tak extends Model
     protected $table = 'takken';
 
     protected $fillable = [
-        'naam', 'foto',
+        'naam', 'foto', 'introductie', 'beschrijving', 'vanaf',
     ];
 
     public function tak_leiding()
