@@ -12,15 +12,15 @@ class Tak extends Model
     protected $table = 'takken';
 
     protected $fillable = [
-        'naam', 'foto', 'introductie', 'beschrijving', 'vanaf',
+        'naam', 'foto', 'introductie', 'beschrijving', 'activiteiten_beschrijving', 'vanaf',
     ];
 
-    public function tak_leiding()
+    public function leiding_tak()
     {
         return $this->hasMany(LeiderTak::class);
     }
 
-    public function activiteit()
+    public function activiteiten()
     {
         return $this->hasMany(Activiteit::class);
     }

@@ -31,7 +31,7 @@ class Leider extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function leider_tak()
+    public function leiding_tak()
     {
         return $this->hasMany(LeiderTak::class);
     }

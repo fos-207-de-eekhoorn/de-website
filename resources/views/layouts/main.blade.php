@@ -49,10 +49,11 @@
 
                             <ul class="nav__sublist">
                                 <li class="nav__sublist-item">
-                                    <a href="/takken/bevers" class="nav__link nav__link--sublist">
-                                        Bevers
+                                    <a href="/takken/" class="nav__link nav__link--sublist">
+                                        Overzicht
                                     </a>
                                 </li>
+
                                 <li class="nav__sublist-item">
                                     <a href="/takken/bevers" class="nav__link nav__link--sublist">
                                         Bevers
@@ -124,7 +125,11 @@
         </header>
 
         <main class="main">
-            @yield('content')
+            <div class="container cs-white">
+                <div class="main__inner">
+                    @yield('content')
+                </div>
+            </div>
         </main>
 
         <footer class="footer">

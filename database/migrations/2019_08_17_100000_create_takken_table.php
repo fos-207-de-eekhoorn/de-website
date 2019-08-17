@@ -19,6 +19,7 @@ class CreateTakkenTable extends Migration
             $table->string('foto');
             $table->string('introductie');
             $table->text('beschrijving');
+            $table->text('activiteiten_beschrijving')->nullable();
             $table->integer('vanaf')->unsigned();
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

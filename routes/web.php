@@ -11,4 +11,9 @@
 |
 */
 
+# General Routes
 Route::get('/', 'HomeController@get_home');
+
+# Takken Routes
+Route::get('/takken', 'TakkenController@get_takken');
+Route::get('/takken/{tak}', 'TakkenController@get_tak_details');

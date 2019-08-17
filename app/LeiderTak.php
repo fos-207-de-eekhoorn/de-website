@@ -12,7 +12,7 @@ class LeiderTak extends Model
     protected $table = 'leiding_tak';
 
     protected $fillable = [
-        'tak_id', 'leiding_id', 'is_tl',
+        'tak_id', 'leiding_id', 'contact_volgorde', 'is_tl',
     ];
 
     public function leider()
