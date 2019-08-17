@@ -4,3 +4,19 @@
 
 //  General color scheme
 //  ------------------------------------------------------------------------------------
+
+.cs-white {
+	@include shadow-standard;
+
+	background-color: $color-white;
+}
+
+.cs-bevers {
+	@include shadow-standard;
+
+	background-color: $color-yellow;
+}
+
+.cs-grey-extra-light {
+	background-color: $color-grey-extra-light;
+}

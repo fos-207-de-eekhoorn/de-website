@@ -1,0 +1,33 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Social
+//  ------------------------------------------------------------------------------------
+
+.social {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	&__item {
+		margin-right: $gutter;
+	}
+
+	&__link {
+		color: $color-blue;
+		
+		&--facebook {
+			color: $color-facebook;
+		}
+		&--instagram {
+			color: $color-instagram;
+		}
+
+		&--google {
+			 color: $color-google;
+		}
+
+		&--mail {
+			color: $color-grey-dark;
+		}
+	}
+}

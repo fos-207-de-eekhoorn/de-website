@@ -1,0 +1,16 @@
+//  ------------------------------------------------------------------------------------
+//  Layout -> Main
+//  ------------------------------------------------------------------------------------
+
+.main {
+    min-height: 95vh;
+    padding-top: $header-height;
+    
+    @include mq(md) {
+        padding-top: $header-height + spacing(md);
+    }
+
+    &__inner {
+        padding-bottom: spacing(lg);
+    }
+}
