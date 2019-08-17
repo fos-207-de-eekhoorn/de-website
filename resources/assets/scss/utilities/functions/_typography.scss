@@ -1,0 +1,34 @@
+//  ------------------------------------------------------------------------------------
+//  Utilities -> Functions -> Spacing
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  .selector {
+//      padding: spacing(md);
+//  }
+//
+//  Options
+//  -------
+//  * none
+//  * xxxs
+//  * xxs
+//  * xs
+//  * sm
+//  * md
+//  * lg
+//  * xl
+//  * xxl
+//  * xxxl
+//
+//  From: Utilities -> Settings -> Spacings
+//
+//  ------------------------------------------------------------------------------------
+
+@each $type, $size in $font-sizes {
+	$font-size-#{type}: $size;
+}
+
+@each $type, $weight in $font-weights {
+	$font-size-#{type}: $weight;
+}

@@ -1,0 +1,58 @@
+//  ------------------------------------------------------------------------------------
+//  Layout -> Footer
+//  ------------------------------------------------------------------------------------
+
+.footer {
+    min-height: 5vh;
+    padding: spacing(lg) 0;
+
+    background-color: $color-grey-extra-light;
+    color: $color-grey-dark;
+
+    &--bottom {
+        padding: spacing(sm) 0;
+        background-color: $color-grey-medium;
+    }
+
+    &__inner {
+        display: flex;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-justify-content: space-between;
+                justify-content: space-between;
+        -webkit-align-items: center;
+                align-items: center;
+
+        @include mq(md) {
+            -webkit-flex-direction: row;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            padding: 0;
+        }
+            
+        & > * {
+            padding: spacing(sm) 0;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+
+        font-size: $font-size-h4;
+    }
+
+    &__section {
+        margin-bottom: spacing(lg);
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__bottom-text {
+        margin: 0;
+        
+        font-size: $font-size-sm;
+    }
+}
