@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTakLeidingTable extends Migration
+class CreateLeidingTakTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTakLeidingTable extends Migration
      */
     public function up()
     {
-        Schema::create('tak_leiding', function (Blueprint $table) {
+        Schema::create('leiding_tak', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tak_id')->unsigned();
             $table->foreign('tak_id')->references('id')->on('takken');
@@ -33,6 +33,6 @@ class CreateTakLeidingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tak_leiding');
+        Schema::dropIfExists('leiding_tak');
     }
 }

@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         $leiding = Leider::where('id', 1)
             ->with([
-                'tak_leiding'
+                'leider_tak'
             ])
             ->get();
         return $leiding;

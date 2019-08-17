@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TakLeiding extends Model
+class LeiderTak extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'tak_leiding';
+    protected $table = 'leiding_tak';
 
     protected $fillable = [
         'tak_id', 'leiding_id', 'is_tl',

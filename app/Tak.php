@@ -17,7 +17,7 @@ class Tak extends Model
 
     public function tak_leiding()
     {
-        return $this->hasMany(TakLeiding::class);
+        return $this->hasMany(LeiderTak::class);
     }
 
     public function activiteit()
