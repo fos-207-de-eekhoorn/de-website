@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'leiding',
+        'passwords' => 'leider',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'leiding',
+            'provider' => 'leider',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'leiding',
+            'provider' => 'leider',
         ],
     ],
 
@@ -65,9 +65,9 @@ return [
     */
 
     'providers' => [
-        'leiding' => [
+        'leider' => [
             'driver' => 'eloquent',
-            'model' => App\Leiding::class,
+            'model' => App\Leider::class,
         ],
 
         // 'users' => [
@@ -92,8 +92,8 @@ return [
     */
 
     'passwords' => [
-        'leiding' => [
-            'provider' => 'leiding',
+        'leider' => [
+            'provider' => 'leider',
             'table' => 'password_resets',
             'expire' => 60,
         ],

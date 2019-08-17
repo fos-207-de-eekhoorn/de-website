@@ -68,7 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Leiding::create([
+        return Leider::create([
             'voornaam' => $data['voornaam'],
             'achternaam' => $data['achternaam'],
             'totem' => $data['totem'],
@@ -78,8 +78,6 @@ class RegisterController extends Controller
             'foto' => $data['foto'],
             'is_el' => $data['is_el'],
             'is_ael' => $data['is_ael'],
-        ]);
-
         ]);
     }
 }

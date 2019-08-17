@@ -3,13 +3,15 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Leiding extends Authenticatable
+class Leider extends Authenticatable
 {
     use Notifiable;
+    use SoftDeletes;
 
-    protected $table = 'leiding';
+    protected $table = 'leider';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +19,7 @@ class Leiding extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'voornaam', 'achternaam', 'totem', 'email', 'password', 'telefoon', 'foto', 'is_el', 'is_ael',
     ];
 
     /**
@@ -28,4 +30,9 @@ class Leiding extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function tak_leiding()
+    {
+        return $this->hasMany(TakLeiding::class);
+    }
 }
