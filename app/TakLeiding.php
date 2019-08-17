@@ -9,6 +9,8 @@ class TakLeiding extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'tak_leiding';
+
     protected $fillable = [
         'tak_id', 'leiding_id', 'is_tl',
     ];

@@ -9,6 +9,8 @@ class Tak extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'takken';
+
     protected $fillable = [
         'naam', 'foto',
     ];

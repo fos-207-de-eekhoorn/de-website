@@ -17,8 +17,8 @@ class CreateTakLeidingTable extends Migration
             $table->increments('id');
             $table->integer('tak_id')->unsigned();
             $table->foreign('tak_id')->references('id')->on('takken');
-            $table->integer('leiding_id')->unsigned();
-            $table->foreign('leiding_id')->references('id')->on('leiding');
+            $table->integer('leider_id')->unsigned();
+            $table->foreign('leider_id')->references('id')->on('leiding');
             $table->tinyInteger('is_tl')->default(0);
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

@@ -11,7 +11,7 @@ class Leider extends Authenticatable
     use Notifiable;
     use SoftDeletes;
 
-    protected $table = 'leider';
+    protected $table = 'leiding';
 
     /**
      * The attributes that are mass assignable.
