@@ -6,49 +6,32 @@
     </section>
 
     <div class="row section">
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="volgende-activiteit volgende-activiteit--bevers">
-                <header class="volgende-activiteit__header">
-                    <h3 class="volgende-activiteit__titel">Bevers</h3>
-                    <p>14/09/19</p>
-                </header>
+        @foreach ($tak_activiteiten as $tak)
+            <div class="col-12 col-md-6 col-lg-3">
+                @if (isset($tak->activiteiten[0]))
+                    <div class="volgende-activiteit volgende-activiteit--{{ strtolower($tak->naam) }}">
+                        <header class="volgende-activiteit__header">
+                            <h3 class="volgende-activiteit__titel">{{ $tak->naam }}</h3>
+                            <p>
+                                {{ Carbon\Carbon::parse($tak->activiteiten[0]->datum)->format('j M') }}
+                                @if ($tak->activiteiten[0]->start_uur != '14:00:00' || $tak->activiteiten[0]->eind_uur != '17:00:00')
+                                    <br>
+                                    {{ Carbon\Carbon::parse($tak->activiteiten[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->activiteiten[0]->eind_uur)->format('H\ui') }}
+                                @endif
+                                @if (0 < $tak->activiteiten[0]->prijs)
+                                    <br>
+                                    <span class="text--sm">€</span>{{ number_format($tak->activiteiten[0]->prijs, 2, ',', ' ') }}
+                                @endif
+                            </p>
+                        </header>
 
-                <p>De eerste activiteit van het jaar! We beginnen om <b>13u</b> en eindigen om <b>17u</b>. Zijn jullie er klaar voor??? Tot dan! Meer informatie vindt u bij evenementen > startdag</p>
+                        <p>
+                            {{ $tak->activiteiten[0]->omschrijving }}
+                        </p>
+                    </div>
+                @endif
             </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="volgende-activiteit volgende-activiteit--welpen">
-                <header class="volgende-activiteit__header">
-                    <h3 class="volgende-activiteit__titel">Welpen</h3>
-                    <p>14/09/19</p>
-                </header>
-
-                <p>De eerste activiteit van het jaar! We beginnen om <b>13u</b> en eindigen om <b>17u</b>. Zijn jullie er klaar voor??? Tot dan! Meer informatie vindt u bij evenementen > startdag</p>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="volgende-activiteit volgende-activiteit--jonge">
-                <header class="volgende-activiteit__header">
-                    <h3 class="volgende-activiteit__titel">Jonge</h3>
-                    <p>14/09/19</p>
-                </header>
-
-                <p>De eerste activiteit van het jaar! We beginnen om <b>13u</b> en eindigen om <b>17u</b>. Zijn jullie er klaar voor??? Tot dan! Meer informatie vindt u bij evenementen > startdag</p>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="volgende-activiteit volgende-activiteit--oude">
-                <header class="volgende-activiteit__header">
-                    <h3 class="volgende-activiteit__titel">Oude</h3>
-                    <p>14/09/19</p>
-                </header>
-
-                <p>De eerste activiteit van het jaar! We beginnen om <b>13u</b> en eindigen om <b>17u</b>. Zijn jullie er klaar voor??? Tot dan! Meer informatie vindt u bij evenementen > startdag</p>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <div class="row section">

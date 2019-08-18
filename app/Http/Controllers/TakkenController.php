@@ -30,7 +30,6 @@ class TakkenController extends Controller
                 'leiding_tak.leider',
                 'activiteiten' => function ($query) {
                     $query->whereBetween('datum', [date('2019-09-01'), date('2019-10-31')]);
-                    $query->orderBy('datum', 'asc');
                 },
             ])
             ->first();
