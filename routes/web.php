@@ -13,7 +13,22 @@
 
 # General Routes
 Route::get('/', 'HomeController@get_home');
+Route::get('/contact', 'HomeController@get_contact');
+Route::get('/privacy', 'HomeController@get_privacy');
 
 # Takken Routes
 Route::get('/takken', 'TakkenController@get_takken');
 Route::get('/takken/{tak}', 'TakkenController@get_tak_details');
+
+# Algemene info Routes
+Route::get('/alle-info', 'InfoController@get_alle_info');
+Route::get('/alle-info/lid-worden', 'InfoController@get_lid_worden');
+Route::get('/alle-info/uniform-shop', 'InfoController@get_uniform_shop');
+Route::get('/alle-info/verhuurlijst', 'InfoController@get_verhuurlijst');
+Route::get('/alle-info/docs', 'InfoController@get_docs');
+
+# Evenementen Routs
+Route::get('/evenementen', 'EvenementenController@get_alle_evenementen');
+Route::get('/evenementen/startdag', 'EvenementenController@get_event_startdag');
+
+# Documenten Routs

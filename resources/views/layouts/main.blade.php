@@ -41,11 +41,9 @@
                         <li class="nav__list-item nav__list-item--sublist">
                             <input type="checkbox" id="nav__toggle-sublist--takken" class="nav__checkbox" hidden>
 
-                            <a href="/takken" class="nav__link-of-sublist">
-                                <label for="nav__toggle-sublist--takken" class="nav__link">
-                                    Takken<span class="fa--after"><i class="fas fa-caret-down"></i></span>
-                                </label>
-                            </a>
+                            <label for="nav__toggle-sublist--takken" class="nav__link">
+                                Takken<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                            </label>
 
                             <ul class="nav__sublist">
                                 <li class="nav__sublist-item">
@@ -89,33 +87,55 @@
 
                             <ul class="nav__sublist">
                                 <li class="nav__sublist-item">
-                                    <a href="bevers.html" class="nav__link nav__link--sublist">
+                                    <a href="/alle-info" class="nav__link nav__link--sublist">
+                                        Overzicht
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/uniform-shop" class="nav__link nav__link--sublist">
                                         Uniform & shop
                                     </a>
                                 </li>
 
                                 <li class="nav__sublist-item">
-                                    <a href="welpen.html" class="nav__link nav__link--sublist">
-                                        Over ons
+                                    <a href="/alle-info/verhuurlijst" class="nav__link nav__link--sublist">
+                                        Verhuurlijst
                                     </a>
                                 </li>
 
                                 <li class="nav__sublist-item">
-                                    <a href="jonge.html" class="nav__link nav__link--sublist">
+                                    <a href="/alle-info/docs" class="nav__link nav__link--sublist">
                                         Attesten & documenten
                                     </a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class="nav__list-item">
-                            <a href="index.html" class="nav__link">
-                                Evenementen
-                            </a>
+                        <li class="nav__list-item nav__list-item--sublist">
+                            <input type="checkbox" id="nav__toggle-sublist--evenementen" class="nav__checkbox" hidden>
+
+                            <label for="nav__toggle-sublist--evenementen" class="nav__link">
+                                Evenementen<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                            </label>
+
+                            <ul class="nav__sublist">
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen" class="nav__link nav__link--sublist">
+                                        Overzicht
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/startdag" class="nav__link nav__link--sublist">
+                                        Startdag
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="nav__list-item">
-                            <a href="contact.html" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
+                            <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
                                 Contact
                             </a>
                         </li>
@@ -138,91 +158,58 @@
                     <nav class="col-12 col-lg-8 footer__section">
                         <ul class="footer__section footer-nav">
                             <li class="footer-nav__item">
-                                <a href="#" class="footer-nav__link footer-nav__link--parent">Menu</a>
+                                <a href="/" class="footer-nav__link footer-nav__link--parent">Home</a>
                             </li>
 
                             <li class="footer-nav__item">
-                                <a href="#" class="footer-nav__link footer-nav__link--parent">Takken</a>
+                                <a href="/takken" class="footer-nav__link footer-nav__link--parent">Takken</a>
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">Bevers</a>
+                                        <a href="/takken/bevers" class="footer-nav__link footer-nav__link--sublink">Bevers</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">Welpen</a>
+                                        <a href="/takken/welpen" class="footer-nav__link footer-nav__link--sublink">Welpen</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">Jonge</a>
+                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">Jonge</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">Oude</a>
+                                        <a href="/takken/oude" class="footer-nav__link footer-nav__link--sublink">Oude</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="footer-nav__item">
-                                <a href="#" class="footer-nav__link footer-nav__link--parent">Meer informatie</a>
+                                <a href="/alle-info" class="footer-nav__link footer-nav__link--parent">Meer informatie</a>
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
+                                        <a href="/alle-info/uniform-shop" class="footer-nav__link footer-nav__link--sublink">Uniform & shop</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
+                                        <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Verhuurlijst</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
+                                        <a href="/alle-info/docs" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="footer-nav__item">
-                                <a href="#" class="footer-nav__link footer-nav__link--parent">Evenementen</a>
+                                <a href="/evenementen" class="footer-nav__link footer-nav__link--parent">Evenementen</a>
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="#" class="footer-nav__link footer-nav__link--sublink">BBB</a>
+                                        <a href="/evenementen/startday" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="footer-nav__item">
-                                <a href="#" class="footer-nav__link footer-nav__link--parent">Contact</a>
-                                <ul class="footer-nav__sublist"></ul>
+                                <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>
                             </li>
                         </ul>
                     </nav>
@@ -283,7 +270,7 @@
         <div class="footer footer--bottom">
             <div class="container">
                 <div class="footer__inner">
-                    <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/2018-05_privacyverklaring.pdf" class="footer__bottom-text" target="_blank">Privacyverklaring</a>
+                    <a href="/privacy" class="footer__bottom-text" target="_blank">Privacyverklaring</a>
 
                     <p class="footer__bottom-text">
                         Copyright &copy; FOS207 'De Eekhoorn'

@@ -68,10 +68,6 @@
         }
     }
 
-    &__link,
-    &__link-of-sublist {
-        text-decoration: none;
-    }
     &__link {
         justify-content: center;
         align-items: center;
@@ -82,6 +78,7 @@
         padding: 0 spacing(lg);
 
         text-align: center;
+        text-decoration: none;
         color: $color-grey-medium;
 
         &--active {

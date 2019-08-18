@@ -17,11 +17,18 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
-        // return $tak_activiteiten;
-        // return $tak_activiteiten[0]->activiteiten[0]->start_uur  ;
-
         return view('home', [
             'tak_activiteiten' => $tak_activiteiten,
         ]);
+    }
+
+    public function get_contact()
+    {
+        return view('contact');
+    }
+
+    public function get_privacy()
+    {
+        return view('privacy');
     }
 }

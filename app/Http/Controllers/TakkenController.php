@@ -14,7 +14,7 @@ class TakkenController extends Controller
     {
         $takken = Tak::get();
 
-        return view('takken', [
+        return view('takken.takken', [
             'takken' => $takken,
         ]);
     }
@@ -34,13 +34,11 @@ class TakkenController extends Controller
             ])
             ->first();
 
-        // return $tak;
-
         if (sizeof($tak)) {
-            return view('tak_details', [
+            return view('takken.tak_details', [
                 'tak' => $tak,
             ]);
-        } else {
+        } else { // todo
             return $naam;
             Session::flash('error');
 
