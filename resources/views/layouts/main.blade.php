@@ -17,7 +17,7 @@
         <header class="header">
             <div class="container header__inner">
                 <div class="header__content logo">
-                    <a href="index.html" class="logo__link">
+                    <a href="/" class="logo__link">
                         <img src="/img/logo.jpg" alt="FOS 207 'De Eekhoorn'" class="logo__img">
                     </a>
                 </div>
