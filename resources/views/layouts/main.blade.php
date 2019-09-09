@@ -203,7 +203,11 @@
                                 <a href="/evenementen" class="footer-nav__link footer-nav__link--parent">Evenementen</a>
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/startday" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
+                                        <a href="/evenementen/startdag" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/sneukeltocht" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
                                     </li>
                                 </ul>
                             </li>

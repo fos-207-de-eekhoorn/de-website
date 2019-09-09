@@ -20,22 +20,30 @@
 		        	<br>
 		        </div>
 		        <div>
-		        	<h4>Praktische info</h4>
-		        	<p>
+		        	<h3 class="text--align-center">Praktische info</h3>
+		        	<p class="text--align-center">
 		        		De startdag loopt van 13u tot 17u. Onze lokalen zijn te vinden achter de valkaart.
 		        	</p>
-		        	<p>
+		        	<p class="text--align-center">
 		        		Om 13u beginnen we met de 'overgang'. Er wordt bekendgemaakt wie in welke tak zit. Daarna beginnen de takken elk met hun activiteit. 
 		        	</p>
-		        	<p>
+		        	<p class="text--align-center">
 		        		Tijdens de activiteit zal de bar open zijn waar ouders en sympatisanten kunnen genieten van een hapje en een drankje terwijl de kinderen spelen.
 		        	</p>
 		        	<br>
-		        	<h4>Nieuwe leden</h4>
-		        	<p>
+		        	<h3 class="text--align-center">Mysterie box</h3>
+		        	<p class="text--align-center">
+		        		We hebben in de scouts een mysterieus pakje ontvangen. Ben jij ook benieuwd wat er in zit? Op startdag proberen we er samen achter te komen!
+		        	</p>
+		        	<p class="text--align-center">
+		        		Denk jij te weten wat er in deze doos zit? Voor een klein bedrag kan je een gokje wagen. Als je het juist hebt win je een leuke prijs!
+		        	</p>
+		        	<br>
+		        	<h3 class="text--align-center">Nieuwe leden</h3>
+		        	<p class="text--align-center">
 		        		Ben je nieuw of kom je eens kijken hoe het er in de scouts aantoe gaat? Sluit vrijblijvend een proefverzekering af om te ontdekken of scouts iets voor jou is. <a href="http://localhost/alle-info/lid-worden">Hier</a> vind je alle info!
 		        	</p>
-		        	<p>
+		        	<p class="text--align-center">
 		        		Lid worden in onze scouts kan van 5 tot 16 jaar.
 		        	</p>
 		        </div>

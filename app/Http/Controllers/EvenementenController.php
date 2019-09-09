@@ -13,4 +13,9 @@ class EvenementenController extends Controller
     {
         return view('evenementen.startdag');
     }
+
+    public function get_event_sneukeltocht()
+    {
+        return view('evenementen.sneukeltocht');
+    }
 }

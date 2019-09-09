@@ -30,5 +30,6 @@ Route::get('/alle-info/docs', 'InfoController@get_docs');
 # Evenementen Routs
 Route::get('/evenementen', 'EvenementenController@get_alle_evenementen');
 Route::get('/evenementen/startdag', 'EvenementenController@get_event_startdag');
+Route::get('/evenementen/sneukeltocht', 'EvenementenController@get_event_sneukeltocht');
 
 # Documenten Routs
