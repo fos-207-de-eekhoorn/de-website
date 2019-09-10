@@ -18,4 +18,9 @@ class EvenementenController extends Controller
     {
         return view('evenementen.sneukeltocht');
     }
+
+    public function get_event_spaghetti_avond()
+    {
+        return view('evenementen.spaghetti_avond');
+    }
 }
