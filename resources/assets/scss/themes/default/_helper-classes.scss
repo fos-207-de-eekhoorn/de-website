@@ -63,6 +63,25 @@
 	}
 }
 
+//  Elements
+//  ------------------------------------------------------------------------------------
+
+.img {
+	&--inline-left,
+	&--inline-right {
+		width: 41.6%;
+		margin-bottom: spacing(sm);
+	}
+	&--inline-left {
+		float: left;
+		margin-right: spacing(md);
+	}
+	&--inline-right {
+		float: right;
+		margin-left: spacing(md);
+	}
+}
+
 //  Layout
 //  ------------------------------------------------------------------------------------
 
