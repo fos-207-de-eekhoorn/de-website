@@ -8,8 +8,6 @@
 	<div class="row justify-content-center section">
         <div class="col-12 col-md-8">
             <div class="evenement">
-                <h2 class="card__title"></h2>
-
                 <div class="card__content">
                     <p class="text--align-center">
         				Met een schitterend jaar en een fantastisch kamp achter de rug staan we te trappelen om aan het nieuwe scoutsjaar te beginnen. Zaterdag 14 september gaan we van start. Wie zou jullie nieuwe leiding zijn? Wat is dat mysterie rond die doos nu toch? Kom af en ontdek het allemaal!
@@ -18,8 +16,6 @@
 		        		Hopelijk tot dan!
 		        	</p>
 		        	<br>
-		        </div>
-		        <div>
 		        	<h3 class="text--align-center">Praktische info</h3>
 		        	<p class="text--align-center">
 		        		De startdag loopt van 13u tot 17u. Onze lokalen zijn te vinden achter de valkaart.

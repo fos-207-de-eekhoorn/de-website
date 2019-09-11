@@ -23,4 +23,9 @@ class EvenementenController extends Controller
     {
         return view('evenementen.spaghetti_avond');
     }
+
+    public function get_event_bbq()
+    {
+        return view('evenementen.bbq');
+    }
 }
