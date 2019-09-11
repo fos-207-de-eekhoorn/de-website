@@ -111,22 +111,41 @@
                         </tr>
                         <tr class="table__row">
                             <td class="table__cell">
-                                <b>Chigi</b><br>
-                                Irene Vanslambrouck
+                                <b>Tayra</b><br>
+                                Shannen De Loof
                             </td>
 
                             <td class="table__cell">
-                                0477/06 66 94
+                                0499/36 97 56
                             </td>
                         </tr>
                         <tr class="table__row">
                             <td class="table__cell">
-                                <b>Grizzly</b><br>
-                                Jovi Tanghe
+                                <b>Simoeng</b><br>
+                                Maarten Van Walleghem
                             </td>
 
                             <td class="table__cell">
-                                0496/92 19 72
+                                0491/17 51 60
+                            </td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell">
+                                <b>Gems</b><br>
+                                Senne Catry
+                            </td>
+
+                            <td class="table__cell">
+                                0495/19 55 20
+                            </td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell">
+                                <b>Joshua Minne</b>
+                            </td>
+
+                            <td class="table__cell">
+                                0494/82 62 14
                             </td>
                         </tr>
                     </table>

@@ -27,8 +27,7 @@
                         </p>
 
                         <a href="/alle-info/uniform-shop">Meer info></a>
-
-                        <img src="public/img/uniform.jpg" alt="Uniform">
+                        <img src="{{ asset('/img/uniform.jpg') }}" alt="Uniform">
                     </div>
                 </div>
             </div>
