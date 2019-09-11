@@ -13,4 +13,19 @@ class EvenementenController extends Controller
     {
         return view('evenementen.startdag');
     }
+
+    public function get_event_sneukeltocht()
+    {
+        return view('evenementen.sneukeltocht');
+    }
+
+    public function get_event_spaghetti_avond()
+    {
+        return view('evenementen.spaghetti_avond');
+    }
+
+    public function get_event_bbq()
+    {
+        return view('evenementen.bbq');
+    }
 }

@@ -34,7 +34,7 @@ class TakkenController extends Controller
             ])
             ->first();
 
-        if (sizeof($tak)) {
+        if (is_object($tak)) {
             return view('takken.tak_details', [
                 'tak' => $tak,
             ]);
