@@ -1,0 +1,13 @@
+//  ------------------------------------------------------------------------------------
+//  Utilities -> Settings -> Transitions
+//  ------------------------------------------------------------------------------------
+
+$transition-base: 300ms;
+
+$transitions: (
+	none:	0s,
+	slow:	$transition-base * 2,
+	normal:	$transition-base,
+	medium:	$transition-base * 1.5,
+	fast:	$transition-base / 2
+);

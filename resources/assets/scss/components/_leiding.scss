@@ -1,0 +1,19 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Leiding
+//  ------------------------------------------------------------------------------------
+
+.leiding {
+	margin-bottom: spacing(md);
+
+	&__takleiding {
+		margin: 0;
+	}
+
+	&__afbeelding {
+		margin-bottom: spacing(xs);
+	}
+
+	&__naam {
+		margin-bottom: spacing(xxs);
+	}
+}

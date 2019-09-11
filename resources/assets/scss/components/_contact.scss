@@ -1,0 +1,21 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Contact
+//  ------------------------------------------------------------------------------------
+
+.contact {
+	&__img-wrapper {
+		display: flex;
+		-webkit-align-items: center;
+		        align-items: center;
+		height: 100%;
+	}
+
+	&__img {
+		-webkit-border-radius: 50%;
+		        border-radius: 50%;
+	}
+
+	&__title {
+		margin-top: 0;
+	}
+}

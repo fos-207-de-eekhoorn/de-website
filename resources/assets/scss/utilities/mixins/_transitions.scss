@@ -1,0 +1,45 @@
+//  ------------------------------------------------------------------------------------
+//  Utilities -> Mixins -> Transitions
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  .selector {
+//      @include transition;
+//      @include transition(.btn, slow);
+//
+//      @include transitions;
+//      @include transitions(fast);
+//  }
+//
+//  Options
+//  -------
+//  * none
+//  * slow
+//  * normal
+//  * medium
+//  * fast
+//
+//  From: Utilities -> Settings -> Transitions
+//
+//  ------------------------------------------------------------------------------------
+
+@mixin transition($element, $speed) {
+	$value: map_get($transitions, $speed);
+
+	@if $value == null {
+		@error "Speed "#{$speed}" is not defined in src/sass/utilities/settings/_transitiongs.scss"
+	}
+
+	transition: $element $value ease-in-out;
+}
+
+@mixin transitions($speed: "normal") {
+	$value: map_get($transitions, $speed);
+
+	@if $value == null {
+		@error "Speed "#{$speed}" is not defined in src/sass/utilities/settings/_transitiongs.scss"
+	}
+
+	transition: all $value ease-in-out;
+}

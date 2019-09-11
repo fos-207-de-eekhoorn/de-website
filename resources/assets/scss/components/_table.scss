@@ -1,0 +1,29 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Table
+//  ------------------------------------------------------------------------------------
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+
+    &__row {
+        padding: 0;
+
+        &:nth-child(odd) {
+            background-color: $color-grey-background;
+        }
+
+        thead & {
+            border-bottom: 2px solid $color-grey-light;
+            background-color: $color-white !important;
+        }
+    }
+
+    &__cell {
+        padding: spacing(md);
+        
+        thead & {
+            font-weight: $font-weight-bold;
+        }
+    }
+}

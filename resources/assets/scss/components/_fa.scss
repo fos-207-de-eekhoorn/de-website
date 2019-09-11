@@ -1,0 +1,43 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Font Awesome
+//  ------------------------------------------------------------------------------------
+
+.fa {
+    &--before,
+    &--within {
+        margin-right: spacing(sm);
+    }
+
+    &--after,
+    &--within {
+        margin-left: spacing(sm);
+    }
+
+    &--xxxs {
+        font-size: spacing(xxxs);
+    }
+    &--xxs {
+        font-size: spacing(xxs);
+    }
+    &--xs {
+        font-size: spacing(xs);
+    }
+    &--sm {
+        font-size: spacing(sm);
+    }
+    &--md {
+        font-size: spacing(md);
+    }
+    &--lg {
+        font-size: spacing(lg);
+    }
+    &--xl {
+        font-size: spacing(xl);
+    }
+    &--xxl {
+        font-size: spacing(xxl);
+    }
+    &--xxxl {
+        font-size: spacing(xxxl);
+    }
+}

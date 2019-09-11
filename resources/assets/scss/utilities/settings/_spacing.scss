@@ -1,0 +1,21 @@
+//  ------------------------------------------------------------------------------------
+//  Utilities -> Settings -> Spacing
+//  ------------------------------------------------------------------------------------
+
+$header-height		: 4rem;
+$gutter				: 2rem;
+
+$spacing-base		: $gutter / 2;
+
+$spacings: (
+	none			: 0,
+	xxxs			: $spacing-base / 16,
+	xxs				: $spacing-base / 8,
+	xs				: $spacing-base / 4,
+	sm				: $spacing-base / 2,
+	md				: $spacing-base,
+	lg				: $spacing-base * 2,
+	xl				: $spacing-base * 4,
+	xxl				: $spacing-base * 8,
+	xxxl			: $spacing-base * 16
+);
