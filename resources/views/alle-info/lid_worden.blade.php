@@ -8,23 +8,23 @@
     <div class="row justify-content-center section">
         <div class="col-12 col-md-6 col-lg-8">
             <div class="algemene-info">
-                <h2>Lid worden?</h2>
+                <h2>Lid worden</h2>
                 <p>
                     Wil je lid worden van onze scouts? Goed idee! Hier vindt je alle nodige info.
                 </p>
-
+                <br>
                 <p>
                     Onze scouts is opgedeeld in 4 leeftijdsgroepen, de takken.
                 </p>
                 <lu>
-                    <li>BEVERS: 3e kleuter -2e leerjaar</li>
-                    <li>WELPEN: 3e leerjaar - 5e leerjaar</li>
-                    <li>JONGE: 6e leerjaar - 2e middelbaar</li>
-                    <li>OUDE: 3e middelbaar- 5e middelbaar</li>
+                    <li>Bevers: 2014-2012 (vanaf 5 jaar)</li>
+                    <li>Welpen: 2011-2009</li>
+                    <li>Jonge: 2008-2006</li>
+                    <li>Oude: 2005-2003</li>
                 </lu>
-
+                <br>
                 <p>
-                    Je kan 3 opeenvolgende zaterdag gratis proberen, pas hierna wordt er een verbintenis via lidgeld gevraagd.
+                    Je kan 3 opeenvolgende zaterdagen gratis proberen, pas hierna wordt er een verbintenis via lidgeld gevraagd.
                 </p>
                     <p>
                         Wil je lid worden van onze scouts? Stuur dan een mail naar <a href="mailto:fos207ste@gmail.com">fos207ste@gmail.com</a> met de volgende gegevens:
@@ -42,17 +42,14 @@
                         <li>Eventuele allergiën, medicatie, ziektes, ...</li>
                         <li>Eventuele opmerkingen</li>
                     </lu>
+                    <br>
                     <p>
                         Eenmaal wij de mail hebben ontvangen en verwerkt sturen wij een bevestiging. Vanaf dan start een proefperiode waarbij je <b>gratis</b> kan deelnemen aan 3 opeenvolgende activiteiten (opeenvolgend vanaf de eerste zaterdag na de bevestingsmail). Als deze proefperiode verlopen is en je wenst verder lid te blijven dan dient het lidgeld betaald te worden.
                     </p>
-                
+                <br>
                 <h4>Wat kost de scouts?</h4>
-                
-                <p>Lidgeld bedraad €28 per kind</p>
-                <p> Betalingen gebeuren op het rekeningnummer: <b>BE71 9730 1630 9269</b> met vermelding “NAAM+TAK+ welke SOORT betaling het is: lidgeld.</p>
-                <p>
-                    ###
-                </p>
+                <p>Lidgeld bedraad €38 per kind</p>
+                <p> Betalingen gebeuren op het rekeningnummer: <b>BE71 9730 1630 9269</b> met vermelding “NAAM+TAK+LIDGELD".</p>
             </div>
         </div>
     </div>

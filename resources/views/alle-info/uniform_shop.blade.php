@@ -67,7 +67,7 @@
                         <li>Provinciebandje</li>
                         <li>Eenheidskenteken</li>
                         <li>Jaarkenteken</li>
-                        <li>Beloftekenteken</li>
+                        <li>Belofte-kenteken</li>
                         <li>Teervoet</li>
                         <li>Welpenbadge, jong gids / JVG badge / OVG badge</li>
                         <li>Kenteken België</li>
@@ -81,66 +81,66 @@
                 De Fosshop is elke zaterdag open vanaf 17u.
             </p>
             <br>
-            <table>
-                <tr>
-                    <td>Uniformmaat 28-32</td>
-                    <td>€35,00</td>
+            <table class="table">
+                <tr class="table__row">
+                    <td class="table__cell">Uniformmaat 28-32</td>
+                    <td class="table__cell">€35,00</td>
                 </tr>
-                <tr>
-                    <td>Uniform maat 34-48</td>
-                    <td>€38,00</td>
+                <tr class="table__row">
+                    <td class="table__cell">Uniform maat 34-48</td>
+                    <td class="table__cell">€38,00</td>
                 </tr>
-                <tr>
-                    <td>T-shirt 207e FOS “De Eekhoorn”</td>
-                    <td>€10,00</td>
+                <tr class="table__row">
+                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn”</td>
+                    <td class="table__cell">€10,00</td>
                 </tr>
-                <tr>
-                    <td>T-shirt 207e FOS “De Eekhoorn”</td>
-                    <td>€1,30</td>
+                <tr class="table__row">
+                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn”</td>
+                    <td class="table__cell">€1,30</td>
                 </tr>
-                <tr>
-                    <td>Das</td>
-                    <td>€10,00</td>
+                <tr class="table__row">
+                    <td class="table__cell">Das</td>
+                    <td class="table__cell">€10,00</td>
                 </tr>
-                <tr>
-                    <td>Badges welpen/gidsen-verkenners</td>
-                    <td>€1,30</td>
+                <tr class="table__row">
+                    <td class="table__cell">Badges welpen/gidsen-verkenners</td>
+                    <td class="table__cell">€1,30</td>
                 </tr>
-                <tr>
-                    <td>Wolfje</td>
-                    <td>€1,50</td>
+                <tr class="table__row">
+                    <td class="table__cell">Wolfje</td>
+                    <td class="table__cell">€1,50</td>
                 </tr>
-                <tr>
-                    <td>Ster</td>
-                    <td>€2,00</td>
+                <tr class="table__row">
+                    <td class="table__cell">Ster</td>
+                    <td class="table__cell">€2,00</td>
                 </tr>
-                <tr>
-                    <td>Kenteken FOS Open Scouting België</td>
-                    <td>€1,50</td>
+                <tr class="table__row">
+                    <td class="table__cell">Kenteken FOS Open Scouting België</td>
+                    <td class="table__cell">€1,50</td>
                 </tr>
-                <tr>
-                    <td>Belofteteken FOS Open Scouting</td>
-                    <td>€1,50</td>
+                <tr class="table__row">
+                    <td class="table__cell">Belofteteken FOS Open Scouting</td>
+                    <td class="table__cell">€1,50</td>
                 </tr>
-                <tr>
-                    <td>Eenheidsteken</td>
-                    <td>€2,50</td>
+                <tr class="table__row">
+                    <td class="table__cell">Eenheidsteken</td>
+                    <td class="table__cell">€2,50</td>
                 </tr>
-                <tr>
-                    <td>Jaarteken</td>
-                    <td>€1,20</td>
+                <tr class="table__row">
+                    <td class="table__cell">Jaarteken</td>
+                    <td class="table__cell">€1,20</td>
                 </tr>
-                <tr>
-                    <td>Provincie "West-Vlaanderen"</td>
-                    <td>€0,50</td>
+                <tr class="table__row">
+                    <td class="table__cell">Provincie "West-Vlaanderen"</td>
+                    <td class="table__cell">€0,50</td>
                 </tr>
-                <tr>
-                    <td>Kenteken Verkenner (jongens)</td>
-                    <td>€3,00</td>
+                <tr class="table__row">
+                    <td class="table__cell">Kenteken Verkenner (jongens)</td>
+                    <td class="table__cell">€3,00</td>
                 </tr>
-                <tr>
-                    <td>Kenteken Gidsen (meisjes)</td>
-                    <td>€3,00</td>
+                <tr class="table__row">
+                    <td class="table__cell">Kenteken Gidsen (meisjes)</td>
+                    <td class="table__cell">€3,00</td>
                 </tr>
             </table>
         </div>
