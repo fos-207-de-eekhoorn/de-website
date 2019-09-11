@@ -16,7 +16,7 @@
 
                 <div class="card__content">
                     <p>
-                        {{ $tak->beschrijving }}
+                        {!! $tak->beschrijving !!}
                     </p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="section">
                 <h2>Activiteiten</h2>
                 <p>
-                    De activiteiten gaan elke zaterdag door van 14u tot 17u in het lokaal, tenzij anders vermeld.Hier vindt u alle geplande activiteiten voor de bevers voor de komende maanden!
+                    De activiteiten gaan elke zaterdag door van 14u tot 17u in het lokaal, tenzij anders vermeld. Hier vindt u alle geplande activiteiten voor de komende maanden!
                 </p>
                 @if (strlen($tak->activiteiten_beschrijving) > 0)
                     <p>
@@ -41,32 +41,60 @@
                 @foreach ($tak->activiteiten as $activiteit)
                     <tr class="table__row">
                         <td class="table__cell activities__date">{{ Carbon\Carbon::parse($activiteit->datum)->format('j M') }}</td>
-                        <td class="table__cell">{{ $activiteit->omschrijving }}</td>
+                        <td class="table__cell">
+                            {{ $activiteit->omschrijving }}
+
+                            @if ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
+                                <br>
+                                <br>
+                                <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
+                            @endif
+
+                            @if (0 < $activiteit->prijs)
+                                <br>
+                                <br>
+                                <b>Prijs:</b> {{ $activiteit->prijs }}
+                            @endif
+
+                            @if ($activiteit->locatie != 'Lokaal')
+                                <br>
+                                <br>
+                                <b>Locatie:</b> {{ $activiteit->locatie }}
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
             </table>
         </div>
 
+        {{--
         <div class="col-12 col-lg-4">
             <h2>{{ $tak->naam }}leiding</h2>
             <div class="row">
                 @foreach ($tak->leiding_tak as $leider)
                     <div class="col-6">
                         <div class="leiding">
-                            <p class="leiding__naam">
-                                @if ($leider->is_tl)Takleiding: @endif
+
+                            <h5 class="leiding__totem">
                                 @if (strlen($leider->leider->totem) > 0)
                                     {{ $leider->leider->totem }}
                                 @else
                                     {{ $leider->leider->voornaam }}
+                                @endif @if ($leider->is_tl)
+                                    (TL)
                                 @endif
-                            </p>
+                            </h5>
 
                             <img src="/img/leiding/{{ $leider->leider->foto }}" alt="{{ $leider->leider->totem }}" class="leiding__afbeelding">
                             
                             <div class="leiding__gegevens">
-                                <p>{{ $leider->leider->voornaam }} {{ $leider->leider->achternaam }}</p>
-                                <p><a href="tel:{{ str_replace('.', '', str_replace('/', '', $leider->leider->telefoon)) }}">{{ $leider->leider->telefoon }}</a></p>
+                                <p class="leiding__naam">
+                                    {{ $leider->leider->voornaam }} {{ $leider->leider->achternaam }}
+                                </p>
+
+                                <p class="leiding__telefoon">
+                                    <a href="tel:{{ str_replace('.', '', str_replace('/', '', $leider->leider->telefoon)) }}">{{ $leider->leider->telefoon }}</a>
+                                </p>
                             </div>
 
                             <div class="clear"></div>
@@ -75,5 +103,6 @@
                 @endforeach
             </div>
         </div>
+        --}}
     </div>
 @endsection

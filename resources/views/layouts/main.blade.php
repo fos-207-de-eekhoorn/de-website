@@ -103,12 +103,13 @@
                                         Verhuurlijst
                                     </a>
                                 </li>
-
+                                {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
                                         Attesten & documenten
                                     </a>
                                 </li>
+                                --}}
                             </ul>
                         </li>
 
@@ -120,25 +121,47 @@
                             </label>
 
                             <ul class="nav__sublist">
+                                {{--
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen" class="nav__link nav__link--sublist">
                                         Overzicht
                                     </a>
                                 </li>
+                                --}}
 
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen/startdag" class="nav__link nav__link--sublist">
                                         Startdag
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/sneukeltocht" class="nav__link nav__link--sublist">
+                                        Sneukeltocht
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/spaghetti-avond" class="nav__link nav__link--sublist">
+                                        Spaghetti avond
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/bbq" class="nav__link nav__link--sublist">
+                                        BBQ
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
+                        {{--
                         <li class="nav__list-item">
                             <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
                                 Contact
                             </a>
                         </li>
+                        --}}
                     </ul>
                 </nav>
             </div>
@@ -193,28 +216,40 @@
                                         <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Verhuurlijst</a>
                                     </li>
 
+                                    {{--
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/docs" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
                                     </li>
+                                    --}}
                                 </ul>
                             </li>
 
                             <li class="footer-nav__item">
-                                <a href="/evenementen" class="footer-nav__link footer-nav__link--parent">Evenementen</a>
+                                <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/evenementen/startdag" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/sneukeltocht" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
+                                        <a href="/evenementen/sneukeltocht" class="footer-nav__link footer-nav__link--sublink">Sneukeltocht</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/spaghetti-avond" class="footer-nav__link footer-nav__link--sublink">Spaghetti-avond</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
                                     </li>
                                 </ul>
                             </li>
 
+                            {{--
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>
                             </li>
+                            --}}
                         </ul>
                     </nav>
 
@@ -271,7 +306,7 @@
             </div>
         </footer>
 
-        <div class="footer footer--bottom">
+        <div class="footer footer--bottom cs-grey-dark">
             <div class="container">
                 <div class="footer__inner">
                     <a href="/privacy" class="footer__bottom-text" target="_blank">Privacyverklaring</a>

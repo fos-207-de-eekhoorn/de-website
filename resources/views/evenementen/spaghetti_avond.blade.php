@@ -33,7 +33,7 @@
                     <br>
                     <h3 class="text--align-center">Inschrijven maar!</h3>
                     <p class="text--align-center">
-                        Om er zeker van te zijn dat we niet te weinig of teveel spaghetti voorzien is inschrijven vereist! Je kan inschrijven door een mailtje te sturen naar <a href="mailto:fos207.jonge@gmail.com">fos207.jonge@gmail.com</a>
+                        Om er zeker van te zijn dat we niet te weinig of teveel spaghetti voorzien is inschrijven vereist! Je kan inschrijven door een mailtje te sturen naar <a href="mailto:fos207.jonge@gmail.com">fos207.jonge@gmail.com</a>.
                     </p>
                     <br>
                     <br>

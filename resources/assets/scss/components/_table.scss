@@ -12,9 +12,18 @@
         &:nth-child(odd) {
             background-color: $color-grey-background;
         }
+
+        thead & {
+            border-bottom: 2px solid $color-grey-light;
+            background-color: $color-white !important;
+        }
     }
 
     &__cell {
-        padding: spacing(md); 
+        padding: spacing(md);
+        
+        thead & {
+            font-weight: $font-weight-bold;
+        }
     }
 }

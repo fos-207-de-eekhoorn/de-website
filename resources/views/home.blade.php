@@ -9,25 +9,31 @@
         @foreach ($tak_activiteiten as $tak)
             <div class="col-12 col-md-6 col-lg-3">
                 @if (isset($tak->activiteiten[0]))
-                    <div class="volgende-activiteit volgende-activiteit--{{ strtolower($tak->naam) }}">
-                        <header class="volgende-activiteit__header">
-                            <h3 class="volgende-activiteit__titel">{{ $tak->naam }}</h3>
-                            <p>
-                                {{ Carbon\Carbon::parse($tak->activiteiten[0]->datum)->format('j M') }}
-                                @if ($tak->activiteiten[0]->start_uur != '14:00:00' || $tak->activiteiten[0]->eind_uur != '17:00:00')
-                                    <br>
-                                    {{ Carbon\Carbon::parse($tak->activiteiten[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->activiteiten[0]->eind_uur)->format('H\ui') }}
-                                @endif
-                                @if (0 < $tak->activiteiten[0]->prijs)
-                                    <br>
-                                    <span class="text--sm">€</span>{{ number_format($tak->activiteiten[0]->prijs, 2, ',', ' ') }}
-                                @endif
-                            </p>
-                        </header>
+                    <div class="volgende-activiteit card cs-{{ strtolower($tak->naam) }}">
+                        <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
 
-                        <p>
-                            {{ $tak->activiteiten[0]->omschrijving }}
+                        <div class="volgende-activiteit__algemene-info">
+                            <div class="volgende-activiteit__timing">
+                                <h5 class="volgende-activiteit__datum">
+                                    {{ Carbon\Carbon::parse($tak->activiteiten[0]->datum)->format('j M') }}
+                                </h5>
+                                <p class="volgende-activiteit__tijd">
+                                    {{ Carbon\Carbon::parse($tak->activiteiten[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->activiteiten[0]->eind_uur)->format('H\ui') }}
+                                </p>
+                            </div>
+
+                            @if (0 < $tak->activiteiten[0]->prijs)
+                                <h6 class="volgende-activiteit__prijs">
+                                    <span class="text--sm">€</span>{{ number_format($tak->activiteiten[0]->prijs, 2, ',', ' ') }}
+                                </ph6>
+                            @endif
+                        </div>
+
+                        <p class="volgende-activiteit__omschrijving">
+                            {{ str_limit($tak->activiteiten[0]->omschrijving, 200) }}
                         </p>
+
+                        <a href="{{ url('/takken/'. strtolower($tak->naam)) }}" class="volgende-activiteit__meer">Bekijk meer ></a>
                     </div>
                 @endif
             </div>
@@ -59,15 +65,15 @@
         <div class="col-12 col-md-6 col-lg-4">
             <h2>Snelle links</h2>
             <ul>
-                <li><a href="#">Snelle link</a></li>
-                <li><a href="#">Snelle link</a></li>
-                <li><a href="#">Snelle link</a></li>
-                <li><a href="#">Snelle link</a></li>
+                <li><a href="{{ url('/alle-info/lid-worden') }}">Ik wil lid worden</a></li>
+                <li><a href="{{ url('/alle-info/uniform-shop') }}">Mijn uniform</a></li>
+                <li><a href="{{ url('/evenementen/startdag') }}">Startdag</a></li>
             </ul>
 
         </div>
     </div>
 
+    {{--
     <div class="row section">
         <div class="col-12">
             <h2>Aankomende evenementen</h2>
@@ -108,4 +114,5 @@
             </div>
         </div>
     </div>
+    --}}
 @endsection

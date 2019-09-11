@@ -18,7 +18,7 @@
             </div>
 
             <div class="col-9">
-                <div class="volgende-activiteit volgende-activiteit--{{ strtolower($tak->naam) }}">
+                <div class="volgende-activiteit cs-{{ strtolower($tak->naam) }}">
                     <header class="volgende-activiteit__header">
                         <h3 class="volgende-activiteit__titel">{{ $tak->naam }}</h3>
                         <p><b>Vanaf {{ $tak->vanaf }} jaar</b></p>
