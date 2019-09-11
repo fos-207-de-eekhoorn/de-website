@@ -11,12 +11,25 @@
 	background-color: $color-white;
 }
 
-.cs-bevers {
-	@include shadow-standard;
-
-	background-color: $color-yellow;
-}
-
 .cs-grey-extra-light {
 	background-color: $color-grey-extra-light;
+}
+
+.cs-bevers,
+.cs-welpen,
+.cs-jonge,
+.cs-oude {
+	@include shadow-standard;
+}
+.cs-bevers {
+	background-color: $color-yellow;
+}
+.cs-welpen {
+	background-color: $color-mint;
+}
+.cs-jonge {
+	background-color: $color-salmon;
+}
+.cs-oude {
+	background-color: $color-blue-light;
 }

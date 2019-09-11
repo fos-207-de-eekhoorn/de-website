@@ -9,7 +9,7 @@
         @foreach ($tak_activiteiten as $tak)
             <div class="col-12 col-md-6 col-lg-3">
                 @if (isset($tak->activiteiten[0]))
-                    <div class="volgende-activiteit volgende-activiteit--{{ strtolower($tak->naam) }}">
+                    <div class="volgende-activiteit cs-{{ strtolower($tak->naam) }}">
                         <header class="volgende-activiteit__header">
                             <h3 class="volgende-activiteit__titel">{{ $tak->naam }}</h3>
                             <p>
