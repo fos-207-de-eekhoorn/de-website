@@ -153,11 +153,13 @@
                             </ul>
                         </li>
 
+                        {{--
                         <li class="nav__list-item">
                             <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
                                 Contact
                             </a>
                         </li>
+                        --}}
                     </ul>
                 </nav>
             </div>
