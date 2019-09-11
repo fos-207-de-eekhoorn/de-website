@@ -121,11 +121,13 @@
                             </label>
 
                             <ul class="nav__sublist">
+                                {{--
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen" class="nav__link nav__link--sublist">
                                         Overzicht
                                     </a>
                                 </li>
+                                --}}
 
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen/startdag" class="nav__link nav__link--sublist">
@@ -223,7 +225,7 @@
                             </li>
 
                             <li class="footer-nav__item">
-                                <a href="/evenementen" class="footer-nav__link footer-nav__link--parent">Evenementen</a>
+                                <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/evenementen/startdag" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
