@@ -23,13 +23,41 @@
 }
 .cs-bevers {
 	background-color: $color-yellow;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-yellow-title;
+	}
+	p, a, li {
+		color: $color-yellow-text;
+	}
 }
 .cs-welpen {
 	background-color: $color-mint;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-mint-title;
+	}
+	p, a, li {
+		color: $color-mint-text;
+	}
 }
 .cs-jonge {
 	background-color: $color-salmon;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-salmon-title;
+	}
+	p, a, li {
+		color: $color-salmon-text;
+	}
 }
 .cs-oude {
 	background-color: $color-blue-light;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-blue-light-title;
+	}
+	p, a, li {
+		color: $color-blue-light-text;
+	}
 }

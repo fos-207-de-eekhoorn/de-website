@@ -3,28 +3,39 @@
 //  ------------------------------------------------------------------------------------
 
 .volgende-activiteit {
-	display: flex;
-	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-webkit-justify-content: center;
-	        justify-content: center;
 	height: 100%;
-	padding: spacing(md);
+	padding: spacing(md) spacing(md) spacing(lg);
 	margin-bottom: spacing(md);
 	background-color: white;
 	
 	color: $color-grey-dark;
 
-	&__header {
-		display: flex;
-		-webkit-justify-content: space-between;
-		        justify-content: space-between;
-	}
-	&__titel {
+	&__tak {
 		margin-top: 0;
 
 		font-weight: bold;
-		color: $color-grey-extra-dark;
+		color: rgba($color-grey-extra-dark,.8);
+	}
+
+	&__algemene-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: spacing(md);
+	}
+
+	&__datum {
+		margin-bottom: 0;
+	}
+
+	&__tijd,
+	&__omschrijving {
+		margin: 0;
+	}
+
+	&__meer {
+		position: absolute;
+		bottom: spacing(md);
+		right: spacing(md);
 	}
 }
