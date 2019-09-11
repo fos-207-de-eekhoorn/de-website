@@ -214,9 +214,11 @@
                                         <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Verhuurlijst</a>
                                     </li>
 
+                                    {{--
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/docs" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
                                     </li>
+                                    --}}
                                 </ul>
                             </li>
 
@@ -228,22 +230,24 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
                                         <a href="/evenementen/sneukeltocht" class="footer-nav__link footer-nav__link--sublink">Sneukeltocht</a>
                                     </li>
 
                                     <li class="footer-nav__item">
                                         <a href="/evenementen/spaghetti-avond" class="footer-nav__link footer-nav__link--sublink">Spaghetti-avond</a>
                                     </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
+                                    </li>
                                 </ul>
                             </li>
 
+                            {{--
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>
                             </li>
+                            --}}
                         </ul>
                     </nav>
 
