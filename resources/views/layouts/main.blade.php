@@ -271,7 +271,7 @@
             </div>
         </footer>
 
-        <div class="footer footer--bottom">
+        <div class="footer footer--bottom cs-grey-dark">
             <div class="container">
                 <div class="footer__inner">
                     <a href="/privacy" class="footer__bottom-text" target="_blank">Privacyverklaring</a>

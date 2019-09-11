@@ -15,6 +15,20 @@
 	background-color: $color-grey-extra-light;
 }
 
+.cs-grey-dark {
+	background-color: $color-grey-extra-dark;
+	
+	color: $color-white;
+	
+	a {
+		color: $color-white;
+		
+		&:hover {
+			color: $color-yellow-light;
+		}
+	}
+}
+
 .cs-bevers,
 .cs-welpen,
 .cs-jonge,
