@@ -53,20 +53,27 @@
                 @foreach ($tak->leiding_tak as $leider)
                     <div class="col-6">
                         <div class="leiding">
-                            <p class="leiding__naam">
-                                @if ($leider->is_tl)Takleiding: @endif
+
+                            <h5 class="leiding__totem">
                                 @if (strlen($leider->leider->totem) > 0)
                                     {{ $leider->leider->totem }}
                                 @else
                                     {{ $leider->leider->voornaam }}
+                                @endif @if ($leider->is_tl)
+                                    (TL)
                                 @endif
-                            </p>
+                            </h5>
 
                             <img src="/img/leiding/{{ $leider->leider->foto }}" alt="{{ $leider->leider->totem }}" class="leiding__afbeelding">
                             
                             <div class="leiding__gegevens">
-                                <p>{{ $leider->leider->voornaam }} {{ $leider->leider->achternaam }}</p>
-                                <p><a href="tel:{{ str_replace('.', '', str_replace('/', '', $leider->leider->telefoon)) }}">{{ $leider->leider->telefoon }}</a></p>
+                                <p class="leiding__naam">
+                                    {{ $leider->leider->voornaam }} {{ $leider->leider->achternaam }}
+                                </p>
+
+                                <p class="leiding__telefoon">
+                                    <a href="tel:{{ str_replace('.', '', str_replace('/', '', $leider->leider->telefoon)) }}">{{ $leider->leider->telefoon }}</a>
+                                </p>
                             </div>
 
                             <div class="clear"></div>
