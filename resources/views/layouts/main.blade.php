@@ -132,6 +132,24 @@
                                         Startdag
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/sneukeltocht" class="nav__link nav__link--sublist">
+                                        Sneukeltocht
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/spaghetti-avond" class="nav__link nav__link--sublist">
+                                        Spaghetti avond
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/bbq" class="nav__link nav__link--sublist">
+                                        BBQ
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
