@@ -16,7 +16,7 @@
 
                 <div class="card__content">
                     <p>
-                        {{ $tak->beschrijving }}
+                        {!! $tak->beschrijving !!}
                     </p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="section">
                 <h2>Activiteiten</h2>
                 <p>
-                    De activiteiten gaan elke zaterdag door van 14u tot 17u in het lokaal, tenzij anders vermeld.Hier vindt u alle geplande activiteiten voor de bevers voor de komende maanden!
+                    De activiteiten gaan elke zaterdag door van 14u tot 17u in het lokaal, tenzij anders vermeld. Hier vindt u alle geplande activiteiten voor de komende maanden!
                 </p>
                 @if (strlen($tak->activiteiten_beschrijving) > 0)
                     <p>
