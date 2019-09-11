@@ -103,12 +103,13 @@
                                         Verhuurlijst
                                     </a>
                                 </li>
-
+                                {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
                                         Attesten & documenten
                                     </a>
                                 </li>
+                                --}}
                             </ul>
                         </li>
 

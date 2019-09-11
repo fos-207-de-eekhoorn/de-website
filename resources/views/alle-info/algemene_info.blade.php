@@ -34,12 +34,15 @@
             </div>
         </div>
 
+        {{--
         <div class="col-12 col-md-6 col-lg-5 cs-grey-extra-light justify-content-center">
             <h3>Documenten</h3>
+
             <p>
                 Hier vindt u alle tegemoetkomingen.
                 U dient uw gegevens in te vullen en daarna af te geven aan de eenheidsleiding (de leiding kan helpen om ervoor zorgen dat het papier bij de juiste personen terechtkomen). De eenheidsleiding zal daarna het nodige aanvullen en u het papier zo snel mogelijk terugbezorgen.
             </p>
+
             <ul class="hierarchielijst">
                 <li class="hierarchielijst__item">
                     Tegemoetkomingen
@@ -102,5 +105,6 @@
                 </li>
             </ul>
         </div>
+        --}}
     </div>
 @endsection
