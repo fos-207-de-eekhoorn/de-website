@@ -48,7 +48,7 @@
                     </p>
                 <br>
                 <h4>Wat kost de scouts?</h4>
-                <p>Lidgeld bedraad €38 per kind</p>
+                <p>Lidgeld bedraagd €38 per kind</p>
                 <p> Betalingen gebeuren op het rekeningnummer: <b>BE71 9730 1630 9269</b> met vermelding “NAAM+TAK+LIDGELD".</p>
             </div>
         </div>
