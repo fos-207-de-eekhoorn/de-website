@@ -11,12 +11,67 @@
 	background-color: $color-white;
 }
 
-.cs-bevers {
-	@include shadow-standard;
-
-	background-color: $color-yellow;
-}
-
 .cs-grey-extra-light {
 	background-color: $color-grey-extra-light;
+}
+
+.cs-grey-dark {
+	background-color: $color-grey-extra-dark;
+	
+	color: $color-white;
+	
+	a {
+		color: $color-white;
+		
+		&:hover {
+			color: $color-yellow-light;
+		}
+	}
+}
+
+.cs-bevers,
+.cs-welpen,
+.cs-jonge,
+.cs-oude {
+	@include shadow-standard;
+}
+.cs-bevers {
+	background-color: $color-yellow;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-yellow-title;
+	}
+	p, a, li {
+		color: $color-yellow-text;
+	}
+}
+.cs-welpen {
+	background-color: $color-mint;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-mint-title;
+	}
+	p, a, li {
+		color: $color-mint-text;
+	}
+}
+.cs-jonge {
+	background-color: $color-salmon;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-salmon-title;
+	}
+	p, a, li {
+		color: $color-salmon-text;
+	}
+}
+.cs-oude {
+	background-color: $color-blue-light;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-blue-light-title;
+	}
+	p, a, li {
+		color: $color-blue-light-text;
+	}
 }

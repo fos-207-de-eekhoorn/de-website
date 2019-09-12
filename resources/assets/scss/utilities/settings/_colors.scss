@@ -38,14 +38,23 @@ $color-grey-extra-dark          : #383d41;
 $color-green					: #c9dd03;
 $color-blue						: #00549f;
 
-$color-mint						: #99cccc;
+$color-mint						: hsla(180, 33%, 70%, 1);
 $color-red						: #eb5961;
-$color-salmon					: #f4a089;
-$color-yellow					: #ffe566;
+$color-salmon					: hsla(13, 83%, 75%, 1);
+$color-yellow					: hsla(50, 100%, 70%, 1);
 $color-green-dark				: #31846a;
-$color-blue-light				: #79c7e1;
+$color-blue-light				: hsla(195, 63%, 68%, 1);
 $color-brown					: #bf9003;
 $color-yellow-light				: #fcf8ba;
+
+$color-mint-title				: hsla(180, 20%, 24%, 1);
+$color-mint-text				: hsla(180, 20%, 32%, 1);
+$color-salmon-title				: hsla(13, 25%, 24%, 1);
+$color-salmon-text				: hsla(13, 25%, 32%, 1);
+$color-yellow-title				: hsla(50, 25%, 24%, 1);
+$color-yellow-text				: hsla(50, 25%, 32%, 1);
+$color-blue-light-title			: hsla(195, 25%, 24%, 1);
+$color-blue-light-text			: hsla(195, 25%, 32%, 1);
 
 //  Tertiary colors
 //  ------------------------------------------------------------------------------------
