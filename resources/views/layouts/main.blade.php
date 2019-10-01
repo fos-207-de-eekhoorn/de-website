@@ -66,13 +66,13 @@
 
                                 <li class="nav__sublist-item">
                                     <a href="/takken/jonge" class="nav__link nav__link--sublist">
-                                        Jonge
+                                        JV/G
                                     </a>
                                 </li>
 
                                 <li class="nav__sublist-item">
                                     <a href="/takken/oude" class="nav__link nav__link--sublist">
-                                        Oude
+                                        OV/G
                                     </a>
                                 </li>
                             </ul>
