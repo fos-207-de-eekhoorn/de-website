@@ -1,9 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing carousel">
-        <img src="/img/banner.jpg" alt="Banner" class="carousel__banner">
-    </section>
+    @component('components.carousel', [
+        'images' => [
+            [
+                'image' => asset('/img/banner.jpg'),
+                'alt' => 'Banner',
+            ],
+        ],
+        'page_title' => 'Lid worden?',
+    ])
+    @endcomponent
 
     <div class="row justify-content-center section">
         <div class="col-12 col-md-6 col-lg-8">

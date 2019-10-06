@@ -1,13 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="row section">
-        <div class="col-12">
-            <div class="carousel">
-                <img src="/img/banner.jpg" alt="Banner" class="carousel__banner">
-            </div>
-        </div>
-    </div>
+    @component('components.carousel', [
+        'images' => [
+            [
+                'image' => asset('/img/banner.jpg'),
+                'alt' => 'Banner',
+            ],
+        ],
+        'page_title' => 'Alle takken',
+    ])
+    @endcomponent
 
     @foreach($takken as $tak)
         <div class="row tak section section--small-spacing">

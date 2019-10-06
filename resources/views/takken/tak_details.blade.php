@@ -1,13 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="row section">
-        <div class="col-12">
-            <div class="carousel">
-                <img src="/img/{{ $tak->foto }}" alt="{{ $tak->naam }}" class="carousel__banner">
-            </div>
-        </div>
-    </div>
+    @component('components.carousel', [
+        'images' => [
+            [
+                'image' => asset('/img/' . $tak->foto),
+                'alt' => $tak->naam,
+            ],
+        ],
+        'page_title' => $tak->naam,
+    ])
+    @endcomponent
 
     <div class="row justify-content-center section">
         <div class="col-12 col-md-8">
