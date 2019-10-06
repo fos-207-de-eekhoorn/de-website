@@ -8,29 +8,29 @@
     <div class="row section">
         @foreach ($tak_activiteiten as $tak)
             <div class="col-12 col-md-6 col-lg-3">
-                @if (isset($tak->activiteiten[0]))
+                @if (isset($tak->volgende_activiteit[0]))
                     <div class="volgende-activiteit card cs-{{ strtolower($tak->naam) }}">
                         <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
 
                         <div class="volgende-activiteit__algemene-info">
                             <div class="volgende-activiteit__timing">
                                 <h5 class="volgende-activiteit__datum">
-                                    {{ Carbon\Carbon::parse($tak->activiteiten[0]->datum)->format('j M') }}
+                                    {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->format('j M') }}
                                 </h5>
                                 <p class="volgende-activiteit__tijd">
-                                    {{ Carbon\Carbon::parse($tak->activiteiten[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->activiteiten[0]->eind_uur)->format('H\ui') }}
+                                    {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->eind_uur)->format('H\ui') }}
                                 </p>
                             </div>
 
-                            @if (0 < $tak->activiteiten[0]->prijs)
+                            @if (0 < $tak->volgende_activiteit[0]->prijs)
                                 <h6 class="volgende-activiteit__prijs">
-                                    <span class="text--sm">€</span>{{ number_format($tak->activiteiten[0]->prijs, 2, ',', ' ') }}
+                                    <span class="text--sm">€</span>{{ number_format($tak->volgende_activiteit[0]->prijs, 2, ',', ' ') }}
                                 </ph6>
                             @endif
                         </div>
 
                         <p class="volgende-activiteit__omschrijving">
-                            {{ str_limit($tak->activiteiten[0]->omschrijving, 200) }}
+                            {{ str_limit($tak->volgende_activiteit[0]->omschrijving, 200) }}
                         </p>
 
                         <a href="{{ url('/takken/'. strtolower($tak->naam)) }}" class="volgende-activiteit__meer">Bekijk meer ></a>
