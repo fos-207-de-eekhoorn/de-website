@@ -33,7 +33,6 @@
             </div>
         </div>
 
-        {{--
         <div class="col-12 col-md-6 col-lg-5 cs-grey-extra-light justify-content-center">
             <h3>Documenten</h3>
 
@@ -52,11 +51,21 @@
 
                             <ul class="hierarchielijst__sublist">
                                 <li class="hierarchielijst__item">
-                                    <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/tegemoetkoming-cm-inschrijvingsgeld.pdf" class="hierarchielijst__link"  target="_blank">Lidgeld</a>
+                                    <a href="https://www.cm.be/media/Tegemoetkoming_tcm47-24960.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="hierarchielijst__item">
+                            OZ
+
+                            <ul class="hierarchielijst__sublist">
+                                <li class="hierarchielijst__item">
+                                    <a href="#"  target="_blank">Lidgeld</a>
                                 </li>
 
                                 <li class="hierarchielijst__item">
-                                    <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/tegemoetkoming-cm-kamp.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
+                                    <a href="#" target="_blank">Kamp</a>
                                 </li>
                             </ul>
                         </li>
@@ -65,7 +74,7 @@
                             LM
                             <ul>
                                 <li class="hierarchielijst__sublist">
-                                    <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/tegemoetkoming-lm-kamp.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
+                                    <a href="https://www.lm.be/LMPlus/Rubrieken/Voordelen-en-diensten/Kinderen-en-jongeren/SpeelpleinenEnSportvakantiesMetOvernachting/Documents/jeugdvakanties.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
                                 </li>
                             </ul> 
                         </li>
@@ -74,23 +83,18 @@
                             Neutraal ziekenfonds
                             <ul>
                                 <li class="hierarchielijst__sublist">
-                                    <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/tegemoetkoming-neutraal-ziekenfonds-kamp-en-lidgeld.pdf" class="hierarchielijst__link"  target="_blank">Lidgeld en kamp</a>
+                                    <a href="https://www.vnz.be/wp-content/uploads/2014/11/kampvergoeding.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
                                 </li>
                             </ul> 
                         </li>
 
                         <li class="hierarchielijst__item">
-                            OZ
-
-                            <ul class="hierarchielijst__sublist">
-                                <li class="hierarchielijst__item">
-                                    <a href="file:///C:/Users/vdbne/Downloads/OZ501_Jeugdbeweging.pdf"  target="_blank">Lidgeld</a>
+                            Bond Moyson
+                            <ul>
+                                <li class="hierarchielijst__sublist">
+                                    <a href="https://www.bondmoyson.be/SiteCollectionDocuments/Formulieren/309/Opstapformulier_admin_SOCMUT.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
                                 </li>
-
-                                <li class="hierarchielijst__item">
-                                    <a href="file:///C:/Users/vdbne/Downloads/OZ501_Tegemoetkoming_Jeugdactiviteiten.pdf" target="_blank">Kamp</a>
-                                </li>
-                            </ul>
+                            </ul> 
                         </li>
                     </ul>
                 </li>
@@ -104,6 +108,5 @@
                 </li>
             </ul>
         </div>
-        --}}
     </div>
 @endsection
