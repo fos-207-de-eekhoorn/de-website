@@ -33,80 +33,82 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-5 cs-grey-extra-light justify-content-center">
-            <h3>Documenten</h3>
+        <div class="col-12 col-md-6 col-lg-5 justify-content-center">
+            <div class="card cs-grey-extra-light">
+                <h3>Documenten</h3>
 
-            <p>
-                Hier vindt u alle tegemoetkomingen.
-                U dient uw gegevens in te vullen en daarna af te geven aan de eenheidsleiding (de leiding kan helpen om ervoor zorgen dat het papier bij de juiste personen terechtkomen). De eenheidsleiding zal daarna het nodige aanvullen en u het papier zo snel mogelijk terugbezorgen.
-            </p>
+                <p>
+                    Hier vindt u alle tegemoetkomingen.
+                    U dient uw gegevens in te vullen en daarna af te geven aan de eenheidsleiding (de leiding kan helpen om ervoor zorgen dat het papier bij de juiste personen terechtkomen). De eenheidsleiding zal daarna het nodige aanvullen en u het papier zo snel mogelijk terugbezorgen.
+                </p>
 
-            <ul class="hierarchielijst">
-                <li class="hierarchielijst__item">
-                    Tegemoetkomingen
+                <ul class="hierarchielijst">
+                    <li class="hierarchielijst__item">
+                        Tegemoetkomingen
 
-                    <ul class="hierarchielijst__sublist">
-                        <li class="hierarchielijst__item">
-                            CM
+                        <ul class="hierarchielijst__sublist">
+                            <li class="hierarchielijst__item">
+                                CM
 
-                            <ul class="hierarchielijst__sublist">
-                                <li class="hierarchielijst__item">
-                                    <a href="https://www.cm.be/media/Tegemoetkoming_tcm47-24960.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
-                                </li>
-                            </ul>
-                        </li>
+                                <ul class="hierarchielijst__sublist">
+                                    <li class="hierarchielijst__item">
+                                        <a href="https://www.cm.be/media/Tegemoetkoming_tcm47-24960.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                        <li class="hierarchielijst__item">
-                            OZ
+                            <li class="hierarchielijst__item">
+                                OZ
 
-                            <ul class="hierarchielijst__sublist">
-                                <li class="hierarchielijst__item">
-                                    <a href="{{ asset('/docs/OZ501_Jeugdbeweging.pdf') }}"  target="_blank">Lidgeld</a>
-                                </li>
+                                <ul class="hierarchielijst__sublist">
+                                    <li class="hierarchielijst__item">
+                                        <a href="{{ asset('/docs/OZ501_Jeugdbeweging.pdf') }}"  target="_blank">Lidgeld</a>
+                                    </li>
 
-                                <li class="hierarchielijst__item">
-                                    <a href="{{ asset('/docs/OZ501_Tegemoetkoming_Jeugdactiviteiten.pdf') }}" target="_blank">Kamp</a>
-                                </li>
-                            </ul>
-                        </li>
+                                    <li class="hierarchielijst__item">
+                                        <a href="{{ asset('/docs/OZ501_Tegemoetkoming_Jeugdactiviteiten.pdf') }}" target="_blank">Kamp</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                        <li class="hierarchielijst__item">
-                            LM
-                            <ul>
-                                <li class="hierarchielijst__sublist">
-                                    <a href="https://www.lm.be/LMPlus/Rubrieken/Voordelen-en-diensten/Kinderen-en-jongeren/SpeelpleinenEnSportvakantiesMetOvernachting/Documents/jeugdvakanties.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
-                                </li>
-                            </ul> 
-                        </li>
+                            <li class="hierarchielijst__item">
+                                LM
+                                <ul>
+                                    <li class="hierarchielijst__sublist">
+                                        <a href="https://www.lm.be/LMPlus/Rubrieken/Voordelen-en-diensten/Kinderen-en-jongeren/SpeelpleinenEnSportvakantiesMetOvernachting/Documents/jeugdvakanties.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
+                                    </li>
+                                </ul> 
+                            </li>
 
-                        <li class="hierarchielijst__item">
-                            Neutraal ziekenfonds
-                            <ul>
-                                <li class="hierarchielijst__sublist">
-                                    <a href="https://www.vnz.be/wp-content/uploads/2014/11/kampvergoeding.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
-                                </li>
-                            </ul> 
-                        </li>
+                            <li class="hierarchielijst__item">
+                                Neutraal ziekenfonds
+                                <ul>
+                                    <li class="hierarchielijst__sublist">
+                                        <a href="https://www.vnz.be/wp-content/uploads/2014/11/kampvergoeding.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
+                                    </li>
+                                </ul> 
+                            </li>
 
-                        <li class="hierarchielijst__item">
-                            Bond Moyson
-                            <ul>
-                                <li class="hierarchielijst__sublist">
-                                    <a href="https://www.bondmoyson.be/SiteCollectionDocuments/Formulieren/309/Opstapformulier_admin_SOCMUT.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
-                                </li>
-                            </ul> 
-                        </li>
-                    </ul>
-                </li>
+                            <li class="hierarchielijst__item">
+                                Bond Moyson
+                                <ul>
+                                    <li class="hierarchielijst__sublist">
+                                        <a href="https://www.bondmoyson.be/SiteCollectionDocuments/Formulieren/309/Opstapformulier_admin_SOCMUT.pdf" class="hierarchielijst__link"  target="_blank">Kamp</a>
+                                    </li>
+                                </ul> 
+                            </li>
+                        </ul>
+                    </li>
 
-                <li class="hierarchielijst__item">
-                    <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/fiscaal-attest-fos207-2019.pdf" class="hierarchielijst__link"  target="_blank">Fiscaal attest</a>
-                </li>
+                    <li class="hierarchielijst__item">
+                        <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/fiscaal-attest-fos207-2019.pdf" class="hierarchielijst__link"  target="_blank">Fiscaal attest</a>
+                    </li>
 
-                <li class="hierarchielijst__item">
-                    <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/medische-fiche_18-19_1.pdf" class="hierarchielijst__link"  target="_blank">Medische fiche</a>
-                </li>
-            </ul>
+                    <li class="hierarchielijst__item">
+                        <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/medische-fiche_18-19_1.pdf" class="hierarchielijst__link"  target="_blank">Medische fiche</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 @endsection
