@@ -103,6 +103,12 @@
                                         Verhuurlijst
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/lid-worden" class="nav__link nav__link--sublist">
+                                        Lid worden
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
@@ -276,7 +282,7 @@
                                 </li>
                             
                                 <li class="social__item">
-                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail">
+                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail" target="_blank">
                                         <span class="fa--lg"><i class="fas fa-at"></i></span>
                                     </a>
                                 </li>
@@ -296,7 +302,8 @@
                                     <div class="col-8">
                                         <h5 class="contact__title">Eenheidsleidster</h5>
                                         <p>Marie 'Ara'<br>Lammertyn</p>
-                                        <a href="tel:0491089740">0491/08.97.40</a>
+                                        <a href="tel:0491089740" target="_blank">0491/08.97.40</a>
+                                        <a href="mailto:fos207ste@gmail.com" target="_blank">fos207ste@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
