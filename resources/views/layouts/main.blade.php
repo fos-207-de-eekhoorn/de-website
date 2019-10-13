@@ -297,6 +297,7 @@
                                         <h5 class="contact__title">Eenheidsleidster</h5>
                                         <p>Marie 'Ara'<br>Lammertyn</p>
                                         <a href="tel:0491089740">0491/08.97.40</a>
+                                        <a href="mailto:fos207ste@gmail.com">fos207ste@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
