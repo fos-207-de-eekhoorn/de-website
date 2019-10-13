@@ -17,7 +17,7 @@ class CreateLeidingTable extends Migration
             $table->increments('id');
             $table->string('voornaam');
             $table->string('achternaam');
-            $table->string('totem');
+            $table->string('totem')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('telefoon')->nullable();
