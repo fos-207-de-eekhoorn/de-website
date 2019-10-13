@@ -61,11 +61,11 @@
 
                             <ul class="hierarchielijst__sublist">
                                 <li class="hierarchielijst__item">
-                                    <a href="#"  target="_blank">Lidgeld</a>
+                                    <a href="{{ asset('/docs/OZ501_Jeugdbeweging.pdf') }}"  target="_blank">Lidgeld</a>
                                 </li>
 
                                 <li class="hierarchielijst__item">
-                                    <a href="#" target="_blank">Kamp</a>
+                                    <a href="{{ asset('/docs/OZ501_Tegemoetkoming_Jeugdactiviteiten.pdf') }}" target="_blank">Kamp</a>
                                 </li>
                             </ul>
                         </li>
