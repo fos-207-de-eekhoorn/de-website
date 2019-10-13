@@ -103,6 +103,12 @@
                                         Verhuurlijst
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/lid-worden" class="nav__link nav__link--sublist">
+                                        Lid worden
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
