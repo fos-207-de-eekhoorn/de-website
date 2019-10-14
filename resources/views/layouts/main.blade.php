@@ -105,8 +105,8 @@
                                 </li>
 
                                 <li class="nav__sublist-item">
-                                    <a href="/alle-info/lid-worden" class="nav__link nav__link--sublist">
-                                        Lid worden
+                                    <a href="/alle-info/trooper" class="nav__link nav__link--sublist">
+                                        Trooper
                                     </a>
                                 </li>
                                 {{--
@@ -220,6 +220,10 @@
                                         <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Lid worden</a>
                                     </li>
 
+                                    <li class="footer-nav__item">
+                                        <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
+                                    </li>
+
                                     {{--
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/docs" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
@@ -276,7 +280,7 @@
                                 </li>
                             
                                 <li class="social__item">
-                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail" target="_blank">
+                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail">
                                         <span class="fa--lg"><i class="fas fa-at"></i></span>
                                     </a>
                                 </li>
@@ -296,8 +300,7 @@
                                     <div class="col-8">
                                         <h5 class="contact__title">Eenheidsleidster</h5>
                                         <p>Marie 'Ara'<br>Lammertyn</p>
-                                        <a href="tel:0491089740" target="_blank">0491/08.97.40</a>
-                                        <a href="mailto:fos207ste@gmail.com" target="_blank">fos207ste@gmail.com</a>
+                                        <a href="tel:0491089740">0491/08.97.40</a>
                                     </div>
                                 </div>
                             </div>
