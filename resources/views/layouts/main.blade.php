@@ -109,6 +109,12 @@
                                         Lid worden
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/kost_scouts" class="nav__link nav__link--sublist">
+                                        Kost scouts
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">

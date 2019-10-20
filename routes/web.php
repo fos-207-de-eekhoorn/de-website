@@ -26,6 +26,7 @@ Route::get('/alle-info/lid-worden', 'InfoController@get_lid_worden');
 Route::get('/alle-info/uniform-shop', 'InfoController@get_uniform_shop');
 Route::get('/alle-info/verhuurlijst', 'InfoController@get_verhuurlijst');
 Route::get('/alle-info/docs', 'InfoController@get_docs');
+Route::get('/alle-info/kost-scouts', 'InfoController@get_kost_scouts');
 
 # Evenementen Routs
 Route::get('/evenementen', 'EvenementenController@get_alle_evenementen');
