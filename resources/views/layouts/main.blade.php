@@ -286,7 +286,7 @@
                                 </li>
                             
                                 <li class="social__item">
-                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail" target="_blank">>
+                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail" target="_blank">
                                         <span class="fa--lg"><i class="fas fa-at"></i></span>
                                     </a>
                                 </li>
