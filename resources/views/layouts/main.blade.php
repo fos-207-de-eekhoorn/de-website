@@ -109,6 +109,12 @@
                                         Lid worden
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/trooper" class="nav__link nav__link--sublist">
+                                        Trooper
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
@@ -136,8 +142,8 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/spaghetti-avond" class="nav__link nav__link--sublist">
-                                        Spaghetti avond
+                                    <a href="/evenementen/halloweentocht" class="nav__link nav__link--sublist">
+                                        Halloweentocht
                                     </a>
                                 </li>
 
@@ -218,6 +224,10 @@
 
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Lid worden</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
                                     </li>
 
                                     {{--
