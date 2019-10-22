@@ -142,8 +142,8 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/spaghetti-avond" class="nav__link nav__link--sublist">
-                                        Spaghetti avond
+                                    <a href="/evenementen/halloweentocht" class="nav__link nav__link--sublist">
+                                        Halloweentocht
                                     </a>
                                 </li>
 

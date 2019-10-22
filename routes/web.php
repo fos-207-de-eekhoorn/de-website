@@ -35,5 +35,6 @@ Route::get('/evenementen/sneukeltocht', 'EvenementenController@get_event_sneukel
 Route::get('/evenementen/spaghetti-avond', 'EvenementenController@get_event_spaghetti_avond');
 Route::get('/evenementen/bbq', 'EvenementenController@get_event_bbq');
 Route::get('/evenementen/winterbar', 'EvenementenController@get_event_winterbar');
+Route::get('/evenementen/halloweentocht', 'EvenementenController@get_event_halloweentocht');
 
 # Documenten Routs
