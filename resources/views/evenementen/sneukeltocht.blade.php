@@ -20,35 +20,38 @@
                     <p class="text--align-center">
         				Beste ouders & sympathisanten,
 		        	</p>
+
 		        	<p class="text--align-center">
-		        		Op zondag 13 oktober organiseren de oudgids/-verkenners een sneukeltocht om hun kas te spijzen voor het nieuwe scoutsjaar.
+		        		Warm je benen maar goed op want op 13 oktober organiseren DE OUDE een heuse sneukeltocht! Wat kan je verwachten? Een leuke fiets- of wandeltocht waarbij je tussendoor een hapje of een drankje krijgt en waar een challenge/ activiteit je te wachten staat. Een gezellige en sportieve zondag gegarandeerd! Er zijn zowel 2 fietsroutes waaruit je kan kiezen, als 2 wandelroutes.
 		        	</p>
-		        	<br>
-		        	<br>
-		        	<h3 class="text--align-center">Wat?</h3>
+
+		        	<h3 class="text--align-center" style="margin-top: 2rem">
+		        		Routes en prijzen<br>
+		        		(Vrij te kiezen welke je wil wandelen of fietsen)
+		        	</h3>
+
 		        	<p class="text--align-center">
-		        		Een sneukeltocht voor jong en oud! Voor een schappelijke prijs zal je een fiets- of wandeltocht kunnen afleggen langs verschillende kraampjes met een hapje, een drankje, of iets anders leuks. Verwacht je maar aan veel lekkers en diverse randanimatie!
+		        		7km - 2 postjes= 5 euro<br>
+		        		15 km - 3 postjes= 8 euro<br>
+		        		25 km - 2 postjes= 5 euro<br>
+		        		50 km - 3 postje= 8 euro
 		        	</p>
-		        	<br>
-		        	<h3 class="text--align-center">Waar?</h3>
+
+		        	<h3 class="text--align-center" style="margin-top: 2rem">
+		        		Inschrijven
+		        	</h3>
+
 		        	<p class="text--align-center">
-		        		Er zullen drie routes van verschillende lengte vertrekken van ons lokaal achter De Valkaart. De precieze routes zullen later nog bekendgemaakt worden! 
+		        		Inschrijven kan door een mailtje te sturen naar fos207ste@gmail.com of een berichtje te sturen naar iemand van de oude leiding! Graag het aantal personen en de route erbij te vermelden. 
 		        	</p>
-		        	<br>
-		        	<h3 class="text--align-center">Wanneer?</h3>
+
 		        	<p class="text--align-center">
-		        		Dit evenement zal plaatsvinden op zondag 13 oktober. Vertrekken zal kunnen gedurende de voormiddag.
+		        		Gelieve na inschrijving zo snel mogelijk te storten, dit mag naar BE05 7360 1246 5675 met vermelding van de naam van de hoofdinschrijver.
 		        	</p>
-		        	<br>
-		        	<br>
-		        	<p class="text--align-center">
-		        		Verdere info volgt nog.
-		        	</p>
-		        	<p class="text--align-center">
-		        		Hopelijk tot dan!
-		        	</p>
-		        	<p class="text--align-center">
-		        		De leiding van de oudgids/-verkenners
+
+		        	<p class="text--align-center" style="margin-top: 2rem">
+		        		Sportieve groetjes van de oude tak.<br>
+		        		Tot dan!
 		        	</p>
 		        </div>
             </div>

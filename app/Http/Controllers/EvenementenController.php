@@ -28,4 +28,14 @@ class EvenementenController extends Controller
     {
         return view('evenementen.bbq');
     }
+
+    public function get_event_winterbar()
+    {
+        return view('evenementen.winterbar');
+    }
+
+    public function get_event_halloweentocht()
+    {
+        return view('evenementen.halloweentocht');
+    }
 }

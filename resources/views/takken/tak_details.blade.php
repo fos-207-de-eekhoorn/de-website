@@ -70,7 +70,6 @@
             </table>
         </div>
 
-        {{--
         <div class="col-12 col-lg-4">
             <h2>{{ $tak->naam }}leiding</h2>
             <div class="row">
@@ -106,6 +105,5 @@
                 @endforeach
             </div>
         </div>
-        --}}
     </div>
 @endsection

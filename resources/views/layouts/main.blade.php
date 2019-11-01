@@ -103,6 +103,18 @@
                                         Verhuurlijst
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/lid-worden" class="nav__link nav__link--sublist">
+                                        Lid worden
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/trooper" class="nav__link nav__link--sublist">
+                                        Trooper
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
@@ -130,26 +142,14 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/startdag" class="nav__link nav__link--sublist">
-                                        Startdag
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/sneukeltocht" class="nav__link nav__link--sublist">
-                                        Sneukeltocht
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/spaghetti-avond" class="nav__link nav__link--sublist">
-                                        Spaghetti avond
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
                                     <a href="/evenementen/bbq" class="nav__link nav__link--sublist">
                                         BBQ
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/winterbar" class="nav__link nav__link--sublist">
+                                        Winterbar
                                     </a>
                                 </li>
                             </ul>
@@ -186,6 +186,7 @@
 
                             <li class="footer-nav__item">
                                 <a href="/takken" class="footer-nav__link footer-nav__link--parent">Takken</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/takken/bevers" class="footer-nav__link footer-nav__link--sublink">Bevers</a>
@@ -207,6 +208,7 @@
 
                             <li class="footer-nav__item">
                                 <a href="/alle-info" class="footer-nav__link footer-nav__link--parent">Meer informatie</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/uniform-shop" class="footer-nav__link footer-nav__link--sublink">Uniform & shop</a>
@@ -214,6 +216,14 @@
 
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Verhuurlijst</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Lid worden</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
                                     </li>
 
                                     {{--
@@ -226,21 +236,14 @@
 
                             <li class="footer-nav__item">
                                 <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/startdag" class="footer-nav__link footer-nav__link--sublink">Startdag</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/sneukeltocht" class="footer-nav__link footer-nav__link--sublink">Sneukeltocht</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/spaghetti-avond" class="footer-nav__link footer-nav__link--sublink">Spaghetti-avond</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
                                         <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
                                     </li>
                                 </ul>
                             </li>
@@ -256,6 +259,7 @@
                     <div class="col-12 col-lg-4 footer__section">
                         <section class="footer__section">
                             <h3 class="footer__title">Waar kan je ons vinden?</h3>
+
                             <ul class="social">
                                 <li class="social__item">
                                     <a href="https://www.facebook.com/fos207/" class="social__link social__link--facebook" target="_blank">
@@ -276,7 +280,7 @@
                                 </li>
                             
                                 <li class="social__item">
-                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail">
+                                    <a href="mailto:fos207ste@gmail.com" class="social__link social__link--mail" target="_blank">
                                         <span class="fa--lg"><i class="fas fa-at"></i></span>
                                     </a>
                                 </li>
@@ -285,6 +289,7 @@
 
                         <section class="footer__section">
                             <h3 class="footer__title">Contacteer ons</h3>
+
                             <div class="contact">
                                 <div class="row">
                                     <div class="col-4"> 
@@ -296,7 +301,8 @@
                                     <div class="col-8">
                                         <h5 class="contact__title">Eenheidsleidster</h5>
                                         <p>Marie 'Ara'<br>Lammertyn</p>
-                                        <a href="tel:0491089740">0491/08.97.40</a>
+                                        <a href="tel:0491089740" target="_blank">0491/08.97.40</a>
+                                        <a href="mailto:fos207ste@gmail.com" target="_blank">fos207ste@gmail.com</a>
                                     </div>
                                 </div>
                             </div>

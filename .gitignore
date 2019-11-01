@@ -28,6 +28,11 @@ Homestead.json
 
 # Project
 public/css
+public/docs
 public/fonts
 public/img
 public/js
+
+# MacOS
+.DS_Store
+*/**/.DS_Store
