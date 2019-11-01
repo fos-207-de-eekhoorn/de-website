@@ -142,12 +142,6 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/halloweentocht" class="nav__link nav__link--sublist">
-                                        Halloweentocht
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
                                     <a href="/evenementen/bbq" class="nav__link nav__link--sublist">
                                         BBQ
                                     </a>
@@ -192,6 +186,7 @@
 
                             <li class="footer-nav__item">
                                 <a href="/takken" class="footer-nav__link footer-nav__link--parent">Takken</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/takken/bevers" class="footer-nav__link footer-nav__link--sublink">Bevers</a>
@@ -213,6 +208,7 @@
 
                             <li class="footer-nav__item">
                                 <a href="/alle-info" class="footer-nav__link footer-nav__link--parent">Meer informatie</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/uniform-shop" class="footer-nav__link footer-nav__link--sublink">Uniform & shop</a>
@@ -240,11 +236,8 @@
 
                             <li class="footer-nav__item">
                                 <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
-                                <ul class="footer-nav__sublist">
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/spaghetti-avond" class="footer-nav__link footer-nav__link--sublink">Spaghetti-avond</a>
-                                    </li>
 
+                                <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
                                     </li>
@@ -266,6 +259,7 @@
                     <div class="col-12 col-lg-4 footer__section">
                         <section class="footer__section">
                             <h3 class="footer__title">Waar kan je ons vinden?</h3>
+
                             <ul class="social">
                                 <li class="social__item">
                                     <a href="https://www.facebook.com/fos207/" class="social__link social__link--facebook" target="_blank">
@@ -295,6 +289,7 @@
 
                         <section class="footer__section">
                             <h3 class="footer__title">Contacteer ons</h3>
+
                             <div class="contact">
                                 <div class="row">
                                     <div class="col-4"> 
