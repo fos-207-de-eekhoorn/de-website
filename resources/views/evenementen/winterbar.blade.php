@@ -3,8 +3,8 @@
 @section('content')
     @component('components.banner', [
         'banner' => (object)[
-            'color' => 'green',
-            'pattern' => '1',
+            'color' => 'green-dark',
+            'pattern' => '5',
             'strength' => 'light',
         ],
         'page_title' => 'Winterbar',
