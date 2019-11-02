@@ -2,11 +2,10 @@
 
 @section('content')
     @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/banner.jpg'),
-                'alt' => 'Banner',
-            ],
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
         ],
         'page_title' => 'Alle takken',
     ])
@@ -21,7 +20,7 @@
             </div>
 
             <div class="col-9">
-                <div class="volgende-activiteit cs-{{ strtolower($tak->naam) }}">
+                <div class="volgende-activiteit cs-{{ $tak->kleur }}">
                     <header class="volgende-activiteit__header">
                         <h3 class="volgende-activiteit__titel">{{ $tak->naam }}</h3>
                         <p><b>Vanaf {{ $tak->vanaf }} jaar</b></p>

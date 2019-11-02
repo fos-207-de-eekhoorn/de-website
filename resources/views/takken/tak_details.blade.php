@@ -2,11 +2,10 @@
 
 @section('content')
     @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/' . $tak->foto),
-                'alt' => $tak->naam,
-            ],
+        'banner' => (object)[
+            'color' => $tak->kleur,
+            'pattern' => '1',
+            'strength' => 'light',
         ],
         'page_title' => $tak->naam,
     ])
@@ -14,7 +13,7 @@
 
     <div class="row justify-content-center section">
         <div class="col-12 col-md-8">
-            <div class="card card--align-center cs-bevers">
+            <div class="card card--align-center cs-{{ $tak->kleur }}">
                 <h2 class="card__title">{{ $tak->introductie }}</h2>
 
                 <div class="card__content">
