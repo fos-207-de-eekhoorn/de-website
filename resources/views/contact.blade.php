@@ -1,16 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-    @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/banner.jpg'),
-                'alt' => 'Banner',
-            ],
-        ],
-        'page_title' => 'Contact',
-    ])
-    @endcomponent
+    <section class="section section--small-spacing banner banner--full">
+        <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
+    </section>
 
     <div class="row section">
         <div class="col-12">

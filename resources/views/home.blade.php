@@ -1,22 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-    @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/banner.jpg'),
-                'alt' => 'Banner',
-            ],
-        ],
-        'page_title' => 'FOS 207 \'De Eekhoorn\'',
-    ])
-    @endcomponent
+    <section class="section section--small-spacing banner banner--full">
+        <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
+    </section>
 
     <div class="row section">
         @foreach ($tak_activiteiten as $tak)
             <div class="col-12 col-md-6 col-lg-3">
                 @if (isset($tak->volgende_activiteit[0]))
-                    <div class="volgende-activiteit card cs-{{ strtolower($tak->naam) }}">
+                    <div class="volgende-activiteit card cs-{{ $tak->kleur }}">
                         <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
 
                         <div class="volgende-activiteit__algemene-info">
