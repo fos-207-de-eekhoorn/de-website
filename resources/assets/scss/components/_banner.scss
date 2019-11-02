@@ -1,5 +1,5 @@
 //  ------------------------------------------------------------------------------------
-//  Component -> Carousel
+//  Component -> Banner
 //  ------------------------------------------------------------------------------------
 
 .banner {
@@ -27,7 +27,6 @@
         font-style: italic; 
         font-weight: $font-weight-black;
         text-align: center;
-        color: $color-blue;
         
         &--with-sub-title {
             transform: translateX(-5%) translateY(-80%);
@@ -42,6 +41,59 @@
         font-style: italic;
         font-weight: $font-weight-black;
         text-align: center;
-        color: $color-black;
+    }
+    
+    &--green,
+    &--mint,
+    &--salmon,
+    &--yellow,
+    &--blue-light,
+    &--yellow-light {
+        .banner {
+            &__title {
+                color: $color-blue;
+            }
+
+            &__sub-title {
+                color: $color-black;
+            }
+        }
+    }
+    
+    &--blue {
+        .banner {
+            &__title {
+                color: $color-white;
+            }
+
+            &__sub-title {
+                color: $color-yellow;
+            }
+        }
+    }
+
+    &--green-dark {
+        .banner {
+            &__title {
+                color: $color-white;
+            }
+
+            &__sub-title {
+                color: $color-yellow-light;
+            }
+        }
+    }
+    
+    &--red,
+    &--brown {
+        .banner {
+            &__title {
+                color: $color-white;
+            }
+
+            &__sub-title {
+                color: $color-black;
+            }
+        }
     }
 }
