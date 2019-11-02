@@ -48,6 +48,11 @@
         "dest": "public/img/",
         "watch": "resources/assets/img/**/*"
     },
+    "docs": {
+        "src": "resources/assets/docs/**/*",
+        "dest": "public/docs/",
+        "watch": "resources/assets/docs/**/*"
+    },
     "fonts": {
         "src": "resources/assets/fonts/**/*",
         "dest": "public/fonts/",
