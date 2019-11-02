@@ -2,11 +2,10 @@
 
 @section('content')
     @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/banner.jpg'),
-                'alt' => 'Banner',
-            ],
+        'banner' => (object)[
+            'color' => 'salmon',
+            'pattern' => '1',
+            'strength' => 'light',
         ],
         'page_title' => 'FOS shop & uniform',
     ])

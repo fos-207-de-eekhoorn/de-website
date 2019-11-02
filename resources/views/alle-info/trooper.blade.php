@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing carousel">
-        <img src="/img/trooperbanner.png" alt="Banner" class="carousel__banner">
+    <section class="section section--small-spacing banner banner--full">
+        <img src="/img/trooperbanner.png" alt="Banner" class="banner__banner">
     </section>
 
     <div class="row section">
