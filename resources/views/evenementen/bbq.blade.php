@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
-    @component('components.carousel', [
-        'images' => [
-            [
-                'image' => asset('/img/evenementen/Banner-evenementen-achtergrond.png'),
-                'alt' => 'BBQ',
-            ],
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'blue',
+            'pattern' => '1',
+            'strength' => 'light',
+            'alt' => 'BBQ',
         ],
         'page_title' => 'BBQ',
         'page_sub_title' => '2 november',

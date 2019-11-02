@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    @component('components.carousel', [
+    @component('components.banner', [
         'images' => [
             [
                 'image' => asset('/img/banner.jpg'),
