@@ -6,7 +6,6 @@
             'color' => 'blue',
             'pattern' => '1',
             'strength' => 'light',
-            'alt' => 'BBQ',
         ],
         'page_title' => 'BBQ',
         'page_sub_title' => '2 november',

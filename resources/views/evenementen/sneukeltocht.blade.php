@@ -2,11 +2,10 @@
 
 @section('content')
     @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/evenementen/Banner-evenementen-achtergrond.png'),
-                'alt' => 'Sneukeltocht',
-            ],
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
         ],
         'page_title' => 'Sneukeltocht',
         'page_sub_title' => '13 oktober',

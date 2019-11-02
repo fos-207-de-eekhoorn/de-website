@@ -1,9 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing carousel">
-        <img src="{{ asset('/img/evenementen/banner-evenement-winterbar.jpg') }}" alt="Banner" class="carousel__banner">
-    </section>
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => 'Winterbar',
+        'page_sub_title' => '22 november',
+    ])
+    @endcomponent
 
     <div class="row justify-content-center section">
         <div class="col-12 col-md-8">

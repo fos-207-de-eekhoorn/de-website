@@ -2,11 +2,10 @@
 
 @section('content')
     @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/evenementen/Banner-evenementen-achtergrond.png'),
-                'alt' => '',
-            ],
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
         ],
         'page_title' => 'Alle evenementen',
     ])

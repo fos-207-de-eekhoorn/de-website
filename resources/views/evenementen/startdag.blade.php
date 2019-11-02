@@ -2,11 +2,10 @@
 
 @section('content')
     @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/evenementen/Banner-evenementen-achtergrond.png'),
-                'alt' => 'Startdag',
-            ],
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
         ],
         'page_title' => 'Startdag',
         'page_sub_title' => '14 september',

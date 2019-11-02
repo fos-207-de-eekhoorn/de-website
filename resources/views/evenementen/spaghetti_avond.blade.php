@@ -2,11 +2,10 @@
 
 @section('content')
     @component('components.banner', [
-        'images' => [
-            [
-                'image' => asset('/img/evenementen/Banner-evenementen-achtergrond.png'),
-                'alt' => 'Spaghetti avond',
-            ],
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
         ],
         'page_title' => 'Spaghetti avond',
         'page_sub_title' => '19 oktober',
