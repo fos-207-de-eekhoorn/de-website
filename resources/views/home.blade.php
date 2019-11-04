@@ -41,7 +41,7 @@
     </div>
 
     <div class="row section">
-        <div class="col-12 col-md-6 col-lg-8">
+        <div class="col-12 col-md-8 col-lg-9">
             <div class="algemene-info">
                 <h2>Welkom!</h2>
                 <p>
@@ -62,14 +62,16 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4">
-            <h2>Snelle links</h2>
-            <ul>
-                <li><a href="{{ url('/alle-info/lid-worden') }}">Ik wil lid worden</a></li>
-                <li><a href="{{ url('/alle-info/uniform-shop') }}">Mijn uniform</a></li>
-                <li><a href="{{ url('/evenementen/startdag') }}">Startdag</a></li>
-            </ul>
+        <div class="col-12 col-md-4 col-lg-3">
+            <a href="{{ url('/docs/prutske/editie-november-december-2019.pdf') }}" class="prutske" target="_blank">
+                <img src="{{ asset('/img/kaft-november-december.png') }}" alt="Prutske november - december 2019" class="prutske__kaft">
 
+                <div class="prutske__hover">
+                    <h4 class="prutske__cta">
+                        Bekijk het prutske hier!
+                    </h4>
+                </div>
+            </a>
         </div>
     </div>
 
