@@ -7,7 +7,7 @@
         <title>FOS207 'De Eekhoorn' / Home</title>
 
         <!-- Styles -->
-        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/style.css?v=0.1.6" rel="stylesheet">
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
