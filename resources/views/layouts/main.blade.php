@@ -142,12 +142,6 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/bbq" class="nav__link nav__link--sublist">
-                                        BBQ
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
                                     <a href="/evenementen/winterbar" class="nav__link nav__link--sublist">
                                         Winterbar
                                     </a>
@@ -238,10 +232,6 @@
                                 <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
 
                                 <ul class="footer-nav__sublist">
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
-                                    </li>
-
                                     <li class="footer-nav__item">
                                         <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
                                     </li>
