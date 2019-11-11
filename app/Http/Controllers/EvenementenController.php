@@ -38,4 +38,9 @@ class EvenementenController extends Controller
     {
         return view('evenementen.halloweentocht');
     }
+
+    public function get_event_eikeltjesquiz()
+    {
+        return view('evenementen.eikeltjesquiz');
+    }
 }

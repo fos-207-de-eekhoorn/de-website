@@ -146,6 +146,12 @@
                                         Winterbar
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/eikeltjesquiz" class="nav__link nav__link--sublist">
+                                        EikeltjesQuiz
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -234,6 +240,10 @@
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/eikeltjesquiz" class="footer-nav__link footer-nav__link--sublink">EikeltjesQuiz</a>
                                     </li>
                                 </ul>
                             </li>
