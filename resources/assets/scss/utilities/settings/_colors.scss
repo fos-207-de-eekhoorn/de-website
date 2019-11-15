@@ -59,46 +59,46 @@ $color-blue-light-text			: hsla(195, 25%, 32%, 1);
 //  Tertiary colors
 //  ------------------------------------------------------------------------------------
 
-$color-gold                     : #daa520;
-$color-silver                   : #c0c0c0;
-$color-bronze                   : hsl(39, 26%, 45%);
+$color-gold						: #daa520;
+$color-silver					: #c0c0c0;
+$color-bronze					: hsla(39, 26%, 45%, 1);
 
 //  Alert colors
 //  ------------------------------------------------------------------------------------
 
 //  Success
 //  ----------
-$color-alert-success-light      : #dff0d8;     //  background color
-$color-alert-success-medium     : #d0e9c6;    //  border color
-$color-alert-success-dark       : #3c763d;      //  color
+$color-alert-success-light		: #dff0d8;						//  background color
+$color-alert-success-medium		: #d0e9c6;						//  border color
+$color-alert-success-dark		: #3c763d;						//  color
 
 //  Error
 //  ----------
-$color-alert-error-light        : #a94442;     //  background color
-$color-alert-error-medium       : #f2dede;    //  border color
-$color-alert-error-dark         : #ebcccc;      //  color
+$color-alert-error-light		: #a94442;						//  background color
+$color-alert-error-medium		: #f2dede;						//  border color
+$color-alert-error-dark			: #ebcccc;						//  color
 
 //  Info
 //  ----------
-$color-alert-info-light         : #31708f;     //  background color
-$color-alert-info-medium        : #d9edf7;    //  border color
-$color-alert-info-dark          : #bcdff1;      //  color
+$color-alert-info-light			: #31708f;						//  background color
+$color-alert-info-medium		: #d9edf7;						//  border color
+$color-alert-info-dark			: #bcdff1;						//  color
 
 //  Warning
 //  ----------
-$color-alert-warning-light      : #8a6d3b;     //  background color
-$color-alert-warning-medium     : #fcf8e3;    //  border color
-$color-alert-warning-dark       : #faf2cc;      //  color
+$color-alert-warning-light		: #8a6d3b;						//  background color
+$color-alert-warning-medium		: #fcf8e3;						//  border color
+$color-alert-warning-dark		: #faf2cc;						//  color
 
 //  Shadow colors
 //  ------------------------------------------------------------------------------------
 
-$color-shadow                   : rgba(0,0,0,.1);
-$color-text-shadow              : rgba(0,0,0,.4);
+$color-shadow					: rgba(0,0,0,.1);
+$color-text-shadow				: rgba(0,0,0,.4);
 
 //  Social colors
 //  ------------------------------------------------------------------------------------
 
-$color-facebook           		: hsla(222, 47%, 40%, 1);     // #365397
-$color-instagram          		: hsla(208, 46%, 41%, 1);     // #396d9a
-$color-google           	  	: hsla(217, 89%, 61%, 1);     // #4285f4
+$color-facebook					: hsla(222, 47%, 40%, 1);		// #365397
+$color-instagram				: hsla(208, 46%, 41%, 1);		// #396d9a
+$color-google					: hsla(217, 89%, 61%, 1);		// #4285f4

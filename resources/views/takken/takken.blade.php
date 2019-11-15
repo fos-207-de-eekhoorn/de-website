@@ -1,13 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="row section">
-        <div class="col-12">
-            <div class="carousel">
-                <img src="/img/banner.jpg" alt="Banner" class="carousel__banner">
-            </div>
-        </div>
-    </div>
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => 'Alle takken',
+    ])
+    @endcomponent
 
     @foreach($takken as $tak)
         <div class="row tak section section--small-spacing">
@@ -18,7 +20,7 @@
             </div>
 
             <div class="col-9">
-                <div class="volgende-activiteit cs-{{ strtolower($tak->naam) }}">
+                <div class="volgende-activiteit cs-{{ $tak->kleur }}">
                     <header class="volgende-activiteit__header">
                         <h3 class="volgende-activiteit__titel">{{ $tak->naam }}</h3>
                         <p><b>Vanaf {{ $tak->vanaf }} jaar</b></p>

@@ -1,9 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing carousel">
-        <img src="/img/banner.jpg" alt="Banner" class="carousel__banner">
-    </section>
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'green',
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => 'Alle documenten',
+    ])
+    @endcomponent
 
     <div class="row section">
         <div class="col-12">

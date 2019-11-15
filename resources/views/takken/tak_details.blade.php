@@ -1,17 +1,19 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="row section">
-        <div class="col-12">
-            <div class="carousel">
-                <img src="/img/{{ $tak->foto }}" alt="{{ $tak->naam }}" class="carousel__banner">
-            </div>
-        </div>
-    </div>
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => $tak->kleur,
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => $tak->naam,
+    ])
+    @endcomponent
 
     <div class="row justify-content-center section">
         <div class="col-12 col-md-8">
-            <div class="card card--align-center cs-bevers">
+            <div class="card card--align-center cs-{{ $tak->kleur }}">
                 <h2 class="card__title">{{ $tak->introductie }}</h2>
 
                 <div class="card__content">

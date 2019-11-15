@@ -7,10 +7,13 @@
         <title>FOS207 'De Eekhoorn' / Home</title>
 
         <!-- Styles -->
-        <link href="/css/style.css?v=0.1.7" rel="stylesheet">
+        <link href="/css/style.css?v=0.1.9" rel="stylesheet">
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        @component('components.analytics')
+        @endcomponent
     </head>
 
     <body>
@@ -107,6 +110,12 @@
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/lid-worden" class="nav__link nav__link--sublist">
                                         Lid worden
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/kost-scouts" class="nav__link nav__link--sublist">
+                                        Kost scouts
                                     </a>
                                 </li>
 
@@ -219,7 +228,11 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Lid worden</a>
+                                        <a href="/alle-info/lid-worden" class="footer-nav__link footer-nav__link--sublink">Lid worden</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/alle-info/kost-scouts" class="footer-nav__link footer-nav__link--sublink">Kost scouts</a>
                                     </li>
 
                                     <li class="footer-nav__item">
