@@ -3,13 +3,17 @@
 //  ------------------------------------------------------------------------------------
 
 .section {
-	margin-bottom: spacing(lg);
-	
+	margin-bottom: spacing(xl);
+
 	&:last-child {
 		margin-bottom: 0;
 	}
-	
+
 	&--small-spacing {
+		margin-bottom: spacing(lg);
+	}
+
+	&--extra-small-spacing {
 		margin-bottom: spacing(md);
 	}
 }
