@@ -29,6 +29,11 @@ class InfoController extends Controller
         return view('alle-info.docs');
     }
 
+    public function get_kost_scouts()
+    {
+        return view('alle-info.kost_scouts');
+    }
+
     public function get_trooper()
     {
         return view('alle-info.trooper');
