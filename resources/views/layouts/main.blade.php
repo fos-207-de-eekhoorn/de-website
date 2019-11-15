@@ -7,7 +7,7 @@
         <title>FOS207 'De Eekhoorn' / Home</title>
 
         <!-- Styles -->
-        <link href="/css/style.css?version=1.0" rel="stylesheet">
+        <link href="/css/style.css?v=0.1.9" rel="stylesheet">
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -142,14 +142,14 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/bbq" class="nav__link nav__link--sublist">
-                                        BBQ
+                                    <a href="/evenementen/winterbar" class="nav__link nav__link--sublist">
+                                        Winterbar
                                     </a>
                                 </li>
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/winterbar" class="nav__link nav__link--sublist">
-                                        Winterbar
+                                    <a href="/evenementen/eikeltjesquiz" class="nav__link nav__link--sublist">
+                                        EikeltjesQuiz
                                     </a>
                                 </li>
                             </ul>
@@ -239,11 +239,11 @@
 
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
+                                        <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
+                                        <a href="/evenementen/eikeltjesquiz" class="footer-nav__link footer-nav__link--sublink">EikeltjesQuiz</a>
                                     </li>
                                 </ul>
                             </li>

@@ -32,6 +32,18 @@ gulp.task('imgbuild', function() {
     }));
 });
 
+//  Documents
+gulp.task('docsbuild', function() {
+  return gulp.src(pkg.docs.src)
+    .pipe(copy(pkg.docs.dest, {
+      'prefix': 3
+    })) // needs to be copy, not just ".dest" as mac often throws errors when the folder doesn't exist
+    .pipe(notify({
+      'message': 'Documents build complete',
+      'onLast': true // otherwise the notify will be fired for each file in the pipe
+    }));
+});
+
 // Fonts
 gulp.task('fontsbuild', function() {
   return gulp.src(pkg.fonts.src)
@@ -102,10 +114,10 @@ gulp.task('sassbuild', done => {
 gulp.task('sass', gulp.parallel('sassbuild'));
 
 // build all task
-gulp.task('build', gulp.parallel('imgbuild', 'fontsbuild', 'jsbuild', 'sassbuild'));
+gulp.task('build', gulp.parallel('imgbuild', 'docsbuild', 'fontsbuild', 'jsbuild', 'sassbuild'));
 
 // default task
-gulp.task('default', gulp.series(gulp.parallel('imgbuild', 'fontsbuild', 'js', 'sass'), function() {
+gulp.task('default', gulp.series(gulp.parallel('imgbuild', 'docsbuild', 'fontsbuild', 'js', 'sass'), function() {
   gulp.watch(pkg.img.watch, gulp.series('imgbuild'));
   gulp.watch(pkg.fonts.watch, gulp.series('fontsbuild'));
   gulp.watch(pkg.js.watch, gulp.series('js'));
