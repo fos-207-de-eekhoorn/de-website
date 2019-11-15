@@ -29,13 +29,13 @@
 	}
 }
 
-.cs-bevers,
-.cs-welpen,
-.cs-jonge,
-.cs-oude {
+.cs-yellow,
+.cs-mint,
+.cs-salmon,
+.cs-blue-light {
 	@include shadow-standard;
 }
-.cs-bevers {
+.cs-yellow {
 	background-color: $color-yellow;
 
 	h1, h2, h3, h4, h5, h6 {
@@ -45,7 +45,7 @@
 		color: $color-yellow-text;
 	}
 }
-.cs-welpen {
+.cs-mint {
 	background-color: $color-mint;
 
 	h1, h2, h3, h4, h5, h6 {
@@ -55,7 +55,7 @@
 		color: $color-mint-text;
 	}
 }
-.cs-jonge {
+.cs-salmon {
 	background-color: $color-salmon;
 
 	h1, h2, h3, h4, h5, h6 {
@@ -65,7 +65,7 @@
 		color: $color-salmon-text;
 	}
 }
-.cs-oude {
+.cs-blue-light {
 	background-color: $color-blue-light;
 
 	h1, h2, h3, h4, h5, h6 {
