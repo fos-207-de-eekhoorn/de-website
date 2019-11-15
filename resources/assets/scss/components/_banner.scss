@@ -1,0 +1,103 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Banner
+//  ------------------------------------------------------------------------------------
+
+.banner {
+    position: relative;
+    height: spacing(xxxl);
+    margin-left: -1 * ($gutter / 2);
+    margin-right: -1 * ($gutter / 2);
+    overflow: hidden;
+    
+    &--full {
+        height: auto;
+    }
+
+    &__image {
+        position: relative;
+        top: 50%;
+        width: 100%;
+        height: auto;
+        transform: translateY(-50%);
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+
+        font-size: $font-size-h1;
+        font-style: italic; 
+        font-weight: $font-weight-black;
+        text-align: center;
+        
+        &--with-sub-title {
+            transform: translateX(-5%) translateY(-80%);
+        }
+    }
+
+    &__sub-title {
+        position: absolute;
+        transform: translateX(5%) translateY(-25%);
+
+        font-size: $font-size-h3 * 2;
+        font-style: italic;
+        font-weight: $font-weight-black;
+        text-align: center;
+    }
+    
+    &--green,
+    &--mint,
+    &--salmon,
+    &--yellow,
+    &--blue-light,
+    &--yellow-light {
+        .banner {
+            &__title {
+                color: $color-blue;
+            }
+
+            &__sub-title {
+                color: $color-black;
+            }
+        }
+    }
+    
+    &--blue {
+        .banner {
+            &__title {
+                color: $color-white;
+            }
+
+            &__sub-title {
+                color: $color-yellow;
+            }
+        }
+    }
+
+    &--green-dark {
+        .banner {
+            &__title {
+                color: $color-white;
+            }
+
+            &__sub-title {
+                color: $color-yellow-light;
+            }
+        }
+    }
+    
+    &--red,
+    &--brown {
+        .banner {
+            &__title {
+                color: $color-white;
+            }
+
+            &__sub-title {
+                color: $color-black;
+            }
+        }
+    }
+}

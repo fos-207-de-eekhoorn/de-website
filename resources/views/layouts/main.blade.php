@@ -7,7 +7,7 @@
         <title>FOS207 'De Eekhoorn' / Home</title>
 
         <!-- Styles -->
-        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/style.css?v=0.1.9" rel="stylesheet">
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -115,6 +115,12 @@
                                         Kost scouts
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/trooper" class="nav__link nav__link--sublist">
+                                        Trooper
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
@@ -142,20 +148,14 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/spaghetti-avond" class="nav__link nav__link--sublist">
-                                        Spaghetti avond
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bbq" class="nav__link nav__link--sublist">
-                                        BBQ
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
                                     <a href="/evenementen/winterbar" class="nav__link nav__link--sublist">
                                         Winterbar
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/eikeltjesquiz" class="nav__link nav__link--sublist">
+                                        EikeltjesQuiz
                                     </a>
                                 </li>
                             </ul>
@@ -192,6 +192,7 @@
 
                             <li class="footer-nav__item">
                                 <a href="/takken" class="footer-nav__link footer-nav__link--parent">Takken</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/takken/bevers" class="footer-nav__link footer-nav__link--sublink">Bevers</a>
@@ -213,6 +214,7 @@
 
                             <li class="footer-nav__item">
                                 <a href="/alle-info" class="footer-nav__link footer-nav__link--parent">Meer informatie</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/uniform-shop" class="footer-nav__link footer-nav__link--sublink">Uniform & shop</a>
@@ -226,6 +228,10 @@
                                         <a href="/alle-info/verhuurlijst" class="footer-nav__link footer-nav__link--sublink">Lid worden</a>
                                     </li>
 
+                                    <li class="footer-nav__item">
+                                        <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
+                                    </li>
+
                                     {{--
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/docs" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
@@ -236,17 +242,14 @@
 
                             <li class="footer-nav__item">
                                 <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
+
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/spaghetti-avond" class="footer-nav__link footer-nav__link--sublink">Spaghetti-avond</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bbq" class="footer-nav__link footer-nav__link--sublink">BBQ</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
                                         <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/eikeltjesquiz" class="footer-nav__link footer-nav__link--sublink">EikeltjesQuiz</a>
                                     </li>
                                 </ul>
                             </li>
@@ -262,6 +265,7 @@
                     <div class="col-12 col-lg-4 footer__section">
                         <section class="footer__section">
                             <h3 class="footer__title">Waar kan je ons vinden?</h3>
+
                             <ul class="social">
                                 <li class="social__item">
                                     <a href="https://www.facebook.com/fos207/" class="social__link social__link--facebook" target="_blank">
@@ -291,6 +295,7 @@
 
                         <section class="footer__section">
                             <h3 class="footer__title">Contacteer ons</h3>
+
                             <div class="contact">
                                 <div class="row">
                                     <div class="col-4"> 

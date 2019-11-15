@@ -29,6 +29,6 @@ class Tak extends Model
     public function volgende_activiteit()
     {
         return $this->activiteiten()
-            ->whereDate('datum', '>=', Carbon::now('Europe/Berlin'));
+            ->whereDate('datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'));
     }
 }

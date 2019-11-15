@@ -1,21 +1,89 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "name": "base",
+    "version": "1.0.0",
+    "description": "FOS 207 'De Eekhoorn'",
+    "main": "gulpfile.js",
+    "js": {
+        "files": [
+            {
+                "src": [
+                    "resources/assets/js/**/*.js"
+                ],
+                "dest": "public/js/",
+                "file": "main.js"
+            }
+        ],
+        "hint": {
+            "src": [
+                "resources/assets/js/**/*.js"
+            ]
+        },
+        "watch": "resources/assets/js/**/*.js"
+    },
+    "sass": {
+        "files": [
+            {
+                "src": "resources/assets/scss/main.scss",
+                "dest": "public/css/",
+                "file": "style.css"
+            }
+        ],
+        "hint": {
+            "src": [
+                "resources/assets/scss/**/*.scss",
+                "!./src/scss/base/_normalize.scss"
+            ]
+        },
+        "watch": "resources/assets/scss/**/*.scss",
+        "autoprefixer": {
+            "browserslist": [
+                "last 1 version",
+                "> 1%",
+                "IE 10"
+            ]
+        }
+    },
+    "img": {
+        "src": "resources/assets/img/**/*",
+        "dest": "public/img/",
+        "watch": "resources/assets/img/**/*"
+    },
+    "docs": {
+        "src": "resources/assets/docs/**/*",
+        "dest": "public/docs/",
+        "watch": "resources/assets/docs/**/*"
+    },
+    "fonts": {
+        "src": "resources/assets/fonts/**/*",
+        "dest": "public/fonts/",
+        "watch": "resources/assets/fonts/**/*"
     },
     "devDependencies": {
-        "axios": "^0.19",
-        "bootstrap-sass": "^3.3.7",
-        "cross-env": "^5.1",
-        "jquery": "^3.2",
-        "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "file-exists": "^1.0.0",
+        "gulp": "^4.0.0",
+        "gulp-autoprefixer": "^7.0.0",
+        "gulp-bless": "^4.0.1",
+        "gulp-cached": "^1.1.1",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-copy": "^4.0.1",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^3.0.0",
+        "gulp-scss-lint": "^1.0.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": [
+        "Orry Verpoort",
+        "Sander Marin"
+    ],
+    "license": "ISC",
+    "dependencies": {
+        "gulp-cli": "^2.2.0"
     }
 }
