@@ -328,7 +328,7 @@
         <div class="footer footer--bottom cs-grey-dark">
             <div class="container">
                 <div class="footer__inner">
-                    <a href="/privacy" class="footer__bottom-text" target="_blank">Privacyverklaring</a>
+                    <a href="https://fosopenscouting.be/nl/privacyverklaring" class="footer__bottom-text" target="_blank">Privacyverklaring</a>
 
                     <p class="footer__bottom-text">
                         Copyright &copy; FOS207 'De Eekhoorn'

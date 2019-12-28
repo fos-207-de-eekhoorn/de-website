@@ -14,7 +14,6 @@
 # General Routes
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
-Route::get('/privacy', 'HomeController@get_privacy');
 
 # Takken Routes
 Route::get('/takken', 'TakkenController@get_takken');
