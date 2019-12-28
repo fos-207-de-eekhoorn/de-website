@@ -11,19 +11,24 @@
     ])
     @endcomponent
 
-    {{-- EL --}}
+    {{-- Contact formulier --}}
+    {{-- EL & AEL --}}
     <div class="row section">
-        <div class="col-12 col-md-7">
-            @component('components.leiding_card', [
-                'leider' => $el,
-            ])
-            @endcomponent
-        </div>
+        <div class="col-12 col-md-8"></div>
 
-        <div class="col-12 col-md-5">
-            <div class="row">
-                <div class="col-6 col-md-12">Fossa</div>
-                <div class="col-6 col-md-12">Axis</div>
+        <div class="col-12 col-md-4">
+            <div class="leiding-card-list">
+                @component('components.leiding_card', [
+                    'leider' => $el,
+                ])
+                @endcomponent
+
+                @foreach($ael as $ael_leider)
+                    @component('components.leiding_card', [
+                        'leider' => $ael_leider,
+                    ])
+                    @endcomponent
+                @endforeach
             </div>
         </div>
     </div>

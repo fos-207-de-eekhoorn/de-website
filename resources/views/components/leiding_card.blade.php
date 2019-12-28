@@ -1,12 +1,12 @@
 <div class="leiding-card">
     <div class="row">
-        <div class="col-4"> 
+        <div class="col-4 leiding-card__col"> 
             <div class="leiding-card__img-wrapper">
                 <img src="{{ asset('/img/leiding/' . $leider->foto) }}" alt="{{ $leider->totem }}" class="leiding-card__img">
             </div>
         </div>
 
-        <div class="col-8 leiding-card__info">
+        <div class="col-8 leiding-card__col">
             <h5 class="leiding-card__title no-margin-bottom">
                 @if (isset($titel))
                     {{ $titel }}

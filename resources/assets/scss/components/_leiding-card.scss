@@ -3,6 +3,12 @@
 //  ------------------------------------------------------------------------------------
 
 .leiding-card {
+    &__col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     &__img-wrapper {
         position: relative;
         width: 100%;
@@ -20,12 +26,6 @@
         height: 100%;
         border-radius: 50%;
         object-fit: cover;
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     &__title {
