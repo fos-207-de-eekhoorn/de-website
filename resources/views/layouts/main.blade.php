@@ -177,14 +177,14 @@
         </header>
 
         <main class="main">
-            <div class="container cs-white">
+            <div class="container cs-white shadow">
                 <div class="main__inner">
                     @yield('content')
                 </div>
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="footer cs-grey-extra-light">
             <div class="container">
                 <div class="row">
                     <nav class="col-12 col-lg-8 footer__section">

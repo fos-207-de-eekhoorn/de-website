@@ -31,4 +31,32 @@
     &__title {
         margin-top: 0;
     }
+
+    &__phone,
+    &__email {
+        display: flex;
+        align-items: center;
+
+        line-height: 1;
+        word-break: break-word;
+
+        &:before {
+            padding-right: spacing(sm);
+            font-family: 'Font Awesome 5 Free';
+            font-weight: $font-weight-black;
+            color: $color-grey-medium;
+        }
+    }
+    &__phone {
+        margin-bottom: spacing(xs);
+
+        &:before {
+            content: fa-content($fa-var-phone);
+        }
+    }
+    &__email {
+        &:before {
+            content: fa-content($fa-var-at);
+        }
+    }
 }

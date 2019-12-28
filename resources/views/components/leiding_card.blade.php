@@ -51,12 +51,12 @@
                 {{ $leider->voornaam }} @if ($leider->totem != NULL)'{{ $leider->totem }}'@endif {{ $leider->achternaam }}
             </p>
 
-            <a href="tel:{{ $leider->telefoon_link }}" target="_blank">{{ $leider->telefoon }}</a>
+            <a href="tel:{{ $leider->telefoon_link }}" class="leiding-card__phone" target="_blank">{{ $leider->telefoon }}</a>
 
             @if (isset($email_overwrite))
-                <a href="mailto:{{ $email_overwrite }}" target="_blank">{{ $email_overwrite }}</a>
+                <a href="mailto:{{ $email_overwrite }}" class="leiding-card__email" target="_blank">{{ $email_overwrite }}</a>
             @else
-                <a href="mailto:{{ $leider->email }}" target="_blank">{{ $leider->email }}</a>
+                <a href="mailto:{{ $leider->email }}" class="leiding-card__email" target="_blank">{{ $leider->email }}</a>
             @endif
         </div>
     </div>
