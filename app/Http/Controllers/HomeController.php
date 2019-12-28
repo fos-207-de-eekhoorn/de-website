@@ -24,7 +24,12 @@ class HomeController extends Controller
 
     public function get_contact()
     {
-        return view('contact');
+        $el = $this->get_el();
+        $ael = $this->get_ael();
+
+        return view('contact', [
+            'ael' => $ael,
+        ]);
     }
 
     public function get_privacy()

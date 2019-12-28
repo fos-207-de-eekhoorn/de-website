@@ -303,22 +303,11 @@
                         <section class="footer__section">
                             <h3 class="footer__title">Contacteer ons</h3>
 
-                            <div class="contact">
-                                <div class="row">
-                                    <div class="col-4"> 
-                                        <div class="contact__img-wrapper">
-                                            <img src="/img/eenheidsleiding.jpg" alt="Ara" class="contact__img">
-                                        </div>
-                                    </div>
-                            
-                                    <div class="col-8">
-                                        <h5 class="contact__title">Eenheidsleidster</h5>
-                                        <p>Marie 'Ara'<br>Lammertyn</p>
-                                        <a href="tel:0491089740" target="_blank">0491/08.97.40</a>
-                                        <a href="mailto:fos207ste@gmail.com" target="_blank">fos207ste@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @component('components.leiding_card', [
+                                'leider' => $el,
+                                'email_overwrite' => 'fos207ste@gmail.com',
+                            ])
+                            @endcomponent
                         </section>
                     </div>
                 </div>

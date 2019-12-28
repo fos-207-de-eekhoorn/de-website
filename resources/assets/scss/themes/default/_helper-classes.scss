@@ -96,6 +96,27 @@
 	}
 }
 
+.no-margin,
+.no-margin-horizontal,
+.no-margin-top {
+	margin-top: 0;
+}
+.no-margin,
+.no-margin-horizontal,
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+.no-margin,
+.no-margin-vertical,
+.no-margin-left {
+	margin-left: 0;
+}
+.no-margin,
+.no-margin-vertical,
+.no-margin-right {
+	margin-right: 0;
+}
+
 .clear:after {
 	content: ' ';
 	display: table;
