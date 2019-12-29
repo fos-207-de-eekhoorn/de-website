@@ -12,6 +12,16 @@
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script type="text/javascript">
+            $.ajaxSetup({
+                headers: {
+                    'X-Csrf-Token': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        </script>
+
         @component('components.analytics')
         @endcomponent
     </head>
