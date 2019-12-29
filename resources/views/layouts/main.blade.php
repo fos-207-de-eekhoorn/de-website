@@ -174,13 +174,11 @@
                             </ul>
                         </li>
 
-                        {{--
                         <li class="nav__list-item">
                             <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
                                 Contact
                             </a>
                         </li>
-                        --}}
                     </ul>
                 </nav>
             </div>
@@ -271,11 +269,9 @@
                                 </ul>
                             </li>
 
-                            {{--
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>
                             </li>
-                            --}}
                         </ul>
                     </nav>
 
