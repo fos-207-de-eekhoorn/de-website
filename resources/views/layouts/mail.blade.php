@@ -145,7 +145,7 @@
 
     <body style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;background-color:#f4f4f4;font-family:Arial, sans-serif;font-size:16px;font-weight:400;color:#666666;" >
         <div class="container" style="max-width:600px;padding-top:30px;padding-bottom:30px;padding-right:30px;padding-left:30px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;border-radius:0.25rem;background-color:#fff;box-shadow:0 3px 6px rgba(0, 0, 0, 0.1);" >
-                <img src="{{ asset("/img/logo.png") }}" alt="Tradler Co" class="logo" style="display:block;max-width:300px;margin-top:.5rem;margin-bottom:30px;margin-right:auto;margin-left:auto;" >
+                <img src="{{ asset('/img/logo.png') }}" alt="FOS 207 De Eekhoorn" class="logo" style="display:block;max-width:300px;margin-top:.5rem;margin-bottom:30px;margin-right:auto;margin-left:auto;" >
                 @yield('body')
         </div>
     </body>
