@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
 Route::get('/privacy', 'HomeController@get_privacy');
 
+Route::post('/contact/zend-bericht', 'HomeController@post_contact_message');
+
 # Takken Routes
 Route::get('/takken', 'TakkenController@get_takken');
 Route::get('/takken/{tak}', 'TakkenController@get_tak_details');

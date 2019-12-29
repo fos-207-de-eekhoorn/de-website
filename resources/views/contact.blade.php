@@ -17,15 +17,16 @@
         <div class="col-12 col-md-7">
             <h3>Heeft u een vraag?</h3>
 
-            @if (session('success'))
-                <div class="form__feedback form__feedback--success">
-                    <p>
-                        <span class="fa--before"><i class="fas fa-check"></i></span>{{ session('success') }}
-                    </p>
-                </div>
+
+            @if (session('contact_form_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    We hebben uw berichtje goed ontvangen.
+                @endcomponent
             @endif
 
-            <form class="form" action="/contact/send-form" method="POST">
+            <form class="form" action="/contact/zend-bericht" method="POST">
                 @csrf
 
                 {{-- Naam --}}
