@@ -14,7 +14,7 @@
     {{-- Contact formulier --}}
     {{-- EL & AEL --}}
     <div class="row section">
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-lg-7">
             <h3>Heeft u een vraag?</h3>
 
 
@@ -107,7 +107,7 @@
             </form>
         </div>
 
-        <div class="col-12 col-md-5">
+        <div class="col-12 col-lg-5">
             <div class="leiding-card-list">
                 @component('components.leiding_card', [
                     'leider' => $el,
