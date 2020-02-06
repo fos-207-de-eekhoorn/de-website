@@ -151,14 +151,20 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/winterbar" class="nav__link nav__link--sublist">
-                                        Winterbar
+                                    <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
+                                        Bivak bevers & welpen
                                     </a>
                                 </li>
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/eikeltjesquiz" class="nav__link nav__link--sublist">
-                                        EikeltjesQuiz
+                                    <a href="/evenementen/bivak/jonge" class="nav__link nav__link--sublist">
+                                        Bivak jonge
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/bivak/oude" class="nav__link nav__link--sublist">
+                                        Bivak Oude
                                     </a>
                                 </li>
                             </ul>
@@ -206,7 +212,7 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">Jonge</a>
+                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">JV/G</a>
                                     </li>
 
                                     <li class="footer-nav__item">
@@ -252,11 +258,15 @@
 
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
+                                        <a href="/evenementen/bivak/bevers-welpen" class="footer-nav__link footer-nav__link--sublink">Bivak bevers & welpen</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/eikeltjesquiz" class="footer-nav__link footer-nav__link--sublink">EikeltjesQuiz</a>
+                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak jonge</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/bivak/oude" class="footer-nav__link footer-nav__link--sublink">Bivak Oude</a>
                                     </li>
                                 </ul>
                             </li>
