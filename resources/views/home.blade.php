@@ -42,7 +42,7 @@
 
     <div class="row section">
         <div class="col-12 col-md-8 col-lg-9">
-            <div class="algemene-info">
+            <div class="algemene-info section">
                 <h2>Welkom!</h2>
                 <p>
                     Welkom op de website van FOS 207 de eekhoorn. Wij zijn een scouts die zich al bijna 55 jaar inzet om de Oostkampse jeugd een toptijd te bezorgen.
@@ -61,38 +61,42 @@
                 </p>
             </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <h3>Bivakken</h3>
+            <div class="section">
+                <h3>Bivakken</h3>
 
-                    <p>
-                        Vind hier alle informatie en bla bla bla...
-                    </p>
-                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <h5>Bevers en welpen</h4>
 
-                <div class="col-12 col-md-4">
-                    <h4>Bevers en welpen</h4>
+                        <ul class="list--no-spacing list--list-style-none">
+                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>17 tot 19 april</li>
+                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Poperinge</li>
+                        </ul>
 
-                    <p>
-                        17 tot 19 april<br>
-                        te Poperinge
-                    </p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <h4>Jonge</h4>
+                        <a href="{{ url('/evenementen/bivak/bevers-welpen') }}" class="btn btn--primary">Meer info</a>
+                    </div>
 
-                    <p>
-                        10 tot 13 april<br>
-                        te Ieper
-                    </p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <h4>Oude</h4>
+                    <div class="col-12 col-md-4">
+                        <h5>Jonge</h4>
 
-                    <p>
-                        4 tot 6 maart<br>
-                        te Lokoren
-                    </p>
+                        <ul class="list--no-spacing list--list-style-none">
+                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>10 tot 13 april</li>
+                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Ieper</li>
+                        </ul>
+
+                        <a href="{{ url('/evenementen/bivak/jonge') }}" class="btn btn--primary">Meer info</a>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <h5>Oude</h4>
+
+                        <ul class="list--no-spacing list--list-style-none">
+                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>4 tot 6 maart</li>
+                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Lokoren</li>
+                        </ul>
+
+                        <a href="{{ url('/evenementen/bivak/oude') }}" class="btn btn--primary">Meer info</a>
+                    </div>
                 </div>
             </div>
         </div>
