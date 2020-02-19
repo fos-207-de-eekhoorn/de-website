@@ -26,9 +26,4 @@ class HomeController extends Controller
     {
         return view('contact');
     }
-
-    public function get_privacy()
-    {
-        return view('privacy');
-    }
 }

@@ -6,6 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>FOS207 'De Eekhoorn' / Home</title>
 
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/img/favicon/apple-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/img/favicon/apple-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/img/favicon/apple-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/img/favicon/apple-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/img/favicon/apple-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('/img/favicon/apple-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('/img/favicon/apple-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('/img/favicon/apple-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/img/favicon/apple-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('/img/favicon/android-icon-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/img/favicon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('/img/favicon/favicon-96x96.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/img/favicon/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('/img/favicon/manifest.json') }}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{ asset('/img/favicon/ms-icon-144x144.png') }}">
+        <meta name="theme-color" content="#c9dd03">
+
         <!-- Styles -->
         <link href="/css/style.css?v=0.1.9" rel="stylesheet">
 
@@ -21,7 +40,7 @@
             <div class="container header__inner">
                 <div class="header__content logo">
                     <a href="/" class="logo__link">
-                        <img src="/img/logo.jpg" alt="FOS 207 'De Eekhoorn'" class="logo__img">
+                        <img src="{{ asset('/img/logo.png') }}" alt="FOS 207 'De Eekhoorn'" class="logo__img">
                     </a>
                 </div>
 
@@ -151,14 +170,20 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/winterbar" class="nav__link nav__link--sublist">
-                                        Winterbar
+                                    <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
+                                        Bivak bevers & welpen
                                     </a>
                                 </li>
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/eikeltjesquiz" class="nav__link nav__link--sublist">
-                                        EikeltjesQuiz
+                                    <a href="/evenementen/bivak/jonge" class="nav__link nav__link--sublist">
+                                        Bivak JV/G
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/evenementen/bivak/oude" class="nav__link nav__link--sublist">
+                                        Bivak Oude
                                     </a>
                                 </li>
                             </ul>
@@ -206,7 +231,7 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">Jonge</a>
+                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">JV/G</a>
                                     </li>
 
                                     <li class="footer-nav__item">
@@ -252,11 +277,15 @@
 
                                 <ul class="footer-nav__sublist">
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/winterbar" class="footer-nav__link footer-nav__link--sublink">Winterbar</a>
+                                        <a href="/evenementen/bivak/bevers-welpen" class="footer-nav__link footer-nav__link--sublink">Bivak bevers & welpen</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/eikeltjesquiz" class="footer-nav__link footer-nav__link--sublink">EikeltjesQuiz</a>
+                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak JV/G</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/evenementen/bivak/oude" class="footer-nav__link footer-nav__link--sublink">Bivak Oude</a>
                                     </li>
                                 </ul>
                             </li>
@@ -328,7 +357,7 @@
         <div class="footer footer--bottom cs-grey-dark">
             <div class="container">
                 <div class="footer__inner">
-                    <a href="/privacy" class="footer__bottom-text" target="_blank">Privacyverklaring</a>
+                    <a href="https://fosopenscouting.be/nl/privacyverklaring" class="footer__bottom-text" target="_blank">Privacyverklaring</a>
 
                     <p class="footer__bottom-text">
                         Copyright &copy; FOS207 'De Eekhoorn'

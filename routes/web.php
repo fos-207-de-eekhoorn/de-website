@@ -14,7 +14,6 @@
 # General Routes
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
-Route::get('/privacy', 'HomeController@get_privacy');
 
 # Takken Routes
 Route::get('/takken', 'TakkenController@get_takken');
@@ -29,7 +28,7 @@ Route::get('/alle-info/docs', 'InfoController@get_docs');
 Route::get('/alle-info/kost-scouts', 'InfoController@get_kost_scouts');
 Route::get('/alle-info/trooper', 'InfoController@get_trooper');
 
-# Evenementen Routs
+# Evenementen Routes
 Route::get('/evenementen', 'EvenementenController@get_alle_evenementen');
 Route::get('/evenementen/startdag', 'EvenementenController@get_event_startdag');
 Route::get('/evenementen/sneukeltocht', 'EvenementenController@get_event_sneukeltocht');
@@ -38,6 +37,9 @@ Route::get('/evenementen/bbq', 'EvenementenController@get_event_bbq');
 Route::get('/evenementen/winterbar', 'EvenementenController@get_event_winterbar');
 Route::get('/evenementen/halloweentocht', 'EvenementenController@get_event_halloweentocht');
 Route::get('/evenementen/eikeltjesquiz', 'EvenementenController@get_event_eikeltjesquiz');
+	# Bivak
+	Route::get('/evenementen/bivak/bevers-welpen', 'EvenementenController@get_bivak_bevers_welpen');
+	Route::get('/evenementen/bivak/jonge', 'EvenementenController@get_bivak_jonge');
+	Route::get('/evenementen/bivak/oude', 'EvenementenController@get_bivak_oude');
 
-
-# Documenten Routs
+# Documenten Routes

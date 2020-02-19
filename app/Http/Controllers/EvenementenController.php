@@ -43,4 +43,19 @@ class EvenementenController extends Controller
     {
         return view('evenementen.eikeltjesquiz');
     }
+
+    public function get_bivak_bevers_welpen()
+    {
+        return view('evenementen.bivak.bevers_welpen');
+    }
+
+    public function get_bivak_jonge()
+    {
+        return view('evenementen.bivak.jonge');
+    }
+
+    public function get_bivak_oude()
+    {
+        return view('evenementen.bivak.oude');
+    }
 }

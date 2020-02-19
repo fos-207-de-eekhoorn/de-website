@@ -60,6 +60,41 @@
                     Als echte scouts hechten wij veel belang aan het outdoorleven. Scouts is je amuseren buiten in de natuur. Wij werken ook met enkele tradities. Zo zijn wij één van de weinige scoutsen die nog werken met een raadsrots, met teervoeten en badges en met totemnamen. Deze totems gebruiken we altijd als aanspreeknaam en zijn een grote eer om te krijgen.
                 </p>
             </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h3>Bivakken</h3>
+
+                    <p>
+                        Vind hier alle informatie en bla bla bla...
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h4>Bevers en welpen</h4>
+
+                    <p>
+                        17 tot 19 april<br>
+                        te Poperinge
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h4>Jonge</h4>
+
+                    <p>
+                        10 tot 13 april<br>
+                        te Ieper
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h4>Oude</h4>
+
+                    <p>
+                        4 tot 6 maart<br>
+                        te Lokoren
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="col-12 col-md-4 col-lg-3">
