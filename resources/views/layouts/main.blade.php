@@ -158,7 +158,7 @@
 
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen/bivak/jonge" class="nav__link nav__link--sublist">
-                                        Bivak jonge
+                                        Bivak JV/G
                                     </a>
                                 </li>
 
@@ -262,7 +262,7 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak jonge</a>
+                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak JV/G</a>
                                     </li>
 
                                     <li class="footer-nav__item">
