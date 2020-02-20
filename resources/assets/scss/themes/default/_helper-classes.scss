@@ -63,6 +63,19 @@
 	}
 }
 
+.list {
+	&--list-style-none {
+		list-style: none;
+	}
+
+	&--no-spacing {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 //  Elements
 //  ------------------------------------------------------------------------------------
 
