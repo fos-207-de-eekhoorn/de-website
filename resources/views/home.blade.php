@@ -101,7 +101,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-4 col-lg-3">
+        <div class="col-12 col-md-4 col-lg-3 align-self-start">
             <a href="{{ url('/docs/prutske/editie-2020-maart-april.pdf') }}" class="prutske" target="_blank">
                 <img src="{{ asset('/img/kaft-2020-maart-april.jpg') }}" alt="Prutske november - december 2019" class="prutske__kaft">
 
