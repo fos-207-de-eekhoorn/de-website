@@ -1,0 +1,15 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Leiding card list
+//  ------------------------------------------------------------------------------------
+
+.leiding-card-list {
+    .leiding-card {
+        padding-top: spacing(md);
+        padding-bottom: spacing(md);
+        border-bottom: 1px solid $color-grey-extra-light;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
