@@ -76,6 +76,8 @@ li {
 button,
 a {
 	@include transitions(fast);
+
+	text-decoration: none;
 }
 
 button {

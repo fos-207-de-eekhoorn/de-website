@@ -31,6 +31,16 @@
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script type="text/javascript">
+            $.ajaxSetup({
+                headers: {
+                    'X-Csrf-Token': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        </script>
+
         @component('components.analytics')
         @endcomponent
     </head>
@@ -189,27 +199,25 @@
                             </ul>
                         </li>
 
-                        {{--
                         <li class="nav__list-item">
                             <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
                                 Contact
                             </a>
                         </li>
-                        --}}
                     </ul>
                 </nav>
             </div>
         </header>
 
         <main class="main">
-            <div class="container cs-white">
+            <div class="container cs-white shadow">
                 <div class="main__inner">
                     @yield('content')
                 </div>
             </div>
         </main>
 
-        <footer class="footer">
+        <footer class="footer cs-grey-extra-light">
             <div class="container">
                 <div class="row">
                     <nav class="col-12 col-lg-8 footer__section">
@@ -290,11 +298,9 @@
                                 </ul>
                             </li>
 
-                            {{--
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>
                             </li>
-                            --}}
                         </ul>
                     </nav>
 
@@ -332,22 +338,11 @@
                         <section class="footer__section">
                             <h3 class="footer__title">Contacteer ons</h3>
 
-                            <div class="contact">
-                                <div class="row">
-                                    <div class="col-4"> 
-                                        <div class="contact__img-wrapper">
-                                            <img src="/img/eenheidsleiding.jpg" alt="Ara" class="contact__img">
-                                        </div>
-                                    </div>
-                            
-                                    <div class="col-8">
-                                        <h5 class="contact__title">Eenheidsleidster</h5>
-                                        <p>Marie 'Ara'<br>Lammertyn</p>
-                                        <a href="tel:0491089740" target="_blank">0491/08.97.40</a>
-                                        <a href="mailto:fos207ste@gmail.com" target="_blank">fos207ste@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @component('components.leiding_card', [
+                                'leider' => $el,
+                                'email_overwrite' => 'fos207ste@gmail.com',
+                            ])
+                            @endcomponent
                         </section>
                     </div>
                 </div>

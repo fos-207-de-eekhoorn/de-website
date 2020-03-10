@@ -35,4 +35,9 @@ class Leider extends Authenticatable
     {
         return $this->hasMany(LeiderTak::class);
     }
+
+    public function getTelefoonLinkAttribute()
+    {
+        return str_replace(".", "", str_replace("/", "", $this->telefoon));
+    }
 }
