@@ -23,7 +23,11 @@ class InfoController extends Controller
 
     public function get_verhuurlijst()
     {
-        $responsibles = Leider::find([24, 11, 23]);
+        $responsibles_ids = [24, 11, 23, 5];
+        $responsibles_ids_ordered = implode(',', $responsibles_ids);
+        $responsibles = Leider::whereIn('id', $responsibles_ids)
+            ->orderByRaw("FIELD(id, $responsibles_ids_ordered)")
+            ->get();
 
         return view('alle-info.verhuurlijst', [
             'responsibles' => $responsibles,
