@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Leider;
+
 class InfoController extends Controller
 {
     public function get_alle_info()
@@ -21,7 +23,11 @@ class InfoController extends Controller
 
     public function get_verhuurlijst()
     {
-        return view('alle-info.verhuurlijst');
+        $responsibles = Leider::find([24, 11, 23]);
+
+        return view('alle-info.verhuurlijst', [
+            'responsibles' => $responsibles,
+        ]);
     }
 
     public function get_docs()
