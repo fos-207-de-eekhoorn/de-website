@@ -206,11 +206,6 @@
                         </li>
 
                         @guest
-                            <li class="nav__list-item">
-                                <a href="/login" class="nav__link {{ Request::is('/login') ? 'nav__link--active' : '' }}">
-                                    Login
-                                </a>
-                            </li>
                         @else
                             <li class="nav__list-item nav__list-item--sublist">
                                 <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
