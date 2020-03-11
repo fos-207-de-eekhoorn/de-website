@@ -116,6 +116,29 @@
                 color: $color-blue-light;
             }
         }
+
+        &:disabled,
+        &--disabled {
+        	@include shadow-none;
+
+        	cursor: not-allowed;
+
+        	&.btn--primary,
+        	&.btn--secondary {
+        		border-color: $color-grey-extra-light;
+        		background-color: $color-grey-extra-light;
+
+        		color: $color-grey-medium;
+
+        		&:hover {
+        			@include shadow-none;
+        		}
+        	}
+
+        	&.btn--tertiary {
+        		color: $color-grey-light;
+        	}
+        }
     }
 
 	.social {
