@@ -168,7 +168,7 @@
 
                         <div class="row small-gutters">
                             {{-- Startuur --}}
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-6">
                                 <section class="form__section">
                                     <label for="start_uur" class="form__label form__label--required">Start uur</label>
 
@@ -189,7 +189,7 @@
                             </div>
 
                             {{-- Einduur --}}
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-6">
                                 <section class="form__section">
                                     <label for="eind_uur" class="form__label form__label--required">Eind uur</label>
 
@@ -208,8 +208,10 @@
                                     @endif
                                 </section>
                             </div>
+                        </div>
 
-                            {{-- Einduur --}}
+                        <div class="row small-gutters">
+                            {{-- Prijs --}}
                             <div class="col-12 col-md-4">
                                 <section class="form__section">
                                     <label for="prijs" class="form__label form__label--required">Prijs</label>
@@ -225,6 +227,27 @@
                                     @if ($errors->has('prijs'))
                                         <span class="form__section-feedback">
                                             {{ $errors->first('prijs') }}
+                                        </span>
+                                    @endif
+                                </section>
+                            </div>
+
+                            {{-- Locatie --}}
+                            <div class="col-12 col-md-8">
+                                <section class="form__section">
+                                    <label for="locatie" class="form__label form__label--required">Locatie</label>
+
+                                    <input
+                                        type="text"
+                                        id="locatie"
+                                        name="locatie"
+                                        class="form__input form__input--full-width"
+                                        value="{{ $activiteit->locatie }}"
+                                        required>
+
+                                    @if ($errors->has('locatie'))
+                                        <span class="form__section-feedback">
+                                            {{ $errors->first('locatie') }}
                                         </span>
                                     @endif
                                 </section>

@@ -116,6 +116,7 @@ class AdminController extends Controller
         $activiteit->start_uur = $request->start_uur . ':00';
         $activiteit->eind_uur = $request->eind_uur . ':00';
         $activiteit->prijs = $request->prijs;
+        $activiteit->locatie = $request->locatie;
         $activiteit->omschrijving = $request->omschrijving;
 
         $edit = $activiteit->save();
