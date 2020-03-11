@@ -18,7 +18,7 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/change-password', 'ChangePasswordController@showChangePasswordForm');
 Route::post('/change-password', 'ChangePasswordController@changePassword');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 # General Routes
 Route::get('/', 'HomeController@get_home');
