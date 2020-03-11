@@ -23,8 +23,6 @@ class AdminController extends Controller
     {
         $takken = Tak::get();
 
-        //return $takken;
-
         return view('admin.activiteiten.activiteiten', [
             'takken' => $takken,
         ]);
@@ -55,7 +53,28 @@ class AdminController extends Controller
         }
     }
 
-    public function edit_activiteit($id_encrypted)
+    public function get_add_activiteit($tak = NULL) {
+        $takken = Tak::get();
+
+        $data = [
+            'takken' => $takken,
+        ];
+
+        if ($tak) {
+            $tak = Tak::where('naam', $tak)->first();
+
+            if (is_object($tak)) {
+                $data = [
+                    'tak' => $tak,
+                    'takken' => $takken,
+                ];
+            }
+        }
+
+        return view('admin.activiteiten.add_activiteit', $data);
+    }
+
+    public function get_edit_activiteit($id_encrypted)
     {
         $id = Crypt::decrypt($id_encrypted);
         $activiteit = Activiteit::where('id', $id)

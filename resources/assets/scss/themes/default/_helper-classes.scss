@@ -150,6 +150,48 @@
 	margin-right: 0;
 }
 
+.small-margin,
+.small-margin-horizontal,
+.small-margin-top {
+	margin-top: spacing(sm);
+}
+.small-margin,
+.small-margin-horizontal,
+.small-margin-bottom {
+	margin-bottom: spacing(sm);
+}
+.small-margin,
+.small-margin-vertical,
+.small-margin-left {
+	margin-left: spacing(sm);
+}
+.small-margin,
+.small-margin-vertical,
+.small-margin-right {
+	margin-right: spacing(sm);
+}
+
+.medium-margin,
+.medium-margin-horizontal,
+.medium-margin-top {
+	margin-top: spacing(md);
+}
+.medium-margin,
+.medium-margin-horizontal,
+.medium-margin-bottom {
+	margin-bottom: spacing(md);
+}
+.medium-margin,
+.medium-margin-vertical,
+.medium-margin-left {
+	margin-left: spacing(md);
+}
+.medium-margin,
+.medium-margin-vertical,
+.medium-margin-right {
+	margin-right: spacing(md);
+}
+
 .shadow {
 	@include shadow-standard;
 }
