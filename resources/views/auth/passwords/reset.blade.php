@@ -70,7 +70,7 @@
                     <span class="info__data password-feedback">
                         {{ __('global.password') }}:
                         <span id="passwordFeedbackMinLength" class="password-feedback__option js-passwordFeedback">
-                            <span class="fa--before password-feedback__icon password-feedback__icon--active"><i class="fas fa-check"></i></span>{{ __('global.min_6_chars') }}
+                            <span class="fa--before password-feedback__icon password-feedback__icon--active"><i class="fas fa-check"></i></span>{{ __('global.min_8_chars') }}
                         </span>
                     </span>
                 </p>
@@ -286,7 +286,7 @@
             }
 
             function passwordCheckMinLength(input) {
-                var passwordLength = 6,
+                var passwordLength = 8,
                 output = ( passwordLength <= input.length );
 
                 return output;
