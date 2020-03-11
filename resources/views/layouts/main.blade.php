@@ -220,17 +220,15 @@
                                 </label>
 
                                 <ul class="nav__sublist">
-                                    {{--
-                                    <li class="nav__sublist-item">
-                                        <a href="/evenementen" class="nav__link nav__link--sublist">
-                                            Overzicht
-                                        </a>
-                                    </li>
-                                    --}}
-
                                     <li class="nav__sublist-item">
                                         <a href="/admin" class="nav__link nav__link--sublist">
                                             Admin
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/change-password" class="nav__link nav__link--sublist">
+                                            Wijzig wachtwoord
                                         </a>
                                     </li>
 
