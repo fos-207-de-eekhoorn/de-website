@@ -204,6 +204,48 @@
                                 Contact
                             </a>
                         </li>
+
+                        @guest
+                            <li class="nav__list-item">
+                                <a href="/login" class="nav__link {{ Request::is('/login') ? 'nav__link--active' : '' }}">
+                                    Login
+                                </a>
+                            </li>
+                        @else
+                            <li class="nav__list-item nav__list-item--sublist">
+                                <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
+
+                                <label for="nav__toggle-sublist--auth" class="nav__link">
+                                    Admin<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                                </label>
+
+                                <ul class="nav__sublist">
+                                    {{--
+                                    <li class="nav__sublist-item">
+                                        <a href="/evenementen" class="nav__link nav__link--sublist">
+                                            Overzicht
+                                        </a>
+                                    </li>
+                                    --}}
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/admin" class="nav__link nav__link--sublist">
+                                            Admin
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="{{ route('logout') }}" class="nav__link nav__link--sublist" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <span class="fa--before"><i class="fas fa-sign-out-alt"></i></span>Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
                     </ul>
                 </nav>
             </div>

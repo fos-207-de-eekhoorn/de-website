@@ -11,6 +11,15 @@
 |
 */
 
+// Authentication Routes...
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/change-password', 'ChangePasswordController@showChangePasswordForm');
+Route::post('/change-password', 'ChangePasswordController@changePassword');
+
+Auth::routes();
+
 # General Routes
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
