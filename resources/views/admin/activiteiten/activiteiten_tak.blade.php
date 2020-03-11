@@ -43,27 +43,27 @@
                             <br><br>
 
                             <span class="
-                                {{ ($activiteit->start_uur == '14:00:00' || $activiteit->eind_uur == '17:00:00')
-                                    ? 'text-color--light text--xs'
-                                    : NULL
+                                {{ ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
+                                    ? NULL
+                                    : 'text-color--light text--xs'
                                 }}
                             ">
                                 <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
                             </span><br>
 
                             <span class="
-                                {{ $activiteit->prijs == 0
-                                    ? 'text-color--light text--xs'
-                                    : NULL
+                                {{ $activiteit->prijs > 0
+                                    ? NULL
+                                    : 'text-color--light text--xs'
                                 }}
                             ">
                                 <b>Prijs:</b> {{ $activiteit->prijs }}
                             </span><br>
 
                             <span class="
-                                {{ $activiteit->locatie == 'Lokaal'
-                                    ? 'text-color--light text--xs'
-                                    : NULL
+                                {{ $activiteit->locatie != 'Lokaal'
+                                    ? NULL
+                                    : 'text-color--light text--xs'
                                 }}
                             ">
                                 <b>Locatie:</b> {{ $activiteit->locatie }}
