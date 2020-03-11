@@ -58,5 +58,8 @@ Route::get('/admin/activiteiten/{tak}', 'AdminController@get_activiteiten_tak');
 Route::get('/admin/activiteit/add/', 'AdminController@get_add_activiteit');
 Route::get('/admin/activiteit/add/{tak}', 'AdminController@get_add_activiteit');
 Route::get('/admin/activiteit/edit/{id}', 'AdminController@get_edit_activiteit');
+
+Route::post('/admin/activiteit/add', 'AdminController@post_add_activiteit')
+	->middleware('decrypt:value,tak');
 Route::post('/admin/activiteit/edit', 'AdminController@post_edit_activiteit')
 	->middleware('decrypt:value,id');

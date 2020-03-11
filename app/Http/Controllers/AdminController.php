@@ -74,6 +74,24 @@ class AdminController extends Controller
         return view('admin.activiteiten.add_activiteit', $data);
     }
 
+    public function post_add_activiteit(Request $request) {
+        $new_activiteit = new Activiteit;
+
+        $new_activiteit->tak_id = $request->tak;
+        $new_activiteit->datum = $request->datum[2] . '-' . $request->datum[1] . '-' . $request->datum[0];
+        $new_activiteit->start_uur = $request->start_uur . ':00';
+        $new_activiteit->eind_uur = $request->eind_uur . ':00';
+        $new_activiteit->prijs = $request->prijs;
+        $new_activiteit->locatie = $request->locatie;
+        $new_activiteit->omschrijving = $request->omschrijving;
+
+        $new_activiteit->save();
+
+        $tak = $tak = Tak::where('id', $request->tak)->first();
+
+        return redirect('/admin/activiteiten/' . $tak->naam);
+    }
+
     public function get_edit_activiteit($id_encrypted)
     {
         $id = Crypt::decrypt($id_encrypted);

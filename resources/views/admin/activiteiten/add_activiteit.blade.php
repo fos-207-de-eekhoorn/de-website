@@ -22,7 +22,7 @@
         </div>
 
         <div class="section col-12">
-            <form class="form" action="/admin/activiteit/edit" method="POST">
+            <form class="form" action="/admin/activiteit/add" method="POST">
                 @csrf
 
                 {{-- Activiteit --}}
