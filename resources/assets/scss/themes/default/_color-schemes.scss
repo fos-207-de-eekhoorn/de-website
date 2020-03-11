@@ -16,6 +16,7 @@
             
             &:hover {
                 background-color: $color-alert-success-medium;
+                color: $color-alert-success-dark;
             }
         }
         &--error {
@@ -25,6 +26,7 @@
             
             &:hover {
                 background-color: $color-alert-error-medium;
+                color: $color-alert-error-dark;
             }
         }
         &--info {
@@ -34,6 +36,7 @@
             
             &:hover {
                 background-color: $color-alert-info-medium;
+                color: $color-alert-info-dark;
             }
         }
         &--warning {
@@ -43,6 +46,7 @@
             
             &:hover {
                 background-color: $color-alert-warning-medium;
+                color: $color-alert-warning-dark;
             }
         }
     }

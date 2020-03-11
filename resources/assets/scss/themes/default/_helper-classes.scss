@@ -61,6 +61,15 @@
 	&--indent-xl {
 		padding-left: spacing(xl);
 	}
+
+	&-color {
+		&--extra-light {
+			color: $color-grey-extra-light;
+		}
+		&--light {
+			color: $color-grey-light;
+		}
+	}
 }
 
 .list {
@@ -74,6 +83,10 @@
 		margin-left: 0;
 		margin-right: 0;
 	}
+}
+
+.no-wrap {
+	white-space: nowrap;
 }
 
 //  Elements

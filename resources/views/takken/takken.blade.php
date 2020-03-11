@@ -31,7 +31,7 @@
                     </p>
 
                     <p>
-                        <a href="/takken/{{ strtolower($tak->naam) }}">meer info ></a>
+                        <a href="{{ url('/takken/' . strtolower($tak->naam)) }}">meer info ></a>
                     </p>
                 </div>
             </div>

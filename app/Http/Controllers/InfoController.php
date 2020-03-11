@@ -39,4 +39,3 @@ class InfoController extends Controller
         return view('alle-info.trooper');
     }
 }
-

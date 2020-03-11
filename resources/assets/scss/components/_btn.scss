@@ -44,6 +44,7 @@
 
     display: inline-block;
     padding: spacing(sm) spacing(md);
+    margin-left: spacing(sm);
 
     text-decoration: none;
 
@@ -55,6 +56,10 @@
 
     &:active {
         @include shadow-none;
+    }
+
+    &:first-child {
+        margin-left: 0;
     }
 
     &--tertiary {
