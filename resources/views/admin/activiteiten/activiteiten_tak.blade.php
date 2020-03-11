@@ -48,7 +48,7 @@
                                     : 'text-color--light text--xs'
                                 }}
                             ">
-                                <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
+                                Tijdstip: {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
                             </span><br>
 
                             <span class="
@@ -57,7 +57,7 @@
                                     : 'text-color--light text--xs'
                                 }}
                             ">
-                                <b>Prijs:</b> {{ $activiteit->prijs }}
+                                Prijs: <span class="text--unit">€</span>{{ $activiteit->prijs }}
                             </span><br>
 
                             <span class="
@@ -66,7 +66,7 @@
                                     : 'text-color--light text--xs'
                                 }}
                             ">
-                                <b>Locatie:</b> {{ $activiteit->locatie }}
+                                Locatie: {{ $activiteit->locatie }}
                             </span>
                         </td>
 
