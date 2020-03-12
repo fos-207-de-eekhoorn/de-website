@@ -49,6 +49,14 @@
                 color: $color-alert-warning-dark;
             }
         }
+
+        &--without-style {
+        	background-color: rgba($color-white,0);
+        	
+        	&:hover {
+        		background-color: rgba($color-white,0);
+        	}
+        }
     }
 }
 

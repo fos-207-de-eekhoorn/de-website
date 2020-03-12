@@ -75,7 +75,7 @@
                             value="{{ strtolower($tak->naam) }}"
                             hidden>
 
-                        <button class="link--error">
+                        <button class="btn btn--without-style link--error">
                             <span class="fa--before"><i class="fas fa-times"></i></span>Maak ongedaan
                         </button>
                     </form>
@@ -154,26 +154,24 @@
                                 </a>
                             </p>
 
-                            <p class="no-margin-bottom">
-                                <form action="{{ url('/admin/activiteit/remove') }}" method="POST">
-                                    @csrf
+                            <form action="{{ url('/admin/activiteit/remove') }}" method="POST" class="no-margin-bottom">
+                                @csrf
 
-                                    <input
-                                        type="text"
-                                        name="id"
-                                        value="{{ Crypt::encrypt($activiteit->id) }}"
-                                        hidden>
-                                    <input
-                                        type="text"
-                                        name="tak"
-                                        value="{{ strtolower($tak->naam) }}"
-                                        hidden>
+                                <input
+                                    type="text"
+                                    name="id"
+                                    value="{{ Crypt::encrypt($activiteit->id) }}"
+                                    hidden>
+                                <input
+                                    type="text"
+                                    name="tak"
+                                    value="{{ strtolower($tak->naam) }}"
+                                    hidden>
 
-                                    <button class="link--error">
-                                        <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
-                                    </button>
-                                </form>
-                            </p>
+                                <button class="btn btn--without-style link--error">
+                                    <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
