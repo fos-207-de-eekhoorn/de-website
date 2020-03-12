@@ -61,6 +61,24 @@
                     'type' => 'warning',
                 ])
                     De activiteit is verwijderd.
+                    <form action="{{ url('/admin/activiteit/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                        @csrf
+
+                        <input
+                            type="text"
+                            name="id"
+                            value="{{ Crypt::encrypt(session('delete_success')) }}"
+                            hidden>
+                        <input
+                            type="text"
+                            name="tak"
+                            value="{{ strtolower($tak->naam) }}"
+                            hidden>
+
+                        <button class="link--error">
+                            <span class="fa--before"><i class="fas fa-times"></i></span>Maak ongedaan
+                        </button>
+                    </form>
                 @endcomponent
             @endif
 
@@ -69,6 +87,22 @@
                     'type' => 'error',
                 ])
                     Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
+                @endcomponent
+            @endif
+
+            @if (session('restore_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    De activiteit is terug gezet.
+                @endcomponent
+            @endif
+
+            @if (session('restore_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan, Paco kan deze toch nog terugzetten.
                 @endcomponent
             @endif
 

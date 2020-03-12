@@ -141,9 +141,22 @@ class AdminController extends Controller
         $delete = Activiteit::destroy($request->id);
 
         if ($delete) {
-            Session::flash('delete_success');
+            Session::flash('delete_success', $request->id);
         } else {
             Session::flash('delete_error');
+        }
+
+        return redirect('/admin/activiteiten/' . $request->tak);
+    }
+
+    public function delete_activiteit_undo(Request $request)
+    {
+        $restore = Activiteit::withTrashed()->find($request->id)->restore();
+
+        if ($restore) {
+            Session::flash('restore_success', $request->id);
+        } else {
+            Session::flash('restore_error');
         }
 
         return redirect('/admin/activiteiten/' . $request->tak);
