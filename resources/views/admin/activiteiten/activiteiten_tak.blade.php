@@ -13,7 +13,11 @@
     @endcomponent
 
     <div class="row section">
-        <div class="col-12">
+        <div class="section--extra-small-spacing col-12">
+            <a href="{{ url('/admin/activiteiten') }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
+        </div>
+
+        <div class="section col-12">
             <div class="wrapper__btn wrapper__btn--right medium-margin-bottom">
                 <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--secondary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
@@ -52,7 +56,7 @@
                 @endcomponent
             @endif
 
-            <table class="table activities section">
+            <table class="table activities">
                 @foreach ($tak->activiteiten as $activiteit)
                     <tr class="table__row">
                         <td class="table__cell activities__date">
@@ -99,6 +103,12 @@
                     </tr>
                 @endforeach
             </table>
+
+            <div class="medium-margin">
+                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--primary">
+                    <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
+                </a>
+            </div>
         </div>
     </div>
 @endsection
