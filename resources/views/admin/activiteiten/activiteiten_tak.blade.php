@@ -168,7 +168,11 @@
                                     value="{{ strtolower($tak->naam) }}"
                                     hidden>
 
-                                <button class="btn btn--without-style link--error">
+                                <button class="btn btn--without-style link--error" onclick="
+                                    confirm('Ben je zeker dat je deze activiteit wilt verwijderen?')
+                                        ? NULL
+                                        : event.preventDefault();
+                                ">
                                     <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
                                 </button>
                             </form>
