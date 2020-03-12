@@ -95,7 +95,7 @@ class AdminController extends Controller
 
         $tak = $tak = Tak::where('id', $request->tak)->first();
 
-        return redirect('/admin/activiteiten/' . $tak->naam);
+        return redirect('/admin/activiteiten/' . strtolower($tak->naam));
     }
 
     public function get_edit_activiteit($id_encrypted)

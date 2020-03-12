@@ -15,7 +15,7 @@
     <div class="row section">
         <div class="col-12">
             <div class="wrapper__btn wrapper__btn--right medium-margin-bottom">
-                <a href="{{ url('/admin/activiteit/add') }}" class="btn btn--secondary">
+                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--secondary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>
