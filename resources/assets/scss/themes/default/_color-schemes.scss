@@ -211,6 +211,10 @@
 	p, a, li {
 		color: $color-yellow-text;
 	}
+	a:hover {
+		color: $color-yellow-title;
+		text-decoration: underline;
+	}
 }
 .cs-mint {
 	background-color: $color-mint;
@@ -220,6 +224,10 @@
 	}
 	p, a, li {
 		color: $color-mint-text;
+	}
+	a:hover {
+		color: $color-mint-title;
+		text-decoration: underline;
 	}
 }
 .cs-salmon {
@@ -231,6 +239,10 @@
 	p, a, li {
 		color: $color-salmon-text;
 	}
+	a:hover {
+		color: $color-salmon-title;
+		text-decoration: underline;
+	}
 }
 .cs-blue-light {
 	background-color: $color-blue-light;
@@ -240,5 +252,9 @@
 	}
 	p, a, li {
 		color: $color-blue-light-text;
+	}
+	a:hover {
+		color: $color-blue-light-title;
+		text-decoration: underline;
 	}
 }
