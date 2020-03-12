@@ -91,7 +91,7 @@
                         <h5>Oude</h4>
 
                         <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>4 tot 6 maart</li>
+                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>4 tot 6 mei</li>
                             <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Lokoren</li>
                         </ul>
 
