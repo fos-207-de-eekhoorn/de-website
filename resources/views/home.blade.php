@@ -1,41 +1,59 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing banner banner--full">
+    <section class="section section--extra-small-spacing banner banner--full">
         <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
     </section>
 
-    <div class="row section">
+    <div class="row section small-gutters">
+        <div class="col-12">
+            <h2 class="text--align-center">Activiteit op {{ $tak_activiteiten[0]->volgende_activiteit[0]->datum }}</h2>
+        </div>
+
         @foreach ($tak_activiteiten as $tak)
-            <div class="col-12 col-md-6 col-lg-3">
-                @if (isset($tak->volgende_activiteit[0]))
-                    <div class="volgende-activiteit card cs-{{ $tak->kleur }}">
-                        <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
+            <div class="col-12 col-md-6 col-lg-3 volgende-activiteit">
+                <div class="volgende-activiteit__inner card cs-{{ $tak->kleur }}">
+                    <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
 
-                        <div class="volgende-activiteit__algemene-info">
-                            <div class="volgende-activiteit__timing">
-                                <h5 class="volgende-activiteit__datum">
-                                    {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->format('j M') }}
-                                </h5>
-                                <p class="volgende-activiteit__tijd">
-                                    {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->eind_uur)->format('H\ui') }}
-                                </p>
-                            </div>
-
-                            @if (0 < $tak->volgende_activiteit[0]->prijs)
-                                <h6 class="volgende-activiteit__prijs">
-                                    <span class="text--sm">€</span>{{ number_format($tak->volgende_activiteit[0]->prijs, 2, ',', ' ') }}
-                                </ph6>
-                            @endif
+                    @if (isset($tak->volgende_activiteit[0]))
+                        <div class="volgende-activiteit__info
+                            {{ ($tak->volgende_activiteit[0]->start_uur != '14:00:00' || $tak->volgende_activiteit[0]->eind_uur != '17:00:00')
+                                ? 'volgende-activiteit__info--active'
+                                : NULL
+                            }}
+                        ">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-clock"></i></span>
+                            {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->eind_uur)->format('H\ui') }}
                         </div>
 
-                        <p class="volgende-activiteit__omschrijving">
+                        <div class="volgende-activiteit__info
+                            {{ $tak->volgende_activiteit[0]->locatie != 'Lokaal'
+                                ? 'volgende-activiteit__info--active'
+                                : NULL
+                            }}
+                        ">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-map-marker-alt"></i></span>
+                            {{ $tak->volgende_activiteit[0]->locatie }}
+                        </div>
+
+                        <div class="volgende-activiteit__info
+                            {{ $tak->volgende_activiteit[0]->prijs > 0
+                                ? 'volgende-activiteit__info--active'
+                                : NULL
+                            }}
+                        ">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-euro-sign"></i></span>
+                            {{ number_format($tak->volgende_activiteit[0]->prijs, 2, ',', ' ') }}
+                        </div>
+
+                        <p class="volgende-activiteit__info volgende-activiteit__info--active">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-comment-alt"></i></span>
                             {{ str_limit($tak->volgende_activiteit[0]->omschrijving, 200) }}
                         </p>
 
                         <a href="{{ url('/takken/'. strtolower($tak->naam)) }}" class="volgende-activiteit__meer">Bekijk meer ></a>
-                    </div>
-                @endif
+                    @endif
+                </div>
             </div>
         @endforeach
     </div>
