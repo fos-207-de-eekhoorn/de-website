@@ -85,7 +85,13 @@ class AdminController extends Controller
         $new_activiteit->locatie = $request->locatie;
         $new_activiteit->omschrijving = $request->omschrijving;
 
-        $new_activiteit->save();
+        $add = $new_activiteit->save();
+
+        if ($add) {
+            Session::flash('add_success');
+        } else {
+            Session::flash('add_error');
+        }
 
         $tak = $tak = Tak::where('id', $request->tak)->first();
 

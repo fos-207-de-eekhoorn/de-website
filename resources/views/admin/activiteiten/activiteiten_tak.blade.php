@@ -20,13 +20,30 @@
                 </a>
             </div>
 
-            @if (session('edit_success'))
+            @if (session('add_success'))
                 @component('components.flash_message', [
                     'type' => 'success',
+                ])
+                    De activiteit is toegevoegd
+                @endcomponent
+            @endif
+
+            @if (session('add_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Neem screenshots en stuur door naar Paco, hij is jouw vriend!
+                @endcomponent
+            @endif
+
+            @if (session('edit_success'))
+                @component('components.flash_message', [
+                    'type' => 'info',
                 ])
                     De activiteit is aangepast
                 @endcomponent
             @endif
+
             @if (session('edit_error'))
                 @component('components.flash_message', [
                     'type' => 'error',
