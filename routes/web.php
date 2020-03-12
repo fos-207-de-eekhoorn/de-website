@@ -63,3 +63,6 @@ Route::post('/admin/activiteit/add', 'AdminController@post_add_activiteit')
 	->middleware('decrypt:value,tak');
 Route::post('/admin/activiteit/edit', 'AdminController@post_edit_activiteit')
 	->middleware('decrypt:value,id');
+
+Route::post('/admin/activiteit/remove', 'AdminController@delete_activiteit')
+	->middleware('decrypt:value,id');

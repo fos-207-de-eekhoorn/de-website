@@ -28,7 +28,7 @@
                 @component('components.flash_message', [
                     'type' => 'success',
                 ])
-                    De activiteit is toegevoegd
+                    De activiteit is toegevoegd.
                 @endcomponent
             @endif
 
@@ -44,7 +44,7 @@
                 @component('components.flash_message', [
                     'type' => 'info',
                 ])
-                    De activiteit is aangepast
+                    De activiteit is aangepast.
                 @endcomponent
             @endif
 
@@ -52,7 +52,23 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco
+                    Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
+                @endcomponent
+            @endif
+
+            @if (session('delete_success'))
+                @component('components.flash_message', [
+                    'type' => 'warning',
+                ])
+                    De activiteit is verwijderd.
+                @endcomponent
+            @endif
+
+            @if (session('delete_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
                 @endcomponent
             @endif
 
@@ -105,9 +121,24 @@
                             </p>
 
                             <p class="no-margin-bottom">
-                                <a href="{{ url('/admin/activiteit/remove/' . Crypt::encrypt($activiteit->id)) }}" class="link--error">
-                                    <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
-                                </a>
+                                <form action="{{ url('/admin/activiteit/remove') }}" method="POST">
+                                    @csrf
+
+                                    <input
+                                        type="text"
+                                        name="id"
+                                        value="{{ Crypt::encrypt($activiteit->id) }}"
+                                        hidden>
+                                    <input
+                                        type="text"
+                                        name="tak"
+                                        value="{{ strtolower($tak->naam) }}"
+                                        hidden>
+
+                                    <button class="link--error">
+                                        <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
+                                    </button>
+                                </form>
                             </p>
                         </td>
                     </tr>

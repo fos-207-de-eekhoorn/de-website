@@ -135,4 +135,17 @@ class AdminController extends Controller
 
         return redirect('/admin/activiteiten/' . $request->tak);
     }
+
+    public function delete_activiteit(Request $request)
+    {
+        $delete = Activiteit::destroy($request->id);
+
+        if ($delete) {
+            Session::flash('delete_success');
+        } else {
+            Session::flash('delete_error');
+        }
+
+        return redirect('/admin/activiteiten/' . $request->tak);
+    }
 }
