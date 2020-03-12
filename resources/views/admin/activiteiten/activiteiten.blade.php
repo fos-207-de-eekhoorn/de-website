@@ -20,10 +20,20 @@
 
         @foreach($takken as $tak)
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="cs-{{ $tak->kleur }}">
+                <div class="card cs-{{ $tak->kleur }}">
                     <h3>{{ $tak->naam }}</h3>
 
-                    <a href="{{ url('/admin/activiteiten/' . strtolower($tak->naam)) }}">Ga naar activiteiten ></a>
+                    <p class="medium-margin-vertical">
+                        <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}">
+                            <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->naam)) }}">
+                            Ga naar activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </p>
                 </div>
             </div>
         @endforeach
