@@ -92,6 +92,16 @@
 	}
 }
 
+.link {
+	&--error {
+        color: $color-alert-error-dark !important;
+        
+        &:hover {
+            color: $color-alert-error-medium !important;
+        }
+	}
+}
+
 .no-wrap {
 	white-space: nowrap;
 }

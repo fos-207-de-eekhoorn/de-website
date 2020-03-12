@@ -98,7 +98,17 @@
                         </td>
 
                         <td class="table__cell no-wrap">
-                            <a href="{{ url('/admin/activiteit/edit/' . Crypt::encrypt($activiteit->id)) }}"><span class="fa--before"><i class="fas fa-pen"></i></span>Pass aan</a>
+                            <p>
+                                <a href="{{ url('/admin/activiteit/edit/' . Crypt::encrypt($activiteit->id)) }}">
+                                    <span class="fa--before"><i class="fas fa-pen"></i></span>Pass aan
+                                </a>
+                            </p>
+
+                            <p class="no-margin-bottom">
+                                <a href="{{ url('/admin/activiteit/remove/' . Crypt::encrypt($activiteit->id)) }}" class="link--error">
+                                    <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
+                                </a>
+                            </p>
                         </td>
                     </tr>
                 @endforeach
