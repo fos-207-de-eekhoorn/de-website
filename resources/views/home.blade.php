@@ -7,7 +7,7 @@
 
     <div class="row section small-gutters">
         <div class="col-12">
-            <h2 class="text--align-center">Activiteit op {{ $tak_activiteiten[0]->volgende_activiteit[0]->datum }}</h2>
+            <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
         </div>
 
         @foreach ($tak_activiteiten as $tak)
