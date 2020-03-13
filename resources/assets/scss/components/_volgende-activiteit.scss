@@ -5,11 +5,36 @@
 .volgende-activiteit {
     margin-bottom: spacing(md);
 
+    &:hover {
+        .volgende-activiteit {
+            &__inner,
+            &__info,
+            &__link {
+                transition-delay: 0s;
+            }
+
+            &__inner {
+                padding-bottom: spacing(lg);
+            }
+
+            &__info {
+                max-height: spacing(xxl);
+                height: auto;
+                margin-bottom: spacing(sm);
+            }
+
+            &__link {
+                opacity: 1;
+            }
+        }
+    }
+
     &__inner {
-        @include transitions;
+        @include transitions(fast);
+        transition-delay: .6s;
 
         height: 100%;
-        padding: spacing(sm) spacing(md) (spacing(lg) + spacing(md));    
+        padding: spacing(sm) spacing(md) spacing(md);    
     }
 
     &__tak {
@@ -19,21 +44,27 @@
     }
 
     &__info {
+        @include transitions;
+        transition-delay: .6s;
+
         display: flex;
         justify-content: flex-start;
-        margin-bottom: spacing(xs);
+        max-height: 0;
         opacity: .5;
+        overflow: hidden;
 
         font-size: $font-size-text-sm;
-        
-        &:last-child {
-            margin-bottom: 0;
-        }
 
         &--active {
+            max-height: spacing(xxl);
+            margin-bottom: spacing(xs);
             opacity: 1;
 
             font-size: $font-size-text;
+        
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -44,9 +75,13 @@
     }
 
     &__link {
+        @include transitions(fast);
+        transition-delay: .6s;
+
         position: absolute;
         right: spacing(md);
         bottom: spacing(sm);
+        opacity: 0;
 
         font-weight: $font-weight-bold;
         text-align: center;

@@ -53,7 +53,7 @@
 
                         <div class="volgende-activiteit__link">
                             <a href="{{ url('/takken/'. strtolower($tak->naam)) }}">
-                                Bekijk meer<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                                Alle activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
                             </a>
                         </div>
                     @endif
