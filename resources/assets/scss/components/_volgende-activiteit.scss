@@ -5,26 +5,28 @@
 .volgende-activiteit {
     margin-bottom: spacing(md);
 
-    &:hover {
-        .volgende-activiteit {
-            &__inner,
-            &__info,
-            &__link {
-                transition-delay: 0s;
-            }
+    @include mq(md) {
+        &:hover {
+            .volgende-activiteit {
+                &__inner,
+                &__info,
+                &__link {
+                    transition-delay: 0s;
+                }
 
-            &__inner {
-                padding-bottom: spacing(lg);
-            }
+                &__inner {
+                    padding-bottom: spacing(lg);
+                }
 
-            &__info {
-                max-height: spacing(xxl);
-                height: auto;
-                margin-bottom: spacing(sm);
-            }
+                &__info {
+                    max-height: spacing(xxl);
+                    height: auto;
+                    margin-bottom: spacing(sm);
+                }
 
-            &__link {
-                opacity: 1;
+                &__link {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -34,7 +36,11 @@
         transition-delay: .6s;
 
         height: 100%;
-        padding: spacing(sm) spacing(md) spacing(md);    
+        padding: spacing(sm) spacing(md) spacing(lg); 
+        
+        @include mq(md) {
+            padding-bottom: spacing(md);
+        }   
     }
 
     &__tak {
@@ -81,9 +87,13 @@
         position: absolute;
         right: spacing(md);
         bottom: spacing(sm);
-        opacity: 0;
+        opacity: 1;
 
         font-weight: $font-weight-bold;
         text-align: center;
+        
+        @include mq(md) {
+            opacity: 0;
+        }
     }
 }

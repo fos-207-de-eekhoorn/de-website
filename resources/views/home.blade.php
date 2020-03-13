@@ -5,7 +5,7 @@
         <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
     </section>
 
-    <div class="row section small-gutters">
+    <div class="row section section--small-spacing small-gutters">
         <div class="col-12">
             <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
         </div>
