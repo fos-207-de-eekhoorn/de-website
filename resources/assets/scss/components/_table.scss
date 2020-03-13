@@ -5,6 +5,7 @@
 .table {
     border-collapse: collapse;
     width: 100%;
+    border-bottom: 1px solid $color-grey-background;
 
     &__row {
         padding: 0;

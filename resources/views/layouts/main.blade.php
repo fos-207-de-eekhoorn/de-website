@@ -26,7 +26,7 @@
         <meta name="theme-color" content="#c9dd03">
 
         <!-- Styles -->
-        <link href="/css/style.css?v=0.3.0" rel="stylesheet">
+        <link href="/css/style.css?v=0.3.3" rel="stylesheet">
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -204,6 +204,41 @@
                                 Contact
                             </a>
                         </li>
+
+                        @guest
+                        @else
+                            <li class="nav__list-item nav__list-item--sublist{{ Request::is('/admin*') ? ' nav__link--active' : '' }}">
+                                <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
+
+                                <label for="nav__toggle-sublist--auth" class="nav__link">
+                                    Admin<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                                </label>
+
+                                <ul class="nav__sublist">
+                                    <li class="nav__sublist-item">
+                                        <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
+                                            Activiteiten
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/change-password" class="nav__link nav__link--sublist">
+                                            Wijzig wachtwoord
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="{{ route('logout') }}" class="nav__link nav__link--sublist" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <span class="fa--before"><i class="fas fa-sign-out-alt"></i></span>Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
                     </ul>
                 </nav>
             </div>
