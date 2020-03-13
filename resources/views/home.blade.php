@@ -6,38 +6,26 @@
     </section>
 
     <div class="row section">
-        @foreach ($tak_activiteiten as $tak)
-            <div class="col-12 col-md-6 col-lg-3">
-                @if (isset($tak->volgende_activiteit[0]))
-                    <div class="volgende-activiteit card cs-{{ $tak->kleur }}">
-                        <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
+        <div class="col-12">
+            <h2>Belangrijk bericht</h2>
+            <h3>De activiteiten gaan in maart niet meer door wegens het Corona-virus.</h3>
 
-                        <div class="volgende-activiteit__algemene-info">
-                            <div class="volgende-activiteit__timing">
-                                <h5 class="volgende-activiteit__datum">
-                                    {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->format('j M') }}
-                                </h5>
-                                <p class="volgende-activiteit__tijd">
-                                    {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->eind_uur)->format('H\ui') }}
-                                </p>
-                            </div>
+            <h5 class="medium-margin-top">Koekenverkoop</h5>
+            <p>
+                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. Daarom zal de leiding de bestellingen klaarzetten in het lokaal op 21 maart. Als je een bestelling hebt geplaatst dan kan je die op deze dag van 14u tot 17u afhalen. Als je er echt niet geraakt om ze op te halen, dan stuur je de eenheidsleiding een berichtje en zoeken we samen naar een oplossing. Er worden dus geen koeken meer verkocht aan de deuren.
+            </p>
 
-                            @if (0 < $tak->volgende_activiteit[0]->prijs)
-                                <h6 class="volgende-activiteit__prijs">
-                                    <span class="text--sm">€</span>{{ number_format($tak->volgende_activiteit[0]->prijs, 2, ',', ' ') }}
-                                </ph6>
-                            @endif
-                        </div>
+            <h5 class="medium-margin-top">Bivak</h5>
+            <p>
+                De geplande bivakken gaan voorlopig nog door, maar we houden de situatie in de gaten.
+            </p>
 
-                        <p class="volgende-activiteit__omschrijving">
-                            {{ str_limit($tak->volgende_activiteit[0]->omschrijving, 200) }}
-                        </p>
-
-                        <a href="{{ url('/takken/'. strtolower($tak->naam)) }}" class="volgende-activiteit__meer">Bekijk meer ></a>
-                    </div>
-                @endif
-            </div>
-        @endforeach
+            <h5 class="medium-margin-top">Vragen?</h5>
+            <p>
+                Contacteer ons gerust als jullie nog vragen of bezorgdheden hebben.<br>
+                <a href="{{ url('/contact') }}">Contact pagina</a>
+            </p>
+        </div>
     </div>
 
     <div class="row section">
