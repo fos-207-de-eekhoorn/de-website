@@ -51,7 +51,11 @@
                             {{ str_limit($tak->volgende_activiteit[0]->omschrijving, 200) }}
                         </p>
 
-                        <a href="{{ url('/takken/'. strtolower($tak->naam)) }}" class="volgende-activiteit__meer">Bekijk meer ></a>
+                        <div class="volgende-activiteit__link">
+                            <a href="{{ url('/takken/'. strtolower($tak->naam)) }}">
+                                Bekijk meer<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                        </div>
                     @endif
                 </div>
             </div>

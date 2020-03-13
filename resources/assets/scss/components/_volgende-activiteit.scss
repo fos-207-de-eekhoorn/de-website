@@ -6,8 +6,10 @@
     margin-bottom: spacing(md);
 
     &__inner {
+        @include transitions;
+
         height: 100%;
-        padding: spacing(sm) spacing(md) spacing(md);       
+        padding: spacing(sm) spacing(md) (spacing(lg) + spacing(md));    
     }
 
     &__tak {
@@ -38,6 +40,15 @@
     &__icon {
         display: inline-block;
         min-width: spacing(md) + spacing(sm);
-        opacity: .5;
+        opacity: .6;
+    }
+
+    &__link {
+        position: absolute;
+        right: spacing(md);
+        bottom: spacing(sm);
+
+        font-weight: $font-weight-bold;
+        text-align: center;
     }
 }
