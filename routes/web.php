@@ -11,6 +11,14 @@
 |
 */
 
+# Authentication Routes
+Auth::routes(['register' => false]);
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/change-password', 'ChangePasswordController@showChangePasswordForm');
+Route::post('/change-password', 'ChangePasswordController@changePassword');
+
 # General Routes
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
@@ -44,4 +52,18 @@ Route::get('/evenementen/eikeltjesquiz', 'EvenementenController@get_event_eikelt
 	Route::get('/evenementen/bivak/jonge', 'EvenementenController@get_bivak_jonge');
 	Route::get('/evenementen/bivak/oude', 'EvenementenController@get_bivak_oude');
 
-# Documenten Routes
+# Admin Routes
+Route::get('/admin/activiteiten', 'AdminController@get_activiteiten');
+Route::get('/admin/activiteiten/{tak}', 'AdminController@get_activiteiten_tak');
+Route::get('/admin/activiteit/add/', 'AdminController@get_add_activiteit');
+Route::get('/admin/activiteit/add/{tak}', 'AdminController@get_add_activiteit');
+Route::get('/admin/activiteit/edit/{id}', 'AdminController@get_edit_activiteit');
+
+Route::post('/admin/activiteit/add', 'AdminController@post_add_activiteit')
+	->middleware('decrypt:value,tak');
+Route::post('/admin/activiteit/edit', 'AdminController@post_edit_activiteit')
+	->middleware('decrypt:value,id');
+Route::post('/admin/activiteit/remove', 'AdminController@delete_activiteit')
+	->middleware('decrypt:value,id');
+Route::post('/admin/activiteit/remove-undo', 'AdminController@delete_activiteit_undo')
+	->middleware('decrypt:value,id');

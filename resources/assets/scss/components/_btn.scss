@@ -44,6 +44,7 @@
 
     display: inline-block;
     padding: spacing(sm) spacing(md);
+    margin-left: spacing(sm);
 
     text-decoration: none;
 
@@ -55,6 +56,10 @@
 
     &:active {
         @include shadow-none;
+    }
+
+    &:first-child {
+        margin-left: 0;
     }
 
     &--tertiary {
@@ -72,5 +77,18 @@
         padding: spacing(md) spacing(lg);
 
         font-size: $font-size-text-xl;
+    }
+
+    &--without-style {
+        @include shadow-none;
+
+        padding: 0;
+        border: 0;
+        margin: 0;
+        
+
+        &:hover {
+            @include shadow-none;
+        }
     }
 }

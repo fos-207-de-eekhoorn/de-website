@@ -16,6 +16,7 @@
             
             &:hover {
                 background-color: $color-alert-success-medium;
+                color: $color-alert-success-dark;
             }
         }
         &--error {
@@ -25,6 +26,7 @@
             
             &:hover {
                 background-color: $color-alert-error-medium;
+                color: $color-alert-error-dark;
             }
         }
         &--info {
@@ -34,6 +36,7 @@
             
             &:hover {
                 background-color: $color-alert-info-medium;
+                color: $color-alert-info-dark;
             }
         }
         &--warning {
@@ -43,7 +46,16 @@
             
             &:hover {
                 background-color: $color-alert-warning-medium;
+                color: $color-alert-warning-dark;
             }
+        }
+
+        &--without-style {
+        	background-color: rgba($color-white,0);
+        	
+        	&:hover {
+        		background-color: rgba($color-white,0);
+        	}
         }
     }
 }
@@ -116,6 +128,29 @@
                 color: $color-blue-light;
             }
         }
+
+        &:disabled,
+        &--disabled {
+        	@include shadow-none;
+
+        	cursor: not-allowed;
+
+        	&.btn--primary,
+        	&.btn--secondary {
+        		border-color: $color-grey-extra-light;
+        		background-color: $color-grey-extra-light;
+
+        		color: $color-grey-medium;
+
+        		&:hover {
+        			@include shadow-none;
+        		}
+        	}
+
+        	&.btn--tertiary {
+        		color: $color-grey-light;
+        	}
+        }
     }
 
 	.social {
@@ -176,6 +211,10 @@
 	p, a, li {
 		color: $color-yellow-text;
 	}
+	a:hover {
+		color: $color-yellow-title;
+		text-decoration: underline;
+	}
 }
 .cs-mint {
 	background-color: $color-mint;
@@ -185,6 +224,10 @@
 	}
 	p, a, li {
 		color: $color-mint-text;
+	}
+	a:hover {
+		color: $color-mint-title;
+		text-decoration: underline;
 	}
 }
 .cs-salmon {
@@ -196,6 +239,10 @@
 	p, a, li {
 		color: $color-salmon-text;
 	}
+	a:hover {
+		color: $color-salmon-title;
+		text-decoration: underline;
+	}
 }
 .cs-blue-light {
 	background-color: $color-blue-light;
@@ -205,5 +252,9 @@
 	}
 	p, a, li {
 		color: $color-blue-light-text;
+	}
+	a:hover {
+		color: $color-blue-light-title;
+		text-decoration: underline;
 	}
 }
