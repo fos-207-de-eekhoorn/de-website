@@ -107,11 +107,21 @@
                     </li>
 
                     <li class="hierarchielijst__item">
-                        <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/fiscaal-attest-fos207-2019.pdf" class="hierarchielijst__link"  target="_blank">Fiscaal attest</a>
+                        Medische fiches
+
+                        <ul class="hierarchielijst__sublist">
+                            <li class="hierarchielijst__item">
+                                <a href="https://fosopenscouting.be/sites/default/files/inline-files/MEDISCHE-FICHE_2018_16min.pdf" class="hierarchielijst__link"  target="_blank">Medische fiche (-16jarigen)</a>
+                            </li>
+
+                            <li class="hierarchielijst__item">
+                                <a href="https://fosopenscouting.be/sites/default/files/inline-files/MEDISCHE-FICHE_2018_16plus.pdf" class="hierarchielijst__link"  target="_blank">Medische fiche (+16jarigen)</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="hierarchielijst__item">
-                        <a href="https://scoutsoostkamp.be/sites/scoutsoostkamp.fossite.be/files/wysiwyg/medische-fiche_18-19_1.pdf" class="hierarchielijst__link"  target="_blank">Medische fiche</a>
+                        <a href="{{ asset('/docs/FiscaalAttest-FOS207.pdf') }}" class="hierarchielijst__link"  target="_blank">Fiscaal attest</a>
                     </li>
                 </ul>
             </div>
