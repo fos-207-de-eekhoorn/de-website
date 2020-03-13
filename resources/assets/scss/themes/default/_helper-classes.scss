@@ -130,6 +130,27 @@
 	margin-right: 0;
 }
 
+.medium-margin,
+.medium-margin-vertical,
+.medium-margin-top {
+	margin-top: spacing(md);
+}
+.medium-margin,
+.medium-margin-vertical,
+.medium-margin-bottom {
+	margin-bottom: spacing(md);
+}
+.medium-margin,
+.medium-margin-horizontal,
+.medium-margin-left {
+	margin-left: spacing(md);
+}
+.medium-margin,
+.medium-margin-horizontal,
+.medium-margin-right {
+	margin-right: spacing(md);
+}
+
 .shadow {
 	@include shadow-standard;
 }
