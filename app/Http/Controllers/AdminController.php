@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Crypt;
 use App\Tak;
-use App\activiteit;
+use App\Activiteit;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
