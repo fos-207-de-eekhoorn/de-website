@@ -3,7 +3,7 @@
 @section('content')
     @component('components.banner', [
         'banner' => (object)[
-            'color' => 'green',
+            'color' => 'blue',
             'pattern' => '1',
             'strength' => 'light',
         ],
@@ -15,37 +15,31 @@
         <div class="col-12">
         	<h2>Alle evenementen</h2>
 
-            <div class="row">
+            <ul class="evenementen-list">
                 @foreach($evenementen as $evenement)
-                    <div class="col-12 col-md-4">
-                        <h3>{{ $evenement->naam }}</h3>
+                    <li class="evenementen-list__item evenementen-list-item">
+                        <div class="evenementen-list-item__visual">
+                            <img src="{{ asset('/img/banners/' . $evenement->kleur . '-' . $evenement->banner_patroon . '-' . $evenement->banner_sterkte . '.png') }}" class="evenementen-list-item__image">
 
-                        <div>
-                            {!! $evenement->omschrijving !!}
+                            <p class="evenementen-list-item__date">
+                                <span class="evenementen-list-item__day">
+                                    {{ Carbon\Carbon::parse($evenement->start_datum)->format('j') }}
+                                </span>
+
+                                <span class="evenementen-list-item__month">
+                                    {{ Carbon\Carbon::parse($evenement->start_datum)->monthName }}
+                                </span>
+                            </p>
                         </div>
 
-                        <h5>Datum</h5>
-                        <p>
-                            {{ $evenement->start_datum }} - {{ $evenement->eind_datum }}
-                        </p>
-
-                        <h5>Tijd</h5>
-                        <p>
-                            {{ $evenement->start_uur }} - {{ $evenement->eind_uur }}
-                        </p>
-
-                        <h5>Prijs</h5>
-                        <p>
-                            {{ $evenement->prijs }}
-                        </p>
-
-                        <h5>Locatie</h5>
-                        <p>
-                            {{ $evenement->locatie }}
-                        </p>
-                    </div>
+                        <div class="evenementen-list-item__info">
+                            <h3 class="evenementen-list-item__titel">{{ $evenement->naam }}</h3>
+                            <p class="evenementen-list-item__location">{{ $evenement->locatie }}</p>
+                            <p class="evenementen-list-item__price">{{ $evenement->prijs }}</p>
+                        </div>
+                    </li>
                 @endforeach
-            </div>
+            </ul>
         </div>
     </div>
 @endsection
