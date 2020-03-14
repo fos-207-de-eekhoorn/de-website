@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Evenement;
+
 class EvenementenController extends Controller
 {
     public function get_alle_evenementen()
     {
-        return view('evenementen.evenementen');
+        $evenementen = Evenement::where('active', 1)
+            ->whereDate('eind_datum', '>=', date('Y-m-d'))
+            ->with([
+                'evenement_tak',
+                'evenement_tak.tak',
+            ])
+            ->get();
+
+        return view('evenementen.evenementen', [
+            'evenementen' => $evenementen,
+        ]);
     }
 
     public function get_event_startdag()
