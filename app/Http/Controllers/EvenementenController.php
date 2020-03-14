@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Evenement;
+use Illuminate\Support\Facades\Session;
 
 class EvenementenController extends Controller
 {
@@ -19,6 +20,27 @@ class EvenementenController extends Controller
         return view('evenementen.evenementen', [
             'evenementen' => $evenementen,
         ]);
+    }
+
+    public function get_evenement_details($naam)
+    {
+        $naam = str_replace('-', ' ', $naam);
+        $evenement = Evenement::where('naam', $naam)
+            ->with([
+                'evenement_tak',
+                'evenement_tak.tak',
+            ])
+            ->first();
+
+        if (is_object($evenement)) {
+            return view('evenementen.evenement_details', [
+                'evenement' => $evenement,
+            ]);
+        } else { // todo
+            Session::flash('error');
+
+            return redirect('evenementen');
+        }
     }
 
     public function get_event_startdag()
