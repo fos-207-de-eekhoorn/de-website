@@ -65,12 +65,12 @@
                         </h2>
 
                         <h4>
-                            Er zijn op dit moment geen evenementen
+                            Er zijn geen evenementen
                         </h4>
 
                         <p>
-                            Er zijn op dit moment geen evenementen geplant in de nabije toekomst.<br>
-                            Kom zeker later eens terug om up-to-date te blijven van onze evenementen!
+                            Er zijn op dit moment geen evenementen gepland in de nabije toekomst.<br>
+                            Kom zeker later eens terug om op de hoogte te blijven van onze evenementen!
                         </p>
                     </div>
                 </div>
