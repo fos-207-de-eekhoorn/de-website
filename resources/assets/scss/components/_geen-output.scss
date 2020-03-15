@@ -4,12 +4,24 @@
 
 .geen-output {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    
+    text-align: center;
+    
+    @include mq(md) {
+        flex-direction: row;
+        
+        text-align: left;
+    }
     
     &__icon {
         font-size: spacing(xxxl);
         color: $color-salmon;
-        margin-right: spacing(xl);
+    
+        @include mq(md) {
+            margin-right: spacing(xl);
+        }
     }
 
     &__message {
