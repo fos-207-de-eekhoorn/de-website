@@ -1,0 +1,20 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Geen output
+//  ------------------------------------------------------------------------------------
+
+.geen-output {
+    display: flex;
+    justify-content: center;
+    
+    &__icon {
+        font-size: spacing(xxxl);
+        color: $color-salmon;
+        margin-right: spacing(xl);
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

@@ -13,10 +13,8 @@
 
     <div class="row section">
         <div class="col-12">
-        	<h2>Alle evenementen</h2>
-
-            <ul class="evenementen-list row small-gutters">
-                @foreach($evenementen as $evenement)
+            @forelse($evenementen as $evenement)
+                <ul class="evenementen-list row small-gutters">
                     <li class="evenementen-list__item col-12 col-md-6">
                         <a href="#">
                             <div class="evenementen-list-item">
@@ -54,8 +52,29 @@
                             </div>
                         </a>
                     </li>
-                @endforeach
-            </ul>
+                </ul>
+            @empty
+                <div class="geen-output">
+                    <div class="geen-output__icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+
+                    <div class="geen-output__message">
+                        <h2>
+                            Het spijt ons<span class="fa--after text-color--blue-light"><i class="far fa-frown"></i></span>
+                        </h2>
+
+                        <h4>
+                            Er zijn op dit moment geen evenementen
+                        </h4>
+
+                        <p>
+                            Er zijn op dit moment geen evenementen geplant in de nabije toekomst.<br>
+                            Kom zeker later eens terug om up-to-date te blijven van onze evenementen!
+                        </p>
+                    </div>
+                </div>
+            @endforelse
         </div>
     </div>
 @endsection

@@ -76,6 +76,31 @@
 		&--extra-dark {
 			color: $color-grey-extra-dark;
 		}
+
+		&--mint {
+			color: $color-mint;
+		}
+		&--red {
+			color: $color-red;
+		}
+		&--salmon {
+			color: $color-salmon;
+		}
+		&--yellow {
+			color: $color-yellow;
+		}
+		&--green-dark {
+			color: $color-green-dark;
+		}
+		&--blue-light {
+			color: $color-blue-light;
+		}
+		&--brown {
+			color: $color-brown;
+		}
+		&--yellow-light {
+			color: $color-yellow-light;
+		}
 	}
 }
 
@@ -123,6 +148,10 @@
 		float: right;
 		margin-left: spacing(md);
 	}
+}
+
+.icon {
+	opacity: .6;
 }
 
 //  Layout
