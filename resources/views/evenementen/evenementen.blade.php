@@ -13,48 +13,50 @@
 
     <div class="row section">
         <div class="col-12">
-            @forelse($evenementen as $evenement)
+            @if(!$evenementen->isEmpty())
                 <ul class="evenementen-list row small-gutters">
-                    <li class="evenementen-list__item col-12 col-md-6">
-                        <a href="#">
-                            <div class="evenementen-list-item">
-                                <div class="evenementen-list-item__visual evenementen-list-item__visual--{{ $evenement->kleur }}">
-                                    <img src="{{ asset('/img/banners/' . $evenement->kleur . '-' . $evenement->banner_patroon . '-' . $evenement->banner_sterkte . '.png') }}" class="evenementen-list-item__image">
+                    @foreach($evenementen as $evenement)
+                        <li class="evenementen-list__item col-12 col-md-6">
+                            <a href="#">
+                                <div class="evenementen-list-item">
+                                    <div class="evenementen-list-item__visual evenementen-list-item__visual--{{ $evenement->kleur }}">
+                                        <img src="{{ asset('/img/banners/' . $evenement->kleur . '-' . $evenement->banner_patroon . '-' . $evenement->banner_sterkte . '.png') }}" class="evenementen-list-item__image">
 
-                                    <p class="evenementen-list-item__date">
-                                        <span class="evenementen-list-item__day">
-                                            {{ Carbon\Carbon::parse($evenement->start_datum)->format('j') }}
-                                        </span>
+                                        <p class="evenementen-list-item__date">
+                                            <span class="evenementen-list-item__day">
+                                                {{ Carbon\Carbon::parse($evenement->start_datum)->format('j') }}
+                                            </span>
 
-                                        <span class="evenementen-list-item__month">
-                                            {{ Carbon\Carbon::parse($evenement->start_datum)->monthName }}
-                                        </span>
-                                    </p>
+                                            <span class="evenementen-list-item__month">
+                                                {{ Carbon\Carbon::parse($evenement->start_datum)->monthName }}
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="evenementen-list-item__info">
+                                        <h3 class="evenementen-list-item__titel">
+                                            {{ $evenement->naam }}
+                                        </h3>
+
+                                        <p class="evenementen-list-item__text evenementen-list-item__text--location">
+                                            <span class="evenementen-list-item__icon"><i class="fas fa-map-marker-alt"></i></span>{{ $evenement->locatie }}
+                                        </p>
+
+                                        <p class="evenementen-list-item__text evenementen-list-item__text--time">
+                                            <span class="evenementen-list-item__icon"><i class="fas fa-clock"></i></span>Start om {{ Carbon\Carbon::parse($evenement->start_uur)->format('H\ui') }}
+                                        </p>
+
+                                        <p class="evenementen-list-item__text evenementen-list-item__text--price">
+                                            <span class="evenementen-list-item__icon"><i class="fas fa-euro-sign"></i></span>{{ $evenement->prijs }}
+                                        </p>
+                                    </div>
                                 </div>
-
-                                <div class="evenementen-list-item__info">
-                                    <h3 class="evenementen-list-item__titel">
-                                        {{ $evenement->naam }}
-                                    </h3>
-
-                                    <p class="evenementen-list-item__text evenementen-list-item__text--location">
-                                        <span class="evenementen-list-item__icon"><i class="fas fa-map-marker-alt"></i></span>{{ $evenement->locatie }}
-                                    </p>
-
-                                    <p class="evenementen-list-item__text evenementen-list-item__text--time">
-                                        <span class="evenementen-list-item__icon"><i class="fas fa-clock"></i></span>Start om {{ Carbon\Carbon::parse($evenement->start_uur)->format('H\ui') }}
-                                    </p>
-
-                                    <p class="evenementen-list-item__text evenementen-list-item__text--price">
-                                        <span class="evenementen-list-item__icon"><i class="fas fa-euro-sign"></i></span>{{ $evenement->prijs }}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
-            @empty
-                <div class="geen-output">
+            @else
+                <div class="geen-output justify-self-center">
                     <div class="geen-output__icon">
                         <i class="fas fa-calendar-times"></i>
                     </div>
@@ -69,12 +71,12 @@
                         </h4>
 
                         <p>
-                            Er zijn op dit moment geen evenementen gepland in de nabije toekomst.<br>
+                            Momenteel zijn er geen evenementen gepland in de nabije toekomst.<br>
                             Kom zeker later eens terug om op de hoogte te blijven van onze evenementen!
                         </p>
                     </div>
                 </div>
-            @endforelse
+            @endif
         </div>
     </div>
 @endsection
