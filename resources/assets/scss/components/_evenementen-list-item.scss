@@ -7,8 +7,13 @@
     @include shadow-standard;
 
     display: flex;
+    flex-direction: column;
     overflow: hidden;
     background-color: $color-grey-background;
+
+    @include mq(md) {
+        flex-direction: row;
+    }
     
     &:hover {
         .evenementen-list-item {
@@ -26,8 +31,12 @@
 
     &__visual {
         position: relative;
-        width: 30%;
+        width: 100%;
         padding-bottom: 25%;
+
+        @include mq(md) {
+            width: 30%;
+        }
 
         &--green,
         &--mint,
@@ -92,8 +101,12 @@
 
     &__info {
         position: relative;
-        width: 70%;
+        width: 100%;
         padding: spacing(md);
+
+        @include mq(md) {
+            width: 70%;
+        }
     }
 
     &__titel {
@@ -101,6 +114,7 @@
 
         display: flex;
         align-items: baseline;
+        justify-content: center;
 
         font-weight: $font-weight-bold;
 
@@ -115,6 +129,10 @@
             margin-left: spacing(sm);
             
             color: $color-grey-extra-dark;
+        }
+
+        @include mq(md) {
+            justify-content: flex-start;
         }
     }
 
