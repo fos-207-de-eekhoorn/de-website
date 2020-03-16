@@ -11,6 +11,7 @@ class EvenementenController extends Controller
     {
         $evenementen = Evenement::where('active', 1)
             ->whereDate('eind_datum', '>=', date('Y-m-d'))
+            ->orderBy('start_datum', 'asc')
             ->with([
                 'evenement_tak',
                 'evenement_tak.tak',
