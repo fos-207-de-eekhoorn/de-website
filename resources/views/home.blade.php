@@ -17,12 +17,12 @@
 
             <h5 class="medium-margin-top">Koekenverkoop</h5>
             <p>
-                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. We wachten zeker nog tot 5 april om deze te verdelen. 
+                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. We wachten zeker nog tot 5 april om deze te verdelen.
             </p>
 
             <h5 class="medium-margin-top">Bivak</h5>
             <p>
-                De bivakken de bevers, de welpen en de jonge worden jammer genoeg geannuleerd. Het bivak van de oude in mei gaat nog door. Voor de geannuleerde bivakken zijn we nog opzoek naar een leuk alternatief! De kinderen die al ingeschreven waren krijgen zo snel mogelijk hun inschrijvingsgeld teruggestort. 
+                De bivakken van de bevers, welpen en JG/V's worden jammer genoeg geannuleerd. Het bivak van de oude in mei gaat nog door. Voor de geannuleerde bivakken zijn we nog opzoek naar een leuk alternatief! De kinderen die al ingeschreven waren krijgen zo snel mogelijk hun inschrijvingsgeld teruggestort.
             </p>
 
             <h5 class="medium-margin-top">Vragen?</h5>
