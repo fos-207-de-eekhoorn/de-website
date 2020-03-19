@@ -150,7 +150,7 @@
                         <td class="table__cell no-wrap">
                             <p>
                                 <a href="{{ url('/admin/activiteit/edit/' . Crypt::encrypt($activiteit->id)) }}">
-                                    <span class="fa--before"><i class="fas fa-pen"></i></span>Pass aan
+                                    <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                 </a>
                             </p>
 

@@ -8,16 +8,21 @@
     <div class="row section">
         <div class="col-12">
             <h2>Belangrijk bericht</h2>
-            <h3>De activiteiten gaan in maart niet meer door wegens het Corona-virus.</h3>
+            <h3>De activiteiten gaan niet door wegens het Corona-virus.</h3>
+
+            <h5 class="medium-margin-top">Activiteiten</h5>
+            <p>
+                Voorlopig zijn alle activiteiten tot en met 18 april afgelast. Daarna hopen we terug te mogen beginnen op 25 april. Onder <a href="{{ url('/takken') }}">takken</a> op onze site vindt u altijd de meest recente informatie over de activiteiten.
+            </p>
 
             <h5 class="medium-margin-top">Koekenverkoop</h5>
             <p>
-                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. Daarom zal de leiding de bestellingen klaarzetten in het lokaal op 21 maart. Als je een bestelling hebt geplaatst dan kan je die op deze dag van 14u tot 17u afhalen. Als je er echt niet geraakt om ze op te halen, dan stuur je de eenheidsleiding een berichtje en zoeken we samen naar een oplossing. Er worden dus geen koeken meer verkocht aan de deuren.
+                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. We wachten zeker nog tot 5 april om deze te verdelen.
             </p>
 
             <h5 class="medium-margin-top">Bivak</h5>
             <p>
-                De geplande bivakken gaan voorlopig nog door, maar we houden de situatie in de gaten.
+                De bivakken van de bevers, welpen en JG/V's worden jammer genoeg geannuleerd. Het bivak van de oude in mei gaat nog door. Voor de geannuleerde bivakken zijn we nog opzoek naar een leuk alternatief! De kinderen die al ingeschreven waren krijgen zo snel mogelijk hun inschrijvingsgeld teruggestort.
             </p>
 
             <h5 class="medium-margin-top">Vragen?</h5>
@@ -56,23 +61,21 @@
                     <div class="col-12 col-md-4">
                         <h5>Bevers en welpen</h4>
 
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>17 tot 19 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Poperinge</li>
-                        </ul>
+                        <p class="text--bold text--xl">
+                            Afgelast
+                        </p>
 
-                        <a href="{{ url('/evenementen/bivak/bevers-welpen') }}" class="btn btn--primary">Meer info</a>
+                        <a class="btn btn--primary btn--disabled">Meer info</a>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <h5>Jonge</h4>
 
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>10 tot 13 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Ieper</li>
-                        </ul>
+                        <p class="text--bold text--xl">
+                            Afgelast
+                        </p>
 
-                        <a href="{{ url('/evenementen/bivak/jonge') }}" class="btn btn--primary">Meer info</a>
+                        <a class="btn btn--primary btn--disabled">Meer info</a>
                     </div>
 
                     <div class="col-12 col-md-4">
