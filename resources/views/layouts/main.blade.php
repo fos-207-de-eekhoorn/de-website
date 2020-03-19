@@ -180,18 +180,6 @@
                                 --}}
 
                                 <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
-                                        Bivak bevers & welpen
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/jonge" class="nav__link nav__link--sublist">
-                                        Bivak JV/G
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
                                     <a href="/evenementen/bivak/oude" class="nav__link nav__link--sublist">
                                         Bivak Oude
                                     </a>
