@@ -61,23 +61,21 @@
                     <div class="col-12 col-md-4">
                         <h5>Bevers en welpen</h4>
 
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>17 tot 19 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Poperinge</li>
-                        </ul>
+                        <p class="text--bold text--xl">
+                            Afgelast
+                        </p>
 
-                        <a href="{{ url('/evenementen/bivak/bevers-welpen') }}" class="btn btn--primary">Meer info</a>
+                        <a class="btn btn--primary btn--disabled">Meer info</a>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <h5>Jonge</h4>
 
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>10 tot 13 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Ieper</li>
-                        </ul>
+                        <p class="text--bold text--xl">
+                            Afgelast
+                        </p>
 
-                        <a href="{{ url('/evenementen/bivak/jonge') }}" class="btn btn--primary">Meer info</a>
+                        <a class="btn btn--primary btn--disabled">Meer info</a>
                     </div>
 
                     <div class="col-12 col-md-4">
