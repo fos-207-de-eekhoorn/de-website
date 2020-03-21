@@ -106,7 +106,8 @@
             <textarea
                 id="prutske"
                 name="prutske"
-                class="form__textarea form__input--full-width"></textarea>
+                class="form__textarea form__input--full-width"
+                style="height: 16rem;">{{ $export }}</textarea>
         </div>
     </div>
 

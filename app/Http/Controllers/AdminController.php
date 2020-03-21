@@ -9,6 +9,7 @@ use App\Activiteit;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -140,11 +141,19 @@ class AdminController extends Controller
                 ->whereDate('datum', '>=', date($year . '-0' . $month . '-01'))
                 ->get();
 
+            $export = '';
+            foreach ($activiteiten as $activiteit) {
+                $export = $export . Carbon::parse($activiteit->datum)->format('j M');
+                $export = $export . "\t";
+                $export = $export . $activiteit->omschrijving;
+                $export = $export . "\n";
+            }
+
             return view('admin.activiteiten.prutske', [
                 'tak' => $request->tak,
                 'month' => $month,
                 'year' => $year,
-                'activiteiten' => $activiteiten
+                'export' => $export
             ]);
         } else {
             return view('admin.activiteiten.prutske', [
