@@ -7,6 +7,7 @@ use App\Http\Shared\CommonHelpers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
             'el' => $this->get_el(),
             'takken' => Tak::get(),
         ]);
+        Carbon::setLocale(config('app.locale'));
     }
 
     /**
