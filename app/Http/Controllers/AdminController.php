@@ -122,13 +122,7 @@ class AdminController extends Controller
             ? $request->month
             : date('m');
 
-        if (intval($month, 10) % 2 === 0) {
-            $month = intval($month, 10) + 1;
-
-            if ($month < 10) $month = '0' . $month;
-            else if ($month === 13) $month = '01';
-            else strval($month);
-        }
+        $months = $this->parse_odd_str_date($month);
 
         $year = isset($request->year)
             ? $request->year
@@ -138,7 +132,8 @@ class AdminController extends Controller
             $tak_id = Tak::where('naam', $request->tak)->first('id')->id;
 
             $activiteiten = Activiteit::where('tak_id', $tak_id)
-                ->whereDate('datum', '>=', date($year . '-0' . $month . '-01'))
+                ->whereDate('datum', '>=', date($year . '-' . $months[0] . '-01'))
+                ->whereDate('datum', '<=', date($year . '-' . $months[1] . '-31'))
                 ->get();
 
             $export = '';
