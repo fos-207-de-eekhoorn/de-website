@@ -17,7 +17,7 @@
         <div class="col-12">
             <h2>Export voor het prutske</h2>
 
-            <form class="form" action="/admin/activiteit/prutske" method="GET">
+            <form class="form" action="{{ url('/admin/activiteiten/prutske') }}" method="GET">
                 {{-- Input --}}
                 <div class="row">
                     {{-- Tak --}}
@@ -108,7 +108,7 @@
                     id="prutske"
                     name="prutske"
                     class="form__textarea form__input--full-width"
-                    style="height: 16rem;">{{ $export }}</textarea>
+                    style="height: 24rem;">{{ $export }}</textarea>
             </div>
         </div>
     @endif
