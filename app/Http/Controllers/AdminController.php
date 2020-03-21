@@ -114,6 +114,46 @@ class AdminController extends Controller
         }
     }
 
+    public function get_for_prutske(Request $request)
+    {
+
+        $month = isset($request->month)
+            ? $request->month
+            : date('m');
+
+        if (intval($month, 10) % 2 === 0) {
+            $month = intval($month, 10) + 1;
+
+            if ($month < 10) $month = '0' . $month;
+            else if ($month === 13) $month = '01';
+            else strval($month);
+        }
+
+        $year = isset($request->year)
+            ? $request->year
+            : date('Y');
+
+        if (isset($request->tak)) {
+            $tak_id = Tak::where('naam', $request->tak)->first('id')->id;
+
+            $activiteiten = Activiteit::where('tak_id', $tak_id)
+                ->whereDate('datum', '>=', date($year . '-0' . $month . '-01'))
+                ->get();
+
+            return view('admin.activiteiten.prutske', [
+                'tak' => $request->tak,
+                'month' => $month,
+                'year' => $year,
+                'activiteiten' => $activiteiten
+            ]);
+        } else {
+            return view('admin.activiteiten.prutske', [
+                'month' => $month,
+                'year' => $year
+            ]);
+        }   
+    }
+
     public function post_edit_activiteit(Request $request)
     {
         $activiteit = Activiteit::find($request->id);
