@@ -15,7 +15,10 @@
     {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12">
-            <h2>Takken</h2> 
+            <div class="multiple-titles small-margin-bottom">
+                <h2>Takken</h2>
+                <a href="{{ url('/admin/activiteiten/prutske') }}" class="btn btn--secondary align-self-start">Export voor het prutske</a>
+            </div>
         </div>
 
         @foreach($takken as $tak)
