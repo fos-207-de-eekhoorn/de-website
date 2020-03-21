@@ -99,17 +99,19 @@
         </div>
     </div>
 
-    <div class="row section">
-        <div class="col-12">
-            <h4>Activiteiten</h4>
+    @if(isset($export))
+        <div class="row section">
+            <div class="col-12">
+                <h4>Activiteiten @if(isset($tak)) voor de {{ $tak }} @endif</h4>
 
-            <textarea
-                id="prutske"
-                name="prutske"
-                class="form__textarea form__input--full-width"
-                style="height: 16rem;">{{ $export }}</textarea>
+                <textarea
+                    id="prutske"
+                    name="prutske"
+                    class="form__textarea form__input--full-width"
+                    style="height: 16rem;">{{ $export }}</textarea>
+            </div>
         </div>
-    </div>
+    @endif
 
     <script>
         (function($){
