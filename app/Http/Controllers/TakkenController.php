@@ -29,7 +29,7 @@ class TakkenController extends Controller
                 },
                 'leiding_tak.leider',
                 'activiteiten' => function ($query) {
-                    $query->whereDate('datum', '>=', date('Y-m-d'));;
+                    $query->whereDate('datum', '>=', date('Y-m-d'));
                 },
             ])
             ->first();
