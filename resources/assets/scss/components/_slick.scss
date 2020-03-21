@@ -61,7 +61,7 @@
 				@include border-radius;
 				@include shadow-standard;
 
-				width: spacing(md);
+				width: spacing(md) + spacing(sm);
 				height: spacing(md);
 				border: spacing(xxs) solid $color-white;
 				background-color: $color-blue;
