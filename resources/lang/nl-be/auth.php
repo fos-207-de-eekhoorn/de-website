@@ -1,0 +1,26 @@
+<?php
+
+return [
+  'a_strong_password' => 'Een sterk wachtwoord bestaat uit:',
+  'change_password' => 'Wachtwoord wijzigen',
+  'confirm_new_password' => 'Bevestig nieuw wachtwoord',
+  'current_password' => 'Huidig wachtwoord',
+  'enter_your_email' => 'Voer je e-mailadres in zodat we een link kunnen sturen om je wachtwoord opnieuw in te stellen.',
+  'failed' => 'Deze combinatie van e-mailadres en wachtwoord is niet geldig.',
+  'field_is_required' => 'Dit veld is verplicht',
+  'fill_in_password' => 'Vul hieronder het nieuwe wachtwoord in en klik op Verzenden.',
+  'forgot_password' => 'Wachtwoord vergeten',
+  'mail_new_password' => 'Nieuw wachtwoord e-mailen',
+  'medium' => 'Gemiddeld',
+  'new_password' => 'Nieuw wachtwoord',
+  'not_accepted' => 'Te zwak',
+  'not_received_the_link' => 'Heb je de link niet ontvangen?',
+  'reset_password' => 'Reset wachtwoord',
+  'secure' => 'Veilig',
+  'send_new_email' => 'Zend een nieuwe e-mail.',
+  'set_new_password' => 'Nieuw wachtwoord instellen',
+  'throttle' => 'Te veel mislukte loginpogingen. Probeer het over :seconds seconden nogmaals.',
+  'very_strong' => 'Zeer sterk',
+  'weak' => 'Zwak',
+  'having_trouble' => 'Als je problemen onder vindt met  \\:actionText\\',
+];

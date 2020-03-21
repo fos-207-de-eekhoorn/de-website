@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Leider;
+
 class EvenementenController extends Controller
 {
     public function get_alle_evenementen()
@@ -46,12 +48,28 @@ class EvenementenController extends Controller
 
     public function get_bivak_bevers_welpen()
     {
-        return view('evenementen.bivak.bevers_welpen');
+        $takleiders_ids = [2, 10];
+        $takleiders_ids_ordered = implode(',', $takleiders_ids);
+        $takleiders = Leider::whereIn('id', $takleiders_ids)
+            ->orderByRaw("FIELD(id, $takleiders_ids_ordered)")
+            ->get();
+
+        return view('evenementen.bivak.bevers_welpen', [
+            'takleiders' => $takleiders,
+        ]);
     }
 
     public function get_bivak_jonge()
     {
-        return view('evenementen.bivak.jonge');
+        $takleiders_ids = [18];
+        $takleiders_ids_ordered = implode(',', $takleiders_ids);
+        $takleiders = Leider::whereIn('id', $takleiders_ids)
+            ->orderByRaw("FIELD(id, $takleiders_ids_ordered)")
+            ->get();
+
+        return view('evenementen.bivak.jonge', [
+            'takleiders' => $takleiders,
+        ]);
     }
 
     public function get_bivak_oude()

@@ -1,5 +1,5 @@
 <div class="flash-message flash-message--{{ $type }}">
-    <p class="flash-message__message">
+    <span class="flash-message__message">
     	@switch($type)
     		@case('success')
         		<span class="fa--before"><i class="fas fa-check"></i></span>
@@ -15,5 +15,5 @@
         		@break
         @endswitch
         {{ $slot }}
-    </p>
+    </span>
 </div>

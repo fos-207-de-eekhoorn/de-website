@@ -4,6 +4,33 @@
 
 .form {
 
+    &__feedback {
+        @include border-radius;
+
+        padding: spacing(sm) spacing(md);
+        border: 1px solid;
+        margin: 0 0 spacing(md);
+
+        &--success {
+            border-color: $color-alert-success-medium;
+            background-color: $color-alert-success-light;
+
+            color: $color-alert-success-dark;
+        }
+        &--error {
+            border-color: $color-alert-error-medium;
+            background-color: $color-alert-error-light;
+
+            color: $color-alert-error-dark;
+        }
+        &--warning {
+            border-color: $color-alert-warning-medium;
+            background-color: $color-alert-warning-light;
+
+            color: $color-alert-warning-dark;
+        }
+    }
+
     &__section {
         margin: 0 0 spacing(md);
 
@@ -90,6 +117,13 @@
 
         &:focus {
             outline: none;
+        }
+    }
+
+    &__input {
+        &:disabled {
+            background-color: $color-grey-extra-light;
+            cursor: not-allowed;
         }
     }
 

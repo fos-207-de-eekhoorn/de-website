@@ -5,6 +5,7 @@
         <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
     </section>
 
+    {{--
     <div class="row section section--small-spacing small-gutters">
         <div class="col-12">
             <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
@@ -61,6 +62,35 @@
             </div>
         @endforeach
     </div>
+    --}}
+
+    <div class="row section">
+        <div class="col-12">
+            <h2>Belangrijk bericht</h2>
+            <h3>De activiteiten gaan niet door wegens het Corona-virus.</h3>
+
+            <h5 class="medium-margin-top">Activiteiten</h5>
+            <p>
+                Voorlopig zijn alle activiteiten tot en met 18 april afgelast. Daarna hopen we terug te mogen beginnen op 25 april. Onder <a href="{{ url('/takken') }}">takken</a> op onze site vindt u altijd de meest recente informatie over de activiteiten.
+            </p>
+
+            <h5 class="medium-margin-top">Koekenverkoop</h5>
+            <p>
+                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. We wachten zeker nog tot 5 april om deze te verdelen.
+            </p>
+
+            <h5 class="medium-margin-top">Bivak</h5>
+            <p>
+                De bivakken van de bevers, welpen en JG/V's worden jammer genoeg geannuleerd. Het bivak van de oude in mei gaat nog door. Voor de geannuleerde bivakken zijn we nog opzoek naar een leuk alternatief! De kinderen die al ingeschreven waren krijgen zo snel mogelijk hun inschrijvingsgeld teruggestort.
+            </p>
+
+            <h5 class="medium-margin-top">Vragen?</h5>
+            <p>
+                Contacteer ons gerust als jullie nog vragen of bezorgdheden hebben.<br>
+                <a href="{{ url('/contact') }}">Contact pagina</a>
+            </p>
+        </div>
+    </div>
 
     <div class="row section">
         <div class="col-12 col-md-8 col-lg-9">
@@ -90,30 +120,28 @@
                     <div class="col-12 col-md-4">
                         <h5>Bevers en welpen</h4>
 
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>17 tot 19 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Poperinge</li>
-                        </ul>
+                        <p class="text--bold text--xl">
+                            Afgelast
+                        </p>
 
-                        <a href="{{ url('/evenementen/bivak/bevers-welpen') }}" class="btn btn--primary">Meer info</a>
+                        <a class="btn btn--primary btn--disabled">Meer info</a>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <h5>Jonge</h4>
 
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>10 tot 13 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Ieper</li>
-                        </ul>
+                        <p class="text--bold text--xl">
+                            Afgelast
+                        </p>
 
-                        <a href="{{ url('/evenementen/bivak/jonge') }}" class="btn btn--primary">Meer info</a>
+                        <a class="btn btn--primary btn--disabled">Meer info</a>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <h5>Oude</h4>
 
                         <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>4 tot 6 mei</li>
+                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>21 tot 24 mei</li>
                             <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Lokoren</li>
                         </ul>
 
