@@ -104,11 +104,9 @@
             <div class="col-12">
                 <h4>Activiteiten @if(isset($tak)) voor de {{ $tak }} @endif</h4>
 
-                <textarea
-                    id="prutske"
-                    name="prutske"
-                    class="form__textarea form__input--full-width"
-                    style="height: 24rem;">{{ $export }}</textarea>
+                <div class="copy-paste" contenteditable="true">
+                    {!! $export !!}
+                </div>
             </div>
         </div>
     @endif
@@ -118,6 +116,18 @@
             @if(isset($tak)) document.getElementById('tak').value = '{{ $tak }}'; @endif
             document.getElementById('month').value = '{{ $month }}';
             document.getElementById('year').value = '{{ $year }}';
+
+            /* Get the text field */
+            var copyText = document.getElementById("prutske");
+
+            /* Select the text field */
+            copyText.select();
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
         })(jQuery);
     </script>
 @endsection
