@@ -104,7 +104,7 @@
             <div class="col-12">
                 <h4>Activiteiten @if(isset($tak)) voor de {{ $tak }} @endif</h4>
 
-                <div class="copy-paste" contenteditable="true">
+                <div class="copy-paste copy-paste--prutske" contenteditable="true">
                     {!! $export !!}
                 </div>
             </div>
