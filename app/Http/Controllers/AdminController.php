@@ -138,10 +138,10 @@ class AdminController extends Controller
 
             $export = '';
             foreach ($activiteiten as $activiteit) {
-                $export = $export . Carbon::parse($activiteit->datum)->format('j M');
+                $export = $export . '<b>' . Carbon::parse($activiteit->datum)->format('j M') . '</b>';
                 $export = $export . "\t";
                 $export = $export . $activiteit->omschrijving;
-                $export = $export . "\n";
+                $export = $export . '<br>';
             }
 
             return view('admin.activiteiten.prutske', [
