@@ -2,13 +2,12 @@
 
 @section('content')
     <section class="section section--small-spacing banner banner--full banner--with-hover-effect">
-        <div class="banner__carousel carousel carousel--homepage">
-            <img src="{{ asset('/img/carousel/homepage/88180712_2661986913855898_4055354661148819456_n.jpg') }}" class="carousel__slide carousel__slide--img">
-            <img src="{{ asset('/img/carousel/homepage/achtergrond.jpg') }}" class="carousel__slide carousel__slide--img">
-            <img src="{{ asset('/img/carousel/homepage/bbq3.jpg') }}" class="carousel__slide carousel__slide--img">
-            <img src="{{ asset('/img/carousel/homepage/IMG_1491.jpg') }}" class="carousel__slide carousel__slide--img">
-            <img src="{{ asset('/img/carousel/homepage/IMG_1876.JPG') }}" class="carousel__slide carousel__slide--img">
-        </div>
+        @component('components.carousel', [
+            'name' => 'homepage',
+            'images' => $carousels->homepage,
+            'type' => 'full-width'
+        ])
+        @endcomponent
 
         <h1 class="banner__title text-color--white text--shadow-hard">
             FOS207<br>
@@ -116,6 +115,15 @@
         </div>
     </div>
 
+    <div class="section">
+        @component('components.carousel', [
+            'name' => 'general',
+            'images' => $carousels->general,
+            'type' => 'normal'
+        ])
+        @endcomponent
+    </div>
+
     {{--
     <div class="row section">
         <div class="col-12">
@@ -158,19 +166,4 @@
         </div>
     </div>
     --}}
-
-    <script>
-        $(document).ready(function() {
-            $('.carousel--homepage').slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                centerMode: true,
-                variableWidth: true,
-                autoplay: true,
-                autoplaySpeed: 3000
-            });
-        });
-    </script>
 @endsection
