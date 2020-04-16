@@ -7,6 +7,21 @@ use Illuminate\Support\Facades\Auth;
 
 trait CommonHelpers
 {
+    public function ignore_files($array) {
+        return array_filter($array, array($this, 'check_ignored_files'));
+    }
+
+    private function check_ignored_files($file) {
+        $files_to_ignore = [
+            '.DS_Store',
+        ];
+
+        $file_array = explode("/", $file);
+        $file_name = $file_array[count($file_array) - 1];
+
+        return !in_array($file_name, $files_to_ignore);
+    }
+
     public function get_leider($leider_id = null)
     {
         return $this->get_user_query($leider_id)->with(

@@ -1,8 +1,18 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--extra-small-spacing banner banner--full">
-        <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
+    <section class="section section--small-spacing banner banner--full banner--with-hover-effect">
+        @component('components.carousel', [
+            'name' => 'homepage',
+            'images' => $carousels->homepage,
+            'type' => 'full-width'
+        ])
+        @endcomponent
+
+        <h1 class="banner__title text-color--white text--shadow-hard">
+            FOS207<br>
+            De Eekhoorn
+        </h1>
     </section>
 
     {{--
@@ -162,6 +172,15 @@
                 </div>
             </a>
         </div>
+    </div>
+
+    <div class="section">
+        @component('components.carousel', [
+            'name' => 'general',
+            'images' => $carousels->general,
+            'type' => 'normal'
+        ])
+        @endcomponent
     </div>
 
     {{--

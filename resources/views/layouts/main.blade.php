@@ -25,11 +25,15 @@
         <meta name="msapplication-TileImage" content="{{ asset('/img/favicon/ms-icon-144x144.png') }}">
         <meta name="theme-color" content="#c9dd03">
 
-        <!-- Styles -->
-        <link href="/css/style.css?v=0.4.4" rel="stylesheet">
-
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <!-- Slick -->
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+        <!-- Styles -->
+        <link href="/css/style.css?v=0.4.5" rel="stylesheet">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
