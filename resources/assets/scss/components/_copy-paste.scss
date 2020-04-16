@@ -1,0 +1,13 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Copy Paste
+//  ------------------------------------------------------------------------------------
+
+.copy-paste {
+    padding: spacing(lg);
+    border: spacing(sm) solid $color-grey-extra-light;
+    
+    &--prutske {
+        font-family: Calibri, arial;
+        font-size: 11pt;
+    }
+}

@@ -48,4 +48,19 @@ trait CommonHelpers
             ->orWhere('is_ael_leden', 1)
             ->get();
     }
+
+    public function parse_odd_str_date($month) {
+        $month_number = intval($month, 10);
+
+        if ($month_number % 2 === 0) $month_number = $month_number === 12 ? 1 : $month_number + 1;
+
+        return [$this->str_double_digit_string($month_number), $this->str_double_digit_string($month_number + 1)];
+    }
+
+    public function str_double_digit_string($date) {
+        if ($date < 10) $date = '0' . $date;
+        else strval($date);
+
+        return $date;
+    }
 }
