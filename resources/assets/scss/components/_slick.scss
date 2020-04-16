@@ -3,88 +3,98 @@
 //  ------------------------------------------------------------------------------------
 
 .slick {
-	&--full-width {
-		.slick {
-			&-slide {
-				height: auto;
-			}
-		}
-	}
+    &--full-width {
+        .slick {
+            &-slide {
+                height: auto;
+                margin: 0;
+            }
+        }
+    }
 
-	&-slider {
-		position: relative;
-	}
+    &-slider {
+        position: relative;
+    }
 
-	&-slide {
-		height: spacing(xxxl);
-		margin: 0 spacing(sm);
-		opacity: .5;
+    &-slide {
+        height: spacing(xxxl);
+        margin: 0 spacing(sm);
+        opacity: .5;
 
-		@include mq(md) {
-			height: spacing(xxxl) + spacing(xxl);
-		}
-	}
+        @include mq(md) {
+            height: spacing(xxxl) + spacing(xxl);
+        }
+    }
 
-	&-current {
-		opacity: 1;
-	}
+    &-current {
+        opacity: 1;
+    }
 
-	&-arrow {
-		display: block;
-		position: absolute;
-		top: 0;
-		z-index: 1;
-		width: 12%;
-		height: 100%;
-		border: 0px;
+    &-arrow {
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 50%;
+        height: 100%;
+        border: 0px;
 
-		color: rgba($color-black, 0);
-	}
-	&-prev {
-		left: 0;
-		background: linear-gradient(90deg, rgba($color-grey-extra-dark, .9) 0%, rgba($color-grey-extra-dark, 0) 100%);
-	}
-	&-next {
-		right: 0;
-		background: linear-gradient(90deg, rgba($color-grey-extra-dark, 0) 0%, rgba($color-grey-extra-dark, 0.9) 100%);
-	}
+        color: rgba($color-black, 0);
+    }
+    &-prev {
+        left: 0;
+        background: linear-gradient(90deg, rgba($color-black, .6) 0%, rgba($color-black, 0) 25%);
+        
+        &:hover {
+            background: linear-gradient(90deg, rgba($color-black, .7) 0%, rgba($color-black, 0) 25%);
+        }
+    }
+    &-next {
+        right: 0;
+        background: linear-gradient(90deg, rgba($color-black, 0) 75%, rgba($color-black, .6) 100%);
+        
+        &:hover {
+            background: linear-gradient(90deg, rgba($color-black, 0) 75%, rgba($color-black, .7) 100%);
+        }
+    }
 
-	&-dots {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		padding: 0;
-		
-		text-align: center;
-		list-style: none;
-		
-		li {
-			margin: 0 spacing(xs);
-			
-			button {
-				@include border-radius;
-				@include shadow-standard;
+    &-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        padding: 0;
+        
+        text-align: center;
+        list-style: none;
+        
+        li {
+            margin: 0 spacing(xs);
+            
+            button {
+                @include border-radius;
+                @include shadow-standard;
 
-				width: spacing(md) + spacing(sm);
-				height: spacing(md);
-				border: spacing(xxs) solid $color-white;
-				background-color: $color-blue;
-				color: rgba($color-black, 0);
-				
-				&:hover {
-					background-color: $color-blue-light;
-				}
-			}
+                width: spacing(md) + spacing(sm);
+                height: spacing(md);
+                border: spacing(xxs) solid $color-white;
+                background-color: $color-blue;
+                color: rgba($color-black, 0);
+                
+                &:hover {
+                    background-color: $color-blue-light;
+                }
+            }
 
-			&.slick-active {
-				button {
-					background-color: $color-white;
-				}
-			}
-		}
-	}
+            &.slick-active {
+                button {
+                    background-color: $color-white;
+                }
+            }
+        }
+    }
 }
