@@ -67,6 +67,9 @@
 	}
 
 	&-color {
+		&--white {
+			color: $color-white;
+		}
 		&--extra-light {
 			color: $color-grey-extra-light;
 		}
@@ -76,6 +79,18 @@
 		&--extra-dark {
 			color: $color-grey-extra-dark;
 		}
+
+		&--blue {
+			color: $color-blue;
+		}
+	}
+
+	&--shadow {
+		@include text-shadow-standard;
+	}
+
+	&--shadow-hard {
+		@include text-shadow-hard;
 	}
 }
 

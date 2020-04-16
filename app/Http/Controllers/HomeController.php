@@ -8,6 +8,7 @@ use App\Mail\ContactForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,17 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
+        $carousels = (object) [
+        // $carousels = [
+            'homepage' => $this->ignore_files(Storage::disk('public')->files('img/carousel/homepage/')),
+            'general' => $this->ignore_files(Storage::disk('public')->files('img/carousel/general/')),
+        ];
+
+        // return $carousels;
+
         return view('home', [
             'tak_activiteiten' => $tak_activiteiten,
+            'carousels' => $carousels,
         ]);
     }
 
