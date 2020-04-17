@@ -32,7 +32,7 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er ging iets mis met de reCAPTCHA. Gelieve later nog eens te proberen.
+                    Gelieve aan te geven dat u geen robot bent.
                 @endcomponent
             @endif
 
@@ -114,10 +114,10 @@
                 </section>
 
                 <section class="form__section form__section--last">
-                    <div class="g-recaptcha" data-sitekey="6LfqfeoUAAAAADUtJuiXGbAnaBjrjsCFF984zJe9"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfqfeoUAAAAADUtJuiXGbAnaBjrjsCFF984zJe9" data-callback="correctCaptcha"></div>
                 </section>
 
-                <button class="btn btn--primary">Verzend</button>
+                <button class="btn btn--primary recaptchaDisable">Verzend</button>
             </form>
         </div>
 
@@ -137,4 +137,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('.recaptchaDisable').prop('disabled', true).prop('title', 'Gelieve aan te geven dat u geen robot bent');
+
+        function correctCaptcha() {
+            $('.recaptchaDisable').prop('disabled', false).prop('title', '');
+        }
+    </script>
 @endsection
