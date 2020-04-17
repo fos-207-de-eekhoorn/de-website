@@ -83,7 +83,7 @@
                 </section>
 
                 {{-- Actief? --}}
-                <section class="form__section form__section--last">
+                <section class="form__section">
                     <div class="form__checkbox-wrapper">
                         <input
                             type="checkbox"
@@ -102,6 +102,52 @@
                         </span>
                     @endif
                 </section>
+
+                {{-- Naam van kind --}}
+                {{-- Tak van kind --}}
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        {{-- Naam van kind --}}
+                        <section class="form__section">
+                            <label for="kind_naam" class="form__label">Naam (van uw kind)</label>
+
+                            <input
+                                type="text"
+                                id="kind_naam"
+                                name="kind_naam"
+                                class="form__input form__input--full-width">
+
+                            @if ($errors->has('kind_naam'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('kind_naam') }}
+                                </span>
+                            @endif
+                        </section>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        {{-- Tak van kind --}}
+                        <section class="form__section form__section--last">
+                            <label for="kind_tak" class="form__label">Tak (van uw kind)</label>
+
+                            <select
+                                id="kind_tak"
+                                name="kind_tak"
+                                class="form__input form__input--full-width">
+                                <option value=""></option>
+                                @foreach($takken as $tak)
+                                    <option value="{{ $tak->naam }}">{{ $tak->naam }}</option>
+                                @endforeach
+                            </select>
+
+                            @if ($errors->has('kind_tak'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('kind_tak') }}
+                                </span>
+                            @endif
+                        </section>
+                    </div>
+                </div>
 
                 <button class="btn btn--primary">Verzend</button>
             </form>
