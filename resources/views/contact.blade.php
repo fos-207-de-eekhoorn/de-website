@@ -11,12 +11,14 @@
     ])
     @endcomponent
 
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?hl=nl" async defer></script>
+
     {{-- Contact formulier --}}
     {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12 col-lg-7">
             <h3>Heeft u een vraag?</h3>
-
 
             @if (session('contact_form_success'))
                 @component('components.flash_message', [
@@ -26,7 +28,15 @@
                 @endcomponent
             @endif
 
-            <form class="form" action="/contact/zend-bericht" method="POST">
+            @if (session('contact_form_error_captcha'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Gelieve aan te geven dat u geen robot bent.
+                @endcomponent
+            @endif
+
+            <form id="contact-form" class="form" action="/contact/zend-bericht" method="POST">
                 @csrf
 
                 {{-- Naam --}}
@@ -149,8 +159,11 @@
                         </section>
                     </div>
                 </div>
+                <section class="form__section form__section--last">
+                    <div class="g-recaptcha" data-sitekey="6LfqfeoUAAAAADUtJuiXGbAnaBjrjsCFF984zJe9" data-callback="correctCaptcha"></div>
+                </section>
 
-                <button class="btn btn--primary">Verzend</button>
+                <button class="btn btn--primary recaptchaDisable">Verzend</button>
             </form>
         </div>
 
@@ -172,6 +185,7 @@
     </div>
 
     <script>
+        // Extra fields
         $extraFields = $('.extraFields');
 
         displayExtraFields(false);
@@ -182,6 +196,13 @@
 
         function displayExtraFields(display) {
             $extraFields.css('display', (display ? 'flex' : 'none'));
+        }
+
+        // reCAPTCHA
+        $('.recaptchaDisable').prop('disabled', true).prop('title', 'Gelieve aan te geven dat u geen robot bent');
+
+        function correctCaptcha() {
+            $('.recaptchaDisable').prop('disabled', false).prop('title', '');
         }
     </script>
 @endsection
