@@ -40,28 +40,41 @@ class HomeController extends Controller
     {
         $el = $this->get_el();
         $ael = $this->get_ael();
+        $takken = Tak::get();
 
         return view('contact', [
+            'el' => $el,
             'ael' => $ael,
+            'takken' => $takken,
         ]);
     }
 
     public function post_contact_message(request $request)
     {
-        $validatedData = $request->validate([
-            'naam' => 'required',
-            'email' => 'required|email',
-            'bericht' => 'required',
-        ]);
+        $recaptcha = new \ReCaptcha\ReCaptcha(config('recaptcha.secret'));
+        $resp = $recaptcha->setExpectedHostname('scoutsoostkamp.be')
+            ->verify($request['g-recaptcha-response'], $request->ip());
 
-        $contactFormObject = new \stdClass();
-        $contactFormObject->naam = $request->naam;
-        $contactFormObject->email = $request->email;
-        $contactFormObject->bericht = $request->bericht;
-        $contactFormObject->actief = $request->actief ? $request->actief : 'off';
+        if ($resp->isSuccess()) {
+            $validatedData = $request->validate([
+                'naam' => 'required',
+                'email' => 'required|email',
+                'bericht' => 'required',
+            ]);
 
-        Mail::send(new ContactForm($contactFormObject));
-        Session::flash('contact_form_success');
+            $contactFormObject = new \stdClass();
+            $contactFormObject->naam = $request->naam;
+            $contactFormObject->email = $request->email;
+            $contactFormObject->bericht = $request->bericht;
+            $contactFormObject->actief = $request->actief ? $request->actief : 'off';
+            $contactFormObject->kind_naam = $request->kind_naam;
+            $contactFormObject->kind_tak = $request->kind_tak;
+
+            Mail::send(new ContactForm($contactFormObject));
+            Session::flash('contact_form_success');
+        } else {
+            Session::flash('contact_form_error_captcha');
+        }
 
         return redirect()->back();
     }
