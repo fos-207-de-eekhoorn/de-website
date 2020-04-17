@@ -99,7 +99,8 @@
                             type="checkbox"
                             id="actief"
                             name="actief"
-                            class="form__checkbox">
+                            class="form__checkbox"
+                            onclick="handleClick(this);">
 
                         <label for="actief" class="form__label">
                             Bent u of uw kind al actief in onze scouts?
@@ -113,6 +114,51 @@
                     @endif
                 </section>
 
+                {{-- Naam van kind --}}
+                {{-- Tak van kind --}}
+                <div class="row extraFields">
+                    <div class="col-12 col-md-8">
+                        {{-- Naam van kind --}}
+                        <section class="form__section">
+                            <label for="kind_naam" class="form__label">Naam (van uw kind)</label>
+
+                            <input
+                                type="text"
+                                id="kind_naam"
+                                name="kind_naam"
+                                class="form__input form__input--full-width">
+
+                            @if ($errors->has('kind_naam'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('kind_naam') }}
+                                </span>
+                            @endif
+                        </section>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        {{-- Tak van kind --}}
+                        <section class="form__section form__section--last">
+                            <label for="kind_tak" class="form__label">Tak (van uw kind)</label>
+
+                            <select
+                                id="kind_tak"
+                                name="kind_tak"
+                                class="form__input form__input--full-width">
+                                <option value=""></option>
+                                @foreach($takken as $tak)
+                                    <option value="{{ $tak->naam }}">{{ $tak->naam }}</option>
+                                @endforeach
+                            </select>
+
+                            @if ($errors->has('kind_tak'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('kind_tak') }}
+                                </span>
+                            @endif
+                        </section>
+                    </div>
+                </div>
                 <section class="form__section form__section--last">
                     <div class="g-recaptcha" data-sitekey="6LfqfeoUAAAAADUtJuiXGbAnaBjrjsCFF984zJe9" data-callback="correctCaptcha"></div>
                 </section>
@@ -139,6 +185,20 @@
     </div>
 
     <script>
+        // Extra fields
+        $extraFields = $('.extraFields');
+
+        displayExtraFields(false);
+
+        function handleClick(checkbox) {
+            displayExtraFields(checkbox.checked);
+        }
+
+        function displayExtraFields(display) {
+            $extraFields.css('display', (display ? 'flex' : 'none'));
+        }
+
+        // reCAPTCHA
         $('.recaptchaDisable').prop('disabled', true).prop('title', 'Gelieve aan te geven dat u geen robot bent');
 
         function correctCaptcha() {

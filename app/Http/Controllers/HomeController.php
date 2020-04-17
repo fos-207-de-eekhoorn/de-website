@@ -40,9 +40,12 @@ class HomeController extends Controller
     {
         $el = $this->get_el();
         $ael = $this->get_ael();
+        $takken = Tak::get();
 
         return view('contact', [
+            'el' => $el,
             'ael' => $ael,
+            'takken' => $takken,
         ]);
     }
 
@@ -64,6 +67,8 @@ class HomeController extends Controller
             $contactFormObject->email = $request->email;
             $contactFormObject->bericht = $request->bericht;
             $contactFormObject->actief = $request->actief ? $request->actief : 'off';
+            $contactFormObject->kind_naam = $request->kind_naam;
+            $contactFormObject->kind_tak = $request->kind_tak;
 
             Mail::send(new ContactForm($contactFormObject));
             Session::flash('contact_form_success');
