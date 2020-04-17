@@ -11,12 +11,14 @@
     ])
     @endcomponent
 
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?hl=nl" async defer></script>
+
     {{-- Contact formulier --}}
     {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12 col-lg-7">
             <h3>Heeft u een vraag?</h3>
-
 
             @if (session('contact_form_success'))
                 @component('components.flash_message', [
@@ -26,7 +28,15 @@
                 @endcomponent
             @endif
 
-            <form class="form" action="/contact/zend-bericht" method="POST">
+            @if (session('contact_form_error_captcha'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er ging iets mis met de reCAPTCHA. Gelieve later nog eens te proberen.
+                @endcomponent
+            @endif
+
+            <form id="contact-form" class="form" action="/contact/zend-bericht" method="POST">
                 @csrf
 
                 {{-- Naam --}}
@@ -83,7 +93,7 @@
                 </section>
 
                 {{-- Actief? --}}
-                <section class="form__section form__section--last">
+                <section class="form__section">
                     <div class="form__checkbox-wrapper">
                         <input
                             type="checkbox"
@@ -101,6 +111,10 @@
                             {{ $errors->first('actief') }}
                         </span>
                     @endif
+                </section>
+
+                <section class="form__section form__section--last">
+                    <div class="g-recaptcha" data-sitekey="6LfqfeoUAAAAADUtJuiXGbAnaBjrjsCFF984zJe9"></div>
                 </section>
 
                 <button class="btn btn--primary">Verzend</button>

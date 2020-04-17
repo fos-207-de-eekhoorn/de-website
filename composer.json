@@ -8,6 +8,7 @@
         "php": ">=7.0.0",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "~4.0",
+        "google/recaptcha": "^1.2",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "~1.0",
         "nesbot/carbon": "^2.31.0"
