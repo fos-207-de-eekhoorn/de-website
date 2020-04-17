@@ -89,7 +89,8 @@
                             type="checkbox"
                             id="actief"
                             name="actief"
-                            class="form__checkbox">
+                            class="form__checkbox"
+                            onclick="handleClick(this);">
 
                         <label for="actief" class="form__label">
                             Bent u of uw kind al actief in onze scouts?
@@ -105,7 +106,7 @@
 
                 {{-- Naam van kind --}}
                 {{-- Tak van kind --}}
-                <div class="row">
+                <div class="row extraFields">
                     <div class="col-12 col-md-8">
                         {{-- Naam van kind --}}
                         <section class="form__section">
@@ -169,4 +170,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $extraFields = $('.extraFields');
+
+        displayExtraFields(false);
+
+        function handleClick(checkbox) {
+            displayExtraFields(checkbox.checked);
+        }
+
+        function displayExtraFields(display) {
+            $extraFields.css('display', (display ? 'flex' : 'none'));
+        }
+    </script>
 @endsection
