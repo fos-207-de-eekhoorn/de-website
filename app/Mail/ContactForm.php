@@ -22,7 +22,7 @@ class ContactForm extends Mailable
         $subject = 'De website: ' . $this->contact_form->naam . ' stelde ons een vraag.';
 
         return $this
-            ->to('orry@tradler.co')
+            ->to('fos207ste@gmail.com')
             ->subject($subject)
             ->view('mails.contact', [
                 'subject' => $subject,
