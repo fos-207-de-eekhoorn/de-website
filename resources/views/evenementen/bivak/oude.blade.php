@@ -19,7 +19,7 @@
             </h2>
 
             <h4 class="text--align-center">
-                Dat ons bivak van de JG/V's is afgelast wegens het coronavirus.
+                Dat ons bivak van de OG/V's is afgelast wegens het coronavirus.
 
                 Voor meer informatie kan je steeds terecht bij de takleiding van uw kind.
             </h4>
