@@ -74,6 +74,14 @@ class EvenementenController extends Controller
 
     public function get_bivak_oude()
     {
-        return view('evenementen.bivak.oude');
+        $takleiders_ids = [25];
+        $takleiders_ids_ordered = implode(',', $takleiders_ids);
+        $takleiders = Leider::whereIn('id', $takleiders_ids)
+            ->orderByRaw("FIELD(id, $takleiders_ids_ordered)")
+            ->get();
+
+        return view('evenementen.bivak.oude', [
+            'takleiders' => $takleiders,
+        ]);
     }
 }
