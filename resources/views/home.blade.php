@@ -150,12 +150,11 @@
                     <div class="col-12 col-md-4">
                         <h5>Oude</h4>
 
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>21 tot 24 mei</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Lokoren</li>
-                        </ul>
+                        <p class="text--bold text--xl">
+                            Afgelast
+                        </p>
 
-                        <a href="{{ url('/evenementen/bivak/oude') }}" class="btn btn--primary">Meer info</a>
+                        <a class="btn btn--primary btn--disabled">Meer info</a>
                     </div>
                 </div>
             </div>
