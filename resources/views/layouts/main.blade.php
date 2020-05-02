@@ -171,13 +171,11 @@
                             </label>
 
                             <ul class="nav__sublist">
-                                {{--
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen" class="nav__link nav__link--sublist">
                                         Overzicht
                                     </a>
                                 </li>
-                                --}}
 
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
