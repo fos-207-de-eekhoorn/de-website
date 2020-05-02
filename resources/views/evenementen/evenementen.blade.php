@@ -25,7 +25,7 @@
                 <ul class="evenementen-list row small-gutters">
                     @foreach($evenementen as $evenement)
                         <li class="evenementen-list__item col-12 col-md-6">
-                            <a href="#">
+                            <a href="{{ url('/evenementen/' . str_replace(' ', '-', strtolower($evenement->naam))) }}">
                                 <div class="evenementen-list-item">
                                     <div class="evenementen-list-item__visual evenementen-list-item__visual--{{ $evenement->kleur }}">
                                         <img src="{{ asset('/img/banners/' . $evenement->kleur . '-' . $evenement->banner_patroon . '-' . $evenement->banner_sterkte . '.png') }}" class="evenementen-list-item__image">
