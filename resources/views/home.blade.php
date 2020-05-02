@@ -86,7 +86,7 @@
             <h5 class="medium-margin-top">Koekenverkoop</h5>
             <p>
                 Door de uitzonderlijke omstandigheden kunnen wij de bestelde koeken niet leveren. Jullie kunnen deze op een veilige manier afhalen bij Ara door een seintje te geven.<br>
-                Wie nog niet geeft gestort voor zijn bestelling vragen we dit zo snel mogelijk te doen.
+                Wie nog niet heeft gestort voor zijn bestelling vragen we dit zo snel mogelijk te doen.
             </p>
 
             <h5 class="medium-margin-top">Kamp</h5>
