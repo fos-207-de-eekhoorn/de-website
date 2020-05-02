@@ -13,6 +13,14 @@
 
     <div class="row section">
         <div class="col-12">
+            @if (session('warning'))
+                @component('components.flash_message', [
+                    'type' => 'warning',
+                ])
+                    We konden het event '{{ session('warning') }}' niet vinden
+                @endcomponent
+            @endif
+
             @if(!$evenementen->isEmpty())
                 <ul class="evenementen-list row small-gutters">
                     @foreach($evenementen as $evenement)

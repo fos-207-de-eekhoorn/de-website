@@ -38,7 +38,7 @@ class EvenementenController extends Controller
                 'evenement' => $evenement,
             ]);
         } else { // todo
-            Session::flash('error');
+            Session::flash('warning', $naam);
 
             return redirect('evenementen');
         }
