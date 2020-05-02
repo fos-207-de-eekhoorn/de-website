@@ -76,22 +76,29 @@
 
     <div class="row section">
         <div class="col-12">
-            <h2>Belangrijk bericht</h2>
-            <h3>De activiteiten gaan niet door wegens het Corona-virus.</h3>
+            <h2>Corona update</h2>
 
             <h5 class="medium-margin-top">Activiteiten</h5>
             <p>
-                Voorlopig zijn alle activiteiten tot en met 18 april afgelast. Daarna hopen we terug te mogen beginnen op 25 april. Onder <a href="{{ url('/takken') }}">takken</a> op onze site vindt u altijd de meest recente informatie over de activiteiten.
+                Voorlopig zijn alle activiteiten tot en met 30 mei afgelast. Daarna hopen we terug te mogen beginnen op 6 juni. Onder <a href="{{ url('/takken') }}">takken</a> op onze site vindt u altijd de meest recente informatie over de activiteiten.
             </p>
 
             <h5 class="medium-margin-top">Koekenverkoop</h5>
             <p>
-                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. We wachten zeker nog tot 5 april om deze te verdelen.
+                Door de uitzonderlijke omstandigheden kunnen wij de bestelde koeken niet leveren. Jullie kunnen deze op een veilige manier afhalen bij Ara door een seintje te geven.<br>
+                Wie nog niet geeft gestort voor zijn bestelling vragen we dit zo snel mogelijk te doen.
             </p>
 
-            <h5 class="medium-margin-top">Bivak</h5>
+            <h5 class="medium-margin-top">Kamp</h5>
             <p>
-                De bivakken van de bevers, welpen en JG/V's worden jammer genoeg geannuleerd. Het bivak van de oude in mei gaat nog door. Voor de geannuleerde bivakken zijn we nog opzoek naar een leuk alternatief! De kinderen die al ingeschreven waren krijgen zo snel mogelijk hun inschrijvingsgeld teruggestort.
+                We mogen er voorlopig nog van uitgaan dat ons zomerkamp doorgaat!<br>
+                Voor welpen, JG/V’s en OG/V’s is er valiezenkoers op 18 juli . We vertrekken op 21 juli aan het station van Brugge. De bevers vervoegen ons op ouderbezoek dag, zondag 26 juli en brengen dan zelf hun valies mee. Op 31 Juli gaan we allemaal samen terug met de trein.
+            </p>
+            <p>
+                <strong>Adres kampterrein:</strong><br>
+                vzw Jeugdwerken Uidekrij<br>
+                Bronnenweg 10<br>
+                1755  Gooik
             </p>
 
             <h5 class="medium-margin-top">Vragen?</h5>
