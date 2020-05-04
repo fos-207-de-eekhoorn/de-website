@@ -8,11 +8,16 @@
             'strength' => $evenement->banner_sterkte,
         ],
         'page_title' => $evenement->naam,
-        'page_sub_title' => $evenement->start_datum == $evenement->eind_datum
-            ? Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName
-            : (Carbon\Carbon::parse($evenement->start_datum)->monthName == Carbon\Carbon::parse($evenement->eind_datum)->monthName
-                ? Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName
-                : Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName)
+    ])
+    @endcomponent
+
+    @component('components.evenement_bar', [
+        'start_datum' => Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName,
+        'eind_datum' => Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName,
+        'start_uur' => Carbon\Carbon::parse($evenement->start_uur)->format('H') . 'u' . Carbon\Carbon::parse($evenement->start_uur)->format('i'),
+        'eind_uur' => Carbon\Carbon::parse($evenement->eind_uur)->format('H') . 'u' . Carbon\Carbon::parse($evenement->eind_uur)->format('i'),
+        'locatie' => $evenement->locatie,
+        'prijs' => $evenement->prijs,
     ])
     @endcomponent
 

@@ -1,0 +1,22 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Evenement bar
+//  ------------------------------------------------------------------------------------
+
+.evenement-bar {
+	@include border-radius;
+	@include shadow-standard;
+
+	position: relative;
+	display: flex;
+    padding: spacing(md);
+    margin: (-1 * spacing(lg)) auto spacing(lg);
+    background-color: $color-grey-background;
+    
+    &__moment {
+    	width: 25%;
+    }
+
+    &__extra {
+    	width: 50%;
+    }
+}
