@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Tak;
 use App\Http\Shared\CommonHelpers;
-use Carbon\Carbon;
 
 class TakkenController extends Controller
 {
