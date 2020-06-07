@@ -8,14 +8,20 @@
             'strength' => $evenement->banner_sterkte,
         ],
         'page_title' => $evenement->naam,
+        'page_sub_title' => ($evenement->start_datum === $evenement->eind_datum)
+            ? Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName
+            : (Carbon\Carbon::parse($evenement->start_datum)->monthName === Carbon\Carbon::parse($evenement->eind_datum)->monthName)
+                ? Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName
+                : Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName
     ])
     @endcomponent
 
     @component('components.evenement_bar', [
+        'naam' => $evenement->naam,
         'start_datum' => Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName,
         'eind_datum' => Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName,
-        'start_uur' => Carbon\Carbon::parse($evenement->start_uur)->format('H') . 'u' . Carbon\Carbon::parse($evenement->start_uur)->format('i'),
-        'eind_uur' => Carbon\Carbon::parse($evenement->eind_uur)->format('H') . 'u' . Carbon\Carbon::parse($evenement->eind_uur)->format('i'),
+        'start_uur' => $evenement->start_uur_formatted,
+        'eind_uur' => $evenement->eind_uur_formatted,
         'locatie' => $evenement->locatie,
         'prijs' => $evenement->prijs,
     ])
@@ -33,7 +39,7 @@
 
             <h5>Tijd</h5>
             <p>
-                {{ $evenement->start_uur }} - {{ $evenement->eind_uur }}
+                {{ $evenement->start_uur_formatted }} - {{ $evenement->eind_uur_formatted }}
             </p>
 
             <h5>Prijs</h5>

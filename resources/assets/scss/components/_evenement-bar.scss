@@ -3,20 +3,15 @@
 //  ------------------------------------------------------------------------------------
 
 .evenement-bar {
-	@include border-radius;
-	@include shadow-standard;
-
-	position: relative;
 	display: flex;
+    align-items: center;
+    // justify-content: center;
     padding: spacing(md);
-    margin: (-1 * spacing(lg)) auto spacing(lg);
-    background-color: $color-grey-background;
+    margin: (-1 * spacing(md)) (-1 * spacing(md)) spacing(lg);
+    border-bottom: spacing(xs) solid $color-grey-background;
     
-    &__moment {
-    	width: 25%;
-    }
-
-    &__extra {
-    	width: 50%;
+    &__event,
+    &__datetime {
+        display: block;
     }
 }
