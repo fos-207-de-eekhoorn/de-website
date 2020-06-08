@@ -138,7 +138,8 @@
                                 </h4>
 
                                 <p>
-                                    Info volgt.
+                                    We spreken af op de kampplaats zelf.<br>
+                                    Het exacte uur zal nog gecommuniceerd worden.
                                 </p>
                             </div>
 
@@ -149,7 +150,8 @@
                                 </h4>
 
                                 <p>
-                                    Info volgt.
+                                    U kan uw kleine spruit terug komen ophalen op de kampplaats zelf.<br>
+                                    Het exacte uur zal nog gecommuniceerd worden.
                                 </p>
                             </div>
 
