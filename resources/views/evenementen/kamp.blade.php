@@ -113,10 +113,19 @@
                                 </h4>
 
                                 <p>
-                                    De prijs voor ons kamp is nog niet gekend. Dit wordt zo snel mogelijk gecommuniceerd.
+                                    De prijs voor ons kamp is €75.
                                 </p>
                                 <p>
-                                    In de prijs zal overnachting, activiteiten, eten, drinken, aankopen van spelmateriaal… inbegrepen zijn.
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Bevers</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaal je €75, voor het tweede kind betaal je €70, voor het derde kind €65 etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
                                 </p>
                             </div>
 
@@ -246,10 +255,19 @@
                                 </h4>
 
                                 <p>
-                                    De prijs voor ons kamp is nog niet gekend. Dit wordt zo snel mogelijk gecommuniceerd.
+                                    De prijs voor ons kamp is €150.
                                 </p>
                                 <p>
-                                    In de prijs zal overnachting, activiteiten, eten, drinken, aankopen van spelmateriaal… inbegrepen zijn.
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Welpen</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaal je €150, voor het tweede kind betaal je €145, voor het derde kind €140 etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
                                 </p>
                             </div>
 
@@ -376,10 +394,19 @@
                                 </h4>
 
                                 <p>
-                                    De prijs voor ons kamp is nog niet gekend. Dit wordt zo snel mogelijk gecommuniceerd.
+                                    De prijs voor ons kamp is €150.
                                 </p>
                                 <p>
-                                    In de prijs zal overnachting, activiteiten, eten, drinken, aankopen van spelmateriaal… inbegrepen zijn.
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Jonge</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaalt volle pot (€150), tweede kind €5 korting (€145), derde kind €10 korting (€140) etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
                                 </p>
                             </div>
 
@@ -523,10 +550,19 @@
                                 </h4>
 
                                 <p>
-                                    De prijs voor ons kamp is nog niet gekend. Dit wordt zo snel mogelijk gecommuniceerd.
+                                    De prijs voor ons kamp is €150.
                                 </p>
                                 <p>
-                                    In de prijs zal overnachting, activiteiten, eten, drinken, aankopen van spelmateriaal… inbegrepen zijn.
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Oude</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaalt volle pot (€150), tweede kind €5 korting (€145), derde kind €10 korting (€140) etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
                                 </p>
                             </div>
 
