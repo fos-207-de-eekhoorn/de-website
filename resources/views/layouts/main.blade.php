@@ -192,7 +192,7 @@
                         --}}
 
                         <li class="nav__list-item">
-                            <a href="/kamp" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
+                            <a href="/evenementen/kamp" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
                                 Kamp
                             </a>
                         </li>

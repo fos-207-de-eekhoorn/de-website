@@ -52,7 +52,7 @@ Route::get('/evenementen/eikeltjesquiz', 'EvenementenController@get_event_eikelt
 	Route::get('/evenementen/bivak/jonge', 'EvenementenController@get_bivak_jonge');
 	Route::get('/evenementen/bivak/oude', 'EvenementenController@get_bivak_oude');
 	# Kamp
-	Route::get('/kamp', 'EvenementenController@get_kamp');
+	Route::get('/evenementen/kamp', 'EvenementenController@get_kamp');
 
 # Admin Routes
 Route::get('/admin/activiteiten', 'AdminController@get_activiteiten');
