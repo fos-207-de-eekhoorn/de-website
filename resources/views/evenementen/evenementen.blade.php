@@ -46,8 +46,8 @@
                                             {{ $evenement->naam }}
                                         </h3>
 
-                                        <p class="evenementen-list-item__text evenementen-list-item__text--location">
-                                            <span class="evenementen-list-item__icon"><i class="fas fa-map-marker-alt"></i></span>{{ $evenement->locatie }}
+                                        <p class="evenementen-list-item__text evenementen-list-item__text--location d-flex">
+                                            <span class="evenementen-list-item__icon"><i class="fas fa-map-marker-alt"></i></span>{!! $evenement->locatie !!}
                                         </p>
 
                                         <p class="evenementen-list-item__text evenementen-list-item__text--time">

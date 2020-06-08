@@ -16,6 +16,8 @@
     ])
     @endcomponent
 
+
+
     @component('components.evenement_bar', [
         'naam' => $evenement->naam,
         'start_datum' => Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName,
@@ -49,7 +51,7 @@
 
             <h5>Locatie</h5>
             <p>
-                {{ $evenement->locatie }}
+                {!! $evenement->locatie !!}
             </p>
         </div>
     </div>

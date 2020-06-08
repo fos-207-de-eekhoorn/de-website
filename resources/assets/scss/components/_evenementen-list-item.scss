@@ -8,6 +8,8 @@
 
     display: flex;
     flex-direction: column;
+    align-itemns: center;
+    height: 100%;
     overflow: hidden;
     background-color: $color-grey-background;
 
@@ -32,6 +34,7 @@
     &__visual {
         position: relative;
         width: 100%;
+        height: 100%;
         padding-bottom: 25%;
 
         @include mq(lg) {

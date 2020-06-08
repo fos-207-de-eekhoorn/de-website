@@ -16,7 +16,8 @@ class CreateEvenementenTable extends Migration
         Schema::create('evenementen', function (Blueprint $table) {
             $table->increments('id');
             $table->string('naam');
-            $table->text('omschrijving');
+            $table->text('omschrijving')->nullable()->default('<p>Info volgt</p>');
+            $table->string('static_link')->nullable();
             $table->date('start_datum');
             $table->date('eind_datum');
             $table->time('start_uur');
