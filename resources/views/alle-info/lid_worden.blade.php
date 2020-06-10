@@ -25,8 +25,8 @@
                 <lu>
                     <li>Bevers: 2014-2012 (vanaf 5 jaar)</li>
                     <li>Welpen: 2011-2009</li>
-                    <li>Jonge: 2008-2006</li>
-                    <li>Oude: 2005-2003</li>
+                    <li>JG/V's: 2008-2006</li>
+                    <li>OG/V's: 2005-2003</li>
                 </lu>
                 <br>
                 <p>

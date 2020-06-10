@@ -119,7 +119,7 @@
                                     Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
                                 </p>
                                 <p>
-                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Bevers</strong></i>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Bever</strong></i>
                                 </p>
                                 <p>
                                     Eerste kind betaal je €75, voor het tweede kind betaal je €70, voor het derde kind €65 etc.
@@ -261,7 +261,7 @@
                                     Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
                                 </p>
                                 <p>
-                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Welpen</strong></i>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Welp</strong></i>
                                 </p>
                                 <p>
                                     Eerste kind betaal je €150, voor het tweede kind betaal je €145, voor het derde kind €140 etc.
@@ -400,7 +400,7 @@
                                     Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
                                 </p>
                                 <p>
-                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Jonge</strong></i>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + JG/V</strong></i>
                                 </p>
                                 <p>
                                     Eerste kind betaalt volle pot (€150), tweede kind €5 korting (€145), derde kind €10 korting (€140) etc.
@@ -556,7 +556,7 @@
                                     Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
                                 </p>
                                 <p>
-                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Oude</strong></i>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + OG/V</strong></i>
                                 </p>
                                 <p>
                                     Eerste kind betaalt volle pot (€150), tweede kind €5 korting (€145), derde kind €10 korting (€140) etc.

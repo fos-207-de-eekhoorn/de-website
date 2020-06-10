@@ -31,8 +31,8 @@
                                 class="form__select form__select--full-width">
                                 <option value="bevers">Bevers</option>
                                 <option value="welpen">Welpen</option>
-                                <option value="jonge">Jonge</option>
-                                <option value="oude">Oude</option>
+                                <option value="jonge">JG/V's</option>
+                                <option value="oude">OG/V's</option>
                             </select>
 
                             @if ($errors->has('tak'))
