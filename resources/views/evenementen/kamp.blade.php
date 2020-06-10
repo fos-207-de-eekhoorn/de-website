@@ -20,7 +20,7 @@
             <h2>Algemene info</h2>
 
             <p>
-                Wegens de ontwikkeling van COVID-18 moeten we ons kamp anders indelen dan anders.<br>
+                Wegens de ontwikkeling van COVID-19 moeten we ons kamp anders indelen dan anders.<br>
                 De bevers en oude gaan niet naar de geplande kampplaats.<br>
                 Alle concrete info vind u hieronder.
             </p>
@@ -232,7 +232,7 @@
                                 <p>
                                     Woensdag <strong>22 juli</strong><br>
                                     -<br>
-                                    Maandag <strong>1 augustus</strong>
+                                    Zaterdag <strong>1 augustus</strong>
                                 </p>
                             </div>
 
