@@ -167,6 +167,7 @@
                             </ul>
                         </li>
 
+                        {{--
                         <li class="nav__list-item nav__list-item--sublist">
                             <input type="checkbox" id="nav__toggle-sublist--evenementen" class="nav__checkbox" hidden>
 
@@ -175,32 +176,25 @@
                             </label>
 
                             <ul class="nav__sublist">
-                                {{--
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen" class="nav__link nav__link--sublist">
                                         Overzicht
                                     </a>
                                 </li>
-                                --}}
 
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
                                         Bivak bevers & welpen
                                     </a>
                                 </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/jonge" class="nav__link nav__link--sublist">
-                                        Bivak JV/G
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/oude" class="nav__link nav__link--sublist">
-                                        Bivak Oude
-                                    </a>
-                                </li>
                             </ul>
+                        </li>
+                        --}}
+
+                        <li class="nav__list-item">
+                            <a href="/evenementen/kamp" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
+                                Kamp
+                            </a>
                         </li>
 
                         <li class="nav__list-item">

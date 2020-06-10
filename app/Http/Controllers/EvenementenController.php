@@ -84,4 +84,17 @@ class EvenementenController extends Controller
             'takleiders' => $takleiders,
         ]);
     }
+
+    public function get_kamp()
+    {
+        $takleiders_ids = [2, 10, 18, 25];
+        $takleiders_ids_ordered = implode(',', $takleiders_ids);
+        $takleiders = Leider::whereIn('id', $takleiders_ids)
+            ->orderByRaw("FIELD(id, $takleiders_ids_ordered)")
+            ->get();
+
+        return view('evenementen.kamp', [
+            'takleiders' => $takleiders,
+        ]);
+    }
 }

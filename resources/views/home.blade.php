@@ -129,42 +129,6 @@
                     Als echte scouts hechten wij veel belang aan het outdoorleven. Scouts is je amuseren buiten in de natuur. Wij werken ook met enkele tradities. Zo zijn wij één van de weinige scoutsen die nog werken met een raadsrots, met teervoeten en badges en met totemnamen. Deze totems gebruiken we altijd als aanspreeknaam en zijn een grote eer om te krijgen.
                 </p>
             </div>
-
-            <div class="section">
-                <h3>Bivakken</h3>
-
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <h5>Bevers en welpen</h4>
-
-                        <p class="text--bold text--xl">
-                            Afgelast
-                        </p>
-
-                        <a class="btn btn--primary btn--disabled">Meer info</a>
-                    </div>
-
-                    <div class="col-12 col-md-4">
-                        <h5>Jonge</h4>
-
-                        <p class="text--bold text--xl">
-                            Afgelast
-                        </p>
-
-                        <a class="btn btn--primary btn--disabled">Meer info</a>
-                    </div>
-
-                    <div class="col-12 col-md-4">
-                        <h5>Oude</h4>
-
-                        <p class="text--bold text--xl">
-                            Afgelast
-                        </p>
-
-                        <a class="btn btn--primary btn--disabled">Meer info</a>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="col-12 col-md-4 col-lg-3 align-self-start">
