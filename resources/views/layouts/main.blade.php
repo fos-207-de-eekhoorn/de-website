@@ -102,13 +102,13 @@
 
                                 <li class="nav__sublist-item">
                                     <a href="/takken/jonge" class="nav__link nav__link--sublist">
-                                        JV/G
+                                        JG/V
                                     </a>
                                 </li>
 
                                 <li class="nav__sublist-item">
                                     <a href="/takken/oude" class="nav__link nav__link--sublist">
-                                        OV/G
+                                        OG/V
                                     </a>
                                 </li>
                             </ul>
@@ -167,6 +167,7 @@
                             </ul>
                         </li>
 
+                        {{--
                         <li class="nav__list-item nav__list-item--sublist">
                             <input type="checkbox" id="nav__toggle-sublist--evenementen" class="nav__checkbox" hidden>
 
@@ -175,32 +176,25 @@
                             </label>
 
                             <ul class="nav__sublist">
-                                {{--
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen" class="nav__link nav__link--sublist">
                                         Overzicht
                                     </a>
                                 </li>
-                                --}}
 
                                 <li class="nav__sublist-item">
                                     <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
                                         Bivak bevers & welpen
                                     </a>
                                 </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/jonge" class="nav__link nav__link--sublist">
-                                        Bivak JV/G
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/oude" class="nav__link nav__link--sublist">
-                                        Bivak Oude
-                                    </a>
-                                </li>
                             </ul>
+                        </li>
+                        --}}
+
+                        <li class="nav__list-item">
+                            <a href="/evenementen/kamp" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
+                                Kamp
+                            </a>
                         </li>
 
                         <li class="nav__list-item">
@@ -278,11 +272,11 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">JV/G</a>
+                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">JG/V</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/takken/oude" class="footer-nav__link footer-nav__link--sublink">Oude</a>
+                                        <a href="/takken/oude" class="footer-nav__link footer-nav__link--sublink">OG/V</a>
                                     </li>
                                 </ul>
                             </li>
@@ -319,6 +313,7 @@
                                 </ul>
                             </li>
 
+                            {{--
                             <li class="footer-nav__item">
                                 <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
 
@@ -328,13 +323,18 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak JV/G</a>
+                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak JG/V</a>
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/oude" class="footer-nav__link footer-nav__link--sublink">Bivak Oude</a>
+                                        <a href="/evenementen/bivak/oude" class="footer-nav__link footer-nav__link--sublink">Bivak JG/V</a>
                                     </li>
                                 </ul>
+                            </li>
+                            --}}
+
+                            <li class="footer-nav__item">
+                                <a href="/evenementen/kamp" class="footer-nav__link footer-nav__link--parent">Kamp</a>
                             </li>
 
                             <li class="footer-nav__item">

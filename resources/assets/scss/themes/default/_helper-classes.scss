@@ -76,12 +76,42 @@
 		&--light {
 			color: $color-grey-light;
 		}
+		&--dark {
+			color: $color-grey-dark;
+		}
 		&--extra-dark {
 			color: $color-grey-extra-dark;
 		}
 
+		&--green {
+			color: $color-green;
+		}
 		&--blue {
 			color: $color-blue;
+		}
+		&--mint {
+			color: $color-mint;
+		}
+		&--red {
+			color: $color-red;
+		}
+		&--salmon {
+			color: $color-salmon;
+		}
+		&--yellow {
+			color: $color-yellow;
+		}
+		&--green-dark {
+			color: $color-green-dark;
+		}
+		&--blue-light {
+			color: $color-blue-light;
+		}
+		&--brown {
+			color: $color-brown;
+		}
+		&--yellow-light {
+			color: $color-yellow-light;
 		}
 	}
 
@@ -115,6 +145,10 @@
             color: $color-alert-error-medium !important;
         }
 	}
+}
+
+.icon {
+	opacity: .5;
 }
 
 .no-wrap {

@@ -29,8 +29,8 @@
                             <td class="table__cell"></td>
                             <td class="table__cell">Bevers</td>
                             <td class="table__cell">Welpen</td>
-                            <td class="table__cell">Jonge</td>
-                            <td class="table__cell">Oude</td>
+                            <td class="table__cell">JG/V's</td>
+                            <td class="table__cell">OG/V's</td>
                         </tr>
                     </thead>
 
@@ -86,8 +86,8 @@
                             <td class="table__cell"></td>
                             <td class="table__cell">Bevers</td>
                             <td class="table__cell">Welpen</td>
-                            <td class="table__cell">Jonge</td>
-                            <td class="table__cell">Oude</td>
+                            <td class="table__cell">JG/V's</td>
+                            <td class="table__cell">OG/V's</td>
                         </tr>
                     </thead>
 

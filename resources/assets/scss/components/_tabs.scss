@@ -1,0 +1,48 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Tabs
+//  ------------------------------------------------------------------------------------
+
+.tabs {
+    &__nav {
+        background-color: $color-grey-background;
+    }
+
+    &__list {
+        display: flex;
+        padding: 0;
+        border-left: 1px solid $color-grey-background;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__nav-item {
+        padding: spacing(md) spacing(lg);
+        border-right: 1px solid $color-white;
+        margin: 0;
+        cursor: pointer;
+        
+        &:hover {
+            background-color: $color-grey-extra-light;
+        }
+        
+        &.active {
+            border-top: 2px solid $color-salmon;
+            background-color: $color-white;
+        }
+    }
+
+    &__content {
+        padding-top: spacing(md);
+    }
+
+    &__section {
+        animation: fadeEffect 600ms;
+
+        display: none;
+    }
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

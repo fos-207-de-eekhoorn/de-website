@@ -7,7 +7,7 @@
             'pattern' => '1',
             'strength' => 'light',
         ],
-        'page_title' => 'Bivak oude',
+        'page_title' => 'Bivak OG/V\'s',
         'page_sub_title' => 'Afgelast',
     ])
     @endcomponent

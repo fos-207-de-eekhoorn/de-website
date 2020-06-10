@@ -7,7 +7,7 @@
             'pattern' => '1',
             'strength' => 'light',
         ],
-        'page_title' => 'Bivak JV/G',
+        'page_title' => 'Bivak JG/V\'s',
         'page_sub_title' => 'Afgelast',
     ])
     @endcomponent
@@ -37,7 +37,7 @@
     {{--
 	<div class="row section">
         <div class="col-12">
-            <h2>Bivak JV/G</h2>
+            <h2>Bivak JG/V</h2>
             <p>Geachte ouders/verantwoordelijke</p>
             <br>
             <p><strong>Vrijdag 10 april</strong> is het zo ver, dan vertrekken wij met de JGV tot en met <strong>maandag 13 april</strong> op bivak naar Ieper. Wij zouden het tof vinden als uw dochter/zoon samen met ons er een spetterend bivak kan van maken vol toffe en verrassende activiteiten. De prijs voor bivak bedraagt €50. </p>
