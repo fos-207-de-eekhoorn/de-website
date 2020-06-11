@@ -9,20 +9,31 @@
 
     &__list {
         display: flex;
+        flex-wrap: wrap;
         padding: 0;
         border-left: 1px solid $color-grey-background;
+        border-right: 1px solid $color-grey-background;
         margin: 0;
         list-style: none;
     }
 
     &__nav-item {
+        width: 50%;
         padding: spacing(md) spacing(lg);
         border-right: 1px solid $color-white;
+        border-bottom: 1px solid $color-white;
         margin: 0;
         cursor: pointer;
         
+        text-align: center;
+        
         &:hover {
             background-color: $color-grey-extra-light;
+        }
+
+        @include mq(md) {
+            width: auto;
+            border-bottom: none;
         }
         
         &.active {

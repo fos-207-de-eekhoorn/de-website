@@ -24,6 +24,11 @@
                 De bevers en oude gaan niet naar de geplande kampplaats.<br>
                 Alle concrete info vind u hieronder.
             </p>
+
+            <p>
+                Hier is zeker nog eens al de informatie die je nodig hebt in een documentje:<br>
+                <a href="{{ asset('/docs/Info_kamp.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a>
+            </p>
         </div>
     </section>
 
@@ -171,8 +176,12 @@
                                 </h4>
 
                                 <p>
-                                    Als bever speel ik samen met de andere bevers.<br>
-                                    Ik ben eerlijk, vriendelijk en hou vol.
+                                    <i>Als bever speel ik samen met de andere bevers.<br>
+                                    Ik ben eerlijk, vriendelijk en hou vol.</i>
+                                </p>
+
+                                <p>
+                                    Zoals de traditie het voorschrijft wordt er elke dag een bever van de dag verkozen. Dat is een bever die zich de dag voordien super goed heeft ingezet tijdens de spellen en boven de groep uitsprong. Deze bever mag dan de volgende dag zijn/haar beverwet opzeggen bij de leiding. Het is dus aangeraden om deze op voorhand al eens te bekijken.
                                 </p>
                             </div>
                         </div>
@@ -303,9 +312,13 @@
                                 </h4>
 
                                 <p>
-                                    Als welp speel ik samen met de anderen in de jungle.<br>
+                                    <i>Als welp speel ik samen met de anderen in de jungle.<br>
                                     Ik luister naar de oudere wolven.<br>
-                                    Ik ben eerlijk, vriendelijk en hou vol.
+                                    Ik ben eerlijk, vriendelijk en hou vol.</i>
+                                </p>
+
+                                <p>
+                                    Zoals de traditie het voorschrijft wordt er elke dag een welp van de dag verkozen. Dat is een welp die zich de dag voordien super goed heeft ingezet tijdens de spellen en boven de groep uitsprong. Deze welp mag dan de volgende dag zijn/haar welpenwet opzeggen bij de leiding. Het is dus aangeraden om deze op voorhand al eens te bekijken.
                                 </p>
                             </div>
                         </div>
@@ -453,6 +466,10 @@
                                     <li>Een scouts / gids is ijverig. </li>
                                     <li>Een scouts / gids is zelfbewust en heeft eerbied voor zichzelf en anderen.</li>
                                 </ul>
+
+                                <p>
+                                    Zoals de traditie het voorschrijft wordt er elke dag een scouts / gids van de dag verkozen. Dat is een scouts / gids die zich de dag voordien super goed heeft ingezet tijdens de spellen en boven de groep uitsprong. Deze scouts / gids mag dan de volgende dag zijn/haar wet opzeggen bij de leiding. Het is dus aangeraden om deze op voorhand al eens te bekijken.
+                                </p>
                             </div>
 
                             <div class="col-12 section section--small-spacing">
@@ -606,6 +623,10 @@
                                     <li>Een scouts / gids is ijverig. </li>
                                     <li>Een scouts / gids is zelfbewust en heeft eerbied voor zichzelf en anderen.</li>
                                 </ul>
+
+                                <p>
+                                    Zoals de traditie het voorschrijft wordt er elke dag een scouts / gids van de dag verkozen. Dat is een scouts / gids die zich de dag voordien super goed heeft ingezet tijdens de spellen en boven de groep uitsprong. Deze scouts / gids mag dan de volgende dag zijn/haar wet opzeggen bij de leiding. Het is dus aangeraden om deze op voorhand al eens te bekijken.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -697,6 +718,11 @@
             <h2 class="text--align-center">Heb je nog vragen?</h2>
             <p class="text--align-center">
                 Aarzal niet de takleiding te contacteren.
+            </p>
+
+            <p class="text--align-center">
+                Hier is zeker nog eens al de informatie die je nodig hebt in een documentje:<br>
+                <a href="{{ asset('/docs/Info_kamp.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a>
             </p>
         </div>
 
