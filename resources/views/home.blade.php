@@ -76,29 +76,9 @@
 
     <div class="row section">
         <div class="col-12">
-            <h2>Corona update</h2>
-
-            <h5 class="medium-margin-top">Activiteiten</h5>
+            <h2>Het kamp gaat door!</h2>
             <p>
-                Voorlopig zijn alle activiteiten tot en met 30 mei afgelast. Daarna hopen we terug te mogen beginnen op 6 juni. Onder <a href="{{ url('/takken') }}">takken</a> op onze site vindt u altijd de meest recente informatie over de activiteiten.
-            </p>
-
-            <h5 class="medium-margin-top">Koekenverkoop</h5>
-            <p>
-                Door de uitzonderlijke omstandigheden kunnen wij de bestelde koeken niet leveren. Jullie kunnen deze op een veilige manier afhalen bij Ara door een seintje te geven.<br>
-                Wie nog niet heeft gestort voor zijn bestelling vragen we dit zo snel mogelijk te doen.
-            </p>
-
-            <h5 class="medium-margin-top">Kamp</h5>
-            <p>
-                We mogen er voorlopig nog van uitgaan dat ons zomerkamp doorgaat!<br>
-                Voor welpen, JG/V’s en OG/V’s is er valiezenkoers op 18 juli . We vertrekken op 21 juli aan het station van Brugge. De bevers vervoegen ons op ouderbezoek dag, zondag 26 juli en brengen dan zelf hun valies mee. Op 31 Juli gaan we allemaal samen terug met de trein.
-            </p>
-            <p>
-                <strong>Adres kampterrein:</strong><br>
-                vzw Jeugdwerken Uidekrij<br>
-                Bronnenweg 10<br>
-                1755  Gooik
+                Vind <a href="{{ url('/evenementen/kamp') }}">hier</a> alle informatie over kamp dat je nodig hebt voor jouw spruit!
             </p>
 
             <h5 class="medium-margin-top">Vragen?</h5>
