@@ -81,6 +81,16 @@
                 Vind <a href="{{ url('/evenementen/kamp') }}">hier</a> alle informatie over kamp dat je nodig hebt voor jouw spruit!
             </p>
 
+            <h3>Fosshop</h3>
+            <p>
+                Indien uw zoon/dochter nog zaken uit de fosshop nodig heeft voor kamp, kan u dit document invullen en doorsturen naar <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>. Dit ten laatste tegen <strong>8 juli</strong>.
+            </p>
+            <p>
+                Verdere info kan u terugvinden in het document.<br>
+                <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a><br>
+                <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.docx') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-word"></i></span>Info_kamp.pdf</a>
+            </p>
+
             <h5 class="medium-margin-top">Vragen?</h5>
             <p>
                 Contacteer ons gerust als jullie nog vragen of bezorgdheden hebben.<br>
