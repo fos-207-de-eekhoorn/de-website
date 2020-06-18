@@ -39,8 +39,8 @@
                 </p>
                 <p>
                     Verdere info kan u terugvinden in het document.<br>
-                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a><br>
-                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.docx') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-word"></i></span>Info_kamp.pdf</a>
+                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Bestelformulier-FOSSHOP.pdf</a><br>
+                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.docx') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-word"></i></span>Bestelformulier-FOSSHOP.docx</a>
                 </p>
             </div>
         </div>
