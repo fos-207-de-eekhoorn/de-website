@@ -17,18 +17,32 @@
         </div>
 
         <div class="col-12 col-md-8 align-self-center">
-            <h2>Algemene info</h2>
+            <div class="section section--extra-small-spacing">
+                <h2>Algemene info</h2>
 
-            <p>
-                Wegens de ontwikkeling van COVID-19 moeten we ons kamp anders indelen dan anders.<br>
-                De bevers en oude gaan niet naar de geplande kampplaats.<br>
-                Alle concrete info vind u hieronder.
-            </p>
+                <p>
+                    Wegens de ontwikkeling van COVID-19 moeten we ons kamp anders indelen dan anders.<br>
+                    De bevers en oude gaan niet naar de geplande kampplaats.<br>
+                    Alle concrete info vind u hieronder.
+                </p>
 
-            <p>
-                Hier is zeker nog eens al de informatie die je nodig hebt in een documentje:<br>
-                <a href="{{ asset('/docs/Info_kamp.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a>
-            </p>
+                <p>
+                    Hier is zeker nog eens al de informatie die je nodig hebt in een documentje:<br>
+                    <a href="{{ asset('/docs/Info_kamp.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a>
+                </p>
+            </div>
+
+            <div class="section section--extra-small-spacing">
+                <h4>Fosshop</h4>
+                <p>
+                    Indien uw zoon/dochter nog zaken uit de fosshop nodig heeft voor kamp, kan u dit document invullen en doorsturen naar <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>. Dit ten laatste tegen <strong>8 juli</strong>.
+                </p>
+                <p>
+                    Verdere info kan u terugvinden in het document.<br>
+                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a><br>
+                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.docx') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-word"></i></span>Info_kamp.pdf</a>
+                </p>
+            </div>
         </div>
     </section>
 
