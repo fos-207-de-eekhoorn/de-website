@@ -1,4 +1,4 @@
-@extends('layouts.main')
+    @extends('layouts.main')
 
 @section('content')
     @component('components.banner', [
@@ -106,10 +106,20 @@
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Zondag <strong>26 juli</strong><br>
-                                    -<br>
-                                    Donderdag <strong>30 juli</strong>
+                                    Woensdag <strong>26 juli</strong>.<br>
+                                    Tussen <strong>14u00 en 16u00</strong>* mogen de kindjes afgezet worden aan het kampadres.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Zaterdag <strong>30 juli</strong>.<br>
+                                    Tussen <strong>14u30 en 16u30</strong>* mogen de kindjes afgehaald worden.
+                                </p>
+
+                                </p>
+                                    <span class="fa--before icon"><i class="fas fa-exclamation"></i></span>De afhaal en ophaal periodes zijn opgesplitst. Als je niet zeker bent welke periode je verwacht, gelieve Wasbeer te contacteren voor meer informatie.
                                 </p>
                             </div>
 
@@ -252,10 +262,16 @@
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Woensdag <strong>22 juli</strong><br>
-                                    -<br>
-                                    Zaterdag <strong>1 augustus</strong>
+                                    Woensdag <strong>22 juli</strong>.<br>
+                                    Tussen <strong>10u30 en 12u00</strong> mogen de kindjes afgezet worden aan het kampadres.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Zaterdag <strong>1 augustus</strong>.<br>
+                                    Tussen <strong>12u00 en 13u30</strong> mogen de kindjes afgehaald worden.
                                 </p>
                             </div>
 
@@ -395,10 +411,16 @@
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Woensdag <strong>22 juli</strong><br>
-                                    -<br>
-                                    Zaterdag <strong>1 augustus</strong>
+                                    Woensdag <strong>22 juli</strong>.<br>
+                                    Tussen <strong>10u30 en 12u00</strong> mogen de kindjes afgezet worden aan het kampadres.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Zaterdag <strong>1 augustus</strong>.<br>
+                                    Tussen <strong>12u00 en 13u30</strong> mogen de kindjes afgehaald worden.
                                 </p>
                             </div>
 
@@ -556,10 +578,16 @@
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Dinsdag <strong>21 juli</strong><br>
-                                    -<br>
-                                    Vrijdag <strong>31 juli</strong>
+                                    Woensdag <strong>21 juli</strong>.<br>
+                                    Om <strong>12u00</strong> stipt aan het station.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Zaterdag <strong>31 juli</strong>.<br>
+                                    Om <strong>21u00</strong> terug aan het station.
                                 </p>
                             </div>
 
