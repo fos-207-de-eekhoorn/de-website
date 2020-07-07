@@ -580,13 +580,13 @@
 
                                 <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Woensdag <strong>21 juli</strong>.<br>
+                                    Dinsdag <strong>21 juli</strong>.<br>
                                     Om <strong>12u00</strong> stipt aan het station.
                                 </p>
 
                                 <h5 class="text-color--dark">Einde</h5>
                                 <p>
-                                    Zaterdag <strong>31 juli</strong>.<br>
+                                    Vrijdag <strong>31 juli</strong>.<br>
                                     Om <strong>21u00</strong> terug aan het station.
                                 </p>
                             </div>
