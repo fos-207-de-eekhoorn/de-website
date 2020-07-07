@@ -398,7 +398,7 @@
                                 <p>
                                     Woensdag <strong>22 juli</strong><br>
                                     -<br>
-                                    Maandag <strong>1 augustus</strong>
+                                    Zaterdag <strong>1 augustus</strong>
                                 </p>
                             </div>
 
