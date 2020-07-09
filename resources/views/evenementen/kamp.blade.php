@@ -549,6 +549,7 @@
                             <li>2 pyjama’s</li>
                             <li>Slaapzak, matje, kussen, knuffel</li>
                             <li>Regenjas en gewone jas</li>
+                            <li>Regenbroek</li>
                             <li>Laarzen</li>
                             <li>Stevige wandelschoenen</li>
                             <li>1 paar extra schoenen</li>
@@ -566,7 +567,17 @@
                             <li>Zakmes (grootte evenredig met verantwoordelijkheidsgevoel)</li>
                             <li>Gamel, beker en bestek</li>
                             <li>Een drinkbus met naam op</li>
+                            <li>Kampingstoeltje</li>
                             <li>TREKRUGZAK</li>
+                        </ul>
+
+                        </p>
+                            <span class="fa--before icon"><i class="fas fa-exclamation"></i></span>Nieuw in de lijst:
+                        </p>
+
+                        <ul>
+                            <li>Regenbroek</li>
+                            <li>Kampingstoeltje</li>
                         </ul>
                     </div>
 
