@@ -592,7 +592,7 @@
                                 <h5 class="text-color--dark">Start</h5>
                                 <p>
                                     Dinsdag <strong>21 juli</strong>.<br>
-                                    Om <strong>12u00</strong> stipt aan het station.
+                                    Om <strong>11u30</strong> stipt aan het station.
                                 </p>
 
                                 <h5 class="text-color--dark">Einde</h5>
