@@ -108,13 +108,13 @@
 
                                 <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Woensdag <strong>26 juli</strong>.<br>
+                                    Zondag <strong>26 juli</strong>.<br>
                                     Tussen <strong>14u00 en 16u00</strong>* mogen de kindjes afgezet worden aan het kampadres.
                                 </p>
 
                                 <h5 class="text-color--dark">Einde</h5>
                                 <p>
-                                    Zaterdag <strong>30 juli</strong>.<br>
+                                    Donderdag <strong>30 juli</strong>.<br>
                                     Tussen <strong>14u30 en 16u30</strong>* mogen de kindjes afgehaald worden.
                                 </p>
 
