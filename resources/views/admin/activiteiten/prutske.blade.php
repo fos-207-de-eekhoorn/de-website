@@ -14,6 +14,12 @@
     {{-- Contact formulier --}}
     {{-- EL & AEL --}}
     <div class="row section section--small-spacing">
+        <div class="col-12 medium-margin-bottom">
+            <a href="{{ url('/admin/activiteiten') }}">
+                <span class="fa--before"><i class="fas fa-angle-left"></i></span>Ga terug naar overzicht
+            </a>
+        </div>
+
         <div class="col-12">
             <h2>Export voor het prutske</h2>
 
