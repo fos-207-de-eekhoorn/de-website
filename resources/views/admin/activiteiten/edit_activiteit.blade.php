@@ -300,6 +300,8 @@
     </div>
 
     <script>
+        var $is_activiteit = $('#is_activiteit');
+
         (function($){
             // Disable fields when there's no activity
             $is_activiteit.on('change',function() {

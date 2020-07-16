@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddIsActiviteitToActiviteiten extends Migration
+class UpdateOmschrijvingInActiviteitenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddIsActiviteitToActiviteiten extends Migration
     public function up()
     {
         Schema::table('activiteiten', function (Blueprint $table) {
-            $table->tinyInteger('is_activiteit')->default(1)->after('prijs');
+            $table->text('omschrijving')->nullable()->change();
         });
     }
 
