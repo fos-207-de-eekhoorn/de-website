@@ -46,7 +46,7 @@
 
             @if (session('edit_success'))
                 @component('components.flash_message', [
-                    'type' => 'info',
+                    'type' => 'success',
                 ])
                     De activiteit is aangepast.
                 @endcomponent
@@ -56,7 +56,7 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
+                    Er is iets fout gegaan. Als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
                 @endcomponent
             @endif
 
@@ -90,7 +90,7 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
+                    Er is iets fout gegaan. Als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
                 @endcomponent
             @endif
 
@@ -106,7 +106,7 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er is iets fout gegaan, Paco kan deze toch nog terugzetten.
+                    Er is iets fout gegaan. Geen paniek, Paco kan deze terugzetten.
                 @endcomponent
             @endif
 
