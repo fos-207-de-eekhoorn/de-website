@@ -77,7 +77,9 @@
                         <div class="leiding">
 
                             <h5 class="leiding__totem">
-                                @if (strlen($leider->leider->totem) > 0)
+                                @if ($tak->naam === 'Welpen' && strlen($leider->leider->welpennaam) > 0)
+                                    {{ $leider->leider->welpennaam }} 
+                                @elseif (strlen($leider->leider->totem) > 0)
                                     {{ $leider->leider->totem }}
                                 @else
                                     {{ $leider->leider->voornaam }}
