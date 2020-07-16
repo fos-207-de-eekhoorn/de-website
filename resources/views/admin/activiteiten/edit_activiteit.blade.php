@@ -41,6 +41,23 @@
 
                 {{-- Activiteit --}}
                 <div class="row">
+                    {{-- Is er activiteit? --}}
+                    <div class="col-12">
+                        {{-- Is er activiteit? --}}
+                        <section class="form__section">
+                            <input
+                                type="checkbox"
+                                id="is_activiteit"
+                                name="is_activiteit"
+                                class="form__checkbox"
+                                checked>
+
+                            <label for="is_activiteit" class="form__label form__label--inline">
+                                Er wordt activiteit gegeven
+                            </label>
+                        </section>
+                    </div>
+
                     {{-- Datum --}}
                     {{-- Startuur --}}
                     {{-- Einduur --}}
@@ -284,6 +301,26 @@
 
     <script>
         (function($){
+            // Disable fields when there's no activity
+            $('#is_activiteit').on('change',function() {
+                var isChecked = $(this).prop('checked');
+                var elementsToBlock = [
+                    $('#start_uur'),
+                    $('#eind_uur'),
+                    $('#prijs'),
+                    $('#locatie'),
+                    $('#omschrijving')
+                ]
+
+                if (isChecked) elementsToBlock.forEach(function(e) {
+                    e.removeAttr('disabled');
+                });
+                else elementsToBlock.forEach(function(e) {
+                    e.attr('disabled', 'true');
+                });
+            });
+
+            // Fill in date
             document.getElementById('day').value = '{{ Carbon\Carbon::parse($activiteit->datum)->format('d') }}';
             document.getElementById('month').value = '{{ Carbon\Carbon::parse($activiteit->datum)->format('m') }}';
             document.getElementById('year').value = '{{ Carbon\Carbon::parse($activiteit->datum)->format('Y') }}';

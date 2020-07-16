@@ -335,7 +335,7 @@
                 else elementsToBlock.forEach(function(e) {
                     e.attr('disabled', 'true');
                 });
-            })
+            });
 
             // Fill in date
             var d = new Date();
