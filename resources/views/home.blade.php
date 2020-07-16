@@ -15,7 +15,7 @@
         </h1>
     </section>
 
-    
+    {{--
     <div class="row section section--small-spacing small-gutters">
         <div class="col-12">
             <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
@@ -74,7 +74,7 @@
             </div>
         @endforeach
     </div>
-    
+    --}}
 
     <div class="row section">
         <div class="col-12">
