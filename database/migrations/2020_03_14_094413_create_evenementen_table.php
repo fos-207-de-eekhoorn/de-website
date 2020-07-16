@@ -19,8 +19,8 @@ class CreateEvenementenTable extends Migration
             $table->tinyInteger('has_static_page')->default('0');
             $table->string('static_link')->nullable();
             $table->text('omschrijving')->nullable();
-            $table->date('start_datum')->nullable();
-            $table->date('eind_datum')->nullable();
+            $table->date('start_datum');
+            $table->date('eind_datum');
             $table->time('start_uur')->nullable();
             $table->time('eind_uur')->nullable();
             $table->string('locatie')->nullable();
