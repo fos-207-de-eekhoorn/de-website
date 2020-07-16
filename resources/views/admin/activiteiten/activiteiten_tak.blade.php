@@ -118,38 +118,44 @@
                             {{ Carbon\Carbon::parse($activiteit->datum)->format('M') }}
                         </td>
 
-                        <td class="table__cell">
-                            {{ $activiteit->omschrijving }}
+                        @if($activiteit->is_activiteit)
+                            <td class="table__cell">
+                                {{ $activiteit->omschrijving }}
 
-                            <br><br>
+                                <br><br>
 
-                            <span class="
-                                {{ ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
-                                    ? NULL
-                                    : 'text-color--light text--xs'
-                                }}
-                            ">
-                                Tijdstip: {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
-                            </span><br>
+                                <span class="
+                                    {{ ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
+                                        ? NULL
+                                        : 'text-color--light text--xs'
+                                    }}
+                                ">
+                                    Tijdstip: {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
+                                </span><br>
 
-                            <span class="
-                                {{ $activiteit->prijs > 0
-                                    ? NULL
-                                    : 'text-color--light text--xs'
-                                }}
-                            ">
-                                Prijs: <span class="text--unit">€</span>{{ $activiteit->prijs }}
-                            </span><br>
+                                <span class="
+                                    {{ $activiteit->prijs > 0
+                                        ? NULL
+                                        : 'text-color--light text--xs'
+                                    }}
+                                ">
+                                    Prijs: <span class="text--unit">€</span>{{ $activiteit->prijs }}
+                                </span><br>
 
-                            <span class="
-                                {{ $activiteit->locatie != 'Lokaal'
-                                    ? NULL
-                                    : 'text-color--light text--xs'
-                                }}
-                            ">
-                                Locatie: {{ $activiteit->locatie }}
-                            </span>
-                        </td>
+                                <span class="
+                                    {{ $activiteit->locatie != 'Lokaal'
+                                        ? NULL
+                                        : 'text-color--light text--xs'
+                                    }}
+                                ">
+                                    Locatie: {{ $activiteit->locatie }}
+                                </span>
+                            </td>
+                        @else
+                            <td class="table__cell">
+                                Geen activiteit
+                            </td>
+                        @endif
 
                         <td class="table__cell no-wrap">
                             <p>
