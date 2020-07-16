@@ -15,7 +15,7 @@
     {{-- EL & AEL --}}
     <div class="row section section--small-spacing">
         <div class="col-12 medium-margin-bottom">
-            <a href="{{ url('/admin/activiteiten') }}">
+            <a href="{{ url()->previous() }}">
                 <span class="fa--before"><i class="fas fa-angle-left"></i></span>Ga terug naar overzicht
             </a>
         </div>
