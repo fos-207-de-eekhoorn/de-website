@@ -13,7 +13,7 @@ class Evenement extends Model
     protected $table = 'evenementen';
 
     protected $fillable = [
-        'tak_id', 'activiteit_id', 'naam', 'omschrijving', 'start_datum', 'eind_datum', 'start_uur', 'eind_uur', 'locatie', 'prijs', 'active',
+        'naam', 'static_url', 'snelle_info', 'omschrijving', 'start_datum', 'eind_datum', 'start_uur', 'eind_uur', 'locatie', 'prijs', 'kleur', 'banner_patroon', 'banner_sterkte', 'active',
     ];
 
     public function evenement_tak()

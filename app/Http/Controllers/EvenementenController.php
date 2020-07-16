@@ -37,10 +37,18 @@ class EvenementenController extends Controller
             return view('evenementen.evenement_details', [
                 'evenement' => $evenement,
             ]);
-        } else { // todo
-            Session::flash('warning', $naam);
+        } else {
+            $evenement = Evenement::where('static_url', '/evenementen/'.$naam)->first();
+            
+            if (is_object($evenement)) {
+                return view('evenementen.evenement_details', [
+                    'evenement' => $evenement,
+                ]);
+            } else { // todo
+                Session::flash('warning', $naam);
 
-            return redirect('evenementen');
+                return redirect('evenementen');
+            }
         }
     }
 

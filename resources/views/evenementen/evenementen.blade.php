@@ -25,7 +25,7 @@
                 <ul class="evenementen-list row small-gutters">
                     @foreach($evenementen as $evenement)
                         <li class="evenementen-list__item col-12 col-md-6">
-                            <a href="{{ url('/evenementen/' . str_replace(' ', '-', strtolower($evenement->naam))) }}">
+                            <a href="{{ isset($evenement->static_url) ? $evenement->static_url : url('/evenementen/' . str_replace(' ', '-', strtolower($evenement->naam))) }}">
                                 <div class="evenementen-list-item">
                                     <div class="evenementen-list-item__visual evenementen-list-item__visual--{{ $evenement->kleur }}">
                                         <img src="{{ asset('/img/banners/' . $evenement->kleur . '-' . $evenement->banner_patroon . '-' . $evenement->banner_sterkte . '.png') }}" class="evenementen-list-item__image">
@@ -46,17 +46,29 @@
                                             {{ $evenement->naam }}
                                         </h3>
 
-                                        <p class="evenementen-list-item__text evenementen-list-item__text--location d-flex">
-                                            <span class="evenementen-list-item__icon"><i class="fas fa-map-marker-alt"></i></span>{!! $evenement->locatie !!}
-                                        </p>
+                                        @if (isset($evenement->locatie))
+                                            <p class="evenementen-list-item__text evenementen-list-item__text--location d-flex">
+                                                <span class="evenementen-list-item__icon"><i class="fas fa-map-marker-alt"></i></span>{!! $evenement->locatie !!}
+                                            </p>
+                                        @endif
 
-                                        <p class="evenementen-list-item__text evenementen-list-item__text--time">
-                                            <span class="evenementen-list-item__icon"><i class="fas fa-clock"></i></span>Start om {{ Carbon\Carbon::parse($evenement->start_uur)->format('H\ui') }}
-                                        </p>
+                                        @if (isset($evenement->start_uur))
+                                            <p class="evenementen-list-item__text evenementen-list-item__text--time">
+                                                <span class="evenementen-list-item__icon"><i class="fas fa-clock"></i></span>Start om {{ Carbon\Carbon::parse($evenement->start_uur)->format('H\ui') }}
+                                            </p>
+                                        @endif
 
-                                        <p class="evenementen-list-item__text evenementen-list-item__text--price">
-                                            <span class="evenementen-list-item__icon"><i class="fas fa-euro-sign"></i></span>{{ $evenement->prijs }}
-                                        </p>
+                                        @if (isset($evenement->prijs))
+                                            <p class="evenementen-list-item__text evenementen-list-item__text--price">
+                                                <span class="evenementen-list-item__icon"><i class="fas fa-euro-sign"></i></span>{{ $evenement->prijs }}
+                                            </p>
+                                        @endif
+
+                                        @if (isset($evenement->snelle_info))
+                                            <p class="evenementen-list-item__text">
+                                                <span class="evenementen-list-item__icon"><i class="fas fa-comment"></i></span>{{ $evenement->snelle_info }}
+                                            </p>
+                                        @endif
                                     </div>
                                 </div>
                             </a>
