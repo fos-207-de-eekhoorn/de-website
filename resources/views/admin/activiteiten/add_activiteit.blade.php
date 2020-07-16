@@ -317,24 +317,15 @@
     </div>
 
     <script>
+        var $is_activiteit = $('#is_activiteit');
+
         (function($){
             // Disable fields when there's no activity
-            $('#is_activiteit').on('change',function() {
-                var isChecked = $(this).prop('checked');
-                var elementsToBlock = [
-                    $('#start_uur'),
-                    $('#eind_uur'),
-                    $('#prijs'),
-                    $('#locatie'),
-                    $('#omschrijving')
-                ]
-
-                if (isChecked) elementsToBlock.forEach(function(e) {
-                    e.removeAttr('disabled');
-                });
-                else elementsToBlock.forEach(function(e) {
-                    e.attr('disabled', 'true');
-                });
+            $is_activiteit.on('change',function() {
+                toggleBlockableElements();
+            });
+            $(document).ready(function() {
+                toggleBlockableElements();
             });
 
             // Fill in date
@@ -349,5 +340,25 @@
                 else return n;
             }
         })(jQuery);
+
+        function toggleBlockableElements() {
+            console.log('toggleBlockableElements');
+            var isChecked = $is_activiteit.prop('checked');
+            console.log(isChecked);
+            var elementsToBlock = [
+                $('#start_uur'),
+                $('#eind_uur'),
+                $('#prijs'),
+                $('#locatie'),
+                $('#omschrijving')
+            ]
+
+            if (isChecked) elementsToBlock.forEach(function(e) {
+                e.removeAttr('disabled');
+            });
+            else elementsToBlock.forEach(function(e) {
+                e.attr('disabled', 'true');
+            });
+        }
     </script>
 @endsection

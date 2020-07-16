@@ -302,22 +302,11 @@
     <script>
         (function($){
             // Disable fields when there's no activity
-            $('#is_activiteit').on('change',function() {
-                var isChecked = $(this).prop('checked');
-                var elementsToBlock = [
-                    $('#start_uur'),
-                    $('#eind_uur'),
-                    $('#prijs'),
-                    $('#locatie'),
-                    $('#omschrijving')
-                ]
-
-                if (isChecked) elementsToBlock.forEach(function(e) {
-                    e.removeAttr('disabled');
-                });
-                else elementsToBlock.forEach(function(e) {
-                    e.attr('disabled', 'true');
-                });
+            $is_activiteit.on('change',function() {
+                toggleBlockableElements();
+            });
+            $(document).ready(function() {
+                toggleBlockableElements();
             });
 
             // Fill in date
@@ -325,5 +314,25 @@
             document.getElementById('month').value = '{{ Carbon\Carbon::parse($activiteit->datum)->format('m') }}';
             document.getElementById('year').value = '{{ Carbon\Carbon::parse($activiteit->datum)->format('Y') }}';
         })(jQuery);
+
+        function toggleBlockableElements() {
+            console.log('toggleBlockableElements');
+            var isChecked = $is_activiteit.prop('checked');
+            console.log(isChecked);
+            var elementsToBlock = [
+                $('#start_uur'),
+                $('#eind_uur'),
+                $('#prijs'),
+                $('#locatie'),
+                $('#omschrijving')
+            ]
+
+            if (isChecked) elementsToBlock.forEach(function(e) {
+                e.removeAttr('disabled');
+            });
+            else elementsToBlock.forEach(function(e) {
+                e.attr('disabled', 'true');
+            });
+        }
     </script>
 @endsection
