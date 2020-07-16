@@ -54,7 +54,8 @@ class AdminController extends Controller
         }
     }
 
-    public function get_add_activiteit($tak = NULL) {
+    public function get_add_activiteit($tak = NULL)
+    {
         $takken = Tak::get();
 
         $data = [
@@ -75,7 +76,8 @@ class AdminController extends Controller
         return view('admin.activiteiten.add_activiteit', $data);
     }
 
-    public function post_add_activiteit(Request $request) {
+    public function post_add_activiteit(Request $request)
+    {
         $new_activiteit = new Activiteit;
 
         $new_activiteit->tak_id = $request->tak;
