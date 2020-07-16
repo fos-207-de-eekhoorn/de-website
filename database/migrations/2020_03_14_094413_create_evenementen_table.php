@@ -16,14 +16,15 @@ class CreateEvenementenTable extends Migration
         Schema::create('evenementen', function (Blueprint $table) {
             $table->increments('id');
             $table->string('naam');
-            $table->text('omschrijving')->nullable()->default('<p>Info volgt</p>');
+            $table->tinyInteger('has_static_page')->default('0');
             $table->string('static_link')->nullable();
-            $table->date('start_datum');
-            $table->date('eind_datum');
-            $table->time('start_uur');
-            $table->time('eind_uur');
-            $table->string('locatie');
-            $table->float('prijs', 5, 2)->unsigned()->default(0);
+            $table->text('omschrijving')->nullable();
+            $table->date('start_datum')->nullable();
+            $table->date('eind_datum')->nullable();
+            $table->time('start_uur')->nullable();
+            $table->time('eind_uur')->nullable();
+            $table->string('locatie')->nullable();
+            $table->float('prijs', 5, 2)->unsigned()->nullable();
             $table->string('kleur', 127)->default('green');
             $table->string('banner_patroon', 127)->default('1');
             $table->string('banner_sterkte', 127)->default('light');
