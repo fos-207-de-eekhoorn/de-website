@@ -40,7 +40,7 @@
             </div>
 
             <table class="table activities section">
-                @foreach ($tak->activiteiten as $activiteit)
+                @forelse ($tak->activiteiten as $activiteit)
                     <tr class="table__row">
                         <td class="table__cell activities__date">{{ Carbon\Carbon::parse($activiteit->datum)->format('j M') }}</td>
                         <td class="table__cell">
@@ -65,7 +65,13 @@
                             @endif
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr class="table__row">
+                        <td class="table__cell" colspan="2">
+                            De nieuwe activiteiten komen snel online!
+                        </td>
+                    </tr>
+                @endforelse
             </table>
         </div>
 
