@@ -120,7 +120,8 @@
         }
     }
 
-    &__input {
+    &__input,
+    &__textarea {
         &:disabled {
             background-color: $color-grey-extra-light;
             cursor: not-allowed;

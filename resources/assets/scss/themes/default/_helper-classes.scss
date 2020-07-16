@@ -251,6 +251,27 @@
 	margin-right: spacing(md);
 }
 
+.large-margin,
+.large-margin-vertical,
+.large-margin-top {
+	margin-top: spacing(lg);
+}
+.large-margin,
+.large-margin-vertical,
+.large-margin-bottom {
+	margin-bottom: spacing(lg);
+}
+.large-margin,
+.large-margin-horizontal,
+.large-margin-left {
+	margin-left: spacing(lg);
+}
+.large-margin,
+.large-margin-horizontal,
+.large-margin-right {
+	margin-right: spacing(lg);
+}
+
 .shadow {
 	@include shadow-standard;
 }

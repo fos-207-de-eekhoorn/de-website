@@ -78,6 +78,7 @@ class AdminController extends Controller
 
     public function post_add_activiteit(Request $request)
     {
+        return $request;
         $new_activiteit = new Activiteit;
 
         $new_activiteit->tak_id = $request->tak;
