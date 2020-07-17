@@ -89,6 +89,7 @@ class AdminController extends Controller
             $new_activiteit->prijs = $request->prijs;
             $new_activiteit->locatie = $request->locatie;
             $new_activiteit->omschrijving = $request->omschrijving;
+            $new_activiteit->is_activiteit = '1';
         } else {
             $new_activiteit->is_activiteit = '0';
         }
@@ -177,6 +178,7 @@ class AdminController extends Controller
             $activiteit->prijs = $request->prijs;
             $activiteit->locatie = $request->locatie;
             $activiteit->omschrijving = $request->omschrijving;
+            $activiteit->is_activiteit = '1';
         } else {
             $activiteit->is_activiteit = '0';
         }
