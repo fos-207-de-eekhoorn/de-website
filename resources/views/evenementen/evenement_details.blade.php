@@ -16,21 +16,8 @@
     ])
     @endcomponent
 
-
-
-    @component('components.evenement_bar', [
-        'naam' => $evenement->naam,
-        'start_datum' => Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName,
-        'eind_datum' => Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName,
-        'start_uur' => $evenement->start_uur_formatted,
-        'eind_uur' => $evenement->eind_uur_formatted,
-        'locatie' => $evenement->locatie,
-        'prijs' => $evenement->prijs,
-    ])
-    @endcomponent
-
     <div class="row section justify-content-center">
-        <div class="col-8">
+        <div class="col-12 col-md-8">
             {!! $evenement->omschrijving !!}
 
             <h5>Datum</h5>
@@ -53,6 +40,21 @@
             <p>
                 {!! $evenement->locatie !!}
             </p>
+        </div>
+
+        <div class="col-12 col-md-4">
+            @component('components.evenement_bar', [
+                'naam' => $evenement->naam,
+                // 'start_datum' => Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName,
+                // 'eind_datum' => Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName,
+                'start_datum' => $evenement->start_datum,
+                'eind_datum' => $evenement->eind_datum,
+                'start_uur' => $evenement->start_uur_formatted,
+                'eind_uur' => $evenement->eind_uur_formatted,
+                'locatie' => $evenement->locatie,
+                'prijs' => $evenement->prijs,
+            ])
+            @endcomponent
         </div>
     </div>
 @endsection
