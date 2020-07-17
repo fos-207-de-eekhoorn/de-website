@@ -1,9 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing banner banner--full">
-        <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
-    </section>
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'blue-light',
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => 'Kost scouts',
+    ])
+    @endcomponent
 
     <div class="row section section--small-spacing">
         <div class="col-12">

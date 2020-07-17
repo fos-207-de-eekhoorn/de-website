@@ -40,7 +40,7 @@
             </div>
 
             <table class="table activities section">
-                @foreach ($tak->activiteiten as $activiteit)
+                @forelse ($tak->activiteiten as $activiteit)
                     <tr class="table__row">
                         <td class="table__cell activities__date">
                             {{ Carbon\Carbon::parse($activiteit->datum)->format('j M') }}
@@ -74,7 +74,13 @@
                             </td>
                         @endif
                     </tr>
-                @endforeach
+                @empty
+                    <tr class="table__row">
+                        <td class="table__cell" colspan="2">
+                            De nieuwe activiteiten komen snel online!
+                        </td>
+                    </tr>
+                @endforelse
             </table>
         </div>
 
@@ -86,7 +92,9 @@
                         <div class="leiding">
 
                             <h5 class="leiding__totem">
-                                @if (strlen($leider->leider->totem) > 0)
+                                @if ($tak->naam === 'Welpen' && strlen($leider->leider->welpennaam) > 0)
+                                    {{ $leider->leider->welpennaam }} 
+                                @elseif (strlen($leider->leider->totem) > 0)
                                     {{ $leider->leider->totem }}
                                 @else
                                     {{ $leider->leider->voornaam }}
