@@ -54,7 +54,8 @@ class AdminController extends Controller
         }
     }
 
-    public function get_add_activiteit($tak = NULL) {
+    public function get_add_activiteit($tak = NULL)
+    {
         $takken = Tak::get();
 
         $data = [
@@ -75,16 +76,22 @@ class AdminController extends Controller
         return view('admin.activiteiten.add_activiteit', $data);
     }
 
-    public function post_add_activiteit(Request $request) {
+    public function post_add_activiteit(Request $request)
+    {
         $new_activiteit = new Activiteit;
 
         $new_activiteit->tak_id = $request->tak;
         $new_activiteit->datum = $request->datum[2] . '-' . $request->datum[1] . '-' . $request->datum[0];
-        $new_activiteit->start_uur = $request->start_uur . ':00';
-        $new_activiteit->eind_uur = $request->eind_uur . ':00';
-        $new_activiteit->prijs = $request->prijs;
-        $new_activiteit->locatie = $request->locatie;
-        $new_activiteit->omschrijving = $request->omschrijving;
+
+        if ($request->is_activiteit === 'on') {
+            $new_activiteit->start_uur = $request->start_uur . ':00';
+            $new_activiteit->eind_uur = $request->eind_uur . ':00';
+            $new_activiteit->prijs = $request->prijs;
+            $new_activiteit->locatie = $request->locatie;
+            $new_activiteit->omschrijving = $request->omschrijving;
+        } else {
+            $new_activiteit->is_activiteit = '0';
+        }
 
         $add = $new_activiteit->save();
 
@@ -163,11 +170,16 @@ class AdminController extends Controller
         $activiteit = Activiteit::find($request->id);
 
         $activiteit->datum = $request->datum[2] . '-' . $request->datum[1] . '-' . $request->datum[0];
-        $activiteit->start_uur = $request->start_uur . ':00';
-        $activiteit->eind_uur = $request->eind_uur . ':00';
-        $activiteit->prijs = $request->prijs;
-        $activiteit->locatie = $request->locatie;
-        $activiteit->omschrijving = $request->omschrijving;
+
+        if ($request->is_activiteit === 'on') {
+            $activiteit->start_uur = $request->start_uur . ':00';
+            $activiteit->eind_uur = $request->eind_uur . ':00';
+            $activiteit->prijs = $request->prijs;
+            $activiteit->locatie = $request->locatie;
+            $activiteit->omschrijving = $request->omschrijving;
+        } else {
+            $activiteit->is_activiteit = '0';
+        }
 
         $edit = $activiteit->save();
 

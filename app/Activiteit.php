@@ -12,7 +12,7 @@ class Activiteit extends Model
     protected $table = 'activiteiten';
 
     protected $fillable = [
-        'tak_id', 'omschrijving', 'datum', 'start_uur', 'eind_uur', 'locatie', 'prijs',
+        'tak_id', 'omschrijving', 'datum', 'start_uur', 'eind_uur', 'locatie', 'prijs', 'is_activiteit',
     ];
 
     public function tak()

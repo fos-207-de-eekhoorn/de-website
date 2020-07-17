@@ -108,13 +108,13 @@
 
                                 <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Woensdag <strong>26 juli</strong>.<br>
+                                    Zondag <strong>26 juli</strong>.<br>
                                     Tussen <strong>14u00 en 16u00</strong>* mogen de kindjes afgezet worden aan het kampadres.
                                 </p>
 
                                 <h5 class="text-color--dark">Einde</h5>
                                 <p>
-                                    Zaterdag <strong>30 juli</strong>.<br>
+                                    Donderdag <strong>30 juli</strong>.<br>
                                     Tussen <strong>14u30 en 16u30</strong>* mogen de kindjes afgehaald worden.
                                 </p>
 
@@ -549,6 +549,7 @@
                             <li>2 pyjama’s</li>
                             <li>Slaapzak, matje, kussen, knuffel</li>
                             <li>Regenjas en gewone jas</li>
+                            <li>Regenbroek</li>
                             <li>Laarzen</li>
                             <li>Stevige wandelschoenen</li>
                             <li>1 paar extra schoenen</li>
@@ -566,7 +567,17 @@
                             <li>Zakmes (grootte evenredig met verantwoordelijkheidsgevoel)</li>
                             <li>Gamel, beker en bestek</li>
                             <li>Een drinkbus met naam op</li>
+                            <li>Kampingstoeltje</li>
                             <li>TREKRUGZAK</li>
+                        </ul>
+
+                        </p>
+                            <span class="fa--before icon"><i class="fas fa-exclamation"></i></span>Nieuw in de lijst:
+                        </p>
+
+                        <ul>
+                            <li>Regenbroek</li>
+                            <li>Kampingstoeltje</li>
                         </ul>
                     </div>
 
@@ -581,7 +592,7 @@
                                 <h5 class="text-color--dark">Start</h5>
                                 <p>
                                     Dinsdag <strong>21 juli</strong>.<br>
-                                    Om <strong>12u00</strong> stipt aan het station.
+                                    Om <strong>11u30</strong> stipt aan het station.
                                 </p>
 
                                 <h5 class="text-color--dark">Einde</h5>

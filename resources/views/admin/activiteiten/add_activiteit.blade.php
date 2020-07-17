@@ -27,6 +27,23 @@
 
                 {{-- Activiteit --}}
                 <div class="row">
+                    {{-- Is er activiteit? --}}
+                    <div class="col-12">
+                        {{-- Is er activiteit? --}}
+                        <section class="form__section">
+                            <input
+                                type="checkbox"
+                                id="is_activiteit"
+                                name="is_activiteit"
+                                class="form__checkbox"
+                                checked>
+
+                            <label for="is_activiteit" class="form__label form__label--inline">
+                                Er wordt activiteit gegeven
+                            </label>
+                        </section>
+                    </div>
+
                     {{-- Datum --}}
                     {{-- Startuur --}}
                     {{-- Einduur --}}
@@ -241,6 +258,8 @@
                         </div>
                     </div>
 
+                    {{-- Tak --}}
+                    {{-- Omschrijving --}}
                     <div class="col-12 col-md-6">
                         {{-- Tak --}}
                         <section class="form__section">
@@ -298,7 +317,18 @@
     </div>
 
     <script>
+        var $is_activiteit = $('#is_activiteit');
+
         (function($){
+            // Disable fields when there's no activity
+            $is_activiteit.on('change',function() {
+                toggleBlockableElements();
+            });
+            $(document).ready(function() {
+                toggleBlockableElements();
+            });
+
+            // Fill in date
             var d = new Date();
 
             document.getElementById('day').value = doubleDigits(d.getDate());
@@ -310,5 +340,25 @@
                 else return n;
             }
         })(jQuery);
+
+        function toggleBlockableElements() {
+            console.log('toggleBlockableElements');
+            var isChecked = $is_activiteit.prop('checked');
+            console.log(isChecked);
+            var elementsToBlock = [
+                $('#start_uur'),
+                $('#eind_uur'),
+                $('#prijs'),
+                $('#locatie'),
+                $('#omschrijving')
+            ]
+
+            if (isChecked) elementsToBlock.forEach(function(e) {
+                e.removeAttr('disabled');
+            });
+            else elementsToBlock.forEach(function(e) {
+                e.attr('disabled', 'true');
+            });
+        }
     </script>
 @endsection

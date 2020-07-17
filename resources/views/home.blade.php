@@ -26,7 +26,7 @@
                 <div class="volgende-activiteit__inner card cs-{{ $tak->kleur }}">
                     <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
 
-                    @if (isset($tak->volgende_activiteit[0]))
+                    @if (isset($tak->volgende_activiteit[0]) && $tak->volgende_activiteit[0]->is_activiteit)
                         <div class="volgende-activiteit__info
                             {{ ($tak->volgende_activiteit[0]->start_uur != '14:00:00' || $tak->volgende_activiteit[0]->eind_uur != '17:00:00')
                                 ? 'volgende-activiteit__info--active'
@@ -61,13 +61,15 @@
                             <span class="volgende-activiteit__icon"><i class="fas fa-comment-alt"></i></span>
                             {{ str_limit($tak->volgende_activiteit[0]->omschrijving, 256) }}
                         </p>
-
-                        <div class="volgende-activiteit__link">
-                            <a href="{{ url('/takken/'. strtolower($tak->naam)) }}">
-                                Alle activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
-                            </a>
-                        </div>
+                    @else
+                        <strong>Geen activiteit</strong>
                     @endif
+
+                    <div class="volgende-activiteit__link">
+                        <a href="{{ url('/takken/'. strtolower($tak->naam)) }}">
+                            Alle activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         @endforeach
