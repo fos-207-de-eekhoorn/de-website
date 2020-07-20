@@ -17,11 +17,11 @@
     @endcomponent
 
     <div class="row section justify-content-center">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-8 order-2 order-md-1">
             {!! $evenement->omschrijving !!}
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 order-1 order-md-2">
             @component('components.evenement_bar', [
                 'start_uur' => $evenement->start_uur_formatted,
                 'eind_uur' => $evenement->eind_uur_formatted,

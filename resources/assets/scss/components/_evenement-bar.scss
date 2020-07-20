@@ -5,6 +5,7 @@
 .evenement-bar {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: -1 * spacing(lg);
 
     &__item {
         display: flex;
