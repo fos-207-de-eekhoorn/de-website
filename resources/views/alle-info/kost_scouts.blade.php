@@ -1,9 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing banner banner--full">
-        <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
-    </section>
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'blue-light',
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => 'Kost scouts',
+    ])
+    @endcomponent
 
     <div class="row section section--small-spacing">
         <div class="col-12">
@@ -29,8 +35,8 @@
                             <td class="table__cell"></td>
                             <td class="table__cell">Bevers</td>
                             <td class="table__cell">Welpen</td>
-                            <td class="table__cell">Jonge</td>
-                            <td class="table__cell">Oude</td>
+                            <td class="table__cell">JG/V's</td>
+                            <td class="table__cell">OG/V's</td>
                         </tr>
                     </thead>
 
@@ -86,8 +92,8 @@
                             <td class="table__cell"></td>
                             <td class="table__cell">Bevers</td>
                             <td class="table__cell">Welpen</td>
-                            <td class="table__cell">Jonge</td>
-                            <td class="table__cell">Oude</td>
+                            <td class="table__cell">JG/V's</td>
+                            <td class="table__cell">OG/V's</td>
                         </tr>
                     </thead>
 

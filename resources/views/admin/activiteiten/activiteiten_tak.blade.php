@@ -19,7 +19,11 @@
 
         <div class="section col-12">
             <div class="wrapper__btn wrapper__btn--right medium-margin-bottom">
-                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--secondary">
+                <a href="{{ url('/admin/activiteiten/prutske?tak=' . strtolower($tak->naam)) }}" class="btn btn--secondary">
+                    Export voor het prutske
+                </a>
+
+                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>
@@ -42,7 +46,7 @@
 
             @if (session('edit_success'))
                 @component('components.flash_message', [
-                    'type' => 'info',
+                    'type' => 'success',
                 ])
                     De activiteit is aangepast.
                 @endcomponent
@@ -52,7 +56,7 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
+                    Er is iets fout gegaan. Als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
                 @endcomponent
             @endif
 
@@ -86,7 +90,7 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er is iets fout gegaan, als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
+                    Er is iets fout gegaan. Als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
                 @endcomponent
             @endif
 
@@ -102,7 +106,7 @@
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Er is iets fout gegaan, Paco kan deze toch nog terugzetten.
+                    Er is iets fout gegaan. Geen paniek, Paco kan deze terugzetten.
                 @endcomponent
             @endif
 
@@ -114,43 +118,49 @@
                             {{ Carbon\Carbon::parse($activiteit->datum)->format('M') }}
                         </td>
 
-                        <td class="table__cell">
-                            {{ $activiteit->omschrijving }}
+                        @if($activiteit->is_activiteit)
+                            <td class="table__cell">
+                                {{ $activiteit->omschrijving }}
 
-                            <br><br>
+                                <br><br>
 
-                            <span class="
-                                {{ ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
-                                    ? NULL
-                                    : 'text-color--light text--xs'
-                                }}
-                            ">
-                                Tijdstip: {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
-                            </span><br>
+                                <span class="
+                                    {{ ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
+                                        ? NULL
+                                        : 'text-color--light text--xs'
+                                    }}
+                                ">
+                                    Tijdstip: {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
+                                </span><br>
 
-                            <span class="
-                                {{ $activiteit->prijs > 0
-                                    ? NULL
-                                    : 'text-color--light text--xs'
-                                }}
-                            ">
-                                Prijs: <span class="text--unit">€</span>{{ $activiteit->prijs }}
-                            </span><br>
+                                <span class="
+                                    {{ $activiteit->prijs > 0
+                                        ? NULL
+                                        : 'text-color--light text--xs'
+                                    }}
+                                ">
+                                    Prijs: <span class="text--unit">€</span>{{ $activiteit->prijs }}
+                                </span><br>
 
-                            <span class="
-                                {{ $activiteit->locatie != 'Lokaal'
-                                    ? NULL
-                                    : 'text-color--light text--xs'
-                                }}
-                            ">
-                                Locatie: {{ $activiteit->locatie }}
-                            </span>
-                        </td>
+                                <span class="
+                                    {{ $activiteit->locatie != 'Lokaal'
+                                        ? NULL
+                                        : 'text-color--light text--xs'
+                                    }}
+                                ">
+                                    Locatie: {{ $activiteit->locatie }}
+                                </span>
+                            </td>
+                        @else
+                            <td class="table__cell">
+                                Geen activiteit
+                            </td>
+                        @endif
 
                         <td class="table__cell no-wrap">
                             <p>
                                 <a href="{{ url('/admin/activiteit/edit/' . Crypt::encrypt($activiteit->id)) }}">
-                                    <span class="fa--before"><i class="fas fa-pen"></i></span>Pass aan
+                                    <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                 </a>
                             </p>
 

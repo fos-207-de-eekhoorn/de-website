@@ -73,7 +73,7 @@
             }
 
             h1 {
-                font-size: 2.4rem;
+                font-size: 1.8rem;
             }
             h2 {
                 font-size: 1.8rem;

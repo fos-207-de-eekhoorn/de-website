@@ -13,6 +13,17 @@
         height: auto;
     }
 
+    &--with-hover-effect {
+        &:hover {
+            .banner {
+                &__title {
+                    top: -50%;
+                }
+            }
+        }
+        
+    }
+
     &__image {
         position: relative;
         top: 50%;
@@ -22,29 +33,41 @@
     }
 
     &__title {
+        @include transitions;
+
         position: absolute;
         top: 50%;
         width: 100%;
         transform: translateY(-50%);
 
-        font-size: $font-size-h1;
+        font-size: 2.8rem;
         font-style: italic; 
         font-weight: $font-weight-black;
         text-align: center;
+        line-height: .8;
         
         &--with-sub-title {
             transform: translateX(-5%) translateY(-80%);
+        }
+
+        @include mq(md) {
+            font-size: 3.6rem;
         }
     }
 
     &__sub-title {
         position: absolute;
+        margin-top: spacing(md) + spacing(sm);
         transform: translateX(5%) translateY(-25%);
 
-        font-size: $font-size-h3 * 2;
+        font-size: 2.4rem;
         font-style: italic;
         font-weight: $font-weight-black;
         text-align: center;
+        
+        @include mq(md) {
+            font-size: 2.8rem;
+        }
     }
     
     &--green,

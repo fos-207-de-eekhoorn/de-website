@@ -43,7 +43,11 @@
 }
 
 @mixin text-shadow-standard {
-    text-shadow: $text-shadow $color-text-shadow;
+    text-shadow: $text-shadow-standard $color-text-shadow;
+}
+
+@mixin text-shadow-hard {
+    text-shadow: $shadow-standard $color-text-shadow;
 }
 
 @mixin text-shadow-half {

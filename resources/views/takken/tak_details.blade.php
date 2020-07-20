@@ -40,32 +40,47 @@
             </div>
 
             <table class="table activities section">
-                @foreach ($tak->activiteiten as $activiteit)
+                @forelse ($tak->activiteiten as $activiteit)
                     <tr class="table__row">
-                        <td class="table__cell activities__date">{{ Carbon\Carbon::parse($activiteit->datum)->format('j M') }}</td>
-                        <td class="table__cell">
-                            {{ $activiteit->omschrijving }}
+                        <td class="table__cell activities__date">
+                            {{ Carbon\Carbon::parse($activiteit->datum)->format('j M') }}
+                        </td>
 
-                            @if ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
-                                <br>
-                                <br>
-                                <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
-                            @endif
+                        @if($activiteit->is_activiteit)
+                            <td class="table__cell">
+                                {{ $activiteit->omschrijving }}
 
-                            @if (0 < $activiteit->prijs)
-                                <br>
-                                <br>
-                                <b>Prijs:</b> {{ $activiteit->prijs }}
-                            @endif
+                                @if ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
+                                    <br>
+                                    <br>
+                                    <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
+                                @endif
 
-                            @if ($activiteit->locatie != 'Lokaal')
-                                <br>
-                                <br>
-                                <b>Locatie:</b> {{ $activiteit->locatie }}
-                            @endif
+                                @if (0 < $activiteit->prijs)
+                                    <br>
+                                    <br>
+                                    <b>Prijs:</b> {{ $activiteit->prijs }}
+                                @endif
+
+                                @if ($activiteit->locatie != 'Lokaal')
+                                    <br>
+                                    <br>
+                                    <b>Locatie:</b> {{ $activiteit->locatie }}
+                                @endif
+                            </td>
+                        @else
+                            <td class="table__cell">
+                                <strong>Geen activiteit</strong>
+                            </td>
+                        @endif
+                    </tr>
+                @empty
+                    <tr class="table__row">
+                        <td class="table__cell" colspan="2">
+                            De nieuwe activiteiten komen snel online!
                         </td>
                     </tr>
-                @endforeach
+                @endforelse
             </table>
         </div>
 
@@ -77,7 +92,9 @@
                         <div class="leiding">
 
                             <h5 class="leiding__totem">
-                                @if (strlen($leider->leider->totem) > 0)
+                                @if ($tak->naam === 'Welpen' && strlen($leider->leider->welpennaam) > 0)
+                                    {{ $leider->leider->welpennaam }} 
+                                @elseif (strlen($leider->leider->totem) > 0)
                                     {{ $leider->leider->totem }}
                                 @else
                                     {{ $leider->leider->voornaam }}

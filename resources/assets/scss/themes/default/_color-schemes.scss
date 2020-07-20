@@ -204,6 +204,7 @@
 }
 .cs-yellow {
 	background-color: $color-yellow;
+	color: $color-yellow-text;
 
 	h1, h2, h3, h4, h5, h6 {
 		color: $color-yellow-title;
@@ -218,6 +219,7 @@
 }
 .cs-mint {
 	background-color: $color-mint;
+	color: $color-mint-text;
 
 	h1, h2, h3, h4, h5, h6 {
 		color: $color-mint-title;
@@ -232,6 +234,7 @@
 }
 .cs-salmon {
 	background-color: $color-salmon;
+	color: $color-salmon-text;
 
 	h1, h2, h3, h4, h5, h6 {
 		color: $color-salmon-title;
@@ -246,6 +249,7 @@
 }
 .cs-blue-light {
 	background-color: $color-blue-light;
+	color: $color-blue-light-text;
 
 	h1, h2, h3, h4, h5, h6 {
 		color: $color-blue-light-title;

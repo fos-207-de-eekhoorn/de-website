@@ -1,23 +1,96 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="section section--small-spacing banner banner--full">
-        <img src="{{ asset('/img/banner.jpg') }}" alt="Banner" class="banner__banner">
+    <section class="section section--small-spacing banner banner--full banner--with-hover-effect">
+        @component('components.carousel', [
+            'name' => 'homepage',
+            'images' => $carousels->homepage,
+            'type' => 'full-width'
+        ])
+        @endcomponent
+
+        <h1 class="banner__title text-color--white text--shadow-hard">
+            FOS207<br>
+            De Eekhoorn
+        </h1>
     </section>
+
+    {{--
+    <div class="row section section--small-spacing small-gutters">
+        <div class="col-12">
+            <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
+        </div>
+
+        @foreach ($tak_activiteiten as $tak)
+            <div class="col-12 col-md-6 col-lg-3 volgende-activiteit">
+                <div class="volgende-activiteit__inner card cs-{{ $tak->kleur }}">
+                    <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
+
+                    @if (isset($tak->volgende_activiteit[0]) && $tak->volgende_activiteit[0]->is_activiteit)
+                        <div class="volgende-activiteit__info
+                            {{ ($tak->volgende_activiteit[0]->start_uur != '14:00:00' || $tak->volgende_activiteit[0]->eind_uur != '17:00:00')
+                                ? 'volgende-activiteit__info--active'
+                                : NULL
+                            }}
+                        ">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-clock"></i></span>
+                            {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->eind_uur)->format('H\ui') }}
+                        </div>
+
+                        <div class="volgende-activiteit__info
+                            {{ $tak->volgende_activiteit[0]->locatie != 'Lokaal'
+                                ? 'volgende-activiteit__info--active'
+                                : NULL
+                            }}
+                        ">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-map-marker-alt"></i></span>
+                            {{ $tak->volgende_activiteit[0]->locatie }}
+                        </div>
+
+                        <div class="volgende-activiteit__info
+                            {{ $tak->volgende_activiteit[0]->prijs > 0
+                                ? 'volgende-activiteit__info--active'
+                                : NULL
+                            }}
+                        ">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-euro-sign"></i></span>
+                            {{ number_format($tak->volgende_activiteit[0]->prijs, 2, ',', ' ') }}
+                        </div>
+
+                        <p class="volgende-activiteit__info volgende-activiteit__info--active">
+                            <span class="volgende-activiteit__icon"><i class="fas fa-comment-alt"></i></span>
+                            {{ str_limit($tak->volgende_activiteit[0]->omschrijving, 256) }}
+                        </p>
+                    @else
+                        <strong>Geen activiteit</strong>
+                    @endif
+
+                    <div class="volgende-activiteit__link">
+                        <a href="{{ url('/takken/'. strtolower($tak->naam)) }}">
+                            Alle activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    --}}
 
     <div class="row section">
         <div class="col-12">
-            <h2>Belangrijk bericht</h2>
-            <h3>De activiteiten gaan in maart niet meer door wegens het Corona-virus.</h3>
-
-            <h5 class="medium-margin-top">Koekenverkoop</h5>
+            <h2>Het kamp gaat door!</h2>
             <p>
-                Onze geplande koekenverkoop op 21 maart laten we ook niet meer doorgaan. Maar aangezien jullie al heel veel koeken in voorverkoop hebben besteld en betaald, kunnen we dit niet zomaar annuleren. Daarom zal de leiding de bestellingen klaarzetten in het lokaal op 21 maart. Als je een bestelling hebt geplaatst dan kan je die op deze dag van 14u tot 17u afhalen. Als je er echt niet geraakt om ze op te halen, dan stuur je de eenheidsleiding een berichtje en zoeken we samen naar een oplossing. Er worden dus geen koeken meer verkocht aan de deuren.
+                Vind <a href="{{ url('/evenementen/kamp') }}">hier</a> alle informatie over kamp dat je nodig hebt voor jouw spruit!
             </p>
 
-            <h5 class="medium-margin-top">Bivak</h5>
+            <h3>Fosshop</h3>
             <p>
-                De geplande bivakken gaan voorlopig nog door, maar we houden de situatie in de gaten.
+                Indien uw zoon/dochter nog zaken uit de fosshop nodig heeft voor kamp, kan u dit document invullen en doorsturen naar <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>. Dit ten laatste tegen <strong>8 juli</strong>.
+            </p>
+            <p>
+                Verdere info kan u terugvinden in het document.<br>
+                <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Bestelformulier-FOSSHOP.pdf</a><br>
+                <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.docx') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-word"></i></span>Bestelformulier-FOSSHOP.docx</a>
             </p>
 
             <h5 class="medium-margin-top">Vragen?</h5>
@@ -48,45 +121,6 @@
                     Als echte scouts hechten wij veel belang aan het outdoorleven. Scouts is je amuseren buiten in de natuur. Wij werken ook met enkele tradities. Zo zijn wij één van de weinige scoutsen die nog werken met een raadsrots, met teervoeten en badges en met totemnamen. Deze totems gebruiken we altijd als aanspreeknaam en zijn een grote eer om te krijgen.
                 </p>
             </div>
-
-            <div class="section">
-                <h3>Bivakken</h3>
-
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <h5>Bevers en welpen</h4>
-
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>17 tot 19 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Poperinge</li>
-                        </ul>
-
-                        <a href="{{ url('/evenementen/bivak/bevers-welpen') }}" class="btn btn--primary">Meer info</a>
-                    </div>
-
-                    <div class="col-12 col-md-4">
-                        <h5>Jonge</h4>
-
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>10 tot 13 april</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Ieper</li>
-                        </ul>
-
-                        <a href="{{ url('/evenementen/bivak/jonge') }}" class="btn btn--primary">Meer info</a>
-                    </div>
-
-                    <div class="col-12 col-md-4">
-                        <h5>Oude</h4>
-
-                        <ul class="list--no-spacing list--list-style-none">
-                            <li><span class="fa--before"><i class="fas fa-calendar"></i></span>4 tot 6 mei</li>
-                            <li><span class="fa--before"><i class="fas fa-map-marker-alt"></i></span>te Lokoren</li>
-                        </ul>
-
-                        <a href="{{ url('/evenementen/bivak/oude') }}" class="btn btn--primary">Meer info</a>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="col-12 col-md-4 col-lg-3 align-self-start">
@@ -100,6 +134,15 @@
                 </div>
             </a>
         </div>
+    </div>
+
+    <div class="section">
+        @component('components.carousel', [
+            'name' => 'general',
+            'images' => $carousels->general,
+            'type' => 'normal'
+        ])
+        @endcomponent
     </div>
 
     {{--
