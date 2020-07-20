@@ -45,8 +45,6 @@
         <div class="col-12 col-md-4">
             @component('components.evenement_bar', [
                 'naam' => $evenement->naam,
-                // 'start_datum' => Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName,
-                // 'eind_datum' => Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName,
                 'start_datum' => $evenement->start_datum,
                 'eind_datum' => $evenement->eind_datum,
                 'start_uur' => $evenement->start_uur_formatted,
