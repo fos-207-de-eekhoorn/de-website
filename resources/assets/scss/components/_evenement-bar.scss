@@ -3,15 +3,22 @@
 //  ------------------------------------------------------------------------------------
 
 .evenement-bar {
-	display: flex;
-    align-items: center;
-    // justify-content: center;
-    padding: spacing(md);
-    margin: (-1 * spacing(md)) (-1 * spacing(md)) spacing(lg);
-    border-bottom: spacing(xs) solid $color-grey-background;
-    
-    &__event,
-    &__datetime {
-        display: block;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-bottom: spacing(xl);
+
+        text-align: center;
     }
+
+    &__icon {
+        margin-bottom: spacing(sm);
+
+        font-size: spacing(lg) + spacing(md);
+        color: $color-grey-extra-light;
+    } 
 }

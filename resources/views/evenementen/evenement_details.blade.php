@@ -19,33 +19,10 @@
     <div class="row section justify-content-center">
         <div class="col-12 col-md-8">
             {!! $evenement->omschrijving !!}
-
-            <h5>Datum</h5>
-            <p>
-                {{ $evenement->start_datum }} - {{ $evenement->eind_datum }}
-            </p>
-
-            <h5>Tijd</h5>
-            <p>
-                {{ $evenement->start_uur_formatted }} - {{ $evenement->eind_uur_formatted }}
-            </p>
-
-            <h5>Prijs</h5>
-            <p>
-                {{ $evenement->prijs }}
-            </p>
-
-            <h5>Locatie</h5>
-            <p>
-                {!! $evenement->locatie !!}
-            </p>
         </div>
 
         <div class="col-12 col-md-4">
             @component('components.evenement_bar', [
-                'naam' => $evenement->naam,
-                'start_datum' => $evenement->start_datum,
-                'eind_datum' => $evenement->eind_datum,
                 'start_uur' => $evenement->start_uur_formatted,
                 'eind_uur' => $evenement->eind_uur_formatted,
                 'locatie' => $evenement->locatie,
