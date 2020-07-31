@@ -220,6 +220,12 @@
                                     </li>
 
                                     <li class="nav__sublist-item">
+                                        <a href="/admin/evenementen" class="nav__link nav__link--sublist">
+                                            Evenementen
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
                                         <a href="/change-password" class="nav__link nav__link--sublist">
                                             Wijzig wachtwoord
                                         </a>

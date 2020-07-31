@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Crypt;
-use App\Tak;
+use App\Evenement;
 use App\Activiteit;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 
-class AdminController extends Controller
+class AdminEvenementenController extends Controller
 {
     use CommonHelpers;
 
@@ -20,15 +20,16 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function get_activiteiten()
+    public function get_evenementen()
     {
-        $takken = Tak::get();
+        $evenementen = Evenement::get();
 
-        return view('admin.activiteiten.activiteiten', [
-            'takken' => $takken,
+        return view('admin.evenementen.evenementen', [
+            'evenementen' => $evenementen,
         ]);
     }
 
+/*
     public function get_activiteiten_tak($naam)
     {
         $tak = Tak::where('naam', $naam)
@@ -219,4 +220,5 @@ class AdminController extends Controller
 
         return redirect('/admin/activiteiten/' . $request->tak);
     }
+*/
 }

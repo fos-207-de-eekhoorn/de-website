@@ -27,7 +27,7 @@
                     <h3>{{ $tak->naam }}</h3>
 
                     <p class="medium-margin-vertical">
-                        <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}">
+                        <a href="{{ url('/admin/activiteiten/add/' . strtolower($tak->naam)) }}">
                             <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                         </a>
                     </p>

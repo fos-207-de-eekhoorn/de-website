@@ -23,6 +23,8 @@
     &__cell {
         padding: spacing(md);
         
+        text-align: left;
+        
         thead & {
             font-weight: $font-weight-bold;
         }
