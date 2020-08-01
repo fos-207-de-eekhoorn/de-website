@@ -69,18 +69,20 @@ Route::prefix('admin')->group(function () {
 	# Activiteiten
 	Route::prefix('activiteiten')->group(function () {
 		Route::get('/', 'AdminActiviteitenController@get_activiteiten');
-		Route::get('/prutske', 'AdminActiviteitenController@get_for_prutske');
 		Route::get('/{tak}', 'AdminActiviteitenController@get_activiteiten_tak');
-		Route::get('/add/', 'AdminActiviteitenController@get_add_activiteit');
+		Route::get('/add', 'AdminActiviteitenController@get_add_activiteit');
 		Route::get('/add/{tak}', 'AdminActiviteitenController@get_add_activiteit');
 		Route::get('/edit/{id}', 'AdminActiviteitenController@get_edit_activiteit');
 		Route::post('/add', 'AdminActiviteitenController@post_add_activiteit')->middleware('decrypt:value,tak');
 		Route::post('/edit', 'AdminActiviteitenController@post_edit_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove', 'AdminActiviteitenController@delete_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove-undo', 'AdminActiviteitenController@delete_activiteit_undo')->middleware('decrypt:value,id');
+		Route::get('/prutske', 'AdminActiviteitenController@get_for_prutske');
 	});
 	# Evenementen
 	Route::prefix('evenementen')->group(function () {
 		Route::get('/', 'AdminEvenementenController@get_evenementen');
+		Route::get('/edit/{id}', 'AdminEvenementenController@get_edit_evenementen');
+		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
 	});
 });

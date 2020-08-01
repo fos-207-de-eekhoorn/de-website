@@ -107,23 +107,24 @@ class AdminEvenementenController extends Controller
 
         return redirect('/admin/activiteiten/' . strtolower($tak->naam));
     }
+*/
 
-    public function get_edit_activiteit($id_encrypted)
+    public function get_edit_evenementen($id_encrypted)
     {
         $id = Crypt::decrypt($id_encrypted);
-        $activiteit = Activiteit::where('id', $id)
-            ->with('tak')
+        $evenement = Evenement::where('id', $id)
             ->first();
 
-        if (is_object($activiteit)) {
-            return view('admin.activiteiten.edit_activiteit', [
-                'activiteit' => $activiteit,
+        if (is_object($evenement)) {
+            return view('admin.evenementen.edit_evenement', [
+                'evenement' => $evenement,
             ]);
         } else {
-            return view('admin.activiteiten.activiteiten');
+            return view('admin.evenement.evenementen');
         }
     }
 
+/*
     public function get_for_prutske(Request $request)
     {
 
@@ -166,12 +167,16 @@ class AdminEvenementenController extends Controller
             ]);
         }   
     }
+*/
 
-    public function post_edit_activiteit(Request $request)
+    public function post_edit_evenementen(Request $request)
     {
-        $activiteit = Activiteit::find($request->id);
+        $evenement = Evenement::find($request->id);
 
-        $activiteit->datum = $request->datum[2] . '-' . $request->datum[1] . '-' . $request->datum[0];
+        $evenement->begin_datum = $request->begin_datum[2] . '-' . $request->begin_datum[1] . '-' . $request->begin_datum[0];
+        $evenement->eind_datum = $request->eind_datum[2] . '-' . $request->eind_datum[1] . '-' . $request->eind_datum[0];
+
+        return $evenement;
 
         if ($request->is_activiteit === 'on') {
             $activiteit->start_uur = $request->start_uur . ':00';
@@ -195,6 +200,7 @@ class AdminEvenementenController extends Controller
         return redirect('/admin/activiteiten/' . $request->tak);
     }
 
+/*
     public function delete_activiteit(Request $request)
     {
         $delete = Activiteit::destroy($request->id);

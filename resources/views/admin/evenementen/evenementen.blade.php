@@ -42,7 +42,38 @@
                                 {{ $evenement->active }}
                             </td>
 
-                            <td class="table__cell"></td>
+                            <td class="table__cell no-wrap">
+                                <p>
+                                    <a href="{{ url('/admin/evenementen/edit/' . Crypt::encrypt($evenement->id)) }}">
+                                        <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
+                                    </a>
+                                </p>
+
+                                {{--
+                                <form action="{{ url('/admin/activiteiten/remove') }}" method="POST" class="no-margin-bottom">
+                                    @csrf
+
+                                    <input
+                                        type="text"
+                                        name="id"
+                                        value="{{ Crypt::encrypt($activiteit->id) }}"
+                                        hidden>
+                                    <input
+                                        type="text"
+                                        name="tak"
+                                        value="{{ strtolower($tak->naam) }}"
+                                        hidden>
+
+                                    <button class="btn btn--without-style link--error" onclick="
+                                        confirm('Ben je zeker dat je deze activiteit wilt verwijderen?')
+                                            ? NULL
+                                            : event.preventDefault();
+                                    ">
+                                        <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
+                                    </button>
+                                </form>
+                                --}}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
