@@ -39,23 +39,49 @@
             <form id="inschrijving-form" class="form" action="/inschrijven" method="POST">
                 @csrf
 
-                {{-- Naam --}}
-                <section class="form__section">
-                    <label for="voornaam" class="form__label form__label--required">Naam</label>
+                {{-- Voornaam --}}
+                {{-- Achternaam --}}
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        {{-- Voornaam --}}
+                        <section class="form__section">
+                            <label for="voornaam" class="form__label form__label--required">Voornaam</label>
 
-                    <input
-                        type="text"
-                        id="voornaam"
-                        name="voornaam"
-                        class="form__input form__input--full-width"
-                        required>
+                            <input
+                                type="text"
+                                id="voornaam"
+                                name="voornaam"
+                                class="form__input form__input--full-width"
+                                required>
 
-                    @if ($errors->has('voornaam'))
-                        <span class="form__section-feedback">
-                            {{ $errors->first('voornaam') }}
-                        </span>
-                    @endif
-                </section>
+                            @if ($errors->has('voornaam'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('voornaam') }}
+                                </span>
+                            @endif
+                        </section>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        {{-- Achternaam --}}
+                        <section class="form__section">
+                            <label for="achternaam" class="form__label form__label--required">Achternaam</label>
+
+                            <input
+                                type="text"
+                                id="achternaam"
+                                name="achternaam"
+                                class="form__input form__input--full-width"
+                                required>
+
+                            @if ($errors->has('achternaam'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('achternaam') }}
+                                </span>
+                            @endif
+                        </section>
+                    </div>
+                </div>
 
                 {{-- ReCAPTCHA --}}
                 <section class="form__section form__section--last">
@@ -98,7 +124,7 @@
         }
 
         // reCAPTCHA
-        $('.recaptchaDisable').prop('disabled', true).prop('title', 'Gelieve aan te geven dat u geen robot bent');
+        // $('.recaptchaDisable').prop('disabled', true).prop('title', 'Gelieve aan te geven dat u geen robot bent');
 
         function correctCaptcha() {
             $('.recaptchaDisable').prop('disabled', false).prop('title', '');

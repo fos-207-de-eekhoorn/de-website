@@ -23,7 +23,8 @@ Route::post('/change-password', 'ChangePasswordController@changePassword');
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
 Route::get('/inschrijven', 'HomeController@get_inschrijven');
-Route::post('/contact/zend-bericht', 'HomeController@post_contact_message');
+Route::post('/contact', 'HomeController@post_contact');
+Route::post('/inschrijven', 'HomeController@post_inschrijven');
 
 # Takken Routes
 Route::get('/takken', 'TakkenController@get_takken');

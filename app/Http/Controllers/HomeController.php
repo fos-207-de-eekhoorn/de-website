@@ -47,7 +47,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function post_contact_message(request $request)
+    public function post_contact(request $request)
     {
         $recaptcha = new \ReCaptcha\ReCaptcha(config('recaptcha.secret'));
         $resp = $recaptcha->setExpectedHostname('scoutsoostkamp.be')
@@ -86,5 +86,10 @@ class HomeController extends Controller
             'el' => $el,
             'ael' => $ael,
         ]);
+    }
+
+    public function post_inschrijven(request $request)
+    {
+        return $request;
     }
 }
