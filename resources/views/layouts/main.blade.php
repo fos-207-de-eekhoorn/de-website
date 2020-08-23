@@ -111,6 +111,12 @@
                                         OG/V
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/takken/seniors" class="nav__link nav__link--sublist">
+                                        Seniors
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
