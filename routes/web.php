@@ -22,7 +22,7 @@ Route::post('/change-password', 'ChangePasswordController@changePassword');
 # General Routes
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
-
+Route::get('/inschrijven', 'HomeController@get_inschrijven');
 Route::post('/contact/zend-bericht', 'HomeController@post_contact_message');
 
 # Takken Routes

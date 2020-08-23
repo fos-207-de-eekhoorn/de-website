@@ -192,8 +192,8 @@
                         --}}
 
                         <li class="nav__list-item">
-                            <a href="/evenementen/kamp" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
-                                Kamp
+                            <a href="/inschrijven" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
+                                Inschrijven
                             </a>
                         </li>
 
@@ -334,7 +334,7 @@
                             --}}
 
                             <li class="footer-nav__item">
-                                <a href="/evenementen/kamp" class="footer-nav__link footer-nav__link--parent">Kamp</a>
+                                <a href="/inschrijven" class="footer-nav__link footer-nav__link--parent">Inschrijven</a>
                             </li>
 
                             <li class="footer-nav__item">

@@ -40,12 +40,10 @@ class HomeController extends Controller
     {
         $el = $this->get_el();
         $ael = $this->get_ael();
-        $takken = Tak::get();
 
         return view('contact', [
             'el' => $el,
             'ael' => $ael,
-            'takken' => $takken,
         ]);
     }
 
@@ -77,5 +75,16 @@ class HomeController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function get_inschrijven()
+    {
+        $el = $this->get_el();
+        $ael = $this->get_ael();
+
+        return view('inschrijven', [
+            'el' => $el,
+            'ael' => $ael,
+        ]);
     }
 }
