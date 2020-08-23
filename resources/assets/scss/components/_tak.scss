@@ -3,6 +3,10 @@
 //  ------------------------------------------------------------------------------------
 
 .tak {
+	@include border-radius;
+	
+	overflow: hidden;
+
 	&__img-wrapper {
 		position: relative;
 		height: 100%;
@@ -14,5 +18,9 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
+	}
+
+	&__info {
+		padding: spacing(md);
 	}
 }

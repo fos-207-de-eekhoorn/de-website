@@ -12,11 +12,7 @@ class TakkenController extends Controller
 
     public function get_takken()
     {
-        $takken = Tak::get();
-
-        return view('takken.takken', [
-            'takken' => $takken,
-        ]);
+        return view('takken.takken');
     }
 
     public function get_tak_details($link)
