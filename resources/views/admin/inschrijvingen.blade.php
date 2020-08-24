@@ -16,7 +16,7 @@
     <div class="row section">
         <div class="col-12">
             <div class="multiple-titles small-margin-bottom">
-                <h2>Inschrijvingen</h2>
+                <h2>Lijst</h2>
                 {{-- <a href="{{ url('/admin/activiteiten/prutske') }}" class="btn btn--secondary align-self-start">Export voor het prutske</a> --}}
             </div>
         </div>
@@ -25,11 +25,12 @@
             <div class="wrapper__table">
                 <table class="table">
                     <thead class="table__head">
-                        <tr class="table__row">
+                        <tr class="table__row table__row--normal-border-bottom">
                             <td class="table__cell table__cell--border-right" colspan="13">Lid</td>
                             <td class="table__cell table__cell--border-right" colspan="10">Voogd 1</td>
                             <td class="table__cell" colspan="10">Voogd 2</td>
                         </tr>
+
                         <tr class="table__row">
                             <td class="table__cell">Voornaam</td>
                             <td class="table__cell">Achternaam</td>
