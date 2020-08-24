@@ -2,6 +2,11 @@
 //  Component -> Table
 //  ------------------------------------------------------------------------------------
 
+.wrapper__table {
+    overflow-x: scroll;
+    padding-bottom: spacing(sm);
+}
+
 .table {
     border-collapse: collapse;
     width: 100%;
@@ -25,6 +30,10 @@
         
         thead & {
             font-weight: $font-weight-bold;
+        }
+
+        &--border-right {
+            border-right: 2px solid $color-grey-light;
         }
     }
 }

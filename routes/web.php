@@ -67,3 +67,5 @@ Route::post('/admin/activiteit/add', 'AdminController@post_add_activiteit')->mid
 Route::post('/admin/activiteit/edit', 'AdminController@post_edit_activiteit')->middleware('decrypt:value,id');
 Route::post('/admin/activiteit/remove', 'AdminController@delete_activiteit')->middleware('decrypt:value,id');
 Route::post('/admin/activiteit/remove-undo', 'AdminController@delete_activiteit_undo')->middleware('decrypt:value,id');
+
+Route::get('/admin/inschrijvingen', 'GeneralAdminController@get_inschrijvingen');
