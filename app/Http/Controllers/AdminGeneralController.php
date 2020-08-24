@@ -6,7 +6,7 @@ use Auth;
 use App\Inschrijving;
 use Carbon\Carbon;
 
-class GeneralAdminController extends Controller
+class AdminGeneralController extends Controller
 {
     public function __construct()
     {
