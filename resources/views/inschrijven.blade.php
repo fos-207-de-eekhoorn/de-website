@@ -18,8 +18,7 @@
     {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12 col-lg-7">
-
-            @if (session('inschrijven_form_success'))
+            @if (session('inschrijving_success'))
                 @component('components.flash_message', [
                     'type' => 'success',
                 ])
@@ -27,7 +26,15 @@
                 @endcomponent
             @endif
 
-            @if (session('inschrijven_form_error_captcha'))
+            @if (session('inschrijving_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets misgelopen. Als dit blijft gebeuren, gelieven een mailtje te sturen met deze gegevens naar <a href="mailto:fos207ste@gmail.com">fos207ste@gmail.com</a>
+                @endcomponent
+            @endif
+
+            @if (session('inschrijving_error_captcha'))
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
@@ -251,77 +258,77 @@
                                 name="geboortedatum[]"
                                 class="form__select form__select--full-width"
                                 required>
-                                <option value="2020" @if( old('geboortedatum')[0] == "2020" ) selected @endif>2020</option>
-                                <option value="2019" @if( old('geboortedatum')[0] == "2019" ) selected @endif>2019</option>
-                                <option value="2018" @if( old('geboortedatum')[0] == "2018" ) selected @endif>2018</option>
-                                <option value="2017" @if( old('geboortedatum')[0] == "2017" ) selected @endif>2017</option>
-                                <option value="2016" @if( old('geboortedatum')[0] == "2016" ) selected @endif>2016</option>
-                                <option value="2015" @if( old('geboortedatum')[0] == "2015" ) selected @endif>2015</option>
-                                <option value="2014" @if( old('geboortedatum')[0] == "2014" ) selected @endif>2014</option>
-                                <option value="2013" @if( old('geboortedatum')[0] == "2013" ) selected @endif>2013</option>
-                                <option value="2012" @if( old('geboortedatum')[0] == "2012" ) selected @endif>2012</option>
-                                <option value="2011" @if( old('geboortedatum')[0] == "2011" ) selected @endif>2011</option>
-                                <option value="2010" @if( old('geboortedatum')[0] == "2010" ) selected @endif>2010</option>
-                                <option value="2009" @if( old('geboortedatum')[0] == "2009" ) selected @endif>2009</option>
-                                <option value="2008" @if( old('geboortedatum')[0] == "2008" ) selected @endif>2008</option>
-                                <option value="2007" @if( old('geboortedatum')[0] == "2007" ) selected @endif>2007</option>
-                                <option value="2006" @if( old('geboortedatum')[0] == "2006" ) selected @endif>2006</option>
-                                <option value="2005" @if( old('geboortedatum')[0] == "2005" ) selected @endif>2005</option>
-                                <option value="2004" @if( old('geboortedatum')[0] == "2004" ) selected @endif>2004</option>
-                                <option value="2003" @if( old('geboortedatum')[0] == "2003" ) selected @endif>2003</option>
-                                <option value="2002" @if( old('geboortedatum')[0] == "2002" ) selected @endif>2002</option>
-                                <option value="2001" @if( old('geboortedatum')[0] == "2001" ) selected @endif>2001</option>
-                                <option value="2000" @if( old('geboortedatum')[0] == "2000" ) selected @endif>2000</option>
-                                <option value="1999" @if( old('geboortedatum')[0] == "1999" ) selected @endif>1999</option>
-                                <option value="1998" @if( old('geboortedatum')[0] == "1998" ) selected @endif>1998</option>
-                                <option value="1997" @if( old('geboortedatum')[0] == "1997" ) selected @endif>1997</option>
-                                <option value="1996" @if( old('geboortedatum')[0] == "1996" ) selected @endif>1996</option>
-                                <option value="1995" @if( old('geboortedatum')[0] == "1995" ) selected @endif>1995</option>
-                                <option value="1994" @if( old('geboortedatum')[0] == "1994" ) selected @endif>1994</option>
-                                <option value="1993" @if( old('geboortedatum')[0] == "1993" ) selected @endif>1993</option>
-                                <option value="1992" @if( old('geboortedatum')[0] == "1992" ) selected @endif>1992</option>
-                                <option value="1991" @if( old('geboortedatum')[0] == "1991" ) selected @endif>1991</option>
-                                <option value="1990" @if( old('geboortedatum')[0] == "1990" ) selected @endif>1990</option>
-                                <option value="1989" @if( old('geboortedatum')[0] == "1989" ) selected @endif>1989</option>
-                                <option value="1988" @if( old('geboortedatum')[0] == "1988" ) selected @endif>1988</option>
-                                <option value="1987" @if( old('geboortedatum')[0] == "1987" ) selected @endif>1987</option>
-                                <option value="1986" @if( old('geboortedatum')[0] == "1986" ) selected @endif>1986</option>
-                                <option value="1985" @if( old('geboortedatum')[0] == "1985" ) selected @endif>1985</option>
-                                <option value="1984" @if( old('geboortedatum')[0] == "1984" ) selected @endif>1984</option>
-                                <option value="1983" @if( old('geboortedatum')[0] == "1983" ) selected @endif>1983</option>
-                                <option value="1982" @if( old('geboortedatum')[0] == "1982" ) selected @endif>1982</option>
-                                <option value="1981" @if( old('geboortedatum')[0] == "1981" ) selected @endif>1981</option>
-                                <option value="1980" @if( old('geboortedatum')[0] == "1980" ) selected @endif>1980</option>
-                                <option value="1979" @if( old('geboortedatum')[0] == "1979" ) selected @endif>1979</option>
-                                <option value="1978" @if( old('geboortedatum')[0] == "1978" ) selected @endif>1978</option>
-                                <option value="1977" @if( old('geboortedatum')[0] == "1977" ) selected @endif>1977</option>
-                                <option value="1976" @if( old('geboortedatum')[0] == "1976" ) selected @endif>1976</option>
-                                <option value="1975" @if( old('geboortedatum')[0] == "1975" ) selected @endif>1975</option>
-                                <option value="1974" @if( old('geboortedatum')[0] == "1974" ) selected @endif>1974</option>
-                                <option value="1973" @if( old('geboortedatum')[0] == "1973" ) selected @endif>1973</option>
-                                <option value="1972" @if( old('geboortedatum')[0] == "1972" ) selected @endif>1972</option>
-                                <option value="1971" @if( old('geboortedatum')[0] == "1971" ) selected @endif>1971</option>
-                                <option value="1970" @if( old('geboortedatum')[0] == "1970" ) selected @endif>1970</option>
-                                <option value="1969" @if( old('geboortedatum')[0] == "1969" ) selected @endif>1969</option>
-                                <option value="1968" @if( old('geboortedatum')[0] == "1968" ) selected @endif>1968</option>
-                                <option value="1967" @if( old('geboortedatum')[0] == "1967" ) selected @endif>1967</option>
-                                <option value="1966" @if( old('geboortedatum')[0] == "1966" ) selected @endif>1966</option>
-                                <option value="1965" @if( old('geboortedatum')[0] == "1965" ) selected @endif>1965</option>
-                                <option value="1964" @if( old('geboortedatum')[0] == "1964" ) selected @endif>1964</option>
-                                <option value="1963" @if( old('geboortedatum')[0] == "1963" ) selected @endif>1963</option>
-                                <option value="1962" @if( old('geboortedatum')[0] == "1962" ) selected @endif>1962</option>
-                                <option value="1961" @if( old('geboortedatum')[0] == "1961" ) selected @endif>1961</option>
-                                <option value="1960" @if( old('geboortedatum')[0] == "1960" ) selected @endif>1960</option>
-                                <option value="1959" @if( old('geboortedatum')[0] == "1959" ) selected @endif>1959</option>
-                                <option value="1958" @if( old('geboortedatum')[0] == "1958" ) selected @endif>1958</option>
-                                <option value="1957" @if( old('geboortedatum')[0] == "1957" ) selected @endif>1957</option>
-                                <option value="1956" @if( old('geboortedatum')[0] == "1956" ) selected @endif>1956</option>
-                                <option value="1955" @if( old('geboortedatum')[0] == "1955" ) selected @endif>1955</option>
-                                <option value="1954" @if( old('geboortedatum')[0] == "1954" ) selected @endif>1954</option>
-                                <option value="1953" @if( old('geboortedatum')[0] == "1953" ) selected @endif>1953</option>
-                                <option value="1952" @if( old('geboortedatum')[0] == "1952" ) selected @endif>1952</option>
-                                <option value="1951" @if( old('geboortedatum')[0] == "1951" ) selected @endif>1951</option>
-                                <option value="1950" @if( old('geboortedatum')[0] == "1950" ) selected @endif>1950</option>
+                                <option value="2020" @if( old('geboortedatum')[2] == "2020" ) selected @endif>2020</option>
+                                <option value="2019" @if( old('geboortedatum')[2] == "2019" ) selected @endif>2019</option>
+                                <option value="2018" @if( old('geboortedatum')[2] == "2018" ) selected @endif>2018</option>
+                                <option value="2017" @if( old('geboortedatum')[2] == "2017" ) selected @endif>2017</option>
+                                <option value="2016" @if( old('geboortedatum')[2] == "2016" ) selected @endif>2016</option>
+                                <option value="2015" @if( old('geboortedatum')[2] == "2015" ) selected @endif>2015</option>
+                                <option value="2014" @if( old('geboortedatum')[2] == "2014" ) selected @endif>2014</option>
+                                <option value="2013" @if( old('geboortedatum')[2] == "2013" ) selected @endif>2013</option>
+                                <option value="2012" @if( old('geboortedatum')[2] == "2012" ) selected @endif>2012</option>
+                                <option value="2011" @if( old('geboortedatum')[2] == "2011" ) selected @endif>2011</option>
+                                <option value="2010" @if( old('geboortedatum')[2] == "2010" ) selected @endif>2010</option>
+                                <option value="2009" @if( old('geboortedatum')[2] == "2009" ) selected @endif>2009</option>
+                                <option value="2008" @if( old('geboortedatum')[2] == "2008" ) selected @endif>2008</option>
+                                <option value="2007" @if( old('geboortedatum')[2] == "2007" ) selected @endif>2007</option>
+                                <option value="2006" @if( old('geboortedatum')[2] == "2006" ) selected @endif>2006</option>
+                                <option value="2005" @if( old('geboortedatum')[2] == "2005" ) selected @endif>2005</option>
+                                <option value="2004" @if( old('geboortedatum')[2] == "2004" ) selected @endif>2004</option>
+                                <option value="2003" @if( old('geboortedatum')[2] == "2003" ) selected @endif>2003</option>
+                                <option value="2002" @if( old('geboortedatum')[2] == "2002" ) selected @endif>2002</option>
+                                <option value="2001" @if( old('geboortedatum')[2] == "2001" ) selected @endif>2001</option>
+                                <option value="2000" @if( old('geboortedatum')[2] == "2000" ) selected @endif>2000</option>
+                                <option value="1999" @if( old('geboortedatum')[2] == "1999" ) selected @endif>1999</option>
+                                <option value="1998" @if( old('geboortedatum')[2] == "1998" ) selected @endif>1998</option>
+                                <option value="1997" @if( old('geboortedatum')[2] == "1997" ) selected @endif>1997</option>
+                                <option value="1996" @if( old('geboortedatum')[2] == "1996" ) selected @endif>1996</option>
+                                <option value="1995" @if( old('geboortedatum')[2] == "1995" ) selected @endif>1995</option>
+                                <option value="1994" @if( old('geboortedatum')[2] == "1994" ) selected @endif>1994</option>
+                                <option value="1993" @if( old('geboortedatum')[2] == "1993" ) selected @endif>1993</option>
+                                <option value="1992" @if( old('geboortedatum')[2] == "1992" ) selected @endif>1992</option>
+                                <option value="1991" @if( old('geboortedatum')[2] == "1991" ) selected @endif>1991</option>
+                                <option value="1990" @if( old('geboortedatum')[2] == "1990" ) selected @endif>1990</option>
+                                <option value="1989" @if( old('geboortedatum')[2] == "1989" ) selected @endif>1989</option>
+                                <option value="1988" @if( old('geboortedatum')[2] == "1988" ) selected @endif>1988</option>
+                                <option value="1987" @if( old('geboortedatum')[2] == "1987" ) selected @endif>1987</option>
+                                <option value="1986" @if( old('geboortedatum')[2] == "1986" ) selected @endif>1986</option>
+                                <option value="1985" @if( old('geboortedatum')[2] == "1985" ) selected @endif>1985</option>
+                                <option value="1984" @if( old('geboortedatum')[2] == "1984" ) selected @endif>1984</option>
+                                <option value="1983" @if( old('geboortedatum')[2] == "1983" ) selected @endif>1983</option>
+                                <option value="1982" @if( old('geboortedatum')[2] == "1982" ) selected @endif>1982</option>
+                                <option value="1981" @if( old('geboortedatum')[2] == "1981" ) selected @endif>1981</option>
+                                <option value="1980" @if( old('geboortedatum')[2] == "1980" ) selected @endif>1980</option>
+                                <option value="1979" @if( old('geboortedatum')[2] == "1979" ) selected @endif>1979</option>
+                                <option value="1978" @if( old('geboortedatum')[2] == "1978" ) selected @endif>1978</option>
+                                <option value="1977" @if( old('geboortedatum')[2] == "1977" ) selected @endif>1977</option>
+                                <option value="1976" @if( old('geboortedatum')[2] == "1976" ) selected @endif>1976</option>
+                                <option value="1975" @if( old('geboortedatum')[2] == "1975" ) selected @endif>1975</option>
+                                <option value="1974" @if( old('geboortedatum')[2] == "1974" ) selected @endif>1974</option>
+                                <option value="1973" @if( old('geboortedatum')[2] == "1973" ) selected @endif>1973</option>
+                                <option value="1972" @if( old('geboortedatum')[2] == "1972" ) selected @endif>1972</option>
+                                <option value="1971" @if( old('geboortedatum')[2] == "1971" ) selected @endif>1971</option>
+                                <option value="1970" @if( old('geboortedatum')[2] == "1970" ) selected @endif>1970</option>
+                                <option value="1969" @if( old('geboortedatum')[2] == "1969" ) selected @endif>1969</option>
+                                <option value="1968" @if( old('geboortedatum')[2] == "1968" ) selected @endif>1968</option>
+                                <option value="1967" @if( old('geboortedatum')[2] == "1967" ) selected @endif>1967</option>
+                                <option value="1966" @if( old('geboortedatum')[2] == "1966" ) selected @endif>1966</option>
+                                <option value="1965" @if( old('geboortedatum')[2] == "1965" ) selected @endif>1965</option>
+                                <option value="1964" @if( old('geboortedatum')[2] == "1964" ) selected @endif>1964</option>
+                                <option value="1963" @if( old('geboortedatum')[2] == "1963" ) selected @endif>1963</option>
+                                <option value="1962" @if( old('geboortedatum')[2] == "1962" ) selected @endif>1962</option>
+                                <option value="1961" @if( old('geboortedatum')[2] == "1961" ) selected @endif>1961</option>
+                                <option value="1960" @if( old('geboortedatum')[2] == "1960" ) selected @endif>1960</option>
+                                <option value="1959" @if( old('geboortedatum')[2] == "1959" ) selected @endif>1959</option>
+                                <option value="1958" @if( old('geboortedatum')[2] == "1958" ) selected @endif>1958</option>
+                                <option value="1957" @if( old('geboortedatum')[2] == "1957" ) selected @endif>1957</option>
+                                <option value="1956" @if( old('geboortedatum')[2] == "1956" ) selected @endif>1956</option>
+                                <option value="1955" @if( old('geboortedatum')[2] == "1955" ) selected @endif>1955</option>
+                                <option value="1954" @if( old('geboortedatum')[2] == "1954" ) selected @endif>1954</option>
+                                <option value="1953" @if( old('geboortedatum')[2] == "1953" ) selected @endif>1953</option>
+                                <option value="1952" @if( old('geboortedatum')[2] == "1952" ) selected @endif>1952</option>
+                                <option value="1951" @if( old('geboortedatum')[2] == "1951" ) selected @endif>1951</option>
+                                <option value="1950" @if( old('geboortedatum')[2] == "1950" ) selected @endif>1950</option>
                             </select>
 
                             @if ($errors->has('year'))
@@ -471,7 +478,7 @@
                     <textarea
                         id="medisch"
                         name="medisch"
-                        class="form__textarea form__input--full-width">{{ old('medisch') || '' }}</textarea>
+                        class="form__textarea form__input--full-width">{{ old('medisch') }}</textarea>
 
                     @if ($errors->has('medisch'))
                         <span class="form__section-feedback">
@@ -487,8 +494,8 @@
                             type="checkbox"
                             id="beeldmateriaal"
                             name="beeldmateriaal"
-                            value="{{ old('beeldmateriaal') }}"
                             class="form__checkbox"
+                            @if( old('beeldmateriaal') === "on" ) checked @endif
                             required>
 
                         <label for="beeldmateriaal" class="form__label form__label--required">
@@ -946,6 +953,12 @@
                 {{-- ReCAPTCHA --}}
                 <section class="form__section form__section--last">
                     <div class="g-recaptcha" data-sitekey="6LfqfeoUAAAAADUtJuiXGbAnaBjrjsCFF984zJe9" data-callback="correctCaptcha"></div>
+
+                    @if (session('inschrijving_error_captcha'))
+                        <span class="form__section-feedback">
+                            Gelieve aan te geven dat u geen robot bent.
+                        </span>
+                    @endif
                 </section>
 
                 <button class="btn btn--primary recaptchaDisable">Verzend</button>

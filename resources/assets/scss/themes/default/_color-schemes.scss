@@ -153,6 +153,12 @@
         }
     }
 
+    .form {
+    	&__section-feedback {
+    		color: $color-alert-error-dark;
+    	}
+    }
+
 	.social {
 		&__link {
 			color: $color-blue;
