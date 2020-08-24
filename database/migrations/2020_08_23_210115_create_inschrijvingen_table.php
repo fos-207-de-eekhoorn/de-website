@@ -20,7 +20,7 @@ class CreateInschrijvingenTable extends Migration
             $table->string('email')->nullable();
             $table->string('telefoon')->nullable();
             $table->string('geslacht');
-            $table->string('geboortedatum');
+            $table->date('geboortedatum');
             $table->string('straat');
             $table->string('nummer');
             $table->string('bus')->nullable();

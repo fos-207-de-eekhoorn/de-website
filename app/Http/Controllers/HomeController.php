@@ -127,7 +127,7 @@ class HomeController extends Controller
             $new_inschrijving->email = $request->email;
             $new_inschrijving->telefoon = $request->telefoon;
             $new_inschrijving->geslacht = $request->geslacht;
-            $new_inschrijving->geboortedatum = $request->geboortedatum[0].$request->geboortedatum[1].$request->geboortedatum[2];
+            $new_inschrijving->geboortedatum = $request->geboortedatum[0].'-'.$request->geboortedatum[1].'-'.$request->geboortedatum[2];
             $new_inschrijving->straat = $request->straat;
             $new_inschrijving->nummer = $request->nummer;
             $new_inschrijving->bus = $request->bus;

@@ -77,7 +77,7 @@
                                 <td class="table__cell">{{ $inschrijving->email }}</td>
                                 <td class="table__cell">{{ $inschrijving->telefoon }}</td>
                                 <td class="table__cell">{{ $inschrijving->geslacht }}</td>
-                                <td class="table__cell">{{ $inschrijving->geboortedatum }}</td>
+                                <td class="table__cell">{{ Carbon\Carbon::parse($inschrijving->geboortedatum)->format('j/m/Y') }}</td>
                                 <td class="table__cell">{{ $inschrijving->straat }}</td>
                                 <td class="table__cell">{{ $inschrijving->nummer }}</td>
                                 <td class="table__cell">{{ $inschrijving->bus }}</td>
