@@ -15,9 +15,13 @@
     {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12">
-            <div class="multiple-titles small-margin-bottom">
+            <div class="multiple-titles small-margin-bottom align-items-center">
                 <h2>Lijst</h2>
-                {{-- <a href="{{ url('/admin/activiteiten/prutske') }}" class="btn btn--secondary align-self-start">Export voor het prutske</a> --}}
+                <div class="wrapper__btn wrapper__btn--right align-items-center">
+                    <span class="fa--before">Export as:</span>
+                    <a href="{{ url('/admin/inschrijvingen/export/xlsx') }}" class="btn btn--primary">XLSX</a>
+                    <a href="{{ url('/admin/inschrijvingen/export/csv') }}" class="btn btn--secondary">CSV</a>
+                </div>
             </div>
         </div>
 

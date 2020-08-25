@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Inschrijving;
+use App\Exports\InschrijvingExport;
 use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminGeneralController extends Controller
 {
@@ -20,5 +22,10 @@ class AdminGeneralController extends Controller
         return view('admin.inschrijvingen', [
             'inschrijvingen' => $inschrijvingen,
         ]);
+    }
+
+    public function export_inschrijvingen($format = 'csv')
+    {
+        return Excel::download(new InschrijvingExport, 'inschrijvingen.'.$format);
     }
 }
