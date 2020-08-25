@@ -80,5 +80,5 @@ gulp.task('dev', gulp.series(
     'sass:watch',
     'img:watch',
     'docs:watch',
-    'fonts:watch',
+    'fonts:watch'
 ));
