@@ -1,127 +1,84 @@
 'use strict';
-
-/* do NOT change the order of the pipes as this could cause unwanted effects */
+ 
 var pkg = require('./package.json'),
-  // del = require('del'),
-  // eslint = require('gulp-eslint'),
-  // fileExists = require('file-exists'),
-  autoprefixer = require('gulp-autoprefixer'),
-  bless = require('gulp-bless'),
-  cached = require('gulp-cached'),
-  cleanCSS = require('gulp-clean-css'),
-  concat = require('gulp-concat'),
-  copy = require('gulp-copy'),
-  gulp = require('gulp'),
-  notify = require('gulp-notify'),
-  plumber = require('gulp-plumber'),
-  rename = require('gulp-rename'),
-  sass = require('gulp-sass'),
-  scssLint = require('gulp-scss-lint'),
-  sourcemaps = require('gulp-sourcemaps'),
-  uglify = require('gulp-uglify');
+    gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    copy = require("gulp-copy"),
+    rename = require("gulp-rename"),
+    notify = require("gulp-notify");
+
+sass.compiler = require('node-sass');
+
+// Sass
+// ------------------------------------------------
+gulp.task('sass', function () {
+    return gulp.src(pkg.sass.files.src)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(rename(pkg.sass.files.file))
+        .pipe(gulp.dest(pkg.sass.files.dest))
+        .pipe(notify({
+          'message': 'Sass build complete',
+          'onLast': true
+        }));
+});
+gulp.task('sass:watch', function () {
+    gulp.watch(pkg.sass.watch, gulp.series('sass'));
+});
 
 //  Images
-gulp.task('imgbuild', function() {
-  return gulp.src(pkg.img.src)
-    .pipe(copy(pkg.img.dest, {
-      'prefix': 3
-    })) // needs to be copy, not just ".dest" as mac often throws errors when the folder doesn't exist
-    .pipe(notify({
-      'message': 'IMG build complete',
-      'onLast': true // otherwise the notify will be fired for each file in the pipe
-    }));
+// ------------------------------------------------
+gulp.task('img', function() {
+    return gulp.src(pkg.img.files.src)
+        .pipe(copy(pkg.img.files.dest, {'prefix': 3}))
+        .pipe(notify({
+            'message': 'IMG build complete',
+            'onLast': true
+        }));
+});
+gulp.task('img:watch', function () {
+    gulp.watch(pkg.img.watch, gulp.series('img'));
 });
 
 //  Documents
-gulp.task('docsbuild', function() {
-  return gulp.src(pkg.docs.src)
-    .pipe(copy(pkg.docs.dest, {
-      'prefix': 3
-    })) // needs to be copy, not just ".dest" as mac often throws errors when the folder doesn't exist
-    .pipe(notify({
-      'message': 'Documents build complete',
-      'onLast': true // otherwise the notify will be fired for each file in the pipe
-    }));
+// ------------------------------------------------
+gulp.task('docs', function() {
+    return gulp.src(pkg.docs.files.src)
+        .pipe(copy(pkg.docs.files.dest, {'prefix': 3}))
+        .pipe(notify({
+            'message': 'Docs build complete',
+            'onLast': true
+        }));
+});
+gulp.task('docs:watch', function () {
+    gulp.watch(pkg.docs.watch, gulp.series('docs'));
 });
 
-// Fonts
-gulp.task('fontsbuild', function() {
-  return gulp.src(pkg.fonts.src)
-    .pipe(copy(pkg.fonts.dest, {
-      'prefix': 3
-    })) // needs to be copy, not just ".dest" as mac often throws errors when the folder doesn't exist
-    .pipe(notify({
-      'message': 'Fonts build complete',
-      'onLast': true // otherwise the notify will be fired for each file in the pipe
-    }));
+//  Fonts
+// ------------------------------------------------
+gulp.task('fonts', function() {
+    return gulp.src(pkg.fonts.files.src)
+        .pipe(copy(pkg.fonts.files.dest, {'prefix': 3}))
+        .pipe(notify({
+            'message': 'Fonts build complete',
+            'onLast': true
+        }));
+});
+gulp.task('fonts:watch', function () {
+    gulp.watch(pkg.fonts.watch, gulp.series('fonts'));
 });
 
-// Javascript
-gulp.task('eslint', function() {
-  return gulp.src(pkg.js.hint.src)
-    .pipe(plumber({
-      'errorHandler': onError
-    }))
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-});
-
-gulp.task('jsbuild', done => {
-  pkg.js.files.forEach(function(o) {
-    return gulp.src(o.src)
-      .pipe(plumber())
-      .pipe(concat(o.file))
-      .pipe(gulp.dest(o.dest))
-      .pipe(notify({
-        'message': 'JS: ' + o.file + ' build complete',
-        'onLast': true // otherwise the notify will be fired for each file in the pipe
-      }));
-  });
-  done();
-});
-
-gulp.task('js', gulp.parallel('jsbuild'));
-
-// CSS
-gulp.task('scsslint', function() {
-  return gulp.src(pkg.sass.hint.src)
-    .pipe(cached('scssLint'))
-    .pipe(scssLint());
-});
-
-gulp.task('sassbuild', done => {
-  pkg.sass.files.forEach(function(o) {
-    return gulp.src(o.src)
-      .pipe(plumber())
-      .pipe(sourcemaps.init()) // can't get them to work in conjunction with bless
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer({
-        'browserslist': pkg.sass.autoprefixer.overrideBrowserslist
-      }))
-      .pipe(rename(o.file))
-      .pipe(cleanCSS())
-      .pipe(sourcemaps.write('.')) // can't get them to work in conjunction with bless
-      .pipe(gulp.dest(o.dest))
-      .pipe(notify({
-        'message': 'Sass: ' + o.file + ' build complete',
-        'onLast': true // otherwise the notify will be fired for each file in the pipe
-      }));
-  });
-  done();
-});
-
-gulp.task('sass', gulp.parallel('sassbuild'));
-
-// build all task
-gulp.task('build', gulp.parallel('imgbuild', 'docsbuild', 'fontsbuild', 'jsbuild', 'sassbuild'));
-
-// default task
-gulp.task('default', gulp.series(gulp.parallel('imgbuild', 'docsbuild', 'fontsbuild', 'js', 'sass'), function() {
-  gulp.watch(pkg.img.watch, gulp.series('imgbuild'));
-  gulp.watch(pkg.fonts.watch, gulp.series('fontsbuild'));
-  gulp.watch(pkg.js.watch, gulp.series('js'));
-  gulp.watch(pkg.sass.watch, gulp.series('sass')).on('change', function () {
-    notify("Sass building...").write('');
-  });
-}));
+//  Default tasks
+// ------------------------------------------------
+gulp.task('default', gulp.parallel(
+    'sass',
+    'img',
+    'docs',
+    'fonts'
+));
+gulp.task('dev', gulp.series(
+    'default',
+    'sass:watch',
+    'img:watch',
+    'docs:watch',
+    'fonts:watch',
+));
