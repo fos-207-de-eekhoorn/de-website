@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Crypt;
 use App\Tak;
 use App\Activiteit;
+use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class TakkenController extends Controller
 {
@@ -69,6 +71,32 @@ class TakkenController extends Controller
 
     public function post_tak_inschrijven(Request $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'activiteit_id' => 'required',
+            'voornaam' => 'required',
+            'achternaam' => 'required',
+        ]);
+
+        $new_inschrijving = new ActiviteitInschrijving;
+        $new_inschrijving->activiteit_id = $request->activiteit_id;
+        $new_inschrijving->voornaam = $request->voornaam;
+        $new_inschrijving->achternaam = $request->achternaam;
+
+        $confirm = $new_inschrijving->save();
+
+        if ($confirm) {
+            Session::flash('success_inschrijving');
+
+            $activiteit = Activiteit::where('id', $request->activiteit_id)
+                ->with([
+                    'tak'
+                ])
+                ->first();
+
+            return redirect('/takken/'.$activiteit->tak->link);
+        } else {
+            Session::flash('error');
+            return redirect()->back()->withInput();
+        }
     }
 }
