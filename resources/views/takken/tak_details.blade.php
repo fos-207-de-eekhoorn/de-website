@@ -47,25 +47,33 @@
                         </td>
 
                         @if($activiteit->is_activiteit)
-                            <td class="table__cell">
-                                {{ $activiteit->omschrijving }}
+                            <td class="table__cell activities__info">
+                                <span class="activities__omschrijving">
+                                    {{ $activiteit->omschrijving }}
 
-                                @if ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
-                                    <br>
-                                    <br>
-                                    <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
-                                @endif
+                                    @if ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
+                                        <span class="activities__detail">
+                                            <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
+                                        </span>
+                                    @endif
 
-                                @if (0 < $activiteit->prijs)
-                                    <br>
-                                    <br>
-                                    <b>Prijs:</b> {{ $activiteit->prijs }}
-                                @endif
+                                    @if (0 < $activiteit->prijs)
+                                        <span class="activities__detail">
+                                            <b>Prijs:</b> {{ $activiteit->prijs }}
+                                        </span>
+                                    @endif
 
-                                @if ($activiteit->locatie != 'Lokaal')
-                                    <br>
-                                    <br>
-                                    <b>Locatie:</b> {{ $activiteit->locatie }}
+                                    @if ($activiteit->locatie != 'Lokaal')
+                                        <span class="activities__detail">
+                                            <b>Locatie:</b> {{ $activiteit->locatie }}
+                                        </span>
+                                    @endif
+                                </span>
+
+                                @if (Carbon\Carbon::parse($activiteit->datum) <  Carbon\Carbon::now()->addDays(6))
+                                    <div class="activities__subscribe">
+                                        <a href="#" class="btn btn--primary">Deelnemen aan de activiteit</a>
+                                    </div>
                                 @endif
                             </td>
                         @else

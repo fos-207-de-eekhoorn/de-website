@@ -8,4 +8,29 @@
 		text-align: center;
 		white-space: nowrap;
 	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+	}
+
+	&__omschrijving,
+	&__subscribe {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__omschrijving {
+		flex-direction: column;
+	}
+
+	&__detail {
+		margin-top: spacing(sm);
+	}
+
+	&__subscribe {
+		align-items: center;
+		margin-left: spacing(lg);
+	}
 }
