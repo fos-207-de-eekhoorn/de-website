@@ -70,7 +70,7 @@
                                     @endif
                                 </span>
 
-                                @if (Carbon\Carbon::parse($activiteit->datum) <  Carbon\Carbon::now()->addDays(6))
+                                @if (Carbon\Carbon::parse($activiteit->datum) <  Carbon\Carbon::now()->addDays(6)->addHours(12))
                                     <div class="activities__subscribe">
                                         <a href="#" class="btn btn--primary">Deelnemen aan de activiteit</a>
                                     </div>
