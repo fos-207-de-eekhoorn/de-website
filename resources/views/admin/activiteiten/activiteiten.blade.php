@@ -13,7 +13,7 @@
 
     {{-- Contact formulier --}}
     {{-- EL & AEL --}}
-    <div class="row section">
+    <div class="row justify-content-center section">
         <div class="col-12">
             <div class="multiple-titles small-margin-bottom">
                 <h2>Takken</h2>
@@ -22,21 +22,21 @@
         </div>
 
         @foreach($takken as $tak)
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card cs-{{ $tak->kleur }}">
-                    <h3>{{ $tak->naam }}</h3>
+            <div class="col-12 col-md-4 large-margin-bottom">
+                <div class="card cs-{{ $tak->kleur }} admin-activities">
+                    <h3 class="admin-activities__title">{{ $tak->naam }}</h3>
 
-                    <p class="medium-margin-vertical">
-                        <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}">
-                            <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
+                    <div class="admin-activities__actions">
+                        <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="admin-activities__action">
+                            <span class="admin-activities__icon"><i class="fas fa-plus"></i></span>
+                            <span>Voeg activiteit toe</span>
                         </a>
-                    </p>
 
-                    <p>
-                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->naam)) }}">
-                            Ga naar activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->naam)) }}" class="admin-activities__action">
+                            <span class="admin-activities__icon"><i class="fas fa-angle-right"></i></span>
+                            <span>Ga naar activiteiten</span>
                         </a>
-                    </p>
+                    </div>
                 </div>
             </div>
         @endforeach
