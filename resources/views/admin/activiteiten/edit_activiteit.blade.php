@@ -14,7 +14,7 @@
 
     <div class="row section">
         <div class="section--extra-small-spacing col-12">
-            <a href="{{ url('/admin/activiteiten/' . strtolower($activiteit->tak->naam)) }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
+            <a href="{{ url('/admin/activiteiten/' . strtolower($activiteit->tak->link)) }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
         </div>
 
         <div class="section--extra-small-spacing col-12">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="section col-12">
-            <form class="form" action="/admin/activiteit/edit" method="POST">
+            <form class="form" action="/admin/activiteiten/edit" method="POST">
                 @csrf
 
                 {{-- ID --}}

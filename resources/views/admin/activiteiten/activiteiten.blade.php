@@ -27,14 +27,19 @@
                     <h3 class="admin-activities__title">{{ $tak->naam }}</h3>
 
                     <div class="admin-activities__actions">
-                        <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="admin-activities__action">
+                        <a href="{{ url('/admin/activiteiten/add/' . strtolower($tak->link)) }}" class="admin-activities__action">
                             <span class="admin-activities__icon"><i class="fas fa-plus"></i></span>
-                            <span>Voeg activiteit toe</span>
+                            <span class="admin-activities__text">Voeg activiteit toe</span>
                         </a>
 
-                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->naam)) }}" class="admin-activities__action">
+                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->link)) . '/inschrijvingen'  }}" class="admin-activities__action">
+                            <span class="admin-activities__icon"><i class="fas fa-file-alt"></i></span>
+                            <span class="admin-activities__text">Bekijk inschrijvingen</span>
+                        </a>
+
+                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->link)) }}" class="admin-activities__action">
                             <span class="admin-activities__icon"><i class="fas fa-angle-right"></i></span>
-                            <span>Ga naar activiteiten</span>
+                            <span class="admin-activities__text">Ga naar activiteiten</span>
                         </a>
                     </div>
                 </div>

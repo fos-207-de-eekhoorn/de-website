@@ -44,4 +44,10 @@
 
 		font-size: spacing(lg);
 	}
+
+	&__text {
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
 }

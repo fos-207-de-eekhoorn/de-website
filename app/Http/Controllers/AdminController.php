@@ -29,9 +29,9 @@ class AdminController extends Controller
         ]);
     }
 
-    public function get_activiteiten_tak($naam)
+    public function get_activiteiten_tak($tak)
     {
-        $tak = Tak::where('naam', $naam)
+        $tak = Tak::where('link', $tak)
             ->with([
                 'activiteiten' => function ($query) {
                     $query->whereDate('datum', '>=', date('Y-m-d'));;
@@ -63,7 +63,7 @@ class AdminController extends Controller
         ];
 
         if ($tak) {
-            $tak = Tak::where('naam', $tak)->first();
+            $tak = Tak::where('link', $tak)->first();
 
             if (is_object($tak)) {
                 $data = [
@@ -218,5 +218,26 @@ class AdminController extends Controller
         }
 
         return redirect('/admin/activiteiten/' . $request->tak);
+    }
+
+    public function get_activiteiten_tak_inschrijvingen($tak)
+    {
+        $tak = Tak::where('link', $tak)
+            ->with([
+                'volgende_activiteit' => function ($query) {
+                    $query->limit(1);
+                    $query->with([
+                        'inschrijvingen'
+                    ]);
+                },
+            ])
+            ->first();
+        return $tak;
+    }
+
+    public function get_activiteit_inschrijvingen($id_encrypted)
+    {
+        $id = Crypt::decrypt($id_encrypted);
+        return $id;
     }
 }
