@@ -28,6 +28,8 @@ Route::post('/contact/zend-bericht', 'HomeController@post_contact_message');
 # Takken Routes
 Route::get('/takken', 'TakkenController@get_takken');
 Route::get('/takken/{tak}', 'TakkenController@get_tak_details');
+Route::get('/takken/inschrijven/{id}', 'TakkenController@get_tak_inschrijven');
+Route::post('/takken/inschrijven', 'TakkenController@post_tak_inschrijven')->middleware('decrypt:value,activiteit_id');
 
 # Algemene info Routes
 Route::get('/alle-info', 'InfoController@get_alle_info');

@@ -72,7 +72,7 @@
 
                                 @if (Carbon\Carbon::parse($activiteit->datum) <  Carbon\Carbon::now()->addDays(6)->addHours(12))
                                     <div class="activities__subscribe">
-                                        <a href="#" class="btn btn--primary">Deelnemen aan de activiteit</a>
+                                        <a href="{{ url('/takken/inschrijven/'.Crypt::encrypt($activiteit->id)) }}" class="btn btn--primary">Deelnemen aan de activiteit</a>
                                     </div>
                                 @endif
                             </td>
