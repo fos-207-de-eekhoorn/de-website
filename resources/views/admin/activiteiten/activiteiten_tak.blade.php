@@ -159,6 +159,17 @@
 
                         <td class="table__cell no-wrap">
                             <p>
+                                <a href="{{ url('/admin/activiteiten/inschrijvingen/' . Crypt::encrypt($activiteit->id)) }}">
+                                    <span class="fa--before"><i class="fas fa-file-alt"></i></span>
+                                    @if (Carbon\Carbon::now() < Carbon\Carbon::parse($activiteit->datum))
+                                        Inschrijvingen
+                                    @else
+                                        Aanwezigheden
+                                    @endif
+                                </a>
+                            </p>
+
+                            <p>
                                 <a href="{{ url('/admin/activiteiten/edit/' . Crypt::encrypt($activiteit->id)) }}">
                                     <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                 </a>

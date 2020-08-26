@@ -232,12 +232,20 @@ class AdminController extends Controller
                 },
             ])
             ->first();
+
         return $tak;
     }
 
     public function get_activiteit_inschrijvingen($id_encrypted)
     {
         $id = Crypt::decrypt($id_encrypted);
-        return $id;
+
+        $activiteit = Activiteit::where('id', $id)
+            ->with([
+                'inschrijvingen'
+            ])
+            ->first();
+
+        return $activiteit;
     }
 }
