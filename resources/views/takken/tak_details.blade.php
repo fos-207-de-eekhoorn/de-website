@@ -11,9 +11,19 @@
     ])
     @endcomponent
 
-    <div class="row justify-content-center section">
-        <div class="col-12 col-md-8">
-            <div class="card card--align-center cs-{{ $tak->kleur }}">
+    <div class="row section">
+        @if (session('success_inschrijving'))
+            <div class="col-12 section section--small-spacing">
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    Je bent ingeschreven voor de activiteit. Tot zaterdag!
+                @endcomponent
+            </div>
+        @endif
+
+        <div class="col-12 col-lg-8 section">
+            <div class="card card--align-center cs-{{ $tak->kleur }} section">
                 <h2 class="card__title">{{ $tak->introductie }}</h2>
 
                 <div class="card__content">
@@ -22,12 +32,8 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="row section">
-        <div class="col-12 col-lg-8">
-            <div class="section">
+            <div class="section section--small-spacing">
                 <h2>Activiteiten</h2>
                 <p>
                     De activiteiten gaan elke zaterdag door van 14u tot 17u in het lokaal, tenzij anders vermeld. Hier vindt u alle geplande activiteiten voor de komende maanden!

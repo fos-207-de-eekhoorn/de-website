@@ -16,6 +16,14 @@
         <div class="col-12 col-md-8 activities">
             <div class="row">
                 <div class="col-12">
+                    @if (session('error'))
+                        @component('components.flash_message', [
+                            'type' => 'error',
+                        ])
+                            Er is iets fout gelopen. Als dit blijft gebeuren, gelieve een mailtje te sturen naar de takleid(st)er.
+                        @endcomponent
+                    @endif
+
                     <h2>De activiteit van {{ Carbon\Carbon::parse($activiteit->datum)->format('j F y') }}</h2>
                 </div>
 
