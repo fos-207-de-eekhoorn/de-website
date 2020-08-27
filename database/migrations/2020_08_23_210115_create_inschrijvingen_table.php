@@ -28,6 +28,7 @@ class CreateInschrijvingenTable extends Migration
             $table->string('plaats');
             $table->string('land');
             $table->text('medisch');
+            $table->tinyInteger('beeldmateriaal')->default(0);
             $table->string('voogd_1_voornaam');
             $table->string('voogd_1_achternaam');
             $table->string('voogd_1_email');
@@ -38,10 +39,10 @@ class CreateInschrijvingenTable extends Migration
             $table->string('voogd_1_postcode')->nullable();
             $table->string('voogd_1_plaats')->nullable();
             $table->string('voogd_1_land')->nullable();
-            $table->string('voogd_2_voornaam');
-            $table->string('voogd_2_achternaam');
-            $table->string('voogd_2_email');
-            $table->string('voogd_2_telefoon');
+            $table->string('voogd_2_voornaam')->nullable();
+            $table->string('voogd_2_achternaam')->nullable();
+            $table->string('voogd_2_email')->nullable();
+            $table->string('voogd_2_telefoon')->nullable();
             $table->string('voogd_2_straat')->nullable();
             $table->string('voogd_2_nummer')->nullable();
             $table->string('voogd_2_bus')->nullable();

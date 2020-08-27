@@ -22,6 +22,7 @@ class Inschrijving extends Model
         'plaats',
         'land',
         'medisch',
+        'beeldmateriaal',
         'voogd_1_voornaam',
         'voogd_1_achternaam',
         'voogd_1_email',
