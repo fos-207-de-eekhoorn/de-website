@@ -112,12 +112,6 @@ class HomeController extends Controller
                 'voogd_1_achternaam' => 'required',
                 'voogd_1_email' => 'required',
                 'voogd_1_telefoon' => 'required',
-
-                // Voogd 2
-                'voogd_2_voornaam' => 'required',
-                'voogd_2_achternaam' => 'required',
-                'voogd_2_email' => 'required',
-                'voogd_2_telefoon' => 'required',
             ]);
 
             $new_inschrijving = new Inschrijving;
