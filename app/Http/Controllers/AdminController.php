@@ -227,13 +227,18 @@ class AdminController extends Controller
                 'volgende_activiteit' => function ($query) {
                     $query->limit(1);
                     $query->with([
-                        'inschrijvingen'
+                        'tak',
+                        'inschrijvingen',
                     ]);
                 },
             ])
             ->first();
 
-        return $tak;
+        $activiteit = $tak->volgende_activiteit[0];
+
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
     }
 
     public function get_activiteit_inschrijvingen($id_encrypted)
@@ -242,10 +247,13 @@ class AdminController extends Controller
 
         $activiteit = Activiteit::where('id', $id)
             ->with([
-                'inschrijvingen'
+                'tak',
+                'inschrijvingen',
             ])
             ->first();
 
-        return $activiteit;
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
     }
 }
