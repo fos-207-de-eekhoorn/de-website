@@ -70,3 +70,5 @@ Route::post('/admin/activiteiten/add', 'AdminController@post_add_activiteit')->m
 Route::post('/admin/activiteiten/edit', 'AdminController@post_edit_activiteit')->middleware('decrypt:value,id');
 Route::post('/admin/activiteiten/remove', 'AdminController@delete_activiteit')->middleware('decrypt:value,id');
 Route::post('/admin/activiteiten/remove-undo', 'AdminController@delete_activiteit_undo')->middleware('decrypt:value,id');
+
+Route::post('/admin/activiteiten/set-aanwezig', 'ApiAdminController@PostSetAanwezig');

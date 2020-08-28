@@ -22,6 +22,22 @@
         <div class="col-12 col-md-8">
             <h2>Inschrijvingen</h2>
 
+            <div class="ajax-error" style="display: none;">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Dit zou niet mogen gebeuren, bel Paco.
+                @endcomponent
+            </div>
+
+            <div class="ajax-fail" style="display: none;">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gelopen. Best eens de pagina refreshen.
+                @endcomponent
+            </div>
+
             <table class="table activities">
                 <thead>
                     <tr class="table__row">
@@ -59,14 +75,24 @@
         (function($){
             $('.toggle-switch__input').change(function() {
                 $.ajax({
-                    url: "{{ url('/api/admin/set-aanwezig') }}",
+                    url: "{{ url('/admin/activiteiten/set-aanwezig') }}",
                     type: "post",
                     data: {
                         '_token': '{{ csrf_token() }}',
                         'id':  $(this).val(),
-                        'activiteit_id': '{{ $activiteit->id }}',
                         'status': $(this).prop('checked') ? 1 : 0
                     }
+                }).done(function(data) {
+                    if (data == 'false') {
+                        $(this).prop('checked', !$(this).prop('checked'));
+                        $('.ajax-error').slideDown(300);
+                    } else {
+                        $('.ajax-error').slideUp(300);
+                        $('.ajax-fail').slideUp(300);
+                    }
+                }).fail(function() {
+                    $(this).prop('checked', !$(this).prop('checked'));
+                    $('.ajax-fail').slideDown(300);
                 });
             });
         })(jQuery);
