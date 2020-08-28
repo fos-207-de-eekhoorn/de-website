@@ -236,6 +236,8 @@ class AdminController extends Controller
 
         $activiteit = $tak->volgende_activiteit[0];
 
+        // return $activiteit;
+
         return view('admin.activiteiten.inschrijvingen', [
             'activiteit' => $activiteit,
         ]);

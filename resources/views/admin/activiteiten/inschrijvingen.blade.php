@@ -36,11 +36,39 @@
                         <tr class="table__row">
                             <td class="table__cell">{{ $inschrijving->voornaam }}</td>
                             <td class="table__cell">{{ $inschrijving->achternaam }}</td>
-                            <td class="table__cell">{{ $inschrijving->is_aanwezig }}</td>
+                            <td class="table__cell">
+                                <div class="toggle-switch">
+                                    <input
+                                        type="checkbox"
+                                        id="toggle-{{ $inschrijving->id }}"
+                                        class="toggle-switch__input"
+                                        value="{{ $inschrijving->id }}"
+                                        @if ($inschrijving->is_aanwezig) checked @endif
+                                        hidden>
+                                    <label class="toggle-switch__slider" for="toggle-{{ $inschrijving->id }}"></label>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+
+    <script>
+        (function($){
+            $('.toggle-switch__input').change(function() {
+                $.ajax({
+                    url: "{{ url('/api/admin/set-aanwezig') }}",
+                    type: "post",
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                        'id':  $(this).val(),
+                        'activiteit_id': '{{ $activiteit->id }}',
+                        'status': $(this).prop('checked') ? 1 : 0
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
 @endsection
