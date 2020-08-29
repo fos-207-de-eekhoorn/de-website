@@ -12,16 +12,12 @@ class TakkenController extends Controller
 
     public function get_takken()
     {
-        $takken = Tak::get();
-
-        return view('takken.takken', [
-            'takken' => $takken,
-        ]);
+        return view('takken.takken');
     }
 
-    public function get_tak_details($naam)
+    public function get_tak_details($link)
     {
-        $tak = Tak::where('naam', $naam)
+        $tak = Tak::where('link', $link)
             ->with([
                 'leiding_tak' => function ($query) {
                     $query->orderBy('is_tl', 'desc');
