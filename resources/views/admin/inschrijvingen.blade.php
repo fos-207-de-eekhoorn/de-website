@@ -11,8 +11,6 @@
     ])
     @endcomponent
 
-    {{-- Contact formulier --}}
-    {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12">
             <div class="multiple-titles small-margin-bottom align-items-center">

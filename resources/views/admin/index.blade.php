@@ -11,8 +11,6 @@
     ])
     @endcomponent
 
-    {{-- Contact formulier --}}
-    {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12">
             <h2 class="text--align-center">Modules</h2>
@@ -28,12 +26,12 @@
         </div>
 
         <div class="col-12 col-md-4">
-            <div class="admin-module admin-module--coming-soon">
+            <a href="{{ url('/admin/inschrijvingen') }}" class="admin-module">
                 <h3>Inschrijvingen</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-user-plus"></i>
                 </div>
-            </div>
+            </a>
         </div>
 
         <div class="col-12 col-md-4">
