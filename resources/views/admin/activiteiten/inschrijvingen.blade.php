@@ -13,13 +13,27 @@
     @endcomponent
 
     <div class="row justify-content-center section">
-        <div class="col-12 col-md-8 medium-margin-bottom">
-            <a href="{{ url()->previous() }}">
-                <span class="fa--before"><i class="fas fa-angle-left"></i></span>Ga terug
-            </a>
+        <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                    (object)[
+                        'link' => '/admin/activiteiten',
+                        'name' => 'Activiteiten',
+                    ],
+                    (object)[
+                        'link' => '/admin/activiteiten/'.$activiteit->tak->link,
+                        'name' => $activiteit->tak->naam,
+                    ],
+                ],
+                'current' => 'Inschrijvingen voor '.Carbon\Carbon::parse($activiteit->datum)->format('j/m/Y'),
+            ])@endcomponent
         </div>
 
-        <div class="col-12 col-md-8">
+        <div class="col-12">
             <h2>Inschrijvingen</h2>
 
             <div class="ajax-error" style="display: none;">
