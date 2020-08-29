@@ -198,6 +198,12 @@
 
                                 <ul class="nav__sublist">
                                     <li class="nav__sublist-item">
+                                        <a href="/admin" class="nav__link nav__link--sublist">
+                                            Overzicht
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
                                         <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
                                             Activiteiten
                                         </a>

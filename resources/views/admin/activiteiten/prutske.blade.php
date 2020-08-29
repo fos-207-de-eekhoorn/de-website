@@ -11,8 +11,6 @@
     ])
     @endcomponent
 
-    {{-- Contact formulier --}}
-    {{-- EL & AEL --}}
     <div class="row section section--small-spacing">
         <div class="col-12 medium-margin-bottom">
             <a href="{{ url()->previous() }}">

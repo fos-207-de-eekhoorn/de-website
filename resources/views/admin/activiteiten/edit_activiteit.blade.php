@@ -13,8 +13,24 @@
     @endcomponent
 
     <div class="row section">
-        <div class="section--extra-small-spacing col-12">
-            <a href="{{ url('/admin/activiteiten/' . strtolower($activiteit->tak->naam)) }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
+        <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                    (object)[
+                        'link' => '/admin/activiteiten',
+                        'name' => 'Activiteiten',
+                    ],
+                    (object)[
+                        'link' => '/admin/activiteiten/'.$activiteit->tak->link,
+                        'name' => $activiteit->tak->naam,
+                    ],
+                ],
+                'current' => 'Activiteit aanpassen',
+            ])@endcomponent
         </div>
 
         <div class="section--extra-small-spacing col-12">

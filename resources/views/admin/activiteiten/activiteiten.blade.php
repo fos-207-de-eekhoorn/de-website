@@ -11,9 +11,19 @@
     ])
     @endcomponent
 
-    {{-- Contact formulier --}}
-    {{-- EL & AEL --}}
     <div class="row section">
+        <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                ],
+                'current' => 'Activiteiten',
+            ])@endcomponent
+        </div>
+
         <div class="col-12">
             <div class="multiple-titles small-margin-bottom">
                 <h2>Takken</h2>
@@ -27,13 +37,13 @@
                     <h3>{{ $tak->naam }}</h3>
 
                     <p class="medium-margin-vertical">
-                        <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}">
+                        <a href="{{ url('/admin/activiteit/add/' . $tak->link) }}">
                             <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                         </a>
                     </p>
 
                     <p>
-                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->naam)) }}">
+                        <a href="{{ url('/admin/activiteiten/' . $tak->link) }}">
                             Ga naar activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </p>

@@ -56,10 +56,11 @@ Route::get('/evenementen/eikeltjesquiz', 'EvenementenController@get_event_eikelt
 	Route::get('/evenementen/kamp', 'EvenementenController@get_kamp');
 
 # Admin Routes
+Route::get('/admin', 'AdminGeneralController@get_admin');
+
 Route::get('/admin/activiteiten', 'AdminController@get_activiteiten');
 Route::get('/admin/activiteiten/prutske', 'AdminController@get_for_prutske');
 Route::get('/admin/activiteiten/{tak}', 'AdminController@get_activiteiten_tak');
-Route::get('/admin/activiteit/add/', 'AdminController@get_add_activiteit');
 Route::get('/admin/activiteit/add/{tak}', 'AdminController@get_add_activiteit');
 Route::get('/admin/activiteit/edit/{id}', 'AdminController@get_edit_activiteit');
 

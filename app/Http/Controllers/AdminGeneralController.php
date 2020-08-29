@@ -15,6 +15,11 @@ class AdminGeneralController extends Controller
         $this->middleware('auth');
     }
 
+    public function get_admin()
+    {
+        return view('admin.index');
+    }
+
     public function get_inschrijvingen()
     {
         $inschrijvingen = Inschrijving::get();

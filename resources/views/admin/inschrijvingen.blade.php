@@ -11,9 +11,19 @@
     ])
     @endcomponent
 
-    {{-- Contact formulier --}}
-    {{-- EL & AEL --}}
     <div class="row section">
+        <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                ],
+                'current' => 'Inschrijvingen',
+            ])@endcomponent
+        </div>
+
         <div class="col-12">
             <div class="multiple-titles small-margin-bottom align-items-center">
                 <h2>Lijst</h2>
