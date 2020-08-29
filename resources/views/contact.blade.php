@@ -36,7 +36,7 @@
                 @endcomponent
             @endif
 
-            <form id="contact-form" class="form" action="/contact/zend-bericht" method="POST">
+            <form id="contact-form" class="form" action="/contact" method="POST">
                 @csrf
 
                 {{-- Naam --}}
