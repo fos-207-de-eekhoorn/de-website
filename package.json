@@ -3,77 +3,40 @@
     "version": "1.0.0",
     "description": "FOS 207 'De Eekhoorn'",
     "main": "gulpfile.js",
-    "js": {
-        "files": [
-            {
-                "src": [
-                    "resources/assets/js/**/*.js"
-                ],
-                "dest": "public/js/",
-                "file": "main.js"
-            }
-        ],
-        "hint": {
-            "src": [
-                "resources/assets/js/**/*.js"
-            ]
-        },
-        "watch": "resources/assets/js/**/*.js"
-    },
     "sass": {
-        "files": [
-            {
-                "src": "resources/assets/scss/main.scss",
-                "dest": "public/css/",
-                "file": "style.css"
-            }
-        ],
-        "hint": {
-            "src": [
-                "resources/assets/scss/**/*.scss",
-                "!./src/scss/base/_normalize.scss"
-            ]
+        "files": {
+            "src": "resources/sass/main.scss",
+            "dest": "public/css/",
+            "file": "style.css"
         },
-        "watch": "resources/assets/scss/**/*.scss",
-        "autoprefixer": {
-            "browserslist": [
-                "last 1 version",
-                "> 1%",
-                "IE 10"
-            ]
-        }
+        "watch": "resources/sass/**/*.scss"
     },
     "img": {
-        "src": "resources/assets/img/**/*",
-        "dest": "public/img/",
+        "files": {
+            "src": "resources/assets/img/**/*",
+            "dest": "public/img/"
+        },
         "watch": "resources/assets/img/**/*"
     },
     "docs": {
-        "src": "resources/assets/docs/**/*",
-        "dest": "public/docs/",
+        "files": {
+            "src": "resources/assets/docs/**/*",
+            "dest": "public/docs/"
+        },
         "watch": "resources/assets/docs/**/*"
     },
     "fonts": {
-        "src": "resources/assets/fonts/**/*",
-        "dest": "public/fonts/",
+        "files": {
+            "src": "resources/assets/fonts/**/*",
+            "dest": "public/fonts/"
+        },
         "watch": "resources/assets/fonts/**/*"
     },
     "devDependencies": {
-        "file-exists": "^1.0.0",
-        "gulp": "^4.0.0",
-        "gulp-autoprefixer": "^7.0.0",
-        "gulp-bless": "^4.0.1",
-        "gulp-cached": "^1.1.1",
-        "gulp-clean-css": "^4.2.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-copy": "^4.0.1",
+        "gulp": "^4.0.2",
         "gulp-notify": "^3.2.0",
-        "gulp-plumber": "^1.2.1",
-        "gulp-rename": "^1.4.0",
-        "gulp-sass": "^3.0.0",
-        "gulp-scss-lint": "^1.0.0",
-        "gulp-sourcemaps": "^2.6.5",
-        "gulp-uglify": "^3.0.2"
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -84,6 +47,7 @@
     ],
     "license": "ISC",
     "dependencies": {
-        "gulp-cli": "^2.2.0"
+        "gulp-cli": "^2.2.0",
+        "gulp-copy": "^4.0.1"
     }
 }

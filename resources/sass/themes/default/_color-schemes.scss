@@ -268,3 +268,18 @@
 		text-decoration: underline;
 	}
 }
+.cs-yellow-light {
+	background-color: $color-yellow-light;
+	color: $color-yellow-light-text;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-yellow-light-title;
+	}
+	p, a, li {
+		color: $color-yellow-light-text;
+	}
+	a:hover {
+		color: $color-yellow-light-title;
+		text-decoration: underline;
+	}
+}
