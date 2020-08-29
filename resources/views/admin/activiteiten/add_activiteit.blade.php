@@ -326,7 +326,7 @@
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Voeg toe</button>
-                    <a href="{{ isset($tak) ? url('/admin/activiteiten/' . strtolower($tak->naam)) : url()->previous() }}" class="btn btn--error">Cancel</a>
+                    <a href="{{ isset($tak) ? url('/admin/activiteiten/' . $tak->link) : url()->previous() }}" class="btn btn--error">Cancel</a>
                 </div>
             </form>
         </div>

@@ -66,7 +66,7 @@
                     @endif
 
                     <div class="volgende-activiteit__link">
-                        <a href="{{ url('/takken/'. strtolower($tak->naam)) }}">
+                        <a href="{{ url('/takken/'. $tak->link) }}">
                             Alle activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>
