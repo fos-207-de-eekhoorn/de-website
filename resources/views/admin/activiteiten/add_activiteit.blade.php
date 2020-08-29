@@ -289,7 +289,7 @@
                                 @foreach($takken as $tak_details)
                                     <option
                                         value="{{ Crypt::encrypt($tak_details->id) }}"
-                                        @if(isset($tak) && $tak_details->naam == $tak->naam)
+                                        @if($tak_details->link == $tak->link)
                                             selected
                                         @endif
                                         >

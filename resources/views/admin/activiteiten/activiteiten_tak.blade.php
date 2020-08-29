@@ -31,11 +31,11 @@
 
         <div class="section col-12">
             <div class="wrapper__btn wrapper__btn--right medium-margin-bottom">
-                <a href="{{ url('/admin/activiteiten/prutske?tak=' . strtolower($tak->naam)) }}" class="btn btn--secondary">
+                <a href="{{ url('/admin/activiteiten/prutske?tak=' . $tak->link) }}" class="btn btn--secondary">
                     Export voor het prutske
                 </a>
 
-                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--primary">
+                <a href="{{ url('/admin/activiteit/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>
@@ -84,11 +84,6 @@
                             type="text"
                             name="id"
                             value="{{ Crypt::encrypt(session('delete_success')) }}"
-                            hidden>
-                        <input
-                            type="text"
-                            name="tak"
-                            value="{{ strtolower($tak->naam) }}"
                             hidden>
 
                         <button class="btn btn--without-style link--error">
@@ -184,11 +179,6 @@
                                     name="id"
                                     value="{{ Crypt::encrypt($activiteit->id) }}"
                                     hidden>
-                                <input
-                                    type="text"
-                                    name="tak"
-                                    value="{{ strtolower($tak->naam) }}"
-                                    hidden>
 
                                 <button class="btn btn--without-style link--error" onclick="
                                     confirm('Ben je zeker dat je deze activiteit wilt verwijderen?')
@@ -204,7 +194,7 @@
             </table>
 
             <div class="medium-margin">
-                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--primary">
+                <a href="{{ url('/admin/activiteit/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>
