@@ -6,6 +6,7 @@ use Auth;
 use Crypt;
 use App\Tak;
 use App\Activiteit;
+use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -189,7 +190,7 @@ class AdminController extends Controller
             ->with(['tak'])
             ->first();
 
-        $delete = $activiteit->destroy('id', $request->id);
+        $delete = Activiteit::destroy('id', $request->id);
 
         if ($delete) {
             Session::flash('delete_success', $request->id);
@@ -208,7 +209,7 @@ class AdminController extends Controller
             ->first();
 
         if ($restore) {
-            Session::flash('restore_success', $request->id);
+            Session::flash('restore_success');
         } else {
             Session::flash('restore_error');
         }
@@ -253,5 +254,31 @@ class AdminController extends Controller
         return view('admin.activiteiten.inschrijvingen', [
             'activiteit' => $activiteit,
         ]);
+    }
+
+    public function delete_activiteit_inschrijvingen(Request $request)
+    {
+        $delete = ActiviteitInschrijving::destroy('id', $request->id);
+
+        if ($delete) {
+            Session::flash('delete_success', $request->id);
+        } else {
+            Session::flash('delete_error');
+        }
+
+        return redirect()->back();
+    }
+
+    public function delete_activiteit_inschrijvingen_undo(Request $request)
+    {
+        $restore = ActiviteitInschrijving::withTrashed()->find($request->id)->restore();
+
+        if ($restore) {
+            Session::flash('restore_success');
+        } else {
+            Session::flash('restore_error');
+        }
+
+        return redirect()->back();
     }
 }

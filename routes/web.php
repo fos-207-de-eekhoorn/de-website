@@ -73,6 +73,8 @@ Route::post('/admin/activiteiten/edit', 'AdminController@post_edit_activiteit')-
 Route::post('/admin/activiteiten/remove', 'AdminController@delete_activiteit')->middleware('decrypt:value,id');
 Route::post('/admin/activiteiten/remove-undo', 'AdminController@delete_activiteit_undo')->middleware('decrypt:value,id');
 Route::post('/admin/activiteiten/set-aanwezig', 'ApiAdminController@PostSetAanwezig');
+Route::post('/admin/activiteiten/inschrijvingen/remove', 'AdminController@delete_activiteit_inschrijvingen')->middleware('decrypt:value,id');
+Route::post('/admin/activiteiten/inschrijvingen/remove-undo', 'AdminController@delete_activiteit_inschrijvingen_undo')->middleware('decrypt:value,id');
 
 Route::get('/admin/inschrijvingen', 'AdminGeneralController@get_inschrijvingen');
 Route::get('/admin/inschrijvingen/export', 'AdminGeneralController@export_inschrijvingen');

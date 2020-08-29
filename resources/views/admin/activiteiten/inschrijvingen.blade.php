@@ -52,36 +52,104 @@
                 @endcomponent
             </div>
 
-            <table class="table activities">
-                <thead>
-                    <tr class="table__row">
-                        <td class="table__cell">Voornaam</td>
-                        <td class="table__cell">Achternaam</td>
-                        <td class="table__cell">Aanwezig?</td>
-                    </tr>
-                </thead>
+            @if (session('delete_success'))
+                @component('components.flash_message', [
+                    'type' => 'warning',
+                ])
+                    De inschrijving is verwijderd.
+                    <form action="{{ url('/admin/activiteiten/inschrijvingen/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                        @csrf
 
-                <tbody>
-                    @foreach ($activiteit->inschrijvingen as $inschrijving)
+                        <input
+                            type="text"
+                            name="id"
+                            value="{{ Crypt::encrypt(session('delete_success')) }}"
+                            hidden>
+
+                        <button class="btn btn--without-style link--error">
+                            <span class="fa--before"><i class="fas fa-times"></i></span>Maak ongedaan
+                        </button>
+                    </form>
+                @endcomponent
+            @endif
+
+            @if (session('delete_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
+                @endcomponent
+            @endif
+
+            @if (session('restore_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    De inschrijving is terug gezet.
+                @endcomponent
+            @endif
+
+            @if (session('restore_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Geen paniek, Paco kan deze terugzetten.
+                @endcomponent
+            @endif
+
+            <div class="wrapper__table">
+                <table class="table activities">
+                    <thead>
                         <tr class="table__row">
-                            <td class="table__cell">{{ $inschrijving->voornaam }}</td>
-                            <td class="table__cell">{{ $inschrijving->achternaam }}</td>
-                            <td class="table__cell">
-                                <div class="toggle-switch">
-                                    <input
-                                        type="checkbox"
-                                        id="toggle-{{ $inschrijving->id }}"
-                                        class="toggle-switch__input"
-                                        value="{{ $inschrijving->id }}"
-                                        @if ($inschrijving->is_aanwezig) checked @endif
-                                        hidden>
-                                    <label class="toggle-switch__slider" for="toggle-{{ $inschrijving->id }}"></label>
-                                </div>
-                            </td>
+                            <td class="table__cell">Voornaam</td>
+                            <td class="table__cell">Achternaam</td>
+                            <td class="table__cell">Aanwezig?</td>
+                            <td class="table__cell"></td>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody>
+                        @foreach ($activiteit->inschrijvingen as $inschrijving)
+                            <tr class="table__row">
+                                <td class="table__cell">{{ $inschrijving->voornaam }}</td>
+                                <td class="table__cell">{{ $inschrijving->achternaam }}</td>
+                                <td class="table__cell">
+                                    <div class="toggle-switch">
+                                        <input
+                                            type="checkbox"
+                                            id="toggle-{{ $inschrijving->id }}"
+                                            class="toggle-switch__input"
+                                            value="{{ $inschrijving->id }}"
+                                            @if ($inschrijving->is_aanwezig) checked @endif
+                                            hidden>
+                                        <label class="toggle-switch__slider" for="toggle-{{ $inschrijving->id }}"></label>
+                                    </div>
+                                </td>
+
+                            <td class="table__cell no-wrap">
+                                <form action="{{ url('/admin/activiteiten/inschrijvingen/remove') }}" method="POST" class="no-margin-bottom">
+                                    @csrf
+
+                                    <input
+                                        type="text"
+                                        name="id"
+                                        value="{{ Crypt::encrypt($inschrijving->id) }}"
+                                        hidden>
+
+                                    <button class="btn btn--without-style link--error" onclick="
+                                        confirm('Ben je zeker dat je dit kindje wilt verwijderen uit de inschrijvinglijst?')
+                                            ? NULL
+                                            : event.preventDefault();
+                                    ">
+                                        <span class="fa--before"><i class="fas fa-times"></i></span><span class="d-none d-lg-inline">Verwijder</span>
+                                    </button>
+                                </form>
+                            </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

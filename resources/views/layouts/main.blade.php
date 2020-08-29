@@ -188,6 +188,13 @@
                         </li>
 
                         @guest
+
+                            <li class="nav__list-item">
+                                <a href="/login" class="nav__link">
+                                    login
+                                </a>
+                            </li>
+
                         @else
                             <li class="nav__list-item nav__list-item--sublist{{ Request::is('/admin*') ? ' nav__link--active' : '' }}">
                                 <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
