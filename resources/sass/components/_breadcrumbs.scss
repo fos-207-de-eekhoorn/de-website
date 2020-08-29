@@ -1,0 +1,13 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Breadcrumbs
+//  ------------------------------------------------------------------------------------
+
+.breadcrumbs {
+    padding-bottom: spacing(sm);
+    border-bottom: 1px solid $color-grey-extra-light;
+    margin-bottom: spacing(md);
+    
+    &__current {
+        color: $color-grey-extra-dark;
+    }
+}

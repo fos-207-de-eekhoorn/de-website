@@ -13,6 +13,12 @@
 
     <div class="row section">
         <div class="col-12">
+            @component('components.breadcrumbs', [
+                'current' => 'Admin',
+            ])@endcomponent     
+        </div>
+
+        <div class="col-12">
             <h2 class="text--align-center">Modules</h2>
         </div>
 
