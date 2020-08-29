@@ -11,9 +11,19 @@
     ])
     @endcomponent
 
-    {{-- Contact formulier --}}
-    {{-- EL & AEL --}}
-    <div class="row justify-content-center section">
+    <div class="row section">
+        <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                ],
+                'current' => 'Activiteiten',
+            ])@endcomponent
+        </div>
+
         <div class="col-12">
             <div class="multiple-titles small-margin-bottom">
                 <h2>Takken</h2>

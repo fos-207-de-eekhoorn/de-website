@@ -54,26 +54,15 @@ class AdminController extends Controller
         }
     }
 
-    public function get_add_activiteit($tak = NULL)
+    public function get_add_activiteit($tak)
     {
+        $tak = Tak::where('naam', $tak)->first();
         $takken = Tak::get();
 
-        $data = [
+        return view('admin.activiteiten.add_activiteit', [
+            'tak' => $tak,
             'takken' => $takken,
-        ];
-
-        if ($tak) {
-            $tak = Tak::where('link', $tak)->first();
-
-            if (is_object($tak)) {
-                $data = [
-                    'tak' => $tak,
-                    'takken' => $takken,
-                ];
-            }
-        }
-
-        return view('admin.activiteiten.add_activiteit', $data);
+        ]);
     }
 
     public function post_add_activiteit(Request $request)
@@ -196,7 +185,11 @@ class AdminController extends Controller
 
     public function delete_activiteit(Request $request)
     {
-        $delete = Activiteit::destroy($request->id);
+        $activiteit = Activiteit::where('id', $request->id)
+            ->with(['tak'])
+            ->first();
+
+        $delete = $activiteit->destroy('id', $request->id);
 
         if ($delete) {
             Session::flash('delete_success', $request->id);
@@ -204,12 +197,15 @@ class AdminController extends Controller
             Session::flash('delete_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/activiteiten/' . $activiteit->tak->link);
     }
 
     public function delete_activiteit_undo(Request $request)
     {
         $restore = Activiteit::withTrashed()->find($request->id)->restore();
+        $activiteit = Activiteit::where('id', $request->id)
+            ->with(['tak'])
+            ->first();
 
         if ($restore) {
             Session::flash('restore_success', $request->id);
@@ -217,7 +213,7 @@ class AdminController extends Controller
             Session::flash('restore_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/activiteiten/' . $activiteit->tak->link);
     }
 
     public function get_activiteiten_tak_inschrijvingen($tak)

@@ -153,6 +153,12 @@
         }
     }
 
+    .form {
+    	&__section-feedback {
+    		color: $color-alert-error-dark;
+    	}
+    }
+
 	.social {
 		&__link {
 			color: $color-blue;
@@ -199,7 +205,8 @@
 .cs-yellow,
 .cs-mint,
 .cs-salmon,
-.cs-blue-light {
+.cs-blue-light,
+.cs-yellow-light {
 	@include shadow-standard;
 }
 .cs-yellow {
@@ -292,5 +299,20 @@
 				background-color: $color-blue-light-background;
 			}
 		}
+	}
+}
+.cs-yellow-light {
+	background-color: $color-yellow-light;
+	color: $color-yellow-light-text;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-yellow-light-title;
+	}
+	p, a, li {
+		color: $color-yellow-light-text;
+	}
+	a:hover {
+		color: $color-yellow-light-title;
+		text-decoration: underline;
 	}
 }

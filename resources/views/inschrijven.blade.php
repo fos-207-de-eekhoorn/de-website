@@ -495,10 +495,9 @@
                             id="beeldmateriaal"
                             name="beeldmateriaal"
                             class="form__checkbox"
-                            @if( old('beeldmateriaal') === "on" ) checked @endif
-                            required>
+                            @if( old('beeldmateriaal') === "on" ) checked @endif>
 
-                        <label for="beeldmateriaal" class="form__label form__label--required">
+                        <label for="beeldmateriaal" class="form__label">
                             Ik geef toestemming dat mijn kind beeldmateriaal mag bekijken bestemd voor zijn leeftijd.
                         </label>
                     </div>
@@ -739,15 +738,14 @@
                     {{-- Voornaam --}}
                     <div class="col-12 col-md-6">
                         <section class="form__section">
-                            <label for="voogd_2_voornaam" class="form__label form__label--required">Voornaam</label>
+                            <label for="voogd_2_voornaam" class="form__label">Voornaam</label>
 
                             <input
                                 type="text"
                                 id="voogd_2_voornaam"
                                 name="voogd_2_voornaam"
                                 value="{{ old('voogd_2_voornaam') }}"
-                                class="form__input form__input--full-width"
-                                required>
+                                class="form__input form__input--full-width">
 
                             @if ($errors->has('voogd_2_voornaam'))
                                 <span class="form__section-feedback">
@@ -760,15 +758,14 @@
                     {{-- Achternaam --}}
                     <div class="col-12 col-md-6">
                         <section class="form__section">
-                            <label for="voogd_2_achternaam" class="form__label form__label--required">Achternaam</label>
+                            <label for="voogd_2_achternaam" class="form__label">Achternaam</label>
 
                             <input
                                 type="text"
                                 id="voogd_2_achternaam"
                                 name="voogd_2_achternaam"
                                 value="{{ old('voogd_2_achternaam') }}"
-                                class="form__input form__input--full-width"
-                                required>
+                                class="form__input form__input--full-width">
 
                             @if ($errors->has('voogd_2_achternaam'))
                                 <span class="form__section-feedback">
@@ -785,15 +782,14 @@
                     {{-- Email --}}
                     <div class="col-12 col-md-6">
                         <section class="form__section">
-                            <label for="voogd_2_email" class="form__label form__label--required">Email</label>
+                            <label for="voogd_2_email" class="form__label">Email</label>
 
                             <input
                                 type="email"
                                 id="voogd_2_email"
                                 name="voogd_2_email"
                                 value="{{ old('voogd_2_email') }}"
-                                class="form__input form__input--full-width"
-                                required>
+                                class="form__input form__input--full-width">
 
                             @if ($errors->has('voogd_2_email'))
                                 <span class="form__section-feedback">
@@ -806,15 +802,14 @@
                     {{-- Telefoon nummer --}}
                     <div class="col-12 col-md-6">
                         <section class="form__section">
-                            <label for="voogd_2_telefoon" class="form__label form__label--required">Telefoon nummer</label>
+                            <label for="voogd_2_telefoon" class="form__label">Telefoon nummer</label>
 
                             <input
                                 type="tel"
                                 id="voogd_2_telefoon"
                                 name="voogd_2_telefoon"
                                 value="{{ old('voogd_2_telefoon') }}"
-                                class="form__input form__input--full-width"
-                                required>
+                                class="form__input form__input--full-width">
 
                             @if ($errors->has('voogd_2_telefoon'))
                                 <span class="form__section-feedback">
