@@ -46,8 +46,17 @@
             <div class="section section--small-spacing">
                 <h2>Activiteiten</h2>
                 <p>
-                    De activiteiten gaan elke zaterdag door van 14u tot 17u in het lokaal, tenzij anders vermeld. Hier vindt u alle geplande activiteiten voor de komende maanden!
+                    Door de coronamaatregelen kunnen we slechts {{ config('activiteit.max_inschrijvingen.'.$tak->link) }} leden toelaten per activiteit. Daarom werken we met inschrijvingen. Wil je deelnemen aan een activiteit? Druk dan op de knop ‘deelnemen aan deze activiteit’ en schrijf je in!
                 </p>
+
+                <p>
+                    We willen iedereen een gelijke kans geven om deel te nemen. Daarom is het pas mogelijk om vanaf de zondag voor de volgende activiteit in te schrijven.
+                </p>
+
+                <p>
+                    Heb je ingeschreven maar kan je toch niet meer komen? Stuur dan een berichtje naar de takleiding om de inschrijving te annuleren.
+                </p>
+
                 @if (strlen($tak->activiteiten_beschrijving) > 0)
                     <p>
                         In mei en juni draaien al onze activiteiten rond het thema 'beroepen'. Elke zaterdag maken de bevers kennis met een nieuw beroep. We proberen deze activiteiten zo leerzaam en leuk mogelijk te maken!
