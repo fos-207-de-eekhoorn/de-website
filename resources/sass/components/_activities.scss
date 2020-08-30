@@ -11,18 +11,20 @@
 
 	&__info {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 		align-content: center;
+		
+		@include mq(md) {
+			flex-direction: row;
+		} 
 	}
 
 	&__omschrijving,
 	&__subscribe {
 		display: flex;
-		justify-content: center;
-	}
-
-	&__omschrijving {
 		flex-direction: column;
+		justify-content: center;
 	}
 
 	&__detail {
@@ -30,7 +32,19 @@
 	}
 
 	&__subscribe {
-		align-items: center;
-		margin-left: spacing(lg);
+		align-items: flex-start;
+		margin-top: spacing(md);
+
+		@include mq(md) {
+			align-items: center;
+			margin-top: none;
+			margin-left: spacing(lg);
+		
+			text-align: center;
+		} 
+	}
+
+	&__amount {
+		margin-top: spacing(xs);
 	}
 }

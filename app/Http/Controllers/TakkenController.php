@@ -32,10 +32,11 @@ class TakkenController extends Controller
                 'activiteiten' => function ($query) {
                     $query->whereDate('datum', '>=', date('Y-m-d'));
                 },
+                'activiteiten.inschrijvingen',
             ])
             ->first();
 
-        // return $tak;
+        // return $tak->activiteiten[0]->inschrijvingen->count();
 
         if (is_object($tak)) {
             return view('takken.tak_details', [

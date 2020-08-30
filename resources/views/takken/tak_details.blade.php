@@ -76,9 +76,16 @@
                                     @endif
                                 </span>
 
-                                @if (Carbon\Carbon::parse($activiteit->datum) <  Carbon\Carbon::now()->addDays(6)->addHours(12))
+                                @if (Carbon\Carbon::parse($activiteit->datum) < Carbon\Carbon::now()->addDays(6))
                                     <div class="activities__subscribe">
-                                        <a href="{{ url('/takken/inschrijven/'.Crypt::encrypt($activiteit->id)) }}" class="btn btn--primary">Deelnemen aan de activiteit</a>
+                                        <a
+                                            @if ($activiteit->inschrijvingen->count() < config('activiteit.max_inschrijvingen.'.$tak->link))
+                                                href="{{ url('/takken/inschrijven/'.Crypt::encrypt($activiteit->id)) }}"
+                                                class="btn btn--primary">Deelnemen aan de activiteit</a>
+                                            @else
+                                                class="btn btn--primary btn--disabled">Activiteit volzet</a>
+                                            @endif
+                                        <span class="activities__amount">Inschrijvingen: {{ $activiteit->inschrijvingen->count() }}</span>
                                     </div>
                                 @endif
                             </td>
