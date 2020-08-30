@@ -188,13 +188,13 @@
                         </li>
 
                         @guest
-
-                            <li class="nav__list-item">
-                                <a href="/login" class="nav__link">
-                                    login
-                                </a>
-                            </li>
-
+                            @if (config('app.env') === 'local')
+                                <li class="nav__list-item">
+                                    <a href="/login" class="nav__link">
+                                        login
+                                    </a>
+                                </li>
+                            @endif
                         @else
                             <li class="nav__list-item nav__list-item--sublist{{ Request::is('/admin*') ? ' nav__link--active' : '' }}">
                                 <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
