@@ -24,12 +24,9 @@ class HomeController extends Controller
             ->get();
 
         $carousels = (object) [
-        // $carousels = [
             'homepage' => $this->ignore_files(Storage::disk('public')->files('img/carousel/homepage/')),
             'general' => $this->ignore_files(Storage::disk('public')->files('img/carousel/general/')),
         ];
-
-        // return $carousels;
 
         return view('home', [
             'tak_activiteiten' => $tak_activiteiten,
@@ -91,7 +88,6 @@ class HomeController extends Controller
 
     public function post_inschrijven(request $request)
     {
-        // return $request;
         $recaptcha = new \ReCaptcha\ReCaptcha(config('recaptcha.secret'));
         $resp = $recaptcha->setExpectedHostname('scoutsoostkamp.be')
             ->verify($request['g-recaptcha-response'], $request->ip());

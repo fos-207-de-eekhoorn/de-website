@@ -36,8 +36,6 @@ class TakkenController extends Controller
             ])
             ->first();
 
-        // return $tak->activiteiten[0]->inschrijvingen->count();
-
         if (is_object($tak)) {
             return view('takken.tak_details', [
                 'tak' => $tak,
@@ -58,8 +56,6 @@ class TakkenController extends Controller
                 'tak'
             ])
             ->first();
-
-        // return $activiteit;
 
         return view('takken.inschrijven', [
             'activiteit' => $activiteit,
