@@ -74,6 +74,11 @@ class TakkenController extends Controller
             'achternaam' => 'required',
         ]);
 
+        $inschrijving = ActiviteitInschrijving::where('activiteit_id', $request->activiteit_id)
+            ->where('voornaam', $request->voornaam)
+            ->where('achternaam', $request->achternaam)
+            ->get()->count();
+
         $inschrijvingen = ActiviteitInschrijving::where('activiteit_id', $request->activiteit_id)
             ->with([
                 'activiteit',
@@ -82,6 +87,11 @@ class TakkenController extends Controller
             ->get();
         $inschrijvingen_amount = $inschrijvingen->count();
         $tak = $inschrijvingen[0]->activiteit->tak->link;
+
+        if ($inschrijving > 0) {
+            Session::flash('success_inschrijving');
+            return redirect('/takken/'.$tak);
+        }
 
         if ($inschrijvingen_amount < config('activiteit.max_inschrijvingen.'.$tak)) {
             $new_inschrijving = new ActiviteitInschrijving;
@@ -93,14 +103,7 @@ class TakkenController extends Controller
 
             if ($confirm) {
                 Session::flash('success_inschrijving');
-
-                $activiteit = Activiteit::where('id', $request->activiteit_id)
-                    ->with([
-                        'tak'
-                    ])
-                    ->first();
-
-                return redirect('/takken/'.$activiteit->tak->link);
+                return redirect('/takken/'.$tak);
             } else {
                 Session::flash('error');
                 return redirect()->back()->withInput();
