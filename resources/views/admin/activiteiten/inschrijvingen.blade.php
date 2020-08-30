@@ -109,7 +109,7 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($activiteit->inschrijvingen as $inschrijving)
+                        @forelse ($activiteit->inschrijvingen as $inschrijving)
                             <tr class="table__row">
                                 <td class="table__cell">{{ $inschrijving->voornaam }}</td>
                                 <td class="table__cell">{{ $inschrijving->achternaam }}</td>
@@ -126,27 +126,33 @@
                                     </div>
                                 </td>
 
-                            <td class="table__cell no-wrap">
-                                <form action="{{ url('/admin/activiteiten/inschrijvingen/remove') }}" method="POST" class="no-margin-bottom">
-                                    @csrf
+                                <td class="table__cell no-wrap">
+                                    <form action="{{ url('/admin/activiteiten/inschrijvingen/remove') }}" method="POST" class="no-margin-bottom">
+                                        @csrf
 
-                                    <input
-                                        type="text"
-                                        name="id"
-                                        value="{{ Crypt::encrypt($inschrijving->id) }}"
-                                        hidden>
+                                        <input
+                                            type="text"
+                                            name="id"
+                                            value="{{ Crypt::encrypt($inschrijving->id) }}"
+                                            hidden>
 
-                                    <button class="btn btn--without-style link--error" onclick="
-                                        confirm('Ben je zeker dat je dit kindje wilt verwijderen uit de inschrijvinglijst?')
-                                            ? NULL
-                                            : event.preventDefault();
-                                    ">
-                                        <span class="fa--before"><i class="fas fa-times"></i></span><span class="d-none d-lg-inline">Verwijder</span>
-                                    </button>
-                                </form>
-                            </td>
+                                        <button class="btn btn--without-style link--error" onclick="
+                                            confirm('Ben je zeker dat je dit kindje wilt verwijderen uit de inschrijvinglijst?')
+                                                ? NULL
+                                                : event.preventDefault();
+                                        ">
+                                            <span class="fa--before"><i class="fas fa-times"></i></span><span class="d-none d-lg-inline">Verwijder</span>
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td class="table__cell" colspan="4">
+                                    Nog geen inschrijvingen
+                                </td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
