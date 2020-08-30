@@ -22,6 +22,16 @@
             </div>
         @endif
 
+        @if (session('error_full'))
+            <div class="col-12 section section--small-spacing">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    De activiteit is al volzet.
+                @endcomponent
+            </div>
+        @endif
+
         <div class="col-12 col-lg-8 section">
             <div class="card card--align-center cs-{{ $tak->kleur }} section">
                 <h2 class="card__title">{{ $tak->introductie }}</h2>

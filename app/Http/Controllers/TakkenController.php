@@ -74,26 +74,40 @@ class TakkenController extends Controller
             'achternaam' => 'required',
         ]);
 
-        $new_inschrijving = new ActiviteitInschrijving;
-        $new_inschrijving->activiteit_id = $request->activiteit_id;
-        $new_inschrijving->voornaam = $request->voornaam;
-        $new_inschrijving->achternaam = $request->achternaam;
+        $inschrijvingen = ActiviteitInschrijving::where('activiteit_id', $request->activiteit_id)
+            ->with([
+                'activiteit',
+                'activiteit.tak'
+            ])
+            ->get();
+        $inschrijvingen_amount = $inschrijvingen->count();
+        $tak = $inschrijvingen[0]->activiteit->tak->link;
 
-        $confirm = $new_inschrijving->save();
+        if ($inschrijvingen_amount < config('activiteit.max_inschrijvingen.'.$tak)) {
+            $new_inschrijving = new ActiviteitInschrijving;
+            $new_inschrijving->activiteit_id = $request->activiteit_id;
+            $new_inschrijving->voornaam = $request->voornaam;
+            $new_inschrijving->achternaam = $request->achternaam;
 
-        if ($confirm) {
-            Session::flash('success_inschrijving');
+            $confirm = $new_inschrijving->save();
 
-            $activiteit = Activiteit::where('id', $request->activiteit_id)
-                ->with([
-                    'tak'
-                ])
-                ->first();
+            if ($confirm) {
+                Session::flash('success_inschrijving');
 
-            return redirect('/takken/'.$activiteit->tak->link);
+                $activiteit = Activiteit::where('id', $request->activiteit_id)
+                    ->with([
+                        'tak'
+                    ])
+                    ->first();
+
+                return redirect('/takken/'.$activiteit->tak->link);
+            } else {
+                Session::flash('error');
+                return redirect()->back()->withInput();
+            }
         } else {
-            Session::flash('error');
-            return redirect()->back()->withInput();
+            Session::flash('error_full');
+            return redirect('/takken/'.$tak);
         }
     }
 }
