@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Crypt;
 use App\Tak;
+use App\Activiteit;
+use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class TakkenController extends Controller
 {
@@ -27,10 +32,9 @@ class TakkenController extends Controller
                 'activiteiten' => function ($query) {
                     $query->whereDate('datum', '>=', date('Y-m-d'));
                 },
+                'activiteiten.inschrijvingen',
             ])
             ->first();
-
-        // return $tak;
 
         if (is_object($tak)) {
             return view('takken.tak_details', [
@@ -41,6 +45,68 @@ class TakkenController extends Controller
             Session::flash('error');
 
             return redirect('login');
+        }
+    }
+
+    public function get_tak_inschrijven($id_encrypted)
+    {
+        $id = Crypt::decrypt($id_encrypted);
+        $activiteit = Activiteit::where('id', $id)
+            ->with([
+                'tak'
+            ])
+            ->first();
+
+        return view('takken.inschrijven', [
+            'activiteit' => $activiteit,
+        ]);
+    }
+
+    public function post_tak_inschrijven(Request $request)
+    {
+        $validatedData = $request->validate([
+            'activiteit_id' => 'required',
+            'voornaam' => 'required',
+            'achternaam' => 'required',
+        ]);
+
+        $inschrijving = ActiviteitInschrijving::where('activiteit_id', $request->activiteit_id)
+            ->where('voornaam', $request->voornaam)
+            ->where('achternaam', $request->achternaam)
+            ->get()->count();
+
+        $inschrijvingen = ActiviteitInschrijving::where('activiteit_id', $request->activiteit_id)
+            ->with([
+                'activiteit',
+                'activiteit.tak'
+            ])
+            ->get();
+        $inschrijvingen_amount = $inschrijvingen->count();
+        $tak = $inschrijvingen[0]->activiteit->tak->link;
+
+        if ($inschrijving > 0) {
+            Session::flash('success_inschrijving');
+            return redirect('/takken/'.$tak);
+        }
+
+        if ($inschrijvingen_amount < config('activiteit.max_inschrijvingen.'.$tak)) {
+            $new_inschrijving = new ActiviteitInschrijving;
+            $new_inschrijving->activiteit_id = $request->activiteit_id;
+            $new_inschrijving->voornaam = $request->voornaam;
+            $new_inschrijving->achternaam = $request->achternaam;
+
+            $confirm = $new_inschrijving->save();
+
+            if ($confirm) {
+                Session::flash('success_inschrijving');
+                return redirect('/takken/'.$tak);
+            } else {
+                Session::flash('error');
+                return redirect()->back()->withInput();
+            }
+        } else {
+            Session::flash('error_full');
+            return redirect('/takken/'.$tak);
         }
     }
 }

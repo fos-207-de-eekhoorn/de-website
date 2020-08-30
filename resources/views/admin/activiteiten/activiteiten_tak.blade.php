@@ -35,7 +35,7 @@
                     Export voor het prutske
                 </a>
 
-                <a href="{{ url('/admin/activiteit/add/' . $tak->link) }}" class="btn btn--primary">
+                <a href="{{ url('/admin/activiteiten/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>
@@ -77,7 +77,7 @@
                     'type' => 'warning',
                 ])
                     De activiteit is verwijderd.
-                    <form action="{{ url('/admin/activiteit/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                    <form action="{{ url('/admin/activiteiten/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
                         @csrf
 
                         <input
@@ -166,12 +166,23 @@
 
                         <td class="table__cell no-wrap">
                             <p>
-                                <a href="{{ url('/admin/activiteit/edit/' . Crypt::encrypt($activiteit->id)) }}">
+                                <a href="{{ url('/admin/activiteiten/inschrijvingen/' . Crypt::encrypt($activiteit->id)) }}">
+                                    <span class="fa--before"><i class="fas fa-file-alt"></i></span>
+                                    @if (Carbon\Carbon::now() < Carbon\Carbon::parse($activiteit->datum))
+                                        Inschrijvingen
+                                    @else
+                                        Aanwezigheden
+                                    @endif
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="{{ url('/admin/activiteiten/edit/' . Crypt::encrypt($activiteit->id)) }}">
                                     <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                 </a>
                             </p>
 
-                            <form action="{{ url('/admin/activiteit/remove') }}" method="POST" class="no-margin-bottom">
+                            <form action="{{ url('/admin/activiteiten/remove') }}" method="POST" class="no-margin-bottom">
                                 @csrf
 
                                 <input
@@ -194,7 +205,7 @@
             </table>
 
             <div class="medium-margin">
-                <a href="{{ url('/admin/activiteit/add/' . $tak->link) }}" class="btn btn--primary">
+                <a href="{{ url('/admin/activiteiten/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>

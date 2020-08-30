@@ -6,6 +6,7 @@ use Auth;
 use Crypt;
 use App\Tak;
 use App\Activiteit;
+use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -29,9 +30,9 @@ class AdminController extends Controller
         ]);
     }
 
-    public function get_activiteiten_tak($naam)
+    public function get_activiteiten_tak($tak)
     {
-        $tak = Tak::where('naam', $naam)
+        $tak = Tak::where('link', $tak)
             ->with([
                 'activiteiten' => function ($query) {
                     $query->whereDate('datum', '>=', date('Y-m-d'));;
@@ -189,7 +190,7 @@ class AdminController extends Controller
             ->with(['tak'])
             ->first();
 
-        $delete = $activiteit->destroy('id', $request->id);
+        $delete = Activiteit::destroy('id', $request->id);
 
         if ($delete) {
             Session::flash('delete_success', $request->id);
@@ -208,11 +209,74 @@ class AdminController extends Controller
             ->first();
 
         if ($restore) {
-            Session::flash('restore_success', $request->id);
+            Session::flash('restore_success');
         } else {
             Session::flash('restore_error');
         }
 
         return redirect('/admin/activiteiten/' . $activiteit->tak->link);
+    }
+
+    public function get_activiteiten_tak_inschrijvingen($tak)
+    {
+        $tak = Tak::where('link', $tak)
+            ->with([
+                'volgende_activiteit' => function ($query) {
+                    $query->limit(1);
+                    $query->with([
+                        'tak',
+                        'inschrijvingen',
+                    ]);
+                },
+            ])
+            ->first();
+
+        $activiteit = $tak->volgende_activiteit[0];
+
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
+    }
+
+    public function get_activiteit_inschrijvingen($id_encrypted)
+    {
+        $id = Crypt::decrypt($id_encrypted);
+
+        $activiteit = Activiteit::where('id', $id)
+            ->with([
+                'tak',
+                'inschrijvingen',
+            ])
+            ->first();
+
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
+    }
+
+    public function delete_activiteit_inschrijvingen(Request $request)
+    {
+        $delete = ActiviteitInschrijving::destroy('id', $request->id);
+
+        if ($delete) {
+            Session::flash('delete_success', $request->id);
+        } else {
+            Session::flash('delete_error');
+        }
+
+        return redirect()->back();
+    }
+
+    public function delete_activiteit_inschrijvingen_undo(Request $request)
+    {
+        $restore = ActiviteitInschrijving::withTrashed()->find($request->id)->restore();
+
+        if ($restore) {
+            Session::flash('restore_success');
+        } else {
+            Session::flash('restore_error');
+        }
+
+        return redirect()->back();
     }
 }

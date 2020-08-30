@@ -19,4 +19,9 @@ class Activiteit extends Model
     {
         return $this->belongsTo(Tak::class);
     }
+
+    public function inschrijvingen()
+    {
+        return $this->hasMany(ActiviteitInschrijving::class);
+    }
 }

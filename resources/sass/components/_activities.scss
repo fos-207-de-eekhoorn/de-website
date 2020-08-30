@@ -8,4 +8,43 @@
 		text-align: center;
 		white-space: nowrap;
 	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-content: center;
+		
+		@include mq(md) {
+			flex-direction: row;
+		} 
+	}
+
+	&__omschrijving,
+	&__subscribe {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__detail {
+		margin-top: spacing(sm);
+	}
+
+	&__subscribe {
+		align-items: flex-start;
+		margin-top: spacing(md);
+
+		@include mq(md) {
+			align-items: center;
+			margin-top: none;
+			margin-left: spacing(lg);
+		
+			text-align: center;
+		} 
+	}
+
+	&__amount {
+		margin-top: spacing(xs);
+	}
 }

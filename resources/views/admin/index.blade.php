@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-12">
-            <h2 class="text--align-center">Modules</h2>
+            <h2>Modules</h2>
         </div>
 
         <div class="col-12 col-md-4">
