@@ -13,8 +13,24 @@
     @endcomponent
 
     <div class="row section">
-        <div class="section--extra-small-spacing col-12">
-            <a href="{{ isset($tak) ? url('/admin/activiteiten/' . strtolower($tak->naam)) : url()->previous() }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
+        <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                    (object)[
+                        'link' => '/admin/activiteiten',
+                        'name' => 'Activiteiten',
+                    ],
+                    (object)[
+                        'link' => '/admin/activiteiten/'.$tak->link,
+                        'name' => $tak->naam,
+                    ],
+                ],
+                'current' => 'Activiteit toevoegen',
+            ])@endcomponent
         </div>
 
         <div class="section--extra-small-spacing col-12">
@@ -22,7 +38,7 @@
         </div>
 
         <div class="section col-12">
-            <form class="form" action="/admin/activiteit/add" method="POST">
+            <form class="form" action="/admin/activiteiten/add" method="POST">
                 @csrf
 
                 {{-- Activiteit --}}
@@ -273,7 +289,7 @@
                                 @foreach($takken as $tak_details)
                                     <option
                                         value="{{ Crypt::encrypt($tak_details->id) }}"
-                                        @if(isset($tak) && $tak_details->naam == $tak->naam)
+                                        @if($tak_details->link == $tak->link)
                                             selected
                                         @endif
                                         >
@@ -310,7 +326,7 @@
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Voeg toe</button>
-                    <a href="{{ isset($tak) ? url('/admin/activiteiten/' . strtolower($tak->naam)) : url()->previous() }}" class="btn btn--error">Cancel</a>
+                    <a href="{{ isset($tak) ? url('/admin/activiteiten/' . $tak->link) : url()->previous() }}" class="btn btn--error">Cancel</a>
                 </div>
             </form>
         </div>

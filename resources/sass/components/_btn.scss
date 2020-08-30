@@ -68,6 +68,7 @@
         
         padding-left: spacing(sm);
         padding-right: spacing(sm);
+        background-color: rgba($white, 0);
         
         &:hover {
             @include shadow-none;

@@ -153,6 +153,12 @@
         }
     }
 
+    .form {
+    	&__section-feedback {
+    		color: $color-alert-error-dark;
+    	}
+    }
+
 	.social {
 		&__link {
 			color: $color-blue;
@@ -199,7 +205,8 @@
 .cs-yellow,
 .cs-mint,
 .cs-salmon,
-.cs-blue-light {
+.cs-blue-light,
+.cs-yellow-light {
 	@include shadow-standard;
 }
 .cs-yellow {
@@ -216,6 +223,14 @@
 		color: $color-yellow-title;
 		text-decoration: underline;
 	}
+
+	.admin-activities {
+		&__action {
+			&:hover {
+				background-color: $color-yellow-background;
+			}
+		}
+	}
 }
 .cs-mint {
 	background-color: $color-mint;
@@ -230,6 +245,14 @@
 	a:hover {
 		color: $color-mint-title;
 		text-decoration: underline;
+	}
+
+	.admin-activities {
+		&__action {
+			&:hover {
+				background-color: $color-mint-background;
+			}
+		}
 	}
 }
 .cs-salmon {
@@ -246,6 +269,14 @@
 		color: $color-salmon-title;
 		text-decoration: underline;
 	}
+
+	.admin-activities {
+		&__action {
+			&:hover {
+				background-color: $color-salmon-background;
+			}
+		}
+	}
 }
 .cs-blue-light {
 	background-color: $color-blue-light;
@@ -259,6 +290,29 @@
 	}
 	a:hover {
 		color: $color-blue-light-title;
+		text-decoration: underline;
+	}
+
+	.admin-activities {
+		&__action {
+			&:hover {
+				background-color: $color-blue-light-background;
+			}
+		}
+	}
+}
+.cs-yellow-light {
+	background-color: $color-yellow-light;
+	color: $color-yellow-light-text;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-yellow-light-title;
+	}
+	p, a, li {
+		color: $color-yellow-light-text;
+	}
+	a:hover {
+		color: $color-yellow-light-title;
 		text-decoration: underline;
 	}
 }

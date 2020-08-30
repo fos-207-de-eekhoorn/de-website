@@ -22,12 +22,15 @@ Route::post('/change-password', 'ChangePasswordController@changePassword');
 # General Routes
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
-
-Route::post('/contact/zend-bericht', 'HomeController@post_contact_message');
+Route::post('/contact', 'HomeController@post_contact');
+Route::get('/inschrijven', 'HomeController@get_inschrijven');
+Route::post('/inschrijven', 'HomeController@post_inschrijven');
 
 # Takken Routes
 Route::get('/takken', 'TakkenController@get_takken');
 Route::get('/takken/{tak}', 'TakkenController@get_tak_details');
+Route::get('/takken/inschrijven/{id}', 'TakkenController@get_tak_inschrijven');
+Route::post('/takken/inschrijven', 'TakkenController@post_tak_inschrijven')->middleware('decrypt:value,activiteit_id');
 
 # Algemene info Routes
 Route::get('/alle-info', 'InfoController@get_alle_info');
@@ -55,14 +58,24 @@ Route::get('/evenementen/eikeltjesquiz', 'EvenementenController@get_event_eikelt
 	Route::get('/evenementen/kamp', 'EvenementenController@get_kamp');
 
 # Admin Routes
+Route::get('/admin', 'AdminGeneralController@get_admin');
+
 Route::get('/admin/activiteiten', 'AdminController@get_activiteiten');
 Route::get('/admin/activiteiten/prutske', 'AdminController@get_for_prutske');
 Route::get('/admin/activiteiten/{tak}', 'AdminController@get_activiteiten_tak');
-Route::get('/admin/activiteit/add/', 'AdminController@get_add_activiteit');
-Route::get('/admin/activiteit/add/{tak}', 'AdminController@get_add_activiteit');
-Route::get('/admin/activiteit/edit/{id}', 'AdminController@get_edit_activiteit');
+Route::get('/admin/activiteiten/add/{tak}', 'AdminController@get_add_activiteit');
+Route::get('/admin/activiteiten/edit/{id}', 'AdminController@get_edit_activiteit');
+Route::get('/admin/activiteiten/{tak}/inschrijvingen', 'AdminController@get_activiteiten_tak_inschrijvingen');
+Route::get('/admin/activiteiten/inschrijvingen/{activiteit_id}', 'AdminController@get_activiteit_inschrijvingen');
 
-Route::post('/admin/activiteit/add', 'AdminController@post_add_activiteit')->middleware('decrypt:value,tak');
-Route::post('/admin/activiteit/edit', 'AdminController@post_edit_activiteit')->middleware('decrypt:value,id');
-Route::post('/admin/activiteit/remove', 'AdminController@delete_activiteit')->middleware('decrypt:value,id');
-Route::post('/admin/activiteit/remove-undo', 'AdminController@delete_activiteit_undo')->middleware('decrypt:value,id');
+Route::post('/admin/activiteiten/add', 'AdminController@post_add_activiteit')->middleware('decrypt:value,tak');
+Route::post('/admin/activiteiten/edit', 'AdminController@post_edit_activiteit')->middleware('decrypt:value,id');
+Route::post('/admin/activiteiten/remove', 'AdminController@delete_activiteit')->middleware('decrypt:value,id');
+Route::post('/admin/activiteiten/remove-undo', 'AdminController@delete_activiteit_undo')->middleware('decrypt:value,id');
+Route::post('/admin/activiteiten/set-aanwezig', 'ApiAdminController@PostSetAanwezig');
+Route::post('/admin/activiteiten/inschrijvingen/remove', 'AdminController@delete_activiteit_inschrijvingen')->middleware('decrypt:value,id');
+Route::post('/admin/activiteiten/inschrijvingen/remove-undo', 'AdminController@delete_activiteit_inschrijvingen_undo')->middleware('decrypt:value,id');
+
+Route::get('/admin/inschrijvingen', 'AdminGeneralController@get_inschrijvingen');
+Route::get('/admin/inschrijvingen/export', 'AdminGeneralController@export_inschrijvingen');
+Route::get('/admin/inschrijvingen/export/{format}', 'AdminGeneralController@export_inschrijvingen');

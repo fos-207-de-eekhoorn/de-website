@@ -88,29 +88,13 @@
                                     </a>
                                 </li>
 
-                                <li class="nav__sublist-item">
-                                    <a href="/takken/bevers" class="nav__link nav__link--sublist">
-                                        Bevers
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/takken/welpen" class="nav__link nav__link--sublist">
-                                        Welpen
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/takken/jonge" class="nav__link nav__link--sublist">
-                                        JG/V
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/takken/oude" class="nav__link nav__link--sublist">
-                                        OG/V
-                                    </a>
-                                </li>
+                                @foreach($takken as $tak)
+                                    <li class="nav__sublist-item">
+                                        <a href="/takken/{{ $tak->link }}" class="nav__link nav__link--sublist">
+                                            {{ $tak->naam }}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </li>
 
@@ -192,8 +176,8 @@
                         --}}
 
                         <li class="nav__list-item">
-                            <a href="/evenementen/kamp" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
-                                Kamp
+                            <a href="/inschrijven" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
+                                Inschrijven
                             </a>
                         </li>
 
@@ -204,6 +188,13 @@
                         </li>
 
                         @guest
+                            @if (config('app.env') === 'local')
+                                <li class="nav__list-item">
+                                    <a href="/login" class="nav__link">
+                                        login
+                                    </a>
+                                </li>
+                            @endif
                         @else
                             <li class="nav__list-item nav__list-item--sublist{{ Request::is('/admin*') ? ' nav__link--active' : '' }}">
                                 <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
@@ -214,8 +205,20 @@
 
                                 <ul class="nav__sublist">
                                     <li class="nav__sublist-item">
+                                        <a href="/admin" class="nav__link nav__link--sublist">
+                                            Overzicht
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
                                         <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
                                             Activiteiten
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/admin/inschrijvingen" class="nav__link nav__link--sublist">
+                                            Inschrijvingen
                                         </a>
                                     </li>
 
@@ -263,21 +266,13 @@
                                 <a href="/takken" class="footer-nav__link footer-nav__link--parent">Takken</a>
 
                                 <ul class="footer-nav__sublist">
-                                    <li class="footer-nav__item">
-                                        <a href="/takken/bevers" class="footer-nav__link footer-nav__link--sublink">Bevers</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/takken/welpen" class="footer-nav__link footer-nav__link--sublink">Welpen</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/takken/jonge" class="footer-nav__link footer-nav__link--sublink">JG/V</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/takken/oude" class="footer-nav__link footer-nav__link--sublink">OG/V</a>
-                                    </li>
+                                    @foreach($takken as $tak)
+                                        <li class="footer-nav__item">
+                                            <a href="/takken/{{ $tak->link }}" class="footer-nav__link footer-nav__link--sublink">
+                                                {{ $tak->naam }}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
 
@@ -334,7 +329,7 @@
                             --}}
 
                             <li class="footer-nav__item">
-                                <a href="/evenementen/kamp" class="footer-nav__link footer-nav__link--parent">Kamp</a>
+                                <a href="/inschrijven" class="footer-nav__link footer-nav__link--parent">Inschrijven</a>
                             </li>
 
                             <li class="footer-nav__item">

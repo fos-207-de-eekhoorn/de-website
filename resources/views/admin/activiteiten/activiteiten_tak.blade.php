@@ -13,17 +13,29 @@
     @endcomponent
 
     <div class="row section">
-        <div class="section--extra-small-spacing col-12">
-            <a href="{{ url('/admin/activiteiten') }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
+        <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                    (object)[
+                        'link' => '/admin/activiteiten',
+                        'name' => 'Activiteiten',
+                    ],
+                ],
+                'current' => $tak->naam,
+            ])@endcomponent
         </div>
 
         <div class="section col-12">
             <div class="wrapper__btn wrapper__btn--right medium-margin-bottom">
-                <a href="{{ url('/admin/activiteiten/prutske?tak=' . strtolower($tak->naam)) }}" class="btn btn--secondary">
+                <a href="{{ url('/admin/activiteiten/prutske?tak=' . $tak->link) }}" class="btn btn--secondary">
                     Export voor het prutske
                 </a>
 
-                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--primary">
+                <a href="{{ url('/admin/activiteiten/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>
@@ -65,18 +77,13 @@
                     'type' => 'warning',
                 ])
                     De activiteit is verwijderd.
-                    <form action="{{ url('/admin/activiteit/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                    <form action="{{ url('/admin/activiteiten/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
                         @csrf
 
                         <input
                             type="text"
                             name="id"
                             value="{{ Crypt::encrypt(session('delete_success')) }}"
-                            hidden>
-                        <input
-                            type="text"
-                            name="tak"
-                            value="{{ strtolower($tak->naam) }}"
                             hidden>
 
                         <button class="btn btn--without-style link--error">
@@ -159,23 +166,29 @@
 
                         <td class="table__cell no-wrap">
                             <p>
-                                <a href="{{ url('/admin/activiteit/edit/' . Crypt::encrypt($activiteit->id)) }}">
+                                <a href="{{ url('/admin/activiteiten/inschrijvingen/' . Crypt::encrypt($activiteit->id)) }}">
+                                    <span class="fa--before"><i class="fas fa-file-alt"></i></span>
+                                    @if (Carbon\Carbon::now() < Carbon\Carbon::parse($activiteit->datum))
+                                        Inschrijvingen
+                                    @else
+                                        Aanwezigheden
+                                    @endif
+                                </a>
+                            </p>
+
+                            <p>
+                                <a href="{{ url('/admin/activiteiten/edit/' . Crypt::encrypt($activiteit->id)) }}">
                                     <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                 </a>
                             </p>
 
-                            <form action="{{ url('/admin/activiteit/remove') }}" method="POST" class="no-margin-bottom">
+                            <form action="{{ url('/admin/activiteiten/remove') }}" method="POST" class="no-margin-bottom">
                                 @csrf
 
                                 <input
                                     type="text"
                                     name="id"
                                     value="{{ Crypt::encrypt($activiteit->id) }}"
-                                    hidden>
-                                <input
-                                    type="text"
-                                    name="tak"
-                                    value="{{ strtolower($tak->naam) }}"
                                     hidden>
 
                                 <button class="btn btn--without-style link--error" onclick="
@@ -192,7 +205,7 @@
             </table>
 
             <div class="medium-margin">
-                <a href="{{ url('/admin/activiteit/add/' . strtolower($tak->naam)) }}" class="btn btn--primary">
+                <a href="{{ url('/admin/activiteiten/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
             </div>

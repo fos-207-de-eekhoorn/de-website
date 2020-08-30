@@ -6,6 +6,7 @@ use Auth;
 use Crypt;
 use App\Tak;
 use App\Activiteit;
+use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -29,9 +30,9 @@ class AdminController extends Controller
         ]);
     }
 
-    public function get_activiteiten_tak($naam)
+    public function get_activiteiten_tak($tak)
     {
-        $tak = Tak::where('naam', $naam)
+        $tak = Tak::where('link', $tak)
             ->with([
                 'activiteiten' => function ($query) {
                     $query->whereDate('datum', '>=', date('Y-m-d'));;
@@ -54,26 +55,15 @@ class AdminController extends Controller
         }
     }
 
-    public function get_add_activiteit($tak = NULL)
+    public function get_add_activiteit($tak)
     {
+        $tak = Tak::where('naam', $tak)->first();
         $takken = Tak::get();
 
-        $data = [
+        return view('admin.activiteiten.add_activiteit', [
+            'tak' => $tak,
             'takken' => $takken,
-        ];
-
-        if ($tak) {
-            $tak = Tak::where('naam', $tak)->first();
-
-            if (is_object($tak)) {
-                $data = [
-                    'tak' => $tak,
-                    'takken' => $takken,
-                ];
-            }
-        }
-
-        return view('admin.activiteiten.add_activiteit', $data);
+        ]);
     }
 
     public function post_add_activiteit(Request $request)
@@ -196,7 +186,11 @@ class AdminController extends Controller
 
     public function delete_activiteit(Request $request)
     {
-        $delete = Activiteit::destroy($request->id);
+        $activiteit = Activiteit::where('id', $request->id)
+            ->with(['tak'])
+            ->first();
+
+        $delete = Activiteit::destroy('id', $request->id);
 
         if ($delete) {
             Session::flash('delete_success', $request->id);
@@ -204,19 +198,85 @@ class AdminController extends Controller
             Session::flash('delete_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/activiteiten/' . $activiteit->tak->link);
     }
 
     public function delete_activiteit_undo(Request $request)
     {
         $restore = Activiteit::withTrashed()->find($request->id)->restore();
+        $activiteit = Activiteit::where('id', $request->id)
+            ->with(['tak'])
+            ->first();
 
         if ($restore) {
-            Session::flash('restore_success', $request->id);
+            Session::flash('restore_success');
         } else {
             Session::flash('restore_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/activiteiten/' . $activiteit->tak->link);
+    }
+
+    public function get_activiteiten_tak_inschrijvingen($tak)
+    {
+        $tak = Tak::where('link', $tak)
+            ->with([
+                'volgende_activiteit' => function ($query) {
+                    $query->limit(1);
+                    $query->with([
+                        'tak',
+                        'inschrijvingen',
+                    ]);
+                },
+            ])
+            ->first();
+
+        $activiteit = $tak->volgende_activiteit[0];
+
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
+    }
+
+    public function get_activiteit_inschrijvingen($id_encrypted)
+    {
+        $id = Crypt::decrypt($id_encrypted);
+
+        $activiteit = Activiteit::where('id', $id)
+            ->with([
+                'tak',
+                'inschrijvingen',
+            ])
+            ->first();
+
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
+    }
+
+    public function delete_activiteit_inschrijvingen(Request $request)
+    {
+        $delete = ActiviteitInschrijving::destroy('id', $request->id);
+
+        if ($delete) {
+            Session::flash('delete_success', $request->id);
+        } else {
+            Session::flash('delete_error');
+        }
+
+        return redirect()->back();
+    }
+
+    public function delete_activiteit_inschrijvingen_undo(Request $request)
+    {
+        $restore = ActiviteitInschrijving::withTrashed()->find($request->id)->restore();
+
+        if ($restore) {
+            Session::flash('restore_success');
+        } else {
+            Session::flash('restore_error');
+        }
+
+        return redirect()->back();
     }
 }
