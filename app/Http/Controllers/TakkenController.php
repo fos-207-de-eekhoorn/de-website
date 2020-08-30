@@ -75,6 +75,17 @@ class TakkenController extends Controller
             ->where('achternaam', $request->achternaam)
             ->get()->count();
 
+        $tak = Activiteit::where('id', $request->activiteit_id)
+            ->with([
+                'tak',
+            ])
+            ->first()->tak->link;
+
+        if ($inschrijving > 0) {
+            Session::flash('success_inschrijving');
+            return redirect('/takken/'.$tak);
+        }
+
         $inschrijvingen = ActiviteitInschrijving::where('activiteit_id', $request->activiteit_id)
             ->with([
                 'activiteit',
@@ -82,12 +93,6 @@ class TakkenController extends Controller
             ])
             ->get();
         $inschrijvingen_amount = $inschrijvingen->count();
-        $tak = $inschrijvingen[0]->activiteit->tak->link;
-
-        if ($inschrijving > 0) {
-            Session::flash('success_inschrijving');
-            return redirect('/takken/'.$tak);
-        }
 
         if ($inschrijvingen_amount < config('activiteit.max_inschrijvingen.'.$tak)) {
             $new_inschrijving = new ActiviteitInschrijving;
