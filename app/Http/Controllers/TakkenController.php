@@ -41,10 +41,9 @@ class TakkenController extends Controller
                 'tak' => $tak,
             ]);
         } else { // todo
-            return $naam;
-            Session::flash('error');
+            Session::flash('error_not_found');
 
-            return redirect('login');
+            return redirect('/takken');
         }
     }
 
