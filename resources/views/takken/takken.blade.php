@@ -11,6 +11,18 @@
     ])
     @endcomponent
 
+    <div class="row">
+        @if (session('error_not_found'))
+            <div class="col-12 section section--small-spacing">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Deze tak is niet gevonden, volg de link hieronder.
+                @endcomponent
+            </div>
+        @endif
+    </div>
+
     @foreach($takken as $tak)
         <div class="tak section section--small-spacing">
             <div class="row">
