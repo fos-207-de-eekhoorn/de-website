@@ -55,9 +55,9 @@ class AdminController extends Controller
         }
     }
 
-    public function get_add_activiteit($tak)
+    public function get_add_activiteit($link)
     {
-        $tak = Tak::where('naam', $tak)->first();
+        $tak = Tak::where('link', $link)->first();
         $takken = Tak::get();
 
         return view('admin.activiteiten.add_activiteit', [
