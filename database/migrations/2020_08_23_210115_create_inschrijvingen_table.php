@@ -27,7 +27,7 @@ class CreateInschrijvingenTable extends Migration
             $table->string('postcode');
             $table->string('plaats');
             $table->string('land');
-            $table->text('medisch');
+            $table->text('medisch')->nullable();
             $table->tinyInteger('beeldmateriaal')->default(0);
             $table->string('voogd_1_voornaam');
             $table->string('voogd_1_achternaam');
