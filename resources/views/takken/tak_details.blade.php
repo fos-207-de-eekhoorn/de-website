@@ -46,15 +46,23 @@
             <div class="section section--small-spacing">
                 <h2>Activiteiten</h2>
                 <p>
-                    Door de coronamaatregelen kunnen we slechts {{ config('activiteit.max_inschrijvingen.'.$tak->link) }} leden toelaten per activiteit. Daarom werken we met inschrijvingen. Wil je deelnemen aan een activiteit? Druk dan op de knop ‘deelnemen aan deze activiteit’ en schrijf je in!
+                    Door de coronamaatregelen kunnen we slechts een aantal leden toelaten per bubbel. Daarom werken we met inschrijvingen. Wil je deelnemen aan een activiteit? Druk dan op de knop ‘deelnemen aan deze activiteit’ en schrijf je in!
                 </p>
 
                 <p>
-                    We willen iedereen een gelijke kans geven om deel te nemen. Daarom is het pas mogelijk om vanaf de zondag voor de volgende activiteit in te schrijven.
+                    Door het grote aantal bevers splitsen wij de groep in twee, zodat we niemand moeten weigeren. U bent vrij om zelf te kiezen in welke groep u uw kind inschrijft. Zo scheiden we zo weinig mogelijk vriendjes of broertjes en zusjes.
                 </p>
 
                 <p>
-                    Heb je ingeschreven maar kan je toch niet meer komen? Stuur dan een berichtje naar de takleiding om de inschrijving te annuleren.
+                    Het maximum aantal leden per bubbel is 44 maar we vragen u wel om te proberen zo evenredig mogelijk in te schrijven. Het aantal reeds ingeschreven leden staat naast de knop.
+                </p>
+
+                <p>
+                    Onthoud goed in welke groep je inschreef! Bij aanvang van de activiteit kunt u zich naar deze groep wenden. Toch vergeten? Stuur gerust een berichtje.
+                </p>
+
+                <p>
+                    Inschrijven is mogelijk vanaf de zondag voor de volgende activiteit. Heb je ingeschreven maar kan je toch niet meer komen? Stuur dan een berichtje naar de takleiding om de inschrijving te annuleren.
                 </p>
 
                 @if (strlen($tak->activiteiten_beschrijving) > 0)
@@ -96,16 +104,20 @@
                                 </span>
 
                                 @if (Carbon\Carbon::parse($activiteit->datum) < Carbon\Carbon::now()->addDays(6))
-                                    <div class="activities__subscribe">
-                                        <a
-                                            @if ($activiteit->inschrijvingen->count() < config('activiteit.max_inschrijvingen.'.$tak->link))
-                                                href="{{ url('/takken/inschrijven/'.Crypt::encrypt($activiteit->id)) }}"
-                                                class="btn btn--primary">Deelnemen aan de activiteit</a>
-                                            @else
-                                                class="btn btn--primary btn--disabled">Activiteit volzet</a>
-                                            @endif
-                                        <span class="activities__amount">Inschrijvingen: {{ $activiteit->inschrijvingen->count() }}</span>
-                                    </div>
+                                    @foreach(config('activiteit.max_inschrijvingen.'.$tak->link) as $max_inschrijving)
+                                        <div class="activities__subscribe">
+                                                @if ($activiteit->inschrijvingen->count() < $max_inschrijving)
+                                                    <a href="{{ url('/takken/inschrijven/'.Crypt::encrypt($activiteit->id)) }}" class="btn btn--primary">
+                                                        Deelnemen aan de activiteit
+                                                    </a>
+                                                @else
+                                                    <a class="btn btn--primary btn--disabled">
+                                                        Activiteit volzet
+                                                    </a>
+                                                @endif
+                                            <span class="activities__amount">Inschrijvingen: {{ $activiteit->inschrijvingen->count() }}</span>
+                                        </div>
+                                    @endforeach
                                 @endif
                             </td>
                         @else

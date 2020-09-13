@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class ActiviteitInschrijving extends Model
 {
@@ -18,5 +19,11 @@ class ActiviteitInschrijving extends Model
     public function activiteit()
     {
         return $this->belongsTo(Activiteit::class);
+    }
+
+    public function count()
+    {
+    	$this->select(`group`, DB::raw('count(*) as inschrijvingen_count'))
+			->groupBy(`group`);
     }
 }
