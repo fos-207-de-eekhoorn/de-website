@@ -141,6 +141,12 @@
                                         Trooper
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/jeugdwerkregels" class="nav__link nav__link--sublist">
+                                        Jeugdwerkregels
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">

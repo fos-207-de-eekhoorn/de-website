@@ -48,4 +48,9 @@ class InfoController extends Controller
     {
         return view('alle-info.trooper');
     }
+
+    public function get_jeugdwerkregels()
+    {
+        return view('alle-info.jeugdwerkregels');
+    }
 }
