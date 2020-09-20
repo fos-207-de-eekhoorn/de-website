@@ -49,7 +49,8 @@ trait CommonHelpers
             ->get();
     }
 
-    public function parse_odd_str_date($month) {
+    public function parse_odd_str_date($month)
+    {
         $month_number = intval($month, 10);
 
         if ($month_number % 2 === 0) $month_number = $month_number === 12 ? 1 : $month_number + 1;
@@ -57,10 +58,25 @@ trait CommonHelpers
         return [$this->str_double_digit_string($month_number), $this->str_double_digit_string($month_number + 1)];
     }
 
-    public function str_double_digit_string($date) {
+    public function str_double_digit_string($date)
+    {
         if ($date < 10) $date = '0' . $date;
         else strval($date);
 
         return $date;
+    }
+
+    public function get_count_inschrijvingen_per_group($inschrijvingen, $config)
+    {
+        $inschrijvingen_count = array();
+        // dd($inschrijvingen->toArray());
+        for ($i = 0; $i < count($config); $i++) {
+            $inschrijvingen_count[$i] = count(array_filter($inschrijvingen->toArray(), function($obj){
+                // dd($obj["group"]);
+                if (isset($obj["group"]) && $obj["group"] == $i) return true;
+                return false;
+            }));
+        }
+        return $inschrijvingen_count;
     }
 }

@@ -20,10 +20,4 @@ class ActiviteitInschrijving extends Model
     {
         return $this->belongsTo(Activiteit::class);
     }
-
-    public function count()
-    {
-    	$this->select(`group`, DB::raw('count(*) as inschrijvingen_count'))
-			->groupBy(`group`);
-    }
 }

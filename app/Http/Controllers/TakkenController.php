@@ -9,7 +9,6 @@ use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class TakkenController extends Controller
@@ -34,14 +33,15 @@ class TakkenController extends Controller
                     $query->whereDate('datum', '>=', date('Y-m-d'))
                         ->withCount('inschrijvingen');
                 },
-                'activiteiten.inschrijvingen' => function($query) {
-                    $query->count('group');
-                },
-                'activiteiten.inschrijvingen.count',
+                'activiteiten.inschrijvingen',
             ])
             ->first();
 
-        return $tak;
+        // return $tak;
+        // return $tak->activiteiten[0]->inschrijvingen;
+
+        $inschrijvingen = $this->get_count_inschrijvingen_per_group($tak->activiteiten[0]->inschrijvingen, config('activiteit.max_inschrijvingen.'.$tak->link));
+        return $inschrijvingen;
         // return $tak->activiteiten[0]->group_count;
 
         if (is_object($tak)) {

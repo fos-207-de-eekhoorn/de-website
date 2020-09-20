@@ -37,7 +37,7 @@
 
 		@include mq(md) {
 			align-items: center;
-			margin-top: none;
+			margin-top: 0;
 			margin-left: spacing(lg);
 		
 			text-align: center;
