@@ -39,5 +39,9 @@
         &--border-right {
             border-right: 2px solid $color-grey-light;
         }
+
+        &--align-right {
+            text-align: right;
+        }
     }
 }

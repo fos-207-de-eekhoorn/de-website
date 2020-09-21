@@ -81,3 +81,4 @@ Route::get('/admin/inschrijvingen/export', 'AdminGeneralController@export_inschr
 Route::get('/admin/inschrijvingen/export/{format}', 'AdminGeneralController@export_inschrijvingen');
 
 Route::get('/admin/contents', 'AdminContentController@get_contents');
+Route::get('/admin/contents/{key}', 'AdminContentController@get_content_key');
