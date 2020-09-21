@@ -10,7 +10,7 @@ class Content extends Model
 	protected $table = 'content';
 
     protected $fillable = [
-        'leiding_id', 'key', 'text'
+        'leider_id', 'key', 'text'
     ];
 
     public function leider()

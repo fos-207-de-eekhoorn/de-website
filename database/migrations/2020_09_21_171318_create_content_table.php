@@ -15,7 +15,7 @@ class CreateContentTable extends Migration
     {
         Schema::create('content', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('leiding_id')->unsigned();
+            $table->integer('leider_id')->unsigned();
             $table->string('key');
             $table->text('text');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
