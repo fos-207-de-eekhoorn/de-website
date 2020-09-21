@@ -36,6 +36,7 @@
                         <td class="table__cell">key</td>
                         <td class="table__cell">Laatste update</td>
                         <td class="table__cell">Door</td>
+                        <td class="table__cell"></td>
                     </tr>
                 </thead>
 
@@ -52,7 +53,7 @@
 
                             @if ($content->content_text->last())
                                 <td class="table__cell">
-                                    {{ $content->content_text->last()->created_at }}
+                                    {{ Carbon\Carbon::parse($content->content_text->last()->created_at)->format('d-m-Y H:i') }}
                                 </td>
 
                                 <td class="table__cell">
@@ -66,6 +67,12 @@
                                 <td class="table__cell">-</td>
                                 <td class="table__cell">-</td>
                             @endif
+
+                            <td class="table__cell no-wrap">
+                                <a href="{{ url('/admin/content/key/' . $content->key) }}">
+                                    <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
+                                </a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
