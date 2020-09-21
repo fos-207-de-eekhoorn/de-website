@@ -79,3 +79,5 @@ Route::post('/admin/activiteiten/inschrijvingen/remove-undo', 'AdminController@d
 Route::get('/admin/inschrijvingen', 'AdminGeneralController@get_inschrijvingen');
 Route::get('/admin/inschrijvingen/export', 'AdminGeneralController@export_inschrijvingen');
 Route::get('/admin/inschrijvingen/export/{format}', 'AdminGeneralController@export_inschrijvingen');
+
+Route::get('/admin/content', 'AdminContentController@get_content');

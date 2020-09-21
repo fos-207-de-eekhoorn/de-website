@@ -41,6 +41,15 @@
         </div>
 
         <div class="col-12 col-md-4">
+            <a href="{{ url('/admin/content') }}" class="admin-module">
+                <h3>Content</h3>
+                <div class="admin-module__icon">
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-4">
             <div class="admin-module admin-module--coming-soon">
                 <h3>Evenementen</h3>
                 <div class="admin-module__icon">
