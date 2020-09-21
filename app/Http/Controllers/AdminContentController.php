@@ -16,13 +16,12 @@ class AdminContentController extends Controller
 
     public function get_content()
     {
-        $keys = content::select('key')
-            ->distinct()
+        $contents = content::distinct()
             ->orderBy('key', 'ASC')
             ->get();
 
         return view('admin.content.index', [
-            'keys' => $keys,
+            'contents' => $contents,
         ]);
     }
 }
