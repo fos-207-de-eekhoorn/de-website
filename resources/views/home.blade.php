@@ -80,6 +80,8 @@
         <div class="col-12">
             <h2>Voorwoord</h2>
 
+            <h5>Beste leden, ouders en vrienden van de Eekhoorn.</h5>
+
             {!! $voorwoord->text !!}
 
             <p>
