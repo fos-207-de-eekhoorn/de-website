@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -28,16 +29,17 @@ class HomeController extends Controller
             ->latest('created_at')
             ->first();
 
-        return $voorwoord;
-
         $carousels = (object) [
             'homepage' => $this->ignore_files(Storage::disk('public')->files('img/carousel/homepage/')),
             'general' => $this->ignore_files(Storage::disk('public')->files('img/carousel/general/')),
         ];
 
+        // return $voorwoord->leider;
+
         return view('home', [
             'tak_activiteiten' => $tak_activiteiten,
             'carousels' => $carousels,
+            'voorwoord' => $voorwoord,
         ]);
     }
 
