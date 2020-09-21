@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Content extends Model
 {
-	protected $table = 'content';
+	protected $table = 'contents';
 
     protected $fillable = [
-        'leider_id', 'key', 'text'
+        'key', 'name',
     ];
 
-    public function leider()
+    public function content_text()
     {
-        return $this->belongsTo(Leider::class);
+        return $this->hasMany(ContentText::class);
     }
 }

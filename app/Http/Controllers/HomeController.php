@@ -26,7 +26,13 @@ class HomeController extends Controller
             ->get();
 
         $voorwoord = Content::where('key', 'voorwoord')
-            ->latest('created_at')
+            ->with([
+                'content_text' => function ($query) {
+                    $query->latest('created_at')
+                        ->first();
+                },
+                'content_text.leider'
+            ])
             ->first();
 
         $carousels = (object) [
@@ -34,12 +40,10 @@ class HomeController extends Controller
             'general' => $this->ignore_files(Storage::disk('public')->files('img/carousel/general/')),
         ];
 
-        // return $voorwoord->leider;
-
         return view('home', [
             'tak_activiteiten' => $tak_activiteiten,
             'carousels' => $carousels,
-            'voorwoord' => $voorwoord,
+            'voorwoord' => $voorwoord->content_text[0],
         ]);
     }
 
