@@ -82,3 +82,5 @@ Route::get('/admin/inschrijvingen/export/{format}', 'AdminGeneralController@expo
 
 Route::get('/admin/contents', 'AdminContentController@get_contents');
 Route::get('/admin/contents/{key}', 'AdminContentController@get_content_key');
+
+Route::post('/admin/contents/add', 'AdminContentController@post_add_content_text')->middleware(['decrypt:value,id', 'decrypt:value,leider_id']);

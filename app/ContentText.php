@@ -13,6 +13,12 @@ class ContentText extends Model
         'content_id', 'leider_id', 'text'
     ];
 
+    public function setUpdatedAt($value)
+	{
+	    // Do nothing.
+	}
+
+
     public function content()
     {
         return $this->belongsTo(Content::class);

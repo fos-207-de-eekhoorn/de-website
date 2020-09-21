@@ -29,17 +29,68 @@
             ])@endcomponent    
         </div>
 
-        <div class="col-12">
-            <h2>Content</h2>
-        </div>
-
         <div class="col-12 col-md-8 section">
-            <h3>key: {{ $content->key }}</h3>
+            <h2>Content</h2>
 
-            <form class="form" action="/admin/content/edit" method="POST">
+            <h4>key: {{ $content->key }}</h4>
+
+            @if (session('add_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    De tekst is aangepast.
+                @endcomponent
+            @endif
+
+            @if (session('add_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Neem screenshots en stuur door naar Paco, hij is jouw vriend!
+                @endcomponent
+            @endif
+
+            @if (session('samesies'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Dude / Dudine! Pas je tekst toch aan. Doe toch een keer een beetje moeite. For fuck's sake...
+                @endcomponent
+            @endif
+
+            <form class="form" action="/admin/contents/add" method="POST">
                 @csrf
 
-                <section class="form__section form__section--last">
+                {{-- ID --}}
+                <input
+                    type="text"
+                    name="id"
+                    value="{{ Crypt::encrypt($content->id) }}"
+                    hidden>
+
+                @if ($errors->has('id'))
+                    <span class="form__section-feedback">
+                        {{ $errors->first('id') }}
+                    </span>
+                @endif
+
+                {{-- Tak --}}
+                <input
+                    type="text"
+                    name="leider_id"
+                    value="{{ Crypt::encrypt(Auth::id()) }}"
+                    hidden>
+
+                @if ($errors->has('leider_id_id'))
+                    <span class="form__section-feedback">
+                        {{ $errors->first('leider_id') }}
+                    </span>
+                @endif
+
+                {{-- Original text --}}
+                <textarea id="original" hidden>@if (count($content->content_text) > 0){{ $content->content_text[0]->text }}@endif</textarea>
+
+                <section class="form__section">
                     <label for="text" class="form__label form__label--required">Tekst</label>
 
                     <textarea
@@ -54,11 +105,15 @@
                         </span>
                     @endif
                 </section>
+
+                <div class="wrapper__btn">
+                    <button class="btn btn--primary">Past tekst aan</button>
+                </div>
             </form>
         </div>
 
         <div class="col-12 col-md-4 section">
-            <h3>Laatst aangepast</h3>
+            <h4>Laatst aangepast</h4>
 
             <table class="table">
                 @forelse ($content->content_text as $text)
