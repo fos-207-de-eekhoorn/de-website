@@ -19,7 +19,6 @@ class CreateContentTable extends Migration
             $table->string('key');
             $table->text('text');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-            $table->softDeletes();
         });
     }
 
