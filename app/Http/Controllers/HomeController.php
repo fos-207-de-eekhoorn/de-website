@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Tak;
+use App\Content;
 use App\Inschrijving;
+use App\Tak;
 use App\Http\Shared\CommonHelpers;
 use App\Mail\ContactForm;
 use Illuminate\Http\Request;
@@ -22,6 +23,12 @@ class HomeController extends Controller
             ])
             ->limit(4)
             ->get();
+
+        $voorwoord = Content::where('key', 'voorwoord')
+            ->latest('created_at')
+            ->first();
+
+        return $voorwoord;
 
         $carousels = (object) [
             'homepage' => $this->ignore_files(Storage::disk('public')->files('img/carousel/homepage/')),

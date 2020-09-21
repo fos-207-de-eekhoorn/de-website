@@ -9,13 +9,13 @@ class Content extends Model
 {
 	use SoftDeletes;
 
-    protected $table = 'activiteiten';
+    protected $table = 'content';
 
     protected $fillable = [
         'leiding_id', 'key', 'text'
     ];
 
-    public function leiding()
+    public function leider()
     {
         return $this->belongsTo(Leider::class);
     }
