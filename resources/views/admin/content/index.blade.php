@@ -69,7 +69,7 @@
                             @endif
 
                             <td class="table__cell no-wrap">
-                                <a href="{{ url('/admin/content/key/' . $content->key) }}">
+                                <a href="{{ url('/admin/contents/key/' . $content->key) }}">
                                     <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                 </a>
                             </td>

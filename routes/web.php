@@ -80,4 +80,4 @@ Route::get('/admin/inschrijvingen', 'AdminGeneralController@get_inschrijvingen')
 Route::get('/admin/inschrijvingen/export', 'AdminGeneralController@export_inschrijvingen');
 Route::get('/admin/inschrijvingen/export/{format}', 'AdminGeneralController@export_inschrijvingen');
 
-Route::get('/admin/content', 'AdminContentController@get_content');
+Route::get('/admin/contents', 'AdminContentController@get_contents');
