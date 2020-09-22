@@ -108,6 +108,14 @@
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Past tekst aan</button>
+
+                    <a class="btn btn--tertiary" onclick="
+                        confirm('Ben je zeker dat je deze content wilt herzetten?')
+                            ? resetInput(event)
+                            : NULL;
+                    ">
+                        Reset content
+                    </a>
                 </div>
             </form>
         </div>
@@ -141,4 +149,15 @@
             </table>
         </div>
     </div>
+
+    <script>
+        var $original = $("#original");
+        var $text = $("#text");
+        var originalContent = $original.val();
+
+        function resetInput(e) {
+            e.preventDefault();
+            $text.val(originalContent);
+        }
+    </script>
 @endsection

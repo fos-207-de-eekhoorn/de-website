@@ -217,14 +217,14 @@
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
-                                            Content
+                                        <a href="/admin/inschrijvingen" class="nav__link nav__link--sublist">
+                                            Inschrijvingen
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="/admin/inschrijvingen" class="nav__link nav__link--sublist">
-                                            Inschrijvingen
+                                        <a href="/admin/contents" class="nav__link nav__link--sublist">
+                                            Content
                                         </a>
                                     </li>
 
