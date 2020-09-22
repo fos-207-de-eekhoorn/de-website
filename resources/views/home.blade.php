@@ -15,7 +15,6 @@
         </h1>
     </section>
 
-    {{--
     <div class="row section section--small-spacing small-gutters">
         <div class="col-12">
             <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
@@ -73,32 +72,6 @@
                 </div>
             </div>
         @endforeach
-    </div>
-    --}}
-
-    <div class="row section">
-        <div class="col-12">
-            <h2>Het kamp gaat door!</h2>
-            <p>
-                Vind <a href="{{ url('/evenementen/kamp') }}">hier</a> alle informatie over kamp dat je nodig hebt voor jouw spruit!
-            </p>
-
-            <h3>Fosshop</h3>
-            <p>
-                Indien uw zoon/dochter nog zaken uit de fosshop nodig heeft voor kamp, kan u dit document invullen en doorsturen naar <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>. Dit ten laatste tegen <strong>8 juli</strong>.
-            </p>
-            <p>
-                Verdere info kan u terugvinden in het document.<br>
-                <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Bestelformulier-FOSSHOP.pdf</a><br>
-                <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.docx') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-word"></i></span>Bestelformulier-FOSSHOP.docx</a>
-            </p>
-
-            <h5 class="medium-margin-top">Vragen?</h5>
-            <p>
-                Contacteer ons gerust als jullie nog vragen of bezorgdheden hebben.<br>
-                <a href="{{ url('/contact') }}">Contact pagina</a>
-            </p>
-        </div>
     </div>
 
     <div class="row section">
