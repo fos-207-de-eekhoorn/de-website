@@ -102,7 +102,7 @@
     </div>
 
     <div class="row section">
-        <div class="col-12 col-md-8 col-lg-9">
+        <div class="col-12">
             <div class="algemene-info section">
                 <h2>Welkom!</h2>
                 <p>
@@ -121,18 +121,6 @@
                     Als echte scouts hechten wij veel belang aan het outdoorleven. Scouts is je amuseren buiten in de natuur. Wij werken ook met enkele tradities. Zo zijn wij één van de weinige scoutsen die nog werken met een raadsrots, met teervoeten en badges en met totemnamen. Deze totems gebruiken we altijd als aanspreeknaam en zijn een grote eer om te krijgen.
                 </p>
             </div>
-        </div>
-
-        <div class="col-12 col-md-4 col-lg-3 align-self-start">
-            <a href="{{ url('/docs/prutske/editie-2020-maart-april.pdf') }}" class="prutske" target="_blank">
-                <img src="{{ asset('/img/kaft-2020-maart-april.jpg') }}" alt="Prutske november - december 2019" class="prutske__kaft">
-
-                <div class="prutske__hover">
-                    <h4 class="prutske__cta">
-                        Bekijk het prutske hier!
-                    </h4>
-                </div>
-            </a>
         </div>
     </div>
 
