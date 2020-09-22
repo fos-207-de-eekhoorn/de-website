@@ -86,7 +86,7 @@
 
             <p>
                 Stevige linker ,<br>
-                {{ $el->totem }}
+                {{ $el->voortotem }} {{ $el->totem }}
             </p>
         </div>
     </div>
