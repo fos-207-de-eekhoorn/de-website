@@ -96,7 +96,7 @@
                     <textarea
                         id="text"
                         name="text"
-                        class="form__textarea form__input--full-width"
+                        class="form__textarea form__input--full-width tinymce"
                         required>@if (count($content->content_text) > 0){{ $content->content_text[0]->text }}@endif</textarea>
 
                     @if ($errors->has('text'))
@@ -158,6 +158,24 @@
         function resetInput(e) {
             e.preventDefault();
             $text.val(originalContent);
+        }
+
+        // TinyMCE
+        initTinymce();
+        function initTinymce() {
+            tinymce.init({
+                selector: '.tinymce',
+                menubar: false,
+                plugins: "link",
+                link_assume_external_targets: true,
+                link_class_list: [
+                    {title: 'None', value: ''},
+                    {title: 'Button Primary', value: 'btn btn--primary'},
+                    {title: 'Button Secondary', value: 'btn btn--secondary'},
+                    {title: 'Button Teriary', value: 'btn btn--tertiary'},
+                ],
+                toolbar: 'undo redo | removeformat | formatselect | bold italic underline link | forecolor backcolor | alignleft aligncenter alignright |'
+            });
         }
     </script>
 @endsection
