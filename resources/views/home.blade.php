@@ -77,21 +77,6 @@
     --}}
 
     <div class="row section">
-        <div class="col-12">
-            <h2>Voorwoord</h2>
-
-            <h5>Beste leden, ouders en vrienden van de Eekhoorn.</h5>
-
-            {!! $voorwoord->text !!}
-
-            <p>
-                Stevige linker ,<br>
-                {{ $el->voortotem }} {{ $el->totem }}
-            </p>
-        </div>
-    </div>
-
-    <div class="row section">
         <div class="col-12 col-md-8 col-lg-9">
             <div class="algemene-info section">
                 <h2>Welkom!</h2>
@@ -123,6 +108,21 @@
                     </h4>
                 </div>
             </a>
+        </div>
+    </div>
+
+    <div class="row section">
+        <div class="col-12">
+            <h2>Voorwoord</h2>
+
+            <h5>Beste leden, ouders en vrienden van de Eekhoorn.</h5>
+
+            {!! $voorwoord->text !!}
+
+            <p>
+                Stevige linker ,<br>
+                {{ $el->voortotem }} {{ $el->totem }}
+            </p>
         </div>
     </div>
 
