@@ -36,7 +36,7 @@
         <link href="/css/style.css?v=0.5.1" rel="stylesheet">
 
         <!-- TinyMCE -->
-        <script src="https://cdn.tiny.cloud/1/g65d3jm5qjuqoz47d0uayqr8247pmg4opk841zz5ynj7djos/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
