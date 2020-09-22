@@ -85,12 +85,8 @@
             {!! $voorwoord->text !!}
 
             <p>
-                Groetjes,<br>
-                @if (strlen($voorwoord->leider->totem) > 0)
-                    {{ $voorwoord->leider->totem }}
-                @else
-                    {{ $voorwoord->leider->voornaam }}
-                @endif
+                Stevige linker ,<br>
+                {{ $el->totem }}
             </p>
         </div>
     </div>
