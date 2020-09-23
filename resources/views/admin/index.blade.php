@@ -22,7 +22,7 @@
             <h2>Modules</h2>
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 section section--small-spacing">
             <a href="{{ url('/admin/activiteiten') }}" class="admin-module">
                 <h3>Activiteiten</h3>
                 <div class="admin-module__icon">
@@ -31,7 +31,7 @@
             </a>
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 section section--small-spacing">
             <a href="{{ url('/admin/inschrijvingen') }}" class="admin-module">
                 <h3>Inschrijvingen</h3>
                 <div class="admin-module__icon">
@@ -40,7 +40,7 @@
             </a>
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 section section--small-spacing">
             <a href="{{ url('/admin/contents') }}" class="admin-module">
                 <h3>Content</h3>
                 <div class="admin-module__icon">
@@ -49,7 +49,7 @@
             </a>
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 section section--small-spacing">
             <div class="admin-module admin-module--coming-soon">
                 <h3>Evenementen</h3>
                 <div class="admin-module__icon">
