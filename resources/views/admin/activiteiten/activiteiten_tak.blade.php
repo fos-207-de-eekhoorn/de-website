@@ -31,9 +31,11 @@
 
         <div class="section col-12">
             <div class="wrapper__btn wrapper__btn--right medium-margin-bottom">
+                {{--
                 <a href="{{ url('/admin/activiteiten/prutske?tak=' . $tak->link) }}" class="btn btn--secondary">
                     Export voor het prutske
                 </a>
+                --}}
 
                 <a href="{{ url('/admin/activiteiten/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe

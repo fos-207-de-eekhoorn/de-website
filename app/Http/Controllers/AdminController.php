@@ -113,49 +113,6 @@ class AdminController extends Controller
         }
     }
 
-    public function get_for_prutske(Request $request)
-    {
-
-        $month = isset($request->month)
-            ? $request->month
-            : date('m');
-
-        $months = $this->parse_odd_str_date($month);
-
-        $year = isset($request->year)
-            ? $request->year
-            : date('Y');
-
-        if (isset($request->tak)) {
-            $tak_id = Tak::where('naam', $request->tak)->first('id')->id;
-
-            $activiteiten = Activiteit::where('tak_id', $tak_id)
-                ->whereDate('datum', '>=', date($year . '-' . $months[0] . '-01'))
-                ->whereDate('datum', '<=', date($year . '-' . $months[1] . '-31'))
-                ->get();
-
-            $export = '';
-            foreach ($activiteiten as $activiteit) {
-                $export = $export . '<b>' . Carbon::parse($activiteit->datum)->format('j M') . '</b>';
-                $export = $export . "\t";
-                $export = $export . $activiteit->omschrijving;
-                $export = $export . '<br>';
-            }
-
-            return view('admin.activiteiten.prutske', [
-                'tak' => $request->tak,
-                'month' => $month,
-                'year' => $year,
-                'export' => $export
-            ]);
-        } else {
-            return view('admin.activiteiten.prutske', [
-                'month' => $month,
-                'year' => $year
-            ]);
-        }   
-    }
-
     public function post_edit_activiteit(Request $request)
     {
         $activiteit = Activiteit::find($request->id);

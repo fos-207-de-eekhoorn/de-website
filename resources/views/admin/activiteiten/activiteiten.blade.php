@@ -25,10 +25,7 @@
         </div>
 
         <div class="col-12">
-            <div class="multiple-titles small-margin-bottom">
-                <h2>Takken</h2>
-                <a href="{{ url('/admin/activiteiten/prutske') }}" class="btn btn--secondary align-self-start">Export voor het prutske</a>
-            </div>
+            <h2>Takken</h2>
         </div>
 
         @foreach($takken as $tak)
