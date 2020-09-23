@@ -40,6 +40,7 @@ Route::get('/alle-info/verhuurlijst', 'InfoController@get_verhuurlijst');
 Route::get('/alle-info/docs', 'InfoController@get_docs');
 Route::get('/alle-info/kost-scouts', 'InfoController@get_kost_scouts');
 Route::get('/alle-info/trooper', 'InfoController@get_trooper');
+Route::get('/alle-info/jeugdwerkregels', 'InfoController@get_jeugdwerkregels');
 
 # Evenementen Routes
 Route::get('/evenementen', 'EvenementenController@get_alle_evenementen');
@@ -78,3 +79,8 @@ Route::post('/admin/activiteiten/inschrijvingen/remove-undo', 'AdminController@d
 Route::get('/admin/inschrijvingen', 'AdminGeneralController@get_inschrijvingen');
 Route::get('/admin/inschrijvingen/export', 'AdminGeneralController@export_inschrijvingen');
 Route::get('/admin/inschrijvingen/export/{format}', 'AdminGeneralController@export_inschrijvingen');
+
+Route::get('/admin/contents', 'AdminContentController@get_contents');
+Route::get('/admin/contents/{key}', 'AdminContentController@get_content_key');
+
+Route::post('/admin/contents/add', 'AdminContentController@post_add_content_text')->middleware(['decrypt:value,id', 'decrypt:value,leider_id']);

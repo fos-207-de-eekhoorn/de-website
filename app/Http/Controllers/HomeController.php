@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Tak;
+use App\Content;
 use App\Inschrijving;
+use App\Tak;
 use App\Http\Shared\CommonHelpers;
 use App\Mail\ContactForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,16 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
+        $voorwoord = Content::where('key', 'voorwoord')
+            ->with([
+                'content_text' => function ($query) {
+                    $query->latest('created_at')
+                        ->first();
+                },
+                'content_text.leider'
+            ])
+            ->first();
+
         $carousels = (object) [
             'homepage' => $this->ignore_files(Storage::disk('public')->files('img/carousel/homepage/')),
             'general' => $this->ignore_files(Storage::disk('public')->files('img/carousel/general/')),
@@ -31,6 +43,7 @@ class HomeController extends Controller
         return view('home', [
             'tak_activiteiten' => $tak_activiteiten,
             'carousels' => $carousels,
+            'voorwoord' => $voorwoord->content_text[0],
         ]);
     }
 

@@ -35,6 +35,9 @@
         <!-- Styles -->
         <link href="/css/style.css?v=0.5.1" rel="stylesheet">
 
+        <!-- TinyMCE -->
+        <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <script type="text/javascript">
@@ -141,6 +144,12 @@
                                         Trooper
                                     </a>
                                 </li>
+
+                                <li class="nav__sublist-item">
+                                    <a href="/alle-info/jeugdwerkregels" class="nav__link nav__link--sublist">
+                                        Jeugdwerkregels
+                                    </a>
+                                </li>
                                 {{--
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/docs" class="nav__link nav__link--sublist">
@@ -219,6 +228,12 @@
                                     <li class="nav__sublist-item">
                                         <a href="/admin/inschrijvingen" class="nav__link nav__link--sublist">
                                             Inschrijvingen
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/admin/contents" class="nav__link nav__link--sublist">
+                                            Content
                                         </a>
                                     </li>
 

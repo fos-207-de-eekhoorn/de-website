@@ -1,0 +1,46 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Corona fase
+//  ------------------------------------------------------------------------------------
+
+.corona-fase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    &__color {
+    	width: spacing(xl) + spacing(lg);
+    	height: spacing(xl) + spacing(lg);
+    	margin-right: spacing(md);
+    	border-radius: 100%;
+
+    	&--green {
+    		background-color: $color-corona-green;
+    	}
+    	&--yellow {
+    		background-color: $color-corona-yellow;
+    	}
+    	&--orange {
+    		background-color: $color-corona-orange;
+    	}
+    	&--red {
+    		background-color: $color-corona-red;
+    	}
+    }
+
+    &__title {
+    	margin: 0;
+    	font-size: $font-size-h5;
+    	color: $color-grey-medium;
+    }
+
+    &__fase {
+    	margin: (-1 * spacing(xs) 0 0);
+    	font-size: $font-size-h2;
+    	font-weight: $font-weight-bold;
+    }
+
+    &__btn {
+    	margin-top: spacing(sm);
+    }
+}

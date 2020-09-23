@@ -12,7 +12,7 @@
     @endcomponent
 
     <div class="row justify-content-center section">
-        <div class="col-12 col-md-6 col-lg-8">
+        <div class="col-12 col-md-8">
             <div class="algemene-info">
                 <h2>Lid worden</h2>
                 <p>
