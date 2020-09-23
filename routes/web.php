@@ -40,6 +40,7 @@ Route::get('/alle-info/verhuurlijst', 'InfoController@get_verhuurlijst');
 Route::get('/alle-info/docs', 'InfoController@get_docs');
 Route::get('/alle-info/kost-scouts', 'InfoController@get_kost_scouts');
 Route::get('/alle-info/trooper', 'InfoController@get_trooper');
+Route::get('/alle-info/jeugdwerkregels', 'InfoController@get_jeugdwerkregels');
 
 # Evenementen Routes
 Route::get('/evenementen', 'EvenementenController@get_alle_evenementen');
@@ -61,7 +62,6 @@ Route::get('/evenementen/eikeltjesquiz', 'EvenementenController@get_event_eikelt
 Route::get('/admin', 'AdminGeneralController@get_admin');
 
 Route::get('/admin/activiteiten', 'AdminController@get_activiteiten');
-Route::get('/admin/activiteiten/prutske', 'AdminController@get_for_prutske');
 Route::get('/admin/activiteiten/{tak}', 'AdminController@get_activiteiten_tak');
 Route::get('/admin/activiteiten/add/{tak}', 'AdminController@get_add_activiteit');
 Route::get('/admin/activiteiten/edit/{id}', 'AdminController@get_edit_activiteit');
@@ -79,3 +79,8 @@ Route::post('/admin/activiteiten/inschrijvingen/remove-undo', 'AdminController@d
 Route::get('/admin/inschrijvingen', 'AdminGeneralController@get_inschrijvingen');
 Route::get('/admin/inschrijvingen/export', 'AdminGeneralController@export_inschrijvingen');
 Route::get('/admin/inschrijvingen/export/{format}', 'AdminGeneralController@export_inschrijvingen');
+
+Route::get('/admin/contents', 'AdminContentController@get_contents');
+Route::get('/admin/contents/{key}', 'AdminContentController@get_content_key');
+
+Route::post('/admin/contents/add', 'AdminContentController@post_add_content_text')->middleware(['decrypt:value,id', 'decrypt:value,leider_id']);
