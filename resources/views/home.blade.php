@@ -15,7 +15,6 @@
         </h1>
     </section>
 
-    {{--
     <div class="row section section--small-spacing small-gutters">
         <div class="col-12">
             <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
@@ -74,10 +73,9 @@
             </div>
         @endforeach
     </div>
-    --}}
 
     <div class="row section">
-        <div class="col-12 col-md-8 col-lg-9">
+        <div class="col-12 col-md-8">
             <div class="algemene-info section">
                 <h2>Welkom!</h2>
                 <p>
@@ -98,16 +96,10 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-4 col-lg-3 align-self-start">
-            <a href="{{ url('/docs/prutske/editie-2020-maart-april.pdf') }}" class="prutske" target="_blank">
-                <img src="{{ asset('/img/kaft-2020-maart-april.jpg') }}" alt="Prutske november - december 2019" class="prutske__kaft">
-
-                <div class="prutske__hover">
-                    <h4 class="prutske__cta">
-                        Bekijk het prutske hier!
-                    </h4>
-                </div>
-            </a>
+        <div class="col-12 col-md-4">
+            @component('components.current_fase', [
+                'with_link' => 1,
+            ])@endcomponent
         </div>
     </div>
 

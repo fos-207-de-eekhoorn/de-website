@@ -40,6 +40,7 @@ Route::get('/alle-info/verhuurlijst', 'InfoController@get_verhuurlijst');
 Route::get('/alle-info/docs', 'InfoController@get_docs');
 Route::get('/alle-info/kost-scouts', 'InfoController@get_kost_scouts');
 Route::get('/alle-info/trooper', 'InfoController@get_trooper');
+Route::get('/alle-info/jeugdwerkregels', 'InfoController@get_jeugdwerkregels');
 
 # Evenementen Routes
 Route::get('/evenementen', 'EvenementenController@get_alle_evenementen');
