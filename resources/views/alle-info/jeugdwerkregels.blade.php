@@ -115,14 +115,19 @@
                 <div class="col-12 col-md-6 section section--small-spacing">
                     <h3>Hygiëne</h3>
 
-                    <h5>Persoonlijke hygiëne </h5>
+                    <h5>Persoonlijke hygiëne</h5>
                     <p>
                         Hygiëne en jeugdwerk is niet altijd de beste combinatie. Maar dit jaar is het noodzakelijk. Extra de handen wassen, hoesten in de elleboog, niezen in een papieren zakdoek: dat blijft ook tijdens het jeugdwerk nodig.
                     </p>
 
                     <h5>Infrastructuur</h5>
                     <p>
-                        We zorgen voor maximale ventilatie van de lokalen en zetten waar mogelijk deuren en ramen open.  materiaal  In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door.  
+                        We zorgen voor maximale ventilatie van de lokalen en zetten waar mogelijk deuren en ramen open. 
+                    </p>
+
+                    <h5>Materiaal</h5>
+                    <p>
+                        In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door. 
                     </p>
                 </div>
 
@@ -166,7 +171,7 @@
                     <h3>Organisatie</h3>
 
                     <p>
-                        Net zoals op zomerkamp wordt er wekelijks een contactbubbel gevormd door de leden & de leiding van een tak. Bij +12 jaar (JVG's, OVG's, Stam) wordt een onderscheid gemaakt tussen binnen en buitenactiviteiten. Bij binnen-activiteiten mag de bubbel maximaal 20 deelnemers bevatten, buiten kunnen dit 50 personen zijn.   Bij -12 jaar kan zowel binnen als buiten de bubbel uit max. 50 personen bestaan.
+                        Net zoals op zomerkamp wordt er wekelijks een contactbubbel gevormd door de leden & de leiding van een tak. Bij +12 jaar (JVG's, OVG's, Stam) wordt een onderscheid gemaakt tussen binnen en buitenactiviteiten. Bij binnen-activiteiten mag de bubbel maximaal 20 deelnemers bevatten, buiten kunnen dit 50 personen zijn. Bij -12 jaar kan zowel binnen als buiten de bubbel uit max. 50 personen bestaan.
                     </p>
 
                     <ul>
@@ -182,14 +187,19 @@
                 <div class="col-12 col-md-6 section section--small-spacing">
                     <h3>Hygiëne</h3>
 
-                    <h5>Persoonlijke hygiëne </h5>
+                    <h5>Persoonlijke hygiëne</h5>
                     <p>
                         Hygiëne en jeugdwerk is niet altijd de beste combinatie. Maar dit jaar is het noodzakelijk. Extra de handen wassen, hoesten in de elleboog, niezen in een papieren zakdoek: dat blijft ook tijdens het jeugdwerk nodig.
                     </p>
 
                     <h5>Infrastructuur</h5>
                     <p>
-                        We zorgen voor maximale ventilatie van de lokalen en zetten waar mogelijk deuren en ramen open. We doen ons best om zoveel mogelijk buiten te blijven tijdens onze activiteiten.  materiaal  In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door.
+                        We zorgen voor maximale ventilatie van de lokalen en zetten waar mogelijk deuren en ramen open. We doen ons best om zoveel mogelijk buiten te blijven tijdens onze activiteiten.
+                    </p>
+
+                    <h5>Materiaal</h5>
+                    <p>
+                        In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door.
                     </p>
                 </div>
 
@@ -240,14 +250,19 @@
                 <div class="col-12 col-md-6 section section--small-spacing">
                     <h3>Hygiëne</h3>
 
-                    <h5>Persoonlijke hygiëne </h5>
+                    <h5>Persoonlijke hygiëne</h5>
                     <p>
                         Hygiëne en jeugdwerk is niet altijd de beste combinatie. Maar dit jaar is het noodzakelijk. Extra de handen wassen, hoesten in de elleboog, niezen in een papieren zakdoek: dat blijft ook tijdens het jeugdwerk nodig. Bij de JVG's, OVG's wordt het mondmasker verplicht als er onderling geen social distancing kan gegarandeerd worden.
                     </p>
 
                     <h5>Infrastructuur</h5>
                     <p>
-                        We zorgen voor maximale ventilatie van de lokalen en zetten waar mogelijk deuren en ramen open.  materiaal  Persoonlijk materiaal per individu heeft de voorkeur. Materiaal dat wordt doorgegeven wordt tussenin ontsmet.
+                        We zorgen voor maximale ventilatie van de lokalen en zetten waar mogelijk deuren en ramen open.
+                    </p>
+
+                    <h5>Materiaal</h5>
+                    <p>
+                        Persoonlijk materiaal per individu heeft de voorkeur. Materiaal dat wordt doorgegeven wordt tussenin ontsmet.
                     </p>
                 </div>
 
