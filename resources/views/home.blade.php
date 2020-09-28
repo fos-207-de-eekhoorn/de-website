@@ -75,8 +75,8 @@
     </div>
 
     <div class="row section">
-        <div class="col-12 col-md-8">
-            <div class="algemene-info section">
+        <div class="col-12 col-md-8 section">
+            <div class="algemene-info">
                 <h2>Welkom!</h2>
                 <p>
                     Welkom op de website van FOS 207 de eekhoorn. Wij zijn een scouts die zich al bijna 55 jaar inzet om de Oostkampse jeugd een toptijd te bezorgen.
@@ -96,7 +96,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 section">
             @component('components.current_fase', [
                 'with_link' => 1,
             ])@endcomponent

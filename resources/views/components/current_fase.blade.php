@@ -1,7 +1,7 @@
 <div class="corona-fase">
 	<div class="corona-fase__color corona-fase__color--{{ config('corona.active_fase') }}"></div>
 	<div class="corona-fase__content">
-		<h3 class="corona-fase__title">Huidige fase</h3>
+		<h3 class="corona-fase__title">Covid-19 werking</h3>
 		<h4 class="corona-fase__fase">
 			@if (config('corona.active_fase') === 'green')
 				Groene fase
