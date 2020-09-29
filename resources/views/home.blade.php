@@ -105,7 +105,7 @@
 
     <div class="row section">
         <div class="col-12">
-            <h2>Voorwoord</h2>
+            <h2>Woordje van de eenheidsleiding</h2>
 
             <h5>Beste leden, ouders en vrienden van de Eekhoorn.</h5>
 
