@@ -109,7 +109,7 @@
                 <h3>Contact</h3>
 
                 <p>
-                    Vind je een document niet of heb je een vraag? Contacteer dan één van onze verandwoordelijke.
+                    Vind je een document niet of heb je een vraag? Contacteer dan één van onze verantwoordelijken.
                 </p>
 
                 <div class="leiding-card-list">
