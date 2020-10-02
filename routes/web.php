@@ -37,7 +37,7 @@ Route::get('/alle-info', 'InfoController@get_alle_info');
 Route::get('/alle-info/lid-worden', 'InfoController@get_lid_worden');
 Route::get('/alle-info/uniform-shop', 'InfoController@get_uniform_shop');
 Route::get('/alle-info/verhuurlijst', 'InfoController@get_verhuurlijst');
-Route::get('/alle-info/docs', 'InfoController@get_docs');
+Route::get('/alle-info/documenten', 'InfoController@get_docs');
 Route::get('/alle-info/kost-scouts', 'InfoController@get_kost_scouts');
 Route::get('/alle-info/trooper', 'InfoController@get_trooper');
 Route::get('/alle-info/jeugdwerkregels', 'InfoController@get_jeugdwerkregels');
