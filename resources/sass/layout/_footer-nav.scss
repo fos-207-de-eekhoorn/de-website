@@ -9,7 +9,7 @@
 	        flex-direction: column;
 	-webkit-justify-content: space-between;
 	        justify-content: space-between;
-	padding: 0 2rem 0 0;
+	padding: 0;
 	margin: 0;
 	
 	text-align: center;
@@ -18,10 +18,12 @@
 		-webkit-flex-direction: row;
 		    -ms-flex-direction: row;
 		        flex-direction: row;
+	   
+	   	padding: 0 spacing(lg) 0 0;
 	}
 	
 	&__item {
-		margin: 1rem 0;
+		margin: spacing(md) 0;
 	    
 		list-style: none;
 		
@@ -40,7 +42,7 @@
 	
 	&__sublist {
 		padding: 0;
-		margin: 1rem 0;
+		margin: spacing(md) 0;
 	}
 
 	&__link {
