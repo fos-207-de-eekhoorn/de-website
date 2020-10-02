@@ -141,7 +141,7 @@
 
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/documenten" class="nav__link nav__link--sublist">
-                                        Documenten
+                                        Attesten & documenten
                                     </a>
                                 </li>
 
@@ -156,13 +156,6 @@
                                         Jeugdwerkregels
                                     </a>
                                 </li>
-                                {{--
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/docs" class="nav__link nav__link--sublist">
-                                        Attesten & documenten
-                                    </a>
-                                </li>
-                                --}}
                             </ul>
                         </li>
 
@@ -318,18 +311,12 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/alle-info/kost-scouts" class="footer-nav__link footer-nav__link--sublink">Documenten</a>
+                                        <a href="/alle-info/kost-scouts" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
                                     </li>
 
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
                                     </li>
-
-                                    {{--
-                                    <li class="footer-nav__item">
-                                        <a href="/alle-info/docs" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
-                                    </li>
-                                    --}}
                                 </ul>
                             </li>
 
