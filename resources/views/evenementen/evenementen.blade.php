@@ -13,11 +13,11 @@
 
     <div class="row section">
         <div class="col-12">
-            @if (session('warning'))
+            @if (session('warning_not_found'))
                 @component('components.flash_message', [
                     'type' => 'warning',
                 ])
-                    We konden het event '{{ session('warning') }}' niet vinden
+                    We konden je evenement niet vinden. Alle komende evenementen kan je hier vinden.
                 @endcomponent
             @endif
 
@@ -25,7 +25,7 @@
                 <ul class="evenementen-list row small-gutters">
                     @foreach($evenementen as $evenement)
                         <li class="evenementen-list__item col-12 col-md-6">
-                            <a href="{{ isset($evenement->static_url) ? $evenement->static_url : url('/evenementen/' . str_replace(' ', '-', strtolower($evenement->naam))) }}">
+                            <a href="{{ url('/evenementen/' . $evenement->url) }}">
                                 <div class="evenementen-list-item">
                                     <div class="evenementen-list-item__visual evenementen-list-item__visual--{{ $evenement->kleur }}">
                                         <img src="{{ asset('/img/banners/' . $evenement->kleur . '-' . $evenement->banner_patroon . '-' . $evenement->banner_sterkte . '.png') }}" class="evenementen-list-item__image">

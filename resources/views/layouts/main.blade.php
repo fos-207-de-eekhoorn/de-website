@@ -174,11 +174,13 @@
                                     </a>
                                 </li>
 
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
-                                        Bivak bevers & welpen
-                                    </a>
-                                </li>
+                                @foreach($evenementen as $evenement)
+                                    <li class="nav__sublist-item">
+                                        <a href="/evenementen/{{ $evenement->url }}" class="nav__link nav__link--sublist">
+                                            {{ $evenement->naam }}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </li>
 
@@ -329,29 +331,25 @@
                                 </ul>
                             </li>
 
-                            {{--
                             <li class="footer-nav__item">
                                 <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
 
                                 <ul class="footer-nav__sublist">
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/bevers-welpen" class="footer-nav__link footer-nav__link--sublink">Bivak bevers & welpen</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak JG/V</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/oude" class="footer-nav__link footer-nav__link--sublink">Bivak JG/V</a>
-                                    </li>
+                                    @foreach($evenementen as $evenement)
+                                        <li class="footer-nav__item">
+                                            <a href="/evenementen/{{ $evenement->url }}" class="footer-nav__link footer-nav__link--sublink">
+                                                {{ $evenement->naam }}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
-                            --}}
 
+                            {{--
                             <li class="footer-nav__item">
                                 <a href="/inschrijven" class="footer-nav__link footer-nav__link--parent">Inschrijven</a>
                             </li>
+                            --}}
 
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>

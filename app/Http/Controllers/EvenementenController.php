@@ -24,10 +24,9 @@ class EvenementenController extends Controller
         ]);
     }
 
-    public function get_evenement_details($naam)
+    public function get_evenement_details($url)
     {
-        $naam = str_replace('-', ' ', $naam);
-        $evenement = Evenement::where('naam', $naam)
+        $evenement = Evenement::where('url', $url)
             ->with([
                 'evenement_tak',
                 'evenement_tak.tak',
@@ -39,17 +38,9 @@ class EvenementenController extends Controller
                 'evenement' => $evenement,
             ]);
         } else {
-            $evenement = Evenement::where('static_url', '/evenementen/'.$naam)->first();
-            
-            if (is_object($evenement)) {
-                return view('evenementen.evenement_details', [
-                    'evenement' => $evenement,
-                ]);
-            } else { // todo
-                Session::flash('warning', $naam);
+            Session::flash('warning_not_found');
 
-                return redirect('evenementen');
-            }
+            return redirect('evenementen');
         }
     }
 

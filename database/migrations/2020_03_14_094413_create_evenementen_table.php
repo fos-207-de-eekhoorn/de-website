@@ -16,7 +16,8 @@ class CreateEvenementenTable extends Migration
         Schema::create('evenementen', function (Blueprint $table) {
             $table->increments('id');
             $table->string('naam');
-            $table->string('static_url')->nullable();
+            $table->string('url')->unique();
+            $table->tinyInteger('has_static_page')->default(0);
             $table->text('snelle_info')->nullable();
             $table->text('omschrijving')->nullable();
             $table->date('start_datum');

@@ -49,7 +49,6 @@ Route::prefix('alle-info')->group(function () {
 # Evenementen Routes
 Route::prefix('evenementen')->group(function () {
 	Route::get('/', 'EvenementenController@get_alle_evenementen');
-	Route::get('/{evenement}', 'EvenementenController@get_evenement_details');
 
 	# Overrides
 	Route::get('/startdag', 'EvenementenController@get_event_startdag');
@@ -57,7 +56,7 @@ Route::prefix('evenementen')->group(function () {
 	Route::get('/spaghetti-avond', 'EvenementenController@get_event_spaghetti_avond');
 	Route::get('/bbq', 'EvenementenController@get_event_bbq');
 	Route::get('/winterbar', 'EvenementenController@get_event_winterbar');
-	Route::get('/halloweentocht', 'EvenementenController@get_event_halloweentocht');
+	// Route::get('/halloweentocht', 'EvenementenController@get_event_halloweentocht');
 	Route::get('/eikeltjesquiz', 'EvenementenController@get_event_eikeltjesquiz');
 
 	# Bivak
@@ -67,6 +66,9 @@ Route::prefix('evenementen')->group(function () {
 
 	# Kamp
 	Route::get('/kamp', 'EvenementenController@get_kamp');
+
+	# Default
+	Route::get('/{url}', 'EvenementenController@get_evenement_details');
 });
 
 # Admin Routes
