@@ -22,12 +22,16 @@ Route::post('/change-password', 'ChangePasswordController@changePassword');
 # General Routes
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
-Route::post('/contact/zend-bericht', 'HomeController@post_contact_message');
+Route::post('/contact', 'HomeController@post_contact');
+Route::get('/inschrijven', 'HomeController@get_inschrijven');
+Route::post('/inschrijven', 'HomeController@post_inschrijven');
 
 # Takken Routes
 Route::prefix('takken')->group(function () {
 	Route::get('/', 'TakkenController@get_takken');
 	Route::get('/{tak}', 'TakkenController@get_tak_details');
+	Route::get('/inschrijven/{id}', 'TakkenController@get_tak_inschrijven');
+	Route::post('/inschrijven', 'TakkenController@post_tak_inschrijven')->middleware('decrypt:value,activiteit_id');
 });
 
 # Algemene info Routes
@@ -39,6 +43,7 @@ Route::prefix('alle-info')->group(function () {
 	Route::get('/docs', 'InfoController@get_docs');
 	Route::get('/kost-scouts', 'InfoController@get_kost_scouts');
 	Route::get('/trooper', 'InfoController@get_trooper');
+	Route::get('/jeugdwerkregels', 'InfoController@get_jeugdwerkregels');
 });
 
 # Evenementen Routes
@@ -73,16 +78,37 @@ Route::prefix('admin')->group(function () {
 		Route::get('/add', 'AdminActiviteitenController@get_add_activiteit');
 		Route::get('/add/{tak}', 'AdminActiviteitenController@get_add_activiteit');
 		Route::get('/edit/{id}', 'AdminActiviteitenController@get_edit_activiteit');
+		Route::get('/{tak}/inschrijvingen', 'AdminController@get_activiteiten_tak_inschrijvingen');
+		Route::get('/inschrijvingen/{activiteit_id}', 'AdminController@get_activiteit_inschrijvingen');
+
 		Route::post('/add', 'AdminActiviteitenController@post_add_activiteit')->middleware('decrypt:value,tak');
 		Route::post('/edit', 'AdminActiviteitenController@post_edit_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove', 'AdminActiviteitenController@delete_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove-undo', 'AdminActiviteitenController@delete_activiteit_undo')->middleware('decrypt:value,id');
-		Route::get('/prutske', 'AdminActiviteitenController@get_for_prutske');
+		Route::post('/set-aanwezig', 'ApiAdminController@PostSetAanwezig');
+		Route::post('/inschrijvingen/remove', 'AdminController@delete_activiteit_inschrijvingen')->middleware('decrypt:value,id');
+		Route::post('/inschrijvingen/remove-undo', 'AdminController@delete_activiteit_inschrijvingen_undo')->middleware('decrypt:value,id');
 	});
+
+	# Inschrijvingen
+	Route::prefix('inschrijvingen')->group(function () {
+		Route::get('/', 'AdminGeneralController@get_inschrijvingen');
+		Route::get('/export', 'AdminGeneralController@export_inschrijvingen');
+		Route::get('/export/{format}', 'AdminGeneralController@export_inschrijvingen');
+	});
+
+	# Contents
+	Route::prefix('contents')->group(function () {
+		Route::get('/', 'AdminContentController@get_contents');
+		Route::get('/{key}', 'AdminContentController@get_content_key');
+
+		Route::post('/add', 'AdminContentController@post_add_content_text')->middleware(['decrypt:value,id', 'decrypt:value,leider_id']);
+	});
+
 	# Evenementen
 	Route::prefix('evenementen')->group(function () {
 		Route::get('/', 'AdminEvenementenController@get_evenementen');
 		Route::get('/edit/{id}', 'AdminEvenementenController@get_edit_evenementen');
 		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
 	});
-});
+});	

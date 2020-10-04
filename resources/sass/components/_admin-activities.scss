@@ -1,0 +1,53 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Admin Activities
+//  ------------------------------------------------------------------------------------
+
+.admin-activities {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100% !important;
+	
+	&__actions {
+		display: flex;
+		margin: 0 (-1 * ($gutter / 4));
+	}
+
+	&__action {
+		@include border-radius;
+		@include transitions;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: spacing(sm);
+		border: 1px solid;
+		margin: 0 ($gutter / 4);
+		
+		&:hover {
+			text-decoration: none !important;
+			
+			.admin-activities {
+				&__icon {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__icon {
+		@include transitions;
+
+		margin-bottom: spacing(sm);
+		opacity: .7;
+
+		font-size: spacing(lg);
+	}
+
+	&__text {
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+}

@@ -6,6 +6,7 @@ use Auth;
 use Crypt;
 use App\Tak;
 use App\Activiteit;
+use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -29,9 +30,9 @@ class AdminActiviteitenController extends Controller
         ]);
     }
 
-    public function get_activiteiten_tak($naam)
+    public function get_activiteiten_tak($tak)
     {
-        $tak = Tak::where('naam', $naam)
+        $tak = Tak::where('link', $tak)
             ->with([
                 'activiteiten' => function ($query) {
                     $query->whereDate('datum', '>=', date('Y-m-d'));;
@@ -54,26 +55,15 @@ class AdminActiviteitenController extends Controller
         }
     }
 
-    public function get_add_activiteit($tak = NULL)
+    public function get_add_activiteit($link)
     {
+        $tak = Tak::where('link', $link)->first();
         $takken = Tak::get();
 
-        $data = [
+        return view('admin.activiteiten.add_activiteit', [
+            'tak' => $tak,
             'takken' => $takken,
-        ];
-
-        if ($tak) {
-            $tak = Tak::where('naam', $tak)->first();
-
-            if (is_object($tak)) {
-                $data = [
-                    'tak' => $tak,
-                    'takken' => $takken,
-                ];
-            }
-        }
-
-        return view('admin.activiteiten.add_activiteit', $data);
+        ]);
     }
 
     public function post_add_activiteit(Request $request)
@@ -123,49 +113,6 @@ class AdminActiviteitenController extends Controller
         }
     }
 
-    public function get_for_prutske(Request $request)
-    {
-
-        $month = isset($request->month)
-            ? $request->month
-            : date('m');
-
-        $months = $this->parse_odd_str_date($month);
-
-        $year = isset($request->year)
-            ? $request->year
-            : date('Y');
-
-        if (isset($request->tak)) {
-            $tak_id = Tak::where('naam', $request->tak)->first('id')->id;
-
-            $activiteiten = Activiteit::where('tak_id', $tak_id)
-                ->whereDate('datum', '>=', date($year . '-' . $months[0] . '-01'))
-                ->whereDate('datum', '<=', date($year . '-' . $months[1] . '-31'))
-                ->get();
-
-            $export = '';
-            foreach ($activiteiten as $activiteit) {
-                $export = $export . '<b>' . Carbon::parse($activiteit->datum)->format('j M') . '</b>';
-                $export = $export . "\t";
-                $export = $export . $activiteit->omschrijving;
-                $export = $export . '<br>';
-            }
-
-            return view('admin.activiteiten.prutske', [
-                'tak' => $request->tak,
-                'month' => $month,
-                'year' => $year,
-                'export' => $export
-            ]);
-        } else {
-            return view('admin.activiteiten.prutske', [
-                'month' => $month,
-                'year' => $year
-            ]);
-        }   
-    }
-
     public function post_edit_activiteit(Request $request)
     {
         $activiteit = Activiteit::find($request->id);
@@ -196,7 +143,11 @@ class AdminActiviteitenController extends Controller
 
     public function delete_activiteit(Request $request)
     {
-        $delete = Activiteit::destroy($request->id);
+        $activiteit = Activiteit::where('id', $request->id)
+            ->with(['tak'])
+            ->first();
+
+        $delete = Activiteit::destroy('id', $request->id);
 
         if ($delete) {
             Session::flash('delete_success', $request->id);
@@ -204,19 +155,85 @@ class AdminActiviteitenController extends Controller
             Session::flash('delete_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/activiteiten/' . $activiteit->tak->link);
     }
 
     public function delete_activiteit_undo(Request $request)
     {
         $restore = Activiteit::withTrashed()->find($request->id)->restore();
+        $activiteit = Activiteit::where('id', $request->id)
+            ->with(['tak'])
+            ->first();
 
         if ($restore) {
-            Session::flash('restore_success', $request->id);
+            Session::flash('restore_success');
         } else {
             Session::flash('restore_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/activiteiten/' . $activiteit->tak->link);
+    }
+
+    public function get_activiteiten_tak_inschrijvingen($tak)
+    {
+        $tak = Tak::where('link', $tak)
+            ->with([
+                'volgende_activiteit' => function ($query) {
+                    $query->limit(1);
+                    $query->with([
+                        'tak',
+                        'inschrijvingen',
+                    ]);
+                },
+            ])
+            ->first();
+
+        $activiteit = $tak->volgende_activiteit[0];
+
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
+    }
+
+    public function get_activiteit_inschrijvingen($id_encrypted)
+    {
+        $id = Crypt::decrypt($id_encrypted);
+
+        $activiteit = Activiteit::where('id', $id)
+            ->with([
+                'tak',
+                'inschrijvingen',
+            ])
+            ->first();
+
+        return view('admin.activiteiten.inschrijvingen', [
+            'activiteit' => $activiteit,
+        ]);
+    }
+
+    public function delete_activiteit_inschrijvingen(Request $request)
+    {
+        $delete = ActiviteitInschrijving::destroy('id', $request->id);
+
+        if ($delete) {
+            Session::flash('delete_success', $request->id);
+        } else {
+            Session::flash('delete_error');
+        }
+
+        return redirect()->back();
+    }
+
+    public function delete_activiteit_inschrijvingen_undo(Request $request)
+    {
+        $restore = ActiviteitInschrijving::withTrashed()->find($request->id)->restore();
+
+        if ($restore) {
+            Session::flash('restore_success');
+        } else {
+            Session::flash('restore_error');
+        }
+
+        return redirect()->back();
     }
 }

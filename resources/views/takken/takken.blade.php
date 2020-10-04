@@ -11,28 +11,42 @@
     ])
     @endcomponent
 
-    @foreach($takken as $tak)
-        <div class="row tak section section--small-spacing">
-            <div class="col-3">
-                <div class="tak__img-wrapper">
-                    <img src="/img/{{ $tak->foto }}" alt="{{ $tak->naam }}" class="tak__img">
-                </div>
+    <div class="row">
+        @if (session('error_not_found'))
+            <div class="col-12 section section--small-spacing">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Deze tak is niet gevonden, volg de link hieronder.
+                @endcomponent
             </div>
+        @endif
+    </div>
 
-            <div class="col-9">
-                <div class="volgende-activiteit cs-{{ $tak->kleur }}">
-                    <header class="volgende-activiteit__header">
-                        <h3 class="volgende-activiteit__titel">{{ $tak->naam }}</h3>
-                        <p><b>Vanaf {{ $tak->vanaf }} jaar</b></p>
-                    </header>
+    @foreach($takken as $tak)
+        <div class="tak section section--small-spacing">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <div class="tak__img-wrapper">
+                        <img src="/img/{{ $tak->foto }}" alt="{{ $tak->naam }}" class="tak__img">
+                    </div>
+                </div>
 
-                    <p>
-                        {!! $tak->beschrijving !!}
-                    </p>
+                <div class="col-12 col-md-9">
+                    <div class="tak__info cs-{{ $tak->kleur }}">
+                        <header class="tak__header">
+                            <h3 class="tak__titel">{{ $tak->naam }}</h3>
+                            <p><b>Vanaf {{ $tak->vanaf }} jaar</b></p>
+                        </header>
 
-                    <p>
-                        <a href="{{ url('/takken/' . strtolower($tak->naam)) }}">meer info ></a>
-                    </p>
+                        <p>
+                            {!! $tak->beschrijving !!}
+                        </p>
+
+                        <p>
+                            <a href="{{ url('/takken/' . $tak->link) }}">meer info ></a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

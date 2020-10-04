@@ -1,0 +1,46 @@
+// ----------------
+// Toggle switch
+// ----------------
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: spacing(lg) + spacing(sm);
+  height: spacing(md) + spacing(sm);
+
+  &__slider {
+    @include transitions;
+
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: spacing(md);
+    background-color: $color-grey-light;
+
+    &:before {
+      @include transitions;
+
+      position: absolute;
+      content: '';
+      height: spacing(md);
+      width: spacing(md);
+      left: spacing(xs);
+      bottom: spacing(xs);
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    input:checked + & {
+      background-color: $color-blue;
+    }
+
+    input:checked + &:before {
+      -webkit-transform: translateX(spacing(md));
+      -ms-transform: translateX(spacing(md));
+      transform: translateX(spacing(md));
+    }
+  }
+}

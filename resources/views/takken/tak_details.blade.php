@@ -11,9 +11,29 @@
     ])
     @endcomponent
 
-    <div class="row justify-content-center section">
-        <div class="col-12 col-md-8">
-            <div class="card card--align-center cs-{{ $tak->kleur }}">
+    <div class="row section">
+        @if (session('success_inschrijving'))
+            <div class="col-12 section section--small-spacing">
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    Je bent ingeschreven voor de activiteit. Tot zaterdag!
+                @endcomponent
+            </div>
+        @endif
+
+        @if (session('error_full'))
+            <div class="col-12 section section--small-spacing">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    De activiteit is al volzet.
+                @endcomponent
+            </div>
+        @endif
+
+        <div class="col-12 col-lg-8 section">
+            <div class="card card--align-center cs-{{ $tak->kleur }} section">
                 <h2 class="card__title">{{ $tak->introductie }}</h2>
 
                 <div class="card__content">
@@ -22,16 +42,21 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="row section">
-        <div class="col-12 col-lg-8">
-            <div class="section">
+            <div class="section section--small-spacing">
                 <h2>Activiteiten</h2>
                 <p>
-                    De activiteiten gaan elke zaterdag door van 14u tot 17u in het lokaal, tenzij anders vermeld. Hier vindt u alle geplande activiteiten voor de komende maanden!
+                    Door de coronamaatregelen kunnen we slechts {{ config('activiteit.max_inschrijvingen.'.$tak->link) }} leden toelaten per activiteit. Daarom werken we met inschrijvingen. Wil je deelnemen aan een activiteit? Druk dan op de knop ‘deelnemen aan deze activiteit’ en schrijf je in!
                 </p>
+
+                <p>
+                    We willen iedereen een gelijke kans geven om deel te nemen. Daarom is het pas mogelijk om vanaf de zondag voor de volgende activiteit in te schrijven.
+                </p>
+
+                <p>
+                    Heb je ingeschreven maar kan je toch niet meer komen? Stuur dan een berichtje naar de takleiding om de inschrijving te annuleren.
+                </p>
+
                 @if (strlen($tak->activiteiten_beschrijving) > 0)
                     <p>
                         In mei en juni draaien al onze activiteiten rond het thema 'beroepen'. Elke zaterdag maken de bevers kennis met een nieuw beroep. We proberen deze activiteiten zo leerzaam en leuk mogelijk te maken!
@@ -47,25 +72,40 @@
                         </td>
 
                         @if($activiteit->is_activiteit)
-                            <td class="table__cell">
-                                {{ $activiteit->omschrijving }}
+                            <td class="table__cell activities__info">
+                                <span class="activities__omschrijving">
+                                    {{ $activiteit->omschrijving }}
 
-                                @if ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
-                                    <br>
-                                    <br>
-                                    <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
-                                @endif
+                                    @if ($activiteit->start_uur != '14:00:00' || $activiteit->eind_uur != '17:00:00')
+                                        <span class="activities__detail">
+                                            <b>Tijdstip:</b> {{ Carbon\Carbon::parse($activiteit->start_uur)->format('H\ui') }} - {{ Carbon\Carbon::parse($activiteit->eind_uur)->format('H\ui') }}
+                                        </span>
+                                    @endif
 
-                                @if (0 < $activiteit->prijs)
-                                    <br>
-                                    <br>
-                                    <b>Prijs:</b> {{ $activiteit->prijs }}
-                                @endif
+                                    @if (0 < $activiteit->prijs)
+                                        <span class="activities__detail">
+                                            <b>Prijs:</b> {{ $activiteit->prijs }}
+                                        </span>
+                                    @endif
 
-                                @if ($activiteit->locatie != 'Lokaal')
-                                    <br>
-                                    <br>
-                                    <b>Locatie:</b> {{ $activiteit->locatie }}
+                                    @if ($activiteit->locatie != 'Lokaal')
+                                        <span class="activities__detail">
+                                            <b>Locatie:</b> {{ $activiteit->locatie }}
+                                        </span>
+                                    @endif
+                                </span>
+
+                                @if (Carbon\Carbon::parse($activiteit->datum) < Carbon\Carbon::now()->addDays(6))
+                                    <div class="activities__subscribe">
+                                        <a
+                                            @if ($activiteit->inschrijvingen->count() < config('activiteit.max_inschrijvingen.'.$tak->link))
+                                                href="{{ url('/takken/inschrijven/'.Crypt::encrypt($activiteit->id)) }}"
+                                                class="btn btn--primary">Deelnemen aan de activiteit</a>
+                                            @else
+                                                class="btn btn--primary btn--disabled">Activiteit volzet</a>
+                                            @endif
+                                        <span class="activities__amount">Inschrijvingen: {{ $activiteit->inschrijvingen->count() }}</span>
+                                    </div>
                                 @endif
                             </td>
                         @else
@@ -93,8 +133,10 @@
 
                             <h5 class="leiding__totem">
                                 @if ($tak->naam === 'Welpen' && strlen($leider->leider->welpennaam) > 0)
-                                    {{ $leider->leider->welpennaam }} 
-                                @elseif (strlen($leider->leider->totem) > 0)
+                                    {{ $leider->leider->welpennaam }}  / 
+                                @endif
+
+                                @if (strlen($leider->leider->totem) > 0)
                                     {{ $leider->leider->totem }}
                                 @else
                                     {{ $leider->leider->voornaam }}

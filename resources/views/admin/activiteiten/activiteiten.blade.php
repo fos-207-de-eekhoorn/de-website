@@ -11,32 +11,44 @@
     ])
     @endcomponent
 
-    {{-- Contact formulier --}}
-    {{-- EL & AEL --}}
     <div class="row section">
         <div class="col-12">
-            <div class="multiple-titles small-margin-bottom">
-                <h2>Takken</h2>
-                <a href="{{ url('/admin/activiteiten/prutske') }}" class="btn btn--secondary align-self-start">Export voor het prutske</a>
-            </div>
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                ],
+                'current' => 'Activiteiten',
+            ])@endcomponent
+        </div>
+
+        <div class="col-12">
+            <h2>Takken</h2>
         </div>
 
         @foreach($takken as $tak)
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card cs-{{ $tak->kleur }}">
-                    <h3>{{ $tak->naam }}</h3>
+            <div class="col-12 col-md-4 large-margin-bottom">
+                <div class="card cs-{{ $tak->kleur }} admin-activities">
+                    <h3 class="admin-activities__title">{{ $tak->naam }}</h3>
 
-                    <p class="medium-margin-vertical">
-                        <a href="{{ url('/admin/activiteiten/add/' . strtolower($tak->naam)) }}">
-                            <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
+                    <div class="admin-activities__actions">
+                        <a href="{{ url('/admin/activiteiten/add/' . strtolower($tak->link)) }}" class="admin-activities__action">
+                            <span class="admin-activities__icon"><i class="fas fa-plus"></i></span>
+                            <span class="admin-activities__text">Voeg activiteit toe</span>
                         </a>
-                    </p>
 
-                    <p>
-                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->naam)) }}">
-                            Ga naar activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->link)) . '/inschrijvingen'  }}" class="admin-activities__action">
+                            <span class="admin-activities__icon"><i class="fas fa-file-alt"></i></span>
+                            <span class="admin-activities__text">Bekijk inschrijvingen</span>
                         </a>
-                    </p>
+
+                        <a href="{{ url('/admin/activiteiten/' . strtolower($tak->link)) }}" class="admin-activities__action">
+                            <span class="admin-activities__icon"><i class="fas fa-angle-right"></i></span>
+                            <span class="admin-activities__text">Ga naar activiteiten</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         @endforeach

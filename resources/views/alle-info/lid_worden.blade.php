@@ -12,7 +12,7 @@
     @endcomponent
 
     <div class="row justify-content-center section">
-        <div class="col-12 col-md-6 col-lg-8">
+        <div class="col-12 col-md-8">
             <div class="algemene-info">
                 <h2>Lid worden</h2>
                 <p>
@@ -23,10 +23,10 @@
                     Onze scouts is opgedeeld in 4 leeftijdsgroepen, de takken.
                 </p>
                 <lu>
-                    <li>Bevers: 2014-2012 (vanaf 5 jaar)</li>
-                    <li>Welpen: 2011-2009</li>
-                    <li>JG/V's: 2008-2006</li>
-                    <li>OG/V's: 2005-2003</li>
+                    <li>Bevers: 2015-2013</li>
+                    <li>Welpen: 2012-2010</li>
+                    <li>JG/V's: 2009-2007</li>
+                    <li>OG/V's: 2006-2004</li>
                 </lu>
                 <br>
                 <p>
