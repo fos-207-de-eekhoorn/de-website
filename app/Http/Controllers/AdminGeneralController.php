@@ -19,18 +19,4 @@ class AdminGeneralController extends Controller
     {
         return view('admin.index');
     }
-
-    public function get_inschrijvingen()
-    {
-        $inschrijvingen = Inschrijving::get();
-
-        return view('admin.inschrijvingen', [
-            'inschrijvingen' => $inschrijvingen,
-        ]);
-    }
-
-    public function export_inschrijvingen($format = 'csv')
-    {
-        return Excel::download(new InschrijvingExport, 'inschrijvingen.'.$format);
-    }
 }

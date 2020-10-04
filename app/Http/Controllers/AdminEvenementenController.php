@@ -6,6 +6,7 @@ use Auth;
 use Crypt;
 use App\Evenement;
 use App\Activiteit;
+use App\Tak;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -54,29 +55,18 @@ class AdminEvenementenController extends Controller
             ]);
         }
     }
+*/
 
-    public function get_add_activiteit($tak = NULL)
+    public function get_add_evenementen()
     {
         $takken = Tak::get();
 
-        $data = [
+        return view('admin.evenementen.add_evenement', [
             'takken' => $takken,
-        ];
-
-        if ($tak) {
-            $tak = Tak::where('naam', $tak)->first();
-
-            if (is_object($tak)) {
-                $data = [
-                    'tak' => $tak,
-                    'takken' => $takken,
-                ];
-            }
-        }
-
-        return view('admin.activiteiten.add_activiteit', $data);
+        ]);
     }
 
+/*
     public function post_add_activiteit(Request $request)
     {
         $new_activiteit = new Activiteit;
@@ -120,7 +110,7 @@ class AdminEvenementenController extends Controller
                 'evenement' => $evenement,
             ]);
         } else {
-            return view('admin.evenement.evenementen');
+            return view('admin.evenementen.evenementen');
         }
     }
 

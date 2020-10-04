@@ -160,7 +160,6 @@
                             </ul>
                         </li>
 
-                        {{--
                         <li class="nav__list-item nav__list-item--sublist">
                             <input type="checkbox" id="nav__toggle-sublist--evenementen" class="nav__checkbox" hidden>
 
@@ -182,13 +181,14 @@
                                 </li>
                             </ul>
                         </li>
-                        --}}
 
+                        {{--
                         <li class="nav__list-item">
                             <a href="/inschrijven" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
                                 Inschrijven
                             </a>
                         </li>
+                        --}}
 
                         <li class="nav__list-item">
                             <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">

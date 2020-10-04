@@ -71,6 +71,8 @@ Route::prefix('evenementen')->group(function () {
 
 # Admin Routes
 Route::prefix('admin')->group(function () {
+	Route::get('/', 'AdminGeneralController@get_admin');
+
 	# Activiteiten
 	Route::prefix('activiteiten')->group(function () {
 		Route::get('/', 'AdminActiviteitenController@get_activiteiten');
@@ -78,23 +80,23 @@ Route::prefix('admin')->group(function () {
 		Route::get('/add', 'AdminActiviteitenController@get_add_activiteit');
 		Route::get('/add/{tak}', 'AdminActiviteitenController@get_add_activiteit');
 		Route::get('/edit/{id}', 'AdminActiviteitenController@get_edit_activiteit');
-		Route::get('/{tak}/inschrijvingen', 'AdminController@get_activiteiten_tak_inschrijvingen');
-		Route::get('/inschrijvingen/{activiteit_id}', 'AdminController@get_activiteit_inschrijvingen');
+		Route::get('/{tak}/inschrijvingen', 'AdminActiviteitenController@get_activiteiten_tak_inschrijvingen');
+		Route::get('/inschrijvingen/{activiteit_id}', 'AdminActiviteitenController@get_activiteit_inschrijvingen');
 
 		Route::post('/add', 'AdminActiviteitenController@post_add_activiteit')->middleware('decrypt:value,tak');
 		Route::post('/edit', 'AdminActiviteitenController@post_edit_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove', 'AdminActiviteitenController@delete_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove-undo', 'AdminActiviteitenController@delete_activiteit_undo')->middleware('decrypt:value,id');
-		Route::post('/set-aanwezig', 'ApiAdminController@PostSetAanwezig');
-		Route::post('/inschrijvingen/remove', 'AdminController@delete_activiteit_inschrijvingen')->middleware('decrypt:value,id');
-		Route::post('/inschrijvingen/remove-undo', 'AdminController@delete_activiteit_inschrijvingen_undo')->middleware('decrypt:value,id');
+		Route::post('/set-aanwezig', 'ApiAdminActiviteitenController@PostSetAanwezig');
+		Route::post('/inschrijvingen/remove', 'AdminActiviteitenController@delete_activiteit_inschrijvingen')->middleware('decrypt:value,id');
+		Route::post('/inschrijvingen/remove-undo', 'AdminActiviteitenController@delete_activiteit_inschrijvingen_undo')->middleware('decrypt:value,id');
 	});
 
 	# Inschrijvingen
 	Route::prefix('inschrijvingen')->group(function () {
-		Route::get('/', 'AdminGeneralController@get_inschrijvingen');
-		Route::get('/export', 'AdminGeneralController@export_inschrijvingen');
-		Route::get('/export/{format}', 'AdminGeneralController@export_inschrijvingen');
+		Route::get('/', 'AdminInschrijvingenController@get_inschrijvingen');
+		Route::get('/export', 'AdminInschrijvingenController@export_inschrijvingen');
+		Route::get('/export/{format}', 'AdminInschrijvingenController@export_inschrijvingen');
 	});
 
 	# Contents
@@ -108,6 +110,7 @@ Route::prefix('admin')->group(function () {
 	# Evenementen
 	Route::prefix('evenementen')->group(function () {
 		Route::get('/', 'AdminEvenementenController@get_evenementen');
+		Route::get('/add', 'AdminEvenementenController@get_add_evenementen');
 		Route::get('/edit/{id}', 'AdminEvenementenController@get_edit_evenementen');
 		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
 	});

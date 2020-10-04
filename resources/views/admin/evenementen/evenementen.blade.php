@@ -13,6 +13,24 @@
 
     <div class="row section">
         <div class="col-12">
+            @component('components.breadcrumbs', [
+                'childs' => [
+                    (object)[
+                        'link' => '/admin',
+                        'name' => 'Admin',
+                    ],
+                ],
+                'current' => 'Evenementen',
+            ])@endcomponent
+        </div>
+
+        <div class="col-12">
+            <div class="multiple-titles small-margin-bottom align-items-center">
+                <h2>Lijst</h2>
+            </div>
+        </div>
+
+        <div class="col-12">
             <table class="table activities">
                 <thead class="table__head">
                     <tr class="table__row">
