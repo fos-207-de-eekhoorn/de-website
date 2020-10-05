@@ -114,6 +114,8 @@ Route::prefix('admin')->group(function () {
 		Route::get('/', 'AdminEvenementenController@get_evenementen');
 		Route::get('/add', 'AdminEvenementenController@get_add_evenementen');
 		Route::get('/edit/{id}', 'AdminEvenementenController@get_edit_evenementen');
+
+		Route::post('/add', 'AdminEvenementenController@post_add_evenementen');
 		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
 	});
 });	

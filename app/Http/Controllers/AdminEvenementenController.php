@@ -66,38 +66,53 @@ class AdminEvenementenController extends Controller
         ]);
     }
 
-/*
-    public function post_add_activiteit(Request $request)
+    public function post_add_evenementen(Request $request)
     {
-        $new_activiteit = new Activiteit;
+        $validatedData = $request->validate([
+            'naam' => 'required',
+            'locatie' => 'required',
+            'prijs' => 'required',
+            'snelle_info' => 'required',
+            'url' => 'required|unique:evenementen,url',
+            'start' => 'required',
+            'eind' => 'required',
+            'page_content' => 'required_if:has_static_page,on',
+        ]);
 
-        $new_activiteit->tak_id = $request->tak;
-        $new_activiteit->datum = $request->datum[2] . '-' . $request->datum[1] . '-' . $request->datum[0];
+        $start = explode('T', $request->start);
+        $eind = explode('T', $request->eind);
 
-        if ($request->is_activiteit === 'on') {
-            $new_activiteit->start_uur = $request->start_uur . ':00';
-            $new_activiteit->eind_uur = $request->eind_uur . ':00';
-            $new_activiteit->prijs = $request->prijs;
-            $new_activiteit->locatie = $request->locatie;
-            $new_activiteit->omschrijving = $request->omschrijving;
-            $new_activiteit->is_activiteit = '1';
+        $new_evenement = new Evenement;
+
+        $new_evenement->naam = $request->naam;
+        $new_evenement->locatie = $request->locatie;
+        $new_evenement->prijs = $request->prijs;
+        $new_evenement->snelle_info = $request->snelle_info;
+        $new_evenement->url = $request->url;
+        $new_evenement->start_datum = $start[0];
+        $new_evenement->eind_datum = $eind[0];
+        $new_evenement->start_uur = $start[1];
+        $new_evenement->eind_uur = $eind[1];
+
+        if ($request->has_static_page === 'on') {
+            $new_evenement->has_static_page = '1';
+            $new_evenement->omschrijving = $request->page_content;
         } else {
-            $new_activiteit->is_activiteit = '0';
+            $new_evenement->has_static_page = '0';
         }
 
-        $add = $new_activiteit->save();
+        $add = $new_evenement->save();
 
         if ($add) {
             Session::flash('add_success');
+            return redirect('/admin/evenementen/');
         } else {
             Session::flash('add_error');
+            return redirect()->back()->withInput();
         }
-
-        $tak = $tak = Tak::where('id', $request->tak)->first();
 
         return redirect('/admin/activiteiten/' . strtolower($tak->naam));
     }
-*/
 
     public function get_edit_evenementen($id_encrypted)
     {

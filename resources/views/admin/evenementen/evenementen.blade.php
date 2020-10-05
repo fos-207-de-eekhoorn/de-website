@@ -27,6 +27,10 @@
         <div class="col-12">
             <div class="multiple-titles small-margin-bottom align-items-center">
                 <h2>Lijst</h2>
+
+                <a href="{{ url('/admin/evenementen/add/') }}" class="btn btn--primary">
+                    <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg evenement toe
+                </a>
             </div>
         </div>
 
