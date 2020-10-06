@@ -91,7 +91,7 @@
                                     </a>
                                 </li>
 
-                                @foreach($takken as $tak)
+                                @foreach($navigation_takken as $tak)
                                     <li class="nav__sublist-item">
                                         <a href="/takken/{{ $tak->link }}" class="nav__link nav__link--sublist">
                                             {{ $tak->naam }}
@@ -174,7 +174,7 @@
                                     </a>
                                 </li>
 
-                                @foreach($evenementen as $evenement)
+                                @foreach($navigation_evenementen as $evenement)
                                     <li class="nav__sublist-item">
                                         <a href="/evenementen/{{ $evenement->url }}" class="nav__link nav__link--sublist">
                                             {{ $evenement->naam }}
@@ -289,7 +289,7 @@
                                 <a href="/takken" class="footer-nav__link footer-nav__link--parent">Takken</a>
 
                                 <ul class="footer-nav__sublist">
-                                    @foreach($takken as $tak)
+                                    @foreach($navigation_takken as $tak)
                                         <li class="footer-nav__item">
                                             <a href="/takken/{{ $tak->link }}" class="footer-nav__link footer-nav__link--sublink">
                                                 {{ $tak->naam }}
@@ -335,7 +335,7 @@
                                 <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
 
                                 <ul class="footer-nav__sublist">
-                                    @foreach($evenementen as $evenement)
+                                    @foreach($navigation_evenementen as $evenement)
                                         <li class="footer-nav__item">
                                             <a href="/evenementen/{{ $evenement->url }}" class="footer-nav__link footer-nav__link--sublink">
                                                 {{ $evenement->naam }}

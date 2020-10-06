@@ -31,8 +31,8 @@ class AppServiceProvider extends ServiceProvider
 
         View::share([
             'el' => $this->get_el(),
-            'takken' => $takken,
-            'evenementen' => $evenementen,
+            'navigation_takken' => $takken,
+            'navigation_evenementen' => $evenementen,
         ]);
         Carbon::setLocale(config('app.locale'));
     }

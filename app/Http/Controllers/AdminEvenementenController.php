@@ -23,7 +23,8 @@ class AdminEvenementenController extends Controller
 
     public function get_evenementen()
     {
-        $evenementen = Evenement::get();
+        $evenementen = Evenement::orderBy('start_datum','ASC')
+            ->get();
 
         return view('admin.evenementen.evenementen', [
             'evenementen' => $evenementen,
