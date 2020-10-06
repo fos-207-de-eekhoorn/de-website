@@ -49,6 +49,22 @@
                 @endcomponent
             </div>
 
+            @if (session('add_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    Het evenement is toegevoegd.
+                @endcomponent
+            @endif
+
+            @if (session('edit_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    Je evenement is aangepast.
+                @endcomponent
+            @endif
+
             <div class="wrapper__table">
                 <table class="table activities">
                     <thead class="table__head">
@@ -73,6 +89,9 @@
                                         : ((Carbon\Carbon::parse($evenement->start_datum)->monthName === Carbon\Carbon::parse($evenement->eind_datum)->monthName)
                                             ? Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName
                                             : Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName) }}
+                                    {{ Carbon\Carbon::parse($evenement->eind_datum)->format('Y') !== Carbon\Carbon::now('Europe/Berlin')->format('Y')
+                                        ? Carbon\Carbon::parse($evenement->eind_datum)->format('Y')
+                                        : ''}}
                                 </td>
 
                                 <td class="table__cell">

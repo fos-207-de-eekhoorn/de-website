@@ -28,38 +28,6 @@
                 </a>
             </div>
 
-            @if (session('add_success'))
-                @component('components.flash_message', [
-                    'type' => 'success',
-                ])
-                    De activiteit is toegevoegd.
-                @endcomponent
-            @endif
-
-            @if (session('add_error'))
-                @component('components.flash_message', [
-                    'type' => 'error',
-                ])
-                    Er is iets fout gegaan. Neem screenshots en stuur door naar Paco, hij is jouw vriend!
-                @endcomponent
-            @endif
-
-            @if (session('edit_success'))
-                @component('components.flash_message', [
-                    'type' => 'success',
-                ])
-                    De activiteit is aangepast.
-                @endcomponent
-            @endif
-
-            @if (session('edit_error'))
-                @component('components.flash_message', [
-                    'type' => 'error',
-                ])
-                    Er is iets fout gegaan. Als dit meerdere malen gebeurt, contacteer vooral NIET Paco!
-                @endcomponent
-            @endif
-
             @if (session('delete_success'))
                 @component('components.flash_message', [
                     'type' => 'warning',

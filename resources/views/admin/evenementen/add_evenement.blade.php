@@ -31,9 +31,15 @@
 
         <div class="col-12 section section--extra-small-spacing">
             <h2>Evenement toevoegen</h2>
-        </div>
 
-        <div class="col-12 section">
+            @if (session('add_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Probeer nog eens. Als dit zich blijft gebeuren, neem screenshots en stuur door naar Paco, hij is jouw vriend!
+                @endcomponent
+            @endif
+
             <form class="form" action="/admin/evenementen/add" method="POST">
                 @csrf
 
@@ -312,7 +318,7 @@
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Voeg toe</button>
-                    <a href="{{ isset($tak) ? url('/admin/activiteiten/' . strtolower($tak->naam)) : url()->previous() }}" class="btn btn--error">Cancel</a>
+                    <a href="{{ url('/admin/evenementen/') }}" class="btn btn--error">Cancel</a>
                 </div>
             </form>
         </div>

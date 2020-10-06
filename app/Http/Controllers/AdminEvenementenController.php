@@ -86,8 +86,6 @@ class AdminEvenementenController extends Controller
             Session::flash('add_error');
             return redirect()->back()->withInput();
         }
-
-        return redirect('/admin/activiteiten/' . strtolower($tak->naam));
     }
 
     public function get_edit_evenementen($id_encrypted)
@@ -95,10 +93,12 @@ class AdminEvenementenController extends Controller
         $id = Crypt::decrypt($id_encrypted);
         $evenement = Evenement::where('id', $id)
             ->first();
+        $urls = Evenement::pluck('url')->toArray();
 
         if (is_object($evenement)) {
             return view('admin.evenementen.edit_evenement', [
                 'evenement' => $evenement,
+                'urls' => $urls,
             ]);
         } else {
             return view('admin.evenementen.evenementen');
@@ -107,33 +107,50 @@ class AdminEvenementenController extends Controller
 
     public function post_edit_evenementen(Request $request)
     {
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'naam' => 'required',
+            'locatie' => 'required',
+            'prijs' => 'required',
+            'snelle_info' => 'required',
+            'url' => 'required|unique:evenementen,url,'.$request->id,
+            'start' => 'required',
+            'eind' => 'required',
+            'page_content' => 'required_if:has_static_page,on',
+        ]);
+
+        $start = explode('T', $request->start);
+        $eind = explode('T', $request->eind);
+
         $evenement = Evenement::find($request->id);
 
-        $evenement->begin_datum = $request->begin_datum[2] . '-' . $request->begin_datum[1] . '-' . $request->begin_datum[0];
-        $evenement->eind_datum = $request->eind_datum[2] . '-' . $request->eind_datum[1] . '-' . $request->eind_datum[0];
+        $evenement->naam = $request->naam;
+        $evenement->locatie = $request->locatie;
+        $evenement->prijs = $request->prijs;
+        $evenement->snelle_info = $request->snelle_info;
+        $evenement->url = $request->url;
+        $evenement->start_datum = $start[0];
+        $evenement->eind_datum = $eind[0];
+        $evenement->start_uur = $start[1];
+        $evenement->eind_uur = $eind[1];
 
-        return $evenement;
-
-        if ($request->is_activiteit === 'on') {
-            $activiteit->start_uur = $request->start_uur . ':00';
-            $activiteit->eind_uur = $request->eind_uur . ':00';
-            $activiteit->prijs = $request->prijs;
-            $activiteit->locatie = $request->locatie;
-            $activiteit->omschrijving = $request->omschrijving;
-            $activiteit->is_activiteit = '1';
+        if ($request->has_static_page === 'on') {
+            $evenement->has_static_page = '1';
+            $evenement->omschrijving = $request->page_content;
         } else {
-            $activiteit->is_activiteit = '0';
+            $evenement->has_static_page = '0';
         }
 
-        $edit = $activiteit->save();
+        $edit = $evenement->save();
+        // $edit = 0;
 
         if ($edit) {
             Session::flash('edit_success');
+            return redirect('/admin/evenementen/');
         } else {
             Session::flash('edit_error');
+            return redirect()->back()->withInput();
         }
-
-        return redirect('/admin/activiteiten/' . $request->tak);
     }
 
 /*
