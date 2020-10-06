@@ -109,6 +109,12 @@
 
                                 <td class="table__cell no-wrap">
                                     <p>
+                                        <a href="{{ url('/evenementen/' . $evenement->url) }}">
+                                            <span class="fa--before"><i class="fas fa-eye"></i></span>Bekijk evenement
+                                        </a>
+                                    </p>
+
+                                    <p>
                                         <a href="{{ url('/admin/evenementen/edit/' . Crypt::encrypt($evenement->id)) }}">
                                             <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                         </a>
