@@ -89,9 +89,10 @@ Route::prefix('admin')->group(function () {
 		Route::post('/edit', 'AdminActiviteitenController@post_edit_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove', 'AdminActiviteitenController@delete_activiteit')->middleware('decrypt:value,id');
 		Route::post('/remove-undo', 'AdminActiviteitenController@delete_activiteit_undo')->middleware('decrypt:value,id');
-		Route::post('/set-aanwezig', 'ApiAdminActiviteitenController@PostSetAanwezig');
 		Route::post('/inschrijvingen/remove', 'AdminActiviteitenController@delete_activiteit_inschrijvingen')->middleware('decrypt:value,id');
 		Route::post('/inschrijvingen/remove-undo', 'AdminActiviteitenController@delete_activiteit_inschrijvingen_undo')->middleware('decrypt:value,id');
+
+		Route::post('/set-aanwezig', 'ApiAdminController@PostSetActiviteitAanwezig');
 	});
 
 	# Inschrijvingen
@@ -117,5 +118,7 @@ Route::prefix('admin')->group(function () {
 
 		Route::post('/add', 'AdminEvenementenController@post_add_evenementen');
 		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
+
+		Route::post('/set-active', 'ApiAdminController@PostSetEvenementActive');
 	});
 });	

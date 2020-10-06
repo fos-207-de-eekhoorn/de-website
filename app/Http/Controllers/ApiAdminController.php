@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Crypt;
 use App\ActiviteitInschrijving;
+use App\Evenement;
 use Illuminate\Http\Request;
 
 class ApiAdminController extends Controller
@@ -14,7 +15,7 @@ class ApiAdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function PostSetAanwezig(Request $request)
+    public function PostSetActiviteitAanwezig(Request $request)
     {
         $validatedData = $request->validate([
             'id' => 'required',
@@ -26,6 +27,23 @@ class ApiAdminController extends Controller
 
         $update_inschrijving->is_aanwezig = $request->status;
         $is_saved = $update_inschrijving->save();
+
+        if ($is_saved) return 'true';
+        else return 'false';
+    }
+
+    public function PostSetEvenementActive(Request $request)
+    {
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'status' => 'required',
+        ]);
+
+        $update_evenement = Evenement::where('id', $request->id)
+            ->first();
+
+        $update_evenement->active = $request->status;
+        $is_saved = $update_evenement->save();
 
         if ($is_saved) return 'true';
         else return 'false';
