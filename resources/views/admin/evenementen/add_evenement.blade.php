@@ -220,7 +220,79 @@
                     </div>
                 </div>
 
+                {{-- Benner --}}
+                {{-- Page --}}
                 <div class="static-page-section">
+                    <h5>Banner</h5>
+                    {{-- Banner --}}
+                    <div class="row">
+                        {{-- Kleur --}}
+                        <div class="col-12 col-md-4">
+                            <section class="form__section">
+                                <label for="banner_color" class="form__label">Kleur</label>
+
+                                <select
+                                    id="banner_color"
+                                    name="banner_color"
+                                    class="form__select form__select--full-width">
+                                    @foreach(config('banner.colors') as $color)
+                                        <option value="{{ $color }}">{{ str_replace('-', ' ', ucwords($color)) }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('page_content'))
+                                    <span class="form__section-feedback">
+                                        {{ $errors->first('page_content') }}
+                                    </span>
+                                @endif
+                            </section>
+                        </div>
+
+                        {{-- Patroon --}}
+                        <div class="col-12 col-md-4">
+                            <section class="form__section">
+                                <label for="banner_pattern" class="form__label">Patroon</label>
+
+                                <select
+                                    id="banner_pattern"
+                                    name="banner_pattern"
+                                    class="form__select form__select--full-width">
+                                    @foreach(config('banner.patterns') as $pattern)
+                                        <option value="{{ $pattern }}">{{ $pattern }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('page_content'))
+                                    <span class="form__section-feedback">
+                                        {{ $errors->first('page_content') }}
+                                    </span>
+                                @endif
+                            </section>
+                        </div>
+
+                        {{-- Patroon --}}
+                        <div class="col-12 col-md-4">
+                            <section class="form__section">
+                                <label for="banner_pattern" class="form__label">Patroon</label>
+
+                                <select
+                                    id="banner_pattern"
+                                    name="banner_pattern"
+                                    class="form__select form__select--full-width">
+                                    @foreach(config('banner.strenght') as $strenght)
+                                        <option value="{{ $strenght }}">{{ ucwords($strenght) }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('page_content'))
+                                    <span class="form__section-feedback">
+                                        {{ $errors->first('page_content') }}
+                                    </span>
+                                @endif
+                            </section>
+                        </div>
+                    </div>
+
                     {{-- Page --}}
                     <section class="form__section">
                         <label for="page_content" class="form__label">De pagina</label>

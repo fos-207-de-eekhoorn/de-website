@@ -24,7 +24,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         $takken = Tak::get();
-        $evenementen = Evenement::whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+        $evenementen = Evenement::where('active', '1')
+            ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
             ->get();
 
         View::share([
