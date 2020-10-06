@@ -33,9 +33,11 @@ class AdminEvenementenController extends Controller
     public function get_add_evenementen()
     {
         $takken = Tak::get();
+        $urls = Evenement::pluck('url')->toArray();
 
         return view('admin.evenementen.add_evenement', [
             'takken' => $takken,
+            'urls' => $urls,
         ]);
     }
 

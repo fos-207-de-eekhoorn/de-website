@@ -153,6 +153,10 @@
                                     {{ $errors->first('url') }}
                                 </span>
                             @endif
+
+                            <span class="form__section-feedback url-already-taken" style="display: none;">
+                                Deze URL is al genomen.
+                            </span>
                         </section>
 
                         {{-- Has static page? --}}
@@ -197,7 +201,7 @@
                     {{-- Eind datum --}}
                     <div class="col-12 col-md-6">
                         <section class="form__section">
-                            <label for="eind" class="form__label form__label--required">Start</label>
+                            <label for="eind" class="form__label form__label--required">Eind</label>
 
                             <input
                                 type="datetime-local"
@@ -241,22 +245,34 @@
     </div>
 
     <script>
-        // Set URL
+        // Set URL and check for used ones
         var $naam = $("#naam"),
             $url = $("#url"),
-            urlIsChanged = false;
-
-        $naam.on('input', function() {
-            console.log($naam.val());
-            if (!urlIsChanged) $url.val($naam.val().toLowerCase().replace(/\s/g, '-'));
-        });
+            $urlFeedback = $('.url-already-taken'),
+            urlIsChanged = false,
+            urls = @json($urls);
 
         (function($){
-            $url.on('input', changedInput);
+            $url.on('input', function() {
+                urlIsChanged = true;
+                $url.val(prepareUrl($url.val()));
+                checkForUsedUrl();
+            });
+            $naam.on('input', function() {
+                if (!urlIsChanged) $url.val(prepareUrl($naam.val()));
+                checkForUsedUrl();
+            });
         })(jQuery);
 
-        function changedInput() {
-            urlIsChanged = true;
+        function checkForUsedUrl() {
+            var input = $url.val();
+            if (urls.includes(input)) $urlFeedback.show(300);
+            else $urlFeedback.hide(300);
+            console.log('bar');
+        }
+
+        function prepareUrl(url) {
+            return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9 ]/g, '');
         }
 
         // TinyMCE
