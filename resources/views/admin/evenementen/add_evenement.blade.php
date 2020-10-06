@@ -246,9 +246,9 @@
                                     @endforeach
                                 </select>
 
-                                @if ($errors->has('page_content'))
+                                @if ($errors->has('banner_color'))
                                     <span class="form__section-feedback">
-                                        {{ $errors->first('page_content') }}
+                                        {{ $errors->first('banner_color') }}
                                     </span>
                                 @endif
                             </section>
@@ -268,9 +268,9 @@
                                     @endforeach
                                 </select>
 
-                                @if ($errors->has('page_content'))
+                                @if ($errors->has('banner_pattern'))
                                     <span class="form__section-feedback">
-                                        {{ $errors->first('page_content') }}
+                                        {{ $errors->first('banner_pattern') }}
                                     </span>
                                 @endif
                             </section>
@@ -279,20 +279,20 @@
                         {{-- Patroon --}}
                         <div class="col-12 col-md-4">
                             <section class="form__section">
-                                <label for="banner_pattern" class="form__label">Patroon</label>
+                                <label for="banner_strenght" class="form__label">Patroon</label>
 
                                 <select
-                                    id="banner_pattern"
-                                    name="banner_pattern"
+                                    id="banner_strenght"
+                                    name="banner_strenght"
                                     class="form__select form__select--full-width">
                                     @foreach(config('banner.strenght') as $strenght)
                                         <option value="{{ $strenght }}">{{ ucwords($strenght) }}</option>
                                     @endforeach
                                 </select>
 
-                                @if ($errors->has('page_content'))
+                                @if ($errors->has('banner_strenght'))
                                     <span class="form__section-feedback">
-                                        {{ $errors->first('page_content') }}
+                                        {{ $errors->first('banner_strenght') }}
                                     </span>
                                 @endif
                             </section>

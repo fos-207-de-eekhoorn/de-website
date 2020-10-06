@@ -52,7 +52,10 @@ class AdminEvenementenController extends Controller
             'url' => 'required|unique:evenementen,url',
             'start' => 'required',
             'eind' => 'required',
-            'page_content' => 'required_if:has_static_page,on',
+            'banner_color' => 'required_if:has_static_page,off',
+            'banner_pattern' => 'required_if:has_static_page,off',
+            'banner_pattern' => 'required_if:has_static_page,off',
+            'page_content' => 'required_if:has_static_page,off',
         ]);
 
         $start = explode('T', $request->start);
@@ -70,11 +73,14 @@ class AdminEvenementenController extends Controller
         $new_evenement->start_uur = $start[1];
         $new_evenement->eind_uur = $eind[1];
 
-        if ($request->has_static_page === 'on') {
-            $new_evenement->has_static_page = '1';
+        if ($request->has_static_page !== 'on') {
+            $new_evenement->has_static_page = '0';
+            $new_evenement->kleur = $request->banner_color;
+            $new_evenement->banner_patroon = $request->banner_pattern;
+            $new_evenement->banner_sterkte = $request->banner_pattern;
             $new_evenement->omschrijving = $request->page_content;
         } else {
-            $new_evenement->has_static_page = '0';
+            $new_evenement->has_static_page = '1';
         }
 
         $add = $new_evenement->save();
@@ -116,7 +122,10 @@ class AdminEvenementenController extends Controller
             'url' => 'required|unique:evenementen,url,'.$request->id,
             'start' => 'required',
             'eind' => 'required',
-            'page_content' => 'required_if:has_static_page,on',
+            'banner_color' => 'required_if:has_static_page,off',
+            'banner_pattern' => 'required_if:has_static_page,off',
+            'banner_pattern' => 'required_if:has_static_page,off',
+            'page_content' => 'required_if:has_static_page,off',
         ]);
 
         $start = explode('T', $request->start);
@@ -134,15 +143,16 @@ class AdminEvenementenController extends Controller
         $evenement->start_uur = $start[1];
         $evenement->eind_uur = $eind[1];
 
-        if ($request->has_static_page === 'on') {
-            $evenement->has_static_page = '1';
+        if ($request->has_static_page !== 'on') {
+            $evenement->has_static_page = '0';
+            $evenement->banner_patroon = $request->banner_pattern;
+            $evenement->banner_sterkte = $request->banner_pattern;
             $evenement->omschrijving = $request->page_content;
         } else {
-            $evenement->has_static_page = '0';
+            $evenement->has_static_page = '1';
         }
 
         $edit = $evenement->save();
-        // $edit = 0;
 
         if ($edit) {
             Session::flash('edit_success');
