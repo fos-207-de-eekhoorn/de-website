@@ -220,21 +220,23 @@
                     </div>
                 </div>
 
-                {{-- Page --}}
-                <section class="form__section">
-                    <label for="page_content" class="form__label">De pagina</label>
+                <div class="static-page-section">
+                    {{-- Page --}}
+                    <section class="form__section">
+                        <label for="page_content" class="form__label">De pagina</label>
 
-                    <textarea
-                        id="page_content"
-                        name="page_content"
-                        class="form__textarea form__input--full-width tinymce">{{ old('page_content') }}</textarea>
+                        <textarea
+                            id="page_content"
+                            name="page_content"
+                            class="form__textarea form__input--full-width tinymce">{{ old('page_content') }}</textarea>
 
-                    @if ($errors->has('page_content'))
-                        <span class="form__section-feedback">
-                            {{ $errors->first('page_content') }}
-                        </span>
-                    @endif
-                </section>
+                        @if ($errors->has('page_content'))
+                            <span class="form__section-feedback">
+                                {{ $errors->first('page_content') }}
+                            </span>
+                        @endif
+                    </section>
+                </div>
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Voeg toe</button>
@@ -245,11 +247,21 @@
     </div>
 
     <script>
-        // Set URL and check for used ones
         var $naam = $("#naam"),
             $url = $("#url"),
+            $hasStaticPage = $('#has_static_page'),
             $urlFeedback = $('.url-already-taken'),
-            urlIsChanged = false,
+            $staticPageSection = $('.static-page-section');
+
+        // Hide page section with a static page
+        (function($){
+            $hasStaticPage.on('change', function() {
+                $staticPageSection.toggle(300);
+            });
+        })(jQuery);
+
+        // Set URL and check for used ones
+        var urlIsChanged = false,
             urls = @json($urls);
 
         (function($){
@@ -272,7 +284,7 @@
         }
 
         function prepareUrl(url) {
-            return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9 ]/g, '');
+            return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
         }
 
         // TinyMCE
