@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
         $takken = Tak::get();
         $evenementen = Evenement::where('active', '1')
             ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+            ->orderBy('start_datum','ASC')
             ->get();
 
         View::share([
