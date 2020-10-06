@@ -241,6 +241,24 @@
     </div>
 
     <script>
+        // Set URL
+        var $naam = $("#naam"),
+            $url = $("#url"),
+            urlIsChanged = false;
+
+        $naam.on('input', function() {
+            console.log($naam.val());
+            if (!urlIsChanged) $url.val($naam.val().toLowerCase().replace(/\s/g, '-'));
+        });
+
+        (function($){
+            $url.on('input', changedInput);
+        })(jQuery);
+
+        function changedInput() {
+            urlIsChanged = true;
+        }
+
         // TinyMCE
         initTinymce();
         function initTinymce() {
