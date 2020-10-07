@@ -157,6 +157,22 @@
     	&__section-feedback {
     		color: $color-alert-error-dark;
     	}
+
+    	&__label {
+    		&--tag {
+	            border-color: $color-grey-extra-light;
+	            
+	            &:hover {
+	            	border-color: $color-green;
+	            }
+    		} 
+    	}
+    }
+
+    .form__checkbox:checked ~ .form__label--tag {
+    	border-color: $color-blue;
+        background-color: $color-green;
+        color: $color-blue;
     }
 
 	.social {

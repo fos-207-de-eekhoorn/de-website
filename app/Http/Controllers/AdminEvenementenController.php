@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Crypt;
 use App\Evenement;
+use App\EvenementTak;
 use App\Activiteit;
 use App\Tak;
 use App\Http\Shared\CommonHelpers;
@@ -84,6 +85,15 @@ class AdminEvenementenController extends Controller
         }
 
         $add = $new_evenement->save();
+
+        foreach($request->tak as $tak_id) {
+            $new_evenement_tak = new EvenementTak;
+
+            $new_evenement_tak->evenement_id = $new_evenement->id;
+            $new_evenement_tak->tak_id = $tak_id;
+
+            $new_evenement_tak->save();
+        }
 
         if ($add) {
             Session::flash('add_success');

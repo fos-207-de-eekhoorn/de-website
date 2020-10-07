@@ -85,6 +85,14 @@
             display: inline;
         }
         
+        &--tag {
+            @include border-radius;
+
+            padding: spacing(sm) spacing(md);
+            border: 1px solid;
+            cursor: pointer;
+        }
+        
         &--required {
             &:after {
                 margin-left: spacing(xxs);

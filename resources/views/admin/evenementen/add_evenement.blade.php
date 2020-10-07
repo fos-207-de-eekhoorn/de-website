@@ -226,10 +226,34 @@
                     </div>
                 </div>
 
+                {{-- Takken --}}
+                <h5>Betrokken takken</h5>
+
+                <div class="row small-gutters">
+                    @foreach($takken as $tak)
+                        <div class="col-">
+                            <section class="form__section">
+                                <input
+                                    type="checkbox"
+                                    id="tak_{{ $tak->link }}"
+                                    name="tak[]"
+                                    class="form__checkbox"
+                                    value="{{ $tak->id }}"
+                                    hidden>
+
+                                <label for="tak_{{ $tak->link }}" class="form__label form__label--tag">
+                                    {{ $tak->naam }}
+                                </label>
+                            </section>
+                        </div>
+                    @endforeach
+                </div>
+
                 {{-- Benner --}}
                 {{-- Page --}}
                 <div class="static-page-section">
                     <h5>Banner</h5>
+
                     {{-- Banner --}}
                     <div class="row">
                         {{-- Kleur --}}
