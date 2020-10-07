@@ -118,6 +118,8 @@ Route::prefix('admin')->group(function () {
 
 		Route::post('/add', 'AdminEvenementenController@post_add_evenementen');
 		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
+		Route::post('/remove', 'AdminEvenementenController@delete_activiteit')->middleware('decrypt:value,id');
+		Route::post('/remove-undo', 'AdminEvenementenController@delete_activiteit_undo')->middleware('decrypt:value,id');
 
 		Route::post('/set-active', 'ApiAdminController@PostSetEvenementActive');
 	});

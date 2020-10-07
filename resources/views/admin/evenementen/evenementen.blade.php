@@ -65,6 +65,51 @@
                 @endcomponent
             @endif
 
+            @if (session('delete_success'))
+                @component('components.flash_message', [
+                    'type' => 'warning',
+                ])
+                    Je evenement is verwijderd.
+                    <form action="{{ url('/admin/evenementen/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                        @csrf
+
+                        <input
+                            type="text"
+                            name="id"
+                            value="{{ Crypt::encrypt(session('delete_success')) }}"
+                            hidden>
+
+                        <button class="btn btn--without-style link--error">
+                            <span class="fa--before"><i class="fas fa-times"></i></span>Maak ongedaan
+                        </button>
+                    </form>
+                @endcomponent
+            @endif
+
+            @if (session('delete_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Als dit meerdere malen gebeurt, contacteer vooral NIET Paco! Laat hem gerust!
+                @endcomponent
+            @endif
+
+            @if (session('restore_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    Je evenement is terug gezet.
+                @endcomponent
+            @endif
+
+            @if (session('restore_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Geen paniek, Paco kan deze terugzetten.
+                @endcomponent
+            @endif
+
             <div class="wrapper__table">
                 <table class="table activities">
                     <thead class="table__head">
@@ -120,30 +165,23 @@
                                         </a>
                                     </p>
 
-                                    {{--
-                                    <form action="{{ url('/admin/activiteiten/remove') }}" method="POST" class="no-margin-bottom">
+                                    <form action="{{ url('/admin/evenementen/remove') }}" method="POST" class="no-margin-bottom">
                                         @csrf
 
                                         <input
                                             type="text"
                                             name="id"
-                                            value="{{ Crypt::encrypt($activiteit->id) }}"
-                                            hidden>
-                                        <input
-                                            type="text"
-                                            name="tak"
-                                            value="{{ strtolower($tak->naam) }}"
+                                            value="{{ Crypt::encrypt($evenement->id) }}"
                                             hidden>
 
                                         <button class="btn btn--without-style link--error" onclick="
-                                            confirm('Ben je zeker dat je deze activiteit wilt verwijderen?')
+                                            confirm('Ben je zeker dat je dit evenement wilt verwijderen?')
                                                 ? NULL
                                                 : event.preventDefault();
                                         ">
                                             <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
                                         </button>
                                     </form>
-                                    --}}
                                 </td>
                             </tr>
                         @endforeach

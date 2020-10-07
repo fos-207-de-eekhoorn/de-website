@@ -163,10 +163,9 @@ class AdminEvenementenController extends Controller
         }
     }
 
-/*
-    public function delete_evenementen(Request $request)
+    public function delete_activiteit(Request $request)
     {
-        $delete = Activiteit::destroy($request->id);
+        $delete = Evenement::destroy($request->id);
 
         if ($delete) {
             Session::flash('delete_success', $request->id);
@@ -174,12 +173,12 @@ class AdminEvenementenController extends Controller
             Session::flash('delete_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/evenementen/');
     }
 
     public function delete_activiteit_undo(Request $request)
     {
-        $restore = Activiteit::withTrashed()->find($request->id)->restore();
+        $restore = Evenement::withTrashed()->find($request->id)->restore();
 
         if ($restore) {
             Session::flash('restore_success', $request->id);
@@ -187,7 +186,6 @@ class AdminEvenementenController extends Controller
             Session::flash('restore_error');
         }
 
-        return redirect('/admin/activiteiten/' . $request->tak);
+        return redirect('/admin/evenementen/');
     }
-*/
 }
