@@ -21,6 +21,11 @@ class Evenement extends Model
         return $this->hasMany(EvenementTak::class);
     }
 
+    public function getEvenementTakIdsAttribute()
+    {
+        return $this->evenement_tak()->pluck('tak_id')->toArray();
+    }
+
     public function getStartUurFormattedAttribute()
     {
     	return Carbon::parse($this->start_uur)->format('H') . 'u' . Carbon::parse($this->start_uur)->format('i');

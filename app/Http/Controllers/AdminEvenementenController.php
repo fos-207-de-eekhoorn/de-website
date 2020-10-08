@@ -107,6 +107,7 @@ class AdminEvenementenController extends Controller
     public function get_edit_evenementen($id_encrypted)
     {
         $id = Crypt::decrypt($id_encrypted);
+        $takken = Tak::get();
         $evenement = Evenement::where('id', $id)
             ->first();
         $urls = Evenement::pluck('url')->toArray();
@@ -114,6 +115,7 @@ class AdminEvenementenController extends Controller
         if (is_object($evenement)) {
             return view('admin.evenementen.edit_evenement', [
                 'evenement' => $evenement,
+                'takken' => $takken,
                 'urls' => $urls,
             ]);
         } else {
@@ -163,6 +165,24 @@ class AdminEvenementenController extends Controller
         }
 
         $edit = $evenement->save();
+
+        $evenement_takken = EvenementTak::where('evenement_id', $request->id)
+            ->get();
+
+        foreach($evenement_takken as $tak) {
+            if (!in_array($tak->tak_id, $request->tak)) {
+                $evenement_tak = EvenementTak::destroy($tak->id);
+            }
+        }
+
+        foreach($request->tak as $tak_id) {
+            if (!in_array($tak_id, $evenement->evenement_tak_ids)) {
+                $new_evenement_tak = new EvenementTak;
+                $new_evenement_tak->evenement_id = $request->id;
+                $new_evenement_tak->tak_id = $tak_id;
+                $new_evenement_tak->save();
+            }
+        }
 
         if ($edit) {
             Session::flash('edit_success');
