@@ -163,16 +163,25 @@
 	            border-color: $color-grey-extra-light;
 	            
 	            &:hover {
-	            	border-color: $color-green;
+	            	border-color: $color-blue;
+	            	color: $color-blue;
 	            }
     		} 
     	}
     }
 
     .form__checkbox:checked ~ .form__label--tag {
-    	border-color: $color-blue;
-        background-color: $color-green;
+    	border-color: $color-yellow;
+        background-color: $color-yellow-light;
         color: $color-blue;
+        
+        &:hover {
+        	border-color: $color-blue;
+        }
+
+        &:active {
+        	background-color: $color-yellow;
+        }
     }
 
 	.social {
