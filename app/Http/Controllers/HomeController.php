@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Content;
+use App\Evenement;
 use App\Inschrijving;
 use App\Tak;
 use App\Http\Shared\CommonHelpers;
 use App\Mail\ContactForm;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -25,6 +27,12 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
+        $evenementen = Evenement::where('active', '1')
+            ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+            ->orderBy('start_datum','ASC')
+            ->limit(3)
+            ->get();
+
         $voorwoord = Content::where('key', 'voorwoord')
             ->with([
                 'content_text' => function ($query) {
@@ -41,8 +49,9 @@ class HomeController extends Controller
         ];
 
         return view('home', [
-            'tak_activiteiten' => $tak_activiteiten,
             'carousels' => $carousels,
+            'tak_activiteiten' => $tak_activiteiten,
+            'evenementen' => $evenementen,
             'voorwoord' => $voorwoord->content_text[0],
         ]);
     }

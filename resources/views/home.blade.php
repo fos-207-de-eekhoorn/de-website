@@ -75,8 +75,8 @@
     </div>
 
     <div class="row section">
-        <div class="col-12 col-md-8">
-            <div class="algemene-info section">
+        <div class="col-12 col-md-8 section">
+            <div class="algemene-info">
                 <h2>Welkom!</h2>
                 <p>
                     Welkom op de website van FOS 207 de eekhoorn. Wij zijn een scouts die zich al bijna 55 jaar inzet om de Oostkampse jeugd een toptijd te bezorgen.
@@ -96,15 +96,42 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 section">
+            <h4>Evenementen kalender</h4>
+
+            <div class="calendar">
+                <div class="calendar__divider"></div>
+
+                @forelse($evenementen as $evenement)
+                    <p class="calendar__date calendar__date--{{ $evenement->kleur }}">
+                        <span class="calendar__day">{{ Carbon\Carbon::parse($evenement->start_datum)->format('j') }}</span>
+                        <span class="calendar__month">{{ Carbon\Carbon::parse($evenement->start_datum)->format('M') }}</span>
+                    </p>
+
+                    <div class="calendar__info">
+                        <h5 class="calendar__name">{{ $evenement->naam }}</h5>
+                        <div class="calendar__details">
+                            <span class="calendar__icon icon fa--before"><i class="fas fa-clock"></i></span>
+                            <span class="calendar__time">{{ $evenement->start_uur }}</span>
+                            <span class="calendar__icon icon fa--before"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="calendar__location">{{ $evenement->locatie }}</span>
+                        </div>
+                    </div>
+
+                    <div class="calendar__divider"></div>
+                @empty
+                    <div class="calendar__no-event">Geen geplande evenementen</div>
+                @endforelse
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 section">
             @component('components.current_fase', [
                 'with_link' => 1,
             ])@endcomponent
         </div>
-    </div>
 
-    <div class="row section">
-        <div class="col-12">
+        <div class="col-12 col-md-8 section">
             <h2>Woordje van de eenheidsleiding</h2>
 
             <h5>Beste leden, ouders en vrienden van de Eekhoorn.</h5>
