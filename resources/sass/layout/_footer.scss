@@ -36,6 +36,11 @@
         margin-top: 0;
 
         font-size: $font-size-h4;
+        text-align: center;
+        
+        @include mq(md) {
+            text-align: left;
+        }
     }
 
     &__section {

@@ -385,6 +385,7 @@
                             <h3 class="footer__title">Contacteer ons</h3>
 
                             @component('components.leiding_card', [
+                                'center_on_mobile' => 1,
                                 'leider' => $el,
                                 'email_overwrite' => 'fos207ste@gmail.com',
                             ])

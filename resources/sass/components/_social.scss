@@ -4,12 +4,21 @@
 
 .social {
 	display: flex;
+	justify-content: center;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	
+	@include mq(md) {
+		justify-content: flex-start;
+	}
 
 	&__item {
 		margin-right: $gutter;
+		
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 
 	&__link {

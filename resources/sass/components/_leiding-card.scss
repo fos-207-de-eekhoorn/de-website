@@ -3,10 +3,25 @@
 //  ------------------------------------------------------------------------------------
 
 .leiding-card {
+    display: flex;
+    
+    &--center-on-mobile {
+        justify-content: center;
+
+        @include mq(md) {
+            justify-content: flex-start;
+        }
+    }
+
     &__col {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        
+        &--image {
+            min-width: 33%;
+            margin-right: spacing(md);
+        }
     }
 
     &__img-wrapper {
