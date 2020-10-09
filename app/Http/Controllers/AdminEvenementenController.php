@@ -169,18 +169,24 @@ class AdminEvenementenController extends Controller
         $evenement_takken = EvenementTak::where('evenement_id', $request->id)
             ->get();
 
-        foreach($evenement_takken as $tak) {
-            if (!in_array($tak->tak_id, $request->tak)) {
-                $evenement_tak = EvenementTak::destroy($tak->id);
+        if ($request->tak) {
+            foreach($evenement_takken as $tak) {
+                if (!in_array($tak->tak_id, $request->tak)) {
+                    EvenementTak::destroy($tak->id);
+                }
             }
-        }
 
-        foreach($request->tak as $tak_id) {
-            if (!in_array($tak_id, $evenement->evenement_tak_ids)) {
-                $new_evenement_tak = new EvenementTak;
-                $new_evenement_tak->evenement_id = $request->id;
-                $new_evenement_tak->tak_id = $tak_id;
-                $new_evenement_tak->save();
+            foreach($request->tak as $tak_id) {
+                if (!in_array($tak_id, $evenement->evenement_tak_ids)) {
+                    $new_evenement_tak = new EvenementTak;
+                    $new_evenement_tak->evenement_id = $request->id;
+                    $new_evenement_tak->tak_id = $tak_id;
+                    $new_evenement_tak->save();
+                }
+            }
+        } else {
+            foreach($evenement_takken as $tak) {
+                EvenementTak::destroy($tak->id);
             }
         }
 
