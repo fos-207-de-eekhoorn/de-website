@@ -368,7 +368,7 @@
                                 </li>
                             
                                 <li class="social__item">
-                                    <a href="https://www.youtube.com/channel/UCBlpI0aSxfmHVkrPLv6rNww" class="social__link social__link--youtube" target="_blank">
+                                    <a href="https://www.youtube.com/user/ScoutsOostkamp" class="social__link social__link--youtube" target="_blank">
                                         <span class="fa--lg"><i class="fab fa-youtube"></i></span>
                                     </a>
                                 </li>
