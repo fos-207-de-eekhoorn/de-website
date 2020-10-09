@@ -78,7 +78,7 @@ class AdminEvenementenController extends Controller
             $new_evenement->has_static_page = '0';
             $new_evenement->kleur = $request->banner_color;
             $new_evenement->banner_patroon = $request->banner_pattern;
-            $new_evenement->banner_sterkte = $request->banner_pattern;
+            $new_evenement->banner_sterkte = $request->banner_strenght;
             $new_evenement->omschrijving = $request->page_content;
         } else {
             $new_evenement->has_static_page = '1';
@@ -158,7 +158,7 @@ class AdminEvenementenController extends Controller
         if ($request->has_static_page !== 'on') {
             $evenement->has_static_page = '0';
             $evenement->banner_patroon = $request->banner_pattern;
-            $evenement->banner_sterkte = $request->banner_pattern;
+            $evenement->banner_sterkte = $request->banner_strenght;
             $evenement->omschrijving = $request->page_content;
         } else {
             $evenement->has_static_page = '1';
