@@ -33,7 +33,7 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <!-- Styles -->
-        <link href="/css/style.css?v=0.5.4" rel="stylesheet">
+        <link href="/css/style.css?v=0.6.4" rel="stylesheet">
 
         <!-- TinyMCE -->
         <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -368,7 +368,7 @@
                                 </li>
                             
                                 <li class="social__item">
-                                    <a href="https://www.youtube.com/channel/UCBlpI0aSxfmHVkrPLv6rNww" class="social__link social__link--youtube" target="_blank">
+                                    <a href="https://www.youtube.com/user/ScoutsOostkamp" class="social__link social__link--youtube" target="_blank">
                                         <span class="fa--lg"><i class="fab fa-youtube"></i></span>
                                     </a>
                                 </li>
