@@ -368,6 +368,12 @@
                                 </li>
                             
                                 <li class="social__item">
+                                    <a href="https://www.youtube.com/channel/UCBlpI0aSxfmHVkrPLv6rNww" class="social__link social__link--youtube" target="_blank">
+                                        <span class="fa--lg"><i class="fab fa-youtube"></i></span>
+                                    </a>
+                                </li>
+                            
+                                <li class="social__item">
                                     <a href="https://www.google.be/maps/place/51%C2%B009'26.2%22N+3%C2%B014'36.3%22E/@51.1572892,3.2426402,18z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d51.1572881!4d3.243414" class="social__link social__link--google" target="_blank">
                                         <span class="fa--lg"><i class="fas fa-map-marked-alt"></i></span>
                                     </a>
