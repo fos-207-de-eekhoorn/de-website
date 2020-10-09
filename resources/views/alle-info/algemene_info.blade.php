@@ -21,7 +21,7 @@
                             Wil je lid worden van onze scouts? Goed idee! Hier vindt je alle nodige info.
                         </p>
 
-                        <a href="/alle-info/lid-worden">Meer info></a>
+                        <a href="/alle-info/lid-worden">Meer info ></a>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                             Uniform in orde brengen? hier vindt je alles die je moet weten!
                         </p>
 
-                        <a href="/alle-info/uniform-shop">Meer info></a>
+                        <a href="/alle-info/uniform-shop">Meer info ></a>
                         <img src="{{ asset('/img/uniform.jpg') }}" alt="Uniform">
                     </div>
                 </div>
@@ -124,6 +124,10 @@
                         <a href="{{ asset('/docs/FiscaalAttest-FOS207.pdf') }}" class="hierarchielijst__link"  target="_blank">Fiscaal attest</a>
                     </li>
                 </ul>
+
+                <p class="large-margin-top no-margin-bottom text--align-right">
+                    <a href="{{ url('/alle-info/documenten') }}">meer info ></a>
+                </p>
             </div>
         </div>
     </div>

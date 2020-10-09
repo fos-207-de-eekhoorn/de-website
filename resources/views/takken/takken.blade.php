@@ -35,7 +35,7 @@
                 <div class="col-12 col-md-9">
                     <div class="tak__info cs-{{ $tak->kleur }}">
                         <header class="tak__header">
-                            <h3 class="tak__titel">{{ $tak->naam }}</h3>
+                            <h3 class="tak__titel"><a href="{{ url('/takken/' . $tak->link) }}" class="link--no-style">{{ $tak->naam }}</a></h3>
                             <p><b>Vanaf {{ $tak->vanaf }} jaar</b></p>
                         </header>
 

@@ -162,18 +162,19 @@
 	.social {
 		&__link {
 			color: $color-blue;
-			
+		
 			&--facebook {
 				color: $color-facebook;
 			}
 			&--instagram {
 				color: $color-instagram;
 			}
-
+			&--youtube {
+				color: $color-youtube;
+			}
 			&--google {
 				 color: $color-google;
 			}
-
 			&--mail {
 				color: $color-grey-dark;
 			}

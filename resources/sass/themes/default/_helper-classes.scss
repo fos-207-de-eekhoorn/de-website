@@ -151,6 +151,12 @@
 }
 
 .link {
+	&--no-style {
+		&:hover {
+			text-decoration: none !important;
+		}
+	}
+
 	&--error {
         color: $color-alert-error-dark !important;
         

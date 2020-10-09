@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Leider;
+use App\Http\Shared\CommonHelpers;
 
 class InfoController extends Controller
 {
+    use CommonHelpers;
+
     public function get_alle_info()
     {
         return view('alle-info.algemene_info');
@@ -36,7 +39,15 @@ class InfoController extends Controller
 
     public function get_docs()
     {
-        return view('alle-info.docs');
+        $el = $this->get_el();
+        $ael_leden = $this->get_ael_leden();
+
+        // return $ael_leden;
+
+        return view('alle-info.docs', [
+            'el' => $el,
+            'ael_leden' => $ael_leden,
+        ]);
     }
 
     public function get_kost_scouts()
