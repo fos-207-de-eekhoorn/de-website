@@ -8,11 +8,6 @@
             'strength' => $evenement->banner_sterkte,
         ],
         'page_title' => $evenement->naam,
-        'page_sub_title' => ($evenement->start_datum === $evenement->eind_datum)
-            ? Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName
-            : ((Carbon\Carbon::parse($evenement->start_datum)->monthName === Carbon\Carbon::parse($evenement->eind_datum)->monthName)
-                ? Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName
-                : Carbon\Carbon::parse($evenement->start_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->start_datum)->monthName . ' - ' . Carbon\Carbon::parse($evenement->eind_datum)->format('j') . ' ' . Carbon\Carbon::parse($evenement->eind_datum)->monthName)
     ])
     @endcomponent
 
@@ -23,7 +18,9 @@
 
         <div class="col-12 col-md-4 order-1 order-md-2">
             @component('components.evenement_bar', [
+                'start_datum' => $evenement->start_datum,
                 'start_uur' => $evenement->start_uur_formatted,
+                'eind_datum' => $evenement->eind_datum,
                 'eind_uur' => $evenement->eind_uur_formatted,
                 'locatie' => $evenement->locatie,
                 'prijs' => $evenement->prijs,
