@@ -121,6 +121,7 @@
                     <div class="calendar__divider"></div>
                 @empty
                     <div class="calendar__no-event">Geen geplande evenementen</div>
+                    <div class="calendar__divider"></div>
                 @endforelse
             </div>
         </div>
