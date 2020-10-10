@@ -121,7 +121,7 @@
                         @if (sizeof($evenement->evenement_tak) > 0)
                             <div class="calendar__takken tags">
                                 @foreach($evenement->evenement_tak as $evenement_tak)
-                                    <span class="tags__tag">{{ $evenement_tak->tak->naam }}</span>
+                                    <a href="{{ url('/takken/'.$evenement_tak->tak->link) }}" class="tags__tag tags__tag--is-link">{{ $evenement_tak->tak->naam }}</a>
                                 @endforeach
                             </div>
                         @endif

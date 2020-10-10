@@ -204,6 +204,18 @@
 			}
 		}
 	}
+
+	.tags {
+		&__tag {
+			&--is-link {
+				color: $color-grey-medium;
+				
+				&:hover {
+					color: $color-blue;
+				}
+			}
+		}
+	}
 }
 
 //  Dark color schemes
