@@ -63,6 +63,10 @@
     	&--yellow-light { border-color: $color-yellow-light }
     }
 
+    &__takken {
+    	margin-top: spacing(sm);
+    }
+
     &__day {
     	font-size: $font-size-text-3xl;
     	line-height: 1;

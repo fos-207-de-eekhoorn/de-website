@@ -29,6 +29,7 @@ class HomeController extends Controller
 
         $evenementen = Evenement::where('active', '1')
             ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+            ->with('evenement_tak')
             ->orderBy('start_datum','ASC')
             ->limit(3)
             ->get();

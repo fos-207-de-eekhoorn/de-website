@@ -110,12 +110,21 @@
 
                     <div class="calendar__info">
                         <h5 class="calendar__name">{{ $evenement->naam }}</h5>
+
                         <div class="calendar__details">
                             <span class="calendar__icon icon fa--before"><i class="fas fa-clock"></i></span>
                             <span class="calendar__time">{{ $evenement->start_uur }}</span>
                             <span class="calendar__icon icon fa--before"><i class="fas fa-map-marker-alt"></i></span>
                             <span class="calendar__location">{{ $evenement->locatie }}</span>
                         </div>
+
+                        @if (sizeof($evenement->evenement_tak) > 0)
+                            <div class="calendar__takken tags">
+                                @foreach($evenement->evenement_tak as $evenement_tak)
+                                    <span class="tags__tag">{{ $evenement_tak->tak->naam }}</span>
+                                @endforeach
+                            </div>
+                        @endif
                     </div>
 
                     <div class="calendar__divider"></div>
