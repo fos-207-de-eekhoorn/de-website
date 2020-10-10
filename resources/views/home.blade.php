@@ -124,6 +124,12 @@
                     <div class="calendar__divider"></div>
                 @endforelse
             </div>
+
+            <p class="text--align-right small-margin-top no-margin-bottom">
+                <a href="{{ '/evenementen' }}" class="text--align-right">
+                    Alle activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
+                </a>
+            </p>
         </div>
 
         <div class="col-12 col-md-4 section">
