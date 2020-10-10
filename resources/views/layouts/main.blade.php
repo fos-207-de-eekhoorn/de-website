@@ -33,7 +33,7 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <!-- Styles -->
-        <link href="/css/style.css?v=0.5.4" rel="stylesheet">
+        <link href="/css/style.css?v=0.6.4" rel="stylesheet">
 
         <!-- TinyMCE -->
         <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -140,6 +140,12 @@
                                 </li>
 
                                 <li class="nav__sublist-item">
+                                    <a href="/alle-info/documenten" class="nav__link nav__link--sublist">
+                                        Attesten & documenten
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
                                     <a href="/alle-info/trooper" class="nav__link nav__link--sublist">
                                         Trooper
                                     </a>
@@ -150,13 +156,6 @@
                                         Jeugdwerkregels
                                     </a>
                                 </li>
-                                {{--
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/docs" class="nav__link nav__link--sublist">
-                                        Attesten & documenten
-                                    </a>
-                                </li>
-                                --}}
                             </ul>
                         </li>
 
@@ -320,14 +319,12 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
+                                        <a href="/alle-info/kost-scouts" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
                                     </li>
 
-                                    {{--
                                     <li class="footer-nav__item">
-                                        <a href="/alle-info/docs" class="footer-nav__link footer-nav__link--sublink">Attesten & documenten</a>
+                                        <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
                                     </li>
-                                    --}}
                                 </ul>
                             </li>
 
@@ -375,6 +372,12 @@
                                 </li>
                             
                                 <li class="social__item">
+                                    <a href="https://www.youtube.com/user/ScoutsOostkamp" class="social__link social__link--youtube" target="_blank">
+                                        <span class="fa--lg"><i class="fab fa-youtube"></i></span>
+                                    </a>
+                                </li>
+                            
+                                <li class="social__item">
                                     <a href="https://www.google.be/maps/place/51%C2%B009'26.2%22N+3%C2%B014'36.3%22E/@51.1572892,3.2426402,18z/data=!3m1!4b1!4m6!3m5!1s0x0:0x0!7e2!8m2!3d51.1572881!4d3.243414" class="social__link social__link--google" target="_blank">
                                         <span class="fa--lg"><i class="fas fa-map-marked-alt"></i></span>
                                     </a>
@@ -392,6 +395,7 @@
                             <h3 class="footer__title">Contacteer ons</h3>
 
                             @component('components.leiding_card', [
+                                'center_on_mobile' => 1,
                                 'leider' => $el,
                                 'email_overwrite' => 'fos207ste@gmail.com',
                             ])

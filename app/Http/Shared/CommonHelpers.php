@@ -24,9 +24,11 @@ trait CommonHelpers
 
     public function get_leider($leider_id = null)
     {
-        return $this->get_user_query($leider_id)->with(
-            'takleiding'
-        )->first();
+        return $this->get_user_query($leider_id)
+            ->with(
+                'takleiding'
+            )
+            ->first();
     }
 
     public function get_leider_query($leider_id = null)
@@ -43,10 +45,21 @@ trait CommonHelpers
 
     public function get_ael()
     {
-        return Leider::
-            where('is_ael_financien', 1)
+        return Leider::where('is_ael_financien', 1)
             ->orWhere('is_ael_leden', 1)
             ->get();
+    }
+
+    public function get_ael_financien()
+    {
+        return Leider::where('is_ael_financien', 1)
+            ->first();
+    }
+
+    public function get_ael_leden()
+    {
+        return Leider::where('is_ael_leden', 1)
+            ->first();
     }
 
     public function parse_odd_str_date($month) {

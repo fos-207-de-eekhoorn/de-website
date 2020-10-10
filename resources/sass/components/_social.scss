@@ -4,30 +4,20 @@
 
 .social {
 	display: flex;
+	justify-content: center;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	
+	@include mq(md) {
+		justify-content: flex-start;
+	}
 
 	&__item {
 		margin-right: $gutter;
-	}
-
-	&__link {
-		color: $color-blue;
 		
-		&--facebook {
-			color: $color-facebook;
-		}
-		&--instagram {
-			color: $color-instagram;
-		}
-
-		&--google {
-			 color: $color-google;
-		}
-
-		&--mail {
-			color: $color-grey-dark;
+		&:last-child {
+			margin-right: 0;
 		}
 	}
 }

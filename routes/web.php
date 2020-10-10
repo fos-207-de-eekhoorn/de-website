@@ -40,7 +40,7 @@ Route::prefix('alle-info')->group(function () {
 	Route::get('/lid-worden', 'InfoController@get_lid_worden');
 	Route::get('/uniform-shop', 'InfoController@get_uniform_shop');
 	Route::get('/verhuurlijst', 'InfoController@get_verhuurlijst');
-	Route::get('/docs', 'InfoController@get_docs');
+	Route::get('/documenten', 'InfoController@get_docs');
 	Route::get('/kost-scouts', 'InfoController@get_kost_scouts');
 	Route::get('/trooper', 'InfoController@get_trooper');
 	Route::get('/jeugdwerkregels', 'InfoController@get_jeugdwerkregels');
