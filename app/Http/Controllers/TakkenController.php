@@ -6,6 +6,7 @@ use Crypt;
 use App\Tak;
 use App\Activiteit;
 use App\ActiviteitInschrijving;
+use App\Evenement;
 use App\Http\Shared\CommonHelpers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -36,9 +37,20 @@ class TakkenController extends Controller
             ])
             ->first();
 
+        $evenementen = Evenement::whereHas('evenement_tak', function ($query) use($tak) {
+                return $query->where('tak_id', $tak->id);
+            })
+            ->where('active', '1')
+            ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+            ->with('evenement_tak')
+            ->orderBy('start_datum','ASC')
+            ->limit(3)
+            ->get();
+
         if (is_object($tak)) {
             return view('takken.tak_details', [
                 'tak' => $tak,
+                'evenementen' => $evenementen,
             ]);
         } else { // todo
             Session::flash('error_not_found');
