@@ -153,6 +153,12 @@
         }
     }
 
+    .calendar {
+		&__link {
+			color: $color-grey-dark;
+		}
+    }
+
     .form {
     	&__section-feedback {
     		color: $color-alert-error-dark;

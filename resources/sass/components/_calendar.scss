@@ -51,16 +51,16 @@
     		border-bottom-left-radius: spacing(xs);
     	}
 
-    	&--green { border-color: $color-green }
-    	&--blue { border-color: $color-blue }
-    	&--mint { border-color: $color-mint }
-    	&--red { border-color: $color-red }
-    	&--salmon { border-color: $color-salmon }
-    	&--yellow { border-color: $color-yellow }
-    	&--green-dark { border-color: $color-green-dark }
-    	&--blue-light { border-color: $color-blue-light }
-    	&--brown { border-color: $color-brown }
-    	&--yellow-light { border-color: $color-yellow-light }
+    	&--green { border-color: $color-green; }
+    	&--blue { border-color: $color-blue; }
+    	&--mint { border-color: $color-mint; }
+    	&--red { border-color: $color-red; }
+    	&--salmon { border-color: $color-salmon; }
+    	&--yellow { border-color: $color-yellow; }
+    	&--green-dark { border-color: $color-green-dark; }
+    	&--blue-light { border-color: $color-blue-light; }
+    	&--brown { border-color: $color-brown; }
+    	&--yellow-light { border-color: $color-yellow-light; }
     }
 
     &__takken {
@@ -80,8 +80,19 @@
 
     &__name {
     	margin-bottom: spacing(sm);
+    }
 
-    	color: $color-grey-dark;
+    &__link {
+    	&--green:hover { color: $color-green !important; }
+    	&--blue:hover { color: $color-blue !important; }
+    	&--mint:hover { color: $color-mint !important; }
+    	&--red:hover { color: $color-red !important; }
+    	&--salmon:hover { color: $color-salmon !important; }
+    	&--yellow:hover { color: $color-yellow !important; }
+    	&--green-dark:hover { color: $color-green-dark !important; }
+    	&--blue-light:hover { color: $color-blue-light !important; }
+    	&--brown:hover { color: $color-brown !important; }
+    	&--yellow-light:hover { color: $color-yellow-light !important; }
     }
 
     &__details {
