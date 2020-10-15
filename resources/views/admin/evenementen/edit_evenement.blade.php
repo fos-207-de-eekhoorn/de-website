@@ -40,7 +40,7 @@
                 @endcomponent
             @endif
 
-            <form class="form" action="/admin/evenementen/edit" method="POST">
+            <form class="form checkIfChanged" action="/admin/evenementen/edit" method="POST">
                 @csrf
 
                 {{-- ID --}}
@@ -459,5 +459,22 @@
                 toolbar: 'undo redo | removeformat | formatselect | bold italic underline link | forecolor backcolor | alignleft aligncenter alignright |'
             });
         }
+
+        // Block going away from page if something is changed
+        var inputIsChanged = false;
+
+        (function($){
+            $('.checkIfChanged').on('input', 'input', changedInput);
+            $('.checkIfChanged').on('input', 'select', changedInput);
+            $('.checkIfChanged').on('input', 'textarea', changedInput);
+        })(jQuery);
+
+        function changedInput() {
+            inputIsChanged = true;
+        }
+
+        window.onbeforeunload = function() {
+            if (inputIsChanged) return "Je aanpassingen zijn niet opgeslagen. Zeker dat je de pagina wilt verlaten?";
+        };
     </script>
 @endsection
