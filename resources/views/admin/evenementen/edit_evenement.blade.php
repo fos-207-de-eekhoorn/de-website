@@ -475,12 +475,16 @@
         }
 
         // Block going away from page if something is changed
-        var inputIsChanged = false;
+        var inputIsChanged = false,
+            formSubmitted = false;
 
         (function($){
             $('.checkIfChanged').on('input', 'input', changedInput);
             $('.checkIfChanged').on('input', 'select', changedInput);
             $('.checkIfChanged').on('input', 'textarea', changedInput);
+            $(".checkIfChanged").submit(function() {
+                formSubmitted = true;
+            });
         })(jQuery);
 
         function changedInput() {
@@ -488,7 +492,7 @@
         }
 
         window.onbeforeunload = function() {
-            if (inputIsChanged) return "Je aanpassingen zijn niet opgeslagen. Zeker dat je de pagina wilt verlaten?";
+            if (inputIsChanged && !formSubmitted) return "Je aanpassingen zijn niet opgeslagen. Zeker dat je de pagina wilt verlaten?";
         };
     </script>
 @endsection
