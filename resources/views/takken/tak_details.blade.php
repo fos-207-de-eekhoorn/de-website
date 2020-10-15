@@ -57,11 +57,9 @@
                     Heb je ingeschreven maar kan je toch niet meer komen? Stuur dan een berichtje naar de takleiding om de inschrijving te annuleren.
                 </p>
 
-                @if (strlen($tak->activiteiten_beschrijving) > 0)
-                    <p>
-                        In mei en juni draaien al onze activiteiten rond het thema 'beroepen'. Elke zaterdag maken de bevers kennis met een nieuw beroep. We proberen deze activiteiten zo leerzaam en leuk mogelijk te maken!
-                    </p>
-                @endif
+                <p>
+                    Activiteiten gaan altijd door op <strong>zaterdag van 14u tot 17u</strong>, tenzij anders vermeld.
+                </p>
             </div>
 
             <table class="table activities section">

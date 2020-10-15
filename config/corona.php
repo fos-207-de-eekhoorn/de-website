@@ -2,7 +2,7 @@
 
 return [
 
-	'active_fase' => 'yellow',
+	'active_fase' => 'orange',
 
     'fases' => [
         'green',
