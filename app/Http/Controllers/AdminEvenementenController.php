@@ -86,7 +86,7 @@ class AdminEvenementenController extends Controller
 
         $add = $new_evenement->save();
 
-        foreach($request->tak as $tak_id) {
+        if (isset($request->tak)) foreach($request->tak as $tak_id) {
             $new_evenement_tak = new EvenementTak;
 
             $new_evenement_tak->evenement_id = $new_evenement->id;
