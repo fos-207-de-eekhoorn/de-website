@@ -442,6 +442,20 @@
             return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
         }
 
+        // Start and end date enhancement
+        var $inputDateTimeStart = $('.inputDateTimeStart'),
+            $inputDateTimeEnd = $('.inputDateTimeEnd');
+
+        (function($){
+            $inputDateTimeStart.on('change', function() {
+                if ($inputDateTimeStart.val() > $inputDateTimeEnd.val()) $inputDateTimeEnd.val($inputDateTimeStart.val());
+            });
+
+            $inputDateTimeEnd.on('change', function() {
+                if ($inputDateTimeStart.val() > $inputDateTimeEnd.val()) $inputDateTimeStart.val($inputDateTimeEnd.val());
+            });
+        })(jQuery);
+
         // TinyMCE
         initTinymce();
         function initTinymce() {

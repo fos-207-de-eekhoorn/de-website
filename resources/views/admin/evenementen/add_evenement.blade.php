@@ -194,7 +194,7 @@
                                 type="datetime-local"
                                 id="start"
                                 name="start"
-                                class="form__input form__input--full-width"
+                                class="form__input form__input--full-width inputDateTimeStart"
                                 value="{{ old('start') }}"
                                 required>
 
@@ -215,7 +215,7 @@
                                 type="datetime-local"
                                 id="eind"
                                 name="eind"
-                                class="form__input form__input--full-width"
+                                class="form__input form__input--full-width inputDateTimeEnd"
                                 value="{{ old('eind') }}"
                                 required>
 
@@ -390,6 +390,29 @@
         function prepareUrl(url) {
             return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
         }
+
+        // Start and end date enhancement
+        var $inputDateTimeStart = $('.inputDateTimeStart'),
+            $inputDateTimeEnd = $('.inputDateTimeEnd');
+            isDateTimeStartInputChanged = false;
+            isDateTimeEndInputChanged = false;
+
+        (function($){
+            $inputDateTimeStart.on('change', function() {
+                isDateTimeStartInputChanged = true;
+                if (isDateTimeEndInputChanged) {
+                    if ($inputDateTimeStart.val() > $inputDateTimeEnd.val()) $inputDateTimeEnd.val($inputDateTimeStart.val());
+                } else {
+                    isDateTimeEndInputChanged = true;
+                    $inputDateTimeEnd.val($inputDateTimeStart.val());
+                }
+            });
+
+            $inputDateTimeEnd.on('change', function() {
+                isDateTimeEndInputChanged = true;
+                if (isDateTimeStartInputChanged) if ($inputDateTimeStart.val() > $inputDateTimeEnd.val()) $inputDateTimeStart.val($inputDateTimeEnd.val());
+            });
+        })(jQuery);
 
         // TinyMCE
         initTinymce();
