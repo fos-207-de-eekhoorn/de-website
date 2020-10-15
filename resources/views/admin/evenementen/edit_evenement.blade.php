@@ -111,7 +111,7 @@
                                     class="form__input"
                                     value="{{ old('prijs', $evenement->prijs) }}"
                                     min="0"
-                                    max="10000"
+                                    max="999"
                                     step="0.1"
                                     required>
                             </div>
