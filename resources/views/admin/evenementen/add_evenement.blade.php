@@ -104,6 +104,8 @@
                                     class="form__input"
                                     value="{{ old('prijs', '0') }}"
                                     min="0"
+                                    max="10000"
+                                    step="0.1"
                                     required>
                             </div>
 
