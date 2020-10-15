@@ -123,7 +123,13 @@
 
                     <tbody class="table__body">
                         @foreach($evenementen as $evenement)
-                            <tr class="table__row">
+                            <tr class="table__row
+                                @if ( Carbon\Carbon::parse($evenement->eind_datum) < Carbon\Carbon::now('Europe/Berlin') )
+                                    table__row--non-active
+                                @elseif ( Carbon\Carbon::parse($evenement->start_datum) < Carbon\Carbon::now('Europe/Berlin') )
+                                    table__row--active
+                                @endif
+                            ">
                                 <td class="table__cell">
                                     {{ $evenement->naam }}
                                 </td>
@@ -140,48 +146,54 @@
                                 </td>
 
                                 <td class="table__cell">
-                                    <div class="toggle-switch">
-                                        <input
-                                            type="checkbox"
-                                            id="toggle-{{ $evenement->id }}"
-                                            class="toggle-switch__input"
-                                            value="{{ $evenement->id }}"
-                                            @if ($evenement->active) checked @endif
-                                            hidden>
-                                        <label class="toggle-switch__slider" for="toggle-{{ $evenement->id }}"></label>
-                                    </div>
+                                    @if ( Carbon\Carbon::parse($evenement->eind_datum) >= Carbon\Carbon::now('Europe/Berlin') )
+                                        <div class="toggle-switch">
+                                            <input
+                                                type="checkbox"
+                                                id="toggle-{{ $evenement->id }}"
+                                                class="toggle-switch__input"
+                                                value="{{ $evenement->id }}"
+                                                @if ($evenement->active) checked @endif
+                                                hidden>
+                                            <label class="toggle-switch__slider" for="toggle-{{ $evenement->id }}"></label>
+                                        </div>
+                                    @else
+                                        Gepasseerd
+                                    @endif
                                 </td>
 
                                 <td class="table__cell no-wrap">
-                                    <p>
+                                    <p @if ( Carbon\Carbon::parse($evenement->eind_datum) < Carbon\Carbon::now('Europe/Berlin') ) class="no-margin-bottom" @endif>
                                         <a href="{{ url('/evenementen/' . $evenement->url) }}">
                                             <span class="fa--before"><i class="fas fa-eye"></i></span>Bekijk evenement
                                         </a>
                                     </p>
 
-                                    <p>
-                                        <a href="{{ url('/admin/evenementen/edit/' . Crypt::encrypt($evenement->id)) }}">
-                                            <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
-                                        </a>
-                                    </p>
+                                    @if ( Carbon\Carbon::parse($evenement->eind_datum) >= Carbon\Carbon::now('Europe/Berlin') )
+                                        <p>
+                                            <a href="{{ url('/admin/evenementen/edit/' . Crypt::encrypt($evenement->id)) }}">
+                                                <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
+                                            </a>
+                                        </p>
 
-                                    <form action="{{ url('/admin/evenementen/remove') }}" method="POST" class="no-margin-bottom">
-                                        @csrf
+                                        <form action="{{ url('/admin/evenementen/remove') }}" method="POST" class="no-margin-bottom">
+                                            @csrf
 
-                                        <input
-                                            type="text"
-                                            name="id"
-                                            value="{{ Crypt::encrypt($evenement->id) }}"
-                                            hidden>
+                                            <input
+                                                type="text"
+                                                name="id"
+                                                value="{{ Crypt::encrypt($evenement->id) }}"
+                                                hidden>
 
-                                        <button class="btn btn--without-style link--error" onclick="
-                                            confirm('Ben je zeker dat je dit evenement wilt verwijderen?')
-                                                ? NULL
-                                                : event.preventDefault();
-                                        ">
-                                            <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
-                                        </button>
-                                    </form>
+                                            <button class="btn btn--without-style link--error" onclick="
+                                                confirm('Ben je zeker dat je dit evenement wilt verwijderen?')
+                                                    ? NULL
+                                                    : event.preventDefault();
+                                            ">
+                                                <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
+                                            </button>
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

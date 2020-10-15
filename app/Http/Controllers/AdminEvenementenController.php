@@ -24,7 +24,9 @@ class AdminEvenementenController extends Controller
 
     public function get_evenementen()
     {
-        $evenementen = Evenement::orderBy('start_datum','ASC')
+        $evenementen = Evenement::whereDate('eind_datum', '>=', Carbon::now('Europe/Berlin')->subDays(6)->format('Y-m-d'))
+            ->orderBy('start_datum','ASC')
+            ->orderBy('eind_datum','ASC')
             ->get();
 
         return view('admin.evenementen.evenementen', [

@@ -19,6 +19,16 @@
             background-color: $color-grey-background;
         }
 
+        &--active {
+            border-left: spacing(xs) solid $color-green;
+            background-color: $color-green-background !important;
+            
+            color: $color-green-text !important;
+        }
+        &--non-active {
+            opacity: .6;
+        }
+
         thead & {
             border-bottom: 2px solid $color-grey-light;
             background-color: $color-white !important;
