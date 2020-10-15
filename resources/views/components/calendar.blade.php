@@ -16,7 +16,7 @@
 
             <div class="calendar__details">
                 <span class="calendar__icon icon fa--before"><i class="fas fa-clock"></i></span>
-                <span class="calendar__time">{{ $evenement->start_uur }}</span>
+                <span class="calendar__time">{{ substr($evenement->start_uur, 0, 5) }}</span>
                 <span class="calendar__icon icon fa--before"><i class="fas fa-map-marker-alt"></i></span>
                 <span class="calendar__location">{{ $evenement->locatie }}</span>
             </div>
