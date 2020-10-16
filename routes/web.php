@@ -84,3 +84,33 @@ Route::get('/admin/contents', 'AdminContentController@get_contents');
 Route::get('/admin/contents/{key}', 'AdminContentController@get_content_key');
 
 Route::post('/admin/contents/add', 'AdminContentController@post_add_content_text')->middleware(['decrypt:value,id', 'decrypt:value,leider_id']);
+
+# Admin Routes
+Route::prefix('admin')->group(function () {
+	# Blog Routes
+	Route::prefix('blog')->group(function () {
+		# Post
+		Route::get('/posts', 'AdminBlogController@get_posts');
+		Route::get('/posts/add', 'AdminBlogController@get_add_post');
+		Route::get('/posts/edit/{id}', 'AdminBlogController@get_edit_post')->middleware('decrypt:value,id');
+		Route::post('/posts/add', 'AdminBlogController@add_post');
+		Route::post('/posts/edit', 'AdminBlogController@edit_post')->middleware('decrypt:value,id');
+		Route::post('/posts/delete', 'AdminBlogController@delete_post')->middleware('decrypt:value,id');
+		# Categories
+		Route::get('/categories', 'AdminBlogController@get_categories');
+		Route::get('/categories/add', function() {
+			return view('admin.blog.add_category');
+		});
+		Route::post('/categories/add', 'AdminBlogController@add_category');
+		Route::post('/categories/delete', 'AdminBlogController@delete_category')->middleware('decrypt:value,id');
+		# Tags
+		Route::get('/tags', 'AdminBlogController@get_tags');
+		Route::get('/tags/add', function() {
+			return view('admin.blog.add_tag');
+		});
+		Route::post('/tags/add', 'AdminBlogController@add_tag');
+		Route::post('/tags/delete', 'AdminBlogController@delete_tag')->middleware('decrypt:value,id');
+
+		Route::get('/test', 'AdminBlogController@test');
+	});
+});

@@ -1,0 +1,35 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Blog posts
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <div class="blog-post">
+//      <img src="#" class="blog-post__image">
+//
+//      <p class="blog-post__date">
+//         11th of August 1990
+//      </p>
+//
+//      <h2 class="blog-post__title">
+//          Blog post title
+//      </h2>
+//  </div>
+//
+//  Options
+//  -------
+//  NONE
+//
+//  ------------------------------------------------------------------------------------
+
+$blog-post-spacing: spacing(xl);
+
+.blog-posts {
+    margin-top: -1 * $blog-post-spacing;
+    margin-bottom: -1 * $blog-post-spacing;
+    
+    &__post {
+        margin-top: $blog-post-spacing;
+        margin-bottom: $blog-post-spacing;
+    }
+}

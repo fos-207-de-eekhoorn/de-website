@@ -41,6 +41,15 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
+            <a href="{{ url('/admin/blog/posts') }}" class="admin-module">
+                <h3>Blog</h3>
+                <div class="admin-module__icon">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-4 section section--small-spacing">
             <a href="{{ url('/admin/contents') }}" class="admin-module">
                 <h3>Content</h3>
                 <div class="admin-module__icon">
