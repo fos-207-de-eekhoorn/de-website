@@ -209,10 +209,11 @@
                     <ul>
                         <li>De activiteiten vinden zoveel mogelijk plaats in openlucht en op het eigen terrein.</li>
                         <li>Contact met anderen in de publieke ruimte wordt vermeden.</li>
-                        <li>In de gele fase geldt de bubbelwerking en kan fysiek contact dus, maar wordt intens fysiek contact nog steeds vermeden, in het bijzonder bij +12-jarige takken (JVG's, VG's, Stam).</li>
-                        <li>In de gele fase kunnen contacten met externen, mits de social distancing-maatregelen gerespecteerd kunnen worden en de afstand bewaard kan blijven.</li>
-                        <li>Overnachtingen kunnen plaatsvinden, mits maatregelen (goed verluchten, voldoende rust, extra handen wassen voor/na maaltijden/spelen, ...).</li>
-                        <li>Uitstappen zijn mogelijk, maar dan zijn we onderhevig aan de samenlevingsmaatregelen.</li>
+                        <li>In de oranje fase geldt de bubbelwerking en kan fysiek contact dus, maar wordt intens fysiek contact nog steeds vermeden, in het bijzonder bij +12-jarige takken (JVG's, OVG's)</li>
+                        <li>Enkel met externen (tov. de bubbel) wordt social distancing toegepast.</li>
+                        <li>Overnachtingen kunnen plaatsvinden, mits maatregelen (goed verluchten, voldoende rust, extra handen wassen voor/na maaltijden/spelen, ...)</li>
+                        <li>We beperken onze externe contacten, deze kunnen alleen mits maatregelen.</li>
+                        <li>Uitstappen kunnen ook, hierbij worden de maatregelen van toepassing op de samenleving verder gevolgd.</li>
                     </ul>
                 </div>
             </div>
