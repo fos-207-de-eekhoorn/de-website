@@ -1,40 +1,69 @@
-@extends('layouts.admin_blog')
+@extends('layouts.main')
 
-@section('main')
+@section('content')
 
-    {{-- List --}}
-    {{-- ================================================================ --}}
-    <div class="col-12 col-md-8">
-        <h4>Add blog category</h4>
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'yellow',
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => 'Blog',
+        'page_sub_title' => 'Categorie toevoegen',
+    ])
+    @endcomponent
 
-        <form method="POST" action="{{ url('/admin/blog/categories/add') }}" class="form">
-            @csrf
+    @component('components.breadcrumbs', [
+        'childs' => [
+            (object)[
+                'link' => '/admin',
+                'name' => 'Admin',
+            ],
+            (object)[
+                'link' => '/admin/blog',
+                'name' => 'Blog',
+            ],
+            (object)[
+                'link' => '/admin/blog/categories',
+                'name' => 'Categorieën',
+            ],
+        ],
+        'current' => 'Categorie toevoegen',
+    ])@endcomponent
 
-            {{-- Name --}}
-            {{-- ============================================ --}}
-            <section class="form__section">
-                <label for="name" class="form__label form__label--required">Name</label>
+    <div class="row justify-content-center section">
+        <div class="col-12 col-md-8 col-lg-6">
+            <h4>Voeg categorie toe</h4>
 
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value="{{ old('name') }}"
-                    class="form__input form__input--full-width"
-                    required>
+            <form method="POST" action="{{ url('/admin/blog/categories/add') }}" class="form">
+                @csrf
 
-                @if ($errors->has('name'))
-                    <span class="form__section-feedback">
-                        {{ $errors->first('name') }}
-                    </span>
-                @endif
-            </section>
+                {{-- Name --}}
+                {{-- ============================================ --}}
+                <section class="form__section">
+                    <label for="name" class="form__label form__label--required">Naam</label>
 
-            <div class="wrapper__btn">
-                <button class="btn btn--primary">Add category</button>
-                <a href="{{ url('/admin/blog/categories') }}" class="btn btn--tertiary">Cancel</a>
-            </div>
-        </form>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        class="form__input form__input--full-width"
+                        required>
+
+                    @if ($errors->has('name'))
+                        <span class="form__section-feedback">
+                            {{ $errors->first('name') }}
+                        </span>
+                    @endif
+                </section>
+
+                <div class="wrapper__btn">
+                    <button class="btn btn--primary">Voeg toe</button>
+                    <a href="{{ url('/admin/blog/categories') }}" class="btn btn--tertiary">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 
 @endsection

@@ -1,255 +1,85 @@
-@extends('layouts.admin_blog')
+@extends('layouts.main')
 
-@section('main')
+@section('content')
 
-    {{-- Content block --}}
-    {{-- Main info --}}
-    {{-- ================================================================ --}}
-    <div class="col-12">
-        <form method="POST" action="{{ url('/admin/blog/posts/edit') }}" id="edit-form" class="form checkIfChanged" enctype="multipart/form-data">
-            @csrf
+    @component('components.banner', [
+        'banner' => (object)[
+            'color' => 'yellow',
+            'pattern' => '1',
+            'strength' => 'light',
+        ],
+        'page_title' => 'Blog',
+        'page_sub_title' => 'Post aanpassen',
+    ])
+    @endcomponent
 
-            @if($errors->any())
-                @foreach($errors->all() as $error)
+    @component('components.breadcrumbs', [
+        'childs' => [
+            (object)[
+                'link' => '/admin',
+                'name' => 'Admin',
+            ],
+            (object)[
+                'link' => '/admin/blog',
+                'name' => 'Blog',
+            ],
+            (object)[
+                'link' => '/admin/blog/posts',
+                'name' => 'Posts',
+            ],
+        ],
+        'current' => 'Post aanpassen',
+    ])@endcomponent
+
+    <div class="row justify-content-center section">
+        <div class="col-12">
+            <form method="POST" action="{{ url('/admin/blog/posts/edit') }}" id="edit-form" class="form checkIfChanged" enctype="multipart/form-data">
+                @csrf
+
+                @if($errors->any())
+                    @foreach($errors->all() as $error)
+                        @component('components.flash_message', [
+                            'type' => 'error',
+                        ])
+                            {{ $error }}
+                        @endcomponent
+                    @endforeach
+                @endif
+
+                <input
+                    type="text"
+                    name="id"
+                    value="{{ Crypt::encrypt($post->id) }}"
+                    hidden>
+
+
+                @if (session('success'))
+                    @component('components.flash_message', [
+                        'type' => 'success',
+                    ])
+                        Your post has been added eddited.
+                    @endcomponent
+                @endif
+                @if (session('error'))
                     @component('components.flash_message', [
                         'type' => 'error',
                     ])
-                        {{ $error }}
+                        Something went wrong. Take a screenshot and send it to Orry, he's your friend!
                     @endcomponent
-                @endforeach
-            @endif
+                @endif
+                @if (session('image_upload_fail'))
+                    @component('components.flash_message', [
+                        'type' => 'error',
+                    ])
+                        One of the image failed to upload. Try again or take a screenshot and send it to Orry, he's your friend!
+                    @endcomponent
+                @endif
 
-            <input
-                type="text"
-                name="id"
-                value="{{ Crypt::encrypt($post->id) }}"
-                hidden>
-
-
-            @if (session('success'))
-                @component('components.flash_message', [
-                    'type' => 'success',
-                ])
-                    Your post has been added eddited.
-                @endcomponent
-            @endif
-            @if (session('error'))
-                @component('components.flash_message', [
-                    'type' => 'error',
-                ])
-                    Something went wrong. Take a screenshot and send it to Orry, he's your friend!
-                @endcomponent
-            @endif
-            @if (session('image_upload_fail'))
-                @component('components.flash_message', [
-                    'type' => 'error',
-                ])
-                    One of the image failed to upload. Try again or take a screenshot and send it to Orry, he's your friend!
-                @endcomponent
-            @endif
-
-            <div class="row">
-                {{-- Content blocks --}}
-                {{-- ============================================ --}}
-                <div class="col-12 col-md-8">
-                    <h3>Content</h3>
-
-                    <div class="input-blog-block input-blog-block--add">
-                        <div class="wrapper__btn wrapper__btn--centered">
-                            <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next('.existingBlocks').slideToggle(300)">Add existing block</a>
-                            <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>
-                        </div>
-
-                        <ul class="list--no-ui text--align-center existingBlocks margin-top--md" style="display: none">
-                            @foreach($blocks as $add_block)
-                                <li>
-                                    <a data-i-block="{{ $loop->index }}" class="link--cursor" onclick="addExistingContentBlock($(this))">{{ $add_block->name }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-
-                    @foreach($post->blocks as $key => $block)
-                        <div class="input-blog-block {{ $block->used_multiple_times ? 'cs-dark' : '' }}">
-                            <input
-                                type="text"
-                                name="blocks[{{ $key }}][id]"
-                                value="{{ $block->id }}"
-                                hidden>
-                            <input
-                                type="text"
-                                name="blocks[{{ $key }}][type]"
-                                class="changeType"
-                                value="linked"
-                                hidden>
-                            <input
-                                type="text"
-                                name="blocks[{{ $key }}][order]"
-                                class="setOrderBeforeSubmit"
-                                hidden>
-
-                            {{-- Name --}}
-                            {{-- Order --}}
-                            {{-- ============================================ --}}
-                            <div class="row">
-                                <div class="col col--max">
-                                    <section class="form__section">
-                                        <label for="blocks[{{ $key }}][name]" class="form__label form__label--required">Name</label>
-
-                                        <input
-                                            type="text"
-                                            id="blocks[{{ $key }}][name]"
-                                            name="blocks[{{ $key }}][name]"
-                                            value="{{ old('blocks.'.$key.'.name', $block->name) }}"
-                                            class="form__input form__input--full-width"
-                                            required>
-
-                                        @if ($errors->has('blocks.'.$key.'.name'))
-                                            <span class="form__section-feedback">
-                                                {{ $errors->first('blocks.'.$key.'.name') }}
-                                            </span>
-                                        @endif
-                                    </section>
-                                </div>
-
-                                <div class="col blog-order">
-                                    <a class="text--xl link--cursor" onclick="orderBlockUp($(this))"><i class="fas fa-angle-up"></i></a>
-                                    <a class="text--xl link--cursor" onclick="orderBlockdown($(this))"><i class="fas fa-angle-down"></i></a>
-                                    <a class="text--xl link--cursor link--error" onclick="removeThisBlock($(this))"><i class="fas fa-times"></i></a>
-                                </div>
-                            </div>
-
-                            {{-- Content --}}
-                            {{-- ============================================ --}}
-                            <section class="form__section">
-                                <label for="blocks[{{ $key }}][content]" class="form__label form__label--required">Content</label>
-
-                                <textarea
-                                    id="blocks[{{ $key }}][content]"
-                                    name="blocks[{{ $key }}][content]"
-                                    class="form__textarea form__input--full-width tinymce"
-                                    required>{{ old('blocks.'.$key.'.content', $block->content) }}</textarea>
-
-                                @if ($errors->has('blocks.'.$key.'.content'))
-                                    <span class="form__section-feedback">
-                                        {{ $errors->first('blocks.'.$key.'.content') }}
-                                    </span>
-                                @endif
-                            </section>
-
-                            {{-- UI type --}}
-                            {{-- ============================================ --}}
-                            <div class="form__section inputUiType">
-                                <label class="form__label form__label--required">UI type</label>
-
-                                <div class="row small-gutters wrapper__ui-type">
-                                    @foreach(Config::get('blog.ui_types') as $ui_type)
-                                        <div class="col-4 col-lg-2 ui-type">
-                                            <input
-                                                type="radio"
-                                                id="{{ $key }}-ui-type-{{ $loop->index }}"
-                                                name="blocks[{{ $key }}][ui_type]"
-                                                class="ui-type__select"
-                                                value="{{ $ui_type }}"
-                                                hidden
-                                                {{ old('blocks.'.$key.'.ui_type', $block->ui_type) == $ui_type ? "checked" : "" }}>
-
-                                            <label for="{{ $key }}-ui-type-{{ $loop->index }}" class="ui-type__label">
-                                                <img src="{{ asset('/img/blog-ui-types/'.$ui_type.'.png') }}" alt="$ui_type">
-                                            </label>
-                                        </div>
-                                    @endforeach
-                                </div>
-
-                                @if ($errors->has('blocks.'.$key.'.ui_type'))
-                                    <span class="form__section-feedback">
-                                        {{ $errors->first('blocks.'.$key.'.ui_type') }}
-                                    </span>
-                                @endif
-                            </div>
-
-                            {{-- Image --}}
-                            {{-- ============================================ --}}
-                            <div class="form__section">
-                                <label class="form__label form__label--required">Image</label>
-
-                                <p>
-                                    <input
-                                        type="radio"
-                                        id="{{ $key }}-image-source-library"
-                                        name="blocks[{{ $key }}][image_source]"
-                                        class="imageSource"
-                                        value="library"
-                                        {{ old('blocks.'.$key.'.image_source', true) == 'library' ? "checked" : "" }}>
-
-                                    <label for="{{ $key }}-image-source-library" class="fa--before ">
-                                        Library
-                                    </label>
-
-                                    <input
-                                        type="radio"
-                                        id="{{ $key }}-image-source-upload"
-                                        name="blocks[{{ $key }}][image_source]"
-                                        class="imageSource"
-                                        value="upload"
-                                        class="fa--after"
-                                        {{ old('blocks.'.$key.'.image_source') == 'upload' ? "checked" : "" }}>
-
-                                    <label for="{{ $key }}-image-source-upload" class="link--cursor">
-                                        Upload
-                                    </label>
-                                </p>
-
-                                <div class="imageFromLibrary">
-                                    <div for="image-selection" class="image-selection image-selection--3">
-                                        @foreach($images as $image)
-                                            <input
-                                                type="radio"
-                                                id="{{ $key }}-image-{{ $loop->index }}"
-                                                name="blocks[{{ $key }}][image]"
-                                                class="image-selection__input"
-                                                value="{{ $image->id }}"
-                                                hidden
-                                                {{ intval(old('blocks.'.$key.'.image', $block->image_id)) == $image->id ? "checked" : "" }}>
-
-                                            <div class="image-selection__image">
-                                                <label for="{{ $key }}-image-{{ $loop->index }}" class="form__label image-selection__label">
-                                                    <img src="{{ $image->path }}">
-                                                </label>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-
-                                <div class="imageFromUpload form__input-with-button">
-                                    <input
-                                        type="file"
-                                        id="blocks[{{ $key }}][image_upload]"
-                                        class="form__input form__input--full-width">
-
-                                    <a class="btn btn--primary form__input-button imageUploadButton" onclick="uploadImage(event, false, $(this));">Upload</a>
-                                </div>
-
-                                @if ($errors->has('blocks.'.$key.'.image'))
-                                    <span class="form__section-feedback">
-                                        {{ $errors->first('blocks.'.$key.'.image') }}
-                                    </span>
-                                @endif
-                                @if ($errors->has('blocks.'.$key.'.image_upload'))
-                                    <span class="form__section-feedback">
-                                        {{ $errors->first('blocks.'.$key.'.image_upload') }}
-                                    </span>
-                                @endif
-                            </div>
-
-                            @if($block->used_multiple_times)
-                                @component('components.flash_message', [
-                                    'type' => 'warning',
-                                ])
-                                    Attention! This block is used multiple times. If you change this one, it changes everywhere. If you have it multiple times on this post, edit the last instance.
-                                @endcomponent
-                            @endif
-                        </div>
+                <div class="row">
+                    {{-- Content blocks --}}
+                    {{-- ============================================ --}}
+                    <div class="col-12 col-md-8">
+                        <h3>Content</h3>
 
                         <div class="input-blog-block input-blog-block--add">
                             <div class="wrapper__btn wrapper__btn--centered">
@@ -265,299 +95,497 @@
                                 @endforeach
                             </ul>
                         </div>
-                    @endforeach
 
-                    {{-- Submit --}}
-                    {{-- ============================================ --}}
-                    <div class="wrapper__btn">
-                        <button class="btn btn--primary">Update post</button>
-                        <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Go back</a>
-                    </div>
-
-                    <div id="test"></div>
-                </div>
-
-                {{-- Main info --}}
-                {{-- ============================================ --}}
-                <div class="col-12 col-md-4">
-                    <h4>Main info</h4>
-
-                    {{-- Name --}}
-                    {{-- ============================================ --}}
-                    <section class="form__section">
-                        <label for="name" class="form__label form__label--required">Name</label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value="{{ old('name', $post->name) }}"
-                            class="form__input form__input--full-width"
-                            required>
-
-                        @if ($errors->has('name'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('name') }}
-                            </span>
-                        @endif
-                    </section>
-
-                    {{-- Title --}}
-                    {{-- ============================================ --}}
-                    <section class="form__section">
-                        <label for="title" class="form__label form__label--required">Title</label>
-
-                        <input
-                            type="text"
-                            id="title"
-                            name="title"
-                            value="{{ old('title', $post->title) }}"
-                            class="form__input form__input--full-width"
-                            required>
-
-                        @if ($errors->has('title'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('title') }}
-                            </span>
-                        @endif
-                    </section>
-
-                    {{-- Subtitle --}}
-                    {{-- ============================================ --}}
-                    <section class="form__section">
-                        <label for="subtitle" class="form__label form__label--required">Subtitle</label>
-
-                        <input
-                            type="text"
-                            id="subtitle"
-                            name="subtitle"
-                            value="{{ old('subtitle', $post->subtitle) }}"
-                            class="form__input form__input--full-width"
-                            required>
-
-                        @if ($errors->has('subtitle'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('subtitle') }}
-                            </span>
-                        @endif
-                    </section>
-
-                    {{-- Category --}}
-                    {{-- ============================================ --}}
-                    <section class="form__section">
-                        <label for="category" class="form__label form__label--required">Category</label>
-
-                        <select
-                            id="category"
-                            name="category"
-                            value="{{ old('category', $post->category->id) }}"
-                            class="form__select form__select--full-width"
-                            required>
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{ intval(old('category', $post->category->id)) == $category->id ? "selected" : "" }}>{{ $category->name }}</option>
-                                }
-                            @endforeach
-                        </select>
-
-                        @if ($errors->has('category'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('category') }}
-                            </span>
-                        @endif
-                    </section>
-
-                    {{-- Tags --}}
-                    {{-- ============================================ --}}
-                    <section class="form__section">
-                        <label for="tag_input" class="form__label form__label--required">Tags</label>
-
-                        <ul class="tags">
-                            @foreach($post->tags as $tag)
-                                <li class="tags__item">
-                                    <input
-                                        type="text"
-                                        name="tags[{{ $loop->index }}][id]"
-                                        value="{{ $tag->id }}"
-                                        hidden>
-                                    <input
-                                        type="text"
-                                        name="tags[{{ $loop->index }}][type]"
-                                        class="changeTagType"
-                                        value="keep"
-                                        hidden>
-                                    #{{ $tag->name }}
-                                    <span class="fa--after link--cursor link--error" onclick="$(this).parent().hide().find('.changeTagType').val('remove')">
-                                        <i class="fas fa-times"></i>
-                                    </span>
-                                </li>
-                            @endforeach
-                        </ul>
-
-                        <div class="imageFromUpload form__input-with-button">
-                            <input
-                                type="text"
-                                id="tag_input"
-                                class="form__input form__input--full-width"
-                                list="tags"
-                                onkeypress="event.keyCode == 13 ? submitTagEntry(event) : ''">
-
-                            <a class="btn btn--secondary form__input-button" onclick="addTagToList()"><i class="fas fa-plus"></i></a>
-                        </div>
-
-                        <datalist id="tags">
-                            @foreach($tags as $tag)
-                                <option value="{{ $tag->name }}" data-id="{{ $tag->id }}"></option>
-                            @endforeach
-                        </datalist>
-                    </section>
-
-                    {{-- Image --}}
-                    {{-- ============================================ --}}
-                    <div class="form__section handleImage">
-                        <label class="form__label form__label--required">Image</label>
-
-                        <p>
-                            <input
-                                type="radio"
-                                id="image-source-library"
-                                name="image_source"
-                                class="imageSource"
-                                value="library"
-                                {{ old('image_source', true) == 'library' ? "checked" : "" }}>
-
-                            <label for="image-source-library" class="fa--before ">
-                                Library
-                            </label>
-
-                            <input
-                                type="radio"
-                                id="image-source-upload"
-                                name="image_source"
-                                class="imageSource"
-                                value="upload"
-                                class="fa--after"
-                                {{ old('image_source') == 'upload' ? "checked" : "" }}>
-
-                            <label for="image-source-upload" class="link--cursor">
-                                Upload
-                            </label>
-                        </p>
-
-                        <div class="imageFromLibrary">
-                            <div for="image-selection" class="image-selection image-selection--post">
-                                @foreach($images as $image)
-                                    <input
-                                        type="radio"
-                                        id="image-{{ $loop->index }}"
-                                        class="image-selection__input"
-                                        name="image"
-                                        value="{{ $image->id }}"
-                                        hidden
-                                        {{ intval(old('image', $post->image->id)) == $image->id ? "checked" : "" }}>
-
-                                    <div class="image-selection__image">
-                                        <label for="image-{{ $loop->index }}" class="form__label image-selection__label">
-                                            <img src="{{ $image->path }}">
-                                        </label>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div class="imageFromUpload form__input-with-button">
-                            <input
-                                type="file"
-                                id="image_upload"
-                                class="form__input form__input--full-width">
-
-                            <a class="btn btn--primary form__input-button imageUploadButton" onclick="uploadImage(event, true);">Upload</a>
-                        </div>
-
-                        @if ($errors->has('image'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('image') }}
-                            </span>
-                        @endif
-                        @if ($errors->has('image_upload'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('image_upload') }}
-                            </span>
-                        @endif
-                    </div>
-
-                    {{-- Active --}}
-                    {{-- ============================================ --}}
-                    <section class="form__section form__section--parts">
-                        <label for="active" class="form__section-part">
-                            Show post?
-                        </label>
-
-                        <div class="form__section-part form__section-part--xl">
-                            <div class="toggle-switch">
+                        @foreach($post->blocks as $key => $block)
+                            <div class="input-blog-block {{ $block->used_multiple_times ? 'cs-dark' : '' }}">
                                 <input
-                                    type="checkbox"
-                                    id="active"
-                                    name="active"
-                                    class="toggle-switch__checkbox"
-                                    {{ old('active', $post->active) ? 'checked' : null}}
+                                    type="text"
+                                    name="blocks[{{ $key }}][id]"
+                                    value="{{ $block->id }}"
+                                    hidden>
+                                <input
+                                    type="text"
+                                    name="blocks[{{ $key }}][type]"
+                                    class="changeType"
+                                    value="linked"
+                                    hidden>
+                                <input
+                                    type="text"
+                                    name="blocks[{{ $key }}][order]"
+                                    class="setOrderBeforeSubmit"
                                     hidden>
 
-                                <label class="toggle-switch__slider" for="active"></label>
+                                {{-- Name --}}
+                                {{-- Order --}}
+                                {{-- ============================================ --}}
+                                <div class="row">
+                                    <div class="col col--max">
+                                        <section class="form__section">
+                                            <label for="blocks[{{ $key }}][name]" class="form__label form__label--required">Name</label>
+
+                                            <input
+                                                type="text"
+                                                id="blocks[{{ $key }}][name]"
+                                                name="blocks[{{ $key }}][name]"
+                                                value="{{ old('blocks.'.$key.'.name', $block->name) }}"
+                                                class="form__input form__input--full-width"
+                                                required>
+
+                                            @if ($errors->has('blocks.'.$key.'.name'))
+                                                <span class="form__section-feedback">
+                                                    {{ $errors->first('blocks.'.$key.'.name') }}
+                                                </span>
+                                            @endif
+                                        </section>
+                                    </div>
+
+                                    <div class="col blog-order">
+                                        <a class="text--xl link--cursor" onclick="orderBlockUp($(this))"><i class="fas fa-angle-up"></i></a>
+                                        <a class="text--xl link--cursor" onclick="orderBlockdown($(this))"><i class="fas fa-angle-down"></i></a>
+                                        <a class="text--xl link--cursor link--error" onclick="removeThisBlock($(this))"><i class="fas fa-times"></i></a>
+                                    </div>
+                                </div>
+
+                                {{-- Content --}}
+                                {{-- ============================================ --}}
+                                <section class="form__section">
+                                    <label for="blocks[{{ $key }}][content]" class="form__label form__label--required">Content</label>
+
+                                    <textarea
+                                        id="blocks[{{ $key }}][content]"
+                                        name="blocks[{{ $key }}][content]"
+                                        class="form__textarea form__input--full-width tinymce"
+                                        required>{{ old('blocks.'.$key.'.content', $block->content) }}</textarea>
+
+                                    @if ($errors->has('blocks.'.$key.'.content'))
+                                        <span class="form__section-feedback">
+                                            {{ $errors->first('blocks.'.$key.'.content') }}
+                                        </span>
+                                    @endif
+                                </section>
+
+                                {{-- UI type --}}
+                                {{-- ============================================ --}}
+                                <div class="form__section inputUiType">
+                                    <label class="form__label form__label--required">UI type</label>
+
+                                    <div class="row small-gutters wrapper__ui-type">
+                                        @foreach(Config::get('blog.ui_types') as $ui_type)
+                                            <div class="col-4 col-lg-2 ui-type">
+                                                <input
+                                                    type="radio"
+                                                    id="{{ $key }}-ui-type-{{ $loop->index }}"
+                                                    name="blocks[{{ $key }}][ui_type]"
+                                                    class="ui-type__select"
+                                                    value="{{ $ui_type }}"
+                                                    hidden
+                                                    {{ old('blocks.'.$key.'.ui_type', $block->ui_type) == $ui_type ? "checked" : "" }}>
+
+                                                <label for="{{ $key }}-ui-type-{{ $loop->index }}" class="ui-type__label">
+                                                    <img src="{{ asset('/img/blog-ui-types/'.$ui_type.'.png') }}" alt="$ui_type">
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    @if ($errors->has('blocks.'.$key.'.ui_type'))
+                                        <span class="form__section-feedback">
+                                            {{ $errors->first('blocks.'.$key.'.ui_type') }}
+                                        </span>
+                                    @endif
+                                </div>
+
+                                {{-- Image --}}
+                                {{-- ============================================ --}}
+                                <div class="form__section">
+                                    <label class="form__label form__label--required">Image</label>
+
+                                    <p>
+                                        <input
+                                            type="radio"
+                                            id="{{ $key }}-image-source-library"
+                                            name="blocks[{{ $key }}][image_source]"
+                                            class="imageSource"
+                                            value="library"
+                                            {{ old('blocks.'.$key.'.image_source', true) == 'library' ? "checked" : "" }}>
+
+                                        <label for="{{ $key }}-image-source-library" class="fa--before ">
+                                            Library
+                                        </label>
+
+                                        <input
+                                            type="radio"
+                                            id="{{ $key }}-image-source-upload"
+                                            name="blocks[{{ $key }}][image_source]"
+                                            class="imageSource"
+                                            value="upload"
+                                            class="fa--after"
+                                            {{ old('blocks.'.$key.'.image_source') == 'upload' ? "checked" : "" }}>
+
+                                        <label for="{{ $key }}-image-source-upload" class="link--cursor">
+                                            Upload
+                                        </label>
+                                    </p>
+
+                                    <div class="imageFromLibrary">
+                                        <div for="image-selection" class="image-selection image-selection--3">
+                                            @foreach($images as $image)
+                                                <input
+                                                    type="radio"
+                                                    id="{{ $key }}-image-{{ $loop->index }}"
+                                                    name="blocks[{{ $key }}][image]"
+                                                    class="image-selection__input"
+                                                    value="{{ $image->id }}"
+                                                    hidden
+                                                    {{ intval(old('blocks.'.$key.'.image', $block->image_id)) == $image->id ? "checked" : "" }}>
+
+                                                <div class="image-selection__image">
+                                                    <label for="{{ $key }}-image-{{ $loop->index }}" class="form__label image-selection__label">
+                                                        <img src="{{ $image->path }}">
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
+                                    <div class="imageFromUpload form__input-with-button">
+                                        <input
+                                            type="file"
+                                            id="blocks[{{ $key }}][image_upload]"
+                                            class="form__input form__input--full-width">
+
+                                        <a class="btn btn--primary form__input-button imageUploadButton" onclick="uploadImage(event, false, $(this));">Upload</a>
+                                    </div>
+
+                                    @if ($errors->has('blocks.'.$key.'.image'))
+                                        <span class="form__section-feedback">
+                                            {{ $errors->first('blocks.'.$key.'.image') }}
+                                        </span>
+                                    @endif
+                                    @if ($errors->has('blocks.'.$key.'.image_upload'))
+                                        <span class="form__section-feedback">
+                                            {{ $errors->first('blocks.'.$key.'.image_upload') }}
+                                        </span>
+                                    @endif
+                                </div>
+
+                                @if($block->used_multiple_times)
+                                    @component('components.flash_message', [
+                                        'type' => 'warning',
+                                    ])
+                                        Attention! This block is used multiple times. If you change this one, it changes everywhere. If you have it multiple times on this post, edit the last instance.
+                                    @endcomponent
+                                @endif
                             </div>
+
+                            <div class="input-blog-block input-blog-block--add">
+                                <div class="wrapper__btn wrapper__btn--centered">
+                                    <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next('.existingBlocks').slideToggle(300)">Add existing block</a>
+                                    <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>
+                                </div>
+
+                                <ul class="list--no-ui text--align-center existingBlocks margin-top--md" style="display: none">
+                                    @foreach($blocks as $add_block)
+                                        <li>
+                                            <a data-i-block="{{ $loop->index }}" class="link--cursor" onclick="addExistingContentBlock($(this))">{{ $add_block->name }}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endforeach
+
+                        {{-- Submit --}}
+                        {{-- ============================================ --}}
+                        <div class="wrapper__btn">
+                            <button class="btn btn--primary">Update post</button>
+                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Go back</a>
                         </div>
 
-                        @if ($errors->has('name'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('name') }}
-                            </span>
-                        @endif
-                    </section>
+                        <div id="test"></div>
+                    </div>
 
-                    {{-- Publish at --}}
+                    {{-- Main info --}}
                     {{-- ============================================ --}}
-                    <section class="form__section">
-                        <label for="live_at_date" class="form__label">Publish at date</label>
+                    <div class="col-12 col-md-4">
+                        <h4>Main info</h4>
 
-                        <input
-                            type="date"
-                            id="live_at_date"
-                            name="live_at_date"
-                            value="{{ old('live_at_date', Carbon\Carbon::create($post->live_at)->toDateString()) }}"
-                            class="form__input form__input--full-width">
+                        {{-- Name --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section">
+                            <label for="name" class="form__label form__label--required">Name</label>
 
-                        @if ($errors->has('live_at_date'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('live_at_date') }}
-                            </span>
-                        @endif
-                    </section>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value="{{ old('name', $post->name) }}"
+                                class="form__input form__input--full-width"
+                                required>
 
-                    <section class="form__section">
-                        <label for="live_at_time" class="form__label">Publish at time</label>
+                            @if ($errors->has('name'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('name') }}
+                                </span>
+                            @endif
+                        </section>
 
-                        <input
-                            type="time"
-                            id="live_at_time"
-                            name="live_at_time"
-                            value="{{ old('live_at_time', Carbon\Carbon::create($post->live_at)->format('H:i')) }}"
-                            class="form__input form__input--full-width">
+                        {{-- Title --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section">
+                            <label for="title" class="form__label form__label--required">Title</label>
 
-                        @if ($errors->has('live_at_time'))
-                            <span class="form__section-feedback">
-                                {{ $errors->first('live_at_time') }}
-                            </span>
-                        @endif
-                    </section>
+                            <input
+                                type="text"
+                                id="title"
+                                name="title"
+                                value="{{ old('title', $post->title) }}"
+                                class="form__input form__input--full-width"
+                                required>
 
-                    {{-- Submit --}}
-                    {{-- ============================================ --}}
-                    <div class="wrapper__btn">
-                        <button class="btn btn--primary">Update post</button>
-                        <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Go back</a>
+                            @if ($errors->has('title'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('title') }}
+                                </span>
+                            @endif
+                        </section>
+
+                        {{-- Subtitle --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section">
+                            <label for="subtitle" class="form__label form__label--required">Subtitle</label>
+
+                            <input
+                                type="text"
+                                id="subtitle"
+                                name="subtitle"
+                                value="{{ old('subtitle', $post->subtitle) }}"
+                                class="form__input form__input--full-width"
+                                required>
+
+                            @if ($errors->has('subtitle'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('subtitle') }}
+                                </span>
+                            @endif
+                        </section>
+
+                        {{-- Category --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section">
+                            <label for="category" class="form__label form__label--required">Category</label>
+
+                            <select
+                                id="category"
+                                name="category"
+                                value="{{ old('category', $post->category->id) }}"
+                                class="form__select form__select--full-width"
+                                required>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" {{ intval(old('category', $post->category->id)) == $category->id ? "selected" : "" }}>{{ $category->name }}</option>
+                                    }
+                                @endforeach
+                            </select>
+
+                            @if ($errors->has('category'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('category') }}
+                                </span>
+                            @endif
+                        </section>
+
+                        {{-- Tags --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section">
+                            <label for="tag_input" class="form__label form__label--required">Tags</label>
+
+                            <ul class="tags">
+                                @foreach($post->tags as $tag)
+                                    <li class="tags__item">
+                                        <input
+                                            type="text"
+                                            name="tags[{{ $loop->index }}][id]"
+                                            value="{{ $tag->id }}"
+                                            hidden>
+                                        <input
+                                            type="text"
+                                            name="tags[{{ $loop->index }}][type]"
+                                            class="changeTagType"
+                                            value="keep"
+                                            hidden>
+                                        #{{ $tag->name }}
+                                        <span class="fa--after link--cursor link--error" onclick="$(this).parent().hide().find('.changeTagType').val('remove')">
+                                            <i class="fas fa-times"></i>
+                                        </span>
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                            <div class="imageFromUpload form__input-with-button">
+                                <input
+                                    type="text"
+                                    id="tag_input"
+                                    class="form__input form__input--full-width"
+                                    list="tags"
+                                    onkeypress="event.keyCode == 13 ? submitTagEntry(event) : ''">
+
+                                <a class="btn btn--secondary form__input-button" onclick="addTagToList()"><i class="fas fa-plus"></i></a>
+                            </div>
+
+                            <datalist id="tags">
+                                @foreach($tags as $tag)
+                                    <option value="{{ $tag->name }}" data-id="{{ $tag->id }}"></option>
+                                @endforeach
+                            </datalist>
+                        </section>
+
+                        {{-- Image --}}
+                        {{-- ============================================ --}}
+                        <div class="form__section handleImage">
+                            <label class="form__label form__label--required">Image</label>
+
+                            <p>
+                                <input
+                                    type="radio"
+                                    id="image-source-library"
+                                    name="image_source"
+                                    class="imageSource"
+                                    value="library"
+                                    {{ old('image_source', true) == 'library' ? "checked" : "" }}>
+
+                                <label for="image-source-library" class="fa--before ">
+                                    Library
+                                </label>
+
+                                <input
+                                    type="radio"
+                                    id="image-source-upload"
+                                    name="image_source"
+                                    class="imageSource"
+                                    value="upload"
+                                    class="fa--after"
+                                    {{ old('image_source') == 'upload' ? "checked" : "" }}>
+
+                                <label for="image-source-upload" class="link--cursor">
+                                    Upload
+                                </label>
+                            </p>
+
+                            <div class="imageFromLibrary">
+                                <div for="image-selection" class="image-selection image-selection--post">
+                                    @foreach($images as $image)
+                                        <input
+                                            type="radio"
+                                            id="image-{{ $loop->index }}"
+                                            class="image-selection__input"
+                                            name="image"
+                                            value="{{ $image->id }}"
+                                            hidden
+                                            {{ intval(old('image', $post->image->id)) == $image->id ? "checked" : "" }}>
+
+                                        <div class="image-selection__image">
+                                            <label for="image-{{ $loop->index }}" class="form__label image-selection__label">
+                                                <img src="{{ $image->path }}">
+                                            </label>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+                            <div class="imageFromUpload form__input-with-button">
+                                <input
+                                    type="file"
+                                    id="image_upload"
+                                    class="form__input form__input--full-width">
+
+                                <a class="btn btn--primary form__input-button imageUploadButton" onclick="uploadImage(event, true);">Upload</a>
+                            </div>
+
+                            @if ($errors->has('image'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('image') }}
+                                </span>
+                            @endif
+                            @if ($errors->has('image_upload'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('image_upload') }}
+                                </span>
+                            @endif
+                        </div>
+
+                        {{-- Active --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section form__section--parts">
+                            <label for="active" class="form__section-part">
+                                Show post?
+                            </label>
+
+                            <div class="form__section-part form__section-part--xl">
+                                <div class="toggle-switch">
+                                    <input
+                                        type="checkbox"
+                                        id="active"
+                                        name="active"
+                                        class="toggle-switch__checkbox"
+                                        {{ old('active', $post->active) ? 'checked' : null}}
+                                        hidden>
+
+                                    <label class="toggle-switch__slider" for="active"></label>
+                                </div>
+                            </div>
+
+                            @if ($errors->has('name'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('name') }}
+                                </span>
+                            @endif
+                        </section>
+
+                        {{-- Publish at --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section">
+                            <label for="live_at_date" class="form__label">Publish at date</label>
+
+                            <input
+                                type="date"
+                                id="live_at_date"
+                                name="live_at_date"
+                                value="{{ old('live_at_date', Carbon\Carbon::create($post->live_at)->toDateString()) }}"
+                                class="form__input form__input--full-width">
+
+                            @if ($errors->has('live_at_date'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('live_at_date') }}
+                                </span>
+                            @endif
+                        </section>
+
+                        <section class="form__section">
+                            <label for="live_at_time" class="form__label">Publish at time</label>
+
+                            <input
+                                type="time"
+                                id="live_at_time"
+                                name="live_at_time"
+                                value="{{ old('live_at_time', Carbon\Carbon::create($post->live_at)->format('H:i')) }}"
+                                class="form__input form__input--full-width">
+
+                            @if ($errors->has('live_at_time'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('live_at_time') }}
+                                </span>
+                            @endif
+                        </section>
+
+                        {{-- Submit --}}
+                        {{-- ============================================ --}}
+                        <div class="wrapper__btn">
+                            <button class="btn btn--primary">Update post</button>
+                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Go back</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
     <script>

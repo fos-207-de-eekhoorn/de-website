@@ -1,19 +1,18 @@
-@extends('layouts.admin_blog')
+@extends('layouts.main')
 
-@section('banner')
+@section('content')
+
     @component('components.banner', [
         'banner' => (object)[
             'color' => 'yellow',
             'pattern' => '1',
             'strength' => 'light',
         ],
-        'page_title' => 'Nieuwtjes',
+        'page_title' => 'Blog',
         'page_sub_title' => 'Posts',
     ])
     @endcomponent
-@endsection
 
-@section('breadcrumbs')
     @component('components.breadcrumbs', [
         'childs' => [
             (object)[
@@ -22,16 +21,39 @@
             ],
             (object)[
                 'link' => '/admin/blog',
-                'name' => 'Nieuwtjes',
+                'name' => 'Blog',
             ],
         ],
         'current' => 'Posts',
     ])@endcomponent
-@endsection
 
-@section('main')
+    <div class="row section section--small-spacing">
+        <div class="col-12">
+            <nav class="admin-blog-nav">
+                <ul class="admin-blog-nav__list">
+                    <li class="admin-blog-nav__list-item">
+                        <a href="{{ url('/admin/blog/posts') }}" class="admin-blog-nav__link{{ Request::is('admin/blog/posts*') ? ' admin-blog-nav__link--active' : '' }}">
+                            Posts
+                        </a>
+                    </li>
 
-    <div class="row section section--extra-small-spacing">
+                    <li class="admin-blog-nav__list-item">
+                        <a href="{{ url('/admin/blog/categories') }}" class="admin-blog-nav__link{{ Request::is('admin/blog/categories*') ? ' admin-blog-nav__link--active' : '' }}">
+                            Categorieën
+                        </a>
+                    </li>
+
+                    <li class="admin-blog-nav__list-item">
+                        <a href="{{ url('/admin/blog/tags') }}" class="admin-blog-nav__link{{ Request::is('admin/blog/tags*') ? ' admin-blog-nav__link--active' : '' }}">
+                            Tags
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row section">
         {{-- List --}}
         {{-- ================================================================ --}}
         <div class="col-12">
@@ -69,10 +91,10 @@
                 <table class="table">
                     <thead>
                         <tr class="table__row">
-                            <td class="table__cell">Image</td>
-                            <td class="table__cell">Title</td>
-                            <td class="table__cell">Category</td>
-                            <td class="table__cell"># of blocks</td>
+                            <td class="table__cell">Afbeelding</td>
+                            <td class="table__cell">Titel</td>
+                            <td class="table__cell">Categorie</td>
+                            <td class="table__cell"># blokken</td>
                             <td class="table__cell">Active</td>
                             <td class="table__cell"></td>
                         </tr>

@@ -90,6 +90,7 @@ Route::prefix('admin')->group(function () {
 	# Blog Routes
 	Route::prefix('blog')->group(function () {
 		# Post
+		Route::get('/', 'AdminBlogController@get_posts');
 		Route::get('/posts', 'AdminBlogController@get_posts');
 		Route::get('/posts/add', 'AdminBlogController@get_add_post');
 		Route::get('/posts/edit/{id}', 'AdminBlogController@get_edit_post')->middleware('decrypt:value,id');
