@@ -42,20 +42,25 @@
         width: 100%;
         height: $header-height;
         padding: 0 spacing(lg);
+        background-color: $color-grey-background-light;
 
         text-align: center;
         text-decoration: none;
-        color: $color-grey-medium;
+        color: $color-grey-medium !important;
 
         &:hover {
             border-bottom: 1px solid $color-blue;
             background-color: $color-grey-background;
+            
+            color: $color-blue !important;
         }
 
         &--active {
             border-left: none;
             border-bottom: 3px solid $color-blue;
             border-right: none;
+            
+            color: $color-blue !important;
 
             &:hover {
                 border-width: 3px;
