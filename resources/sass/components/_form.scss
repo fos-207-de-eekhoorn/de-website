@@ -175,4 +175,14 @@
         display: block;
         margin-top: spacing(xs);
     }
+
+    &__input-with-button {
+        display: flex;
+    }
+
+    &__input-button {
+        display: flex;
+        align-items: center;
+        margin-left: spacing(md);
+    }
 }

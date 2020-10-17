@@ -33,7 +33,7 @@
 
     <div class="row justify-content-center section">
         <div class="col-12 col-md-8">
-            <h4>Add blog posts</h4>
+            <h4>Voeg post toe</h4>
 
             <form method="POST" action="{{ url('/admin/blog/posts/add') }}" class="form">
                 @csrf
@@ -41,7 +41,7 @@
                 {{-- Name --}}
                 {{-- ============================================ --}}
                 <section class="form__section">
-                    <label for="name" class="form__label form__label--required">Internal name</label>
+                    <label for="name" class="form__label form__label--required">Interne naam</label>
 
                     <input
                         type="text"
@@ -61,7 +61,7 @@
                 {{-- Title --}}
                 {{-- ============================================ --}}
                 <section class="form__section">
-                    <label for="title" class="form__label form__label--required">Post title</label>
+                    <label for="title" class="form__label form__label--required">Post titel</label>
 
                     <input
                         type="text"
@@ -81,7 +81,7 @@
                 {{-- Subtitle --}}
                 {{-- ============================================ --}}
                 <section class="form__section">
-                    <label for="subtitle" class="form__label form__label--required">Post subsubtitle</label>
+                    <label for="subtitle" class="form__label form__label--required">Post subsubtitel</label>
 
                     <input
                         type="text"
@@ -101,7 +101,7 @@
                 {{-- Category --}}
                 {{-- ============================================ --}}
                 <section class="form__section">
-                    <label for="category" class="form__label form__label--required">Category</label>
+                    <label for="category" class="form__label form__label--required">Categorie</label>
 
 
                     <select
@@ -110,7 +110,7 @@
                         value="{{ old('category') }}"
                         class="form__select form__select--full-width"
                         required>
-                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option hidden disabled selected value> -- Selecteer een optie -- </option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}" {{ old('category') == $category->id ? "selected" : "" }}>{{ $category->name }}</option>
                         @endforeach
@@ -126,7 +126,7 @@
                 {{-- Image --}}
                 {{-- ============================================ --}}
                 <div class="form__section handleImage">
-                    <label class="form__label form__label--required">Image</label>
+                    <label class="form__label form__label--required">Afbeelding</label>
 
                     <p>
                         <input
@@ -138,7 +138,7 @@
                             {{ old('image_source', true) == 'library' ? "checked" : "" }}>
 
                         <label for="image-source-library" class="fa--before ">
-                            Library
+                            Bibliotheek
                         </label>
 
                         <input
@@ -199,12 +199,12 @@
 
                 {{-- Publish at --}}
                 {{-- ============================================ --}}
-                <span class="form__label">Publish at</span>
+                <span class="form__label">Publiceer om</span>
 
                 <div class="row small-gutters">
                     <div class="col-12 col-md-6">
                         <section class="form__section">
-                            <label for="live_at_date" class="form__label">Date</label>
+                            <label for="live_at_date" class="form__label">Datum</label>
 
                             <input
                                 type="date"

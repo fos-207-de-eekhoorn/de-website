@@ -159,6 +159,29 @@
     	}
     }
 
+    .image-selection {
+        border-color: $color-grey-extra-light;
+        background-color: rgba($color-white,.2);
+
+        &--expanded {
+            .image-selection {
+                &__input:checked {
+                    + .image-selection__image {
+                        .image-selection {
+                            &__label {
+                                border-color: $color-green;
+                            }
+                        }
+                    }
+                }
+
+                &__label {
+                    border-color: $color-white;
+                }
+            }
+        }
+    }
+
 	.social {
 		&__link {
 			color: $color-blue;

@@ -89,14 +89,9 @@ class AdminBlogController extends Controller
         $new_post->subtitle = $request->subtitle;
         $new_post->category_id = $request->category;
         $new_post->header_image_id = $request->image;
-        $new_post->live_at =
-            ($request->live_at_date
-                ? $request->live_at_date
-                : Carbon::now('CET')->toDateString())
-            . ' ' .
-            ($request->live_at_time
-                ? $request->live_at_time
-                : Carbon::now('CET')->toTimeString());
+        $new_post->live_at = ($request->live_at_date
+            ? str_replace('T', ' ', $request->live_at)
+            : Carbon::now('CET')->toDateString());
         $success = $new_post->save();
 
         if ($success) {

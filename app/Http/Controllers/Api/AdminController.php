@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use Auth;
-use Crypt;
+use App\Http\Controllers\Controller;
 use App\ActiviteitInschrijving;
 use Illuminate\Http\Request;
 
-class ApiAdminController extends Controller
+class AdminController extends Controller
 {
     public function __construct()
     {
