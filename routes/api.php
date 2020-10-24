@@ -14,14 +14,4 @@ Route::namespace('Api')
     		'/activiteiten/set-aanwezig',
     		'AdminController@PostSetAanwezig'
     	);
-
-        // Uploads
-        Route::get(
-            '/signed-upload-url',
-            'ImageUploadController@getSignedImageUploadUrl'
-        );
-        Route::post(
-            '/complete-upload',
-            'ImageUploadController@postCompleteImageUpload'
-        );
     });
