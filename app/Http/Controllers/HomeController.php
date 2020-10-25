@@ -8,7 +8,6 @@ use App\Inschrijving;
 use App\Tak;
 use App\Http\Shared\CommonHelpers;
 use App\Mail\ContactForm;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
