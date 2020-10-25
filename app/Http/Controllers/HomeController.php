@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -40,7 +41,11 @@ class HomeController extends Controller
             'general' => $this->ignore_files(Storage::disk('public')->files('img/carousel/general/')),
         ];
 
+        $today = Carbon::now();
+        $next_saturday = $today->is('Saturday') ? $today : $today->next('Saturday');
+
         return view('home', [
+            'next_saturday' => $next_saturday,
             'tak_activiteiten' => $tak_activiteiten,
             'carousels' => $carousels,
             'voorwoord' => $voorwoord->content_text[0],
