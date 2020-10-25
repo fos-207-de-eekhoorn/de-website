@@ -244,7 +244,7 @@
                     <h3>Organisatie</h3>
 
                     <p>
-                        Net zoals op zomerkamp wordt er wekelijks een contactbubbel gevormd door de leden & de leiding van een tak, met een maximum van 20 personen per bubbel. In deze fase houden we enkel nog maar activiteiten in de buitenlucht. Tussen de deelnemers in elke bubbel is er geen contact. Bij de JVG's & OVG's wordt het mondmasker verplicht als er onderling geen social distancing kan gegarandeerd worden. Contact met externen is in de rode fase uit den boze.
+                        Net zoals op zomerkamp wordt er wekelijks een contactbubbel gevormd door de leden & de leiding van een tak, met een maximum van 20 personen per bubbel. In deze fase houden we enkel nog maar activiteiten in de buitenlucht. Tussen de deelnemers in elke bubbel is er geen contact. Bij de JVG's & OVG's wordt het mondmasker verplicht. Contact met externen is in de rode fase uit den boze.
                     </p>
                 </div>
 
@@ -253,7 +253,7 @@
 
                     <h5>Persoonlijke hygiëne</h5>
                     <p>
-                        Hygiëne en jeugdwerk is niet altijd de beste combinatie. Maar dit jaar is het noodzakelijk. Extra de handen wassen, hoesten in de elleboog, niezen in een papieren zakdoek: dat blijft ook tijdens het jeugdwerk nodig. Bij de JVG's, OVG's wordt het mondmasker verplicht als er onderling geen social distancing kan gegarandeerd worden.
+                        Hygiëne en jeugdwerk is niet altijd de beste combinatie. Maar dit jaar is het noodzakelijk. Extra de handen wassen, hoesten in de elleboog, niezen in een papieren zakdoek: dat blijft ook tijdens het jeugdwerk nodig. Bij de JVG's, OVG's wordt het mondmasker verplicht.
                     </p>
 
                     <h5>Infrastructuur</h5>
