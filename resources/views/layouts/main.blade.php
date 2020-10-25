@@ -33,7 +33,7 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <!-- Styles -->
-        <link href="/css/style.css?v=0.6.5" rel="stylesheet">
+        <link href="/css/style.css?v=0.7.0" rel="stylesheet">
 
         <!-- TinyMCE -->
         <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
