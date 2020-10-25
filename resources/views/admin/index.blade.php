@@ -57,5 +57,14 @@
                 </div>
             </a>
         </div>
+
+        <div class="col-12 col-md-4 section section--small-spacing">
+            <a class="admin-module admin-module--coming-soon">
+                <h3>Instellingen</h3>
+                <div class="admin-module__icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </a>
+        </div>
     </div>
 @endsection
