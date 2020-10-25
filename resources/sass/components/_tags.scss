@@ -1,0 +1,19 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Tags
+//  ------------------------------------------------------------------------------------
+
+.tags {
+    &__tag {
+        @include border-radius;
+
+        display: inline-block;
+        padding: spacing(xs) spacing(sm);
+        border: 1px solid $color-grey-extra-light;
+        margin-bottom: spacing(xs);
+        background-color: $color-grey-background;
+        
+        &--is-link {
+            cursor: pointer;
+        }
+    }
+}
