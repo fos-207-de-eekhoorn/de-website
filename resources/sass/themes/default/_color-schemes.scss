@@ -203,13 +203,6 @@
 //  ------------------------------------------------------------------------------------
 
 //  Takken color schemes
-.cs-yellow,
-.cs-mint,
-.cs-salmon,
-.cs-blue-light,
-.cs-yellow-light {
-	@include shadow-standard;
-}
 .cs-yellow {
 	background-color: $color-yellow;
 	color: $color-yellow-text;
