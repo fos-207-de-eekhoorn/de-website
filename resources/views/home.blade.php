@@ -106,14 +106,21 @@
         </div>
 
         <div class="col-12 col-md-4 section">
+            <h4>Evenementen kalender</h4>
+
+            @component('components.calendar', [
+                'evenementen' => $evenementen,
+            ])
+            @endcomponent
+        </div>
+
+        <div class="col-12 col-md-4 section">
             @component('components.current_fase', [
                 'with_link' => 1,
             ])@endcomponent
         </div>
-    </div>
 
-    <div class="row section">
-        <div class="col-12">
+        <div class="col-12 col-md-8 section">
             <h2>Woordje van de eenheidsleiding</h2>
 
             <h5>Beste leden, ouders en vrienden van de Eekhoorn.</h5>
@@ -135,47 +142,4 @@
         ])
         @endcomponent
     </div>
-
-    {{--
-    <div class="row section">
-        <div class="col-12">
-            <h2>Aankomende evenementen</h2>
-        </div>
-
-        <div class="col-12 col-lg-4">
-            <h3>Startdag</h3>
-            <div>
-                <img src="/img/evenement-startdag.jpg" alt="Startdag">
-            </div>
-        </div>
-
-        <div class="col-12 col-lg-4">
-            <h3>Startdag</h3>
-            <div>
-                <img src="/img/evenement-startdag.jpg" alt="Startdag">
-            </div>
-        </div>
-
-        <div class="col-12 col-lg-4">
-            <h3>Startdag</h3>
-            <div>
-                <img src="/img/evenement-startdag.jpg" alt="Startdag">
-            </div>
-        </div>
-
-        <div class="col-12 col-lg-4">
-            <h3>Startdag</h3>
-            <div>
-                <img src="/img/evenement-startdag.jpg" alt="Startdag">
-            </div>
-        </div>
-
-        <div class="col-12 col-lg-4">
-            <h3>Startdag</h3>
-            <div>
-                <img src="/img/evenement-startdag.jpg" alt="Startdag">
-            </div>
-        </div>
-    </div>
-    --}}
 @endsection

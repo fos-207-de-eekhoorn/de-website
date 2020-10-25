@@ -1,0 +1,33 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Geen output
+//  ------------------------------------------------------------------------------------
+
+.geen-output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: spacing(md);
+    
+    text-align: center;
+    
+    @include mq(md) {
+        flex-direction: row;
+        
+        text-align: left;
+    }
+    
+    &__icon {
+        font-size: spacing(xxxl);
+        color: $color-salmon;
+    
+        @include mq(md) {
+            margin-right: spacing(xl);
+        }
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

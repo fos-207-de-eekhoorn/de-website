@@ -120,6 +120,14 @@
                     </tr>
                 @endforelse
             </table>
+
+            <div class="section">
+                <h3>Komende evenementen voor de {{ $tak->naam }}</h3>
+                @component('components.calendar', [
+                    'evenementen' => $evenementen,
+                ])
+                @endcomponent
+            </div>
         </div>
 
         <div class="col-12 col-lg-4">

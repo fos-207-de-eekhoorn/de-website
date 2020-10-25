@@ -2,13 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Evenement;
 use App\Leider;
+use Illuminate\Support\Facades\Session;
 
 class EvenementenController extends Controller
 {
     public function get_alle_evenementen()
     {
-        return view('evenementen.evenementen');
+        $evenementen = Evenement::where('active', 1)
+            ->whereDate('eind_datum', '>=', date('Y-m-d'))
+            ->orderBy('start_datum', 'asc')
+            ->with([
+                'evenement_tak',
+                'evenement_tak.tak',
+            ])
+            ->get();
+
+        return view('evenementen.evenementen', [
+            'evenementen' => $evenementen,
+        ]);
+    }
+
+    public function get_evenement_details($url)
+    {
+        $evenement = Evenement::where('url', $url)
+            ->with([
+                'evenement_tak',
+                'evenement_tak.tak',
+            ])
+            ->first();
+
+        if (is_object($evenement)) {
+            return view('evenementen.evenement_details', [
+                'evenement' => $evenement,
+            ]);
+        } else {
+            Session::flash('warning_not_found');
+
+            return redirect('evenementen');
+        }
     }
 
     public function get_event_startdag()

@@ -153,10 +153,41 @@
         }
     }
 
+    .calendar {
+		&__link {
+			color: $color-grey-dark;
+		}
+    }
+
     .form {
     	&__section-feedback {
     		color: $color-alert-error-dark;
     	}
+
+    	&__label {
+    		&--tag {
+	            border-color: $color-grey-extra-light;
+	            
+	            &:hover {
+	            	border-color: $color-blue;
+	            	color: $color-blue;
+	            }
+    		} 
+    	}
+    }
+
+    .form__checkbox:checked ~ .form__label--tag {
+    	border-color: $color-yellow;
+        background-color: $color-yellow-light;
+        color: $color-blue;
+        
+        &:hover {
+        	border-color: $color-blue;
+        }
+
+        &:active {
+        	background-color: $color-yellow;
+        }
     }
 
 	.social {
@@ -177,6 +208,18 @@
 			}
 			&--mail {
 				color: $color-grey-dark;
+			}
+		}
+	}
+
+	.tags {
+		&__tag {
+			&--is-link {
+				color: $color-grey-medium;
+				
+				&:hover {
+					color: $color-blue;
+				}
 			}
 		}
 	}

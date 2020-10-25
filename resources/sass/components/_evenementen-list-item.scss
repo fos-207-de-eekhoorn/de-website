@@ -1,0 +1,165 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Evenementen list item
+//  ------------------------------------------------------------------------------------
+
+.evenementen-list-item {
+    @include border-radius;
+    @include shadow-standard;
+
+    display: flex;
+    flex-direction: column;
+    align-itemns: center;
+    height: 100%;
+    overflow: hidden;
+    background-color: $color-grey-background;
+
+    @include mq(lg) {
+        flex-direction: row;
+    }
+    
+    &:hover {
+        .evenementen-list-item {
+            &__titel {
+                color: $color-blue;
+                
+                &:after {
+                    opacity: 1;
+
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+
+    &__visual {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 25%;
+
+        @include mq(lg) {
+            width: 30%;
+        }
+
+        &--green,
+        &--mint,
+        &--salmon,
+        &--yellow,
+        &--blue-light,
+        &--yellow-light {
+            .evenementen-list-item {
+                &__date {
+                    color: $color-blue;
+                }
+            }
+        }
+
+        &--red,
+        &--brown,
+        &--blue {
+            .evenementen-list-item {
+                &__date {
+                    color: $color-white;
+                }
+            }
+        }
+
+        &--green-dark {
+            .evenementen-list-item {
+                &__date {
+                    color: $color-yellow-light;
+                }
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        font-weight: $font-weight-bold;
+        line-height: 1;
+        color: $color-grey-extra-dark;
+    }
+    &__day {
+        font-size: $font-size-h2;
+    }
+    &__month {
+        font-size: $font-size-h4;
+    }
+
+    &__info {
+        position: relative;
+        width: 100%;
+        padding: spacing(md);
+
+        @include mq(lg) {
+            width: 70%;
+        }
+    }
+
+    &__titel {
+        @include transitions;
+
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+
+        font-weight: $font-weight-bold;
+
+        &:after {
+            @include transitions;
+
+            @extend %fa-icon;
+            @extend .fas;
+            
+            content: fa-content($fa-var-angle-right);
+            opacity: 0;
+            margin-left: spacing(sm);
+            
+            color: $color-grey-extra-dark;
+        }
+
+        @include mq(lg) {
+            justify-content: flex-start;
+        }
+    }
+
+    &__text {
+        color: $color-grey-dark;
+
+        &--time {
+            float: left;
+            width: 70%;
+        }
+
+        &--price {
+            float: right;
+            width: 30%;
+            
+            text-align: right;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        min-width: spacing(md) + spacing(sm);
+        opacity: .6;
+        
+        text-align: left;
+    }
+}

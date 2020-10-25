@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Content;
+use App\Evenement;
 use App\Inschrijving;
 use App\Tak;
 use App\Http\Shared\CommonHelpers;
@@ -26,6 +27,13 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
+        $evenementen = Evenement::where('active', '1')
+            ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+            ->with('evenement_tak')
+            ->orderBy('start_datum','ASC')
+            ->limit(3)
+            ->get();
+
         $voorwoord = Content::where('key', 'voorwoord')
             ->with([
                 'content_text' => function ($query) {
@@ -45,9 +53,10 @@ class HomeController extends Controller
         $next_saturday = $today->is('Saturday') ? $today : $today->next('Saturday');
 
         return view('home', [
+            'carousels' => $carousels,
             'next_saturday' => $next_saturday,
             'tak_activiteiten' => $tak_activiteiten,
-            'carousels' => $carousels,
+            'evenementen' => $evenementen,
             'voorwoord' => $voorwoord->content_text[0],
         ]);
     }

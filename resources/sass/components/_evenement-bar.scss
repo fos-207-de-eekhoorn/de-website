@@ -1,0 +1,40 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Evenement bar
+//  ------------------------------------------------------------------------------------
+
+.evenement-bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -1 * spacing(lg);
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-bottom: spacing(xl);
+
+        font-size: $font-size-h4;
+        text-align: center;
+    }
+
+    &__icon {
+        margin-bottom: spacing(sm);
+
+        font-size: spacing(lg) + spacing(md);
+        color: $color-green;
+    }
+
+    &__day {
+        font-size: $font-size-h3;
+        line-height: 1;
+    }
+    &__month {
+        font-size: $font-size-text-xl;
+    }
+    &__year {
+        margin-bottom: spacing(md);
+
+        font-size: $font-size-text-sm;
+        color: $color-grey-light;
+    }
+}
