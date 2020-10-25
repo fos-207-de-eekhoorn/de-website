@@ -17,15 +17,24 @@
 
     <div class="row section section--small-spacing small-gutters">
         <div class="col-12">
-            <h2>Activiteit op {{ Carbon\Carbon::parse($tak_activiteiten[0]->volgende_activiteit[0]->datum)->isoFormat('LL') }}</h2>
+            <h2>Activiteit op {{ $next_saturday->isoFormat('LL') }}</h2>
         </div>
 
         @foreach ($tak_activiteiten as $tak)
             <div class="col-12 col-md-6 col-lg-3 volgende-activiteit">
-                <div class="volgende-activiteit__inner card cs-{{ $tak->kleur }}">
+                <div class="volgende-activiteit__inner card cs-{{ (isset($tak->volgende_activiteit[0]) && $tak->volgende_activiteit[0]->is_activiteit && Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->diffInDays($next_saturday) < 7) ? $tak->kleur : 'grey-extra-light' }}">
                     <h3 class="volgende-activiteit__tak">{{ $tak->naam }}</h3>
 
-                    @if (isset($tak->volgende_activiteit[0]) && $tak->volgende_activiteit[0]->is_activiteit)
+                    @if (isset($tak->volgende_activiteit[0])
+                        && $tak->volgende_activiteit[0]->is_activiteit
+                        && Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->diffInDays($next_saturday) < 7)
+                        @if (Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum) != $next_saturday)
+                            <div class="volgende-activiteit__info volgende-activiteit__info--active volgende-activiteit__info--important">
+                                <span class="volgende-activiteit__icon"><i class="fas fa-calendar"></i></span>
+                                {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->isoFormat('LL') }}
+                            </div>
+                        @endif
+
                         <div class="volgende-activiteit__info
                             {{ ($tak->volgende_activiteit[0]->start_uur != '14:00:00' || $tak->volgende_activiteit[0]->eind_uur != '17:00:00')
                                 ? 'volgende-activiteit__info--active'

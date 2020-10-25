@@ -8,7 +8,6 @@ use App\Activiteit;
 use App\ActiviteitInschrijving;
 use App\Evenement;
 use App\Http\Shared\CommonHelpers;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
