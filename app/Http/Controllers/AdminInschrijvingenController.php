@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Inschrijving;
 use App\Exports\InschrijvingExport;
-use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminInschrijvingenController extends Controller

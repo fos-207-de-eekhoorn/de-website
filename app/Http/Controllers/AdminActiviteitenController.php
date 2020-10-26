@@ -10,7 +10,6 @@ use App\ActiviteitInschrijving;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Carbon\Carbon;
 
 class AdminActiviteitenController extends Controller
 {
