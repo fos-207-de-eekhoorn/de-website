@@ -66,6 +66,10 @@
                 <p>
                     Hier is een voorbeeldje: "Marie Lammertyn - Leiding - Lidgeld".
                 </p>
+
+                <p>
+                    Vind <a href="{{ url('/alle-info/kost-scouts') }}">hier</a> meer info over wat de scouts kost.
+                </p>
             </div>
 
         </div>
