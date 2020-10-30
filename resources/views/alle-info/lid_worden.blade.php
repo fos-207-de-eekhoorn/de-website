@@ -45,6 +45,10 @@
                 <p>
                     Eenmaal wij de inschrijving hebben ontvangen start een proefperiode waarbij je gratis kan deelnemen aan 3 opeenvolgende activiteiten (opeenvolgend vanaf de eerste zaterdag na de bevestingsmail). Als deze proefperiode verlopen is en je wenst verder lid te blijven dan dient het lidgeld betaald te worden.
                 </p>
+
+                <div class="wrapper__btn">
+                    <a href="{{ url('/inschrijven') }}" class="btn btn--primary">Schrijf je hier in</a>
+                </div>
             </div>
 
             <div class="section">
@@ -63,6 +67,7 @@
                     Hier is een voorbeeldje: "Marie Lammertyn - Leiding - Lidgeld".
                 </p>
             </div>
+
         </div>
 
         <div class="col-12 col-md-4">
@@ -82,7 +87,7 @@
             </div>
 
             <div class="wrapper__btn large-margin-top">
-                <a href="{{ url('/contact') }}" class="btn btn--primary">Stuur een berichtje</a>
+                <a href="{{ url('/contact') }}" class="btn btn--secondary">Stuur een berichtje</a>
             </div>
         </div>
     </div>

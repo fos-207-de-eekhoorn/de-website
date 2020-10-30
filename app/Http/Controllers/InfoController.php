@@ -16,10 +16,10 @@ class InfoController extends Controller
 
     public function get_lid_worden()
     {
-        $el = $this->get_all_el();
+        $el_leiding = $this->get_all_el();
 
         return view('alle-info.lid_worden', [
-            'el_leiding' => $el,
+            'el_leiding' => $el_leiding,
         ]);
     }
 
