@@ -66,6 +66,10 @@
 		font-size: .75em;
 	}
 
+	&--very-small-line-height {
+		line-height: .8;
+	}
+
 	&-color {
 		&--white {
 			color: $color-white;

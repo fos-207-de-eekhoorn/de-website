@@ -11,7 +11,11 @@ class InfoController extends Controller
 
     public function get_alle_info()
     {
-        return view('alle-info.algemene_info');
+        $el = $this->get_all_el();
+
+        return view('alle-info.algemene_info', [
+            'el' => $el,
+        ]);
     }
 
     public function get_lid_worden()
@@ -41,8 +45,6 @@ class InfoController extends Controller
     {
         $el = $this->get_el();
         $ael_leden = $this->get_ael_leden();
-
-        // return $ael_leden;
 
         return view('alle-info.docs', [
             'el' => $el,
