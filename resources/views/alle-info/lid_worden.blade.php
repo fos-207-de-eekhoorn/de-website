@@ -28,7 +28,11 @@
                     @foreach($takken->take(4) as $tak)
                         <div class="col-6 col-md-3 section section--small-spacing">
                             <div class="card card--align-center cs-{{ $tak->kleur }} section">
-                                <h5 class="card__title text--align-center">{{ $tak->korte_naam }}</h5>
+                                <a href="{{ url('/takken/' . $tak->link) }}" class="link--block">
+                                    <h5 class="card__title card__title--link card__title--link--centered">
+                                        {{ $tak->korte_naam }}<span class="card__title-link-icon"><i class="fas fa-angle-right"></i></span>
+                                    </h5>
+                                </a>
 
                                 <div class="card__content text--align-center">
                                     <h3 class="text--bold text--very-small-line-height medium-margin-top">

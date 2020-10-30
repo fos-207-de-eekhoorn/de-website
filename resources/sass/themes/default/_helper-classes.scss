@@ -168,6 +168,10 @@
             color: $color-alert-error-medium !important;
         }
 	}
+
+	&--block {
+		display: block;
+	}
 }
 
 .icon {
