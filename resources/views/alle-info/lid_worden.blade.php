@@ -12,7 +12,7 @@
     @endcomponent
 
     <div class="row justify-content-center section">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-8 section">
             <div class="section">
                 <h2>Lid worden</h2>
 
@@ -78,7 +78,7 @@
 
         </div>
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 section">
             @component('components.meer_info_el_leiding', [
                 'el_leiding' => $el_leiding,
             ])
