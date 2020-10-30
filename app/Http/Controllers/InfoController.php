@@ -11,16 +11,16 @@ class InfoController extends Controller
 
     public function get_alle_info()
     {
-        $el = $this->get_all_el();
-
-        return view('alle-info.algemene_info', [
-            'el' => $el,
-        ]);
+        return view('alle-info.algemene_info');
     }
 
     public function get_lid_worden()
     {
-        return view('alle-info.lid_worden');
+        $el = $this->get_all_el();
+
+        return view('alle-info.lid_worden', [
+            'el_leiding' => $el,
+        ]);
     }
 
     public function get_uniform_shop()
@@ -43,11 +43,9 @@ class InfoController extends Controller
 
     public function get_docs()
     {
-        $el = $this->get_el();
         $ael_leden = $this->get_ael_leden();
 
         return view('alle-info.docs', [
-            'el' => $el,
             'ael_leden' => $ael_leden,
         ]);
     }

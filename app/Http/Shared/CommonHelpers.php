@@ -43,6 +43,8 @@ trait CommonHelpers
         return Leider::where('is_el', 1)
             ->orWhere('is_ael_financien', 1)
             ->orWhere('is_ael_leden', 1)
+            ->orderBy('is_el', 'desc')
+            ->orderBy('is_ael_leden', 'desc')
             ->get();
     }
 
