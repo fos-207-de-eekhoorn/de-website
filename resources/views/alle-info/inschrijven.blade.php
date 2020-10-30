@@ -42,7 +42,7 @@
                 @endcomponent
             @endif
 
-            <form id="inschrijving-form" class="form" action="/inschrijven" method="POST">
+            <form id="inschrijving-form" class="form" action="alle-info/inschrijven" method="POST">
                 @csrf
                 
                 <h2>Lid</h2>
@@ -961,18 +961,23 @@
         </div>
 
         <div class="col-12 col-lg-5">
-            <div class="leiding-card-list">
-                @component('components.leiding_card', [
-                    'leider' => $el,
-                ])
-                @endcomponent
+            <h3>Heb je vragen?</h3>
 
-                @foreach($ael as $ael_leider)
+            <p>
+                Contacteer een van onze eenheidsleiding of stuur een berichtje via ons <a href="{{ url('/contact') }}">contact</a> pagina.
+            </p>
+
+            <div class="leiding-card-list">
+                @foreach($el_leiding as $leider)
                     @component('components.leiding_card', [
-                        'leider' => $ael_leider,
+                        'leider' => $leider,
                     ])
                     @endcomponent
                 @endforeach
+            </div>
+
+            <div class="wrapper__btn large-margin-top">
+                <a href="{{ url('/contact') }}" class="btn btn--secondary">Stuur een berichtje</a>
             </div>
         </div>
     </div>

@@ -23,8 +23,6 @@ Route::post('/change-password', 'ChangePasswordController@changePassword');
 Route::get('/', 'HomeController@get_home');
 Route::get('/contact', 'HomeController@get_contact');
 Route::post('/contact', 'HomeController@post_contact');
-Route::get('/inschrijven', 'HomeController@get_inschrijven');
-Route::post('/inschrijven', 'HomeController@post_inschrijven');
 
 # Takken Routes
 Route::prefix('takken')->group(function () {
@@ -44,6 +42,8 @@ Route::prefix('alle-info')->group(function () {
 	Route::get('/kost-scouts', 'InfoController@get_kost_scouts');
 	Route::get('/trooper', 'InfoController@get_trooper');
 	Route::get('/jeugdwerkregels', 'InfoController@get_jeugdwerkregels');
+	Route::get('/inschrijven', 'InfoController@get_inschrijven');
+	Route::post('/inschrijven', 'InfoController@post_inschrijven');
 });
 
 # Evenementen Routes

@@ -47,7 +47,7 @@
                 </p>
 
                 <div class="wrapper__btn">
-                    <a href="{{ url('/inschrijven') }}" class="btn btn--primary">Schrijf je hier in</a>
+                    <a href="{{ url('/alle-info/inschrijven') }}" class="btn btn--primary">Schrijf je hier in</a>
                 </div>
             </div>
 
