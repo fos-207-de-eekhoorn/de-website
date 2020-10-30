@@ -13,7 +13,7 @@
 
     <div class="row justify-content-center section">
         <div class="col-12 col-md-8">
-            <div class="algemene-info">
+            <div class="section">
                 <h2>Lid worden</h2>
 
                 <p>
@@ -44,6 +44,23 @@
 
                 <p>
                     Eenmaal wij de inschrijving hebben ontvangen start een proefperiode waarbij je gratis kan deelnemen aan 3 opeenvolgende activiteiten (opeenvolgend vanaf de eerste zaterdag na de bevestingsmail). Als deze proefperiode verlopen is en je wenst verder lid te blijven dan dient het lidgeld betaald te worden.
+                </p>
+            </div>
+
+            <div class="section">
+                <h3>Wat kost de scouts?</h3>
+
+                <p>
+                    Lidgeld bedraagt €38 per kind.
+                </p>
+
+                <p>
+                    Betalingen gebeuren op het rekeningnummer:<br>
+                    <strong>BE71 9730 1630 9269</strong> met vermelding “<strong><i>Naam&nbsp;-&nbsp;Tak&nbsp;-&nbsp;Lidgeld</i></strong>".
+                </p>
+
+                <p>
+                    Hier is een voorbeeldje: "Marie Lammertyn - Leiding - Lidgeld".
                 </p>
             </div>
         </div>
