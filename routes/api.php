@@ -12,6 +12,12 @@ Route::namespace('Api')
     	// Activiteiten
     	Route::post(
     		'/activiteiten/set-aanwezig',
-    		'AdminController@PostSetAanwezig'
+    		'AdminController@SetAanwezig'
+    	);
+
+    	// General
+    	Route::post(
+    		'/upload-image',
+    		'AdminController@UploadImage'
     	);
     });

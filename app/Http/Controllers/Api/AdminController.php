@@ -4,16 +4,21 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\ActiviteitInschrijving;
+use App\Image;
+use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
+    use UploadTrait;
+
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function PostSetAanwezig(Request $request)
+    public function SetAanwezig(Request $request)
     {
         $validatedData = $request->validate([
             'id' => 'required',
@@ -28,5 +33,28 @@ class AdminController extends Controller
 
         if ($is_saved) return 'true';
         else return 'false';
+    }
+
+    public function UploadImage(Request $request)
+    {
+        $validatedData = $request->validate([
+            'image' => 'required|image|max:2048',
+        ]);
+
+        $image = $request->image;
+        $name = Str::slug($request->image->getClientOriginalName()).'_'.time();
+        $folder = '/uploads/';
+        $filePath = $folder . $name. '.' . $image->getClientOriginalExtension();
+        if ($this->uploadOne($image, $folder, 'public', $name)) {
+            $image = new Image;
+            $image->path = $filePath;
+            $image->save();
+            return [
+                'id' => $image->id,
+                'path' => $image->path,
+            ];
+        } else {
+            return 'false';
+        }
     }
 }

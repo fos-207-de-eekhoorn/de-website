@@ -295,14 +295,26 @@
             var image = $imageUpload.prop('files')[0];
             var imageName = image.name;
             var imageUrl;
+            var formData = new FormData();
+            formData.append('image', image);
 
             $button.html(buttonContent.connecting);
             $.ajax({
-                url: '/api/signed-upload-url',
-                data: {
-                    key: imageName
+                url: '/api/upload-image',
+                method: 'post',
+                contentType: false,
+                processData: false,
+                data: formData,
+                dataType:'json',
+                beforeSend: function() {
+                    $button.html(buttonContent.uploading);
+                    console.log('Uploading....');
                 }
             }).done(function(data) {
+                $button.html(buttonContent.saved);
+                console.log(data);
+                console.log('Saved');
+                /*
                 imageUrl = data.url;
 
                 $button.html(buttonContent.uploading);
@@ -312,7 +324,7 @@
                     url: imageUrl,
                     method: 'PUT',
                     contentType: 'multipart/form-data',
-                    processData: false,
+                    
                     data: image
                 }).done(function(data) {
                     $button.html(buttonContent.saving);
@@ -356,7 +368,10 @@
                         }, 600);
                     });
                 });
-            });
+                */
+            }).fail(function() {
+                console.log('Paco, fix it');
+            });;
         }
     </script>
 
