@@ -87,7 +87,7 @@
                                 <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>
                             </div>
 
-                            <ul class="list--no-ui text--align-center existingBlocks margin-top--md" style="display: none">
+                            <ul class="list--no-ui text--align-center existingBlocks medium-margin-top" style="display: none">
                                 @foreach($blocks as $add_block)
                                     <li>
                                         <a data-i-block="{{ $loop->index }}" class="link--cursor" onclick="addExistingContentBlock($(this))">{{ $add_block->name }}</a>
@@ -284,7 +284,7 @@
                                     <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>
                                 </div>
 
-                                <ul class="list--no-ui text--align-center existingBlocks margin-top--md" style="display: none">
+                                <ul class="list--no-ui text--align-center existingBlocks medium-margin-top" style="display: none">
                                     @foreach($blocks as $add_block)
                                         <li>
                                             <a data-i-block="{{ $loop->index }}" class="link--cursor" onclick="addExistingContentBlock($(this))">{{ $add_block->name }}</a>
@@ -850,7 +850,7 @@
                     '       <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>' +
                     '   </div>' +
 
-                    '   <ul class="list--no-ui text--align-center existingBlocks margin-top--md" style="display: none">' +
+                    '   <ul class="list--no-ui text--align-center existingBlocks medium-margin-top" style="display: none">' +
                             @foreach($blocks as $add_block)
                     '           <li>' +
                     '               <a data-i-block="{{ $loop->index }}" class="link--cursor" onclick="addExistingContentBlock($(this))">{{ $add_block->name }}</a>' +

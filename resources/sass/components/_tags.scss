@@ -1,0 +1,53 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Tags
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <ul class="tags">
+//      <li class="tags__item">Tag</li>
+//      <li class="tags__item">Tag</li>
+//  </ul>
+//
+//  Options
+//  -------
+//  * tags__centered
+//  * tags__right
+//
+//  ------------------------------------------------------------------------------------
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    
+    &--centered {
+        justify-content: center;
+    }
+    
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &--wide-both-sides {
+        .tags {
+            &__item {
+                margin: 0 spacing(md) spacing(sm) !important;
+            }
+        }
+    }
+    
+    &__item {
+        @include border-radius;
+
+        border: 1px solid;
+        list-style: none;
+        padding: spacing(xs) spacing(sm);
+        margin-right: spacing(xs);
+        
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

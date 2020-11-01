@@ -1,0 +1,28 @@
+//  ------------------------------------------------------------------------------------
+//  Components -> Input Blog block
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <div class="input-blog-block">
+//      Input for the blog block
+//  </div>
+//
+//  Options
+//  -------
+//  NONE
+//
+//  ------------------------------------------------------------------------------------
+
+.input-blog-block {
+    @include border-radius;
+
+    padding: spacing(md);
+    border: 1px solid $color-grey-extra-light;
+    margin-bottom: spacing(sm);
+    background-color: $color-grey-background-light;
+    
+    &--add {
+    	background-color: $color-grey-extra-light;
+    }
+}

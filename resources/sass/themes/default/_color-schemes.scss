@@ -203,6 +203,13 @@
 			}
 		}
 	}
+
+    .tags {
+        &__item {
+            border-color: $color-grey-light;
+            background-color: $color-grey-extra-light;
+        }
+    }
 }
 
 //  Dark color schemes

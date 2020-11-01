@@ -142,6 +142,12 @@
 		list-style: none;
 	}
 
+	&--no-ui {
+		padding-left: 0;
+
+		list-style: none;
+	}
+
 	&--no-spacing {
 		padding-left: 0;
 		padding-right: 0;
@@ -163,6 +169,10 @@
         &:hover {
             color: $color-alert-error-medium !important;
         }
+	}
+
+	&--cursor {
+		cursor: pointer;
 	}
 }
 
@@ -244,6 +254,12 @@
 	> [class*="col-"] {
 		padding-right: $grid-gutter-width / 4;
 		padding-left: $grid-gutter-width / 4;
+	}
+}
+
+.col {
+	&--max {
+		flex-grow: 1000;
 	}
 }
 
