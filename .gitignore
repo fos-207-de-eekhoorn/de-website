@@ -34,6 +34,7 @@ public/docs
 public/fonts
 public/img
 public/js
+public/uploads
 
 # MacOS
 .DS_Store
