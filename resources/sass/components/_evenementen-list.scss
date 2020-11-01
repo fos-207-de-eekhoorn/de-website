@@ -1,0 +1,17 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Evenementen list
+//  ------------------------------------------------------------------------------------
+
+.evenementen-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    
+    &__item {
+        margin-bottom: spacing(md);
+
+        list-style: none;
+    }
+}

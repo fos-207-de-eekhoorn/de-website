@@ -60,6 +60,10 @@
             }
         }
 
+        &--small-margin-bottom {
+            margin-bottom: spacing(sm);
+        }
+
         &--last {
             margin-bottom: spacing(lg);
         }
@@ -81,6 +85,14 @@
             display: inline;
         }
         
+        &--tag {
+            @include border-radius;
+
+            padding: spacing(sm) spacing(md);
+            border: 1px solid;
+            cursor: pointer;
+        }
+        
         &--required {
             &:after {
                 margin-left: spacing(xxs);
@@ -89,6 +101,43 @@
                 color: $color-alert-error-dark;
             }
         }
+    }
+
+    &__input-group {
+        display: flex;
+
+        .form {
+            &__input {
+                width: 100%;
+
+                &:first-child {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+                &:last-child {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        } 
+    }
+
+    &__input-group-before,
+    &__input-group-after {
+        padding: spacing(sm) spacing(md);
+        border-top: 1px solid $color-grey-extra-light;
+        border-bottom: 1px solid $color-grey-extra-light;
+        background-color: $color-grey-background;
+    }
+    &__input-group-before {
+        border-left: 1px solid $color-grey-extra-light;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+    }
+    &__input-group-after {
+        border-right: 1px solid $color-grey-extra-light;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
     }
 
     &__input,

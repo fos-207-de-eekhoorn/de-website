@@ -108,12 +108,6 @@
                                         <option value="30">30</option>
                                         <option value="31">31</option>
                                     </select>
-
-                                    @if ($errors->has('day'))
-                                        <span class="form__section-feedback">
-                                            {{ $errors->first('day') }}
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
 
@@ -140,18 +134,6 @@
                                         <option value="11">November</option>
                                         <option value="12">December</option>
                                     </select>
-
-                                    @if ($errors->has('month'))
-                                        <span class="form__section-feedback">
-                                            {{ $errors->first('month') }}
-                                        </span>
-                                        <script>    
-                                            trackEvent('View Error Message', {
-                                                'message': "{{ $errors->first('month') }}",
-                                                'field': 'month'
-                                            });
-                                        </script>
-                                    @endif
                                 </div>
                             </div>
 
@@ -169,18 +151,6 @@
                                         <option value="2019">2019</option>
                                         <option value="2018">2018</option>
                                     </select>
-
-                                    @if ($errors->has('year'))
-                                        <span class="form__section-feedback">
-                                            {{ $errors->first('year') }}
-                                        </span>
-                                        <script>    
-                                            trackEvent('View Error Message', {
-                                                'message': "{{ $errors->first('year') }}",
-                                                'field': 'year'
-                                            });
-                                        </script>
-                                    @endif
                                 </div>
                             </div>
                         </div>

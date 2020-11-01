@@ -33,7 +33,7 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <!-- Styles -->
-        <link href="/css/style.css?v=0.6.4" rel="stylesheet">
+        <link href="/css/style.css?v=0.7.0" rel="stylesheet">
 
         <!-- TinyMCE -->
         <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -91,7 +91,7 @@
                                     </a>
                                 </li>
 
-                                @foreach($takken as $tak)
+                                @foreach($navigation_takken as $tak)
                                     <li class="nav__sublist-item">
                                         <a href="/takken/{{ $tak->link }}" class="nav__link nav__link--sublist">
                                             {{ $tak->naam }}
@@ -134,6 +134,12 @@
                                 </li>
 
                                 <li class="nav__sublist-item">
+                                    <a href="/alle-info/inschrijven" class="nav__link nav__link--sublist">
+                                        Inschrijven
+                                    </a>
+                                </li>
+
+                                <li class="nav__sublist-item">
                                     <a href="/alle-info/kost-scouts" class="nav__link nav__link--sublist">
                                         Kost scouts
                                     </a>
@@ -159,7 +165,6 @@
                             </ul>
                         </li>
 
-                        {{--
                         <li class="nav__list-item nav__list-item--sublist">
                             <input type="checkbox" id="nav__toggle-sublist--evenementen" class="nav__checkbox" hidden>
 
@@ -174,20 +179,23 @@
                                     </a>
                                 </li>
 
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen/bivak/bevers-welpen" class="nav__link nav__link--sublist">
-                                        Bivak bevers & welpen
-                                    </a>
-                                </li>
+                                @foreach($navigation_evenementen as $evenement)
+                                    <li class="nav__sublist-item">
+                                        <a href="/evenementen/{{ $evenement->url }}" class="nav__link nav__link--sublist">
+                                            {{ $evenement->naam }}
+                                        </a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </li>
-                        --}}
 
+                        {{--
                         <li class="nav__list-item">
                             <a href="/inschrijven" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
                                 Inschrijven
                             </a>
                         </li>
+                        --}}
 
                         <li class="nav__list-item">
                             <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
@@ -221,6 +229,12 @@
                                     <li class="nav__sublist-item">
                                         <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
                                             Activiteiten
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/admin/evenementen" class="nav__link nav__link--sublist">
+                                            Evenementen
                                         </a>
                                     </li>
 
@@ -280,7 +294,7 @@
                                 <a href="/takken" class="footer-nav__link footer-nav__link--parent">Takken</a>
 
                                 <ul class="footer-nav__sublist">
-                                    @foreach($takken as $tak)
+                                    @foreach($navigation_takken as $tak)
                                         <li class="footer-nav__item">
                                             <a href="/takken/{{ $tak->link }}" class="footer-nav__link footer-nav__link--sublink">
                                                 {{ $tak->naam }}
@@ -307,6 +321,10 @@
                                     </li>
 
                                     <li class="footer-nav__item">
+                                        <a href="/alle-info/inschrijven" class="footer-nav__link footer-nav__link--sublink">Inschrijven</a>
+                                    </li>
+
+                                    <li class="footer-nav__item">
                                         <a href="/alle-info/kost-scouts" class="footer-nav__link footer-nav__link--sublink">Kost scouts</a>
                                     </li>
 
@@ -317,32 +335,32 @@
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/trooper" class="footer-nav__link footer-nav__link--sublink">Trooper</a>
                                     </li>
+
+                                    <li class="footer-nav__item">
+                                        <a href="/alle-info/jeugdwerkregels" class="footer-nav__link footer-nav__link--sublink">Jeugdwerkregels</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="footer-nav__item">
+                                <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
+
+                                <ul class="footer-nav__sublist">
+                                    @foreach($navigation_evenementen as $evenement)
+                                        <li class="footer-nav__item">
+                                            <a href="/evenementen/{{ $evenement->url }}" class="footer-nav__link footer-nav__link--sublink">
+                                                {{ $evenement->naam }}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
 
                             {{--
                             <li class="footer-nav__item">
-                                <a class="footer-nav__link footer-nav__link--parent">Evenementen</a>
-
-                                <ul class="footer-nav__sublist">
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/bevers-welpen" class="footer-nav__link footer-nav__link--sublink">Bivak bevers & welpen</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/jonge" class="footer-nav__link footer-nav__link--sublink">Bivak JG/V</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/evenementen/bivak/oude" class="footer-nav__link footer-nav__link--sublink">Bivak JG/V</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            --}}
-
-                            <li class="footer-nav__item">
                                 <a href="/inschrijven" class="footer-nav__link footer-nav__link--parent">Inschrijven</a>
                             </li>
+                            --}}
 
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>

@@ -12,51 +12,77 @@
     @endcomponent
 
     <div class="row justify-content-center section">
-        <div class="col-12 col-md-8">
-            <div class="algemene-info">
+        <div class="col-12 col-md-8 section">
+            <div class="section">
                 <h2>Lid worden</h2>
+
                 <p>
                     Wil je lid worden van onze scouts? Goed idee! Hier vindt je alle nodige info.
                 </p>
-                <br>
+
                 <p>
                     Onze scouts is opgedeeld in 4 leeftijdsgroepen, de takken.
                 </p>
-                <lu>
-                    <li>Bevers: 2015-2013</li>
-                    <li>Welpen: 2012-2010</li>
-                    <li>JG/V's: 2009-2007</li>
-                    <li>OG/V's: 2006-2004</li>
-                </lu>
-                <br>
+
+                <div class="row small-gutters">
+                    @foreach($takken->take(4) as $tak)
+                        <div class="col-6 col-md-3 section section--small-spacing">
+                            <div class="card card--align-center cs-{{ $tak->kleur }} section">
+                                <a href="{{ url('/takken/' . $tak->link) }}" class="link--block">
+                                    <h5 class="card__title card__title--link card__title--link--centered">
+                                        {{ $tak->korte_naam }}<span class="card__title-link-icon"><i class="fas fa-angle-right"></i></span>
+                                    </h5>
+                                </a>
+
+                                <div class="card__content text--align-center">
+                                    <h3 class="text--bold text--very-small-line-height medium-margin-top">
+                                        {{ $tak->jaartal_begin }}<br>
+                                        -<br>
+                                        {{ $tak->jaartal_eind }}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
                 <p>
-                    Je kan 3 opeenvolgende zaterdagen gratis proberen, pas hierna wordt er een verbintenis via lidgeld gevraagd.
+                    Eenmaal wij de inschrijving hebben ontvangen start een proefperiode waarbij je gratis kan deelnemen aan 3 opeenvolgende activiteiten (opeenvolgend vanaf de eerste zaterdag na de bevestingsmail). Als deze proefperiode verlopen is en je wenst verder lid te blijven dan dient het lidgeld betaald te worden.
                 </p>
-                    <p>
-                        Wil je lid worden van onze scouts? Stuur dan een mail naar <a href="mailto:fos207ste@gmail.com">fos207ste@gmail.com</a> met de volgende gegevens:
-                    </p>
-                    <lu>
-                        <li>Naam kind</li>
-                        <li>Geboortedatum kind</li>
-                        <li>Naam moeder</li>
-                        <li>Naam Vader</li>
-                        <li>Telefoon moeder</li>
-                        <li>Telefoon vader</li>
-                        <li>Adres</li>
-                        <li>Email-adres</li>
-                        <li>Of uw kind aan bepaalde activiteiten niet mag deelnemen</li>
-                        <li>Eventuele allergiën, medicatie, ziektes, ...</li>
-                        <li>Eventuele opmerkingen</li>
-                    </lu>
-                    <br>
-                    <p>
-                        Eenmaal wij de mail hebben ontvangen en verwerkt sturen wij een bevestiging. Vanaf dan start een proefperiode waarbij je <b>gratis</b> kan deelnemen aan 3 opeenvolgende activiteiten (opeenvolgend vanaf de eerste zaterdag na de bevestingsmail). Als deze proefperiode verlopen is en je wenst verder lid te blijven dan dient het lidgeld betaald te worden.
-                    </p>
-                <br>
-                <h4>Wat kost de scouts?</h4>
-                <p>Lidgeld bedraagd €38 per kind</p>
-                <p> Betalingen gebeuren op het rekeningnummer: <b>BE71 9730 1630 9269</b> met vermelding “NAAM+TAK+LIDGELD".</p>
+
+                <div class="wrapper__btn">
+                    <a href="{{ url('/alle-info/inschrijven') }}" class="btn btn--primary">Schrijf je hier in</a>
+                </div>
             </div>
+
+            <div class="section">
+                <h3>Wat kost de scouts?</h3>
+
+                <p>
+                    Lidgeld bedraagt €38 per kind.
+                </p>
+
+                <p>
+                    Betalingen gebeuren op het rekeningnummer:<br>
+                    <strong>BE71 9730 1630 9269</strong> met vermelding “<strong><i>Naam&nbsp;-&nbsp;Tak&nbsp;-&nbsp;Lidgeld</i></strong>".
+                </p>
+
+                <p>
+                    Hier is een voorbeeldje: "Marie Lammertyn - Leiding - Lidgeld".
+                </p>
+
+                <p>
+                    Vind <a href="{{ url('/alle-info/kost-scouts') }}">hier</a> meer info over wat de scouts kost.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-4 section">
+            @component('components.meer_info_el_leiding', [
+                'el_leiding' => $el_leiding,
+            ])
+            @endcomponent
         </div>
     </div>
 @endsection

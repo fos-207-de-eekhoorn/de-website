@@ -40,7 +40,13 @@
         
         @include mq(md) {
             padding-bottom: spacing(md);
-        }   
+        }
+
+        &.cs-grey-extra-light {
+            .volgende-activiteit__tak {
+                color: $color-grey-dark;
+            }
+        }
     }
 
     &__tak {
@@ -71,6 +77,11 @@
             &:last-child {
                 margin-bottom: 0;
             }
+        }
+
+        &--important {
+            font-weight: $font-weight-bold;
+            color: $color-grey-extra-dark;
         }
     }
 

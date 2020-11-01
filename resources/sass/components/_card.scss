@@ -4,9 +4,41 @@
 
 .card {
     @include border-radius;
+    @include shadow-standard;
 
     position: relative;
     width: 100%;
     height: auto;
     padding: $gutter / 2;
+    
+    &__title {
+    	&--link {
+    		display: flex;
+    		align-items: baseline;
+
+    		&--centered {
+    			justify-content: center;
+    		}
+
+    		&:hover {
+    			.card {
+    				&__title-link-icon {
+    					width: spacing(md);
+    					margin-left: spacing(sm);
+    					opacity: 1;
+    				}
+    			}
+    		}
+    	}
+    }
+    
+    &__title-link-icon {
+    	@include transitions;
+
+    	display: inline-block;
+    	width: 0;
+    	margin: 0;
+    	overflow: hidden;
+    	opacity: 0;
+    }
 }

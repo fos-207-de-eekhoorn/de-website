@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Content;
+use App\Evenement;
 use App\Inschrijving;
 use App\Tak;
 use App\Http\Shared\CommonHelpers;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,13 @@ class HomeController extends Controller
                 'volgende_activiteit',
             ])
             ->limit(4)
+            ->get();
+
+        $evenementen = Evenement::where('active', '1')
+            ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+            ->with('evenement_tak')
+            ->orderBy('start_datum','ASC')
+            ->limit(3)
             ->get();
 
         $voorwoord = Content::where('key', 'voorwoord')
@@ -40,9 +49,14 @@ class HomeController extends Controller
             'general' => $this->ignore_files(Storage::disk('public')->files('img/carousel/general/')),
         ];
 
+        $today = Carbon::now();
+        $next_saturday = $today->is('Saturday') ? $today : $today->next('Saturday');
+
         return view('home', [
-            'tak_activiteiten' => $tak_activiteiten,
             'carousels' => $carousels,
+            'next_saturday' => $next_saturday,
+            'tak_activiteiten' => $tak_activiteiten,
+            'evenementen' => $evenementen,
             'voorwoord' => $voorwoord->content_text[0],
         ]);
     }
@@ -86,94 +100,5 @@ class HomeController extends Controller
         }
 
         return redirect()->back();
-    }
-
-    public function get_inschrijven()
-    {
-        $el = $this->get_el();
-        $ael = $this->get_ael();
-
-        return view('inschrijven', [
-            'el' => $el,
-            'ael' => $ael,
-        ]);
-    }
-
-    public function post_inschrijven(request $request)
-    {
-        $recaptcha = new \ReCaptcha\ReCaptcha(config('recaptcha.secret'));
-        $resp = $recaptcha->setExpectedHostname('scoutsoostkamp.be')
-            ->verify($request['g-recaptcha-response'], $request->ip());
-
-        if (true) {
-            $request->validate([
-                // Lid
-                'voornaam' => 'required',
-                'achternaam' => 'required',
-                'geboortedatum' => 'required',
-                'straat' => 'required',
-                'nummer' => 'required',
-                'postcode' => 'required',
-                'land' => 'required',
-
-                // Voogd 1
-                'voogd_1_voornaam' => 'required',
-                'voogd_1_achternaam' => 'required',
-                'voogd_1_email' => 'required',
-                'voogd_1_telefoon' => 'required',
-            ]);
-
-            $new_inschrijving = new Inschrijving;
-
-            $new_inschrijving->voornaam = $request->voornaam;
-            $new_inschrijving->achternaam = $request->achternaam;
-            $new_inschrijving->email = $request->email;
-            $new_inschrijving->telefoon = $request->telefoon;
-            $new_inschrijving->geslacht = $request->geslacht;
-            $new_inschrijving->geboortedatum = $request->geboortedatum[2].'-'.$request->geboortedatum[1].'-'.$request->geboortedatum[0];
-            $new_inschrijving->straat = $request->straat;
-            $new_inschrijving->nummer = $request->nummer;
-            $new_inschrijving->bus = $request->bus;
-            $new_inschrijving->postcode = $request->postcode;
-            $new_inschrijving->plaats = $request->plaats;
-            $new_inschrijving->land = $request->land;
-            $new_inschrijving->medisch = $request->medisch;
-            $new_inschrijving->voogd_1_voornaam = $request->voogd_1_voornaam;
-            $new_inschrijving->voogd_1_achternaam = $request->voogd_1_achternaam;
-            $new_inschrijving->voogd_1_email = $request->voogd_1_email;
-            $new_inschrijving->voogd_1_telefoon = $request->voogd_1_telefoon;
-            $new_inschrijving->voogd_1_straat = $request->voogd_1_straat;
-            $new_inschrijving->voogd_1_nummer = $request->voogd_1_nummer;
-            $new_inschrijving->voogd_1_bus = $request->voogd_1_bus;
-            $new_inschrijving->voogd_1_postcode = $request->voogd_1_postcode;
-            $new_inschrijving->voogd_1_plaats = $request->voogd_1_plaats;
-            $new_inschrijving->voogd_1_land = $request->voogd_1_land;
-            $new_inschrijving->voogd_2_voornaam = $request->voogd_2_voornaam;
-            $new_inschrijving->voogd_2_achternaam = $request->voogd_2_achternaam;
-            $new_inschrijving->voogd_2_email = $request->voogd_2_email;
-            $new_inschrijving->voogd_2_telefoon = $request->voogd_2_telefoon;
-            $new_inschrijving->voogd_2_straat = $request->voogd_2_straat;
-            $new_inschrijving->voogd_2_nummer = $request->voogd_2_nummer;
-            $new_inschrijving->voogd_2_bus = $request->voogd_2_bus;
-            $new_inschrijving->voogd_2_postcode = $request->voogd_2_postcode;
-            $new_inschrijving->voogd_2_plaats = $request->voogd_2_plaats;
-            $new_inschrijving->voogd_2_land = $request->voogd_2_land;
-
-            $inschrijving = $new_inschrijving->save();
-
-            if ($inschrijving) {
-                Session::flash('inschrijving_success');
-
-                return redirect()->back();
-            } else {
-                Session::flash('inschrijving_error');
-
-                return redirect()->back()->withInput();
-            }
-        } else {
-            Session::flash('inschrijving_error_captcha');
-
-            return redirect()->back()->withInput();
-        }
     }
 }

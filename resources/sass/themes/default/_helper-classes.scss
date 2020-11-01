@@ -66,6 +66,10 @@
 		font-size: .75em;
 	}
 
+	&--very-small-line-height {
+		line-height: .8;
+	}
+
 	&-color {
 		&--white {
 			color: $color-white;
@@ -174,6 +178,10 @@
 	&--cursor {
 		cursor: pointer;
 	}
+
+	&--block {
+		display: block;
+	}
 }
 
 .icon {
@@ -241,6 +249,10 @@
 		max-width: spacing(xxl);
 		max-height: spacing(xxl);
 	}
+}
+
+.icon {
+	opacity: .6;
 }
 
 //  Layout
