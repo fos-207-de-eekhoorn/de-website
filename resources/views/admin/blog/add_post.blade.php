@@ -281,7 +281,6 @@
                 upload: 'Upload',
                 connecting: '<span class="fa--before"><i class="fas fa-spinner fa-spin"></i></span>Connecting...',
                 uploading: '<span class="fa--before"><i class="fas fa-spinner fa-spin"></i></span>Uploading...',
-                saving: '<span class="fa--before"><i class="fas fa-spinner fa-spin"></i></span>Saving...',
                 saved: '<span class="fa--before"><i class="fas fa-check"></i></span>Uploaded'
             };
 
@@ -293,12 +292,11 @@
             e.preventDefault();
 
             var image = $imageUpload.prop('files')[0];
-            var imageName = image.name;
-            var imageUrl;
             var formData = new FormData();
             formData.append('image', image);
 
             $button.html(buttonContent.connecting);
+
             $.ajax({
                 url: '/api/upload-image',
                 method: 'post',

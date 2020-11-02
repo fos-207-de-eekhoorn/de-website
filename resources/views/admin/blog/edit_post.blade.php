@@ -828,12 +828,14 @@
                     '           </div>' +
                     '       </div>' +
 
-                    '       <div class="imageFromUpload">' +
+                    '       <div class="imageFromUpload form__input-with-button">' +
                     '           <input' +
                     '               type="file"' +
                     '               id="blocks[' + key + '][image_upload]"' +
                     '               name="blocks[' + key + '][image_upload]"' +
                     '               class="form__input form__input--full-width">' +
+
+                    '           <a class="btn btn--primary form__input-button imageUploadButton" onclick="uploadImage(event, false, $(this));">Upload</a>'
                     '       </div>' +
                     '   </div>' +
 
@@ -991,7 +993,6 @@
                 upload: 'Upload',
                 connecting: '<span class="fa--before"><i class="fas fa-spinner fa-spin"></i></span>Connecting...',
                 uploading: '<span class="fa--before"><i class="fas fa-spinner fa-spin"></i></span>Uploading...',
-                saving: '<span class="fa--before"><i class="fas fa-spinner fa-spin"></i></span>Saving...',
                 saved: '<span class="fa--before"><i class="fas fa-check"></i></span>Uploaded'
             };
 
@@ -1005,94 +1006,76 @@
             if (!fromPost) $imageUpload = element.prev();
 
             var image = $imageUpload.prop('files')[0];
-            var imageName = image.name;
-            var imageUrl;
+            var formData = new FormData();
+            formData.append('image', image);
 
             $button.html(buttonContent.connecting);
+
             $.ajax({
-                url: '/api/signed-upload-url',
-                data: {
-                    key: imageName
+                url: '/api/upload-image',
+                method: 'post',
+                contentType: false,
+                processData: false,
+                data: formData,
+                dataType:'json',
+                beforeSend: function() {
+                    $button.html(buttonContent.uploading);
+                    console.log('Uploading....');
                 }
             }).done(function(data) {
-                imageUrl = data.url;
+                $button.html(buttonContent.saved);
+                console.log(data);
+                console.log('Saved');
 
-                $button.html(buttonContent.uploading);
-                console.log('Uploading....');
+                var i = $('.image-selection__input').length,
+                    html = '' +
+                        '<input' +
+                        '    type="radio"' +
+                        '    id="image-' + data.id + '"' +
+                        '    class="image-selection__input"' +
+                        '    name="image"' +
+                        '    value="' + data.id + '"' +
+                        '    hidden' +
+                        (fromPost
+                            ? ' checked'
+                            : ''
+                        ) +
+                        '>' +
+                        '<div class="image-selection__image">' +
+                        '    <label for="image-' + data.id + '" class="form__label image-selection__label">' +
+                        '        <img src="' + data.path + '">' +
+                        '    </label>' +
+                        '</div>';
 
-                $.ajax({
-                    url: imageUrl,
-                    method: 'PUT',
-                    contentType: 'multipart/form-data',
-                    processData: false,
-                    data: image
-                }).done(function(data) {
-                    $button.html(buttonContent.saving);
-                    console.log('Uploaded');
-                    console.log('Saving....');
+                $button.html(buttonContent.saved);
+                $('.image-selection--post').append(html);
 
-                    $.ajax({
-                        url: '{{ url('/api/complete-upload') }}',
-                        method: 'POST',
-                        data: {
-                            key: imageName,
-                            url: imageUrl
-                        }
-                    }).done(function(data) {
-                        console.log(data);
-                        console.log('Saved');
+                $('.input-blog-block:not(.input-blog-block--add').each(function() {
+                    var key = $(this).find('.imageFromLibrary:first').find('.image-selection__input:first').attr('id').split("-")[0];
+                    html = '' +
+                        '<input' +
+                        '    type="radio"' +
+                        '    id="' + key + '-image-' + data.id + '"' +
+                        '    name="blocks[' + key + '][image]"' +
+                        '    class="image-selection__input"' +
+                        '    value="' + data.id + '"' +
+                        '    hidden>' +
+                        '<div class="image-selection__image">' +
+                        '    <label for="' + key + '-image-' + data.id + '" class="form__label image-selection__label">' +
+                        '        <img src="' + data.path + '">' +
+                        '    </label>' +
+                        '</div>';
 
-                        var i = $('.image-selection__input').length,
-                            html = '' +
-                                '<input' +
-                                '    type="radio"' +
-                                '    id="image-' + data.id + '"' +
-                                '    class="image-selection__input"' +
-                                '    name="image"' +
-                                '    value="' + data.id + '"' +
-                                '    hidden' +
-                                (fromPost
-                                    ? ' checked'
-                                    : ''
-                                ) +
-                                '>' +
-                                '<div class="image-selection__image">' +
-                                '    <label for="image-' + data.id + '" class="form__label image-selection__label">' +
-                                '        <img src="' + data.path + '">' +
-                                '    </label>' +
-                                '</div>';
-
-                        $button.html(buttonContent.saved);
-                        $('.image-selection--post').append(html);
-
-                        $('.input-blog-block:not(.input-blog-block--add').each(function() {
-                            var key = $(this).find('.imageFromLibrary:first').find('.image-selection__input:first').attr('id').split("-")[0];
-                            html = '' +
-                                '<input' +
-                                '    type="radio"' +
-                                '    id="' + key + '-image-' + data.id + '"' +
-                                '    name="blocks[' + key + '][image]"' +
-                                '    class="image-selection__input"' +
-                                '    value="' + data.id + '"' +
-                                '    hidden>' +
-                                '<div class="image-selection__image">' +
-                                '    <label for="' + key + '-image-' + data.id + '" class="form__label image-selection__label">' +
-                                '        <img src="' + data.path + '">' +
-                                '    </label>' +
-                                '</div>';
-
-                            $(this).find('.image-selection').append(html)
-                        });
-
-                        setTimeout(function (){
-                            $button.html(buttonContent.upload);
-                            $('[id$="image-source-library"]').prop("checked", true);
-                            $('input[type=file]').val('');
-                            checkIfImageIncluded();
-                            checkIfPostImageIncluded();
-                        }, 600);
-                    });
+                    $(this).find('.image-selection').append(html)
                 });
+
+                setTimeout(function (){
+                    $button.html(buttonContent.upload);
+                    $('[id$="image-source-library"]').prop("checked", true);
+                    $('input[type=file]').val('');
+                    checkIfImageIncluded();
+                    checkIfPostImageIncluded();
+                }, 600);
             });
         }
     </script>
