@@ -80,8 +80,18 @@ Route::prefix('admin')->group(function () {
 		Route::post('/remove-undo', 'AdminActiviteitenController@delete_activiteit_undo')->middleware('decrypt:value,id');
 		Route::post('/inschrijvingen/remove', 'AdminActiviteitenController@delete_activiteit_inschrijvingen')->middleware('decrypt:value,id');
 		Route::post('/inschrijvingen/remove-undo', 'AdminActiviteitenController@delete_activiteit_inschrijvingen_undo')->middleware('decrypt:value,id');
+	});
 
-		Route::post('/set-aanwezig', 'ApiAdminController@PostSetActiviteitAanwezig');
+	# Evenementen
+	Route::prefix('evenementen')->group(function () {
+		Route::get('/', 'AdminEvenementenController@get_evenementen');
+		Route::get('/add', 'AdminEvenementenController@get_add_evenementen');
+		Route::get('/edit/{id}', 'AdminEvenementenController@get_edit_evenementen');
+
+		Route::post('/add', 'AdminEvenementenController@post_add_evenementen');
+		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
+		Route::post('/remove', 'AdminEvenementenController@delete_activiteit')->middleware('decrypt:value,id');
+		Route::post('/remove-undo', 'AdminEvenementenController@delete_activiteit_undo')->middleware('decrypt:value,id');
 	});
 
 	# Inschrijvingen
@@ -101,6 +111,7 @@ Route::prefix('admin')->group(function () {
 		Route::post('/posts/add', 'AdminBlogController@add_post');
 		Route::post('/posts/edit', 'AdminBlogController@edit_post')->middleware('decrypt:value,id');
 		Route::post('/posts/delete', 'AdminBlogController@delete_post')->middleware('decrypt:value,id');
+
 		# Categories
 		Route::get('/categories', 'AdminBlogController@get_categories');
 		Route::get('/categories/add', function() {
@@ -108,6 +119,7 @@ Route::prefix('admin')->group(function () {
 		});
 		Route::post('/categories/add', 'AdminBlogController@add_category');
 		Route::post('/categories/delete', 'AdminBlogController@delete_category')->middleware('decrypt:value,id');
+
 		# Tags
 		Route::get('/tags', 'AdminBlogController@get_tags');
 		Route::get('/tags/add', function() {
@@ -119,25 +131,11 @@ Route::prefix('admin')->group(function () {
 		Route::get('/test', 'AdminBlogController@test');
 	});
 
-	# Contents
+	# Content
 	Route::prefix('contents')->group(function () {
 		Route::get('/', 'AdminContentController@get_contents');
 		Route::get('/{key}', 'AdminContentController@get_content_key');
 
 		Route::post('/add', 'AdminContentController@post_add_content_text')->middleware(['decrypt:value,id', 'decrypt:value,leider_id']);
-	});
-
-	# Evenementen
-	Route::prefix('evenementen')->group(function () {
-		Route::get('/', 'AdminEvenementenController@get_evenementen');
-		Route::get('/add', 'AdminEvenementenController@get_add_evenementen');
-		Route::get('/edit/{id}', 'AdminEvenementenController@get_edit_evenementen');
-
-		Route::post('/add', 'AdminEvenementenController@post_add_evenementen');
-		Route::post('/edit', 'AdminEvenementenController@post_edit_evenementen')->middleware('decrypt:value,id');
-		Route::post('/remove', 'AdminEvenementenController@delete_activiteit')->middleware('decrypt:value,id');
-		Route::post('/remove-undo', 'AdminEvenementenController@delete_activiteit_undo')->middleware('decrypt:value,id');
-
-		Route::post('/set-active', 'ApiAdminController@PostSetEvenementActive');
 	});
 });

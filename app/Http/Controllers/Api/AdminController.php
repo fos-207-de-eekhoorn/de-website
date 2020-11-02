@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\ActiviteitInschrijving;
+use App\Evenement;
 use App\Image;
 use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function SetAanwezig(Request $request)
+    public function SetActiviteitAanwezig(Request $request)
     {
         $validatedData = $request->validate([
             'id' => 'required',
@@ -30,6 +31,23 @@ class AdminController extends Controller
 
         $update_inschrijving->is_aanwezig = $request->status;
         $is_saved = $update_inschrijving->save();
+
+        if ($is_saved) return 'true';
+        else return 'false';
+    }
+
+    public function SetEvenementActive(Request $request)
+    {
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'status' => 'required',
+        ]);
+
+        $update_evenement = Evenement::where('id', $request->id)
+            ->first();
+
+        $update_evenement->active = $request->status;
+        $is_saved = $update_evenement->save();
 
         if ($is_saved) return 'true';
         else return 'false';

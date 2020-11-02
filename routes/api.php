@@ -12,7 +12,13 @@ Route::namespace('Api')
     	// Activiteiten
     	Route::post(
     		'/activiteiten/set-aanwezig',
-    		'AdminController@SetAanwezig'
+    		'AdminController@SetActiviteitAanwezig'
+    	);
+
+    	// Activiteiten
+    	Route::post(
+    		'/evenementen/set-active',
+    		'AdminController@SetEvenementActive'
     	);
 
     	// General
