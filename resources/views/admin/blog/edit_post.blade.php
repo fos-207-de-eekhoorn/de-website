@@ -141,7 +141,7 @@
 
                                     <div class="col blog-order">
                                         <a class="text--xl link--cursor" onclick="orderBlockUp($(this))"><i class="fas fa-angle-up"></i></a>
-                                        <a class="text--xl link--cursor" onclick="orderBlockdown($(this))"><i class="fas fa-angle-down"></i></a>
+                                        <a class="text--xl link--cursor" onclick="orderBlockDown($(this))"><i class="fas fa-angle-down"></i></a>
                                         <a class="text--xl link--cursor link--error" onclick="removeThisBlock($(this))"><i class="fas fa-times"></i></a>
                                     </div>
                                 </div>
@@ -734,7 +734,7 @@
 
                     '        <div class="col blog-order">' +
                     '            <a class="text--xl link--cursor" onclick="orderBlockUp($(this))"><i class="fas fa-angle-up"></i></a>' +
-                    '            <a class="text--xl link--cursor" onclick="orderBlockdown($(this))"><i class="fas fa-angle-down"></i></a>' +
+                    '            <a class="text--xl link--cursor" onclick="orderBlockDown($(this))"><i class="fas fa-angle-down"></i></a>' +
                     '            <a class="text--xl link--cursor link--error" onclick="removeThisBlock($(this))"><i class="fas fa-times"></i></a>' +
                     '        </div>' +
                     '    </div>' +
@@ -835,7 +835,7 @@
                     '               name="blocks[' + key + '][image_upload]"' +
                     '               class="form__input form__input--full-width">' +
 
-                    '           <a class="btn btn--primary form__input-button imageUploadButton" onclick="uploadImage(event, false, $(this));">Upload</a>'
+                    '           <a class="btn btn--primary form__input-button imageUploadButton" onclick="uploadImage(event, false, $(this));">Upload</a>' +
                     '       </div>' +
                     '   </div>' +
 
@@ -875,7 +875,7 @@
         function orderBlockUp(e) {
             var block = e.parents('.input-blog-block');
             var blockToSwapWith = block.prev().prev();
-            if (blockToSwapWith.length > 0) {
+            if (blockToSwapWith.length > 0 && blockToSwapWith.hasClass('input-blog-block')) {
                 block.swapWith(blockToSwapWith);
                 changedInput();
             }
