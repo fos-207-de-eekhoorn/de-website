@@ -400,7 +400,7 @@
 
                             <ul class="tags">
                                 @foreach($post->tags as $tag)
-                                    <li class="tags__item">
+                                    <li class="tags__tag">
                                         <input
                                             type="text"
                                             name="tags[{{ $loop->index }}][id]"
@@ -920,7 +920,7 @@
                         return this.value;
                     }).get(),
                     id = list.indexOf(tag) >= 0 ? ($options.eq(list.indexOf(tag)).attr('data-id')) : undefined,
-                    tagList = $tags.find('.tags__item').map(function () {
+                    tagList = $tags.find('.tags__tag').map(function () {
                         return $(this).text().replace(/\s/g,'').replace('#','');
                     }).get(),
                     inList = tagList.indexOf(tag) >= 0 ? true : false;
@@ -953,7 +953,7 @@
             key++;
 
             element = '' +
-                '   <li class="tags__item">' +
+                '   <li class="tags__tag">' +
                 (id ?
                     '   <input' +
                     '       type="text"' +

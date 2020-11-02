@@ -233,9 +233,17 @@
 	}
 
     .tags {
-        &__item {
-            border-color: $color-grey-light;
-            background-color: $color-grey-extra-light;
+        &__tag {
+            border-color: $color-grey-extra-light;
+            background-color: $color-grey-background;
+
+			&--is-link {
+				color: $color-grey-medium;
+				
+				&:hover {
+					color: $color-blue;
+				}
+			}
         }
     }
 }
