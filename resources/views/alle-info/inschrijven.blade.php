@@ -42,7 +42,7 @@
                 @endcomponent
             @endif
 
-            <form id="inschrijving-form" class="form" action="/inschrijven" method="POST">
+            <form id="inschrijving-form" class="form" action="alle-info/inschrijven" method="POST">
                 @csrf
                 
                 <h2>Lid</h2>
@@ -961,19 +961,10 @@
         </div>
 
         <div class="col-12 col-lg-5">
-            <div class="leiding-card-list">
-                @component('components.leiding_card', [
-                    'leider' => $el,
-                ])
-                @endcomponent
-
-                @foreach($ael as $ael_leider)
-                    @component('components.leiding_card', [
-                        'leider' => $ael_leider,
-                    ])
-                    @endcomponent
-                @endforeach
-            </div>
+            @component('components.meer_info_el_leiding', [
+                'el_leiding' => $el_leiding,
+            ])
+            @endcomponent
         </div>
     </div>
 

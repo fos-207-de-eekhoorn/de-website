@@ -38,6 +38,16 @@ trait CommonHelpers
         return Leider::where('id', $leider_id);
     }
 
+    public function get_all_el()
+    {
+        return Leider::where('is_el', 1)
+            ->orWhere('is_ael_financien', 1)
+            ->orWhere('is_ael_leden', 1)
+            ->orderBy('is_el', 'desc')
+            ->orderBy('is_ael_leden', 'desc')
+            ->get();
+    }
+
     public function get_el()
     {
         return Leider::where('is_el', 1)->first();

@@ -113,13 +113,10 @@
             }
         }
         &--secondary {
-            background-color: $color-grey-extra-light;
+        	border: 1px solid $color-green;
+            background-color: rgba($color-white, 0);
             
             color: $color-blue;
-
-            &:hover {
-            	background-color: $color-yellow-light;
-            }
         }
         &--tertiary {
             color: $color-blue;
