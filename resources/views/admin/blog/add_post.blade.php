@@ -201,45 +201,22 @@
                 {{-- ============================================ --}}
                 <span class="form__label">Publiceer om</span>
 
-                <div class="row small-gutters">
-                    <div class="col-12 col-md-6">
-                        <section class="form__section">
-                            <label for="live_at_date" class="form__label">Datum</label>
+                <section class="form__section">
+                    <label for="live_at" class="form__label">Datum</label>
 
-                            <input
-                                type="date"
-                                id="live_at_date"
-                                name="live_at_date"
-                                value="{{ old('live_at_date') }}"
-                                class="form__input form__input--full-width">
+                    <input
+                        type="datetime-local"
+                        id="live_at"
+                        name="live_at"
+                        value="{{ old('live_at') }}"
+                        class="form__input form__input--full-width">
 
-                            @if ($errors->has('live_at_date'))
-                                <span class="form__section-feedback">
-                                    {{ $errors->first('live_at_date') }}
-                                </span>
-                            @endif
-                        </section>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <section class="form__section">
-                            <label for="live_at_time" class="form__label">Time</label>
-
-                            <input
-                                type="time"
-                                id="live_at_time"
-                                name="live_at_time"
-                                value="{{ old('live_at_time') }}"
-                                class="form__input form__input--full-width">
-
-                            @if ($errors->has('live_at_time'))
-                                <span class="form__section-feedback">
-                                    {{ $errors->first('live_at_time') }}
-                                </span>
-                            @endif
-                        </section>
-                    </div>
-                </div>
+                    @if ($errors->has('live_at'))
+                        <span class="form__section-feedback">
+                            {{ $errors->first('live_at') }}
+                        </span>
+                    @endif
+                </section>
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Make post</button>

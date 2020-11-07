@@ -543,35 +543,18 @@
                         {{-- Publish at --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
-                            <label for="live_at_date" class="form__label">Publish at date</label>
+                            <label for="live_at" class="form__label">publiceer datum</label>
 
                             <input
-                                type="date"
-                                id="live_at_date"
-                                name="live_at_date"
-                                value="{{ old('live_at_date', Carbon\Carbon::create($post->live_at)->toDateString()) }}"
+                                type="datetime-local"
+                                id="live_at"
+                                name="live_at"
+                                value="{{ old('live_at', str_replace(' ', 'T', $post->live_at)) }}"
                                 class="form__input form__input--full-width">
 
-                            @if ($errors->has('live_at_date'))
+                            @if ($errors->has('live_at'))
                                 <span class="form__section-feedback">
-                                    {{ $errors->first('live_at_date') }}
-                                </span>
-                            @endif
-                        </section>
-
-                        <section class="form__section">
-                            <label for="live_at_time" class="form__label">Publish at time</label>
-
-                            <input
-                                type="time"
-                                id="live_at_time"
-                                name="live_at_time"
-                                value="{{ old('live_at_time', Carbon\Carbon::create($post->live_at)->format('H:i')) }}"
-                                class="form__input form__input--full-width">
-
-                            @if ($errors->has('live_at_time'))
-                                <span class="form__section-feedback">
-                                    {{ $errors->first('live_at_time') }}
+                                    {{ $errors->first('live_at') }}
                                 </span>
                             @endif
                         </section>

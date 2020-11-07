@@ -83,15 +83,14 @@ class AdminBlogController extends Controller
         ]);
 
         $new_post = new BlogPost;
-
         $new_post->name = $request->name;
         $new_post->title = $request->title;
         $new_post->subtitle = $request->subtitle;
         $new_post->category_id = $request->category;
         $new_post->header_image_id = $request->image;
-        $new_post->live_at = ($request->live_at_date
+        $new_post->live_at = ($request->live_at
             ? str_replace('T', ' ', $request->live_at)
-            : Carbon::now('CET')->toDateString());
+            : Carbon::now('CET'));
         $success = $new_post->save();
 
         if ($success) {
@@ -135,14 +134,9 @@ class AdminBlogController extends Controller
         $post->category_id = $request->category;
         $post->active = ($request->active ? '1' : '0');
         $post->header_image_id = $request->image;
-        $post->live_at =
-            ($request->live_at_date
-                ? $request->live_at_date
-                : Carbon::now('CET')->toDateString())
-            . ' ' .
-            ($request->live_at_time
-                ? $request->live_at_time
-                : Carbon::now('CET')->toTimeString());
+        $post->live_at = ($request->live_at
+            ? str_replace('T', ' ', $request->live_at)
+            : Carbon::now('CET'));
 
         if ($post->save()) {
             // Handle Tags
