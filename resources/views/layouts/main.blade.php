@@ -245,6 +245,12 @@
                                     </li>
 
                                     <li class="nav__sublist-item">
+                                        <a href="/admin/blog/" class="nav__link nav__link--sublist">
+                                            Blog
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
                                         <a href="/admin/contents" class="nav__link nav__link--sublist">
                                             Content
                                         </a>
