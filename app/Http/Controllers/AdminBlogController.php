@@ -219,8 +219,21 @@ class AdminBlogController extends Controller
 
         if ($post->save()) $success = BlogPost::destroy($request->id);
 
-        if ($success) Session::flash('delete_success');
+        if ($success) Session::flash('delete_success', $request->id);
         else Session::flash('error');
+
+        return redirect('/admin/blog/posts');
+    }
+
+    public function delete_post_undo(Request $request)
+    {
+        $restore = BlogPost::withTrashed()->find($request->id)->restore();
+
+        if ($restore) {
+            Session::flash('restore_success');
+        } else {
+            Session::flash('restore_error');
+        }
 
         return redirect('/admin/blog/posts');
     }

@@ -69,21 +69,48 @@
                 @component('components.flash_message', [
                     'type' => 'success',
                 ])
-                    Your post has been added
+                    Je post is toegevoegd.
                 @endcomponent
             @endif
             @if (session('delete_success'))
                 @component('components.flash_message', [
                     'type' => 'warning',
                 ])
-                    Your post has been added removed
+                    Je post is verwijderd.
+                    <form action="{{ url('/admin/blog/posts/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                        @csrf
+
+                        <input
+                            type="text"
+                            name="id"
+                            value="{{ Crypt::encrypt(session('delete_success')) }}"
+                            hidden>
+
+                        <button class="btn btn--without-style link--error">
+                            <span class="fa--before"><i class="fas fa-times"></i></span>Maak ongedaan
+                        </button>
+                    </form>
                 @endcomponent
             @endif
             @if (session('error'))
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Something went wrong. Take a screenshot and send it to Orry, he's your friend!
+                    Er is iets fout gegaan. Neem screenshots indien mogelijk en stuur het naar Paco, hij is je vriend.
+                @endcomponent
+            @endif
+            @if (session('restore_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    Je post is terug gezet.
+                @endcomponent
+            @endif
+            @if (session('restore_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Geen paniek, Paco kan deze terugzetten.
                 @endcomponent
             @endif
 
