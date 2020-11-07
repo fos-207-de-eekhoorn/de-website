@@ -1004,6 +1004,15 @@
                 beforeSend: function() {
                     $button.html(buttonContent.uploading);
                     console.log('Uploading....');
+                },
+                statusCode: {
+                    413: function() {
+                        alert('Oh daddy, it\'s too big. Hou je afbeeldingen onder 2MB.');
+                        $button.html(buttonContent.upload);
+                    },
+                    500: function() {
+                        alert('Er is iets foutgelopen aan de serverkant. Probeer nog eens of contacteer Paco.');
+                    }
                 }
             }).done(function(data) {
                 $button.html(buttonContent.saved);
