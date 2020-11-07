@@ -123,32 +123,40 @@
                                     {{ $post->active }}
                                 </td>
 
-                                <td class="table__cell table__cell--hover-action">
-                                    <div class="wrapper__btn wrapper__btn--right wrapper__btn--vertical-on-mobile wrapper__btn--small-spacing">
-                                        <a href="{{ url('/admin/blog/posts/edit/' . Crypt::encrypt($post->id)) }}" class="table__action btn btn--without-style">
-                                            <i class="fas fa-pen"></i>
+                                <td class="table__cell no-wrap">
+                                    {{--
+                                    <p>
+                                        <a href="{{ url('/evenementen/') }}">
+                                            <span class="fa--before"><i class="fas fa-eye"></i></span>Bekijk evenement
                                         </a>
+                                    </p>
+                                    --}}
 
-                                        <form action="{{ url('/admin/blog/posts/delete') }}" method="POST" class="btn btn--without-style">
-                                            @csrf
+                                    <p>
+                                        <a href="{{ url('/admin/blog/posts/edit/' . Crypt::encrypt($post->id)) }}">
+                                            <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
+                                        </a>
+                                    </p>
 
-                                            <input
-                                                type="text"
-                                                name="id"
-                                                value="{{ Crypt::encrypt($post->id) }}"
-                                                hidden>
-                                            <button
-                                                class="btn btn--without-style table__action link--error"
-                                                title="Delete post"
-                                                onclick="
-                                                    confirm('U SURE? LIKE... FO REALZZZZ?')
-                                                        ? NULL
-                                                        : event.preventDefault();
-                                                ">
-                                                <i class="fas fa-times"></i>
-                                            </button>
-                                        </form>
-                                    </div>
+                                    <form action="{{ url('/admin/blog/posts/delete') }}" method="POST" class="no-margin-bottom">
+                                        @csrf
+
+                                        <input
+                                            type="text"
+                                            name="id"
+                                            value="{{ Crypt::encrypt($post->id) }}"
+                                            hidden>
+
+                                        <button
+                                            class="btn btn--without-style link--error"
+                                            onclick="
+                                                confirm('U SURE? LIKE... FO REALZZZZ?')
+                                                    ? NULL
+                                                    : event.preventDefault();
+                                        ">
+                                            <span class="fa--before"><i class="fas fa-times"></i></span>Verwijder
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty
