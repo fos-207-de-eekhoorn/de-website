@@ -44,21 +44,48 @@
                 @component('components.flash_message', [
                     'type' => 'success',
                 ])
-                    Your tag has been added
+                    Je tag is toegevoegd.
                 @endcomponent
             @endif
             @if (session('delete_success'))
                 @component('components.flash_message', [
                     'type' => 'warning',
                 ])
-                    Your tag has been added removed
+                    Je tag is verwijderd.
+                    <form action="{{ url('/admin/blog/tags/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                        @csrf
+
+                        <input
+                            type="text"
+                            name="id"
+                            value="{{ Crypt::encrypt(session('delete_success')) }}"
+                            hidden>
+
+                        <button class="btn btn--without-style link--error">
+                            <span class="fa--before"><i class="fas fa-times"></i></span>Maak ongedaan
+                        </button>
+                    </form>
                 @endcomponent
             @endif
             @if (session('error'))
                 @component('components.flash_message', [
                     'type' => 'error',
                 ])
-                    Something went wrong. Take a screenshot and send it to Orry, he's your friend!
+                    Er is iets fout gegaan. Neem screenshots indien mogelijk en stuur het naar Paco, hij is je vriend.
+                @endcomponent
+            @endif
+            @if (session('restore_success'))
+                @component('components.flash_message', [
+                    'type' => 'success',
+                ])
+                    Je tag is terug gezet.
+                @endcomponent
+            @endif
+            @if (session('restore_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gegaan. Geen paniek, Paco kan deze terugzetten.
                 @endcomponent
             @endif
 
@@ -96,7 +123,7 @@
                                             class="btn btn--without-style table__action link--error"
                                             title="Delete tag"
                                             onclick="
-                                                confirm('{{ $tag->times_used > 0 ? 'This one is actually used in ' . $tag->times_used . ' posts. Are you sure you want to delete this tag out of all the posts?' : 'U SURE? LIKE... FO REALZZZZ?' }}')
+                                                confirm('{{ $tag->times_used > 0 ? 'Deze tag is gebruikt in ' . $tag->times_used . ' posts. Ben je zeker dat je de tag wilt verwijderen uit al deze posts?' : 'U SURE? LIKE... FO REALZZZZ?' }}')
                                                     ? undefined
                                                     : event.preventDefault();
                                             ">

@@ -123,6 +123,7 @@ Route::prefix('admin')->group(function () {
 			});
 			Route::post('/add', 'AdminBlogController@add_category');
 			Route::post('/delete', 'AdminBlogController@delete_category')->middleware('decrypt:value,id');
+			Route::post('/remove-undo', 'AdminBlogController@delete_category_undo')->middleware('decrypt:value,id');
 		});
 
 		# Tags
@@ -133,6 +134,7 @@ Route::prefix('admin')->group(function () {
 			});
 			Route::post('/add', 'AdminBlogController@add_tag');
 			Route::post('/delete', 'AdminBlogController@delete_tag')->middleware('decrypt:value,id');
+			Route::post('/remove-undo', 'AdminBlogController@delete_tag_undo')->middleware('decrypt:value,id');
 		});
 	});
 

@@ -223,11 +223,8 @@ class AdminBlogController extends Controller
     {
         $restore = BlogPost::withTrashed()->find($request->id)->restore();
 
-        if ($restore) {
-            Session::flash('restore_success');
-        } else {
-            Session::flash('restore_error');
-        }
+        if ($restore) Session::flash('restore_success');
+        else Session::flash('restore_error');
 
         return redirect('/admin/blog/posts');
     }
@@ -266,11 +263,18 @@ class AdminBlogController extends Controller
     {
         $success = BlogCategory::destroy($request->id);
 
-        if ($success) {
-            Session::flash('delete_success');
-        } else {
-            Session::flash('error');
-        }
+        if ($success) Session::flash('delete_success', $request->id);
+        else Session::flash('error');
+
+        return redirect('/admin/blog/categories');
+    }
+
+    public function delete_category_undo(Request $request)
+    {
+        $restore = BlogCategory::withTrashed()->find($request->id)->restore();
+
+        if ($restore) Session::flash('restore_success');
+        else Session::flash('restore_error');
 
         return redirect('/admin/blog/categories');
     }
@@ -310,11 +314,18 @@ class AdminBlogController extends Controller
         BlogPostTag::where('blog_tag_id', $request->id)->delete();
         $success = BlogTag::destroy($request->id);
 
-        if ($success) {
-            Session::flash('delete_success');
-        } else {
-            Session::flash('error');
-        }
+        if ($success) Session::flash('delete_success', $request->id);
+        else Session::flash('error');
+
+        return redirect('/admin/blog/tags');
+    }
+
+    public function delete_tag_undo(Request $request)
+    {
+        $restore = BlogTag::withTrashed()->find($request->id)->restore();
+
+        if ($restore) Session::flash('restore_success');
+        else Session::flash('restore_error');
 
         return redirect('/admin/blog/tags');
     }
