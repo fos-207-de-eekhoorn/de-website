@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\ActiviteitInschrijving;
+use App\BlogPost;
 use App\Evenement;
 use App\Image;
 use App\Traits\UploadTrait;
@@ -44,6 +45,23 @@ class AdminController extends Controller
         ]);
 
         $update_evenement = Evenement::where('id', $request->id)
+            ->first();
+
+        $update_evenement->active = $request->status;
+        $is_saved = $update_evenement->save();
+
+        if ($is_saved) return 'true';
+        else return 'false';
+    }
+
+    public function SetBlogPostActive(Request $request)
+    {
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'status' => 'required',
+        ]);
+
+        $update_evenement = BlogPost::where('id', $request->id)
             ->first();
 
         $update_evenement->active = $request->status;

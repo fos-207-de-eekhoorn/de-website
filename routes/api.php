@@ -15,10 +15,16 @@ Route::namespace('Api')
     		'AdminController@SetActiviteitAanwezig'
     	);
 
-    	// Activiteiten
+    	// Evenementen
     	Route::post(
     		'/evenementen/set-active',
     		'AdminController@SetEvenementActive'
+    	);
+
+    	// Evenementen
+    	Route::post(
+    		'/blog/posts/set-active',
+    		'AdminController@SetBlogPostActive'
     	);
 
     	// General

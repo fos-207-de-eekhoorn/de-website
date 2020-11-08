@@ -42,6 +42,20 @@
                 </a>
             </div>
 
+            <div class="ajax-error" style="display: none;">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Dit zou niet mogen gebeuren, bel Paco.
+                @endcomponent
+            </div>
+            <div class="ajax-fail" style="display: none;">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is iets fout gelopen. Best eens de pagina refreshen.
+                @endcomponent
+            </div>
             @if (session('add_success'))
                 @component('components.flash_message', [
                     'type' => 'success',
@@ -124,7 +138,16 @@
                                 </td>
 
                                 <td class="table__cell">
-                                    {{ $post->active }}
+                                    <div class="toggle-switch">
+                                        <input
+                                            type="checkbox"
+                                            id="toggle-{{ $post->id }}"
+                                            class="toggle-switch__input"
+                                            value="{{ $post->id }}"
+                                            @if ($post->active) checked @endif
+                                            hidden>
+                                        <label class="toggle-switch__slider" for="toggle-{{ $post->id }}"></label>
+                                    </div>
                                 </td>
 
                                 <td class="table__cell no-wrap">
@@ -175,5 +198,32 @@
             </div>
         </div>
     </div>
+
+    <script>
+        (function($){
+            $('.toggle-switch__input').change(function() {
+                $.ajax({
+                    url: "{{ url('/api/blog/posts/set-active') }}",
+                    type: "post",
+                    data: {
+                        '_token': '{{ csrf_token() }}',
+                        'id':  $(this).val(),
+                        'status': $(this).prop('checked') ? 1 : 0
+                    }
+                }).done(function(data) {
+                    if (data == 'false') {
+                        $(this).prop('checked', !$(this).prop('checked'));
+                        $('.ajax-error').slideDown(300);
+                    } else {
+                        $('.ajax-error').slideUp(300);
+                        $('.ajax-fail').slideUp(300);
+                    }
+                }).fail(function() {
+                    $(this).prop('checked', !$(this).prop('checked'));
+                    $('.ajax-fail').slideDown(300);
+                });
+            });
+        })(jQuery);
+    </script>
 
 @endsection
