@@ -19,4 +19,9 @@ class BlogCategory extends Model
     {
         return $this->hasMany(BlogPost::class);
     }
+
+    public function getTimesUsedAttribute()
+    {
+        return sizeof(BlogPost::where('category_id', $this->id)->get());
+    }
 }

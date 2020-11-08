@@ -93,6 +93,7 @@
                 <thead class="table__head">
                     <tr class="table__row">
                         <td class="table__cell">Categorie</td>
+                        <td class="table__cell"># gebruikt</td>
                         <td class="table__cell"></td>
                     </tr>
                 </thead>
@@ -102,6 +103,10 @@
                         <tr class="table__row">
                             <td class="table__cell">
                                 {{ $category->name }}
+                            </td>
+
+                            <td class="table__cell">
+                                {{ $category->times_used }}x
                             </td>
 
                             <td class="table__cell table__cell--hover-action">
