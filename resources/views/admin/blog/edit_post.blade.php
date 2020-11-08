@@ -57,21 +57,14 @@
                     @component('components.flash_message', [
                         'type' => 'success',
                     ])
-                        Your post has been added eddited.
+                        Je post is aangepast.
                     @endcomponent
                 @endif
                 @if (session('error'))
                     @component('components.flash_message', [
                         'type' => 'error',
                     ])
-                        Something went wrong. Take a screenshot and send it to Orry, he's your friend!
-                    @endcomponent
-                @endif
-                @if (session('image_upload_fail'))
-                    @component('components.flash_message', [
-                        'type' => 'error',
-                    ])
-                        One of the image failed to upload. Try again or take a screenshot and send it to Orry, he's your friend!
+                        Er is iets fout gegaan. Neem screenshots indien mogelijk en stuur het naar Paco, hij is je vriend.
                     @endcomponent
                 @endif
 
@@ -83,8 +76,8 @@
 
                         <div class="input-blog-block input-blog-block--add">
                             <div class="wrapper__btn wrapper__btn--centered">
-                                <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next('.existingBlocks').slideToggle(300)">Add existing block</a>
-                                <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>
+                                <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next('.existingBlocks').slideToggle(300)">Voeg bestaande blok toe</a>
+                                <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Voeg nieuwe blok toe</a>
                             </div>
 
                             <ul class="list--no-ui text--align-center existingBlocks medium-margin-top" style="display: none">
@@ -121,7 +114,7 @@
                                 <div class="row">
                                     <div class="col col--max">
                                         <section class="form__section">
-                                            <label for="blocks[{{ $key }}][name]" class="form__label form__label--required">Name</label>
+                                            <label for="blocks[{{ $key }}][name]" class="form__label form__label--required">Naam</label>
 
                                             <input
                                                 type="text"
@@ -195,10 +188,10 @@
                                     @endif
                                 </div>
 
-                                {{-- Image --}}
+                                {{-- Afbeelding --}}
                                 {{-- ============================================ --}}
                                 <div class="form__section">
-                                    <label class="form__label form__label--required">Image</label>
+                                    <label class="form__label form__label--required">Afbeelding</label>
 
                                     <p>
                                         <input
@@ -210,7 +203,7 @@
                                             {{ old('blocks.'.$key.'.image_source', true) == 'library' ? "checked" : "" }}>
 
                                         <label for="{{ $key }}-image-source-library" class="fa--before ">
-                                            Library
+                                            Bibliotheek
                                         </label>
 
                                         <input
@@ -273,15 +266,15 @@
                                     @component('components.flash_message', [
                                         'type' => 'warning',
                                     ])
-                                        Attention! This block is used multiple times. If you change this one, it changes everywhere. If you have it multiple times on this post, edit the last instance.
+                                        Aandacht! Deze blok is meerdere keren gebruikt. Als je deze aanpast, wordt het overal aangepast. Als je deze blok meerdere keren gebruikt in deze post, pas de laatste instantie aan.
                                     @endcomponent
                                 @endif
                             </div>
 
                             <div class="input-blog-block input-blog-block--add">
                                 <div class="wrapper__btn wrapper__btn--centered">
-                                    <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next('.existingBlocks').slideToggle(300)">Add existing block</a>
-                                    <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>
+                                    <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next('.existingBlocks').slideToggle(300)">Voeg bestaande blok toe</a>
+                                    <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Voeg nieuwe blok toe</a>
                                 </div>
 
                                 <ul class="list--no-ui text--align-center existingBlocks medium-margin-top" style="display: none">
@@ -298,7 +291,7 @@
                         {{-- ============================================ --}}
                         <div class="wrapper__btn">
                             <button class="btn btn--primary">Update post</button>
-                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Go back</a>
+                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Ga terug</a>
                         </div>
 
                         <div id="test"></div>
@@ -307,12 +300,12 @@
                     {{-- Main info --}}
                     {{-- ============================================ --}}
                     <div class="col-12 col-md-4">
-                        <h4>Main info</h4>
+                        <h4>Algemene info</h4>
 
                         {{-- Name --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
-                            <label for="name" class="form__label form__label--required">Name</label>
+                            <label for="name" class="form__label form__label--required">Naam</label>
 
                             <input
                                 type="text"
@@ -332,7 +325,7 @@
                         {{-- Title --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
-                            <label for="title" class="form__label form__label--required">Title</label>
+                            <label for="title" class="form__label form__label--required">Titel</label>
 
                             <input
                                 type="text"
@@ -352,7 +345,7 @@
                         {{-- Subtitle --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
-                            <label for="subtitle" class="form__label form__label--required">Subtitle</label>
+                            <label for="subtitle" class="form__label form__label--required">Subtitel</label>
 
                             <input
                                 type="text"
@@ -372,7 +365,7 @@
                         {{-- Category --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
-                            <label for="category" class="form__label form__label--required">Category</label>
+                            <label for="category" class="form__label form__label--required">Categorie</label>
 
                             <select
                                 id="category"
@@ -438,10 +431,10 @@
                             </datalist>
                         </section>
 
-                        {{-- Image --}}
+                        {{-- Afbeelding --}}
                         {{-- ============================================ --}}
                         <div class="form__section handleImage">
-                            <label class="form__label form__label--required">Image</label>
+                            <label class="form__label form__label--required">Afbeelding</label>
 
                             <p>
                                 <input
@@ -453,7 +446,7 @@
                                     {{ old('image_source', true) == 'library' ? "checked" : "" }}>
 
                                 <label for="image-source-library" class="fa--before ">
-                                    Library
+                                    Bibliotheek
                                 </label>
 
                                 <input
@@ -516,7 +509,7 @@
                         {{-- ============================================ --}}
                         <section class="form__section form__section--parts">
                             <label for="active" class="form__section-part">
-                                Show post?
+                                Toon post?
                             </label>
 
                             <div class="form__section-part form__section-part--xl">
@@ -543,7 +536,7 @@
                         {{-- Publish at --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
-                            <label for="live_at" class="form__label">publiceer datum</label>
+                            <label for="live_at" class="form__label">Publiceer datum</label>
 
                             <input
                                 type="datetime-local"
@@ -563,7 +556,7 @@
                         {{-- ============================================ --}}
                         <div class="wrapper__btn">
                             <button class="btn btn--primary">Update post</button>
-                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Go back</a>
+                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Ga terug</a>
                         </div>
                     </div>
                 </div>
@@ -616,7 +609,7 @@
         }
 
         window.onbeforeunload = function() {
-            if (inputIsChanged && !formSubmitted) return "Changes that you made may not be saved.";
+            if (inputIsChanged && !formSubmitted) return "Je aanpassingen zijn nog niet opgeslagen.";
         };
 
         // Blog block images toggles
@@ -703,7 +696,7 @@
                     '   <div class="row">' +
                     '       <div class="col col--max">' +
                     '           <section class="form__section">' +
-                    '               <label for="blocks[' + key + '][name]" class="form__label form__label--required">Name</label>' +
+                    '               <label for="blocks[' + key + '][name]" class="form__label form__label--required">Naam</label>' +
 
                     '               <input' +
                     '                   type="text"' +
@@ -759,10 +752,10 @@
                     '       </div>' +
                     '   </div>' +
 
-                    '   {{-- Image --}}' +
+                    '   {{-- Afbeelding --}}' +
                     '   {{-- ============================================ --}}' +
                     '   <div class="form__section">' +
-                    '       <label class="form__label form__label--required">Image</label>' +
+                    '       <label class="form__label form__label--required">Afbeelding</label>' +
 
                     '       <p>' +
                     '           <input' +
@@ -774,7 +767,7 @@
                     '               checked>' +
 
                     '           <label for="' + key + '-image-source-library" class="fa--before link--cursor">' +
-                    '               Library' +
+                    '               Bibliotheek' +
                     '           </label>' +
 
                     '           <input' +
@@ -831,8 +824,8 @@
 
                     '<div class="input-blog-block input-blog-block--add">' +
                     '   <div class="wrapper__btn wrapper__btn--centered">' +
-                    '       <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next(\'.existingBlocks\').slideToggle(300)">Add existing block</a>' +
-                    '       <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Add new block</a>' +
+                    '       <a class="btn btn--secondary link--cursor" onclick="$(this).parent().next(\'.existingBlocks\').slideToggle(300)">Voeg bestaande blok toe</a>' +
+                    '       <a class="btn btn--secondary link--cursor" onclick="addNewContentBlock($(this))">Voeg nieuwe blok toe</a>' +
                     '   </div>' +
 
                     '   <ul class="list--no-ui text--align-center existingBlocks medium-margin-top" style="display: none">' +

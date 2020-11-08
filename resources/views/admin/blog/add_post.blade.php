@@ -81,7 +81,7 @@
                 {{-- Subtitle --}}
                 {{-- ============================================ --}}
                 <section class="form__section">
-                    <label for="subtitle" class="form__label form__label--required">Post subsubtitel</label>
+                    <label for="subtitle" class="form__label form__label--required">Post subtitel</label>
 
                     <input
                         type="text"
@@ -199,10 +199,8 @@
 
                 {{-- Publish at --}}
                 {{-- ============================================ --}}
-                <span class="form__label">Publiceer om</span>
-
                 <section class="form__section">
-                    <label for="live_at" class="form__label">Datum</label>
+                    <label for="live_at" class="form__label">Publiceer om</label>
 
                     <input
                         type="datetime-local"
@@ -219,7 +217,7 @@
                 </section>
 
                 <div class="wrapper__btn">
-                    <button class="btn btn--primary">Make post</button>
+                    <button class="btn btn--primary">Maak post aan</button>
                     <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Cancel</a>
                 </div>
             </form>
