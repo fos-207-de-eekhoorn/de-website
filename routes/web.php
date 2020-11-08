@@ -60,6 +60,13 @@ Route::prefix('evenementen')->group(function () {
 	Route::get('/{url}', 'EvenementenController@get_evenement_details');
 });
 
+# Blog Routes
+Route::prefix('blog')->group(function () {
+	Route::get('/', 'BlogController@get_blog');
+
+	Route::get('/{title}', 'BlogController@get_blog_post');
+});
+
 # Admin Routes
 Route::prefix('admin')->group(function () {
 	Route::get('/', 'AdminGeneralController@get_admin');
