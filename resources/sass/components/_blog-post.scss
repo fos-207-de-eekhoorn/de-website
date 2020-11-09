@@ -41,6 +41,8 @@
         text-decoration: none;
         
         &:hover {
+            @include shadow-double;
+
             text-decoration: none;
         }
     }
