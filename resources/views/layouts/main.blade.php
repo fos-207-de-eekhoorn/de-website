@@ -134,12 +134,6 @@
                                 </li>
 
                                 <li class="nav__sublist-item">
-                                    <a href="/alle-info/inschrijven" class="nav__link nav__link--sublist">
-                                        Inschrijven
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
                                     <a href="/alle-info/kost-scouts" class="nav__link nav__link--sublist">
                                         Kost scouts
                                     </a>
@@ -318,10 +312,6 @@
 
                                     <li class="footer-nav__item">
                                         <a href="/alle-info/lid-worden" class="footer-nav__link footer-nav__link--sublink">Lid worden</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
-                                        <a href="/alle-info/inschrijven" class="footer-nav__link footer-nav__link--sublink">Inschrijven</a>
                                     </li>
 
                                     <li class="footer-nav__item">
