@@ -82,74 +82,97 @@
                 </div>
             </div>
         </div>
+
         <div class="col-12 col-md-4">
-            <h2>Shop</h2>
-            <p>
-                De Fosshop is elke zaterdag open vanaf 17u.
-            </p>
-            <br>
-            <table class="table">
-                <tr class="table__row">
-                    <td class="table__cell">Uniformmaat 28-32</td>
-                    <td class="table__cell"><span class="text--unit">€</span>35,00</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Uniform maat 34-48</td>
-                    <td class="table__cell"><span class="text--unit">€</span>38,00</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn” Kindermaten</td>
-                    <td class="table__cell"><span class="text--unit">€</span>10,00</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn” Volwassen maten</td>
-                    <td class="table__cell"><span class="text--unit">€</span>15,00</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Das</td>
-                    <td class="table__cell"><span class="text--unit">€</span>10,00</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Badges welpen/gidsen-verkenners</td>
-                    <td class="table__cell"><span class="text--unit">€</span>1,30</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Wolfje</td>
-                    <td class="table__cell"><span class="text--unit">€</span>1,50</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Ster</td>
-                    <td class="table__cell"><span class="text--unit">€</span>2,00</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Kenteken FOS Open Scouting België</td>
-                    <td class="table__cell"><span class="text--unit">€</span>1,50</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Belofteteken FOS Open Scouting</td>
-                    <td class="table__cell"><span class="text--unit">€</span>1,50</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Eenheidsteken</td>
-                    <td class="table__cell"><span class="text--unit">€</span>2,50</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Jaarteken</td>
-                    <td class="table__cell"><span class="text--unit">€</span>1,20</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Provincie "West-Vlaanderen"</td>
-                    <td class="table__cell"><span class="text--unit">€</span>0,50</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Kenteken Verkenner (jongens)</td>
-                    <td class="table__cell"><span class="text--unit">€</span>3,00</td>
-                </tr>
-                <tr class="table__row">
-                    <td class="table__cell">Kenteken Gidsen (meisjes)</td>
-                    <td class="table__cell"><span class="text--unit">€</span>3,00</td>
-                </tr>
-            </table>
+            <div class="section">
+                <h2>Shop</h2>
+
+                <p class="medium-margin-bottom">
+                    {{-- De Fosshop is elke zaterdag open vanaf 17u. --}}
+                    Normaal gezien is de fosshop elke zaterdag open vanaf 17u. Omwille van corona openen we deze periode de fosshop in het nieuw materiaalkot achter het lokaal. Mondmasker is verplicht, alcoholische handgel om te desinfecteren is voorzien. Contacteer ons bij vragen gerust via <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>.
+                </p>
+
+                <table class="table">
+                    <tr class="table__row">
+                        <td class="table__cell">Uniformmaat 28-32</td>
+                        <td class="table__cell"><span class="text--unit">€</span>35,00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Uniform maat 34-48</td>
+                        <td class="table__cell"><span class="text--unit">€</span>38,00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">T-shirt 207e FOS “De Eekhoorn” Kindermaten</td>
+                        <td class="table__cell"><span class="text--unit">€</span>10,00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">T-shirt 207e FOS “De Eekhoorn” Volwassen maten</td>
+                        <td class="table__cell"><span class="text--unit">€</span>15,00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Das</td>
+                        <td class="table__cell"><span class="text--unit">€</span>10,00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Badges welpen/gidsen-verkenners</td>
+                        <td class="table__cell"><span class="text--unit">€</span>1,30</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Wolfje</td>
+                        <td class="table__cell"><span class="text--unit">€</span>1,50</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Ster</td>
+                        <td class="table__cell"><span class="text--unit">€</span>2,00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Kenteken FOS Open Scouting België</td>
+                        <td class="table__cell"><span class="text--unit">€</span>1,50</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Belofteteken FOS Open Scouting</td>
+                        <td class="table__cell"><span class="text--unit">€</span>1,50</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Eenheidsteken</td>
+                        <td class="table__cell"><span class="text--unit">€</span>2,50</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Jaarteken</td>
+                        <td class="table__cell"><span class="text--unit">€</span>1,20</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Provincie "West-Vlaanderen"</td>
+                        <td class="table__cell"><span class="text--unit">€</span>0,50</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Kenteken Verkenner (jongens)</td>
+                        <td class="table__cell"><span class="text--unit">€</span>3,00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Kenteken Gidsen (meisjes)</td>
+                        <td class="table__cell"><span class="text--unit">€</span>3,00</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>Contact</h3>
+
+                <p>
+                    Wil je iets huren of heb je een vraag? Contacteer dan één van onze FOS shop verantwoordelijke.
+                </p>
+
+                <div class="leiding-card-list">
+                    @foreach($responsibles as $leider)
+                        @component('components.leiding_card', [
+                            'leider' => $leider,
+                            'titel' => 'FOS shop verantwoordelijke',
+                        ])
+                        @endcomponent
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 @endsection
