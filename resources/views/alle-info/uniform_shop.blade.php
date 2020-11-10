@@ -52,7 +52,7 @@
 
                 <p>
                     {{-- De fosshop is elke zaterdag open om 17u. Daar krijgt u meer uitleg over alle andere badges die op het uniform horen te hangen.  --}}
-                    Normaal gezien is de fosshop elke zaterdag open vanaf 17u. Omwille van corona openen we deze periode de fosshop in het nieuw materiaalkot achter het lokaal. Mondmasker is verplicht, alcoholische handgel om te desinfecteren is voorzien. Contacteer ons bij vragen gerust via <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>.
+                    Normaal gezien is de fosshop elke zaterdag open vanaf 17u. Omwille van corona kunnen we echter niet met zekerheid zeggen dat de fosshop elke week open zal zijn. Mondmasker is verplicht, alcoholische handgel om te desinfecteren is voorzien. Contacteer ons bij vragen gerust via <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>.
                 </p>
 
                 <p>
@@ -89,7 +89,7 @@
 
                 <p class="medium-margin-bottom">
                     {{-- De Fosshop is elke zaterdag open vanaf 17u. --}}
-                    Normaal gezien is de fosshop elke zaterdag open vanaf 17u. Omwille van corona openen we deze periode de fosshop in het nieuw materiaalkot achter het lokaal. Mondmasker is verplicht, alcoholische handgel om te desinfecteren is voorzien. Contacteer ons bij vragen gerust via <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>.
+                    Normaal gezien is de fosshop elke zaterdag open vanaf 17u. Omwille van corona kunnen we echter niet met zekerheid zeggen dat de fosshop elke week open zal zijn. Mondmasker is verplicht, alcoholische handgel om te desinfecteren is voorzien. Contacteer ons bij vragen gerust via <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>.
                 </p>
 
                 <table class="table">
