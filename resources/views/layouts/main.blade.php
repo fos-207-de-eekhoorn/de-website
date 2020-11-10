@@ -205,9 +205,9 @@
 
                         @guest
                             @if (config('app.env') === 'local')
-                                <li class="nav__list-item">
+                                <li class="nav__list-item nav__list-item--small">
                                     <a href="/login" class="nav__link">
-                                        login
+                                        <i class="fas fa-sign-in-alt"></i>
                                     </a>
                                 </li>
                             @endif
@@ -228,31 +228,31 @@
 
                                     <li class="nav__sublist-item">
                                         <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
-                                            Activiteiten
+                                            <span class="fa--before icon"><i class="fas fa-dice"></i></span>Activiteiten
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
                                         <a href="/admin/evenementen" class="nav__link nav__link--sublist">
-                                            Evenementen
+                                            <span class="fa--before icon"><i class="fas fa-calendar-alt"></i></span>Evenementen
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
                                         <a href="/admin/inschrijvingen" class="nav__link nav__link--sublist">
-                                            Inschrijvingen
+                                            <span class="fa--before icon"><i class="fas fa-user-plus"></i></span>Inschrijvingen
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
                                         <a href="/admin/blog/" class="nav__link nav__link--sublist">
-                                            Blog
+                                            <span class="fa--before icon"><i class="fas fa-newspaper"></i></span>Blog
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
                                         <a href="/admin/contents" class="nav__link nav__link--sublist">
-                                            Content
+                                            <span class="fa--before icon"><i class="fas fa-comment-alt"></i></span>Content
                                         </a>
                                     </li>
 
