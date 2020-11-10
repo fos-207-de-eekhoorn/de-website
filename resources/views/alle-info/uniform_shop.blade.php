@@ -90,63 +90,63 @@
             <table class="table">
                 <tr class="table__row">
                     <td class="table__cell">Uniformmaat 28-32</td>
-                    <td class="table__cell">€35,00</td>
+                    <td class="table__cell"><span class="text--unit">€</span>35,00</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Uniform maat 34-48</td>
-                    <td class="table__cell">€38,00</td>
+                    <td class="table__cell"><span class="text--unit">€</span>38,00</td>
                 </tr>
                 <tr class="table__row">
-                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn”</td>
-                    <td class="table__cell">€10,00</td>
+                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn” Kindermaten</td>
+                    <td class="table__cell"><span class="text--unit">€</span>10,00</td>
                 </tr>
                 <tr class="table__row">
-                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn”</td>
-                    <td class="table__cell">€1,30</td>
+                    <td class="table__cell">T-shirt 207e FOS “De Eekhoorn” Volwassen maten</td>
+                    <td class="table__cell"><span class="text--unit">€</span>15,00</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Das</td>
-                    <td class="table__cell">€10,00</td>
+                    <td class="table__cell"><span class="text--unit">€</span>10,00</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Badges welpen/gidsen-verkenners</td>
-                    <td class="table__cell">€1,30</td>
+                    <td class="table__cell"><span class="text--unit">€</span>1,30</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Wolfje</td>
-                    <td class="table__cell">€1,50</td>
+                    <td class="table__cell"><span class="text--unit">€</span>1,50</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Ster</td>
-                    <td class="table__cell">€2,00</td>
+                    <td class="table__cell"><span class="text--unit">€</span>2,00</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Kenteken FOS Open Scouting België</td>
-                    <td class="table__cell">€1,50</td>
+                    <td class="table__cell"><span class="text--unit">€</span>1,50</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Belofteteken FOS Open Scouting</td>
-                    <td class="table__cell">€1,50</td>
+                    <td class="table__cell"><span class="text--unit">€</span>1,50</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Eenheidsteken</td>
-                    <td class="table__cell">€2,50</td>
+                    <td class="table__cell"><span class="text--unit">€</span>2,50</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Jaarteken</td>
-                    <td class="table__cell">€1,20</td>
+                    <td class="table__cell"><span class="text--unit">€</span>1,20</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Provincie "West-Vlaanderen"</td>
-                    <td class="table__cell">€0,50</td>
+                    <td class="table__cell"><span class="text--unit">€</span>0,50</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Kenteken Verkenner (jongens)</td>
-                    <td class="table__cell">€3,00</td>
+                    <td class="table__cell"><span class="text--unit">€</span>3,00</td>
                 </tr>
                 <tr class="table__row">
                     <td class="table__cell">Kenteken Gidsen (meisjes)</td>
-                    <td class="table__cell">€3,00</td>
+                    <td class="table__cell"><span class="text--unit">€</span>3,00</td>
                 </tr>
             </table>
         </div>
