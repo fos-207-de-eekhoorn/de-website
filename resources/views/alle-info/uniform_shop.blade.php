@@ -37,26 +37,27 @@
                 <p>
                     In onze eenheid mag je vanaf de welpentak een hemd dragen. Voor <strong>bevers</strong> volstaat het om een das en t-shirt van de eenheid te dragen.
                 </p>
+
                 <p>
                     Vanaf het eerste jaar dat je naar de <strong>welpen</strong> gaat mag je ook een uniform dragen. Je draagt naast alle andere badges ook de welpenbadge. Je kan dan ook eindelijk ook badges en sterren verdienen. Deze kunnen verdiend worden op speciale activiteiten en op kamp. Het is ook mogelijk om een wolfje te verdienen. Een wolfje verdien je door minstens 3 badges en 2 sterren te behalen. Een wolfje mag je je hele scouts carrière op je hemd laten hangen. Vanaf je naar de jonge gaat moeten de welpenbadges en sterren er helaas af. 
                 </p>
+
                 <p>
                     Maar geen nood! Ook bij de <strong>jong gids / verkenners</strong> kan je badges verdienen. Als JVG mag je ook je welpenbadge vervangen voor een jonge/oude verkenners of gidsen badge. Vanaf de jong gids / verkenners kan je ook beginnen aan je teervoet. De teervoet is een badge waarvoor 50 verschillende opdrachten uitgevoerd moeten worden. Deze badge is een hele grote eer en mag voor altijd op je scoutshemd blijven hangen!
                 </p>
+
                 <p>
                     Wanneer je overgaat naar de <strong>oud gids / verkenners</strong> gaan alle jonge-badges er weer af en kan je met een schone lei beginnen. Je kan nieuwe badges verdienen en verder werken aan je teervoet. 
                 </p>
+
                 <p>
-                    De fosshop is elke zaterdag open om 17u. Daar krijgt u meer uitleg over alle andere badges die op het uniform horen te hangen. 
+                    {{-- De fosshop is elke zaterdag open om 17u. Daar krijgt u meer uitleg over alle andere badges die op het uniform horen te hangen.  --}}
+                    Normaal gezien is de fosshop elke zaterdag open vanaf 17u. Omwille van corona openen we deze periode de fosshop in het nieuw materiaalkot achter het lokaal. Mondmasker is verplicht, alcoholische handgel om te desinfecteren is voorzien. Contacteer ons bij vragen gerust via <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>.
                 </p>
-                <br>
+
                 <p>
-                    Tot dan!
-                </p>
-                <p>
-                    Groetjes, het fosshop team.
-                </p>
-                <p>
+                    Tot dan!<br>
+                    Groetjes, het fosshop team.<br>
                     Nandoe, Chigi, Grizzly
                 </p>
             </div>
