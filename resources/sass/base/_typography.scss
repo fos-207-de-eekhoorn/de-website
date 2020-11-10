@@ -69,10 +69,6 @@ p {
 	line-height: 1.25;
 }
 
-li {
-	//some code here
-}
-
 button,
 a {
 	@include transitions(fast);
@@ -82,4 +78,8 @@ a {
 
 button {
 	color: $color-grey-medium;
+}
+
+strong {
+	color: $color-grey-dark;
 }
