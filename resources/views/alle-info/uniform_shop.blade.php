@@ -15,7 +15,7 @@
         <div class="col-12 col-md-8">
             <h2>Uniform</h2>
 
-            <div class="row section">
+            <div class="row section section--extra-small-spacing">
                 <div class="col-12 col-md-5">
                     <img src="{{ asset('/img/uniform.jpg') }}" alt="Uniform">
                 </div>
