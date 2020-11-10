@@ -46,10 +46,13 @@
         left: 0;
         width: 100%;
         height: auto;
+        max-height: 90vh;
+        padding-bottom: spacing(md);
         margin-top: $header-height;
         visibility: hidden;
         opacity: 0;
         background-color: $color-white;
+        overflow: scroll;
 
         list-style: none;
     }
@@ -89,7 +92,7 @@
         }
 
         &--sublist {
-            padding: 1rem 0;
+            padding: spacing(sm);
             background-color: $color-grey-background;
         }
         &:not(&--sublist) {
@@ -127,6 +130,11 @@
         padding: 0;
         margin: 0;
     }
+
+    &__sublist-item-divider {
+        width: 100%;
+        height: 1px;
+    }
 }
 
 @include mq(lg) {
@@ -150,9 +158,11 @@
 
             position: relative;
             width: auto;
+            padding-bottom: 0;
             margin-top: 0;
             visibility: visible;
             opacity: 1;
+            overflow: visible;
 
             &--sublist {
                 position: absolute;
@@ -189,7 +199,8 @@
             display: block;
             position: absolute;
             top: 100%;
-            width: 100%;
+            right: 0;
+            min-width: 100%;
             padding: 0;
             background-color: $color-white;
         }
@@ -221,13 +232,17 @@
             }
 
             &--sublist {
-                padding: 1rem 0;
+                padding: spacing(md) spacing(sm);
                 background-color: $color-white;
 
                 &:hover {
                     border-bottom: none;
                 }
             }
+        }
+
+        &__sublist-item-divider {
+            background-color: $color-grey-extra-light;
         }
     }
 }

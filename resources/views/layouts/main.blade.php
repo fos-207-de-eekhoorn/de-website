@@ -91,6 +91,8 @@
                                     </a>
                                 </li>
 
+                                <div class="nav__sublist-item-divider"></div>
+
                                 @foreach($navigation_takken as $tak)
                                     <li class="nav__sublist-item">
                                         <a href="/takken/{{ $tak->link }}" class="nav__link nav__link--sublist">
@@ -114,6 +116,8 @@
                                         Overzicht
                                     </a>
                                 </li>
+
+                                <div class="nav__sublist-item-divider"></div>
 
                                 <li class="nav__sublist-item">
                                     <a href="/alle-info/uniform-shop" class="nav__link nav__link--sublist">
@@ -179,6 +183,8 @@
                                     </a>
                                 </li>
 
+                                <div class="nav__sublist-item-divider"></div>
+
                                 @foreach($navigation_evenementen as $evenement)
                                     <li class="nav__sublist-item">
                                         <a href="/evenementen/{{ $evenement->url }}" class="nav__link nav__link--sublist">
@@ -226,6 +232,8 @@
                                         </a>
                                     </li>
 
+                                    <div class="nav__sublist-item-divider"></div>
+
                                     <li class="nav__sublist-item">
                                         <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
                                             <span class="fa--before icon"><i class="fas fa-dice"></i></span>Activiteiten
@@ -255,6 +263,8 @@
                                             <span class="fa--before icon"><i class="fas fa-comment-alt"></i></span>Content
                                         </a>
                                     </li>
+
+                                    <div class="nav__sublist-item-divider"></div>
 
                                     <li class="nav__sublist-item">
                                         <a href="/change-password" class="nav__link nav__link--sublist">
