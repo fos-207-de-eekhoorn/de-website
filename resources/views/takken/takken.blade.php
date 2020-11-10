@@ -36,7 +36,14 @@
                     <div class="tak__info cs-{{ $tak->kleur }}">
                         <header class="tak__header">
                             <h3 class="tak__titel"><a href="{{ url('/takken/' . $tak->link) }}" class="link--no-style">{{ $tak->naam }}</a></h3>
-                            <p><b>Vanaf {{ $tak->vanaf }} jaar</b></p>
+
+                            <p class="text--bold">
+                                @if($tak->jaartal_begin === $tak->jaartal_eind)
+                                    Geboren in {{ $tak->jaartal_begin }}
+                                @else
+                                    Geboren tussen {{ $tak->jaartal_eind }} en {{ $tak->jaartal_begin }}
+                                @endif
+                            </p>
                         </header>
 
                         <p>
@@ -44,7 +51,7 @@
                         </p>
 
                         <p>
-                            <a href="{{ url('/takken/' . $tak->link) }}">meer info ></a>
+                            <a href="{{ url('/takken/' . $tak->link) }}">Meer info<span class="fa--after"><i class="fas fa-angle-right"></i></span></a>
                         </p>
                     </div>
                 </div>
