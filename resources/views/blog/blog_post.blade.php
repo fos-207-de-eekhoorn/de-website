@@ -25,71 +25,39 @@
 
 @section('content')
 
-    {{-- Header --}}
-    {{-- ================================================================ --}}
-    <section class="section section--no-padding cs-grey-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <img src="{{ $post->image->path }}" class="banner">
-                </div>
-            </div>
-        </div>
+    <section class="section section--extra-small-spacing banner banner--large">
+        <img src="{{ $post->image->path }}" class="banner__image">
     </section>
 
 
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 blog-post-details">
+            <a href="{{ url('/blog') }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
+        </div>
+    </div>
 
     {{-- Content --}}
     {{-- ================================================================ --}}
-    <section class="section section--small-padding cs-white">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 blog-post-details">
-                    <h1 class="blog-post-details__title">{{ $post->title }}</h1>
-                    <h2 class="blog-post-details__subtitle">{{ $post->subtitle }}</h2>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 blog-post-details">
+            <h1 class="blog-post-details__title">{{ $post->title }}</h1>
+            <h2 class="blog-post-details__subtitle">{{ $post->subtitle }}</h2>
 
-                    @foreach ($post->blocks as $block)
-                        <div class="blog-block blog-block--{{ $block->ui_type }}">
-                            @if($block->ui_type != 'no_image') <img src="{{ $block->image->path }}" class="blog-block__image">@endif
+            @foreach ($post->blocks as $block)
+                <div class="blog-block blog-block--{{ $block->ui_type }}">
+                    @if($block->ui_type != 'no_image') <img src="{{ $block->image->path }}" class="blog-block__image">@endif
 
-                            {!! $block->content !!}
-                        </div>
-                    @endforeach
+                    {!! $block->content !!}
                 </div>
-            </div>
+            @endforeach
         </div>
-    </section>
+    </div>
 
-
-
-    {{-- Content --}}
-    {{-- ================================================================ --}}
-    <section class="section section--small-padding cs-grey-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <img src="{{ asset('/img/maryama-marong.png') }}" alt="Maryama Marong">
-                </div>
-
-                <div class="col-12 col-md-8 d-flex flex-column justify-content-center">
-                    <h3>Maryama Marong</h3>
-
-                    <p>
-                        Client Engagement Manager
-                    </p>
-
-                    <p>
-                        "At Tradler, we believe in the power of positive affirmation through recognition and incentives. In our view, productivity and positivity go hand in hand, which directly translates to tangible business success."
-                    </p>
-
-                    <p>
-                        Want to learn more about Tradler? Contact <a href="mailto:paul.lloyd@tradler.co">Paul Lloyd</a>, our Key Account Manager, directly via email. Contact <a href="mailto:maryama.marong@tradler.co">Maryama</a> if you have any questions regarding our blog.
-                    </p>
-                </div>
-            </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 blog-post-details">
+            <a href="{{ url('/blog') }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
         </div>
-    </section>
-
-    <div class="section-seperator section-seperator--grey"></div>
+    </div>
 
 @endsection

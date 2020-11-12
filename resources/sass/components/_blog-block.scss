@@ -19,6 +19,15 @@
 
 .blog-block {
 	margin-bottom: spacing(xl);
+	
+	&--image_left,
+	&--image_right {
+		&:after {
+			content: "";
+		    clear: both;
+		    display: table;
+		}
+	}
 
 	&--image_left {
 		.blog-block {
@@ -59,7 +68,7 @@
 	}
 
 	&__image {
-		width: 40%;
+		max-width: 40%;
 		margin-bottom: spacing(sm);
 	}
 }

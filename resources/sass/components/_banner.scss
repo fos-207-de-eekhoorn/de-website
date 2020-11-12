@@ -12,6 +12,10 @@
     &--full {
         height: auto;
     }
+    
+    &--large {
+        height: spacing(xxxl) + spacing(xxl);
+    }
 
     &--with-hover-effect {
         &:hover {
