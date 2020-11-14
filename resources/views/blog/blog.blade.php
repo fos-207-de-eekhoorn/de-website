@@ -17,12 +17,32 @@
 	<div class="row">
 		<div class="col-12 col-md-4 col-lg-3">
 			<h3>Filter</h3>
+
+			<h5 class="large-margin-top">Categoriën</h5>
+			@foreach($categories as $category)
+				<section class="form__section form__section--small-margin-bottom">
+					<input type="checkbox" id="category-{{ $category->id }}" class="js-filter" value="category-{{ strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $category->name)) }}">
+					<label for="category-{{ $category->id }}" class="fa--after">
+						{{ $category->name }}
+					</label>
+				</section>
+			@endforeach
+
+			<h5 class="large-margin-top">Tags</h5>
+			@foreach($tags as $tag)
+				<section class="form__section form__section--small-margin-bottom">
+					<input type="checkbox" id="tag-{{ $tag->id }}" class="js-filter" value="tag-{{ $tag->name }}">
+					<label for="tag-{{ $tag->id }}" class="fa--after">
+						{{ $tag->name }}
+					</label>
+				</section>
+			@endforeach
 		</div>
 
 		<div class="col-12 col-md-8 col-lg-9">
 			<div class="row blog-posts">
 				@forelse ($posts as $post)
-					<div class="col-12 col-md-4 blog-posts__post blog-post">
+					<div class="col-12 col-md-4 blog-posts__post blog-post @foreach ($post->tag_names as $tag) tag-{{ $tag }}@endforeach category-{{ strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $post->category_name)) }}">
 						<a href="{{ url('/blog/' . str_replace('?', '', str_replace(' ', '-', strtolower($post->title)))) }}" class="blog-post__inner">
 							<img src="{{ $post->image->path }}" class="blog-post__image">
 
@@ -52,12 +72,29 @@
 		</div>
 	</div>
 
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
 	<script>
-		$('.blog-posts').masonry({
+		var $blogPosts = $('.blog-posts'),
+			$blogPost = $('.blog-post'),
+			$filterInput = $('.js-filter');
+
+		$blogPosts.isotope({
 			itemSelector: '.blog-post',
+			layoutMode: 'masonry'
 		});
+
+		$filterInput.on('change', filterPosts);
+
+		function filterPosts() {
+			var searchQuery = [];
+
+			$('.js-filter:checked').each(function() {
+				searchQuery.push('.' + $(this).val());
+			});
+
+			$blogPosts.isotope({ filter: searchQuery.join(', ') });
+		}
 	</script>
 
 @endsection

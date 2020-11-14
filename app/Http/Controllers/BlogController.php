@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\BlogCategory;
 use App\BlogPost;
+use App\BlogTag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -19,8 +21,13 @@ class BlogController extends Controller
             ->orderBy('live_at', 'desc')
             ->get();
 
+        $categories = BlogCategory::get();
+        $tags = BlogTag::get();
+
         return view('blog.blog', [
             'posts' => $posts,
+            'categories' => $categories,
+            'tags' => $tags,
         ]);
     }
 

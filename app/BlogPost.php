@@ -48,4 +48,14 @@ class BlogPost extends Model
             'blog_block_id'
         );
     }
+
+    public function getCategoryNameAttribute()
+    {
+        return $this->category->name;
+    }
+
+    public function getTagNamesAttribute()
+    {
+        return $this->tags->pluck('name')->toArray();
+    }
 }

@@ -296,7 +296,7 @@ class AdminBlogController extends Controller
 
         $new_tag = new BlogTag;
 
-        $new_tag->name = strtolower($request->name);
+        $new_tag->name = strtolower(preg_replace('/[^a-zA-Z0-9- ]/', '', str_replace('_', '-', str_replace(' ', '-', trim($request->name)))));
 
         $success = $new_tag->save();
 
