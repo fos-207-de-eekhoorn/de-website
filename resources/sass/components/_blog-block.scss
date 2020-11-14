@@ -61,6 +61,7 @@
 		.blog-block {
 			&__image {
 			    width: 100%;
+			    max-width: 100%;
 				max-height: spacing(xxxl);
 			    object-fit: cover;
 			}
