@@ -57,14 +57,16 @@
     {{-- Ending --}}
     {{-- ================================================================ --}}
     <div class="row justify-content-center section">
-        <div class="col-12 col-md-8 section">
-            <h3 class="text--align-center">Tag cloud</h3>
-            <div class="tags tags--centered">
-                @foreach ($post->tags as $tag)
-                    <a href="{{ url('/blog?tags=' . $tag->name) }}" class="tags__tag">#{{ $tag->name }}</a>
-                @endforeach
+        @if (sizeof($post->tags) > 0)
+            <div class="col-12 col-md-8 section">
+                <h3 class="text--align-center">Tag cloud</h3>
+                <div class="tags tags--centered">
+                    @foreach ($post->tags as $tag)
+                        <a href="{{ url('/blog?tags=' . $tag->name) }}" class="tags__tag">#{{ $tag->name }}</a>
+                    @endforeach
+                </div>
             </div>
-        </div>
+        @endif
 
         <div class="col-12 col-md-8 section">
             <h3 class="text--align-center">Recente posts</h3>
