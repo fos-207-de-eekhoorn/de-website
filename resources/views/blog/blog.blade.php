@@ -48,7 +48,7 @@
 
 							<div class="blog-post__details">
 								<p class="blog-post__date">
-								   {{ Carbon\Carbon::create($post->live_at)->format('jS \\of F Y') }} 
+								   {{ Carbon\Carbon::create($post->live_at)->isoFormat('DD MMMM YYYY') }} 
 								</p>
 
 								<h2 class="blog-post__title">

@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="blog-post-small__info">
-                                    <h4 class="blog-post-small__title">{{ $next_post->title }}</h4>
+                                    <h5 class="blog-post-small__title">{{ $next_post->title }}</h5>
                                     <p class="blog-post-small__date">
                                         <span class="fa--before icon"><i class="fas fa-calendar-day"></i></span>{{ Carbon\Carbon::parse($next_post->live_at)->isoFormat('DD MMMM YYYY') }}
                                     </p>

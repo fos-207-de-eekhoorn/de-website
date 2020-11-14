@@ -135,7 +135,7 @@
                         </tr>
                     @empty
                         <tr class="table__row">
-                            <td class="table__cell" colspan="2">
+                            <td class="table__cell" colspan="3">
                                 No categories yet
                             </td>
                         </tr>
