@@ -30,12 +30,12 @@
     </section>
 
 
-
+{{-- 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 blog-post-details">
             <a href="{{ url('/blog') }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
         </div>
-    </div>
+    </div> --}}
 
     {{-- Content --}}
     {{-- ================================================================ --}}
@@ -43,6 +43,12 @@
         <div class="col-12 col-md-8 blog-post-details">
             <h1 class="blog-post-details__title">{{ $post->title }}</h1>
             <h2 class="blog-post-details__subtitle">{{ $post->subtitle }}</h2>
+
+            <p class="blog-post-details__info">
+                <span class="fa--before icon"><i class="fas fa-newspaper"></i></span>{{ $post->category_name }}
+                <span class="fa--before fa--after">&middot;</span>
+                <span class="fa--before icon"><i class="fas fa-calendar-day"></i></span>{{ Carbon\Carbon::parse($post->live_at)->isoFormat('DD MMMM YYYY') }}
+            </p>
 
             @foreach ($post->blocks as $block)
                 <div class="blog-block blog-block--{{ $block->ui_type }}">
@@ -54,7 +60,17 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
+    {{-- Ending --}}
+    {{-- ================================================================ --}}
+    <div class="row justify-content-center section section--small-spacing">
+        <div class="col-12 col-md-8">
+            <p class="text-color--light">
+                
+            </p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center section">
         <div class="col-12 col-md-8 blog-post-details">
             <a href="{{ url('/blog') }}"><span class="fa--before"><i class="fas fa-angle-left"></i></span>Terug naar overzicht</a>
         </div>

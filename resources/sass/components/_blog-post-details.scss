@@ -30,9 +30,15 @@
 
     &__subtitle {
         margin-top: 0;
-        margin-bottom: spacing(lg);
+        margin-bottom: spacing(sm);
 
         font-size: $font-size-h3;
         font-weight: $font-weight-light;
+    }
+
+    &__info {
+        margin-bottom: spacing(lg);
+
+        color: $color-grey-light;
     }
 }
