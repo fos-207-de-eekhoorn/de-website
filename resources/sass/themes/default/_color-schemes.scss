@@ -100,6 +100,12 @@
 	}
 
 	//  Components
+    .blog-post,
+    .blog-post-small {
+        &__date {
+            color: $color-grey-light;
+        }
+    }
     .blog-post {
         &:hover {
             .blog-post {
@@ -108,10 +114,6 @@
                     color: $color-blue;
                 }
             }
-        }
-
-        &__date {
-            color: $color-grey-light;
         }
 
         &__title {

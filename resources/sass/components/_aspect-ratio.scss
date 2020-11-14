@@ -5,10 +5,8 @@
 //  Usage example
 //  -------------
 //  <div class="aspect-ratio">
-//      <div class="aspect-ratio">
-//          <div class="aspect-ratio__container">
-//              <img src="{{ $post->image->path }}" class="aspect-ratio__inner blog-post__image">
-//          </div>
+//      <div class="aspect-ratio__container">
+//          <img src="{{ $post->image->path }}" class="aspect-ratio__inner blog-post__image">
 //      </div>
 //  </div>
 //

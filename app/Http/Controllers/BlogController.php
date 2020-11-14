@@ -42,8 +42,18 @@ class BlogController extends Controller
             ])
             ->whereRaw('lower(replace(replace(replace(title, \' \', \'\'), \'?\', \'\'), \'.\', \'\')) = ?', str_replace('-','',$request->title))->first();
 
+        $next_posts = BlogPost::with([
+                'image',
+            ])
+            ->where('active', 1)
+            ->where('live_at', '<=', Carbon::now('Europe/Berlin')->format('Y-m-d H:i:s'))
+            ->orderBy('live_at', 'desc')
+            ->limit(2)
+            ->get();
+
         return view('blog.blog_post', [
             'post' => $post,
+            'next_posts' => $next_posts,
         ]);
     }
 }
