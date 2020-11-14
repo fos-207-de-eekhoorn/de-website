@@ -90,7 +90,7 @@ class AdminBlogController extends Controller
         $new_post->header_image_id = $request->image;
         $new_post->live_at = ($request->live_at
             ? str_replace('T', ' ', $request->live_at)
-            : Carbon::now('CET'));
+            : Carbon::now('CET')->format('Y-m-d H:i'));
         $success = $new_post->save();
 
         if ($success) {
