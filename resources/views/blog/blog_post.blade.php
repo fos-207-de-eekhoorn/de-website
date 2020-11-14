@@ -61,7 +61,7 @@
             <h3 class="text--align-center">Tag cloud</h3>
             <div class="tags tags--centered">
                 @foreach ($post->tags as $tag)
-                    <span class="tags__tag">#{{ $tag->name }}</span>
+                    <a href="{{ url('/blog?tags=' . $tag->name) }}" class="tags__tag">#{{ $tag->name }}</a>
                 @endforeach
             </div>
         </div>

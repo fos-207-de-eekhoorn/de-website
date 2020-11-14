@@ -75,6 +75,7 @@
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
 	<script>
+		// Filter functionallity
 		var $blogPosts = $('.blog-posts'),
 			$blogPost = $('.blog-post'),
 			$filterInput = $('.js-filter');
@@ -87,14 +88,48 @@
 		$filterInput.on('change', filterPosts);
 
 		function filterPosts() {
-			var searchQuery = [];
+			var searchQuery = [],
+				urlCategories = [],
+				urlTags = [],
+				url = '/blog';
 
 			$('.js-filter:checked').each(function() {
-				searchQuery.push('.' + $(this).val());
+				var value = $(this).val(),
+					valueArray = value.split('-');
+				searchQuery.push('.' + value);
+
+				if (valueArray[0] === 'category') urlCategories.push(valueArray[1]);
+				else if (valueArray[0] === 'tag') urlTags.push(valueArray[1]);
 			});
 
 			$blogPosts.isotope({ filter: searchQuery.join(', ') });
+
+			if (urlCategories.length > 0 || urlTags.length > 0) url += '?';
+			if (urlCategories.length > 0) {
+				url += 'categories=' + urlCategories.join(',');
+
+				if (urlTags.length > 0) url += '&';
+			}
+			if (urlTags.length > 0) url += 'tags=' + urlTags.join(',');
+
+			window.history.pushState('', '', url);
 		}
+
+		// Init filters from GET
+		var urlParams = new URLSearchParams(window.location.search),
+			urlTags = urlParams.has('tags') ? urlParams.get('tags').split(',') : [],
+			urlCategories = urlParams.has('categories') ? urlParams.get('categories').split(',') : [];
+
+		$filterInput.each(function() {
+			var value = $(this).val().split('-');
+			if (value[0] === 'category') {
+				if (urlCategories.indexOf(value[1]) !== -1) $(this).attr('checked', 'checked');
+			} else if (value[0] === 'tag') {
+				if (urlTags.indexOf(value[1]) !== -1) $(this).attr('checked', 'checked');
+			}
+		});
+
+		filterPosts();
 	</script>
 
 @endsection
