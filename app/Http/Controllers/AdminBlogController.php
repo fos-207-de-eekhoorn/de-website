@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Crypt;
-use App\BlogPost;
-use App\BlogCategory;
-use App\BlogTag;
 use App\BlogBlock;
-use App\BlogPostTag;
+use App\BlogCategory;
+use App\BlogPost;
 use App\BlogPostBlock;
+use App\BlogPostTag;
+use App\BlogTag;
 use App\Image;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -41,10 +41,12 @@ class AdminBlogController extends Controller
     {
         $categories = BlogCategory::get();
         $images = Image::get();
+        $urls = BlogPost::pluck('url')->toArray();
 
         return view('admin.blog.add_post', [
             'categories' => $categories,
             'images' => $images,
+            'urls' => $urls,
         ]);
     }
 
@@ -74,10 +76,12 @@ class AdminBlogController extends Controller
 
     public function add_post(request $request)
     {
+        return $request;
         $request->validate([
             'name' => 'required',
             'title' => 'required',
             'subtitle' => 'required',
+            'url' => 'required',
             'category' => 'required',
             'image' => 'required',
         ]);
