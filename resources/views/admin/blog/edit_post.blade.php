@@ -362,6 +362,26 @@
                             @endif
                         </section>
 
+                        {{-- URL --}}
+                        {{-- ============================================ --}}
+                        <section class="form__section">
+                            <label for="url" class="form__label form__label--required">URL</label>
+
+                            <input
+                                type="text"
+                                id="url"
+                                name="url"
+                                value="{{ old('url', $post->url) }}"
+                                class="form__input form__input--full-width"
+                                required>
+
+                            @if ($errors->has('url'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('url') }}
+                                </span>
+                            @endif
+                        </section>
+
                         {{-- Category --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
@@ -1062,6 +1082,36 @@
                     checkIfPostImageIncluded();
                 }, 600);
             });
+        }
+
+        // Set URL and check for used ones
+        var $title = $("#title"),
+            $url = $("#url"),
+            urlIsChanged = false,
+            urls = @json($urls);
+
+        (function($){
+            $url.on('input', function() {
+                urlIsChanged = true;
+                $url.val(prepareUrl($url.val()));
+                checkForUsedUrl();
+            });
+            $title.on('input', function() {
+                if (!urlIsChanged) {
+                    $url.val(prepareUrl($title.val()));
+                    checkForUsedUrl();
+                }
+            });
+        })(jQuery);
+
+        function checkForUsedUrl() {
+            var input = $url.val();
+            if (urls.includes(input)) $urlFeedback.show(300);
+            else $urlFeedback.hide(300);
+        }
+
+        function prepareUrl(url) {
+            return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
         }
     </script>
 

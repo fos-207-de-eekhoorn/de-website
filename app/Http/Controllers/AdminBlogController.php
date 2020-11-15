@@ -64,6 +64,7 @@ class AdminBlogController extends Controller
         $categories = BlogCategory::get();
         $tags = BlogTag::get();
         $images = Image::get();
+        $urls = BlogPost::pluck('url')->toArray();
 
         return view('admin.blog.edit_post', [
             'post' => $post,
@@ -71,6 +72,7 @@ class AdminBlogController extends Controller
             'categories' => $categories,
             'tags' => $tags,
             'images' => $images,
+            'urls' => $urls,
         ]);
     }
 
@@ -112,6 +114,7 @@ class AdminBlogController extends Controller
             'name' => 'required',
             'title' => 'required',
             'subtitle' => 'required',
+            'url' => 'required',
             'category' => 'required',
             'image' => 'required',
         ]);
