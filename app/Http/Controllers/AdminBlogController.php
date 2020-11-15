@@ -78,7 +78,6 @@ class AdminBlogController extends Controller
 
     public function add_post(request $request)
     {
-        return $request;
         $request->validate([
             'name' => 'required',
             'title' => 'required',
@@ -92,6 +91,7 @@ class AdminBlogController extends Controller
         $new_post->name = $request->name;
         $new_post->title = $request->title;
         $new_post->subtitle = $request->subtitle;
+        $new_post->url = $request->url;
         $new_post->category_id = $request->category;
         $new_post->header_image_id = $request->image;
         $new_post->live_at = ($request->live_at
@@ -138,6 +138,7 @@ class AdminBlogController extends Controller
         $post->name = $request->name;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
+        $post->url = $request->url;
         $post->category_id = $request->category;
         $post->active = ($request->active ? '1' : '0');
         $post->header_image_id = $request->image;
