@@ -1,0 +1,76 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Blog post
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <div class="blog-post">
+//      <img src="#" class="blog-post__image">
+//
+//      <p class="blog-post__date">
+//         11th of August 1990
+//      </p>
+//
+//      <h2 class="blog-post__title">Blog post title</h2>
+//      <h2 class="blog-post__subtitle">Blog post subtitle</h2>
+//  </div>
+//
+//  Options
+//  -------
+//  NONE
+//
+//  ------------------------------------------------------------------------------------
+
+.blog-post {
+    &:hover {
+        .blog-post {
+            &__image {
+                opacity: .8;
+            }
+        }
+    }
+
+    &__inner {
+        @include border-radius;
+        @include shadow-standard;
+
+        display: block;
+        background-color: $color-grey-background-light;
+        overflow: hidden;
+
+        text-decoration: none;
+        
+        &:hover {
+            @include shadow-double;
+
+            text-decoration: none;
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__details {
+        padding: spacing(md);
+    }
+
+    &__date {
+        margin-top: 0;
+        margin-bottom: none;
+    }
+
+    &__title {
+        margin-bottom: 0;
+
+        font-size: $font-size-h4;
+        font-weight: $font-weight-normal;
+    }
+
+    &__subtitle {
+        margin-bottom: 0;
+
+        font-size: $font-size-text;
+        font-weight: $font-weight-normal;
+    }
+}

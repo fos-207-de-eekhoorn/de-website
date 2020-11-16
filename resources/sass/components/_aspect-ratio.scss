@@ -1,0 +1,53 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Aspect Ratio
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <div class="aspect-ratio">
+//      <div class="aspect-ratio__container">
+//          <img src="{{ $post->image->path }}" class="aspect-ratio__inner blog-post__image">
+//      </div>
+//  </div>
+//
+//  Options
+//  -------
+//  default     1:1
+//  * 2-3       2:3
+//  * 3-4       3:4
+//  * 16-9      16:9
+//
+//  ------------------------------------------------------------------------------------
+
+.aspect-ratio {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
+
+    &--2-3 {
+        padding-bottom: 66%
+    }
+    &--3-4 {
+        padding-bottom: 75%
+    }
+    &--16-9 {
+        padding-bottom: 56%
+    }
+
+    &__container {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__inner {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

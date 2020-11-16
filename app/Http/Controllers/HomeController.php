@@ -6,6 +6,7 @@ use App\Content;
 use App\Evenement;
 use App\Inschrijving;
 use App\Tak;
+use App\Setting;
 use App\Http\Shared\CommonHelpers;
 use App\Mail\ContactForm;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -31,7 +33,7 @@ class HomeController extends Controller
             ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
             ->with('evenement_tak')
             ->orderBy('start_datum','ASC')
-            ->limit(3)
+            ->limit(Setting::where('key', 'homepage_evenementen_limit')->first()->value ?? 3)
             ->get();
 
         $voorwoord = Content::where('key', 'voorwoord')
@@ -57,6 +59,7 @@ class HomeController extends Controller
             'next_saturday' => $next_saturday,
             'tak_activiteiten' => $tak_activiteiten,
             'evenementen' => $evenementen,
+            'next_blog_posts' => $this->get_next_blog_posts(),
             'voorwoord' => $voorwoord->content_text[0],
         ]);
     }

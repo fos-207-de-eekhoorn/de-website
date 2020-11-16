@@ -1,0 +1,75 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Blog block
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <div class="blog-block">
+//      <img class="blog-block__image">
+//  </div>
+//
+//  Options
+//  -------
+//  * image_left
+//  * image_center
+//  * image_right
+//  * panorama_top
+//
+//  ------------------------------------------------------------------------------------
+
+.blog-block {
+	margin-bottom: spacing(xl);
+	
+	&--image_left,
+	&--image_right {
+		&:after {
+			content: "";
+		    clear: both;
+		    display: table;
+		}
+	}
+
+	&--image_left {
+		.blog-block {
+			&__image {
+				float: left;
+				margin-right: spacing(lg);
+			}
+		}
+	}
+
+	&--image_center {
+		.blog-block {
+			&__image {
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	&--image_right {
+		.blog-block {
+			&__image {
+				float: right;
+				margin-left: spacing(lg);
+			}
+		}
+	}
+
+	&--panorama_top {
+		.blog-block {
+			&__image {
+			    width: 100%;
+			    max-width: 100%;
+				max-height: spacing(xxxl);
+			    object-fit: cover;
+			}
+		}
+	}
+
+	&__image {
+		max-width: 40%;
+		margin-bottom: spacing(sm);
+	}
+}
