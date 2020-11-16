@@ -245,6 +245,12 @@
                                     </li>
 
                                     <li class="nav__sublist-item">
+                                        <a href="/admin/settings" class="nav__link nav__link--sublist">
+                                            Instellingen
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
                                         <a href="/change-password" class="nav__link nav__link--sublist">
                                             Wijzig wachtwoord
                                         </a>
