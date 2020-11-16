@@ -1,5 +1,5 @@
-<div class="row">
-    @foreach ($next_blog_posts as $next_post)
+<div class="row @if (isset($align) && $align === 'center') justify-content-center @endif">
+    @forelse ($next_blog_posts as $next_post)
         <div class="col-12 @if(isset($columns) && $columns == 2) col-md-6 @endif section section--extra-small-spacing">
             <div class="blog-post-small">
                 <a href="{{ url('/blog/'.$next_post->url) }}" class="blog-post-small__inner">
@@ -18,7 +18,13 @@
                 </a>
             </div>
         </div>
-    @endforeach
+    @empty
+        <div class="col-12">
+            <p class="@if (isset($align) && $align === 'center') text--align-center @endif">
+                Nieuwe posts komen binnenkort!
+            </p>
+        </div>
+    @endforelse
 </div>
 
 @if (isset($with_link) && $with_link)

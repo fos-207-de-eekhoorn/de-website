@@ -62,7 +62,7 @@
 						</a>
 					</div>
 				@empty
-					<div class="col-12 col-md-4 col-lg-3 blog-posts__post blog-post">
+					<div class="col-12 blog-posts__post blog-post">
 						<h2 class="text--align-center margin-bottom--none">
 							Eerste post komt binnenkort!
 						</h2>

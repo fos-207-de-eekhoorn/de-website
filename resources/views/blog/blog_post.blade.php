@@ -74,6 +74,7 @@
             @component('components.next_blog_posts', [
                 'next_blog_posts' => $next_blog_posts,
                 'columns' => 2,
+                'align' => 'center',
             ])@endcomponent
         </div>
     </div>

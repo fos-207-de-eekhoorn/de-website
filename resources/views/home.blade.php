@@ -129,6 +129,7 @@
                 'next_blog_posts' => $next_blog_posts,
                 'columns' => 1,
                 'with_link' => 1,
+                'align' => 'left',
             ])@endcomponent
         </div>
 
