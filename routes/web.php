@@ -128,5 +128,7 @@ Route::prefix('admin')->group(function () {
 	Route::prefix('settings')->group(function () {
 		Route::get('/', 'AdminSettingsController@get_settings');
 		Route::get('/edit/{id}', 'AdminSettingsController@get_edit_settings');
+
+		Route::post('/edit', 'AdminSettingsController@edit_settings')->middleware('decrypt:value,id');
 	});
 });	

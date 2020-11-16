@@ -34,4 +34,24 @@ class AdminSettingsController extends Controller
             'setting' => $setting,
         ]);
     }
+
+    public function edit_settings(Request $request)
+    {
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'value' => 'required',
+        ]);
+
+        $setting = Setting::find($request->id);
+        $setting->value = $request->value;
+        $edit = $setting->save();
+
+        if ($edit) {
+            Session::flash('edit_success');
+            return redirect('/admin/settings/');
+        } else {
+            Session::flash('error');
+            return redirect()->back()->withInput();
+        }
+    }
 }
