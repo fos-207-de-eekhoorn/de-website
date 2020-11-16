@@ -17,7 +17,7 @@ class CreateBlogPostsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('title');
-            $table->string('subtitle')->nullable();
+            $table->string('subtitle');
             $table->string('url')->unique();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('blog_categories');

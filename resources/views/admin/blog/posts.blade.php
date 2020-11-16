@@ -130,9 +130,7 @@
 
                                     <div class="quote">
                                         <h6 class="no-margin-bottom">{{ $post->title }}</h6>
-                                        @if (isset($post->subtitle))
-                                            <p class="no-margin-bottom">{{ $post->subtitle }}</p>
-                                        @endif
+                                        <p class="no-margin-bottom">{{ $post->subtitle }}</p>
                                     </div>
                                 </td>
 
