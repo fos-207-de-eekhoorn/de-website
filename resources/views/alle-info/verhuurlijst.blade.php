@@ -17,6 +17,7 @@
             <p>
                 Met een scouts hebben we veel materiaal die we niet het hele jaar nodig hebben. Hier vindt je een lijst van alle materiaal die wij verhuren. Kan je iets gebruiken voor een feestje of evenement? Twijfel niet om ons te contacteren!
             </p>
+
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <h3>Materiaal</h3>
@@ -113,6 +114,7 @@
                         @foreach($responsibles as $leider)
                             @component('components.leiding_card', [
                                 'leider' => $leider,
+                                'titel' => 'Materiaalmeester',
                             ])
                             @endcomponent
                         @endforeach

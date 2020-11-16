@@ -17,7 +17,7 @@
     {{-- Contact formulier --}}
     {{-- EL & AEL --}}
     <div class="row section">
-        <div class="col-12 col-lg-7">
+        <div class="col-12 col-lg-7 section">
             @if (session('inschrijving_success'))
                 @component('components.flash_message', [
                     'type' => 'success',
@@ -956,11 +956,13 @@
                     @endif
                 </section>
 
-                <button class="btn btn--primary recaptchaDisable">Verzend</button>
+                <div class="wrapper__btn">
+                    <button class="btn btn--primary recaptchaDisable">Verzend</button>
+                </div>
             </form>
         </div>
 
-        <div class="col-12 col-lg-5">
+        <div class="col-12 col-lg-5 section">
             @component('components.meer_info_el_leiding', [
                 'el_leiding' => $el_leiding,
             ])

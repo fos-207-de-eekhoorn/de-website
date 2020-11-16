@@ -25,7 +25,15 @@ class InfoController extends Controller
 
     public function get_uniform_shop()
     {
-        return view('alle-info.uniform_shop');
+        $responsibles_ids = [24, 16, 12];
+        $responsibles_ids_ordered = implode(',', $responsibles_ids);
+        $responsibles = Leider::whereIn('id', $responsibles_ids)
+            ->orderByRaw("FIELD(id, $responsibles_ids_ordered)")
+            ->get();
+
+        return view('alle-info.uniform_shop', [
+            'responsibles' => $responsibles,
+        ]);
     }
 
     public function get_verhuurlijst()

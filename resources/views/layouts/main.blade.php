@@ -339,10 +339,6 @@
                                     </li>
 
                                     <li class="footer-nav__item">
-                                        <a href="/alle-info/inschrijven" class="footer-nav__link footer-nav__link--sublink">Inschrijven</a>
-                                    </li>
-
-                                    <li class="footer-nav__item">
                                         <a href="/alle-info/kost-scouts" class="footer-nav__link footer-nav__link--sublink">Kost scouts</a>
                                     </li>
 
