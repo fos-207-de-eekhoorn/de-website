@@ -70,29 +70,11 @@
 
         <div class="col-12 col-md-8 section">
             <h3 class="text--align-center">Recente posts</h3>
-            
-            <div class="row">
-                @foreach ($next_posts as $next_post)
-                    <div class="col-12 col-md-6">
-                        <div class="blog-post-small">
-                            <a href="#" class="blog-post-small__inner">
-                                <div class="blog-post-small__image aspect-ratio">
-                                    <div class="aspect-ratio__container">
-                                        <img src="{{ $next_post->image->path }}" class="aspect-ratio__inner">
-                                    </div>
-                                </div>
 
-                                <div class="blog-post-small__info">
-                                    <h5 class="blog-post-small__title">{{ $next_post->title }}</h5>
-                                    <p class="blog-post-small__date">
-                                        <span class="fa--before icon"><i class="fas fa-calendar-day"></i></span>{{ Carbon\Carbon::parse($next_post->live_at)->isoFormat('DD MMMM YYYY') }}
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+            @component('components.next_blog_posts', [
+                'next_blog_posts' => $next_blog_posts,
+                'columns' => 2,
+            ])@endcomponent
         </div>
     </div>
 
