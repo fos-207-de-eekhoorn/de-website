@@ -30,6 +30,7 @@ class AdminBlogController extends Controller
             'category',
             'image',
         ])
+        ->orderBy('live_at', 'desc')
         ->get();
 
         return view('admin.blog.posts', [
