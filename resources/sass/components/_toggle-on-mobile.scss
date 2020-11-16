@@ -1,0 +1,55 @@
+//  ----------------
+//  Toggle on mobile
+//  ----------------
+
+.toggle-on-mobile {
+	@include transitions;
+
+	max-height: 0;
+	visibility: hidden;
+	opacity: 0;
+
+	@include mq(md) {
+		max-height: 10000000px;
+        visibility: visible;
+        opacity: 1;
+	}
+
+	&__checkbox:checked {
+		& ~ .toggle-on-mobile {
+	        max-height: 10000000px;
+	        visibility: visible;
+	        opacity: 1;
+		}
+
+		& ~ .toggle-on-mobile__label .toggle-on-mobile__caret {
+        	transform: rotate(180deg);
+        	display: inline-block;
+        }
+	}
+	&__checkbox:not(:checked) {
+		& ~ .toggle-on-mobile * {
+			transition: margin 0s linear map_get($transitions, 'normal');
+
+			@media (max-width: 768px) {
+				margin: 0;				
+			}
+		}
+	}
+
+	&__label {
+		cursor: pointer;
+
+		@include mq(md) {
+			cursor: default;
+		}
+	}
+
+	&__caret {
+		@include transitions;
+
+		@include mq(md) {
+			display: none;
+		}
+	}
+}
