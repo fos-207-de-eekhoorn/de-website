@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
-            <a class="admin-module admin-module--coming-soon">
+            <a href="{{ url('/admin/settings') }}" class="admin-module">
                 <h3>Instellingen</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-cog"></i>

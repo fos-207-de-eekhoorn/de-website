@@ -123,4 +123,9 @@ Route::prefix('admin')->group(function () {
 
 		Route::post('/set-active', 'ApiAdminController@PostSetEvenementActive');
 	});
+
+	# Settings
+	Route::prefix('settings')->group(function () {
+		Route::get('/', 'AdminSettingsController@get_settings');
+	});
 });	
