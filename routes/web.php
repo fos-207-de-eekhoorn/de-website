@@ -127,5 +127,6 @@ Route::prefix('admin')->group(function () {
 	# Settings
 	Route::prefix('settings')->group(function () {
 		Route::get('/', 'AdminSettingsController@get_settings');
+		Route::get('/edit/{id}', 'AdminSettingsController@get_edit_settings');
 	});
 });	

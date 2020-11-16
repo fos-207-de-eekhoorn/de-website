@@ -7,7 +7,7 @@
             'pattern' => '1',
             'strength' => 'light',
         ],
-        'page_title' => 'Settings',
+        'page_title' => 'Instellingen',
     ])
     @endcomponent
 
@@ -20,7 +20,7 @@
                         'name' => 'Admin',
                     ],
                 ],
-                'current' => 'Settings',
+                'current' => 'Instellingen',
             ])@endcomponent    
         </div>
 
@@ -34,6 +34,7 @@
                     <tr class="table__row">
                         <td class="table__cell">Key</td>
                         <td class="table__cell">Value</td>
+                        <td class="table__cell"></td>
                     </tr>
                 </thead>
 
@@ -46,6 +47,14 @@
 
                             <td class="table__cell">
                                 {{ $setting->value }}
+                            </td>
+
+                            <td class="table__cell no-wrap">
+                                <p class="no-margin-bottom">
+                                    <a href="{{ url('/admin/settings/edit/' . Crypt::encrypt($setting->id)) }}">
+                                        <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
+                                    </a>
+                                </p>
                             </td>
                         </tr>
                     @endforeach
