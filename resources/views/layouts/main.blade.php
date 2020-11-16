@@ -265,6 +265,12 @@
                                             </a>
                                         </li>
 
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin/settings" class="nav__link nav__link--sublist">
+                                                <span class="fa--before icon"><i class="fas fa-cog"></i></span>Instellingen
+                                            </a>
+                                        </li>
+
                                         <div class="nav__sublist-item-divider"></div>
 
                                         <li class="nav__sublist-item">
