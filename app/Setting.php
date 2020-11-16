@@ -11,4 +11,9 @@ class Setting extends Model
     protected $fillable = [
         'key', 'value',
     ];
+
+    public function setting_options()
+    {
+        return $this->hasMany(SettingOption::class);
+    }
 }

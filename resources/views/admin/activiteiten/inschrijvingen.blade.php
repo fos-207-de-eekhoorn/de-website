@@ -163,7 +163,7 @@
         (function($){
             $('.toggle-switch__input').change(function() {
                 $.ajax({
-                    url: "{{ url('/admin/activiteiten/set-aanwezig') }}",
+                    url: "{{ url('/api/activiteiten/set-aanwezig') }}",
                     type: "post",
                     data: {
                         '_token': '{{ csrf_token() }}',

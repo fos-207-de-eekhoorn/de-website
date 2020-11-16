@@ -34,22 +34,29 @@
         margin: 0;
     }
 
-    &__list {
+    &__inner {
         @include transitions;
         @include shadow-standard;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
         position: absolute;
         left: 0;
         width: 100%;
         height: auto;
+        max-height: 90vh;
+        max-height: calc(100vh - #{$header-height});
+        padding-bottom: spacing(md);
         margin-top: $header-height;
         visibility: hidden;
         opacity: 0;
         background-color: $color-white;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         list-style: none;
     }
@@ -74,7 +81,7 @@
 
         position: relative;
         width: 100%;
-        height: $header-height;
+        height: $header-height !important;
         padding: 0 spacing(lg);
 
         text-align: center;
@@ -89,7 +96,7 @@
         }
 
         &--sublist {
-            padding: 1rem 0;
+            padding: spacing(sm);
             background-color: $color-grey-background;
         }
         &:not(&--sublist) {
@@ -110,7 +117,7 @@
     }
 
     &__checkbox:checked {
-        & ~ .nav__list {
+        & ~ .nav__inner {
             visibility: visible;
             opacity: 1;
         }
@@ -126,6 +133,11 @@
     &__sublist-item {
         padding: 0;
         margin: 0;
+    }
+
+    &__sublist-item-divider {
+        width: 100%;
+        height: 1px;
     }
 }
 
@@ -143,16 +155,20 @@
             }
         }
 
-        &__list {
+        &__inner {
             @include shadow-none;
-
-            flex-direction: row;
 
             position: relative;
             width: auto;
+            padding-bottom: 0;
             margin-top: 0;
             visibility: visible;
             opacity: 1;
+            overflow: visible;
+        }
+
+        &__list {
+            flex-direction: row;
 
             &--sublist {
                 position: absolute;
@@ -189,7 +205,8 @@
             display: block;
             position: absolute;
             top: 100%;
-            width: 100%;
+            right: 0;
+            min-width: 100%;
             padding: 0;
             background-color: $color-white;
         }
@@ -221,13 +238,17 @@
             }
 
             &--sublist {
-                padding: 1rem 0;
+                padding: spacing(md) spacing(sm);
                 background-color: $color-white;
 
                 &:hover {
                     border-bottom: none;
                 }
             }
+        }
+
+        &__sublist-item-divider {
+            background-color: $color-grey-extra-light;
         }
     }
 }

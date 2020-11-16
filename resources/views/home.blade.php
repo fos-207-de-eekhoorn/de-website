@@ -106,17 +106,30 @@
         </div>
 
         <div class="col-12 col-md-4 section">
-            <h4>Evenementen kalender</h4>
+            <div class="section section--small-spacing">
+                @component('components.current_fase', [
+                    'with_link' => 1,
+                ])@endcomponent
+            </div>
 
-            @component('components.calendar', [
-                'evenementen' => $evenementen,
-            ])
-            @endcomponent
+            <div class="section section--small-spacing">
+                <h4>Evenementen kalender</h4>
+
+                @component('components.calendar', [
+                    'evenementen' => $evenementen,
+                ])
+                @endcomponent
+            </div>
         </div>
 
         <div class="col-12 col-md-4 section">
-            @component('components.current_fase', [
+            <h4>Nieuwtjes</h4>
+
+            @component('components.next_blog_posts', [
+                'next_blog_posts' => $next_blog_posts,
+                'columns' => 1,
                 'with_link' => 1,
+                'align' => 'left',
             ])@endcomponent
         </div>
 

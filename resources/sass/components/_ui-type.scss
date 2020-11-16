@@ -1,0 +1,60 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> UI type
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <div class="ui-type">
+//      <input class="ui-type__select">
+//      <label class="ui-type__label"></label>
+//  </div>
+//
+//  Options
+//  -------
+//  NONE
+//
+//  ------------------------------------------------------------------------------------
+
+.wrapper__ui-type {
+    margin-bottom: -1 * spacing(sm);
+}
+
+.ui-type {
+    margin-bottom: spacing(sm);
+
+    &__select:checked {
+        & ~ .ui-type {
+            &__label {
+                &:after {
+                    @extend %fa-icon;
+                    @extend .fas;
+
+                    content: fa-content($fa-var-check-circle);
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    
+                    color: $color-blue;
+                }
+
+                img {
+                    border: spacing(xxs) solid $color-blue;
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+    &__label img{
+        @include border-radius;
+
+        position: relative;
+        cursor: pointer;
+    }
+}
