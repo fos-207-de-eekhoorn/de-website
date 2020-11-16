@@ -95,7 +95,7 @@
 
 			$('.js-filter:checked').each(function() {
 				var value = $(this).val(),
-					valueArray = value.split('-');
+					valueArray = value.split(/-(.+)/);
 				searchQuery.push('.' + value);
 
 				if (valueArray[0] === 'category') urlCategories.push(valueArray[1]);
@@ -121,7 +121,7 @@
 			urlCategories = urlParams.has('categories') ? urlParams.get('categories').split(',') : [];
 
 		$filterInput.each(function() {
-			var value = $(this).val().split('-');
+			var value = $(this).val().split(/-(.+)/);
 			if (value[0] === 'category') {
 				if (urlCategories.indexOf(value[1]) !== -1) $(this).attr('checked', 'checked');
 			} else if (value[0] === 'tag') {
