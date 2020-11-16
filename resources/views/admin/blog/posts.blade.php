@@ -151,13 +151,11 @@
                                 </td>
 
                                 <td class="table__cell no-wrap">
-                                    {{--
                                     <p>
-                                        <a href="{{ url('/evenementen/') }}">
+                                        <a href="{{ url('/blog/' . $post->url) }}">
                                             <span class="fa--before"><i class="fas fa-eye"></i></span>Bekijk evenement
                                         </a>
                                     </p>
-                                    --}}
 
                                     <p>
                                         <a href="{{ url('/admin/blog/posts/edit/' . Crypt::encrypt($post->id)) }}">

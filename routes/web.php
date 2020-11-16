@@ -64,7 +64,7 @@ Route::prefix('evenementen')->group(function () {
 Route::prefix('blog')->group(function () {
 	Route::get('/', 'BlogController@get_blog');
 
-	Route::get('/{title}', 'BlogController@get_blog_post');
+	Route::get('/{url}', 'BlogController@get_blog_post');
 });
 
 # Admin Routes

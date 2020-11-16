@@ -40,7 +40,7 @@ class BlogController extends Controller
                 },
                 'blocks.image',
             ])
-            ->whereRaw('lower(replace(replace(replace(title, \' \', \'\'), \'?\', \'\'), \'.\', \'\')) = ?', str_replace('-','',$request->title))->first();
+            ->where('url', $request->url)->first();
 
         $next_posts = BlogPost::with([
                 'image',

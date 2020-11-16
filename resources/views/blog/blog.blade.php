@@ -43,7 +43,7 @@
 			<div class="row blog-posts">
 				@forelse ($posts as $post)
 					<div class="col-12 col-md-4 blog-posts__post blog-post @foreach ($post->tag_names as $tag) tag-{{ $tag }}@endforeach category-{{ strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $post->category_name)) }}">
-						<a href="{{ url('/blog/' . str_replace('?', '', str_replace(' ', '-', strtolower($post->title)))) }}" class="blog-post__inner">
+						<a href="{{ url('/blog/'.$post->url) }}" class="blog-post__inner">
 							<img src="{{ $post->image->path }}" class="blog-post__image">
 
 							<div class="blog-post__details">
