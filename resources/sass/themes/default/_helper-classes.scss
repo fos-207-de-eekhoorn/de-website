@@ -306,6 +306,27 @@
 	margin-right: 0;
 }
 
+.extra-small-margin,
+.extra-small-margin-vertical,
+.extra-small-margin-top {
+	margin-top: spacing(xs);
+}
+.extra-small-margin,
+.extra-small-margin-vertical,
+.extra-small-margin-bottom {
+	margin-bottom: spacing(xs);
+}
+.extra-small-margin,
+.extra-small-margin-horizontal,
+.extra-small-margin-left {
+	margin-left: spacing(xs);
+}
+.extra-small-margin,
+.extra-small-margin-horizontal,
+.extra-small-margin-right {
+	margin-right: spacing(xs);
+}
+
 .small-margin,
 .small-margin-vertical,
 .small-margin-top {

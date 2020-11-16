@@ -125,12 +125,19 @@
                                     <img src="{{ $post->image->path }}" class="img--thumbnail">
                                 </td>
 
-                                <td class="table__cell">
-                                    {{ $post->name }}
+                                <td class="table__cell grid grid--2">
+                                    <h5 class="extra-small-margin-bottom">{{ $post->name }}</h5>
+
+                                    <div class="quote">
+                                        <h6 class="no-margin-bottom">{{ $post->title }}</h6>
+                                        @if (isset($post->subtitle))
+                                            <p class="no-margin-bottom">{{ $post->subtitle }}</p>
+                                        @endif
+                                    </div>
                                 </td>
 
                                 <td class="table__cell">
-                                    {{ $post->category->name }}
+                                    {{ $post->category_name }}
                                 </td>
 
                                 <td class="table__cell">
