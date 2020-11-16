@@ -1,0 +1,131 @@
+//  ------------------------------------------------------------------------------------
+//  Components -> Image selection
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <ul class="list">
+//      <li class="list__item">AAA</li>
+//      <li class="list__item">AAA</li>
+//  </ul>
+//
+//  Options
+//  -------
+//  NONE
+//
+//  ------------------------------------------------------------------------------------
+
+.image-selection {
+    @include border-radius;
+    @include transitions;
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: spacing(sm);
+    border: 1px solid;
+    cursor: pointer;
+
+    @include mq(md) {
+        &--3 {
+            width: 33%;
+        }
+    }
+
+    &:after {
+        @extend %fa-icon;
+        @extend .fas;
+
+        content: fa-content($fa-var-caret-down);
+
+        padding: 0 0 0 spacing(sm);
+    }
+
+    &--expanded {
+        align-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &:after {
+            transform: rotate(180deg);
+            padding: 0 spacing(sm) 0 0;
+        }
+
+        .image-selection {
+            &__input:checked {
+                + .image-selection__image {
+                    .image-selection {
+                        &__label {
+                            &:after {
+                                @extend %fa-icon;
+                                @extend .fas;
+
+                                content: fa-content($fa-var-check-circle);
+
+                                position: absolute;
+                                top: spacing(xs);
+                                right: spacing(xs);
+
+                                color: $color-white;
+                            }
+                        }
+                    }
+
+                    img {
+                        opacity: 0.7;
+                    }
+                }
+            }
+
+            &__image {
+                display: block;
+                padding: 0 spacing(xs) spacing(xs);
+
+                &--active {
+                }
+            }
+
+            &__label {
+                border: spacing(xs) solid;
+            }
+        }
+    }
+
+    &--expanded.image-selection--3 {
+        @include mq(md) {
+            width: 100%;
+
+            .image-selection {
+                &__image {
+                    width: 33.3%;
+                }
+            }
+        }
+    }
+
+    &__input:checked {
+        + .image-selection {
+            &__image {
+                display: block;
+            }
+        }
+    }
+
+    &__image {
+        display: none;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__label {
+        @include border-radius;
+
+        position: relative;
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+}

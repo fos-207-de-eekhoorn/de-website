@@ -3,14 +3,38 @@
 //  ------------------------------------------------------------------------------------
 
 .tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    
+    &--centered {
+        justify-content: center;
+    }
+    
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &--wide-both-sides {
+        .tags {
+            &__item {
+                margin: 0 spacing(md) spacing(sm) !important;
+            }
+        }
+    }
+    
     &__tag {
         @include border-radius;
 
-        display: inline-block;
+        border: 1px solid;
+        list-style: none;
         padding: spacing(xs) spacing(sm);
-        border: 1px solid $color-grey-extra-light;
+        margin-right: spacing(xs);
         margin-bottom: spacing(xs);
-        background-color: $color-grey-background;
+        
+        &:last-of-type {
+            margin-right: 0;
+        }
         
         &--is-link {
             cursor: pointer;

@@ -1,0 +1,79 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Blog post small
+//  ------------------------------------------------------------------------------------
+//
+//  Usage example
+//  -------------
+//  <div class="blog-post-small">
+//      <div class="blog-post-small__inner">
+//          <div class="blog-post-small__image aspect-ratio">
+//              <div class="aspect-ratio__container">
+//                  <img src="#" class="aspect-ratio__inner">
+//              </div>
+//          </div>
+//
+//          <div class="blog-post-small__info">
+//              <h4 class="blog-post-small__title">Title</h4>
+//              <p class="blog-post-small__date">
+//                  Date
+//              </p>
+//          </div>
+//      </div>
+//  </div>
+//
+//  Options
+//  -------
+//  NONE
+//
+//  ------------------------------------------------------------------------------------
+
+.blog-post-small {
+    &:hover {
+        .blog-post-small {
+            &__image {
+                opacity: .8;
+            }
+        }
+    }
+
+    &__inner {
+        @include border-radius;
+        @include shadow-standard;
+
+        display: flex;
+        align-items: center;
+        height: 100%;
+        background-color: $color-grey-background-light;
+        overflow: hidden;
+
+        text-decoration: none;
+        
+        &:hover {
+            @include shadow-double;
+
+            text-decoration: none;
+        }
+    }
+
+    &__image {
+        align-self: strech;
+        width: 33%;
+        min-width: 33%;
+        padding-bottom: 33%;
+        margin-right: spacing(md);
+    }
+
+    &__info {
+        padding: spacing(sm) spacing(sm) spacing(sm) 0;
+    }
+
+    &__title {
+        margin-bottom: 0;
+
+        font-weight: $font-weight-bold;
+    }
+
+    &__date {
+        margin-bottom: 0;
+    }
+}

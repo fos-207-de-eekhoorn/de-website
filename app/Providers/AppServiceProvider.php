@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        setlocale(LC_TIME, config('app.locale'));
+        Carbon::setLocale(config('app.locale'));
 
         $takken = Tak::get();
         $evenementen = Evenement::where('active', '1')
@@ -37,7 +39,6 @@ class AppServiceProvider extends ServiceProvider
             'takken' => Tak::get(),
             'active_corona_phase' => Setting::where('key', 'active_corona_phase')->first()->value,
         ]);
-        Carbon::setLocale(config('app.locale'));
     }
 
     /**

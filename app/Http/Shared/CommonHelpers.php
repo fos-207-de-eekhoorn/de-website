@@ -2,7 +2,9 @@
 
 namespace App\Http\Shared;
 
+use App\BlogPost;
 use App\Leider;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 trait CommonHelpers
@@ -72,7 +74,8 @@ trait CommonHelpers
             ->first();
     }
 
-    public function parse_odd_str_date($month) {
+    public function parse_odd_str_date($month)
+    {
         $month_number = intval($month, 10);
 
         if ($month_number % 2 === 0) $month_number = $month_number === 12 ? 1 : $month_number + 1;
@@ -80,10 +83,23 @@ trait CommonHelpers
         return [$this->str_double_digit_string($month_number), $this->str_double_digit_string($month_number + 1)];
     }
 
-    public function str_double_digit_string($date) {
+    public function str_double_digit_string($date)
+    {
         if ($date < 10) $date = '0' . $date;
         else strval($date);
 
         return $date;
+    }
+
+    public function get_next_blog_posts()
+    {
+        return BlogPost::with([
+                'image',
+            ])
+            ->where('active', 1)
+            ->where('live_at', '<=', Carbon::now('Europe/Berlin')->format('Y-m-d H:i:s'))
+            ->orderBy('live_at', 'desc')
+            ->limit(2)
+            ->get();
     }
 }

@@ -33,7 +33,7 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <!-- Styles -->
-        <link href="/css/style.css?v=0.7.2" rel="stylesheet">
+        <link href="/css/style.css?v=1.0.0" rel="stylesheet">
 
         <!-- TinyMCE -->
         <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -70,205 +70,229 @@
                         </label>
                     </div>
 
-                    <ul class="nav__list">
-                        <li class="nav__list-item">
-                            <a href="/" class="nav__link{{ Request::is('/') ? ' nav__link--active' : '' }}">
-                                Home
-                            </a>
-                        </li>
+                    <div class="nav__inner">
+                        <ul class="nav__list">
+                            <li class="nav__list-item">
+                                <a href="/" class="nav__link{{ Request::is('/') ? ' nav__link--active' : '' }}">
+                                    Home
+                                </a>
+                            </li>
 
-                        <li class="nav__list-item nav__list-item--sublist">
-                            <input type="checkbox" id="nav__toggle-sublist--takken" class="nav__checkbox" hidden>
+                            <li class="nav__list-item nav__list-item--sublist">
+                                <input type="checkbox" id="nav__toggle-sublist--takken" class="nav__checkbox" hidden>
 
-                            <label for="nav__toggle-sublist--takken" class="nav__link">
-                                Takken<span class="fa--after"><i class="fas fa-caret-down"></i></span>
-                            </label>
-
-                            <ul class="nav__sublist">
-                                <li class="nav__sublist-item">
-                                    <a href="/takken/" class="nav__link nav__link--sublist">
-                                        Overzicht
-                                    </a>
-                                </li>
-
-                                @foreach($navigation_takken as $tak)
-                                    <li class="nav__sublist-item">
-                                        <a href="/takken/{{ $tak->link }}" class="nav__link nav__link--sublist">
-                                            {{ $tak->naam }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-
-                        <li class="nav__list-item nav__list-item--sublist">
-                            <input type="checkbox" id="nav__toggle-sublist--alle-info" class="nav__checkbox" hidden>
-
-                            <label for="nav__toggle-sublist--alle-info" class="nav__link">
-                                Alle&nbsp;info<span class="fa--after"><i class="fas fa-caret-down"></i></span>
-                            </label>
-
-                            <ul class="nav__sublist">
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info" class="nav__link nav__link--sublist">
-                                        Overzicht
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/uniform-shop" class="nav__link nav__link--sublist">
-                                        Uniform & shop
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/verhuurlijst" class="nav__link nav__link--sublist">
-                                        Verhuurlijst
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/lid-worden" class="nav__link nav__link--sublist">
-                                        Lid worden
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/kost-scouts" class="nav__link nav__link--sublist">
-                                        Kost scouts
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/documenten" class="nav__link nav__link--sublist">
-                                        Attesten & documenten
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/trooper" class="nav__link nav__link--sublist">
-                                        Trooper
-                                    </a>
-                                </li>
-
-                                <li class="nav__sublist-item">
-                                    <a href="/alle-info/jeugdwerkregels" class="nav__link nav__link--sublist">
-                                        Jeugdwerkregels
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav__list-item nav__list-item--sublist">
-                            <input type="checkbox" id="nav__toggle-sublist--evenementen" class="nav__checkbox" hidden>
-
-                            <label for="nav__toggle-sublist--evenementen" class="nav__link">
-                                Evenementen<span class="fa--after"><i class="fas fa-caret-down"></i></span>
-                            </label>
-
-                            <ul class="nav__sublist">
-                                <li class="nav__sublist-item">
-                                    <a href="/evenementen" class="nav__link nav__link--sublist">
-                                        Overzicht
-                                    </a>
-                                </li>
-
-                                @foreach($navigation_evenementen as $evenement)
-                                    <li class="nav__sublist-item">
-                                        <a href="/evenementen/{{ $evenement->url }}" class="nav__link nav__link--sublist">
-                                            {{ $evenement->naam }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-
-                        {{--
-                        <li class="nav__list-item">
-                            <a href="/inschrijven" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
-                                Inschrijven
-                            </a>
-                        </li>
-                        --}}
-
-                        <li class="nav__list-item">
-                            <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
-                                Contact
-                            </a>
-                        </li>
-
-                        @guest
-                            @if (config('app.env') === 'local')
-                                <li class="nav__list-item">
-                                    <a href="/login" class="nav__link">
-                                        login
-                                    </a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav__list-item nav__list-item--sublist{{ Request::is('/admin*') ? ' nav__link--active' : '' }}">
-                                <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
-
-                                <label for="nav__toggle-sublist--auth" class="nav__link">
-                                    Admin<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                                <label for="nav__toggle-sublist--takken" class="nav__link">
+                                    Takken<span class="fa--after"><i class="fas fa-caret-down"></i></span>
                                 </label>
 
                                 <ul class="nav__sublist">
                                     <li class="nav__sublist-item">
-                                        <a href="/admin" class="nav__link nav__link--sublist">
+                                        <a href="/takken/" class="nav__link nav__link--sublist">
                                             Overzicht
                                         </a>
                                     </li>
 
+                                    <div class="nav__sublist-item-divider"></div>
+
+                                    @foreach($navigation_takken as $tak)
+                                        <li class="nav__sublist-item">
+                                            <a href="/takken/{{ $tak->link }}" class="nav__link nav__link--sublist">
+                                                {{ $tak->naam }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+
+                            <li class="nav__list-item nav__list-item--sublist">
+                                <input type="checkbox" id="nav__toggle-sublist--alle-info" class="nav__checkbox" hidden>
+
+                                <label for="nav__toggle-sublist--alle-info" class="nav__link">
+                                    Alle&nbsp;info<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                                </label>
+
+                                <ul class="nav__sublist">
                                     <li class="nav__sublist-item">
-                                        <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
-                                            Activiteiten
+                                        <a href="/alle-info" class="nav__link nav__link--sublist">
+                                            Overzicht
+                                        </a>
+                                    </li>
+
+                                    <div class="nav__sublist-item-divider"></div>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/alle-info/uniform-shop" class="nav__link nav__link--sublist">
+                                            Uniform & shop
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="/admin/evenementen" class="nav__link nav__link--sublist">
-                                            Evenementen
+                                        <a href="/alle-info/verhuurlijst" class="nav__link nav__link--sublist">
+                                            Verhuurlijst
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="/admin/inschrijvingen" class="nav__link nav__link--sublist">
-                                            Inschrijvingen
+                                        <a href="/alle-info/lid-worden" class="nav__link nav__link--sublist">
+                                            Lid worden
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="/admin/contents" class="nav__link nav__link--sublist">
-                                            Content
+                                        <a href="/alle-info/inschrijven" class="nav__link nav__link--sublist">
+                                            Inschrijven
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="/admin/settings" class="nav__link nav__link--sublist">
-                                            Instellingen
+                                        <a href="/alle-info/kost-scouts" class="nav__link nav__link--sublist">
+                                            Kost scouts
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="/change-password" class="nav__link nav__link--sublist">
-                                            Wijzig wachtwoord
+                                        <a href="/alle-info/documenten" class="nav__link nav__link--sublist">
+                                            Attesten & documenten
                                         </a>
                                     </li>
 
                                     <li class="nav__sublist-item">
-                                        <a href="{{ route('logout') }}" class="nav__link nav__link--sublist" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            <span class="fa--before"><i class="fas fa-sign-out-alt"></i></span>Logout
+                                        <a href="/alle-info/trooper" class="nav__link nav__link--sublist">
+                                            Trooper
+                                        </a>
+                                    </li>
+
+                                    <li class="nav__sublist-item">
+                                        <a href="/alle-info/jeugdwerkregels" class="nav__link nav__link--sublist">
+                                            Jeugdwerkregels
                                         </a>
                                     </li>
                                 </ul>
                             </li>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        @endguest
-                    </ul>
+                            <li class="nav__list-item nav__list-item--sublist">
+                                <input type="checkbox" id="nav__toggle-sublist--evenementen" class="nav__checkbox" hidden>
+
+                                <label for="nav__toggle-sublist--evenementen" class="nav__link">
+                                    Evenementen<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                                </label>
+
+                                <ul class="nav__sublist">
+                                    <li class="nav__sublist-item">
+                                        <a href="/evenementen" class="nav__link nav__link--sublist">
+                                            Overzicht
+                                        </a>
+                                    </li>
+
+                                    <div class="nav__sublist-item-divider"></div>
+
+                                    @foreach($navigation_evenementen as $evenement)
+                                        <li class="nav__sublist-item">
+                                            <a href="/evenementen/{{ $evenement->url }}" class="nav__link nav__link--sublist">
+                                                {{ $evenement->naam }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+
+                            {{--
+                            <li class="nav__list-item">
+                                <a href="/inschrijven" class="nav__link {{ Request::is('/kamp') ? 'nav__link--active' : '' }}">
+                                    Inschrijven
+                                </a>
+                            </li>
+                            --}}
+
+                            <li class="nav__list-item">
+                                <a href="/contact" class="nav__link {{ Request::is('/contact') ? 'nav__link--active' : '' }}">
+                                    Contact
+                                </a>
+                            </li>
+
+                            @guest
+                                @if (config('app.env') === 'local')
+                                    <li class="nav__list-item nav__list-item--small">
+                                        <a href="/login" class="nav__link">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                        </a>
+                                    </li>
+                                @endif
+                            @else
+                                <li class="nav__list-item nav__list-item--sublist{{ Request::is('/admin*') ? ' nav__link--active' : '' }}">
+                                    <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
+
+                                    <label for="nav__toggle-sublist--auth" class="nav__link">
+                                        Admin<span class="fa--after"><i class="fas fa-caret-down"></i></span>
+                                    </label>
+
+                                    <ul class="nav__sublist">
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin" class="nav__link nav__link--sublist">
+                                                Overzicht
+                                            </a>
+                                        </li>
+
+                                        <div class="nav__sublist-item-divider"></div>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin/activiteiten" class="nav__link nav__link--sublist">
+                                                <span class="fa--before icon"><i class="fas fa-dice"></i></span>Activiteiten
+                                            </a>
+                                        </li>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin/evenementen" class="nav__link nav__link--sublist">
+                                                <span class="fa--before icon"><i class="fas fa-calendar-alt"></i></span>Evenementen
+                                            </a>
+                                        </li>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin/inschrijvingen" class="nav__link nav__link--sublist">
+                                                <span class="fa--before icon"><i class="fas fa-user-plus"></i></span>Inschrijvingen
+                                            </a>
+                                        </li>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin/blog/" class="nav__link nav__link--sublist">
+                                                <span class="fa--before icon"><i class="fas fa-newspaper"></i></span>Blog
+                                            </a>
+                                        </li>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin/contents" class="nav__link nav__link--sublist">
+                                                <span class="fa--before icon"><i class="fas fa-comment-alt"></i></span>Content
+                                            </a>
+                                        </li>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="/admin/settings" class="nav__link nav__link--sublist">
+                                                <span class="fa--before icon"><i class="fas fa-cog"></i></span>Instellingen
+                                            </a>
+                                        </li>
+
+                                        <div class="nav__sublist-item-divider"></div>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="/change-password" class="nav__link nav__link--sublist">
+                                                Wijzig wachtwoord
+                                            </a>
+                                        </li>
+
+                                        <li class="nav__sublist-item">
+                                            <a href="{{ route('logout') }}" class="nav__link nav__link--sublist" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                <span class="fa--before"><i class="fas fa-sign-out-alt"></i></span>Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            @endguest
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </header>
