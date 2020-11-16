@@ -207,7 +207,7 @@
         (function($){
             $('.toggle-switch__input').change(function() {
                 $.ajax({
-                    url: "{{ url('/admin/evenementen/set-active') }}",
+                    url: "{{ url('/api/evenementen/set-active') }}",
                     type: "post",
                     data: {
                         '_token': '{{ csrf_token() }}',

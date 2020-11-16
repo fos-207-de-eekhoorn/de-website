@@ -146,6 +146,12 @@
 		list-style: none;
 	}
 
+	&--no-ui {
+		padding-left: 0;
+
+		list-style: none;
+	}
+
 	&--no-spacing {
 		padding-left: 0;
 		padding-right: 0;
@@ -169,6 +175,10 @@
         }
 	}
 
+	&--cursor {
+		cursor: pointer;
+	}
+
 	&--block {
 		display: block;
 	}
@@ -186,6 +196,21 @@
 //  ------------------------------------------------------------------------------------
 
 .img {
+	&--margin-bottom {
+		margin-bottom: spacing(md);
+	}
+
+	&--align-left {
+		margin-right: auto;
+	}
+	&--align-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&--align-right {
+		margin-left: auto;
+	}
+
 	&--inline-left,
 	&--inline-right {
 		width: 41.6%;
@@ -198,6 +223,31 @@
 	&--inline-right {
 		float: right;
 		margin-left: spacing(md);
+	}
+
+	&--sm {
+		max-width: spacing(xl);
+	}
+	&--md {
+		max-width: spacing(xxl);
+	}
+	&--lg {
+		max-width: spacing(xxxl);
+	}
+	&--xl {
+		max-width: spacing(xxxxl);
+	}
+
+	&--cover {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 80%;
+	}
+
+	&--thumbnail {
+		max-width: spacing(xxl);
+		max-height: spacing(xxl);
 	}
 }
 
@@ -216,6 +266,22 @@
 	> [class*="col-"] {
 		padding-right: $grid-gutter-width / 4;
 		padding-left: $grid-gutter-width / 4;
+	}
+}
+.large-gutters {
+	margin-right: - $grid-gutter-width;
+	margin-left: - $grid-gutter-width;
+
+	> .col,
+	> [class*="col-"] {
+		padding-right: $grid-gutter-width;
+		padding-left: $grid-gutter-width;
+	}
+}
+
+.col {
+	&--max {
+		flex-grow: 1000;
 	}
 }
 
@@ -238,6 +304,27 @@
 .no-margin-vertical,
 .no-margin-right {
 	margin-right: 0;
+}
+
+.extra-small-margin,
+.extra-small-margin-vertical,
+.extra-small-margin-top {
+	margin-top: spacing(xs);
+}
+.extra-small-margin,
+.extra-small-margin-vertical,
+.extra-small-margin-bottom {
+	margin-bottom: spacing(xs);
+}
+.extra-small-margin,
+.extra-small-margin-horizontal,
+.extra-small-margin-left {
+	margin-left: spacing(xs);
+}
+.extra-small-margin,
+.extra-small-margin-horizontal,
+.extra-small-margin-right {
+	margin-right: spacing(xs);
 }
 
 .small-margin,

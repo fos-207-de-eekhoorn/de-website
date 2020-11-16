@@ -375,8 +375,10 @@
                 checkForUsedUrl();
             });
             $naam.on('input', function() {
-                if (!urlIsChanged) $url.val(prepareUrl($naam.val()));
-                checkForUsedUrl();
+                if (!urlIsChanged) {
+                    $url.val(prepareUrl($title.val()));
+                    checkForUsedUrl();
+                }
             });
         })(jQuery);
 
@@ -384,7 +386,6 @@
             var input = $url.val();
             if (urls.includes(input)) $urlFeedback.show(300);
             else $urlFeedback.hide(300);
-            console.log('bar');
         }
 
         function prepareUrl(url) {

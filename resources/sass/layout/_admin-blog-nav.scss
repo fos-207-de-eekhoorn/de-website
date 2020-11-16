@@ -1,0 +1,70 @@
+//  ------------------------------------------------------------------------------------
+//  Layout -> Admin blog - Navigation
+//  ------------------------------------------------------------------------------------
+
+.admin-blog-nav {
+    display: flex;
+
+    &__list,
+    &__list-item,
+    &__link {
+        display: flex;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__list {
+        @include border-radius;
+        @include shadow-standard;
+        @include transitions;
+
+        display: flex;
+        align-items: center;
+
+        height: auto;
+        background-color: $color-white;
+
+        list-style: none;
+    }
+
+    &__list-item {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__link {
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+        width: 100%;
+        height: $header-height;
+        padding: 0 spacing(lg);
+        background-color: $color-grey-background-light;
+
+        text-align: center;
+        text-decoration: none;
+        color: $color-grey-medium !important;
+
+        &:hover {
+            border-bottom: 1px solid $color-blue;
+            background-color: $color-grey-background;
+            
+            color: $color-blue !important;
+        }
+
+        &--active {
+            border-left: none;
+            border-bottom: 3px solid $color-blue;
+            border-right: none;
+            
+            color: $color-blue !important;
+
+            &:hover {
+                border-width: 3px;
+            }
+        }
+    }
+}

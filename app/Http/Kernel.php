@@ -28,9 +28,9 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \App\Http\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
+            'encrypt_cookies',
+            'queued_cookies',
+            'start_session',
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
@@ -38,6 +38,9 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+            'encrypt_cookies',
+            'queued_cookies',
+            'start_session',
             'throttle:60,1',
             'bindings',
         ],
@@ -58,5 +61,8 @@ class Kernel extends HttpKernel
         'decrypt' => \App\Http\Middleware\DecryptRequestData::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'encrypt_cookies' => \App\Http\Middleware\EncryptCookies::class,
+        'queued_cookies' => \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        'start_session' => \Illuminate\Session\Middleware\StartSession::class,
     ];
 }

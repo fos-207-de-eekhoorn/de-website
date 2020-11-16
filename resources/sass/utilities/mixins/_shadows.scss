@@ -7,6 +7,7 @@
 //  .selector {
 //      @include shadow-standard;
 //      @include shadow-hard;
+//      @include shadow-double;
 //      @include shadow-half;
 //      @include shadow-none;
 //      @include shadow-custom($color);
@@ -25,19 +26,18 @@
 @mixin shadow-standard {
     box-shadow: $shadow-standard $color-shadow;
 }
-
 @mixin shadow-hard {
     box-shadow: $shadow-hard $color-text-shadow;
 }
-
+@mixin shadow-double {
+    box-shadow: $shadow-double $color-shadow;
+}
 @mixin shadow-half {
     box-shadow: $shadow-half $color-shadow;
 }
-
 @mixin shadow-none {
     box-shadow: none;
 }
-
 @mixin shadow-custom($color) {
     box-shadow: $text-shadow-standard $color;
 }
@@ -45,19 +45,15 @@
 @mixin text-shadow-standard {
     text-shadow: $text-shadow-standard $color-text-shadow;
 }
-
 @mixin text-shadow-hard {
     text-shadow: $shadow-standard $color-text-shadow;
 }
-
 @mixin text-shadow-half {
     text-shadow: $text-shadow-half $color-text-shadow;
 }
-
 @mixin text-shadow-none {
     text-shadow: none;
 }
-
 @mixin text-shadow-custom($color) {
     text-shadow: $text-shadow $color;
 }
