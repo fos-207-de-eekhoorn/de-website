@@ -48,8 +48,11 @@ class TakkenController extends Controller
                 ->limit(3)
                 ->get();
 
+            $limit = $this->get_limit_inschrijvingen_tak($tak->link);
+
             return view('takken.tak_details', [
                 'tak' => $tak,
+                'limit' => $limit,
                 'evenementen' => $evenementen,
             ]);
         } else { // todo
@@ -104,8 +107,11 @@ class TakkenController extends Controller
             ])
             ->get();
         $inschrijvingen_amount = $inschrijvingen->count();
+        $limit = $this->get_limit_inschrijvingen_tak($tak->link);
 
-        if ($inschrijvingen_amount < config('activiteit.max_inschrijvingen.'.$tak)) {
+        return $max_inschrijvingen;
+
+        if ($inschrijvingen_amount < $limit) {
             $new_inschrijving = new ActiviteitInschrijving;
             $new_inschrijving->activiteit_id = $request->activiteit_id;
             $new_inschrijving->voornaam = $request->voornaam;
