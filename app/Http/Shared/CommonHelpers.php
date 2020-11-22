@@ -4,6 +4,7 @@ namespace App\Http\Shared;
 
 use App\BlogPost;
 use App\Leider;
+use App\Setting;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,6 +73,13 @@ trait CommonHelpers
     {
         return Leider::where('is_ael_leden', 1)
             ->first();
+    }
+
+    public function get_limit_inschrijvingen_tak($tak_link)
+    {
+        $limit = Setting::where('key', 'limit_inschrijvingen_activiteit_'.$tak_link)->first();
+        if ($limit) return $limit->value;
+        else return 41;
     }
 
     public function parse_odd_str_date($month)

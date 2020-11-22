@@ -46,7 +46,7 @@
             <div class="section section--small-spacing">
                 <h2>Activiteiten</h2>
                 <p>
-                    Door de coronamaatregelen kunnen we slechts {{ config('activiteit.max_inschrijvingen.'.$tak->link) }} leden toelaten per activiteit. Daarom werken we met inschrijvingen. Wil je deelnemen aan een activiteit? Druk dan op de knop ‘deelnemen aan deze activiteit’ en schrijf je in!
+                    Door de coronamaatregelen kunnen we slechts {{ $limit }} leden toelaten per activiteit. Daarom werken we met inschrijvingen. Wil je deelnemen aan een activiteit? Druk dan op de knop ‘deelnemen aan deze activiteit’ en schrijf je in!
                 </p>
 
                 <p>
@@ -96,7 +96,7 @@
                                 @if (Carbon\Carbon::parse($activiteit->datum) < Carbon\Carbon::now()->addDays(6))
                                     <div class="activities__subscribe">
                                         <a
-                                            @if ($activiteit->inschrijvingen->count() < config('activiteit.max_inschrijvingen.'.$tak->link))
+                                            @if ($activiteit->inschrijvingen->count() < $limit)
                                                 href="{{ url('/takken/inschrijven/'.Crypt::encrypt($activiteit->id)) }}"
                                                 class="btn btn--primary">Deelnemen aan de activiteit</a>
                                             @else

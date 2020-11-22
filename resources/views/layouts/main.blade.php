@@ -33,7 +33,7 @@
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
         <!-- Styles -->
-        <link href="/css/style.css?v=1.0.0" rel="stylesheet">
+        <link href="/css/style.css?v=1.0.1" rel="stylesheet">
 
         <!-- TinyMCE -->
         <script src="https://cdn.tiny.cloud/1/4crnpf63phl1l1ig50ryvytggpw5697mheec0cgpzjjne96e/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -138,11 +138,13 @@
                                         </a>
                                     </li>
 
+                                    {{--
                                     <li class="nav__sublist-item">
                                         <a href="/alle-info/inschrijven" class="nav__link nav__link--sublist">
                                             Inschrijven
                                         </a>
                                     </li>
+                                    --}}
 
                                     <li class="nav__sublist-item">
                                         <a href="/alle-info/kost-scouts" class="nav__link nav__link--sublist">
@@ -375,12 +377,6 @@
                                     @endforeach
                                 </ul>
                             </li>
-
-                            {{--
-                            <li class="footer-nav__item">
-                                <a href="/inschrijven" class="footer-nav__link footer-nav__link--parent">Inschrijven</a>
-                            </li>
-                            --}}
 
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>

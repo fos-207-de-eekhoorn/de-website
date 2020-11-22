@@ -37,19 +37,22 @@ class TakkenController extends Controller
             ])
             ->first();
 
-        $evenementen = Evenement::whereHas('evenement_tak', function ($query) use($tak) {
-                return $query->where('tak_id', $tak->id);
-            })
-            ->where('active', '1')
-            ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
-            ->with('evenement_tak')
-            ->orderBy('start_datum','ASC')
-            ->limit(3)
-            ->get();
-
         if (is_object($tak)) {
+            $evenementen = Evenement::whereHas('evenement_tak', function ($query) use($tak) {
+                    return $query->where('tak_id', $tak->id);
+                })
+                ->where('active', '1')
+                ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+                ->with('evenement_tak')
+                ->orderBy('start_datum','ASC')
+                ->limit(3)
+                ->get();
+
+            $limit = $this->get_limit_inschrijvingen_tak($tak->link);
+
             return view('takken.tak_details', [
                 'tak' => $tak,
+                'limit' => $limit,
                 'evenementen' => $evenementen,
             ]);
         } else { // todo
@@ -104,8 +107,11 @@ class TakkenController extends Controller
             ])
             ->get();
         $inschrijvingen_amount = $inschrijvingen->count();
+        $limit = $this->get_limit_inschrijvingen_tak($tak->link);
 
-        if ($inschrijvingen_amount < config('activiteit.max_inschrijvingen.'.$tak)) {
+        return $max_inschrijvingen;
+
+        if ($inschrijvingen_amount < $limit) {
             $new_inschrijving = new ActiviteitInschrijving;
             $new_inschrijving->activiteit_id = $request->activiteit_id;
             $new_inschrijving->voornaam = $request->voornaam;

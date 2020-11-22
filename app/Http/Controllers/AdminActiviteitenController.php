@@ -187,11 +187,17 @@ class AdminActiviteitenController extends Controller
             ])
             ->first();
 
-        $activiteit = $tak->volgende_activiteit[0];
+        if (sizeof($tak->volgende_activiteit)) {
+            $activiteit = $tak->volgende_activiteit[0];
 
-        return view('admin.activiteiten.inschrijvingen', [
-            'activiteit' => $activiteit,
-        ]);
+            return view('admin.activiteiten.inschrijvingen', [
+                'activiteit' => $activiteit,
+            ]);
+        } else {
+            Session::flash('no_next_inschrijving_error');
+
+            return redirect('/admin/activiteiten/' . $tak->link);
+        }
     }
 
     public function get_activiteit_inschrijvingen($id_encrypted)
