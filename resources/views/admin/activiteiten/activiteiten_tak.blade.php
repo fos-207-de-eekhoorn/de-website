@@ -74,6 +74,14 @@
                 @endcomponent
             @endif
 
+            @if (session('no_next_inschrijving_error'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er is geen activiteit gepland, get your shit together!
+                @endcomponent
+            @endif
+
             @if (session('delete_success'))
                 @component('components.flash_message', [
                     'type' => 'warning',
@@ -120,7 +128,7 @@
             @endif
 
             <table class="table activities">
-                @foreach ($tak->activiteiten as $activiteit)
+                @forelse ($tak->activiteiten as $activiteit)
                     <tr class="table__row">
                         <td class="table__cell activities__date">
                             <span class="text--xl">{{ Carbon\Carbon::parse($activiteit->datum)->format('j') }}</span><br>
@@ -203,10 +211,16 @@
                             </form>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr class="table__row">
+                        <td class="table__cell">
+                            These are not the droids your looking for.
+                        </td>
+                    </tr>
+                @endforelse
             </table>
 
-            <div class="medium-margin">
+            <div class="wrapper__btn medium-margin-top">
                 <a href="{{ url('/admin/activiteiten/add/' . $tak->link) }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg activiteit toe
                 </a>
