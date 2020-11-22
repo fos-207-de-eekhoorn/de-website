@@ -138,11 +138,13 @@
                                         </a>
                                     </li>
 
+                                    {{--
                                     <li class="nav__sublist-item">
                                         <a href="/alle-info/inschrijven" class="nav__link nav__link--sublist">
                                             Inschrijven
                                         </a>
                                     </li>
+                                    --}}
 
                                     <li class="nav__sublist-item">
                                         <a href="/alle-info/kost-scouts" class="nav__link nav__link--sublist">
@@ -375,12 +377,6 @@
                                     @endforeach
                                 </ul>
                             </li>
-
-                            {{--
-                            <li class="footer-nav__item">
-                                <a href="/inschrijven" class="footer-nav__link footer-nav__link--parent">Inschrijven</a>
-                            </li>
-                            --}}
 
                             <li class="footer-nav__item">
                                 <a href="/contact" class="footer-nav__link footer-nav__link--parent">Contact</a>
