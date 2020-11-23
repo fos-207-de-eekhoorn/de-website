@@ -107,9 +107,7 @@ class TakkenController extends Controller
             ])
             ->get();
         $inschrijvingen_amount = $inschrijvingen->count();
-        $limit = $this->get_limit_inschrijvingen_tak($tak->link);
-
-        return $max_inschrijvingen;
+        $limit = $this->get_limit_inschrijvingen_tak($tak);
 
         if ($inschrijvingen_amount < $limit) {
             $new_inschrijving = new ActiviteitInschrijving;
