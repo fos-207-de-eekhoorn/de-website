@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Leider;
+use App\Inschrijving;
 use App\Http\Shared\CommonHelpers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class InfoController extends Controller
 {
