@@ -21,11 +21,26 @@
                 <h2>Algemene info</h2>
 
                 <p>
-                    Het zomerkamp gaat door van 20-29 juli in Grobbendonk. Voor de bevers start het kamp op de 25ste.
+                    Wegens de ontwikkeling van COVID-19 moeten we ons kamp anders indelen dan anders.<br>
+                    De bevers en oude gaan niet naar de geplande kampplaats.<br>
+                    Alle concrete info vind u hieronder.
                 </p>
 
                 <p>
-                    Het is nog onzeker in welke vorm de kampen zullen doorgaan, maar de data zal hetzelfde blijven. Ook over ouderbezoekdag is alles nog onzeker. We informeren jullie hier tijdig over.
+                    Hier is zeker nog eens al de informatie die je nodig hebt in een documentje:<br>
+                    <a href="{{ asset('/docs/Info_kamp.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Info_kamp.pdf</a>
+                </p>
+            </div>
+
+            <div class="section section--extra-small-spacing">
+                <h4>Fosshop</h4>
+                <p>
+                    Indien uw zoon/dochter nog zaken uit de fosshop nodig heeft voor kamp, kan u dit document invullen en doorsturen naar <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>. Dit ten laatste tegen <strong>8 juli</strong>.
+                </p>
+                <p>
+                    Verdere info kan u terugvinden in het document.<br>
+                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.pdf') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-pdf"></i></span>Bestelformulier-FOSSHOP.pdf</a><br>
+                    <a href="{{ asset('/docs/Bestelformulier-FOSSHOP.docx') }}" target="_blank"><span class="fa--before icon"><i class="fas fa-file-word"></i></span>Bestelformulier-FOSSHOP.docx</a>
                 </p>
             </div>
         </div>
@@ -44,7 +59,6 @@
         <div class="tabs__content">
             <section id="Bevers" class="tabs__section active">
                 <div class="row justify-content-center">
-                    {{-- Valies --}}
                     <div class="col-12 col-md-4 section section--small-spacing text--align-left">
                         <h4 class="text-color--dark">
                             <span class="fa--before icon"><i class="fas fa-suitcase"></i></span>
@@ -84,19 +98,28 @@
                         </ul>
                     </div>
 
-                    {{-- Andere informatie --}}
                     <div class="col-12 col-md-8 section section--small-spacing">
                         <div class="row">
-                            {{-- Wanneer --}}
                             <div class="col-12 col-md-4 section section--small-spacing">
                                 <h4 class="text-color--dark">
                                     <span class="fa--before icon"><i class="fas fa-calendar-day"></i></span>
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Zondag <strong>25 juli</strong>.<br>
-                                    Donderdag <strong>29 juli</strong>.
+                                    Zondag <strong>26 juli</strong>.<br>
+                                    Tussen <strong>14u00 en 16u00</strong>* mogen de kindjes afgezet worden aan het kampadres.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Donderdag <strong>30 juli</strong>.<br>
+                                    Tussen <strong>14u30 en 16u30</strong>* mogen de kindjes afgehaald worden.
+                                </p>
+
+                                </p>
+                                    <span class="fa--before icon"><i class="fas fa-exclamation"></i></span>De afhaal en ophaal periodes zijn opgesplitst. Als je niet zeker bent welke periode je verwacht, gelieve Wasbeer te contacteren voor meer informatie.
                                 </p>
                             </div>
 
@@ -107,7 +130,8 @@
                                 </h4>
 
                                 <p>
-                                    Grobbendonck
+                                    Lodewijk Coiseaukaai 11d​<br>
+                                    8000 Brugge
                                 </p>
                             </div>
 
@@ -119,6 +143,53 @@
 
                                 <p>
                                     De prijs voor ons kamp is €75.
+                                </p>
+                                <p>
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Bever</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaal je €75, voor het tweede kind betaal je €70, voor het derde kind €65 etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-4 section section--small-spacing">
+                                <h4 class="text-color--blue">
+                                    <span class="fa--before icon"><i class="fas fa-suitcase"></i></span>
+                                    Valies ordenen
+                                </h4>
+
+                                <p>
+                                    Het is gemakkelijker voor uw kind en ons als alles mooi klaar zit per dag in de valies, zo kunnen ze vlot en goed aan de dag beginnen.
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-4 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-arrival"></i></span>
+                                    Aankomst op de kampplaats
+                                </h4>
+
+                                <p>
+                                    We spreken af op de kampplaats zelf.<br>
+                                    Het exacte uur zal nog gecommuniceerd worden.
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-4 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-departure"></i></span>
+                                    Vertrek van de kampplaats
+                                </h4>
+
+                                <p>
+                                    U kan uw kleine spruit terug komen ophalen op de kampplaats zelf.<br>
+                                    Het exacte uur zal nog gecommuniceerd worden.
                                 </p>
                             </div>
 
@@ -144,7 +215,6 @@
 
             <section id="Welpen" class="tabs__section">
                 <div class="row justify-content-center">
-                    {{-- Valies --}}
                     <div class="col-12 col-md-4 section section--small-spacing text--align-left">
                         <h4 class="text-color--dark">
                             <span class="fa--before icon"><i class="fas fa-suitcase"></i></span>
@@ -184,7 +254,6 @@
                         </ul>
                     </div>
 
-                    {{-- Andere informatie --}}
                     <div class="col-12 col-md-8 section section--small-spacing">
                         <div class="row">
                             <div class="col-12 col-md-4 section section--small-spacing">
@@ -193,9 +262,16 @@
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Dinsdag <strong>20 juli</strong>.<br>
-                                    Donderdag <strong>29 juli</strong>.
+                                    Woensdag <strong>22 juli</strong>.<br>
+                                    Tussen <strong>10u30 en 12u00</strong> mogen de kindjes afgezet worden aan het kampadres.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Zaterdag <strong>1 augustus</strong>.<br>
+                                    Tussen <strong>12u00 en 13u30</strong> mogen de kindjes afgehaald worden.
                                 </p>
                             </div>
 
@@ -206,7 +282,8 @@
                                 </h4>
 
                                 <p>
-                                    Grobbendonck
+                                    Bronnenweg 10<br>
+                                    1755 Gooik
                                 </p>
                             </div>
 
@@ -218,6 +295,43 @@
 
                                 <p>
                                     De prijs voor ons kamp is €150.
+                                </p>
+                                <p>
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + Welp</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaal je €150, voor het tweede kind betaal je €145, voor het derde kind €140 etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-6 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-arrival"></i></span>
+                                    Aankomst op de kampplaats
+                                </h4>
+
+                                <p>
+                                    We spreken op <strong>woensdag 22/07</strong> af op de kampplaats zelf. Het is de bedoeling dat u uw zoon / dochter zelf brengt. Het concrete uur zal nog worden meegedeeld.
+                                <p>
+                                </p>
+                                    <span class="fa--before icon"><i class="fas fa-exclamation"></i></span>Er mag gecarpoold worden als er enkel kinderen uit dezelfde tak in de auto zitten. Een broer & zus (uit verschillende tak) mogen samen op kamp vertrekken maar een extra kindje er bij mag niet.
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-6 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-departure"></i></span>
+                                    Vertrek van de kampplaats
+                                </h4>
+
+                                <p>
+                                    <strong>Maandag 01/08</strong> mag u uw kleine spruit terug komen ophalen op de kampplaats. Het concrete uur zal nog worden meegedeeld.
                                 </p>
                             </div>
 
@@ -244,7 +358,6 @@
 
             <section id="Jonge" class="tabs__section">
                 <div class="row justify-content-center">
-                    {{-- Valies --}}
                     <div class="col-12 col-md-4 section section--small-spacing text--align-left">
                         <h4 class="text-color--dark">
                             <span class="fa--before icon"><i class="fas fa-suitcase"></i></span>
@@ -290,7 +403,6 @@
                         </ul>
                     </div>
 
-                    {{-- Andere informatie --}}
                     <div class="col-12 col-md-8 section section--small-spacing">
                         <div class="row">
                             <div class="col-12 col-md-4 section section--small-spacing">
@@ -299,9 +411,16 @@
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Dinsdag <strong>20 juli</strong>.<br>
-                                    Donderdag <strong>29 juli</strong>.
+                                    Woensdag <strong>22 juli</strong>.<br>
+                                    Tussen <strong>10u30 en 12u00</strong> mogen de kindjes afgezet worden aan het kampadres.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Zaterdag <strong>1 augustus</strong>.<br>
+                                    Tussen <strong>12u00 en 13u30</strong> mogen de kindjes afgehaald worden.
                                 </p>
                             </div>
 
@@ -312,7 +431,8 @@
                                 </h4>
 
                                 <p>
-                                    Grobbendonck
+                                    Bronnenweg 10<br>
+                                    1755 Gooik
                                 </p>
                             </div>
 
@@ -324,6 +444,43 @@
 
                                 <p>
                                     De prijs voor ons kamp is €150.
+                                </p>
+                                <p>
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + JG/V</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaalt volle pot (€150), tweede kind €5 korting (€145), derde kind €10 korting (€140) etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-6 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-arrival"></i></span>
+                                    Aankomst op de kampplaats
+                                </h4>
+
+                                <p>
+                                    We spreken op <strong>woensdag 22/07</strong> af op de kampplaats zelf. Het is de bedoeling dat u uw zoon / dochter zelf brengt. Het concrete uur zal nog worden meegedeeld.
+                                <p>
+                                </p>
+                                    <span class="fa--before icon"><i class="fas fa-exclamation"></i></span>Er mag gecarpoold worden als er enkel kinderen uit dezelfde tak in de auto zitten. Een broer & zus (uit verschillende tak) mogen samen op kamp vertrekken maar een extra kindje er bij mag niet.
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-6 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-departure"></i></span>
+                                    Vertrek van de kampplaats
+                                </h4>
+
+                                <p>
+                                    <strong>Maandag 01/08</strong> mag u uw kleine spruit terug komen ophalen op de kampplaats. Het concrete uur zal nog worden meegedeeld.
                                 </p>
                             </div>
 
@@ -368,7 +525,6 @@
 
             <section id="Oude" class="tabs__section">
                 <div class="row justify-content-center">
-                    {{-- Valies --}}
                     <div class="col-12 col-md-4 section section--small-spacing text--align-left">
                         <h4 class="text-color--dark">
                             <span class="fa--before icon"><i class="fas fa-suitcase"></i></span>
@@ -414,9 +570,17 @@
                             <li>Kampingstoeltje</li>
                             <li>TREKRUGZAK</li>
                         </ul>
+
+                        </p>
+                            <span class="fa--before icon"><i class="fas fa-exclamation"></i></span>Nieuw in de lijst:
+                        </p>
+
+                        <ul>
+                            <li>Regenbroek</li>
+                            <li>Kampingstoeltje</li>
+                        </ul>
                     </div>
 
-                    {{-- Andere informatie --}}
                     <div class="col-12 col-md-8 section section--small-spacing">
                         <div class="row">
                             <div class="col-12 col-md-4 section section--small-spacing">
@@ -425,9 +589,16 @@
                                     Wanneer
                                 </h4>
 
+                                <h5 class="text-color--dark">Start</h5>
                                 <p>
-                                    Dinsdag <strong>20 juli</strong>.<br>
-                                    Donderdag <strong>29 juli</strong>.
+                                    Dinsdag <strong>21 juli</strong>.<br>
+                                    Om <strong>11u30</strong> stipt aan het station.
+                                </p>
+
+                                <h5 class="text-color--dark">Einde</h5>
+                                <p>
+                                    Vrijdag <strong>31 juli</strong>.<br>
+                                    Om <strong>21u00</strong> terug aan het station.
                                 </p>
                             </div>
 
@@ -438,7 +609,7 @@
                                 </h4>
 
                                 <p>
-                                    Grobbendonck
+                                    Hier, daar en nergens.
                                 </p>
                             </div>
 
@@ -450,6 +621,40 @@
 
                                 <p>
                                     De prijs voor ons kamp is €150.
+                                </p>
+                                <p>
+                                    Inschrijven doe je door te storten <strong class="no-wrap">BE27 9730 9297 8473</strong>.
+                                </p>
+                                <p>
+                                    Gebruik als vermelding: <i class="no-wrap"><strong>naam kind + OG/V</strong></i>
+                                </p>
+                                <p>
+                                    Eerste kind betaalt volle pot (€150), tweede kind €5 korting (€145), derde kind €10 korting (€140) etc.
+                                </p>
+                                <p>
+                                    Deadline: <strong>8 juli</strong>
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-6 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-arrival"></i></span>
+                                    Vertrek met de trein aan het station
+                                </h4>
+
+                                <p>
+                                    Info volgt.
+                                </p>
+                            </div>
+
+                            <div class="col-12 col-md-6 section section--small-spacing">
+                                <h4 class="text-color--dark">
+                                    <span class="fa--before icon"><i class="fas fa-plane-departure"></i></span>
+                                    Aankomst terug aan het station
+                                </h4>
+
+                                <p>
+                                    Info volgt.
                                 </p>
                             </div>
 
