@@ -118,15 +118,25 @@ class EvenementenController extends Controller
         ]);
     }
 
-    public function get_kamp()
+    public function get_kamp($year = null)
     {
-        $takleiders_ids = [2, 13, 24, 27];
+        $kampen = ["2020", "2021"];
+
+        if ($year) {
+            if (!in_array($year, $kampen)) return view('evenementen.kamp_not_found', ['year' => $year]);
+            if ($year == "2020") $takleiders_ids = [2, 10, 18, 25];
+            else if ($year == "2021") $takleiders_ids = [2, 13, 24, 27];
+        } else {
+            $year = "2021";
+            $takleiders_ids = [2, 13, 24, 27];
+        }
+
         $takleiders_ids_ordered = implode(',', $takleiders_ids);
         $takleiders = Leider::whereIn('id', $takleiders_ids)
             ->orderByRaw("FIELD(id, $takleiders_ids_ordered)")
             ->get();
 
-        return view('evenementen.kamp', [
+        return view('evenementen.kamp_'.$year, [
             'takleiders' => $takleiders,
         ]);
     }

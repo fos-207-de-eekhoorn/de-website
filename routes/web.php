@@ -55,6 +55,7 @@ Route::prefix('evenementen')->group(function () {
 
 	# Kamp
 	Route::get('/kamp', 'EvenementenController@get_kamp');
+	Route::get('/kamp/{year}', 'EvenementenController@get_kamp');
 
 	# Default
 	Route::get('/{url}', 'EvenementenController@get_evenement_details');
