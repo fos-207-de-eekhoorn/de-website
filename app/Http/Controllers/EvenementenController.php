@@ -138,6 +138,7 @@ class EvenementenController extends Controller
 
         return view('evenementen.kamp_'.$year, [
             'takleiders' => $takleiders,
+            'year' => $year,
         ]);
     }
 }

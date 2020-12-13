@@ -7,9 +7,11 @@
             'pattern' => '1',
             'strength' => 'light',
         ],
-        'page_title' => 'Kamp',
+        'page_title' => 'Kamp '.$year,
     ])
     @endcomponent
+
+
 
     <section class="row justify-content-center section">
         <div class="col-12 col-md-4 d-none d-md-block">
