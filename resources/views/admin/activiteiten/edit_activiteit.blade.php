@@ -78,127 +78,28 @@
                     {{-- Startuur --}}
                     {{-- Einduur --}}
                     {{-- Prijs --}}
+                    {{-- Locatie --}}
                     <div class="col-12 col-md-6">
-                        <div class="row small-gutters">
-                            {{-- Datum - Dag --}}
-                            <div class="col-3">
-                                <div class="form__section form__section--last">
-                                    <label for="day" class="form__label form__label--required">Dag</label>
+                        {{-- Datum --}}
+                        <section class="form__section">
+                            <label for="datum" class="form__label">Datum</label>
 
-                                    <select
-                                        id="day"
-                                        name="datum[]"
-                                        class="form__select form__select--full-width"
-                                        required>
-                                        <option value="01">1</option>
-                                        <option value="02">2</option>
-                                        <option value="03">3</option>
-                                        <option value="04">4</option>
-                                        <option value="05">5</option>
-                                        <option value="06">6</option>
-                                        <option value="07">7</option>
-                                        <option value="08">8</option>
-                                        <option value="09">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                    </select>
+                            <input
+                                type="date"
+                                id="datum"
+                                name="datum"
+                                value="{{ $activiteit->datum }}"
+                                class="form__input form__input--full-width">
 
-                                    @if ($errors->has('day'))
-                                        <span class="form__section-feedback">
-                                            {{ $errors->first('day') }}
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
+                            @if ($errors->has('datum'))
+                                <span class="form__section-feedback">
+                                    {{ $errors->first('datum') }}
+                                </span>
+                            @endif
+                        </section>
 
-                            {{-- Datum - Maand --}}
-                            <div class="col-5">
-                                <div class="form__section">
-                                    <label for="month" class="form__label form__label--required">Maand</label>
-
-                                    <select
-                                        id="month"
-                                        name="datum[]"
-                                        class="form__select form__select--full-width"
-                                        required>
-                                        <option value="01">Januari</option>
-                                        <option value="02">Februari</option>
-                                        <option value="03">Maart</option>
-                                        <option value="04">April</option>
-                                        <option value="05">Mei</option>
-                                        <option value="06">Juni</option>
-                                        <option value="07">Juli</option>
-                                        <option value="08">Augustus</option>
-                                        <option value="09">September</option>
-                                        <option value="10">Oktober</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
-                                    </select>
-
-                                    @if ($errors->has('month'))
-                                        <span class="form__section-feedback">
-                                            {{ $errors->first('month') }}
-                                        </span>
-                                        <script>    
-                                            trackEvent('View Error Message', {
-                                                'message': "{{ $errors->first('month') }}",
-                                                'field': 'month'
-                                            });
-                                        </script>
-                                    @endif
-                                </div>
-                            </div>
-
-                            {{-- Datum - Jaar --}}
-                            <div class="col-4">
-                                <div class="form__section">
-                                    <label for="year" class="form__label form__label--required">Jaar</label>
-
-                                    <select
-                                        id="year"
-                                        name="datum[]"
-                                        class="form__select form__select--full-width"
-                                        required>
-                                        <option value="2020">2020</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2018">2018</option>
-                                    </select>
-
-                                    @if ($errors->has('year'))
-                                        <span class="form__section-feedback">
-                                            {{ $errors->first('year') }}
-                                        </span>
-                                        <script>    
-                                            trackEvent('View Error Message', {
-                                                'message': "{{ $errors->first('year') }}",
-                                                'field': 'year'
-                                            });
-                                        </script>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
+                        {{-- Startuur --}}
+                        {{-- Einduur --}}
                         <div class="row small-gutters">
                             {{-- Startuur --}}
                             <div class="col-12 col-md-6">
@@ -243,6 +144,8 @@
                             </div>
                         </div>
 
+                        {{-- Prijs --}}
+                        {{-- Locatie --}}
                         <div class="row small-gutters">
                             {{-- Prijs --}}
                             <div class="col-12 col-md-4">

@@ -70,7 +70,7 @@ class AdminActiviteitenController extends Controller
         $new_activiteit = new Activiteit;
 
         $new_activiteit->tak_id = $request->tak;
-        $new_activiteit->datum = $request->datum[2] . '-' . $request->datum[1] . '-' . $request->datum[0];
+        $new_activiteit->datum = $request->datum;
 
         if ($request->is_activiteit === 'on') {
             $new_activiteit->start_uur = $request->start_uur . ':00';
@@ -116,7 +116,7 @@ class AdminActiviteitenController extends Controller
     {
         $activiteit = Activiteit::find($request->id);
 
-        $activiteit->datum = $request->datum[2] . '-' . $request->datum[1] . '-' . $request->datum[0];
+        $activiteit->datum = $request->datum;
 
         if ($request->is_activiteit === 'on') {
             $activiteit->start_uur = $request->start_uur . ':00';
