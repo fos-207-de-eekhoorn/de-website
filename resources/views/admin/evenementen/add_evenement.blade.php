@@ -359,11 +359,15 @@
 
         // Hide page section with a static page
         (function($){
-            $hasStaticPage.on('change', function() {
-                $staticPageSection.toggle(300);
-                checkForUsedUrl();
-            });
+            $hasStaticPage.on('change', toggleStaticPageSection);
+            toggleStaticPageSection();
         })(jQuery);
+
+        function toggleStaticPageSection() {
+            if ($hasStaticPage.prop('checked')) $staticPageSection.hide(300);
+            else $staticPageSection.show(300);
+            checkForUsedUrl();
+        }
 
         // Set URL and check for used ones
         var urlIsChanged = false,
@@ -385,7 +389,7 @@
 
         function checkForUsedUrl() {
             var input = $url.val();
-            if (urls.includes(input) && !$hasStaticPage.is(':checked')) $urlFeedback.show(300);
+            if (urls && urls.includes(input) && !$hasStaticPage.is(':checked')) $urlFeedback.show(300);
             else $urlFeedback.hide(300);
         }
 
