@@ -159,6 +159,7 @@ class AdminEvenementenController extends Controller
 
         if ($request->has_static_page !== 'on') {
             $evenement->has_static_page = '0';
+            $evenement->kleur = $request->banner_color;
             $evenement->banner_patroon = $request->banner_pattern;
             $evenement->banner_sterkte = $request->banner_strenght;
             $evenement->omschrijving = $request->page_content;
