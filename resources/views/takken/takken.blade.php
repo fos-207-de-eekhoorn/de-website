@@ -11,17 +11,22 @@
     ])
     @endcomponent
 
-    <div class="row">
-        @if (session('error_not_found'))
-            <div class="col-12 section section--small-spacing">
-                @component('components.flash_message', [
-                    'type' => 'error',
-                ])
-                    Deze tak is niet gevonden, volg de link hieronder.
-                @endcomponent
-            </div>
-        @endif
-    </div>
+    @if (session('error_not_found'))
+        @component('components.flash_message', [
+            'type' => 'error',
+        ])
+            Deze tak is niet gevonden, volg de link hieronder.
+        @endcomponent
+    @endif
+
+    @if (session('error_activiteit_not_found'))
+        @component('components.flash_message', [
+            'type' => 'error',
+        ])
+            De activiteit waarvoor je wou inschrijven is niet gevonden. Probeer het nog eens.<br>
+            Indien je deze link gekopieerd hebt van ergens, zorg zeker dat je alle karakters hebt gekopieerd.
+        @endcomponent
+    @endif
 
     @foreach($takken as $tak)
         <div class="tak section section--small-spacing">

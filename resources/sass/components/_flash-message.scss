@@ -53,6 +53,14 @@
     }
 
 	&__message {
+		display: flex;
+		align-items: center;
 		margin-bottom: 0;
+	}
+
+	&__icon {
+		margin-right: spacing(md);
+
+		font-size: $font-size-h4;
 	}
 }

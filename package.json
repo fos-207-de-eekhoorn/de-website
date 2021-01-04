@@ -39,15 +39,13 @@
         "gulp-sass": "^4.1.0"
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "gulp",
+        "dev": "gulp dev"
     },
-    "author": [
-        "Orry Verpoort",
-        "Sander Marin"
-    ],
+    "author": "Orry Verpoort",
     "license": "ISC",
     "dependencies": {
-        "gulp-cli": "^2.2.0",
+        "gulp-cli": "^2.3.0",
         "gulp-copy": "^4.0.1"
     }
 }

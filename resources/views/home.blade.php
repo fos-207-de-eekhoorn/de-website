@@ -141,7 +141,7 @@
             {!! $voorwoord->text !!}
 
             <p>
-                Stevige linker ,<br>
+                Stevige linker,<br>
                 {{ $el->voortotem }} {{ $el->totem }}
             </p>
         </div>

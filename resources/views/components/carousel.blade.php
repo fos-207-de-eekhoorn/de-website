@@ -5,7 +5,7 @@
 		* full-width
 --}}
 
-<div class="carousel--{{ $name }} slick--{{ $type }}">
+<div class="carousel--{{ $name }} slick--{{ $type ?? 'normal' }} slick-slider">
 	@foreach($images as $image)
 	    <img src="{{ $image }}">
     @endforeach
@@ -23,7 +23,7 @@
 	            slidesToShow: 2,
 	            centerMode: true,
 	            variableWidth: true,
-	         @elseif($type === 'full-width')
+	        @elseif($type === 'full-width')
 	            slidesToShow: 1,
             @endif
 	        slidesToScroll: 1,

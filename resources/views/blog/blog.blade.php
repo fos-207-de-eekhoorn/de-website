@@ -15,6 +15,16 @@
 	{{-- Blog posts --}}
 	{{-- ================================================================ --}}
 	<div class="row">
+		<div class="col-12">
+			@if (session('error_post_not_found'))
+				@component('components.flash_message', [
+					'type' => 'error',
+				])
+					Deze post is niet gevonden.
+				@endcomponent
+			@endif
+		</div>
+
 		<div class="col-12 col-md-4 col-lg-3 section section--small-spacing">
 			<input type="checkbox" id="filters" class="toggle-on-mobile__checkbox" hidden>
 

@@ -493,15 +493,15 @@
                                 </h4>
 
                                 <ul>
-                                    <li>Een scouts / gids is eerlijk. </li>
-                                    <li>Een scouts / gids eerbiedigt de overtuiging van anderen. </li>
-                                    <li>Een scouts / gids maakt zich nuttig. </li>
-                                    <li>Een scouts / gids is een vriend van allen. </li>
-                                    <li>Een scouts / gids is vriendelijk en hoffelijk. </li>
-                                    <li>Een scouts / gids kan gehoorzamen. </li>
-                                    <li>Een scouts / gids staat open voor de natuur en is milieubewust. </li>
-                                    <li>Een scouts / gids houdt vol. </li>
-                                    <li>Een scouts / gids is ijverig. </li>
+                                    <li>Een scouts / gids is eerlijk.</li>
+                                    <li>Een scouts / gids eerbiedigt de overtuiging van anderen.</li>
+                                    <li>Een scouts / gids maakt zich nuttig.</li>
+                                    <li>Een scouts / gids is een vriend van allen.</li>
+                                    <li>Een scouts / gids is vriendelijk en hoffelijk.</li>
+                                    <li>Een scouts / gids kan gehoorzamen.</li>
+                                    <li>Een scouts / gids staat open voor de natuur en is milieubewust.</li>
+                                    <li>Een scouts / gids houdt vol.</li>
+                                    <li>Een scouts / gids is ijverig.</li>
                                     <li>Een scouts / gids is zelfbewust en heeft eerbied voor zichzelf en anderen.</li>
                                 </ul>
 
@@ -667,15 +667,15 @@
                                 </h4>
 
                                 <ul>
-                                    <li>Een scouts / gids is eerlijk. </li>
-                                    <li>Een scouts / gids eerbiedigt de overtuiging van anderen. </li>
-                                    <li>Een scouts / gids maakt zich nuttig. </li>
-                                    <li>Een scouts / gids is een vriend van allen. </li>
-                                    <li>Een scouts / gids is vriendelijk en hoffelijk. </li>
-                                    <li>Een scouts / gids kan gehoorzamen. </li>
-                                    <li>Een scouts / gids staat open voor de natuur en is milieubewust. </li>
-                                    <li>Een scouts / gids houdt vol. </li>
-                                    <li>Een scouts / gids is ijverig. </li>
+                                    <li>Een scouts / gids is eerlijk.</li>
+                                    <li>Een scouts / gids eerbiedigt de overtuiging van anderen.</li>
+                                    <li>Een scouts / gids maakt zich nuttig.</li>
+                                    <li>Een scouts / gids is een vriend van allen.</li>
+                                    <li>Een scouts / gids is vriendelijk en hoffelijk.</li>
+                                    <li>Een scouts / gids kan gehoorzamen.</li>
+                                    <li>Een scouts / gids staat open voor de natuur en is milieubewust.</li>
+                                    <li>Een scouts / gids houdt vol.</li>
+                                    <li>Een scouts / gids is ijverig.</li>
                                     <li>Een scouts / gids is zelfbewust en heeft eerbied voor zichzelf en anderen.</li>
                                 </ul>
 

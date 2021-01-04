@@ -45,11 +45,17 @@ class BlogController extends Controller
             ])
             ->where('url', $request->url)->first();
 
-        $next_blog_posts = $this->get_next_blog_posts();
+        if ($post) {
+            $next_blog_posts = $this->get_next_blog_posts();
+    
+            return view('blog.blog_post', [
+                'post' => $post,
+                'next_blog_posts' => $next_blog_posts,
+            ]);
+        } else {
+            Session::flash('error_post_not_found');
 
-        return view('blog.blog_post', [
-            'post' => $post,
-            'next_blog_posts' => $next_blog_posts,
-        ]);
+            return redirect('/blog');
+        }
     }
 }

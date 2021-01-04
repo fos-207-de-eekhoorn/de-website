@@ -1,19 +1,9 @@
 <div class="flash-message flash-message--{{ $type }}">
-    <span class="flash-message__message">
-    	@switch($type)
-    		@case('success')
-        		<span class="fa--before"><i class="fas fa-check"></i></span>
-        		@break
-    		@case('error')
-        		<span class="fa--before"><i class="fas fa-times"></i></span>
-        		@break
-    		@case('info')
-        		<span class="fa--before"><i class="fas fa-info"></i></span>
-        		@break
-    		@case('warning')
-        		<span class="fa--before"><i class="fas fa-exclamation"></i></span>
-        		@break
-        @endswitch
-        {{ $slot }}
-    </span>
+    <div class="flash-message__message">
+        <span class="flash-message__icon icon">
+			<i class="{{ config('style.flash_message.'.$type) }}"></i>
+		</span>
+
+        <span>{{ $slot }}</span>
+    </div>
 </div>
