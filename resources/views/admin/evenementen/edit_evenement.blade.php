@@ -413,6 +413,7 @@
         function toggleStaticPageSection() {
             if ($hasStaticPage.prop('checked')) $staticPageSection.hide(300);
             else $staticPageSection.show(300);
+            checkForUsedUrl();
         }
 
         // Set URL and check for used ones
@@ -433,7 +434,7 @@
 
         function checkForUsedUrl() {
             var input = $url.val();
-            if (urls.includes(input)) $urlFeedback.show(300);
+            if (urls && urls.includes(input) && !$hasStaticPage.is(':checked')) $urlFeedback.show(300);
             else $urlFeedback.hide(300);
             console.log('bar');
         }
