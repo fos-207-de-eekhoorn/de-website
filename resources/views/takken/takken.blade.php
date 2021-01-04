@@ -21,6 +21,17 @@
                 @endcomponent
             </div>
         @endif
+
+        @if (session('error_activiteit_not_found'))
+            <div class="col-12 section section--small-spacing">
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    De activiteit waarvoor je wou inschrijven is niet gevonden. Probeer het nog eens.<br>
+                    Indien je deze link gekopieerd hebt van ergens, zorg zeker dat je alle karakters hebt gekopieerd.
+                @endcomponent
+            </div>
+        @endif
     </div>
 
     @foreach($takken as $tak)

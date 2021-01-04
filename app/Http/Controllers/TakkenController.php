@@ -8,6 +8,7 @@ use App\Activiteit;
 use App\ActiviteitInschrijving;
 use App\Evenement;
 use App\Http\Shared\CommonHelpers;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
@@ -64,7 +65,14 @@ class TakkenController extends Controller
 
     public function get_tak_inschrijven($id_encrypted)
     {
-        $id = Crypt::decrypt($id_encrypted);
+        try {
+            $id = Crypt::decrypt($id_encrypted);
+        } catch (DecryptException $e) {
+            Session::flash('error_activiteit_not_found');
+
+            return redirect('/takken');
+        }
+
         $activiteit = Activiteit::where('id', $id)
             ->with([
                 'tak'
