@@ -14,6 +14,11 @@
 
     &-slider {
         position: relative;
+        display: none;
+    }
+
+    &-initialized {
+        display: block;
     }
 
     &-slide {
