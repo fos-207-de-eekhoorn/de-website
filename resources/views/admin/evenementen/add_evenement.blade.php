@@ -163,7 +163,7 @@
                             @endif
 
                             <span class="form__section-feedback url-already-taken" style="display: none;">
-                                Deze URL is al genomen.
+                                Deze URL is al genomen of is voorbehoudt voor Paco.
                             </span>
                         </section>
 
@@ -361,6 +361,7 @@
         (function($){
             $hasStaticPage.on('change', function() {
                 $staticPageSection.toggle(300);
+                checkForUsedUrl();
             });
         })(jQuery);
 
@@ -384,7 +385,7 @@
 
         function checkForUsedUrl() {
             var input = $url.val();
-            if (urls.includes(input)) $urlFeedback.show(300);
+            if (urls.includes(input) && !$hasStaticPage.is(':checked')) $urlFeedback.show(300);
             else $urlFeedback.hide(300);
         }
 

@@ -52,7 +52,7 @@ class AdminEvenementenController extends Controller
             'locatie' => 'required',
             'prijs' => 'required',
             'snelle_info' => 'required',
-            'url' => 'required|unique:evenementen,url',
+            'url' => $request->has_static_page !== 'on' ? 'required' : 'required|unique:evenementen,url',
             'start' => 'required',
             'eind' => 'required',
             'banner_color' => 'required_if:has_static_page,off',
