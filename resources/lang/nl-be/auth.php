@@ -22,5 +22,6 @@ return [
   'throttle' => 'Te veel mislukte loginpogingen. Probeer het over :seconds seconden nogmaals.',
   'very_strong' => 'Zeer sterk',
   'weak' => 'Zwak',
+  'password' => 'Het gegeven wachtwoord is verkeerd.',
   'having_trouble' => 'Als je problemen onder vindt met  \\:actionText\\',
 ];

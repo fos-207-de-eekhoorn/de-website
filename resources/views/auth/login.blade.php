@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
     @component('components.banner', [
@@ -17,15 +17,30 @@
                 {{ __('global.log_in') }}
             </h3>
 
-            <?php if(Session::has('broken_link')): ?>
-                <div class="alert alert-danger"><?php echo e(Session::get('broken_link')); ?></div>
-            <?php endif; ?>
-            <?php if(Session::has('flash_message_important')): ?>
-                <div class="alert alert-danger"><?php echo e(Session::get('flash_message_important')); ?></div>
-            <?php endif; ?>
-            @if (Request::get('refer') == 'email')
-              &nbsp;
+            @if (session('broken_link'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    {{ session('broken_link') }}
+                @endcomponent
             @endif
+
+            @if (session('flash_message_important'))
+                @component('components.flash_message', [
+                    'type' => 'warning',
+                ])
+                    {{ session('flash_message_important') }}
+                @endcomponent
+            @endif
+
+            @if (session('status'))
+                @component('components.flash_message', [
+                    'type' => 'info',
+                ])
+                    {{ session('status') }}
+                @endcomponent
+            @endif
+
             <form method="POST" action="{{ route('login') }}" class="form">
                 @csrf
 

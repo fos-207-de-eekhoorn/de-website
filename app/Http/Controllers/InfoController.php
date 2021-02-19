@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Leider;
-use App\Inschrijving;
+use App\Models\Inschrijving;
+use App\Models\Role;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -14,7 +14,7 @@ class InfoController extends Controller
 
     public function get_alle_info()
     {
-        return view('alle-info.algemene_info');
+        return view('alle-info.index');
     }
 
     public function get_lid_worden()
@@ -28,11 +28,12 @@ class InfoController extends Controller
 
     public function get_uniform_shop()
     {
-        $responsibles_ids = [24, 16, 12];
-        $responsibles_ids_ordered = implode(',', $responsibles_ids);
-        $responsibles = Leider::whereIn('id', $responsibles_ids)
-            ->orderByRaw("FIELD(id, $responsibles_ids_ordered)")
-            ->get();
+        $collection = Role::where('key', config('roles.keys.fos_shop'))
+            ->with('identities')
+            ->first();
+        
+        $responsibles = $collection->identities;
+        $role = $collection->name;
 
         return view('alle-info.uniform_shop', [
             'responsibles' => $responsibles,
@@ -41,20 +42,22 @@ class InfoController extends Controller
 
     public function get_verhuurlijst()
     {
-        $responsibles_ids = [27, 25, 37, 31];
-        $responsibles_ids_ordered = implode(',', $responsibles_ids);
-        $responsibles = Leider::whereIn('id', $responsibles_ids)
-            ->orderByRaw("FIELD(id, $responsibles_ids_ordered)")
-            ->get();
+        $collection = Role::where('key', onfig('roles.keys.materiaal'))
+            ->with('identities')
+            ->first();
+        
+        $responsibles = $collection->identities;
+        $role = $collection->name;
 
         return view('alle-info.verhuurlijst', [
             'responsibles' => $responsibles,
+            'role' => $role,
         ]);
     }
 
     public function get_docs()
     {
-        $ael_leden = $this->get_ael_leden();
+        $ael_leden = $this->get_el_leden();
 
         return view('alle-info.docs', [
             'ael_leden' => $ael_leden,
@@ -91,7 +94,7 @@ class InfoController extends Controller
         $resp = $recaptcha->setExpectedHostname('scoutsoostkamp.be')
             ->verify($request['g-recaptcha-response'], $request->ip());
 
-        if (true) {
+        if ($resp->isSuccess()) {
             $request->validate([
                 // Lid
                 'voornaam' => 'required',

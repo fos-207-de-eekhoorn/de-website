@@ -9,4 +9,5 @@ return [
   'sent' => 'Bedankt, binnen enkele minuten ontvang je een e-mail met daarin een persoonlijke link. Via de link kun je een nieuw wachtwoord opgeven.',
   'token' => 'Deze wachtwoord herstel link is niet geldig.',
   'user' => 'Geen gebruiker bekend met dit e-mailadres.',
+  'throttled' => 'Even wachten voor je opnieuw probeert.',
 ];

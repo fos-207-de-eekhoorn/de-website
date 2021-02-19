@@ -18,7 +18,7 @@
 
 		@if (isset($with_link) && $with_link)
 			<div class="wrapper__btn corona-fase__btn">
-				<a href="{{ url('/alle-info/jeugdwerkregels') }}" class="btn btn--primary">Meer informatie</a>
+				<a href="{{ route('info.jeugdwerkregels') }}" class="btn btn--primary">Meer informatie</a>
 			</div>
 		@endif
 	</div>

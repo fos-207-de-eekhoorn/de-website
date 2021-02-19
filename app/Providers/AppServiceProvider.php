@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Tak;
-use App\Evenement;
-use App\Setting;
+use App\Models\Tak;
+use App\Models\Evenement;
+use App\Models\Setting;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -14,6 +14,16 @@ use Carbon\Carbon;
 class AppServiceProvider extends ServiceProvider
 {
     use CommonHelpers;
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
 
     /**
      * Bootstrap any application services.
@@ -28,26 +38,16 @@ class AppServiceProvider extends ServiceProvider
 
         $takken = Tak::get();
         $evenementen = Evenement::where('active', '1')
-            ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
+            ->whereDate('eind_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
             ->orderBy('start_datum','ASC')
             ->get();
+        $corona_phase = Setting::where('key', 'active_corona_phase')->first()->value;
 
         View::share([
             'el' => $this->get_el(),
-            'navigation_takken' => $takken,
-            'navigation_evenementen' => $evenementen,
-            'takken' => Tak::get(),
-            'active_corona_phase' => Setting::where('key', 'active_corona_phase')->first()->value,
+            'takken' => $takken,
+            'evenementen' => $evenementen,
+            'active_corona_phase' => $corona_phase,
         ]);
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
     }
 }

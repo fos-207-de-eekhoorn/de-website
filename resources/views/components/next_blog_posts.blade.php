@@ -2,7 +2,7 @@
     @forelse ($next_blog_posts as $next_post)
         <div class="col-12 @if(isset($columns) && $columns == 2) col-md-6 @endif section section--extra-small-spacing">
             <div class="blog-post-small">
-                <a href="{{ url('/blog/'.$next_post->url) }}" class="blog-post-small__inner">
+                <a href="{{ route('blog.post', ['blog_post' => $next_post->slug]) }}" class="blog-post-small__inner">
                     <div class="blog-post-small__image aspect-ratio">
                         <div class="aspect-ratio__container">
                             <img src="{{ $next_post->image->path }}" class="aspect-ratio__inner">
@@ -29,7 +29,7 @@
 
 @if (isset($with_link) && $with_link)
     <p class="text--align-right small-margin-top no-margin-bottom">
-        <a href="{{ url('/blog') }}" class="text--align-right">
+        <a href="{{ route('blog') }}" class="text--align-right">
             Alle posts<span class="fa--after"><i class="fas fa-angle-right"></i></span>
         </a>
     </p>

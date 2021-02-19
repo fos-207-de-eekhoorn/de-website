@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
 
@@ -35,7 +35,7 @@
         <div class="col-12 col-md-8">
             <h4>Voeg post toe</h4>
 
-            <form method="POST" action="{{ url('/admin/blog/posts/add') }}" class="form">
+            <form method="POST" action="{{ route('admin.blog.posts.add.post') }}" class="form">
                 @csrf
 
                 {{-- Name --}}
@@ -98,22 +98,22 @@
                     @endif
                 </section>
 
-                {{-- URL --}}
+                {{-- Slug --}}
                 {{-- ============================================ --}}
                 <section class="form__section">
-                    <label for="url" class="form__label form__label--required">URL</label>
+                    <label for="slug" class="form__label form__label--required">URL</label>
 
                     <input
                         type="text"
-                        id="url"
-                        name="url"
-                        value="{{ old('url') }}"
+                        id="slug"
+                        name="slug"
+                        value="{{ old('slug') }}"
                         class="form__input form__input--full-width"
                         required>
 
-                    @if ($errors->has('url'))
+                    @if ($errors->has('slug'))
                         <span class="form__section-feedback">
-                            {{ $errors->first('url') }}
+                            {{ $errors->first('slug') }}
                         </span>
                     @endif
                 </section>
@@ -238,7 +238,7 @@
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Maak post aan</button>
-                    <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Cancel</a>
+                    <a href="{{ route('admin.blog.posts') }}" class="btn btn--tertiary">Cancel</a>
                 </div>
             </form>
         </div>
@@ -293,7 +293,7 @@
             $button.html(buttonContent.connecting);
 
             $.ajax({
-                url: '/api/upload-image',
+                url: '{{ route('api.upload_image') }}',
                 method: 'post',
                 contentType: false,
                 processData: false,
@@ -301,7 +301,6 @@
                 dataType:'json',
                 beforeSend: function() {
                     $button.html(buttonContent.uploading);
-                    console.log('Uploading....');
                 },
                 statusCode: {
                     413: function() {
@@ -345,34 +344,34 @@
             });;
         }
 
-        // Set URL and check for used ones
+        // Set slug and check for used ones
         var $title = $("#title"),
-            $url = $("#url"),
-            urlIsChanged = false,
-            urls = @json($urls);
+            $slug = $("#slug"),
+            slugIsChanged = false,
+            slugs = @json($slugs);
 
         (function($){
-            $url.on('input', function() {
-                urlIsChanged = true;
-                $url.val(prepareUrl($url.val()));
-                checkForUsedUrl();
+            $slug.on('input', function() {
+                slugIsChanged = true;
+                $slug.val(prepareSlug($slug.val()));
+                checkForUsedSlugs();
             });
             $title.on('input', function() {
-                if (!urlIsChanged) {
-                    $url.val(prepareUrl($title.val()));
-                    checkForUsedUrl();
+                if (!slugIsChanged) {
+                    $slug.val(prepareSlug($title.val()));
+                    checkForUsedSlugs();
                 }
             });
         })(jQuery);
 
-        function checkForUsedUrl() {
-            var input = $url.val();
-            if (urls.includes(input)) $urlFeedback.show(300);
-            else $urlFeedback.hide(300);
+        function checkForUsedSlugs() {
+            var input = $slug.val();
+            if (slugs.includes(input)) $slugFeedback.show(300);
+            else $slugFeedback.hide(300);
         }
 
-        function prepareUrl(url) {
-            return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
+        function prepareSlug(slug) {
+            return slug.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
         }
     </script>
 

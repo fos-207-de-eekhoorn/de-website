@@ -11,32 +11,42 @@
         },
         "watch": "resources/sass/**/*.scss"
     },
+    "js": {
+        "files": {
+            "src": "resources/js/app.js",
+            "dest": "public/js/",
+            "file": "app.js"
+        },
+        "watch": "resources/js/**/*.js"
+    },
     "img": {
         "files": {
-            "src": "resources/assets/img/**/*",
+            "src": "resources/img/**/*",
             "dest": "public/img/"
         },
-        "watch": "resources/assets/img/**/*"
+        "watch": "resources/img/**/*"
     },
     "docs": {
         "files": {
-            "src": "resources/assets/docs/**/*",
+            "src": "resources/docs/**/*",
             "dest": "public/docs/"
         },
-        "watch": "resources/assets/docs/**/*"
+        "watch": "resources/docs/**/*"
     },
     "fonts": {
         "files": {
-            "src": "resources/assets/fonts/**/*",
+            "src": "resources/fonts/**/*",
             "dest": "public/fonts/"
         },
-        "watch": "resources/assets/fonts/**/*"
+        "watch": "resources/fonts/**/*"
     },
     "devDependencies": {
         "gulp": "^4.0.2",
         "gulp-notify": "^3.2.0",
         "gulp-rename": "^2.0.0",
-        "gulp-sass": "^4.1.0"
+        "gulp-sass": "^4.1.0",
+        "gulp-cli": "^2.3.0",
+        "gulp-copy": "^4.0.1"
     },
     "scripts": {
         "build": "gulp",
@@ -44,8 +54,5 @@
     },
     "author": "Orry Verpoort",
     "license": "ISC",
-    "dependencies": {
-        "gulp-cli": "^2.3.0",
-        "gulp-copy": "^4.0.1"
-    }
+    "dependencies": {}
 }

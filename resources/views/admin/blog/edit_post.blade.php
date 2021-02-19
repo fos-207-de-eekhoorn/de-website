@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
 
@@ -33,7 +33,7 @@
 
     <div class="row justify-content-center section">
         <div class="col-12">
-            <form method="POST" action="{{ url('/admin/blog/posts/edit') }}" id="edit-form" class="form checkIfChanged" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.blog.posts.edit.post') }}" id="edit-form" class="form checkIfChanged" enctype="multipart/form-data">
                 @csrf
 
                 @if($errors->any())
@@ -291,7 +291,7 @@
                         {{-- ============================================ --}}
                         <div class="wrapper__btn">
                             <button class="btn btn--primary">Update post</button>
-                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Ga terug</a>
+                            <a href="{{ route('admin.blog.posts') }}" class="btn btn--tertiary">Ga terug</a>
                         </div>
 
                         <div id="test"></div>
@@ -362,22 +362,22 @@
                             @endif
                         </section>
 
-                        {{-- URL --}}
+                        {{-- Slug --}}
                         {{-- ============================================ --}}
                         <section class="form__section">
-                            <label for="url" class="form__label form__label--required">URL</label>
+                            <label for="slug" class="form__label form__label--required">URL</label>
 
                             <input
                                 type="text"
-                                id="url"
-                                name="url"
-                                value="{{ old('url', $post->url) }}"
+                                id="slug"
+                                name="slug"
+                                value="{{ old('slug', $post->slug) }}"
                                 class="form__input form__input--full-width"
                                 required>
 
-                            @if ($errors->has('url'))
+                            @if ($errors->has('slug'))
                                 <span class="form__section-feedback">
-                                    {{ $errors->first('url') }}
+                                    {{ $errors->first('slug') }}
                                 </span>
                             @endif
                         </section>
@@ -576,7 +576,7 @@
                         {{-- ============================================ --}}
                         <div class="wrapper__btn">
                             <button class="btn btn--primary">Update post</button>
-                            <a href="{{ url('/admin/blog/posts') }}" class="btn btn--tertiary">Ga terug</a>
+                            <a href="{{ route('admin.blog.posts') }}" class="btn btn--tertiary">Ga terug</a>
                         </div>
                     </div>
                 </div>
@@ -1008,7 +1008,7 @@
             $button.html(buttonContent.connecting);
 
             $.ajax({
-                url: '/api/upload-image',
+                url: '{{ route('api.upload_image') }}',
                 method: 'post',
                 contentType: false,
                 processData: false,
@@ -1084,34 +1084,34 @@
             });
         }
 
-        // Set URL and check for used ones
+        // Set Slug and check for used ones
         var $title = $("#title"),
-            $url = $("#url"),
-            urlIsChanged = false,
-            urls = @json($urls);
+            $slug = $("#slug"),
+            slugIsChanged = false,
+            slugs = @json($slugs);
 
         (function($){
-            $url.on('input', function() {
-                urlIsChanged = true;
-                $url.val(prepareUrl($url.val()));
-                checkForUsedUrl();
+            $slug.on('input', function() {
+                slugIsChanged = true;
+                $slug.val(prepareSlug($slug.val()));
+                checkForUsedSlug();
             });
             $title.on('input', function() {
-                if (!urlIsChanged) {
-                    $url.val(prepareUrl($title.val()));
-                    checkForUsedUrl();
+                if (!slugIsChanged) {
+                    $slug.val(prepareSlug($title.val()));
+                    checkForUsedSlug();
                 }
             });
         })(jQuery);
 
-        function checkForUsedUrl() {
-            var input = $url.val();
-            if (urls.includes(input)) $urlFeedback.show(300);
-            else $urlFeedback.hide(300);
+        function checkForUsedSlug() {
+            var input = $slug.val();
+            if (slugs.includes(input)) $slugFeedback.show(300);
+            else $slugFeedback.hide(300);
         }
 
-        function prepareUrl(url) {
-            return url.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
+        function prepareSlug(slug) {
+            return slug.toLowerCase().replace(/\s/g, '-').replace(/\s/g, '-').replace(/[^A-Za-z0-9-]/g, '');
         }
     </script>
 

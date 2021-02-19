@@ -1,6 +1,7 @@
 <?php
 
 return [
+  '8_chars' => '8 tekens',
   '9_chars' => '9 tekens',
   'achieved' => 'Behaald',
   'action' => 'Actie',

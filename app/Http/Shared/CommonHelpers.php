@@ -2,11 +2,13 @@
 
 namespace App\Http\Shared;
 
-use App\BlogPost;
-use App\Leider;
-use App\Setting;
+use App\Models\BlogPost;
+use App\Models\Role;
+use App\Models\Tak;
+use App\Models\Identity;
+use App\Models\Setting;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 
 trait CommonHelpers
 {
@@ -25,54 +27,99 @@ trait CommonHelpers
         return !in_array($file_name, $files_to_ignore);
     }
 
-    public function get_leider($leider_id = null)
+    // public function get_leider($leider_id = null)
+    // {
+    //     return $this->get_user_query($leider_id)
+    //         ->with(
+    //             'takleiding'
+    //         )
+    //         ->first();
+    // }
+
+    // public function get_leider_query($leider_id = null)
+    // {
+    //     $leider_id = $leider_id ?? Auth::user()->id;
+
+    //     return Leider::where('id', $leider_id);
+    // }
+
+    public function get_identities_through_roles($keys = ['leider'], $relationships = [])
     {
-        return $this->get_user_query($leider_id)
-            ->with(
-                'takleiding'
-            )
-            ->first();
+        $keys_string = '"'.implode('","', $keys).'"';
+
+        return Role::whereIn('key', $keys)
+            ->with(array_merge(
+                ['identities'],
+                $relationships
+            ))
+            ->orderByRaw("FIELD(`key`, $keys_string)")
+            ->get()
+            ->flatMap(function ($role) {
+                return $role->identities;
+            });
     }
 
-    public function get_leider_query($leider_id = null)
+    public function get_identities_through_ids($ids, $relationships = [])
     {
-        $leider_id = $leider_id ?? Auth::user()->id;
+        $ids_string = implode(',', $ids);
 
-        return Leider::where('id', $leider_id);
+        return Identity::whereIn('id', $ids)
+            ->with($relationships)
+            ->orderByRaw("FIELD(`id`, $ids_string)")
+            ->get();
+    }
+
+    public function get_all_tl()
+    {
+        $takken = Tak::take(4)
+            ->get();
+
+        $tl = [];
+        foreach($takken as $tak) array_push($tl, $tak->tl);
+        return $tl;
     }
 
     public function get_all_el()
     {
-        return Leider::where('is_el', 1)
-            ->orWhere('is_ael_financien', 1)
-            ->orWhere('is_ael_leden', 1)
-            ->orderBy('is_el', 'desc')
-            ->orderBy('is_ael_leden', 'desc')
-            ->get();
+        $keys = [
+            config('roles.keys.el'),
+            config('roles.keys.el_leden'),
+            config('roles.keys.el_financien'),
+        ];
+        return $this->get_identities_through_roles($keys);
     }
 
     public function get_el()
     {
-        return Leider::where('is_el', 1)->first();
+        $keys = [
+            config('roles.keys.el'),
+        ];
+        return $this->get_identities_through_roles($keys)[0];
     }
 
     public function get_ael()
     {
-        return Leider::where('is_ael_financien', 1)
-            ->orWhere('is_ael_leden', 1)
-            ->get();
+        $keys = [
+            config('roles.keys.el_leden'),
+            config('roles.keys.el_financien'),
+        ];
+        return $this->get_identities_through_roles($keys);
     }
 
-    public function get_ael_financien()
+    public function get_el_financien()
     {
-        return Leider::where('is_ael_financien', 1)
-            ->first();
+        $keys = [
+            config('roles.keys.el_financien'),
+        ];
+        return $this->get_identities_through_roles($keys)[0];
     }
 
-    public function get_ael_leden()
+    public function get_el_leden()
     {
-        return Leider::where('is_ael_leden', 1)
-            ->first();
+        $keys = [
+            config('roles.keys.el_leden'),
+        ];
+        return $this->get_identities_through_roles($keys)[0];
     }
 
     public function get_limit_inschrijvingen_tak($tak_link)
