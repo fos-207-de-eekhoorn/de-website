@@ -8,7 +8,7 @@
         @include('layouts.app_components.header')
 
         <main class="main">
-            <div class="container page-warning">
+            <div class="container page-warning page-warning--error">
                 <div class="page-warning__icon icon">
                     <i class="fas fa-exclamation-triangle"></i>
                 </div>

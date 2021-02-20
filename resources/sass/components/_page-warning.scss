@@ -8,7 +8,11 @@
     padding-top: spacing(md);
     padding-bottom: spacing(md);
     margin-bottom: spacing(sm);
-    background-color: $color-red;
+    background-color: $color-blue;
+
+    &--error {
+        background-color: $color-red;
+    }
 
     &__icon,
     &__warning {
