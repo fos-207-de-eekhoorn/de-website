@@ -8,20 +8,14 @@
         @include('layouts.app_components.header')
 
         <main class="main">
-            <div class="container page-warning page-warning--error">
-                <div class="page-warning__icon icon">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </div>
-
-                <p class="page-warning__warning text--align-center">
+            @if (config('app.env') === 'staging')
+                @component('components.page_warning', [
+                    'type' => 'error',
+                ])
                     Dit is een testversie van onze website.<br>
                     De informatie die hier te vinden is, is NIET actueel of juist.
-                </p>
-
-                <div class="page-warning__icon icon">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </div>
-            </div>
+                @endcomponent
+            @endif
 
             <div class="container cs-white shadow">
                 <div class="main__inner">
