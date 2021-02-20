@@ -26,6 +26,14 @@
 
         <div class="col-12">
             <h2>Takken</h2>
+
+            @if (session('no_next_activity'))
+                @component('components.flash_message', [
+                    'type' => 'error',
+                ])
+                    Er zijn geen activieiten om inschrijvingen weer te geven.
+                @endcomponent
+            @endif
         </div>
 
         @foreach($takken as $tak)

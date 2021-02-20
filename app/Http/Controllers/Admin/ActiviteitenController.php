@@ -171,11 +171,17 @@ class ActiviteitenController extends Controller
             },
         ]);
 
-        $activiteit = $tak->volgende_activiteit[0];
+        if (sizeof($tak->volgende_activiteit) > 0) {
+            $activiteit = $tak->volgende_activiteit[0];
 
-        return view('admin.activiteiten.inschrijvingen', [
-            'activiteit' => $activiteit,
-        ]);
+            return view('admin.activiteiten.inschrijvingen', [
+                'activiteit' => $activiteit,
+            ]);
+        } else {
+            Session::flash('no_next_activity');
+            return view('admin.activiteiten.index');
+        }
+
     }
 
     public function get_activiteit_inschrijvingen($id_encrypted)
