@@ -42,7 +42,7 @@ class InfoController extends Controller
 
     public function get_verhuurlijst()
     {
-        $collection = Role::where('key', onfig('roles.keys.materiaal'))
+        $collection = Role::where('key', config('roles.keys.materiaal'))
             ->with('identities')
             ->first();
         
