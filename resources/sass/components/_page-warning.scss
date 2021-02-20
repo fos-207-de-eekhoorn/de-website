@@ -1,0 +1,29 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Page warning
+//  ------------------------------------------------------------------------------------
+
+.page-warning {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: spacing(md);
+    padding-bottom: spacing(md);
+    margin-bottom: spacing(sm);
+    background-color: $color-red;
+
+    &__icon,
+    &__warning {
+        color: $color-white;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+
+        font-size: $font-size-h4;
+    }
+
+    &__warning {
+        margin: 0 spacing(lg);
+        padding: 0;
+    }
+}
