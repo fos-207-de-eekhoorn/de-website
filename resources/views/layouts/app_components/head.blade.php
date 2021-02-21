@@ -4,6 +4,8 @@
 <title>@yield('title') - {{ config('app.name') }}</title>
 @hasSection('message')
     <meta name="description" content="@yield('message')">
+@else
+    <meta name="description" content="Hier vind je wekelijks de activiteiten of word lid!">
 @endif
 
 @hasSection('head')

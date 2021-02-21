@@ -4,6 +4,10 @@
     {{ $tak->naam }}
 @endsection
 
+@section('description')
+    Hier vind je wekelijks de activiteiten van de {{ $tak->naam }}
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[
