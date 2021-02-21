@@ -4,14 +4,23 @@
     {{ $blog_post->title }}
 @endsection
 
-@section('description')
+@section('meta_description')
     {{ $blog_post->subtitle }}
+@endsection
+
+@section('meta_type')
+    {{ $blog_post->image->path }}
+@endsection
+
+@section('meta_image')
+    {{ $blog_post->image->path }}
 @endsection
 
 @section('head')
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="{{ $blog_post->title }} - {{ config('app.name') }}">
+    <meta name="description" content="{{ $blog_post->subtitle }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
