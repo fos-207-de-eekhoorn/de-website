@@ -31,8 +31,8 @@
     <meta property="og:image" content="@yield('meta_image')">
     <meta property="twitter:image" content="@yield('meta_image')">
 @else
-    <meta property="og:image" content="{{ asset('/img/Meta image Blue.png') }}">
-    <meta property="twitter:image" content="{{ asset('/img/Meta image Blue.png') }}">
+    <meta property="og:image" content="{{ asset('/img/meta/meta_image_blue.png') }}">
+    <meta property="twitter:image" content="{{ asset('/img/meta/meta_image_blue.png') }}">
 @endif
 
 {{-- Url --}}

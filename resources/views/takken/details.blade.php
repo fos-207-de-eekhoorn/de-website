@@ -4,8 +4,12 @@
     {{ $tak->naam }}
 @endsection
 
-@section('description')
+@section('meta_description')
     Hier vind je wekelijks de activiteiten van de {{ $tak->naam }}
+@endsection
+
+@section('meta_image')
+    {{ asset('/img/meta/meta_image_'.$tak->slug.'.png') }}
 @endsection
 
 @section('content')
