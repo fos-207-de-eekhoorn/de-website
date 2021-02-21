@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Pas je wachtwoord aan
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

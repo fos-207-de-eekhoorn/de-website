@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Halloweentocht
+@endsection
+
 @section('content')
     <section class="section section--small-spacing carousel">
         <img src="{{ asset('/img/evenementen/banner-evenement-halloweentocht.jpg') }}" alt="Banner" class="carousel__banner">

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Admin - Voeg evenement toe
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

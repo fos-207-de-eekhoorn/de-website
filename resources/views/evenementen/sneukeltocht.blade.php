@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Sneukeltocht
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

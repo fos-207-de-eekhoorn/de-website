@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Winterbar
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

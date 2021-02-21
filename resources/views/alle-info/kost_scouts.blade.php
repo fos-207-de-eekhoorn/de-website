@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Wat kost de scouts?
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

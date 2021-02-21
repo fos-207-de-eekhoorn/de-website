@@ -1,23 +1,29 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $blog_post->title }}
+@endsection
+
+@section('description')
+    {{ $blog_post->subtitle }}
+@endsection
+
 @section('head')
 
     <!-- Primary Meta Tags -->
-    <title>{{ $blog_post->title }} | {{ config('app.name') }}</title>
-    <meta name="title" content="{{ $blog_post->title }} | {{ config('app.name') }}">
-    <meta name="description" content="{{ $blog_post->subtitle }}">
+    <meta name="title" content="{{ $blog_post->title }} - {{ config('app.name') }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="{{ $blog_post->title }} | {{ config('app.name') }}">
+    <meta property="og:title" content="{{ $blog_post->title }} - {{ config('app.name') }}">
     <meta property="og:description" content="{{ $blog_post->subtitle }}">
     <meta property="og:image" content="{{ $blog_post->image->path }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="{{ $blog_post->title }} | {{ config('app.name') }}">
+    <meta property="twitter:title" content="{{ $blog_post->title }} - {{ config('app.name') }}">
     <meta property="twitter:description" content="{{ $blog_post->subtitle }}">
     <meta property="twitter:image" content="{{ asset('$blog_post->image->path') }}">
 

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+	Eikeltjesquiz
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

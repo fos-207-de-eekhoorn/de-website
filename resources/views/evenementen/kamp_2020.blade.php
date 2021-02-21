@@ -1,4 +1,8 @@
-    @extends('layouts.app')
+@extends('layouts.app')
+
+@section('title')
+    Kamp 2020
+@endsection
 
 @section('content')
     @component('components.banner', [
@@ -10,8 +14,6 @@
         'page_title' => 'Kamp '.$year,
     ])
     @endcomponent
-
-
 
     <section class="row justify-content-center section">
         <div class="col-12 col-md-4 d-none d-md-block">

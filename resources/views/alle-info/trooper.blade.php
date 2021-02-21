@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Trooper
+@endsection
+
 @section('content')
     <section class="section section--small-spacing banner banner--full">
         <img src="/img/trooperbanner.png" alt="Banner" class="banner__banner">

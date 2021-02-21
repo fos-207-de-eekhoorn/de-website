@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Admin - Inschrijvingen
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

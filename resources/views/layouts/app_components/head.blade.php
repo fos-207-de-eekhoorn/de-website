@@ -1,7 +1,14 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>@yield('title') - FOS207 'De Eekhoorn'</title>
+<title>@yield('title') - {{ config('app.name') }}</title>
+@hasSection('message')
+    <meta name="description" content="@yield('message')">
+@endif
+
+@hasSection('head')
+    @yield('head')
+@endif
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/img/favicon/apple-icon-57x57.png') }}">

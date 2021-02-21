@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Jeugdwerkregels
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

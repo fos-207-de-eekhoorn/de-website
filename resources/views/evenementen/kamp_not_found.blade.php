@@ -1,4 +1,8 @@
-    @extends('layouts.app')
+@extends('layouts.app')
+
+@section('title')
+    Kamp {{ $year }} niet gevonden
+@endsection
 
 @section('content')
     @component('components.banner', [

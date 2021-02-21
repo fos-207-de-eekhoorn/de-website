@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Inschrijven voor $activiteit->tak->naam
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

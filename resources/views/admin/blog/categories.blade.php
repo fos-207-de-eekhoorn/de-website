@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Admin - Categorieën
+@endsection
+
 @section('content')
 
     @component('components.banner', [

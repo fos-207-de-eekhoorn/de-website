@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Admin - Activiteit van {{ $tak->naam }}
+@endsection
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

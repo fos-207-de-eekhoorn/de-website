@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Blog
+@endsection
+
 @section('content')
 
 	@component('components.banner', [

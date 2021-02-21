@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Admin - Pas post aan
+@endsection
+
 @section('content')
 
     @component('components.banner', [
