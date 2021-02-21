@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Alle info
-@endsection
+@section('title', 'Alle info')
 
 @section('content')
     @component('components.banner', [

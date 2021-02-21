@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Registreer
-@endsection
+@section('title', 'Registreer')
 
 @section('content')
 <div class="container">

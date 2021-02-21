@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-	BBQ
-@endsection
+@section('title', 'BBQ')
 
 @section('content')
     @component('components.banner', [

@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Wachtwoord vergeten?
-@endsection
+@section('title', 'Wachtwoord vergeten?')
 
 @section('content')
     @component('components.banner', [

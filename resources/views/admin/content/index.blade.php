@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Admin - Content
-@endsection
+@section('title', 'Admin - Content')
 
 @section('content')
     @component('components.banner', [

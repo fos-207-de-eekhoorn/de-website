@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Word lid!
-@endsection
+@section('title', 'Word lid!')
 
 @section('content')
     @component('components.banner', [

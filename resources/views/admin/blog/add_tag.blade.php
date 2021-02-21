@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Admin - Voeg tag toe
-@endsection
+@section('title', 'Admin - Voeg tag toe')
 
 @section('content')
 

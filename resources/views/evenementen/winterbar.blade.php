@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Winterbar
-@endsection
+@section('title', 'Winterbar')
 
 @section('content')
     @component('components.banner', [

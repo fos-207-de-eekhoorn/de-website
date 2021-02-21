@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Jeugdwerkregels
-@endsection
+@section('title', 'Jeugdwerkregels')
 
 @section('content')
     @component('components.banner', [

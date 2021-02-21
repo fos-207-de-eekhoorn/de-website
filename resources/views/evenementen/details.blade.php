@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    {{ $evenement->naam }}
-@endsection
+@section('title', $evenement->naam)
 
 @section('content')
     @component('components.banner', [

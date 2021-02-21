@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Kamp 2020
-@endsection
+@section('title', 'Kamp 2020')
 
 @section('content')
     @component('components.banner', [

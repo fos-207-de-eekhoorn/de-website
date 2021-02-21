@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Halloweentocht
-@endsection
+@section('title', 'Halloweentocht')
 
 @section('content')
     <section class="section section--small-spacing carousel">

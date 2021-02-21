@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Admin - Categorieën
-@endsection
+@section('title', 'Admin - Categorieën')
 
 @section('content')
 

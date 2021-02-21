@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Materiaal en verhuur
-@endsection
+@section('title', 'Materiaal en verhuur')
 
 @section('content')
     @component('components.banner', [

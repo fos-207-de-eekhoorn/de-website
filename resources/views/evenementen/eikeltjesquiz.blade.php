@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-	Eikeltjesquiz
-@endsection
+@section('title', 'Eikeltjesquiz')
 
 @section('content')
     @component('components.banner', [

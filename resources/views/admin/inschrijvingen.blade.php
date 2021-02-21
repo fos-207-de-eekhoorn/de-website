@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Admin - Inschrijvingen
-@endsection
+@section('title', 'Admin - Inschrijvingen')
 
 @section('content')
     @component('components.banner', [

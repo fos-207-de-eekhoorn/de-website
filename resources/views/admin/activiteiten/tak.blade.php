@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Admin - Activiteit van {{ $tak->naam }}
-@endsection
+@section('title', 'Admin - Activiteit van '.$tak->naam)
 
 @section('content')
     @component('components.banner', [

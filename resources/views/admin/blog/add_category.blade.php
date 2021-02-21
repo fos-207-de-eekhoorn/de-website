@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Admin - Voeg categorie toe
-@endsection
+@section('title', 'Admin - Voeg categorie toe')
 
 @section('content')
 

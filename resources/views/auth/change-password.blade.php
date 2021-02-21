@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Pas je wachtwoord aan
-@endsection
+@section('title', 'Pas je wachtwoord aan')
 
 @section('content')
     @component('components.banner', [

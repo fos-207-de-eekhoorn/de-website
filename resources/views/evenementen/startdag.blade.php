@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Startdag
-@endsection
+@section('title', 'Startdag')
 
 @section('content')
     @component('components.banner', [

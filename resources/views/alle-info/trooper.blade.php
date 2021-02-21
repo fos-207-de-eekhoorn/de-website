@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Trooper
-@endsection
+@section('title', 'Trooper')
 
 @section('content')
     <section class="section section--small-spacing banner banner--full">

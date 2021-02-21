@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Inschrijven voor {{ $activiteit->tak->naam }}
-@endsection
+@section('title', 'Inschrijven voor '.$activiteit->tak->naam)
 
 @section('content')
     @component('components.banner', [

@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Documenten
-@endsection
+@section('title', 'Documenten')
 
 @section('content')
     @component('components.banner', [

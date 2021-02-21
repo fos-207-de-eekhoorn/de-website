@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('title')
-    Admin - Pas evenement aan
-@endsection
+@section('title', 'Admin - Pas evenement aan')
 
 @section('content')
     @component('components.banner', [
