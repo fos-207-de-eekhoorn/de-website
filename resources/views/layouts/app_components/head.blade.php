@@ -10,9 +10,9 @@
 
 {{-- Description --}}
 @hasSection('meta_description')
-    <meta name="description" content="@yield('description')">
-    <meta property="og:description" content="@yield('description')">
-    <meta property="twitter:description" content="@yield('description')">
+    <meta name="description" content="@yield('meta_description')">
+    <meta property="og:description" content="@yield('meta_description')">
+    <meta property="twitter:description" content="@yield('meta_description')">
 @else
     <meta name="description" content="Hier vind je wekelijks de activiteiten of word lid!">
     <meta property="og:description" content="Hier vind je wekelijks de activiteiten of word lid!">
