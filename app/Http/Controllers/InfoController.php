@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Inschrijving;
 use App\Models\Role;
+use App\Models\BlogPost;
 use App\Http\Shared\CommonHelpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 
 class InfoController extends Controller
 {
@@ -76,7 +78,16 @@ class InfoController extends Controller
 
     public function get_jeugdwerkregels()
     {
-        return view('alle-info.jeugdwerkregels');
+        $corona_blog_posts = BlogPost::where('category_id', 3)
+            ->where('active', 1)
+            ->where('live_at', '<=', Carbon::now('Europe/Berlin')->format('Y-m-d H:i:s'))
+            ->orderBy('live_at', 'desc')
+            ->limit(4)
+            ->get();
+
+        return view('alle-info.jeugdwerkregels', [
+            'corona_blog_posts' => $corona_blog_posts,
+        ]);
     }
 
     public function get_inschrijven()
