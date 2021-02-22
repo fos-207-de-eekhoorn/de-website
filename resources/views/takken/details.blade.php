@@ -140,7 +140,7 @@
 
                             <h5 class="leiding__totem">
                                 @if ($tak->naam === 'Welpen' && strlen($identity->welpennaam) > 0)
-                                    {{ $identity->welpennaam }}  / 
+                                    {{ $identity->welpennaam }}  - 
                                 @endif
 
                                 @if (strlen($identity->totem) > 0)
