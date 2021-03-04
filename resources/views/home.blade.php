@@ -127,8 +127,8 @@
         <div class="col-12 col-md-4 section">
             <h4>Nieuwtjes</h4>
 
-            @component('components.next_blog_posts', [
-                'next_blog_posts' => $next_blog_posts,
+            @component('components.blog_post_cards', [
+                'blog_posts' => $next_blog_posts,
                 'columns' => 1,
                 'with_link' => 1,
                 'align' => 'left',
