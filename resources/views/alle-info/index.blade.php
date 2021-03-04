@@ -31,7 +31,7 @@
                     <div class="algemene-info">
                         <h2>Uniform & Fosshop</h2>
                         <p>
-                            Uniform in orde brengen? hier vindt je alles die je moet weten!
+                            Uniform in orde brengen? Hier vind je alles die je moet weten!
                         </p>
 
                         <a href="{{ route('info.uniform') }}">Meer info <span class="icon"><i class="fas fa-angle-right"></i></span></a>
@@ -46,7 +46,7 @@
                 <h3>Documenten</h3>
 
                 <p>
-                    Hier vindt u alle tegemoetkomingen.
+                    Hier vind je alle tegemoetkomingen.
                     U dient uw gegevens in te vullen en daarna af te geven aan de eenheidsleiding (de leiding kan helpen om ervoor zorgen dat het papier bij de juiste personen terechtkomen). De eenheidsleiding zal daarna het nodige aanvullen en u het papier zo snel mogelijk terugbezorgen.
                 </p>
 

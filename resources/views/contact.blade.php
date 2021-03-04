@@ -105,7 +105,7 @@
                             onclick="handleClick(this);">
 
                         <label for="actief" class="form__label">
-                            Bent u of uw kind al actief in onze scouts?
+                            Bent u of is uw kind al actief in onze scouts?
                         </label>
                     </div>
 

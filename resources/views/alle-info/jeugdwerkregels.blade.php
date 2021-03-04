@@ -141,7 +141,7 @@
 
                     <h5>Materiaal</h5>
                     <p>
-                        In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door. 
+                        In de gele en oranje fase kan materiaal enkel gedeeld worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door. 
                     </p>
                 </div>
 
@@ -213,7 +213,7 @@
 
                     <h5>Materiaal</h5>
                     <p>
-                        In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door.
+                        In de gele en oranje fase kan materiaal enkel gedeeld worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door.
                     </p>
                 </div>
 
@@ -277,7 +277,7 @@
 
                     <h5>Materiaal</h5>
                     <p>
-                        Persoonlijk materiaal per individu heeft de voorkeur. Materiaal dat wordt doorgegeven wordt tussenin ontsmet.
+                        Persoonlijk materiaal heeft de voorkeur. Materiaal dat wordt doorgegeven wordt tussenin ontsmet.
                     </p>
                 </div>
 

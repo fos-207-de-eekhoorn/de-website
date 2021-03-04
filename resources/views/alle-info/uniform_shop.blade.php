@@ -41,15 +41,15 @@
                 </p>
 
                 <p>
-                    Vanaf het eerste jaar dat je naar de <strong>welpen</strong> gaat mag je ook een uniform dragen. Je draagt naast alle andere badges ook de welpenbadge. Je kan dan ook eindelijk ook badges en sterren verdienen. Deze kunnen verdiend worden op speciale activiteiten en op kamp. Het is ook mogelijk om een wolfje te verdienen. Een wolfje verdien je door minstens 3 badges en 2 sterren te behalen. Een wolfje mag je je hele scouts carrière op je hemd laten hangen. Vanaf je naar de jonge gaat moeten de welpenbadges en sterren er helaas af. 
+                    Vanaf het eerste jaar dat je naar de <strong>welpen</strong> gaat mag je ook een uniform dragen. Je draagt naast alle andere badges ook de welpenbadge. Je kan dan ook eindelijk ook badges en sterren verdienen. Deze kunnen verdiend worden op speciale activiteiten en op kamp. Het is ook mogelijk om een wolfje te verdienen. Een wolfje verdien je door minstens 3 badges en 2 sterren te behalen. Een wolfje mag je je hele scouts carrière op je hemd laten hangen. Vanaf je naar de JGV's gaat moeten de welpenbadges en sterren er helaas af. 
                 </p>
 
                 <p>
-                    Maar geen nood! Ook bij de <strong>jong gids / verkenners</strong> kan je badges verdienen. Als JVG mag je ook je welpenbadge vervangen voor een jonge/oude verkenners of gidsen badge. Vanaf de jong gids / verkenners kan je ook beginnen aan je teervoet. De teervoet is een badge waarvoor 50 verschillende opdrachten uitgevoerd moeten worden. Deze badge is een hele grote eer en mag voor altijd op je scoutshemd blijven hangen!
+                    Maar geen nood! Ook bij de <strong>jong gids / verkenners</strong> kan je badges verdienen. Als JGV mag je ook je welpenbadge vervangen voor een JGV's/OGV's verkenners of gidsen badge. Vanaf de jong gids / verkenners kan je ook beginnen aan je teervoet. De teervoet is een badge waarvoor 50 verschillende opdrachten uitgevoerd moeten worden. Deze badge is een hele grote eer en mag voor altijd op je scoutshemd blijven hangen!
                 </p>
 
                 <p>
-                    Wanneer je overgaat naar de <strong>oud gids / verkenners</strong> gaan alle jonge-badges er weer af en kan je met een schone lei beginnen. Je kan nieuwe badges verdienen en verder werken aan je teervoet. 
+                    Wanneer je overgaat naar de <strong>oud gids / verkenners</strong> gaan alle JGV's-badges er weer af en kan je met een schone lei beginnen. Je kan nieuwe badges verdienen en verder werken aan je teervoet. 
                 </p>
 
                 <p>
@@ -78,7 +78,7 @@
                         <li>Jaarkenteken</li>
                         <li>Belofte-kenteken</li>
                         <li>Teervoet</li>
-                        <li>Welpenbadge, jong gids / JVG badge / OVG badge</li>
+                        <li>Welpenbadge, jong gids / JGV badge / OGV badge</li>
                         <li>Kenteken België</li>
                     </ol>
                 </div>
@@ -100,7 +100,7 @@
                         <td class="table__cell"><span class="text--unit">€</span>35,00</td>
                     </tr>
                     <tr class="table__row">
-                        <td class="table__cell">Uniform maat 34-48</td>
+                        <td class="table__cell">Uniformmaat 34-48</td>
                         <td class="table__cell"><span class="text--unit">€</span>38,00</td>
                     </tr>
                     <tr class="table__row">
@@ -162,7 +162,7 @@
                 <h3>Contact</h3>
 
                 <p>
-                    Wil je iets huren of heb je een vraag? Contacteer dan één van onze FOS shop verantwoordelijke.
+                    Wil je iets kopen of heb je een vraag? Contacteer dan één van onze FOS shop verantwoordelijke.
                 </p>
 
                 <div class="leiding-card-list">
