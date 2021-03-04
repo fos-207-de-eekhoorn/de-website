@@ -30,7 +30,7 @@
                     @if (isset($tak->volgende_activiteit[0])
                         && $tak->volgende_activiteit[0]->is_activiteit
                         && Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->diffInDays($next_saturday) < 7)
-                        @if (Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum) != $next_saturday)
+                        @if (Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->isoFormat('LL') != Carbon\Carbon::parse($next_saturday)->isoFormat('LL'))
                             <div class="volgende-activiteit__info volgende-activiteit__info--active volgende-activiteit__info--important">
                                 <span class="volgende-activiteit__icon"><i class="fas fa-calendar"></i></span>
                                 {{ Carbon\Carbon::parse($tak->volgende_activiteit[0]->datum)->isoFormat('LL') }}
