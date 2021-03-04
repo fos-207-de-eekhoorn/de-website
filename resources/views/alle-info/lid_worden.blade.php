@@ -19,7 +19,7 @@
                 <h2>Lid worden</h2>
 
                 <p>
-                    Wil je lid worden van onze scouts? Goed idee! Hier vindt je alle nodige info.
+                    Wil je lid worden van onze scouts? Goed idee! Hier vind je alle nodige info.
                 </p>
 
                 <p>

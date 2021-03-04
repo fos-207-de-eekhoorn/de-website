@@ -58,7 +58,7 @@
                 </p>
 
                 <p>
-                    Heb je ingeschreven maar kan je toch niet meer komen? Stuur dan een berichtje naar de takleiding om de inschrijving te annuleren.
+                    Ben je ingeschreven maar kan je toch niet meer komen? Stuur dan een berichtje naar de takleiding om de inschrijving te annuleren.
                 </p>
 
                 <p>
