@@ -1,4 +1,4 @@
-    @extends('layouts.main')
+    @extends('layouts.app')
 
 @section('content')
     @component('components.banner', [
@@ -781,45 +781,18 @@
             </p>
         </div>
 
-        <div class="col-12 col-md-6 section section--small-spacing">
-            <div class="leiding-card-list">
-                @component('components.leiding_card', [
-                    'leider' => $takleiders[0],
-                    'titel' => 'Takleider Bevers'
-                ])
-                @endcomponent
+        @foreach ($takleiders as $takleider)
+            <div class="col-12 col-md-6 section section--small-spacing">
+                <div class="leiding-card-list">
+                    @component('components.leiding_card', [
+                        'leider' => $takleider,
+                        'titel' => $takleider->tak->korte_naam,
+                        'titel_special' => config('roles.keys.tl'),
+                    ])
+                    @endcomponent
+                </div>
             </div>
-        </div>
-
-        <div class="col-12 col-md-6 section section--small-spacing">
-            <div class="leiding-card-list">
-                @component('components.leiding_card', [
-                    'leider' => $takleiders[1],
-                    'titel' => 'Takleider Welpen'
-                ])
-                @endcomponent
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 section section--small-spacing">
-            <div class="leiding-card-list">
-                @component('components.leiding_card', [
-                    'leider' => $takleiders[2],
-                    'titel' => 'Takleider JG/V\'s'
-                ])
-                @endcomponent
-            </div>
-        </div>
-
-        <div class="col-12 col-md-6 section section--small-spacing">
-            <div class="leiding-card-list">
-                @component('components.leiding_card', [
-                    'leider' => $takleiders[3],
-                    'titel' => 'Takleider OG/V\'s'
-                ])
-                @endcomponent
-            </div>
-        </div>
+        @endforeach
     </section>
 
 

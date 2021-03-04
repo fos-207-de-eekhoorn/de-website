@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
     @component('components.banner', [
@@ -58,7 +58,7 @@
                 @endcomponent
             @endif
 
-            <form class="form" action="/admin/contents/add" method="POST">
+            <form class="form" action="{{ route('admin.contents.add.post') }}" method="POST">
                 @csrf
 
                 {{-- ID --}}
@@ -77,13 +77,13 @@
                 {{-- Tak --}}
                 <input
                     type="text"
-                    name="leider_id"
+                    name="user_id"
                     value="{{ Crypt::encrypt(Auth::id()) }}"
                     hidden>
 
-                @if ($errors->has('leider_id_id'))
+                @if ($errors->has('user_id_id'))
                     <span class="form__section-feedback">
-                        {{ $errors->first('leider_id') }}
+                        {{ $errors->first('user_id') }}
                     </span>
                 @endif
 
@@ -109,12 +109,16 @@
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Past tekst aan</button>
 
-                    <a class="btn btn--tertiary" onclick="
+                    <a class="btn btn--secondary" onclick="
                         confirm('Ben je zeker dat je deze content wilt herzetten?')
                             ? resetInput(event)
                             : NULL;
                     ">
                         Reset content
+                    </a>
+
+                    <a href="{{ route('admin.contents') }}" class="btn btn--tertiary">
+                        Ga terug
                     </a>
                 </div>
             </form>
@@ -127,10 +131,10 @@
                 @forelse ($content->content_text as $text)
                     <tr class="table__row">
                         <td class="table__cell">
-                            @if (strlen($text->leider->totem) > 0)
-                                {{ $text->leider->totem }}
+                            @if (strlen($text->user->identity->totem) > 0)
+                                {{ $text->user->identity->totem }}
                             @else
-                                {{ $text->leider->voornaam }}
+                                {{ $text->user->identity->voornaam }}
                             @endif
                         </td>
 
@@ -157,7 +161,7 @@
 
         function resetInput(e) {
             e.preventDefault();
-            $text.val(originalContent);
+            document.getElementById("text_ifr").contentWindow.document.getElementById('tinymce').getElementsByTagName('P')[0].innerHTML = originalContent;
         }
 
         // TinyMCE

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
     <section class="section section--small-spacing banner banner--full banner--with-hover-effect">
@@ -74,7 +74,7 @@
                     @endif
 
                     <div class="volgende-activiteit__link">
-                        <a href="{{ url('/takken/'. $tak->link) }}">
+                        <a href="{{ route('takken.details', ['tak' => $tak->slug]) }}">
                             Alle activiteiten<span class="fa--after"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>
@@ -116,7 +116,7 @@
                 <h4>Evenementen kalender</h4>
 
                 @component('components.calendar', [
-                    'evenementen' => $evenementen,
+                    'evenementen' => $next_evenementen,
                 ])
                 @endcomponent
             </div>

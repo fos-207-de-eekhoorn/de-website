@@ -8,7 +8,19 @@
     <div class="leiding-card__col">
         <h5 class="leiding-card__title no-margin-bottom">
             @if (isset($titel))
-                {{ $titel }}
+                @if (isset($titel_special))
+                    @if ($titel_special === 'tl')
+                        @if ($leider->geslacht === 'male')
+                            Takleider  {{ $titel }}
+                        @elseif ($leider->geslacht === 'female')
+                            Takleidster {{ $titel }}
+                        @else
+                            Takleid(st)er {{ $titel }}
+                        @endif
+                    @endif
+                @else
+                    {{ $titel }}
+                @endif
             @else
                 @if ($leider->is_el == 1)
                     @if ($leider->geslacht === 'male')
@@ -18,7 +30,7 @@
                     @else
                         Eenheidsleid(st)er
                     @endif
-                @elseif ($leider->is_ael_financien == 1)
+                @elseif ($leider->is_el_financien == 1)
                     @if ($leider->geslacht === 'male')
                         Assistent eenheidsleider financiën
                     @elseif ($leider->geslacht === 'female')
@@ -26,7 +38,7 @@
                     @else
                         Assistent eenheidsleid(st)er financiën
                     @endif
-                @elseif ($leider->is_ael_leden == 1)
+                @elseif ($leider->is_el_leden == 1)
                     @if ($leider->geslacht === 'male')
                         Assistent eenheidsleider leden
                     @elseif ($leider->geslacht === 'female')
@@ -47,7 +59,8 @@
         </h5>
 
         <p>
-            {{ $leider->voornaam }} @if ($leider->totem != NULL)'{{ $leider->totem }}'@endif {{ $leider->achternaam }}
+            @if ($leider->totem != NULL){{ $leider->voortotem }} {{ $leider->totem }}<br>@endif
+            {{ $leider->voornaam }} {{ $leider->achternaam }}
         </p>
 
         <a href="tel:{{ $leider->telefoon_link }}" class="leiding-card__phone" target="_blank">{{ $leider->telefoon }}</a>

@@ -9,7 +9,11 @@
 
         <div class="calendar__info">
             <h5 class="calendar__name">
-                <a href="{{ url('/evenementen/'.$evenement->url) }}" class="calendar__link calendar__link--{{ $evenement->kleur }}">
+                <a href="{{
+                    $evenement->has_static_url
+                        ? route('evenementen.'.$evenement->url)
+                        : route('evenementen.details', ['evenement' => $evenement->url])
+                }}" class="calendar__link calendar__link--{{ $evenement->kleur }}">
                     {{ $evenement->naam }}
                 </a>
             </h5>
@@ -24,7 +28,7 @@
             @if (sizeof($evenement->evenement_tak) > 0)
                 <div class="calendar__takken tags">
                     @foreach($evenement->evenement_tak as $evenement_tak)
-                        <a href="{{ url('/takken/'.$evenement_tak->tak->link) }}" class="tags__tag tags__tag--is-link">{{ $evenement_tak->tak->naam }}</a>
+                        <a href="{{ route('takken.details', ['tak' => $evenement_tak->tak->slug]) }}" class="tags__tag tags__tag--is-link">{{ $evenement_tak->tak->naam }}</a>
                     @endforeach
                 </div>
             @endif
@@ -38,7 +42,7 @@
 </div>
 
 <p class="text--align-right small-margin-top no-margin-bottom">
-    <a href="{{ '/evenementen' }}" class="text--align-right">
+    <a href="{{ route('evenementen') }}" class="text--align-right">
         Alle evenementen<span class="fa--after"><i class="fas fa-angle-right"></i></span>
     </a>
 </p>

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
     @component('components.banner', [
@@ -241,7 +241,7 @@
                 </h5>
                 
                 <p>
-                    Voor de bevers bestaat het uniform slechts uit een T-shirt en een das. Vanaf de welpen wordt dat T-shirt ingeruild voor een hemd. Het hemd wordt uitgerust met allerlei badges. Sommige badges gaan de hele scoutscarrière mee en anderen behoren enkel tot een specifieke tak. Meer info over het uniform vindt u <a href="https://scoutsoostkamp.be/alle-info/uniform-shop">hier</a>.
+                    Voor de bevers bestaat het uniform slechts uit een T-shirt en een das. Vanaf de welpen wordt dat T-shirt ingeruild voor een hemd. Het hemd wordt uitgerust met allerlei badges. Sommige badges gaan de hele scoutscarrière mee en anderen behoren enkel tot een specifieke tak. Meer info over het uniform vindt u <a href="{{ route('info.uniform') }}">hier</a>.
                 </p>
             </div>
         </div>
