@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Uniform & FOS shop')
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

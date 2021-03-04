@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Documenten')
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

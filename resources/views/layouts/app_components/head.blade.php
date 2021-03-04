@@ -1,7 +1,46 @@
-<!-- Required meta tags -->
+{{--Required meta tags --}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>FOS207 'De Eekhoorn' / Home</title>
+
+{{-- Title --}}
+<title>@yield('title') - {{ config('app.name') }}</title>
+<meta name="title" content="@yield('title') - {{ config('app.name') }}">
+<meta property="og:title" content="@yield('title') - {{ config('app.name') }}">
+<meta property="twitter:title" content="@yield('title') - {{ config('app.name') }}">
+
+{{-- Description --}}
+@hasSection('meta_description')
+    <meta name="description" content="@yield('meta_description')">
+    <meta property="og:description" content="@yield('meta_description')">
+    <meta property="twitter:description" content="@yield('meta_description')">
+@else
+    <meta name="description" content="Hier vind je wekelijks de activiteiten of word lid!">
+    <meta property="og:description" content="Hier vind je wekelijks de activiteiten of word lid!">
+    <meta property="twitter:description" content="Hier vind je wekelijks de activiteiten of word lid!">
+@endif
+
+{{-- Type --}}
+@hasSection('meta_type')
+    <meta property="og:type" content="@yield('meta_type')">
+@else
+    <meta property="og:type" content="website">
+@endif
+
+{{-- Image --}}
+@hasSection('meta_image')
+    <meta property="og:image" content="@yield('meta_image')">
+    <meta property="twitter:image" content="@yield('meta_image')">
+@else
+    <meta property="og:image" content="{{ asset('/img/meta/meta_image_blue.png') }}">
+    <meta property="twitter:image" content="{{ asset('/img/meta/meta_image_blue.png') }}">
+@endif
+
+{{-- Url --}}
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="twitter:url" content="{{ url()->current() }}">
+
+{{-- Extra --}}
+<meta property="twitter:card" content="summary_large_image">
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/img/favicon/apple-icon-57x57.png') }}">

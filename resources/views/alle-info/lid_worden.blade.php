@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Word lid!')
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

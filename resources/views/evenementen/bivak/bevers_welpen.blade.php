@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Bivak Bevers & Welpen')
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[

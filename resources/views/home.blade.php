@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Home')
+
 @section('content')
     <section class="section section--small-spacing banner banner--full banner--with-hover-effect">
         @component('components.carousel', [
@@ -67,7 +69,7 @@
 
                         <p class="volgende-activiteit__info volgende-activiteit__info--active">
                             <span class="volgende-activiteit__icon"><i class="fas fa-comment-alt"></i></span>
-                            {{ str_limit($tak->volgende_activiteit[0]->omschrijving, 256) }}
+                            {{ Str::limit($tak->volgende_activiteit[0]->omschrijving, 256) }}
                         </p>
                     @else
                         <strong>Geen activiteit</strong>

@@ -8,6 +8,15 @@
         @include('layouts.app_components.header')
 
         <main class="main">
+            @if (config('app.env') === 'staging')
+                @component('components.page_warning', [
+                    'type' => 'error',
+                ])
+                    Dit is een testversie van onze website.<br>
+                    De informatie die hier te vinden is, is NIET actueel of juist.
+                @endcomponent
+            @endif
+
             <div class="container cs-white shadow">
                 <div class="main__inner">
                     @yield('content')

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Admin - Tags')
+
 @section('content')
 
     @component('components.banner', [
