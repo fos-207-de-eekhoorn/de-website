@@ -53,11 +53,6 @@
                 </p>
 
                 <p>
-                    {{-- De fosshop is elke zaterdag open om 17u. Daar krijgt u meer uitleg over alle andere badges die op het uniform horen te hangen.  --}}
-                    Normaal gezien is de fosshop elke zaterdag open vanaf 17u. Omwille van corona kunnen we echter niet met zekerheid zeggen dat de fosshop elke week open zal zijn. Mondmasker is verplicht, alcoholische handgel om te desinfecteren is voorzien. Contacteer ons bij vragen gerust via <a href="mailto:eekhoorn.fosshop@gmail.com">eekhoorn.fosshop@gmail.com</a>.
-                </p>
-
-                <p>
                     Tot dan!<br>
                     Groetjes, het fosshop team.<br>
                     Nandoe, Chigi, Grizzly
