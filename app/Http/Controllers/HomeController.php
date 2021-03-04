@@ -53,7 +53,7 @@ class HomeController extends Controller
         $today = Carbon::now();
         $next_saturday = $today->is('Saturday') ? $today : $today->next('Saturday');
 
-        return view('welcome', [
+        return view('home', [
             'carousels' => $carousels,
             'next_saturday' => $next_saturday,
             'tak_activiteiten' => $tak_activiteiten,
