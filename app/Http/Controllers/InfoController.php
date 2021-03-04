@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Inschrijving;
 use App\Models\Role;
 use App\Http\Shared\CommonHelpers;
+use App\Mail\InschrijvingFormToScouts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -152,6 +153,43 @@ class InfoController extends Controller
 
             if ($inschrijving) {
                 Session::flash('inschrijving_success');
+
+                $inschrijvingFormObject = new \stdClass();
+                $inschrijvingFormObject->voornaam = $request->voornaam;
+                $inschrijvingFormObject->achternaam = $request->achternaam;
+                $inschrijvingFormObject->email = $request->email;
+                $inschrijvingFormObject->telefoon = $request->telefoon;
+                $inschrijvingFormObject->geslacht = $request->geslacht;
+                $inschrijvingFormObject->geboortedatum = $request->geboortedatum[2].'-'.$request->geboortedatum[1].'-'.$request->geboortedatum[0];
+                $inschrijvingFormObject->straat = $request->straat;
+                $inschrijvingFormObject->nummer = $request->nummer;
+                $inschrijvingFormObject->bus = $request->bus;
+                $inschrijvingFormObject->postcode = $request->postcode;
+                $inschrijvingFormObject->plaats = $request->plaats;
+                $inschrijvingFormObject->land = $request->land;
+                $inschrijvingFormObject->medisch = $request->medisch;
+                $inschrijvingFormObject->voogd_1_voornaam = $request->voogd_1_voornaam;
+                $inschrijvingFormObject->voogd_1_achternaam = $request->voogd_1_achternaam;
+                $inschrijvingFormObject->voogd_1_email = $request->voogd_1_email;
+                $inschrijvingFormObject->voogd_1_telefoon = $request->voogd_1_telefoon;
+                $inschrijvingFormObject->voogd_1_straat = $request->voogd_1_straat;
+                $inschrijvingFormObject->voogd_1_nummer = $request->voogd_1_nummer;
+                $inschrijvingFormObject->voogd_1_bus = $request->voogd_1_bus;
+                $inschrijvingFormObject->voogd_1_postcode = $request->voogd_1_postcode;
+                $inschrijvingFormObject->voogd_1_plaats = $request->voogd_1_plaats;
+                $inschrijvingFormObject->voogd_1_land = $request->voogd_1_land;
+                $inschrijvingFormObject->voogd_2_voornaam = $request->voogd_2_voornaam;
+                $inschrijvingFormObject->voogd_2_achternaam = $request->voogd_2_achternaam;
+                $inschrijvingFormObject->voogd_2_email = $request->voogd_2_email;
+                $inschrijvingFormObject->voogd_2_telefoon = $request->voogd_2_telefoon;
+                $inschrijvingFormObject->voogd_2_straat = $request->voogd_2_straat;
+                $inschrijvingFormObject->voogd_2_nummer = $request->voogd_2_nummer;
+                $inschrijvingFormObject->voogd_2_bus = $request->voogd_2_bus;
+                $inschrijvingFormObject->voogd_2_postcode = $request->voogd_2_postcode;
+                $inschrijvingFormObject->voogd_2_plaats = $request->voogd_2_plaats;
+                $inschrijvingFormObject->voogd_2_land = $request->voogd_2_land;
+    
+                Mail::send(new InschrijvingFormToScouts($inschrijvingFormObject));
 
                 return redirect()->back();
             } else {

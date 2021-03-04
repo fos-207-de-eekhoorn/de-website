@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', $tak->naam)
+@section('meta_description', 'Hier vind je wekelijks de activiteiten van de '.$tak->naam)
+@section('meta_image', asset('/img/meta/meta_image_'.$tak->slug.'.png'))
+
 @section('content')
     @component('components.banner', [
         'banner' => (object)[
@@ -140,7 +144,7 @@
 
                             <h5 class="leiding__totem">
                                 @if ($tak->naam === 'Welpen' && strlen($identity->welpennaam) > 0)
-                                    {{ $identity->welpennaam }}  / 
+                                    {{ $identity->welpennaam }}  - 
                                 @endif
 
                                 @if (strlen($identity->totem) > 0)

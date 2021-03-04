@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Admin - Voeg post toe')
+
 @section('content')
 
     @component('components.banner', [
