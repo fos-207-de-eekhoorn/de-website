@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
-
 @section('content')
     <section class="section section--small-spacing banner banner--full banner--with-hover-effect">
         @component('components.carousel', [

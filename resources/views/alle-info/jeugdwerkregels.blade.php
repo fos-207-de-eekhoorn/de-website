@@ -12,7 +12,7 @@
         'page_title' => 'Jeugdwerkregels werkjaar i.v.m. covid-19',
     ])
     @endcomponent
-    <div class="row justify-content-center section">
+    <div class="row justify-content-center section section--small-spacing">
         <div class="col-12 col-md-8">
             <div class="row">
                 <div class="col-4">
@@ -32,6 +32,18 @@
                     ])@endcomponent 
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center section">
+        <div class="col-12 col-md-8">
+            <h3 class="">Recente corona updates</h3>
+
+            @component('components.blog_post_cards', [
+                'blog_posts' => $corona_blog_posts,
+                'columns' => 2,
+                // 'align' => 'center',
+            ])@endcomponent
         </div>
     </div>
 

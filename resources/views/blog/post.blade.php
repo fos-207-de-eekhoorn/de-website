@@ -53,8 +53,8 @@
         <div class="col-12 col-md-8 section">
             <h3 class="text--align-center">Recente posts</h3>
 
-            @component('components.next_blog_posts', [
-                'next_blog_posts' => $next_blog_posts,
+            @component('components.blog_post_cards', [
+                'blog_posts' => $next_blog_posts,
                 'columns' => 2,
                 'align' => 'center',
             ])@endcomponent
