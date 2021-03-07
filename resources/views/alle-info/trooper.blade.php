@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Trooper')
 
 @section('content')
     <section class="section section--small-spacing banner banner--full">
@@ -21,13 +23,13 @@
             <div class="section">
                 <h3>Cool! Hoe werk dat?</h3>
                 <p>
-                    Voor je een online aankoopt doet, surf je naar <a href="https://trooper.be/fos207eekhoorn">https://trooper.be/fos207eekhoorn</a>. Op deze pagina staan links naar webshops. Als je via die links naar de webshop surft, weet de shop welke vereniging jij wil steunen. De link doet het werk, en jij kan gewoon shoppen zoals je normaal shopt. Van elke aankoop die jij doet, gaat er een percentje naar jouw vereniging.
+                    Voor je een online aankoopt doet, surf je naar <a href="https://trooper.be/fos207eekhoorn" target="_blank">https://trooper.be/fos207eekhoorn</a>. Op deze pagina staan links naar webshops. Als je via die links naar de webshop surft, weet de shop welke vereniging jij wil steunen. De link doet het werk, en jij kan gewoon shoppen zoals je normaal shopt. Van elke aankoop die jij doet, gaat er een percentje naar jouw vereniging.
                 </p>
                 <br>
                 <br>
                 <h3>Trooperbot</h3>
                 <p>
-                    Ben je wat vergeetachtig? Installeer dan zeker de Trooperbot. Telkens je op een Troopershop komt, zal hij verschijnen en zeggen: “bliep, bliep, Troopershop gevonden.” Jij klikt om Trooper te activeren. Trooperbot stuurt het nodige naar TrooperHQ. De monnies zijn binnen. <a href="https://trooper.be/trooperbot">https://trooper.be/trooperbot</a>
+                    Ben je wat vergeetachtig? Installeer dan zeker de Trooperbot. Telkens je op een Troopershop komt, zal hij verschijnen en zeggen: “bliep, bliep, Troopershop gevonden.” Jij klikt om Trooper te activeren. Trooperbot stuurt het nodige naar TrooperHQ. De monnies zijn binnen. <a href="https://trooper.be/trooperbot" target="_blank">https://trooper.be/trooperbot</a>
                 </p>
                 <br>
                 <p>

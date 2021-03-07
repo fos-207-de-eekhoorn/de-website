@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\BlogCategory;
-use App\BlogPost;
-use App\BlogTag;
+use App\Models\BlogCategory;
+use App\Models\BlogPost;
+use App\Models\BlogTag;
 use App\Http\Shared\CommonHelpers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class BlogController extends Controller
 
     public function get_blog()
     {
-        $posts = BlogPost::with([
+        $blog_posts = BlogPost::with([
                 'image',
             ])
             ->where('active', 1)
@@ -27,35 +27,28 @@ class BlogController extends Controller
         $categories = BlogCategory::get();
         $tags = BlogTag::get();
 
-        return view('blog.blog', [
-            'posts' => $posts,
+        return view('blog.index', [
+            'blog_posts' => $blog_posts,
             'categories' => $categories,
             'tags' => $tags,
         ]);
     }
 
-    public function get_blog_post(request $request)
+    public function get_blog_post(BlogPost $blog_post)
     {
-        $post = BlogPost::with([
-                'image',
-                'blocks' => function($query) {
-                    $query->orderBy('order', 'ASC');
-                },
-                'blocks.image',
-            ])
-            ->where('url', $request->url)->first();
+        $blog_post->load([
+            'image',
+            'blocks' => function($query) {
+                $query->orderBy('order', 'ASC');
+            },
+            'blocks.image',
+        ]);
 
-        if ($post) {
-            $next_blog_posts = $this->get_next_blog_posts();
-    
-            return view('blog.blog_post', [
-                'post' => $post,
-                'next_blog_posts' => $next_blog_posts,
-            ]);
-        } else {
-            Session::flash('error_post_not_found');
+        $next_blog_posts = $this->get_next_blog_posts();
 
-            return redirect('/blog');
-        }
+        return view('blog.post', [
+            'blog_post' => $blog_post,
+            'next_blog_posts' => $next_blog_posts,
+        ]);
     }
 }

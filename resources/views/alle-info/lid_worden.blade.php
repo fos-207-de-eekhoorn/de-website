@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Word lid!')
 
 @section('content')
     @component('components.banner', [
@@ -17,7 +19,7 @@
                 <h2>Lid worden</h2>
 
                 <p>
-                    Wil je lid worden van onze scouts? Goed idee! Hier vindt je alle nodige info.
+                    Wil je lid worden van onze scouts? Goed idee! Hier vind je alle nodige info.
                 </p>
 
                 <p>
@@ -28,7 +30,7 @@
                     @foreach($takken->take(4) as $tak)
                         <div class="col-6 col-md-3 section section--small-spacing">
                             <div class="card card--align-center cs-{{ $tak->kleur }} section">
-                                <a href="{{ url('/takken/' . $tak->link) }}" class="link--block">
+                                <a href="{{ route('takken.details', ['tak' => $tak->slug]) }}" class="link--block">
                                     <h5 class="card__title card__title--link card__title--link--centered">
                                         {{ $tak->korte_naam }}<span class="card__title-link-icon"><i class="fas fa-angle-right"></i></span>
                                     </h5>
@@ -51,7 +53,7 @@
                 </p>
 
                 <div class="wrapper__btn">
-                    <a href="{{ url('/alle-info/inschrijven') }}" class="btn btn--primary">Schrijf je hier in</a>
+                    <a href="{{ route('info.inschrijven') }}" class="btn btn--primary">Schrijf je hier in</a>
                 </div>
             </div>
 
@@ -72,7 +74,7 @@
                 </p>
 
                 <p>
-                    Vind <a href="{{ url('/alle-info/kost-scouts') }}">hier</a> meer info over wat de scouts kost.
+                    Vind <a href="{{ route('info.kost') }}">hier</a> meer info over wat de scouts kost.
                 </p>
             </div>
 

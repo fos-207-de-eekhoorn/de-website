@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Bekijk inschrijvingen')
 
 @section('content')
     @component('components.banner', [
@@ -25,7 +27,7 @@
                         'name' => 'Activiteiten',
                     ],
                     (object)[
-                        'link' => '/admin/activiteiten/'.$activiteit->tak->link,
+                        'link' => '/admin/activiteiten/'.$activiteit->tak->slug,
                         'name' => $activiteit->tak->naam,
                     ],
                 ],
@@ -57,7 +59,7 @@
                     'type' => 'warning',
                 ])
                     De inschrijving is verwijderd.
-                    <form action="{{ url('/admin/activiteiten/inschrijvingen/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                    <form action="{{ route('admin.activiteiten.inschrijvingen.remove.undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
                         @csrf
 
                         <input
@@ -127,7 +129,7 @@
                                 </td>
 
                                 <td class="table__cell no-wrap">
-                                    <form action="{{ url('/admin/activiteiten/inschrijvingen/remove') }}" method="POST" class="no-margin-bottom">
+                                    <form action="{{ route('admin.activiteiten.inschrijvingen.remove.post') }}" method="POST" class="no-margin-bottom">
                                         @csrf
 
                                         <input
@@ -163,7 +165,7 @@
         (function($){
             $('.toggle-switch__input').change(function() {
                 $.ajax({
-                    url: "{{ url('/api/activiteiten/set-aanwezig') }}",
+                    url: "{{ route('api.activiteiten.set_aanwezig') }}",
                     type: "post",
                     data: {
                         '_token': '{{ csrf_token() }}',

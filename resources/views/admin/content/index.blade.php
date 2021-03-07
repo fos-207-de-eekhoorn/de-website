@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Content')
 
 @section('content')
     @component('components.banner', [
@@ -57,10 +59,10 @@
                                 </td>
 
                                 <td class="table__cell">
-                                    @if (strlen($content->content_text->last()->leider->totem) > 0)
-                                        {{ $content->content_text->last()->leider->totem }}
+                                    @if (strlen($content->content_text->last()->user->identity->totem) > 0)
+                                        {{ $content->content_text->last()->user->identity->totem }}
                                     @else
-                                        {{ $content->content_text->last()->leider->voornaam }}
+                                        {{ $content->content_text->last()->user->identity->voornaam }}
                                     @endif
                                 </td>
                             @else
@@ -69,7 +71,7 @@
                             @endif
 
                             <td class="table__cell no-wrap">
-                                <a href="{{ url('/admin/contents/' . $content->key) }}">
+                                <a href="{{ route('admin.contents.key', ['content' => $content->key]) }}">
                                     <span class="fa--before"><i class="fas fa-eye"></i></span>Bekijk
                                 </a>
                             </td>

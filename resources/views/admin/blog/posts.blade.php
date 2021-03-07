@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Posts')
 
 @section('content')
 
@@ -37,7 +39,7 @@
             <div class="multiple-titles small-margin-bottom align-items-center">
                 <h2>Blog posts</h2>
 
-                <a href="{{ url('/admin/blog/posts/add/') }}" class="btn btn--primary">
+                <a href="{{ route('admin.blog.posts.add') }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg post toe
                 </a>
             </div>
@@ -68,7 +70,7 @@
                     'type' => 'warning',
                 ])
                     Je post is verwijderd.
-                    <form action="{{ url('/admin/blog/posts/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                    <form action="{{ route('admin.blog.posts.remove.undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
                         @csrf
 
                         <input
@@ -157,18 +159,18 @@
 
                                 <td class="table__cell no-wrap">
                                     <p>
-                                        <a href="{{ url('/blog/' . $post->url) }}">
+                                        <a href="{{ route('blog.post', ['blog_post' => $post->slug]) }}">
                                             <span class="fa--before"><i class="fas fa-eye"></i></span>Bekijk evenement
                                         </a>
                                     </p>
 
                                     <p>
-                                        <a href="{{ url('/admin/blog/posts/edit/' . Crypt::encrypt($post->id)) }}">
+                                        <a href="{{ route('admin.blog.posts.edit', [Crypt::encrypt($post->id)]) }}">
                                             <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                         </a>
                                     </p>
 
-                                    <form action="{{ url('/admin/blog/posts/delete') }}" method="POST" class="no-margin-bottom">
+                                    <form action="{{ route('admin.blog.posts.remove.post') }}" method="POST" class="no-margin-bottom">
                                         @csrf
 
                                         <input
@@ -206,7 +208,7 @@
         (function($){
             $('.toggle-switch__input').change(function() {
                 $.ajax({
-                    url: "{{ url('/api/blog/posts/set-active') }}",
+                    url: "{{ route('api.blog.set_active') }}",
                     type: "post",
                     data: {
                         '_token': '{{ csrf_token() }}',

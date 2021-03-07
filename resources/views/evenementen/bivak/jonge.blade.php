@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Bivak JG/V\'s')
 
 @section('content')
     @component('components.banner', [

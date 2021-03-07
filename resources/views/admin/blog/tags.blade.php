@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Tags')
 
 @section('content')
 
@@ -35,7 +37,7 @@
             <div class="multiple-titles small-margin-bottom align-items-center">
                 <h2>Blog tags</h2>
 
-                <a href="{{ url('/admin/blog/tags/add') }}" class="btn btn--primary">
+                <a href="{{ route('admin.blog.tags.add') }}" class="btn btn--primary">
                     <span class="fa--before"><i class="fas fa-plus"></i></span>Voeg tag toe
                 </a>
             </div>
@@ -52,7 +54,7 @@
                     'type' => 'warning',
                 ])
                     Je tag is verwijderd.
-                    <form action="{{ url('/admin/blog/tags/remove-undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
+                    <form action="{{ route('admin.blog.tags.remove.undo') }}" method="POST" class="medium-margin-left" style="display: inline;">
                         @csrf
 
                         <input
@@ -111,7 +113,7 @@
 
                             <td class="table__cell table__cell--hover-action">
                                 <div class="wrapper__btn wrapper__btn--right">
-                                    <form action="{{ url('/admin/blog/tags/delete') }}" method="POST">
+                                    <form action="{{ route('admin.blog.tags.remove.post') }}" method="POST">
                                         @csrf
 
                                         <input

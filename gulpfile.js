@@ -25,6 +25,20 @@ gulp.task('sass:watch', function () {
     gulp.watch(pkg.sass.watch, gulp.series('sass'));
 });
 
+//  JS
+// ------------------------------------------------
+gulp.task('js', function() {
+    return gulp.src(pkg.js.files.src)
+        .pipe(gulp.dest(pkg.js.files.dest))
+        .pipe(notify({
+            'message': 'JS build complete',
+            'onLast': true
+        }));
+});
+gulp.task('js:watch', function () {
+    gulp.watch(pkg.js.watch, gulp.series('js'));
+});
+
 //  Images
 // ------------------------------------------------
 gulp.task('img', function() {
@@ -71,13 +85,15 @@ gulp.task('fonts:watch', function () {
 // ------------------------------------------------
 gulp.task('default', gulp.parallel(
     'sass',
+    'js',
     'img',
     'docs',
     'fonts'
 ));
-gulp.task('dev', gulp.series(
+gulp.task('dev', gulp.parallel(
     'default',
     'sass:watch',
+    'js:watch',
     'img:watch',
     'docs:watch',
     'fonts:watch'

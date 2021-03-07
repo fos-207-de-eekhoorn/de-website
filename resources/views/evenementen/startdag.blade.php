@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Startdag')
 
 @section('content')
     @component('components.banner', [
@@ -44,7 +46,7 @@
 		        	<br>
 		        	<h3 class="text--align-center">Nieuwe leden</h3>
 		        	<p class="text--align-center">
-		        		Ben je nieuw of kom je eens kijken hoe het er in de scouts aantoe gaat? Sluit vrijblijvend een proefverzekering af om te ontdekken of scouts iets voor jou is. <a href="https://scoutsoostkamp.be/alle-info/lid-worden">Hier</a> vind je alle info!
+		        		Ben je nieuw of kom je eens kijken hoe het er in de scouts aantoe gaat? Sluit vrijblijvend een proefverzekering af om te ontdekken of scouts iets voor jou is. <a href="{{ route('info.lid-worden') }}">Hier</a> vind je alle info!
 		        	</p>
 		        	<p class="text--align-center">
 		        		Lid worden in onze scouts kan van 5 tot 16 jaar.

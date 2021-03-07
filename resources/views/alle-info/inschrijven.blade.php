@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Schrijf je in')
 
 @section('content')
     @component('components.banner', [
@@ -42,7 +44,7 @@
                 @endcomponent
             @endif
 
-            <form id="inschrijving-form" class="form" action="{{ url('/alle-info/inschrijven') }}" method="POST">
+            <form id="inschrijving-form" class="form" action="{{ route('info.inschrijven') }}" method="POST">
                 @csrf
                 
                 <h2>Lid</h2>

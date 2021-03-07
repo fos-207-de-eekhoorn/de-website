@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin console')
 
 @section('content')
     @component('components.banner', [
@@ -23,7 +25,7 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
-            <a href="{{ url('/admin/activiteiten') }}" class="admin-module">
+            <a href="{{ route('admin.activiteiten') }}" class="admin-module">
                 <h3>Activiteiten</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-dice"></i>
@@ -32,7 +34,7 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
-            <a href="{{ url('/admin/evenementen') }}" class="admin-module">
+            <a href="{{ route('admin.evenementen') }}" class="admin-module">
                 <h3>Evenementen</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-calendar-alt"></i>
@@ -41,7 +43,7 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
-            <a href="{{ url('/admin/inschrijvingen') }}" class="admin-module">
+            <a href="{{ route('admin.inschrijvingen') }}" class="admin-module">
                 <h3>Inschrijvingen</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-user-plus"></i>
@@ -50,7 +52,7 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
-            <a href="{{ url('/admin/blog/posts') }}" class="admin-module">
+            <a href="{{ route('admin.blog.posts') }}" class="admin-module">
                 <h3>Blog</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-newspaper"></i>
@@ -59,7 +61,7 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
-            <a href="{{ url('/admin/contents') }}" class="admin-module">
+            <a href="{{ route('admin.contents') }}" class="admin-module">
                 <h3>Content</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-comment-alt"></i>
@@ -68,7 +70,7 @@
         </div>
 
         <div class="col-12 col-md-4 section section--small-spacing">
-            <a href="{{ url('/admin/settings') }}" class="admin-module">
+            <a href="{{ route('admin.settings') }}" class="admin-module">
                 <h3>Instellingen</h3>
                 <div class="admin-module__icon">
                     <i class="fas fa-cog"></i>

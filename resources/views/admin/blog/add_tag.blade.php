@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Voeg tag toe')
 
 @section('content')
 
@@ -35,7 +37,7 @@
         <div class="col-12 col-md-8 col-lg-6">
             <h4>Voeg tag toe</h4>
 
-            <form method="POST" action="{{ url('/admin/blog/tags/add') }}" class="form">
+            <form method="POST" action="{{ route('admin.blog.tags.add.post') }}" class="form">
                 @csrf
 
                 {{-- Name --}}
@@ -60,7 +62,7 @@
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Voeg toe</button>
-                    <a href="{{ url('/admin/blog/tags') }}" class="btn btn--tertiary">Cancel</a>
+                    <a href="{{ route('admin.blog.tags') }}" class="btn btn--tertiary">Cancel</a>
                 </div>
             </form>
         </div>

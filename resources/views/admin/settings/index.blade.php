@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Instellingen')
 
 @section('content')
     @component('components.banner', [
@@ -51,7 +53,7 @@
 
                             <td class="table__cell no-wrap">
                                 <p class="no-margin-bottom">
-                                    <a href="{{ url('/admin/settings/edit/' . Crypt::encrypt($setting->id)) }}">
+                                    <a href="{{ route('admin.settings.edit', [Crypt::encrypt($setting->id)]) }}">
                                         <span class="fa--before"><i class="fas fa-pen"></i></span>Pas aan
                                     </a>
                                 </p>

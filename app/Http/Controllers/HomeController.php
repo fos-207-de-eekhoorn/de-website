@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Content;
-use App\Evenement;
-use App\Inschrijving;
-use App\Tak;
-use App\Setting;
+use App\Models\Content;
+use App\Models\Evenement;
+use App\Models\Inschrijving;
+use App\Models\Tak;
+use App\Models\Setting;
 use App\Http\Shared\CommonHelpers;
-use App\Mail\ContactForm;
+use App\Mail\ContactFormToScouts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -29,7 +29,7 @@ class HomeController extends Controller
             ->limit(4)
             ->get();
 
-        $evenementen = Evenement::where('active', '1')
+        $next_evenementen = Evenement::where('active', '1')
             ->whereDate('start_datum', '>=', Carbon::now('Europe/Berlin')->format('Y-m-d'))
             ->with('evenement_tak')
             ->orderBy('start_datum','ASC')
@@ -42,7 +42,6 @@ class HomeController extends Controller
                     $query->latest('created_at')
                         ->first();
                 },
-                'content_text.leider'
             ])
             ->first();
 
@@ -58,7 +57,7 @@ class HomeController extends Controller
             'carousels' => $carousels,
             'next_saturday' => $next_saturday,
             'tak_activiteiten' => $tak_activiteiten,
-            'evenementen' => $evenementen,
+            'next_evenementen' => $next_evenementen,
             'next_blog_posts' => $this->get_next_blog_posts(),
             'voorwoord' => $voorwoord->content_text[0],
         ]);
@@ -96,7 +95,7 @@ class HomeController extends Controller
             $contactFormObject->kind_naam = $request->kind_naam;
             $contactFormObject->kind_tak = $request->kind_tak;
 
-            Mail::send(new ContactForm($contactFormObject));
+            Mail::send(new ContactFormToScouts($contactFormObject));
             Session::flash('contact_form_success');
         } else {
             Session::flash('contact_form_error_captcha');

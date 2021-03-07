@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Inschrijvingen')
 
 @section('content')
     @component('components.banner', [
@@ -29,8 +31,8 @@
                 <h2>Lijst</h2>
                 <div class="wrapper__btn wrapper__btn--right align-items-center">
                     <span class="fa--before">Export as:</span>
-                    <a href="{{ url('/admin/inschrijvingen/export/xlsx') }}" class="btn btn--primary">XLSX</a>
-                    <a href="{{ url('/admin/inschrijvingen/export/csv') }}" class="btn btn--secondary">CSV</a>
+                    <a href="{{ route('admin.inschrijvingen.export', ['xlsx']) }}" class="btn btn--primary">XLSX</a>
+                    <a href="{{ route('admin.inschrijvingen.export', ['csv']) }}" class="btn btn--secondary">CSV</a>
                 </div>
             </div>
         </div>

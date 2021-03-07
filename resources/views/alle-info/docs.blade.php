@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Documenten')
 
 @section('content')
     @component('components.banner', [

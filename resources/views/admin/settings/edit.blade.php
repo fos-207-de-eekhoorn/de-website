@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Admin - Pas instelling aan')
 
 @section('content')
     @component('components.banner', [
@@ -92,7 +94,7 @@
 
                 <div class="wrapper__btn">
                     <button class="btn btn--primary">Pas instelling aan</button>
-                    <a href="{{ url('/admin/settings') }}" class="btn btn--tertiary">Ga terug</a>
+                    <a href="{{ route('admin.settings') }}" class="btn btn--tertiary">Ga terug</a>
                 </div>
             </form>
         </div>

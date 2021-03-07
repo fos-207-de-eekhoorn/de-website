@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Inschrijven voor '.$activiteit->tak->naam)
 
 @section('content')
     @component('components.banner', [
@@ -52,7 +54,7 @@
                 </div>
 
                 <div class="col-12 col-md-6">
-                    <form id="inschrijving-form" class="form" action="/takken/inschrijven" method="POST">
+                    <form id="inschrijving-form" class="form" action="{{ route('takken.inschrijven.post') }}" method="POST">
                         @csrf
 
                         <input
@@ -101,7 +103,7 @@
 
                         <div class="wrapper__btn">
                             <button class="btn btn--primary">Verzend</button>
-                            <a href="{{ url('/takken/'.$activiteit->tak->link) }}" class="btn btn--tertiary">Ga terug naar activiteiten</a>
+                            <a href="{{ route('takken.details', ['tak' => $activiteit->tak->slug]) }}" class="btn btn--tertiary">Ga terug naar activiteiten</a>
                         </div>
                     </form>
                 </div>

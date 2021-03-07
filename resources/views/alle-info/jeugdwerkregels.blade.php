@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Jeugdwerkregels')
 
 @section('content')
     @component('components.banner', [
@@ -10,7 +12,7 @@
         'page_title' => 'Jeugdwerkregels werkjaar i.v.m. covid-19',
     ])
     @endcomponent
-    <div class="row justify-content-center section">
+    <div class="row justify-content-center section section--small-spacing">
         <div class="col-12 col-md-8">
             <div class="row">
                 <div class="col-4">
@@ -30,6 +32,18 @@
                     ])@endcomponent 
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center section">
+        <div class="col-12 col-md-8">
+            <h3 class="">Recente corona updates</h3>
+
+            @component('components.blog_post_cards', [
+                'blog_posts' => $corona_blog_posts,
+                'columns' => 2,
+                // 'align' => 'center',
+            ])@endcomponent
         </div>
     </div>
 
@@ -127,7 +141,7 @@
 
                     <h5>Materiaal</h5>
                     <p>
-                        In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door. 
+                        In de gele en oranje fase kan materiaal enkel gedeeld worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door. 
                     </p>
                 </div>
 
@@ -199,7 +213,7 @@
 
                     <h5>Materiaal</h5>
                     <p>
-                        In de gele en oranje fase kan materiaal gedeeld gebruikt worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door.
+                        In de gele en oranje fase kan materiaal enkel gedeeld worden binnen éénzelfde bubbel. Als er verschillende bubbels hetzelfde materiaal nodig hebben, wordt dit ontsmet tussen de bubbels door.
                     </p>
                 </div>
 
@@ -263,7 +277,7 @@
 
                     <h5>Materiaal</h5>
                     <p>
-                        Persoonlijk materiaal per individu heeft de voorkeur. Materiaal dat wordt doorgegeven wordt tussenin ontsmet.
+                        Persoonlijk materiaal heeft de voorkeur. Materiaal dat wordt doorgegeven wordt tussenin ontsmet.
                     </p>
                 </div>
 

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\ActiviteitInschrijving;
-use App\BlogPost;
-use App\Evenement;
-use App\Image;
+use App\Models\ActiviteitInschrijving;
+use App\Models\BlogPost;
+use App\Models\Evenement;
+use App\Models\Image;
 use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

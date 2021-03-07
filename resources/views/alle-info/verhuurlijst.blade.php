@@ -1,4 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
+
+@section('title', 'Materiaal en verhuur')
 
 @section('content')
     @component('components.banner', [
@@ -114,7 +116,7 @@
                         @foreach($responsibles as $leider)
                             @component('components.leiding_card', [
                                 'leider' => $leider,
-                                'titel' => 'Materiaalmeester',
+                                'titel' => $role,
                             ])
                             @endcomponent
                         @endforeach

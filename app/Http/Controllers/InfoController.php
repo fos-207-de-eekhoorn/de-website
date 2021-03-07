@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Leider;
-use App\Inschrijving;
+use App\Models\Inschrijving;
+use App\Models\Role;
+use App\Models\BlogPost;
 use App\Http\Shared\CommonHelpers;
+use App\Mail\InschrijvingFormToScouts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 
 class InfoController extends Controller
 {
@@ -14,7 +17,7 @@ class InfoController extends Controller
 
     public function get_alle_info()
     {
-        return view('alle-info.algemene_info');
+        return view('alle-info.index');
     }
 
     public function get_lid_worden()
@@ -28,11 +31,12 @@ class InfoController extends Controller
 
     public function get_uniform_shop()
     {
-        $responsibles_ids = [24, 16, 12];
-        $responsibles_ids_ordered = implode(',', $responsibles_ids);
-        $responsibles = Leider::whereIn('id', $responsibles_ids)
-            ->orderByRaw("FIELD(id, $responsibles_ids_ordered)")
-            ->get();
+        $collection = Role::where('key', config('roles.keys.fos_shop'))
+            ->with('identities')
+            ->first();
+        
+        $responsibles = $collection->identities;
+        $role = $collection->name;
 
         return view('alle-info.uniform_shop', [
             'responsibles' => $responsibles,
@@ -41,20 +45,22 @@ class InfoController extends Controller
 
     public function get_verhuurlijst()
     {
-        $responsibles_ids = [27, 25, 37, 31];
-        $responsibles_ids_ordered = implode(',', $responsibles_ids);
-        $responsibles = Leider::whereIn('id', $responsibles_ids)
-            ->orderByRaw("FIELD(id, $responsibles_ids_ordered)")
-            ->get();
+        $collection = Role::where('key', config('roles.keys.materiaal'))
+            ->with('identities')
+            ->first();
+        
+        $responsibles = $collection->identities;
+        $role = $collection->name;
 
         return view('alle-info.verhuurlijst', [
             'responsibles' => $responsibles,
+            'role' => $role,
         ]);
     }
 
     public function get_docs()
     {
-        $ael_leden = $this->get_ael_leden();
+        $ael_leden = $this->get_el_leden();
 
         return view('alle-info.docs', [
             'ael_leden' => $ael_leden,
@@ -73,7 +79,16 @@ class InfoController extends Controller
 
     public function get_jeugdwerkregels()
     {
-        return view('alle-info.jeugdwerkregels');
+        $corona_blog_posts = BlogPost::where('category_id', 3)
+            ->where('active', 1)
+            ->where('live_at', '<=', Carbon::now('Europe/Berlin')->format('Y-m-d H:i:s'))
+            ->orderBy('live_at', 'desc')
+            ->limit(4)
+            ->get();
+
+        return view('alle-info.jeugdwerkregels', [
+            'corona_blog_posts' => $corona_blog_posts,
+        ]);
     }
 
     public function get_inschrijven()
@@ -91,7 +106,7 @@ class InfoController extends Controller
         $resp = $recaptcha->setExpectedHostname('scoutsoostkamp.be')
             ->verify($request['g-recaptcha-response'], $request->ip());
 
-        if (true) {
+        if ($resp->isSuccess()) {
             $request->validate([
                 // Lid
                 'voornaam' => 'required',
@@ -149,6 +164,43 @@ class InfoController extends Controller
 
             if ($inschrijving) {
                 Session::flash('inschrijving_success');
+
+                $inschrijvingFormObject = new \stdClass();
+                $inschrijvingFormObject->voornaam = $request->voornaam;
+                $inschrijvingFormObject->achternaam = $request->achternaam;
+                $inschrijvingFormObject->email = $request->email;
+                $inschrijvingFormObject->telefoon = $request->telefoon;
+                $inschrijvingFormObject->geslacht = $request->geslacht;
+                $inschrijvingFormObject->geboortedatum = $request->geboortedatum[2].'-'.$request->geboortedatum[1].'-'.$request->geboortedatum[0];
+                $inschrijvingFormObject->straat = $request->straat;
+                $inschrijvingFormObject->nummer = $request->nummer;
+                $inschrijvingFormObject->bus = $request->bus;
+                $inschrijvingFormObject->postcode = $request->postcode;
+                $inschrijvingFormObject->plaats = $request->plaats;
+                $inschrijvingFormObject->land = $request->land;
+                $inschrijvingFormObject->medisch = $request->medisch;
+                $inschrijvingFormObject->voogd_1_voornaam = $request->voogd_1_voornaam;
+                $inschrijvingFormObject->voogd_1_achternaam = $request->voogd_1_achternaam;
+                $inschrijvingFormObject->voogd_1_email = $request->voogd_1_email;
+                $inschrijvingFormObject->voogd_1_telefoon = $request->voogd_1_telefoon;
+                $inschrijvingFormObject->voogd_1_straat = $request->voogd_1_straat;
+                $inschrijvingFormObject->voogd_1_nummer = $request->voogd_1_nummer;
+                $inschrijvingFormObject->voogd_1_bus = $request->voogd_1_bus;
+                $inschrijvingFormObject->voogd_1_postcode = $request->voogd_1_postcode;
+                $inschrijvingFormObject->voogd_1_plaats = $request->voogd_1_plaats;
+                $inschrijvingFormObject->voogd_1_land = $request->voogd_1_land;
+                $inschrijvingFormObject->voogd_2_voornaam = $request->voogd_2_voornaam;
+                $inschrijvingFormObject->voogd_2_achternaam = $request->voogd_2_achternaam;
+                $inschrijvingFormObject->voogd_2_email = $request->voogd_2_email;
+                $inschrijvingFormObject->voogd_2_telefoon = $request->voogd_2_telefoon;
+                $inschrijvingFormObject->voogd_2_straat = $request->voogd_2_straat;
+                $inschrijvingFormObject->voogd_2_nummer = $request->voogd_2_nummer;
+                $inschrijvingFormObject->voogd_2_bus = $request->voogd_2_bus;
+                $inschrijvingFormObject->voogd_2_postcode = $request->voogd_2_postcode;
+                $inschrijvingFormObject->voogd_2_plaats = $request->voogd_2_plaats;
+                $inschrijvingFormObject->voogd_2_land = $request->voogd_2_land;
+    
+                Mail::send(new InschrijvingFormToScouts($inschrijvingFormObject));
 
                 return redirect()->back();
             } else {
