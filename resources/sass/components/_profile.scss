@@ -1,0 +1,62 @@
+//  ------------------------------------------------------------------------------------
+//  Component -> Profile
+//  ------------------------------------------------------------------------------------
+
+.profile {
+	@include border-radius;
+
+    padding: spacing(md) spacing(lg);
+    background-color: $color-grey-background-light;
+
+    &__name {
+        margin-bottom: spacing(md);
+
+        text-align: center;
+    }
+
+    &__profile-image {
+        border: spacing(sm) solid $color-white;
+        margin-bottom: spacing(md);
+        border-radius: 100%;
+    }
+
+    &__basics,
+    &__info {
+        text-align: center;
+    }
+
+    &__extras {
+        display: flex;
+        justify-content: space-around;
+
+        &-title {
+            margin-top: spacing(md);
+            margin-bottom: spacing(xs);
+        }
+    }
+
+    &__tak-introductie {
+        margin: 0;
+    }
+
+    &__roles-list {
+        padding: 0;
+
+        list-style: none;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: spacing(xxs);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-icon {
+            font-size: spacing(sm);
+            color: $color-grey-light;
+        }
+    }
+}

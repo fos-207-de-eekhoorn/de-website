@@ -3,15 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use Auth;
-use App\Models\Inschrijving;
-use App\Exports\InschrijvingExport;
+use App\Models\User;
 use App\Http\Controllers\Controller;
-use Maatwebsite\Excel\Facades\Excel;
 
 class GeneralController extends Controller
 {
     public function get_admin()
     {
-        return view('admin.index');
+        $user = User::where('id', Auth::user()->id)
+            ->with([
+                'identity',
+                'identity.tak',
+                'identity.roles',
+            ])->first();
+
+        return view('admin.index', [
+            'user' => $user,
+        ]);
     }
 }
