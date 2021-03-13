@@ -169,7 +169,7 @@
                     </li>
                 @endif
             @else
-                <li class="nav__list-item nav__list-item--sublist{{ Request::is('/admin*') ? ' nav__link--active' : '' }}">
+                <li class="nav__list-item nav__list-item--sublist{{ Request::is('/profile*') || Request::is('/admin*') ? ' nav__link--active' : '' }}">
                     <input type="checkbox" id="nav__toggle-sublist--auth" class="nav__checkbox" hidden>
 
                     <label for="nav__toggle-sublist--auth" class="nav__link">
@@ -179,8 +179,8 @@
                     <ul class="nav__sublist">
                         {{-- Overzicht --}}
                         <li class="nav__sublist-item">
-                            <a href="/admin" class="nav__link nav__link--sublist">
-                                Overzicht
+                            <a href="/profile" class="nav__link nav__link--sublist">
+                                Profiel
                             </a>
                         </li>
 

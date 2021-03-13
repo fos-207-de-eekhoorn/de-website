@@ -235,6 +235,13 @@
         margin-left: spacing(md);
     }
 
+    &__helper-text {
+        margin-top: spacing(xs);
+
+        font-size: $font-size-text-sm;
+        color: $color-grey-light;
+    }
+
     &__extra {
         margin-top: spacing(sm);
     }

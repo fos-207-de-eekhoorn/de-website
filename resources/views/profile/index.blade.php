@@ -17,7 +17,7 @@
     <div class="row section">
         <div class="col-12">
             @component('components.breadcrumbs', [
-                'current' => 'Admin',
+                'current' => 'Profiel',
             ])@endcomponent     
         </div>
 
@@ -75,6 +75,13 @@
                         @endif
                     </div>
                 @endif
+
+                <p class="profile__edit">
+                    <a href="{{ route('profile.edit') }}">
+                        <span class="fa--before"><i class="fas fa-pencil-alt"></i></span>
+                        Pas je profiel aan
+                    </a>
+                </p>
             </div>
         </div>
 

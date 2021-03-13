@@ -30,11 +30,14 @@ require $base_route.'/info.php';
 # Evenementen Routes
 require $base_route.'/evenementen.php';
 
-# Admin Routes
-require $base_route.'/admin.php';
-
 # Blog Routes
 require $base_route.'/blog.php';
+
+# Profile Routes
+require $base_route.'/profile.php';
+
+# Admin Routes
+require $base_route.'/admin.php';
 
 # Auth Routes
 require $base_route.'/auth.php';
