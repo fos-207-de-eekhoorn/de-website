@@ -6,6 +6,7 @@ use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rule;
 use Carbon\Carbon;
 
 class ProfileController extends Controller
@@ -38,6 +39,29 @@ class ProfileController extends Controller
 
     public function post_edit(Request $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'voornaam' => 'required',
+            'achternaam' => 'required',
+            'user_email' => 'required|email',
+            'email' => 'required|email',
+            'geslacht' => ['required', Rule::in(config('identity.genders'))],
+            'telefoon' => 'required',
+        ]);
+
+        Auth::user()->update([
+            'email' => $request->user_email,
+        ]);
+        Auth::user()->identity->update($request->only([
+            'voornaam',
+            'achternaam',
+            'voortotem',
+            'totem',
+            'welpennaam',
+            'email',
+            'geslacht',
+            'telefoon',
+        ]));
+
+        return redirect()->route('profile');
     }
 }
