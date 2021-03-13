@@ -1,4 +1,4 @@
-<section class="section section--extra-small-spacing banner banner--{{ $banner->color }}">
+<section class="section section--extra-small-spacing banner banner--{{ $banner->color }} {{ isset($banner->size) ? 'banner--'.$banner->size  : ''}}">
 	<img src="{{ asset('/img/banners/' . $banner->color . '-' . $banner->pattern . '-' . $banner->strength . '.png') }}" alt="{{ $page_title }}" class="banner__image">
 
 	<h1 class="banner__title @if(isset($page_sub_title)) banner__title--with-sub-title @endif">

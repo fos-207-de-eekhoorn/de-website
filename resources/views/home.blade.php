@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <section class="section section--small-spacing banner banner--full banner--with-hover-effect">
+    <section class="section section--small-spacing banner banner--auto-height banner--with-hover-effect">
         @component('components.carousel', [
             'name' => 'homepage',
             'images' => $carousels->homepage,

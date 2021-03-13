@@ -8,6 +8,7 @@
             'color' => 'blue',
             'pattern' => '1',
             'strength' => 'light',
+            'size' => 'small',
         ],
         'page_title' => 'Admin',
     ])

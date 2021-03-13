@@ -9,10 +9,14 @@
     margin-right: -1 * ($gutter / 2);
     overflow: hidden;
     
-    &--full {
+    &--auto-height {
         height: auto;
     }
-    
+
+    &--small {
+        height: spacing(xxl);
+    }
+
     &--large {
         height: spacing(xxxl) + spacing(xxl);
     }

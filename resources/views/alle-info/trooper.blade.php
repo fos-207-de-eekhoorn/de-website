@@ -3,7 +3,7 @@
 @section('title', 'Trooper')
 
 @section('content')
-    <section class="section section--small-spacing banner banner--full">
+    <section class="section section--small-spacing banner banner--auto-height">
         <img src="/img/trooperbanner.png" alt="Banner" class="banner__banner">
     </section>
 
