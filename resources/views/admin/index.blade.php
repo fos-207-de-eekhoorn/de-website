@@ -49,7 +49,7 @@
                                     {{ $user->identity->tak->korte_naam }}
                                 </h5>
 
-                                <p>
+                                <p class="profile__tak-introductie">
                                     {{ $user->identity->tak->introductie }}
                                 </p>
                             </div>
