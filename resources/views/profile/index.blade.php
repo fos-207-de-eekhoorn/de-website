@@ -142,6 +142,33 @@
                         </div>
                     </a>
                 </div>
+
+                <div class="col-12 col-md-4 section section--extra-small-spacing">
+                    <div class="admin-module admin-module--coming-soon">
+                        <h4>Identiteiten</h4>
+                        <div class="admin-module__icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 section section--extra-small-spacing">
+                    <div class="admin-module admin-module--coming-soon">
+                        <h4>Roles</h4>
+                        <div class="admin-module__icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 section section--extra-small-spacing">
+                    <div class="admin-module admin-module--coming-soon">
+                        <h4>Takken</h4>
+                        <div class="admin-module__icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
