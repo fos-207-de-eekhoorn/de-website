@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('profile')->name('profile')->group(function () {
+Route::prefix('profile')->name('profile')->middleware(['auth'])->group(function () {
     Route::get('/', [ProfileController::class, 'get_profile'])->name('');
 
     Route::name('.')->group(function () {
